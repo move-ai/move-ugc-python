@@ -1,0 +1,82 @@
+---
+name: "🐛 Bug Report"
+description: File a bug report
+title: "short issue description"
+labels: [bug, needs-triage]
+assignees: []
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the bug
+      description: Please provide a clear and concise description of the bug you encountered.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction Steps
+      description: |
+        1. [Outline the steps to reproduce the bug. Be as specific as possible.]
+        2. [Include any relevant code snippets or configuration settings.]
+
+        Avoid including business logic or unrelated code, it makes diagnosis more difficult.
+        The code sample should be an SSCCE. See http://sscce.org/ for details. In short, please provide a code sample that we can copy/paste, run and reproduce.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: |
+        Describe what you expected to happen when performing the steps above.
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: Current Behavior
+      description: |
+        Explain what actually happened when performing the steps above.
+        Please include full errors, uncaught exceptions, stack traces, and relevant logs.
+    validations:
+      required: true
+  - type: textarea
+    id: reproducibility
+    attributes:
+      label: Reproducibility
+      description: |
+        Describe how consistently you can reproduce the bug.
+        For example, does the bug occur only occasionally, or every time?
+  - type: textarea
+    id: solution
+    attributes:
+      label: Possible Solution
+      description: |
+        If you have any ideas on how to fix the issue, feel free to suggest them here.
+    validations:
+      required: false
+  - type: textarea
+    id: related
+    attributes:
+      label: Related Issues and PRs
+      description: |
+        If you have any other open issues or PRs related to this problem, link to them here.
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional Information/Context
+      description: |
+        Anything else that might be relevant for troubleshooting this bug. Providing context helps us come up with a solution that is most useful in the real world.
+    validations:
+      required: false
+  - type: checkboxes
+    id: contribution
+    attributes:
+        label: Contribution
+        description: |
+          Please indicate if you would be willing to submit a PR to fix this issue.
+        options:
+          - required: false
+            label: I would be willing to submit a PR to fix this issue
+            default: false

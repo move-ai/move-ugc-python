@@ -1,0 +1,5 @@
+site_name: "Move UGC Python SDK"
+theme:
+  name: material
+nav:
+  - "Home": "index.md"
