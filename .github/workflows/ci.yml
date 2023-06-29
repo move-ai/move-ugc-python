@@ -1,0 +1,63 @@
+name: CI
+
+on:
+  push:
+    branches:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    name: Lint ${{ matrix.python-version }}
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: [ '3.8', '3.9', '3.10', '3.11' ]
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+      - name: Run pre-commit checks
+        uses: ./.github/actions/pre-commit
+        with:
+          python_version: ${{ matrix.python-version }}
+          skip_hooks: "pytest,generate-tests-badge"
+
+  tests:
+    runs-on: ${{ matrix.os }}
+    name: Test ${{ matrix.os }} -> ${{ matrix.python-version }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ ubuntu-latest, macos-latest, windows-latest ]
+        python-version: [ '3.8', '3.9', '3.10', '3.11' ]
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+      - name: Run tests
+        uses: ./.github/actions/tests
+        with:
+          python_version: ${{ matrix.python-version }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Auto-update badges
+        uses: ./.github/actions/commit-badges
+        if: matrix.os == 'ubuntu-latest' && matrix.python-version == '3.9'
+
+  create_tag:
+    runs-on: ubuntu-latest
+    name: Create tag
+    if: github.ref == 'refs/heads/main'
+    needs:
+      - tests
+      - lint
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+      - name: Set up python and dependencies
+        uses: ./.github/actions/base-python
+        with:
+          version: '3.10'
+      - name: Create tag
+        run: |
+          TAG_NAME=$(poetry version --short)
+          echo "Creating tag for version ${TAG_NAME}"
+          git tag $TAG_NAME
+          git push origin $TAG_NAME

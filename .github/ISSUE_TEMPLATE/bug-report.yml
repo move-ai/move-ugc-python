@@ -79,4 +79,3 @@ body:
         options:
           - required: false
             label: I would be willing to submit a PR to fix this issue
-            default: false

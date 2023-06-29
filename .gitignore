@@ -4,6 +4,9 @@
 # node files
 node_modules/
 
+$ pytest reports
+reports/
+
 ### Linux ###
 *~
 

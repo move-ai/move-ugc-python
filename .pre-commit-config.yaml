@@ -38,6 +38,6 @@ repos:
   - repo: local
     hooks:
       - id: poetry-lock-check
-        name: "Check poetry lock file"
+        name: "check poetry lock file"
         entry: bash -c "poetry lock --check"
         language: system
