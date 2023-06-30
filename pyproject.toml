@@ -37,7 +37,7 @@ build-backend = "poetry.core.masonry.api"
 profile = "black"
 
 [tool.pytest.ini_options]
-addopts="--cov-report html --cov . -vvv --randomly-seed=3694812 --junitxml=reports/junit/junit.xml --cov-report=xml:reports/coverage/coverage.xml"
+addopts="--cov-report html --cov . -vvv --randomly-seed=3694812 --junitxml=reports/junit/junit.xml --cov-report=xml:reports/coverage/coverage.xml --cov-fail-under=100"
 
 [tool.coverage.run]
 omit=["tests/*"]
