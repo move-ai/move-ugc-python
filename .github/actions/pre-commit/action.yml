@@ -1,0 +1,23 @@
+name: 'Runs pre-commit checks'
+description: 'Runs pre-commit checks for this repository'
+inputs:
+  skip_hooks:
+    description: 'Hooks to skip when running pre-commit'
+    required: false
+    default: ""
+  python_version:
+    description: 'Python version to use'
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: Set up python and dependencies
+      uses: ./.github/actions/base-python
+      with:
+        version: ${{ inputs.python_version }}
+    - name: Run pre-commit checks
+      shell: bash
+      run: poetry run pre-commit run -a
+      env:
+        SKIP: ${{ inputs.skip_hooks }}

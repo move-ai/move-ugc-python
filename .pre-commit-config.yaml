@@ -14,7 +14,6 @@ repos:
     rev: 23.1.0
     hooks:
       - id: black
-        language_version: python3.10
   - repo: local
     hooks:
       - id: flake8
@@ -27,7 +26,6 @@ repos:
     rev: v1.0.0
     hooks:
       - id: mypy
-        language_version: python3.10
         args:
           - --strict
           - --no-warn-no-return
@@ -38,6 +36,6 @@ repos:
   - repo: local
     hooks:
       - id: poetry-lock-check
-        name: "Check poetry lock file"
+        name: "check poetry lock file"
         entry: bash -c "poetry lock --check"
         language: system

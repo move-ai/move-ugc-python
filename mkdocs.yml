@@ -1,5 +1,22 @@
 site_name: "Move UGC Python SDK"
 theme:
   name: material
+  logo: "assets/images/logo.svg"
+  favicon: "assets/images/favicon.svg"
+  features:
+    - announce.dismiss
+    - navigation.tabs
+    - navigation.footer
+    - navigation.instant
+    - navigation.tabs.sticky
+    - navigation.top
+    - content.code.copy
+    - content.code.annotate
+  palette:
+    primary: "black"
+    accent: "black"
 nav:
   - "Home": "index.md"
+extra:
+  version:
+    provider: mike

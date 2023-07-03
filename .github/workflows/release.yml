@@ -1,0 +1,26 @@
+name: Release
+
+# Run on every version tag (0.1.0, 0.1.1 and so on)
+on:
+  push:
+    tags:
+      - "*"
+
+jobs:
+  release:
+    name: "Public documentation for ${{ github.ref_name }}"
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+      - name: Set up python and dependencies
+        uses: ./.github/actions/base-python
+        with:
+          version: "3.10"
+          groups: "docs"
+      - name: Target latest docs to ${{ github.ref_name }}
+        run: |
+          poetry run mike deploy --push --update-aliases ${{ github.ref_name }} latest
+      - name: Set ${{ github.ref }} as default documentation
+        run: |
+          poetry run mike set-default --push latest

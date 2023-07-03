@@ -1,0 +1,10 @@
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/" # path where poetry.lock, pyroject.toml lives
+    schedule:
+      interval: "monthly"
+  - package-ecosystem: "pip"
+    directory: "/" # path where .github/ lives
+    schedule:
+      interval: "monthly"
