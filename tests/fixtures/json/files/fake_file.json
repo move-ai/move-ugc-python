@@ -1,0 +1,10 @@
+{
+    "getFile": {
+        "id": "file-a0059241-7ede-411c-a149-769a4305e8b6",
+        "presignedUrl": "https://PYTEST_INVALID_PRESIGNED_URL.com/file",
+        "metadata": "{}",
+        "type": ".mp4",
+        "created": "2023-07-03T14:48:06.029019Z",
+        "__typename": "File"
+    }
+}

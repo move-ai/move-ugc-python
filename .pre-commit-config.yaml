@@ -31,7 +31,7 @@ repos:
           - --no-warn-no-return
         exclude: ^(tests|platform_utils/pytest_plugins)
         additional_dependencies: [
-          "pydantic",
+          "pydantic", "gql", "pydantic_settings"
         ]
   - repo: local
     hooks:
