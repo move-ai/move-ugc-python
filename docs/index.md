@@ -5,8 +5,20 @@
 Move's UGC API enables businesses and groups to construct tailored workflows or applications, addressing their unique requirements for mocap animation.
 While our core API is built on GraphQL, this SDK provides a simple interface for interacting with the API and can be integrated into any python application.
 
+### Installation
 
-### Creating a file:
+#### With pip:
+
+```bash
+pip install move-ugc
+```
+#### With poetry:
+
+```bash
+poetry add move-ugc
+```
+
+### Creating a file
 
 ```python
 from move_ugc import MoveUgc
