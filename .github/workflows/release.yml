@@ -26,6 +26,3 @@ jobs:
       - name: Target latest docs to ${{ github.ref_name }}
         run: |
           poetry run mike deploy --push --update-aliases ${{ github.ref_name }} latest
-      - name: Set ${{ github.ref }} as default documentation
-        run: |
-          poetry run mike set-default --push latest
