@@ -42,5 +42,5 @@ depth_file = ugc.files.create(file_type="move")
 ## Retrieve a file
 
 ```python
-video_file = ugc.files.get(file_id="<FILE_ID>")
+video_file = ugc.files.retrieve(file_id="<FILE_ID>")
 ```
