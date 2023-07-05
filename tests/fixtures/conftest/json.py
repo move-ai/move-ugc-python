@@ -1,0 +1,40 @@
+"""Json fixtures."""
+import os
+
+import pytest
+
+
+@pytest.fixture
+def json_fixtures_path():
+    """Fixture to return the path to the JSON fixtures.
+
+    Returns:
+        str: Path to JSON fixtures.
+    """
+    return os.path.join(os.path.dirname(__file__), "..", "json")
+
+
+@pytest.fixture
+def files_fixtures_path(json_fixtures_path):
+    """Fixture to return the path to the files fixtures.
+
+    Args:
+        json_fixtures_path (str): Path to JSON fixtures.
+
+    Returns:
+        str: Path to files fixtures.
+    """
+    return os.path.join(json_fixtures_path, "files")
+
+
+@pytest.fixture
+def client_fixtures_path(json_fixtures_path):
+    """Fixture to return the path to the client fixtures.
+
+    Args:
+        json_fixtures_path (str): Path to JSON fixtures.
+
+    Returns:
+        str: Path to client fixtures.
+    """
+    return os.path.join(json_fixtures_path, "client")

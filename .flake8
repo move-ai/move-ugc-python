@@ -6,3 +6,8 @@ per-file-ignores =
     tests/**:
     ; Use of assert detected
     S101,
+    ; Found outer scope names shadowing for fixtures
+    WPS442,
+    move_ugc/__init__.py:
+    ; Found `__init__.py` module with logic
+    WPS412,
