@@ -21,7 +21,6 @@ def _get_transport(endpoint_url: HttpUrl, api_key: str) -> RequestsHTTPTransport
         use_json=True,
         headers={AUTHORIZATION_HEADER: api_key},
         verify=True,
-        retries=3,
     )
 
 
