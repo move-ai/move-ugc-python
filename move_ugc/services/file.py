@@ -10,7 +10,22 @@ Expand = List[Literal["client"]]
 
 
 class FileService(BaseService[FileType]):
-    """File mixin for the Move UGC SDK."""
+    """Service which can be used to communicate with File type in UGC API.
+
+    To use this service, you need to instantiate it with a valid Move UGC client.
+
+    ```python
+    from move_ugc import MoveUgc
+    ugc = MoveUgc(api_key="my-api-key")
+
+    # Call file service methods directly
+    ugc.files.retrieve(id="file-<guid>")
+
+    # Or use the file service as a mixin
+    file_service = ugc.files
+    file_service.retrieve(id="file-<guid>")
+    ```
+    """
 
     _schema = FileType
 
@@ -19,10 +34,12 @@ class FileService(BaseService[FileType]):
         id: str,  # noqa: WPS125
         expand: Optional[Expand] = None,
     ) -> FileType:
-        """Retrieve a file from UGC API.
+        """Retrieve a file with given file_id from MoveUGC.
+
+        The unique id for file will usually be in the format: `file-{uuid}`
 
         Args:
-            id: unique identifier for the file. This should typically be something like `file-<guid>`.
+            id: unique identifier for the file. This should typically be something like `file-{uuid}`.
             expand: list of fields to be expanded. Currently only `client` is supported.
 
         Returns:
@@ -35,10 +52,10 @@ class FileService(BaseService[FileType]):
         )
 
     def create(self, file_type: str, expand: Optional[Expand] = None) -> FileType:
-        """Create a file from UGC API.
+        """Create a file with given file type in MoveUGC.
 
         Args:
-            file_type: type of file to be created.
+            file_type: type of file to be created. Example: `mp4`, `avi`, `move` etc.
             expand: list of fields to be expanded. Currently only `client` is supported.
 
         Returns:

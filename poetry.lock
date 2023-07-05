@@ -686,6 +686,20 @@ files = [
 ]
 
 [[package]]
+name = "griffe"
+version = "0.31.0"
+description = "Signatures for entire Python programs. Extract the structure, the frame, the skeleton of your project, to generate API documentation or find breaking changes in your API."
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "griffe-0.31.0-py3-none-any.whl", hash = "sha256:de6e659487497c0e73459d370f40bfda7d6f9f6cec43a687de8a110ec72a2c4f"},
+    {file = "griffe-0.31.0.tar.gz", hash = "sha256:b51f6e9541ce9cb9c08580917971cd4b76b6d88e2469822d612b614fb96be776"},
+]
+
+[package.dependencies]
+colorama = ">=0.4"
+
+[[package]]
 name = "identify"
 version = "2.5.24"
 description = "File identification library for Python"
@@ -1022,6 +1036,7 @@ Markdown = ">=3.3"
 MarkupSafe = ">=1.1"
 mkdocs = ">=1.2"
 mkdocs-autorefs = ">=0.3.1"
+mkdocstrings-python = {version = ">=0.5.2", optional = true, markers = "extra == \"python\""}
 pymdown-extensions = ">=6.3"
 typing-extensions = {version = ">=4.1", markers = "python_version < \"3.10\""}
 
@@ -1029,6 +1044,21 @@ typing-extensions = {version = ">=4.1", markers = "python_version < \"3.10\""}
 crystal = ["mkdocstrings-crystal (>=0.3.4)"]
 python = ["mkdocstrings-python (>=0.5.2)"]
 python-legacy = ["mkdocstrings-python-legacy (>=0.2.1)"]
+
+[[package]]
+name = "mkdocstrings-python"
+version = "1.1.2"
+description = "A Python handler for mkdocstrings."
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "mkdocstrings_python-1.1.2-py3-none-any.whl", hash = "sha256:c2b652a850fec8e85034a9cdb3b45f8ad1a558686edc20ed1f40b4e17e62070f"},
+    {file = "mkdocstrings_python-1.1.2.tar.gz", hash = "sha256:f28bdcacb9bcdb44b6942a5642c1ea8b36870614d33e29e3c923e204a8d8ed61"},
+]
+
+[package.dependencies]
+griffe = ">=0.24"
+mkdocstrings = ">=0.20"
 
 [[package]]
 name = "multidict"
@@ -2138,4 +2168,4 @@ testing = ["big-O", "flake8 (<5)", "jaraco.functools", "jaraco.itertools", "more
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.8.1"
-content-hash = "165bffaec0b6acec9f1184b62269a1635b5c7d6cd62204668f1e0f2000f55cb7"
+content-hash = "5c0cfb99db099ed873d9f890644e1183a9b06b9163baf7277f1ce4c5307fc027"

@@ -13,3 +13,8 @@ per-file-ignores =
     move_ugc/__init__.py:
     ; Found `__init__.py` module with logic
     WPS412,
+    move_ugc/services/file.py:
+    ; Inline literal start-string without end-string
+    RST214
+    ; Inline interpreted text or phrase reference start-string without end-string
+    RST215

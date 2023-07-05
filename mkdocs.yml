@@ -1,8 +1,10 @@
 site_name: "Move UGC Python SDK"
+copyright: "<a href='https://www.move.ai/' target=_blank>&copy; Move Ai Limited</a>"
 theme:
   name: material
   logo: "assets/images/logo.svg"
   favicon: "assets/images/favicon.svg"
+  custom_dir: "docs/theme"
   features:
     - announce.dismiss
     - navigation.tabs
@@ -16,7 +18,34 @@ theme:
     primary: "black"
     accent: "black"
 nav:
-  - "Home": "index.md"
+  - "Getting started":
+    - Overview: "index.md"
+    - Usage:
+      - Files: "getting-started/usage/file.md"
+  - "API Reference":
+      - Services:
+        - Files: "api-reference/services/file.md"
+      - Schemas:
+        - Files: "api-reference/schemas/file.md"
+        - Client: "api-reference/schemas/client.md"
 extra:
   version:
     provider: mike
+  generator: false
+
+plugins:
+  - search
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          options:
+            show_source: false
+            show_bases: false
+            separate_signature: true
+            show_root_heading: true
+            show_root_full_path: false
+            show_signature_annotations: true
+            show_symbol_type_heading: true
+            show_symbol_type_toc: true
+            signature_crossrefs: true

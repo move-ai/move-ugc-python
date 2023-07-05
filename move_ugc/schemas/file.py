@@ -8,7 +8,7 @@ from move_ugc.schemas.client import Client
 
 
 class FileType(BaseModel):
-    """Representation for File type in Ugc API."""
+    """Representation for File type in MoveUGC."""
 
     id: str = Field(
         description="Unique identifier for the file",
