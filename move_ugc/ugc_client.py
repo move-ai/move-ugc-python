@@ -1,6 +1,6 @@
 """Move UGC SDK client."""
 from move_ugc.schemas.metaclient import MetaClient
-from move_ugc.services.files import FileService
+from move_ugc.services.file import FileService
 
 
 class MoveUgc(MetaClient):

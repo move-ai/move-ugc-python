@@ -11,7 +11,9 @@ class TestFileService(ServicesTestCase):
     service_name = "files"
 
     def test_retrieve(self, snapshot, faker, file_retrieve_response):
-        """Test creating a file.
+        """Test retrieving a file from Move UGC API.
+
+        This should test -> `ugc.files.retrieve(id='files-<uuid>)'`
 
         Args:
             snapshot: The snapshot fixture.
@@ -28,7 +30,9 @@ class TestFileService(ServicesTestCase):
         faker,
         file_retrieve_response_with_client,
     ):
-        """Test creating a file.
+        """Test retrieving a file with client expansion.
+
+        This should test -> `ugc.files.retrieve(id='files-<uuid>, expand=['client'])'`
 
         Args:
             snapshot: The snapshot fixture.
@@ -44,6 +48,8 @@ class TestFileService(ServicesTestCase):
 
     def test_file_not_found(self, snapshot, faker, file_not_found_response):
         """Test file not found.
+
+        This should test -> `ugc.files.retrieve(id='invalid-id')'`
 
         Args:
             snapshot: The snapshot fixture.

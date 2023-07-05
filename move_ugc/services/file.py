@@ -1,23 +1,23 @@
 """File mixin for the Move UGC SDK."""
 from typing import List, Literal, Optional
 
-from move_ugc.queries.files import retrieve as retrieve_query
-from move_ugc.schemas.file import File
+from move_ugc.queries.file import retrieve as retrieve_query
+from move_ugc.schemas.file import FileType
 from move_ugc.services.base import BaseService
 
 Expand = List[Literal["client"]]
 
 
-class FileService(BaseService[File]):
+class FileService(BaseService[FileType]):
     """File mixin for the Move UGC SDK."""
 
-    _schema = File
+    _schema = FileType
 
     def retrieve(
         self,
         id: str,  # noqa: WPS125
         expand: Optional[Expand] = None,
-    ) -> File:
+    ) -> FileType:
         """Retrieve a file from UGC API.
 
         Args:

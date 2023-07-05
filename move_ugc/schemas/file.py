@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field, HttpUrl, Json
 from move_ugc.schemas.client import Client
 
 
-class File(BaseModel):
+class FileType(BaseModel):
     """Representation for File type in Ugc API."""
 
     id: str = Field(
@@ -21,7 +21,7 @@ class File(BaseModel):
         title="File type",
     )
     created: datetime = Field(
-        description="Date and time when the file was created",
+        description="Date and time when the file was created. This will be in UTC.",
         examples=["2021-08-04T15:00:00.000Z"],
         title="File creation date",
     )

@@ -52,7 +52,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
         with:
-          ssh-key: "${{ secrets.RELEASE_KEY }}"
+          ssh-key: "${{ secrets.RELEASE_WORKFLOW_KEY }}"
           fetch-depth: 0
       - name: Set up python and dependencies
         uses: ./.github/actions/base-python

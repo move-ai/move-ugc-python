@@ -8,9 +8,6 @@ per-file-ignores =
     S101,
     ; Found outer scope names shadowing for fixtures
     WPS442,
-    move_ugc/schemas/file.py:
-    ; Wrong variable name: File
-    WPS110,
     move_ugc/__init__.py:
     ; Found `__init__.py` module with logic
     WPS412,
