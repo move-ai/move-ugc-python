@@ -24,7 +24,7 @@ def files_fixtures_path(json_fixtures_path):
     Returns:
         str: Path to files fixtures.
     """
-    return os.path.join(json_fixtures_path, "files")
+    return os.path.join(json_fixtures_path, "file")
 
 
 @pytest.fixture

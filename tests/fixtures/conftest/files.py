@@ -23,6 +23,32 @@ def fake_file_json(files_fixtures_path) -> FakeFileJson:
 
 
 @pytest.fixture
+def fake_get_file_response(fake_file_json) -> FakeFileJson:
+    """Fixture to return a fake file response for getFile query.
+
+    Args:
+        fake_file_json (dict[str, str]): Fake file json.
+
+    Returns:
+        FakeFileJson: Fake file response.
+    """
+    return {"getFile": fake_file_json}
+
+
+@pytest.fixture
+def fake_create_file_response(fake_file_json) -> FakeFileJson:
+    """Fixture to return a fake file response for createFile mutation.
+
+    Args:
+        fake_file_json (dict[str, str]): Fake file json.
+
+    Returns:
+        FakeFileJson: Fake file response.
+    """
+    return {"createFile": fake_file_json}
+
+
+@pytest.fixture
 def file_not_found_json(files_fixtures_path) -> FakeFileJson:
     """Fixture to return a fake file.
 
@@ -37,18 +63,22 @@ def file_not_found_json(files_fixtures_path) -> FakeFileJson:
 
 
 @pytest.fixture
-def file_retrieve_response(mock_transport, fake_file_json, introspection_result):
+def file_retrieve_response(
+    mock_transport,
+    fake_get_file_response,
+    introspection_result,
+):
     """Fixture to return a fake file response for retrieve query.
 
     Args:
         mock_transport (MagicMock): Mock transport.
-        fake_file_json (dict[str, str]): Fake file json.
+        fake_get_file_response (dict[str, str]): Fake file json.
         introspection_result (dict[str, str]): Introspection result.
 
     Yields:
         file_response (ExecutionResult): Fake file response.
     """
-    file_response = ExecutionResult(data=fake_file_json)
+    file_response = ExecutionResult(data=fake_get_file_response)
     mock_transport.side_effect = [introspection_result, file_response]
     yield file_response
 
@@ -56,7 +86,7 @@ def file_retrieve_response(mock_transport, fake_file_json, introspection_result)
 @pytest.fixture
 def file_retrieve_response_with_client(
     mock_transport,
-    fake_file_json,
+    fake_get_file_response,
     introspection_result,
     fake_client_type,
 ):
@@ -64,14 +94,14 @@ def file_retrieve_response_with_client(
 
     Args:
         mock_transport (MagicMock): Mock transport.
-        fake_file_json (FakeFileJson): Fake file json.
+        fake_get_file_response (FakeFileJson): Fake file json.
         introspection_result (dict[str, str]): Introspection result.
         fake_client_type (dict[str, str]): Fake client type.
 
     Yields:
         file_response (ExecutionResult): Fake file response.
     """
-    fake_file_response_with_client = fake_file_json.copy()
+    fake_file_response_with_client = fake_get_file_response.copy()
     fake_file_response_with_client["getFile"]["client"] = fake_client_type
     file_response = ExecutionResult(data=fake_file_response_with_client)
     mock_transport.side_effect = [introspection_result, file_response]
@@ -95,5 +125,51 @@ def file_not_found_response(
         file_response (ExecutionResult): Fake file response.
     """
     file_response = ExecutionResult(errors=file_not_found_json)
+    mock_transport.side_effect = [introspection_result, file_response]
+    yield file_response
+
+
+@pytest.fixture
+def file_create_response(
+    mock_transport,
+    fake_create_file_response,
+    introspection_result,
+):
+    """Fixture to return a fake file response for create mutation.
+
+    Args:
+        mock_transport (MagicMock): Mock transport.
+        fake_create_file_response (FakeFileJson): Fake file json.
+        introspection_result (dict[str, str]): Introspection result.
+
+    Yields:
+        file_response (ExecutionResult): Fake file response.
+    """
+    file_response = ExecutionResult(data=fake_create_file_response)
+    mock_transport.side_effect = [introspection_result, file_response]
+    yield file_response
+
+
+@pytest.fixture
+def file_create_response_with_client(
+    mock_transport,
+    fake_create_file_response,
+    introspection_result,
+    fake_client_type,
+):
+    """Fixture to return a fake file response for create mutation with client.
+
+    Args:
+        mock_transport (MagicMock): Mock transport.
+        fake_create_file_response (FakeFileJson): Fake file json.
+        introspection_result (dict[str, str]): Introspection result.
+        fake_client_type (dict[str, str]): Fake client type.
+
+    Yields:
+        file_response (ExecutionResult): Fake file response.
+    """
+    fake_file_response_with_client = fake_create_file_response.copy()
+    fake_file_response_with_client["createFile"]["client"] = fake_client_type
+    file_response = ExecutionResult(data=fake_file_response_with_client)
     mock_transport.side_effect = [introspection_result, file_response]
     yield file_response
