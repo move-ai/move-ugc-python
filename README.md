@@ -44,3 +44,7 @@ depth_file = ugc.files.create(file_type="move")
 ```python
 video_file = ugc.files.retrieve(file_id="<FILE_ID>")
 ```
+
+## Contribution Guide
+
+Information for how someone can configure to this project can be found in our [documentation](https://move-ai.github.io/move-ugc-api/contributing)

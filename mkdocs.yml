@@ -28,6 +28,7 @@ nav:
       - Schemas:
         - Files: "api-reference/schemas/file.md"
         - Client: "api-reference/schemas/client.md"
+  - "Contributing": "contributing.md"
 extra:
   version:
     provider: mike
