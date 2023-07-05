@@ -10,7 +10,7 @@ Sample: Creating an `mp4` file.
 file = ugc.files.create(file_type="mp4")
 ```
 
-This will return a pydantic object with the fields mentioned [here](/move-ugc-python/api-reference/schemas/file/).
+This will return a pydantic object with the fields mentioned [here](/move-ugc-python/latest/api-reference/schemas/file/).
 
 > 💡 You can fetch the client in the same request by passing `expand=["client"]` to
 > either `ugc.files.create` or `ugc.files.retrieve`.
