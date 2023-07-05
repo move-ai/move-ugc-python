@@ -30,7 +30,7 @@ snapshots["TestFileService.test_file_not_found file_not_found_response"] = [
 ]
 
 snapshots[
-    "TestFileService.test_retrieve[empty_expand] file_retrieve_response_expand_"
+    "TestFileService.test_retrieve[empty_expand] file_retrieve_response_expand_[]"
 ] = {
     "client": None,
     "created": GenericRepr(
@@ -44,7 +44,7 @@ snapshots[
     "type": ".mp4",
 }
 
-snapshots["TestFileService.test_retrieve[empty_expand] retrieve_query_expand_"] = [
+snapshots["TestFileService.test_retrieve[empty_expand] retrieve_query_expand_[]"] = [
     [
         """query retrieve($id: ID!) {
   getFile(fileId: $id) {
@@ -106,7 +106,9 @@ snapshots[
     },
 ]
 
-snapshots["TestFileService.test_retrieve[no_expand] file_retrieve_response_expand_"] = {
+snapshots[
+    "TestFileService.test_retrieve[no_expand] file_retrieve_response_expand_None"
+] = {
     "client": None,
     "created": GenericRepr(
         "datetime.datetime(2023, 7, 3, 14, 48, 6, 29019, tzinfo=TzInfo(UTC))",
@@ -119,7 +121,7 @@ snapshots["TestFileService.test_retrieve[no_expand] file_retrieve_response_expan
     "type": ".mp4",
 }
 
-snapshots["TestFileService.test_retrieve[no_expand] retrieve_query_expand_"] = [
+snapshots["TestFileService.test_retrieve[no_expand] retrieve_query_expand_None"] = [
     [
         """query retrieve($id: ID!) {
   getFile(fileId: $id) {

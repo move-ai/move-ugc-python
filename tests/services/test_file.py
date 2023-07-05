@@ -18,7 +18,7 @@ class TestFileService(ServicesTestCase):
     def test_retrieve(self, expand, snapshot, faker, file_retrieve_response):
         """Test retrieving a file from Move UGC API.
 
-        This should test -> `ugc.files.retrieve(id='files-<uuid>)'`
+        This should test -> `ugc.files.retrieve(id='files-<uuid>, expand=[<fixture>])'`
 
         Args:
             expand: The expand fixture.
@@ -27,7 +27,7 @@ class TestFileService(ServicesTestCase):
             file_retrieve_response: The file retrieve response fixture.
         """
         file_model = self.client.files.retrieve(id=faker.uuid4(), expand=expand)
-        suffix = "_".join(expand or [])
+        suffix = "_".join(expand) if expand else str(expand)
         self.assert_execute(
             snapshot,
             name=f"retrieve_query_expand_{suffix}",
