@@ -10,40 +10,31 @@ class TestFileService(ServicesTestCase):
 
     service_name = "files"
 
-    def test_retrieve(self, snapshot, faker, file_retrieve_response):
+    @pytest.mark.parametrize(
+        argnames="expand",
+        argvalues=[None, [], ["client"]],
+        ids=["no_expand", "empty_expand", "expand_client"],
+    )
+    def test_retrieve(self, expand, snapshot, faker, file_retrieve_response):
         """Test retrieving a file from Move UGC API.
 
         This should test -> `ugc.files.retrieve(id='files-<uuid>)'`
 
         Args:
+            expand: The expand fixture.
             snapshot: The snapshot fixture.
             faker: The faker fixture.
             file_retrieve_response: The file retrieve response fixture.
         """
-        file_model = self.client.files.retrieve(id=faker.uuid4())
-        self.assert_execute(snapshot, name="retrieve_query")
-        snapshot.assert_match(file_model.model_dump(), name="retrieve_response")
-
-    def test_retrieve_with_client(
-        self,
-        snapshot,
-        faker,
-        file_retrieve_response_with_client,
-    ):
-        """Test retrieving a file with client expansion.
-
-        This should test -> `ugc.files.retrieve(id='files-<uuid>, expand=['client'])'`
-
-        Args:
-            snapshot: The snapshot fixture.
-            faker: The faker fixture.
-            file_retrieve_response_with_client: The file retrieve response with client fixture.
-        """
-        file_model = self.client.files.retrieve(id=faker.uuid4(), expand=["client"])
-        self.assert_execute(snapshot, name="retrieve_query_with_client")
+        file_model = self.client.files.retrieve(id=faker.uuid4(), expand=expand)
+        suffix = "_".join(expand or [])
+        self.assert_execute(
+            snapshot,
+            name=f"retrieve_query_expand_{suffix}",
+        )
         snapshot.assert_match(
             file_model.model_dump(),
-            name="retrieve_response_with_client",
+            name=f"file_retrieve_response_expand_{suffix}",
         )
 
     def test_file_not_found(self, snapshot, faker, file_not_found_response):
