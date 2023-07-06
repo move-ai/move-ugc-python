@@ -46,7 +46,7 @@ omit=["tests/*"]
 
 [tool.commitizen]
 name = "cz_conventional_commits"
-version = "0.2.5"
+version_provider = "poetry"
 version_files = [
     "pyproject.toml:version"
 ]

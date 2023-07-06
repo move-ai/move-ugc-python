@@ -5,13 +5,12 @@
   (possibly not a complete list)
   - git 
   - python3 (at least 3.8)
-  - docker
   - poetry
 
 ## Instruction for creating a commit
 1. Clone the repository from your GitHub.
 2. Setup development environment through [poetry](https://python-poetry.org/) (`poetry install`).
-3. Setup [pre-commit](https://pre-commit.com/) hook (`poetry run pre-commit install --hook-type commit-msg`)
+3. Setup [pre-commit](https://pre-commit.com/) hook (`poetry run pre-commit install`)
 
 ## Creating releases
 
