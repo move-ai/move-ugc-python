@@ -44,3 +44,7 @@ depth_file = ugc.files.create(file_type="move")
 ```python
 video_file = ugc.files.retrieve(file_id="<FILE_ID>")
 ```
+
+## Contribution Guide
+
+Information for how someone can contribute to this project can be found in our [documentation](/move-ugc-python/latest/contributing)
