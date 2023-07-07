@@ -22,12 +22,14 @@ nav:
     - Overview: "index.md"
     - Usage:
       - Files: "getting-started/usage/file.md"
+      - Takes: "getting-started/usage/take.md"
   - "API Reference":
       - Services:
         - Files: "api-reference/services/file.md"
       - Schemas:
-        - Files: "api-reference/schemas/file.md"
+        - File: "api-reference/schemas/file.md"
         - Client: "api-reference/schemas/client.md"
+        - Take: "api-reference/schemas/take.md"
   - "Contributing": "contributing.md"
 extra:
   version:

@@ -9,4 +9,5 @@ pytest_plugins = [
     "tests.fixtures.conftest.json",
     "tests.fixtures.conftest.files",
     "tests.fixtures.conftest.client_type",
+    "tests.fixtures.conftest.take",
 ]

@@ -38,3 +38,16 @@ def client_fixtures_path(json_fixtures_path):
         str: Path to client fixtures.
     """
     return os.path.join(json_fixtures_path, "client")
+
+
+@pytest.fixture
+def take_fixtures_path(json_fixtures_path):
+    """Fixture to return the path to the take fixtures.
+
+    Args:
+        json_fixtures_path (str): Path to JSON fixtures.
+
+    Returns:
+        str: Path to take fixtures.
+    """
+    return os.path.join(json_fixtures_path, "take")

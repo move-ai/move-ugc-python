@@ -15,6 +15,11 @@ per-file-ignores =
     WPS412,
     move_ugc/services/file.py:
     ; Inline literal start-string without end-string
-    RST214
+    RST214,
     ; Inline interpreted text or phrase reference start-string without end-string
-    RST215
+    RST215,
+    move_ugc/services/take.py:
+    ; Inline literal start-string without end-string
+    RST214,
+    ; Inline interpreted text or phrase reference start-string without end-string
+    RST215,
