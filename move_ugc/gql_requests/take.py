@@ -23,3 +23,24 @@ create = UgcGql(
         "additional_files": expand_additional_file,
     },
 )
+
+
+retrieve = UgcGql(
+    query="""
+    query retrieve($id: ID!){{
+        getTake(takeId: $id){{
+            id
+            created
+            metadata
+            {expand}
+            __typename
+        }}
+    }}
+    """,
+    key="getTake",
+    expand={
+        "client": expand_client_query,
+        "video_file": expand_video_file,
+        "additional_files": expand_additional_file,
+    },
+)

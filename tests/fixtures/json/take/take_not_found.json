@@ -1,0 +1,18 @@
+[
+  {
+    "path": [
+      "getTake"
+    ],
+    "data": null,
+    "errorType": "MoveNotFoundError",
+    "errorInfo": null,
+    "locations": [
+      {
+        "line": 2,
+        "column": 3,
+        "sourceName": null
+      }
+    ],
+    "message": "Resource not found in move-ugc-api."
+  }
+]
