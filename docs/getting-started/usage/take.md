@@ -49,13 +49,13 @@ take = ugc.takes.create(
 ## Querying for a take
 
 ```python
-take = ugc.takes.retrieve(take_id="take-2be2463e-ffa3-419b-beb4-ea0f99c79512")
+take = ugc.takes.retrieve(id="take-2be2463e-ffa3-419b-beb4-ea0f99c79512")
 ```
 
 ## Fetching associated types with a take
 
 ```python
-take = ugc.takes.retrieve(take_id="take-2be2463e-ffa3-419b-beb4-ea0f99c79512", expand=["video_file"])
+take = ugc.takes.retrieve(id="take-2be2463e-ffa3-419b-beb4-ea0f99c79512", expand=["video_file"])
 ```
 
 > 💡 Currently supported attributes for expand are `client`, `video_file` and `additional_files`
