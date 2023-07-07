@@ -45,7 +45,7 @@ class TakeType(BaseModel):
         examples=[
             {
                 "key": "depth",
-                "file": {"id": "file-2c6059be-0f91-4cb8-aa1a-512cd10a66b5"},
+                "file": {"id": "file-ee02c1b6-0328-4a7c-a2b2-76883acb451d"},
             },
         ],
         title="Take additional files",
