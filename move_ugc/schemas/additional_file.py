@@ -14,6 +14,7 @@ class TakeAdditionalFileKeys(str, Enum):  # noqa: WPS600
     odometry = "ODOMETRY"
     vision = "VISION"
     intrinsic = "INTRINSIC"
+    move = "MOVE"
 
     @classmethod
     def _missing_(cls, key_value: object) -> Optional[str]:  # noqa: WPS120

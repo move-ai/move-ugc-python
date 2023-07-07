@@ -1,6 +1,8 @@
 Takes are a way to define a recording session. A single take can be associated with a video file and optionally additional files.
 
-> Currently, we only support additional file types: DEPTH, INTRINSIC, ODOMETRY, VISION
+> Currently, we only support additional file types: DEPTH, INTRINSIC, ODOMETRY, VISION, MOVE
+> Note: MOVE type supports only .move files
+
 
 ## Prequisites
 
