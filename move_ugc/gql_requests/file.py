@@ -38,3 +38,24 @@ create = UgcGql(
     key="createFile",
     expand={"client": expand_client_query},
 )
+
+expand_file_base = """
+    id
+    created
+    type
+    metadata
+    presignedUrl
+    __typename
+"""
+
+expand_video_file = f"""
+    videoFile {{
+        {expand_file_base}
+    }}
+"""
+
+expand_file = f"""
+    file {{
+        {expand_file_base}
+    }}
+"""

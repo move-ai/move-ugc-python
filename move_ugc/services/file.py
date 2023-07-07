@@ -1,12 +1,11 @@
 """File mixin for the Move UGC SDK."""
-from typing import List, Literal, Optional
+from typing import List, Optional
 
 from move_ugc.gql_requests.file import create as create_query
 from move_ugc.gql_requests.file import retrieve as retrieve_query
+from move_ugc.schemas.constants import ALLOWED_EXPAND_ATTRS
 from move_ugc.schemas.file import FileType
 from move_ugc.services.base import BaseService
-
-Expand = List[Literal["client"]]
 
 
 class FileService(BaseService[FileType]):
@@ -32,7 +31,7 @@ class FileService(BaseService[FileType]):
     def retrieve(
         self,
         id: str,  # noqa: WPS125
-        expand: Optional[Expand] = None,
+        expand: Optional[List[ALLOWED_EXPAND_ATTRS]] = None,
     ) -> FileType:
         """Retrieve a file with given file_id from MoveUGC.
 
@@ -47,11 +46,15 @@ class FileService(BaseService[FileType]):
         """
         return self.execute(
             query_key=retrieve_query.key,
-            gql_query=retrieve_query.generate_query(expand=expand or []),
+            gql_query=retrieve_query.generate_query(expand=expand),
             variable_values={"id": id},
         )
 
-    def create(self, file_type: str, expand: Optional[Expand] = None) -> FileType:
+    def create(
+        self,
+        file_type: str,
+        expand: Optional[List[ALLOWED_EXPAND_ATTRS]] = None,
+    ) -> FileType:
         """Create a file with given file type in MoveUGC.
 
         Args:
@@ -63,6 +66,6 @@ class FileService(BaseService[FileType]):
         """
         return self.execute(
             query_key=create_query.key,
-            gql_query=create_query.generate_query(expand=expand or []),
+            gql_query=create_query.generate_query(expand=expand),
             variable_values={"type": file_type},
         )
