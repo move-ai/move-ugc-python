@@ -21,5 +21,5 @@ This will return a pydantic object with the fields mentioned [here](/move-ugc-py
 To fetch an existing file from MoveUGC you can use the `ugc.files.retrieve` method:
 
 ```python
-file = ugc.files.retrieve(file_id="file-123-123-123-123")
+file = ugc.files.retrieve(id="file-123-123-123-123")
 ```

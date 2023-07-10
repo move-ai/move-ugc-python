@@ -2,6 +2,7 @@
 import json
 
 import pytest
+from gql.transport.exceptions import TransportQueryError
 
 from move_ugc.schemas.additional_file import AdditionalFileIn, TakeAdditionalFileKeys
 from tests.services.testcases import ServicesTestCase
@@ -122,4 +123,69 @@ class TestTakeService(ServicesTestCase):
         snapshot.assert_match(
             take_model.model_dump(),
             name="create_response_lower_additional_file_key",
+        )
+
+    @pytest.mark.parametrize(
+        argnames="expand, take_fixture",
+        argvalues=[
+            (None, "take_retrieve_response"),
+            ([], "take_retrieve_response"),
+            (["client"], "take_retrieve_response_with_client"),
+            (["video_file"], "take_retrieve_response_with_video_file"),
+            (["additional_files"], "take_retrieve_response_with_additional_files"),
+        ],
+        ids=[
+            "no_expand",
+            "empty_expand",
+            "expand_client",
+            "expand_video_file",
+            "expand_additional_files",
+        ],
+    )
+    def test_retrieve(  # noqa: WPS211
+        self,
+        snapshot,
+        faker,
+        request,
+        expand,
+        take_fixture,
+    ):
+        """Test retrieving a take.
+
+        This should test -> `ugc.takes.retrieve()`
+
+        Args:
+            snapshot: The snapshot fixture.
+            faker: The faker fixture.
+            request: The request fixture.
+            expand: The expand fixture.
+            take_fixture: The take fixture.
+        """
+        request.getfixturevalue(take_fixture)
+        take_model = self.client.takes.retrieve(id=faker.uuid4(), expand=expand)
+        suffix = "_".join(expand) if expand else str(expand)
+        self.assert_execute(
+            snapshot,
+            name=f"retrieve_request_expand_{suffix}",
+        )
+        snapshot.assert_match(
+            take_model.model_dump(),
+            name=f"retrieve_response_expand_{suffix}",
+        )
+
+    def test_take_not_found(self, snapshot, faker, take_not_found_response):
+        """Test take not found.
+
+        This should test -> `ugc.takes.retrieve(id='invalid-id')'`
+
+        Args:
+            snapshot: The snapshot fixture.
+            faker: The faker fixture.
+            take_not_found_response: take not found response fixture.
+        """
+        with pytest.raises(TransportQueryError) as excinfo:
+            self.client.takes.retrieve(id=faker.uuid4())
+        snapshot.assert_match(
+            excinfo.value.errors,  # noqa: WPS441
+            name="take_not_found_response",
         )

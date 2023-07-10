@@ -26,6 +26,7 @@ nav:
   - "API Reference":
       - Services:
         - Files: "api-reference/services/file.md"
+        - Takes: "api-reference/services/take.md"
       - Schemas:
         - File: "api-reference/schemas/file.md"
         - Client: "api-reference/schemas/client.md"
