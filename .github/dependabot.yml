@@ -4,7 +4,13 @@ updates:
     directory: "/" # path where poetry.lock, pyroject.toml lives
     schedule:
       interval: "monthly"
+    commit-message:
+      # prefix all commit messages with "fix: " for commitezen to bump package version automatically
+      prefix: "fix" # github automatically adds a ":" after the prefix
   - package-ecosystem: "pip"
     directory: "/" # path where .github/ lives
     schedule:
       interval: "monthly"
+    commit-message:
+      # prefix all commit messages with "fix: " for commitezen to bump package version automatically
+      prefix: "fix" # github automatically adds a ":" after the prefix
