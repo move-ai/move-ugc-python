@@ -27,10 +27,12 @@ nav:
       - Services:
         - Files: "api-reference/services/file.md"
         - Takes: "api-reference/services/take.md"
+        - Jobs: "api-reference/services/job.md"
       - Schemas:
         - File: "api-reference/schemas/file.md"
         - Client: "api-reference/schemas/client.md"
         - Take: "api-reference/schemas/take.md"
+        - Job: "api-reference/schemas/job.md"
   - "Contributing": "contributing.md"
 extra:
   version:

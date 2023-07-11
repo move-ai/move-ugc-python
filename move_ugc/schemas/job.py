@@ -15,22 +15,22 @@ class JobType(BaseModel):
     id: str = Field(
         description="Unique identifier for the job",
         examples=["job-2c6059be-0f91-4cb8-aa1a-512cd10a66b5"],
-        title="File ID",
+        title="Job ID",
     )
     created: datetime = Field(
         description="Date and time when the job was created. This will be in UTC.",
         examples=["2021-08-04T15:00:00.000Z"],
-        title="File creation date",
+        title="Job creation date",
     )
     metadata: Json[Dict[str, str]] = Field(
         description="Metadata associated with the job",
         examples=[{"key": "value"}],
-        title="File metadata",
+        title="Job metadata",
     )
     client: Optional[Client] = Field(
         description="Client associated with the job",
         examples=[{"id": "client-ff07d226-4ecb-49b4-8aed-0bd35cd50eeb"}],
-        title="File client",
+        title="job client",
         default=None,
     )
     outputs: Optional[List[AdditionalFileType]] = Field(
