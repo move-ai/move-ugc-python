@@ -44,3 +44,13 @@ retrieve = UgcGql(
         "additional_files": expand_additional_file,
     },
 )
+
+
+expand_take_query = """
+    take {
+        id
+        created
+        metadata
+        __typename
+    }
+"""

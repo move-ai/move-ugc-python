@@ -1,2200 +1,2369 @@
 {
-  "data" : {
-    "__schema" : {
-      "queryType" : {
-        "name" : "Query"
-      },
-      "mutationType" : {
-        "name" : "Mutation"
-      },
-      "subscriptionType" : null,
-      "types" : [ {
-        "kind" : "OBJECT",
-        "name" : "Query",
-        "description" : "  List of available queries in UGC API.",
-        "fields" : [ {
-          "name" : "getFile",
-          "description" : "  Get file details with given file id.",
-          "args" : [ {
-            "name" : "fileId",
-            "description" : null,
-            "type" : {
-              "kind" : "NON_NULL",
-              "name" : null,
-              "ofType" : {
-                "kind" : "SCALAR",
-                "name" : "ID",
-                "ofType" : null
-              }
-            },
-            "defaultValue" : null
-          } ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "OBJECT",
-              "name" : "File",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : [ ]
-        }, {
-          "name" : "getJob",
-          "description" : "  Get job details from given job id.",
-          "args" : [ {
-            "name" : "jobId",
-            "description" : null,
-            "type" : {
-              "kind" : "NON_NULL",
-              "name" : null,
-              "ofType" : {
-                "kind" : "SCALAR",
-                "name" : "ID",
-                "ofType" : null
-              }
-            },
-            "defaultValue" : null
-          } ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "OBJECT",
-              "name" : "Job",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : [ ]
-        }, {
-          "name" : "getTake",
-          "description" : "  Get a take with give id.",
-          "args" : [ {
-            "name" : "takeId",
-            "description" : null,
-            "type" : {
-              "kind" : "NON_NULL",
-              "name" : null,
-              "ofType" : {
-                "kind" : "SCALAR",
-                "name" : "ID",
-                "ofType" : null
-              }
-            },
-            "defaultValue" : null
-          } ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "OBJECT",
-              "name" : "Take",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : [ ]
-        }, {
-          "name" : "listJobs",
-          "description" : "  List all the jobs you've created under your client account.",
-          "args" : [ {
-            "name" : "input",
-            "description" : null,
-            "type" : {
-              "kind" : "NON_NULL",
-              "name" : null,
-              "ofType" : {
-                "kind" : "INPUT_OBJECT",
-                "name" : "JobListInput",
-                "ofType" : null
-              }
-            },
-            "defaultValue" : null
-          } ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "OBJECT",
-              "name" : "JobsPage",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : [ ]
-        }, {
-          "name" : "listTakes",
-          "description" : "  List all the takes you've created under your client account.",
-          "args" : [ {
-            "name" : "input",
-            "description" : null,
-            "type" : {
-              "kind" : "NON_NULL",
-              "name" : null,
-              "ofType" : {
-                "kind" : "INPUT_OBJECT",
-                "name" : "ListInput",
-                "ofType" : null
-              }
-            },
-            "defaultValue" : null
-          } ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "OBJECT",
-              "name" : "TakesPage",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : [ ]
-        } ],
-        "inputFields" : null,
-        "interfaces" : [ ],
-        "enumValues" : null,
-        "possibleTypes" : null,
-        "directives" : [ ]
-      }, {
-        "kind" : "OBJECT",
-        "name" : "File",
-        "description" : "  Represents a File in UGC API.",
-        "fields" : [ {
-          "name" : "client",
-          "description" : "  Associated client account which created this file.",
-          "args" : [ ],
-          "type" : {
-            "kind" : "OBJECT",
-            "name" : "Client",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : [ ]
-        }, {
-          "name" : "created",
-          "description" : "  Datetime at which the file was created.",
-          "args" : [ ],
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "AWSDateTime",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : [ ]
-        }, {
-          "name" : "id",
-          "description" : "  Unique identifier for a File.",
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "ID",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : [ ]
-        }, {
-          "name" : "metadata",
-          "description" : "  Metadata for the client to store any key value pairs - json validation done by AWS",
-          "args" : [ ],
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "AWSJSON",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : [ ]
-        }, {
-          "name" : "presignedUrl",
-          "description" : "  Url to upload/download the file. When creating a file, this attribute will return a upload url. Otherwise, this attribute will represent a download url.",
-          "args" : [ ],
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "AWSURL",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : [ ]
-        }, {
-          "name" : "type",
-          "description" : "  Type (extension) of a file. Example: mp4, mov, avi etc.",
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "String",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : [ ]
-        } ],
-        "inputFields" : null,
-        "interfaces" : [ {
-          "kind" : "INTERFACE",
-          "name" : "Identifier",
-          "ofType" : null
-        }, {
-          "kind" : "INTERFACE",
-          "name" : "Timestamped",
-          "ofType" : null
-        }, {
-          "kind" : "INTERFACE",
-          "name" : "InternalFileSchema",
-          "ofType" : null
-        }, {
-          "kind" : "INTERFACE",
-          "name" : "ClientOwner",
-          "ofType" : null
-        } ],
-        "enumValues" : null,
-        "possibleTypes" : null,
-        "directives" : [ ]
-      }, {
-        "kind" : "OBJECT",
-        "name" : "Client",
-        "description" : "  Representation of a Client account.",
-        "fields" : [ {
-          "name" : "created",
-          "description" : "  Datetime at which the Client was created.",
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "AWSDateTime",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : [ ]
-        }, {
-          "name" : "id",
-          "description" : "  Unique identifier for this client.",
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "ID",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : [ ]
-        }, {
-          "name" : "name",
-          "description" : "  Name associated to this client.",
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "String",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : [ ]
-        } ],
-        "inputFields" : null,
-        "interfaces" : [ {
-          "kind" : "INTERFACE",
-          "name" : "Identifier",
-          "ofType" : null
-        }, {
-          "kind" : "INTERFACE",
-          "name" : "Timestamped",
-          "ofType" : null
-        } ],
-        "enumValues" : null,
-        "possibleTypes" : null,
-        "directives" : [ ]
-      }, {
-        "kind" : "SCALAR",
-        "name" : "AWSDateTime",
-        "description" : "The `AWSDateTime` scalar type provided by AWS AppSync, represents a valid ***extended*** [ISO 8601 DateTime](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations) string. In other words, this scalar type accepts datetime strings of the form `YYYY-MM-DDThh:mm:ss.SSSZ`.  The scalar can also accept \"negative years\" of the form `-YYYY` which correspond to years before `0000`. For example, \"**-2017-01-01T00:00Z**\" and \"**-9999-01-01T00:00Z**\" are both valid datetime strings.  The field after the two digit seconds field is a nanoseconds field. It can accept between 1 and 9 digits. So, for example, \"**1970-01-01T12:00:00.2Z**\", \"**1970-01-01T12:00:00.277Z**\" and \"**1970-01-01T12:00:00.123456789Z**\" are all valid datetime strings.  The seconds and nanoseconds fields are optional (the seconds field must be specified if the nanoseconds field is to be used).  The [time zone offset](https://en.wikipedia.org/wiki/ISO_8601#Time_zone_designators) is compulsory for this scalar. The time zone offset must either be `Z` (representing the UTC time zone) or be in the format `±hh:mm:ss`. The seconds field in the timezone offset will be considered valid even though it is not part of the ISO 8601 standard.",
-        "fields" : null,
-        "inputFields" : null,
-        "interfaces" : null,
-        "enumValues" : null,
-        "possibleTypes" : null,
-        "directives" : null
-      }, {
-        "kind" : "SCALAR",
-        "name" : "ID",
-        "description" : "Built-in ID",
-        "fields" : null,
-        "inputFields" : null,
-        "interfaces" : null,
-        "enumValues" : null,
-        "possibleTypes" : null,
-        "directives" : null
-      }, {
-        "kind" : "SCALAR",
-        "name" : "String",
-        "description" : "Built-in String",
-        "fields" : null,
-        "inputFields" : null,
-        "interfaces" : null,
-        "enumValues" : null,
-        "possibleTypes" : null,
-        "directives" : null
-      }, {
-        "kind" : "INTERFACE",
-        "name" : "Identifier",
-        "description" : "  Implement this interface to add an identifier to your schema",
-        "fields" : [ {
-          "name" : "id",
-          "description" : "  Unique identifier.",
-          "args" : [ ],
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "ID",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : [ ]
-        } ],
-        "inputFields" : null,
-        "interfaces" : null,
-        "enumValues" : null,
-        "possibleTypes" : [ {
-          "kind" : "OBJECT",
-          "name" : "File",
-          "ofType" : null
-        }, {
-          "kind" : "OBJECT",
-          "name" : "Client",
-          "ofType" : null
-        }, {
-          "kind" : "OBJECT",
-          "name" : "Job",
-          "ofType" : null
-        }, {
-          "kind" : "OBJECT",
-          "name" : "Take",
-          "ofType" : null
-        } ],
-        "directives" : [ ]
-      }, {
-        "kind" : "INTERFACE",
-        "name" : "Timestamped",
-        "description" : "  Implement this interface to make your schema timestampable",
-        "fields" : [ {
-          "name" : "created",
-          "description" : "  The child type should define this attribute.",
-          "args" : [ ],
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "AWSDateTime",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : [ ]
-        } ],
-        "inputFields" : null,
-        "interfaces" : null,
-        "enumValues" : null,
-        "possibleTypes" : [ {
-          "kind" : "OBJECT",
-          "name" : "File",
-          "ofType" : null
-        }, {
-          "kind" : "OBJECT",
-          "name" : "Client",
-          "ofType" : null
-        }, {
-          "kind" : "OBJECT",
-          "name" : "Job",
-          "ofType" : null
-        }, {
-          "kind" : "OBJECT",
-          "name" : "Take",
-          "ofType" : null
-        } ],
-        "directives" : [ ]
-      }, {
-        "kind" : "SCALAR",
-        "name" : "AWSJSON",
-        "description" : "The `AWSJSON` scalar type provided by AWS AppSync, represents a JSON string that complies with [RFC 8259](https://tools.ietf.org/html/rfc8259).  Maps like \"**{\\\\\"upvotes\\\\\": 10}**\", lists like \"**[1,2,3]**\", and scalar values like \"**\\\\\"AWSJSON example string\\\\\"**\", \"**1**\", and \"**true**\" are accepted as valid JSON and will automatically be parsed and loaded in the resolver mapping templates as Maps, Lists, or Scalar values rather than as the literal input strings.  Invalid JSON strings like \"**{a: 1}**\", \"**{'a': 1}**\" and \"**Unquoted string**\" will throw GraphQL validation errors.",
-        "fields" : null,
-        "inputFields" : null,
-        "interfaces" : null,
-        "enumValues" : null,
-        "possibleTypes" : null,
-        "directives" : null
-      }, {
-        "kind" : "SCALAR",
-        "name" : "AWSURL",
-        "description" : "The `AWSURL` scalar type provided by AWS AppSync, represents a valid URL string (Ex: <https://www.amazon.com/>). The URL may use any scheme and may also be a local URL (Ex: <http://localhost/>).  URLs without schemes like \"**amazon.com**\" or \"**www.amazon.com**\" are considered invalid. URLs which contain double slashes (two consecutive forward slashes) in their path are also considered invalid.",
-        "fields" : null,
-        "inputFields" : null,
-        "interfaces" : null,
-        "enumValues" : null,
-        "possibleTypes" : null,
-        "directives" : null
-      }, {
-        "kind" : "INTERFACE",
-        "name" : "InternalFileSchema",
-        "description" : "  Implement this interface to add internal file service structure to your schema",
-        "fields" : [ {
-          "name" : "presignedUrl",
-          "description" : "  Url to upload/download the file. When creating a file, this attribute will return a upload url. Otherwise, this attribute will represent a download url.",
-          "args" : [ ],
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "AWSURL",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : [ ]
-        }, {
-          "name" : "type",
-          "description" : "  Type (extension) of a file. Example: mp4, mov, avi etc.",
-          "args" : [ ],
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "String",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : [ ]
-        } ],
-        "inputFields" : null,
-        "interfaces" : null,
-        "enumValues" : null,
-        "possibleTypes" : [ {
-          "kind" : "OBJECT",
-          "name" : "File",
-          "ofType" : null
-        } ],
-        "directives" : [ ]
-      }, {
-        "kind" : "INTERFACE",
-        "name" : "ClientOwner",
-        "description" : "  Implement this interface if your schema has a client owner",
-        "fields" : [ {
-          "name" : "client",
-          "description" : "  Reference to the associated Client owner.",
-          "args" : [ ],
-          "type" : {
-            "kind" : "OBJECT",
-            "name" : "Client",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : [ ]
-        } ],
-        "inputFields" : null,
-        "interfaces" : null,
-        "enumValues" : null,
-        "possibleTypes" : [ {
-          "kind" : "OBJECT",
-          "name" : "File",
-          "ofType" : null
-        }, {
-          "kind" : "OBJECT",
-          "name" : "Job",
-          "ofType" : null
-        }, {
-          "kind" : "OBJECT",
-          "name" : "Take",
-          "ofType" : null
-        } ],
-        "directives" : [ ]
-      }, {
-        "kind" : "OBJECT",
-        "name" : "Job",
-        "description" : "  Represents an animation job for a take",
-        "fields" : [ {
-          "name" : "client",
-          "description" : "  Client owner of this job",
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "OBJECT",
-              "name" : "Client",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : [ ]
-        }, {
-          "name" : "created",
-          "description" : "  Datetime at which the job was created",
-          "args" : [ ],
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "AWSDateTime",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : [ ]
-        }, {
-          "name" : "id",
-          "description" : "  Unique identifier for the job",
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "ID",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : [ ]
-        }, {
-          "name" : "metadata",
-          "description" : "  Metadata json field where the client can store any key value pair",
-          "args" : [ ],
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "AWSJSON",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : [ ]
-        }, {
-          "name" : "outputs",
-          "description" : "  Outputs of this job",
-          "args" : [ ],
-          "type" : {
-            "kind" : "LIST",
-            "name" : null,
-            "ofType" : {
-              "kind" : "OBJECT",
-              "name" : "AdditionalFile",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : [ ]
-        }, {
-          "name" : "state",
-          "description" : "  Current status of the job",
-          "args" : [ ],
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "String",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : [ ]
-        }, {
-          "name" : "take",
-          "description" : "  Reference to the original take",
-          "args" : [ ],
-          "type" : {
-            "kind" : "OBJECT",
-            "name" : "Take",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : [ ]
-        } ],
-        "inputFields" : null,
-        "interfaces" : [ {
-          "kind" : "INTERFACE",
-          "name" : "Identifier",
-          "ofType" : null
-        }, {
-          "kind" : "INTERFACE",
-          "name" : "Timestamped",
-          "ofType" : null
-        }, {
-          "kind" : "INTERFACE",
-          "name" : "ClientOwner",
-          "ofType" : null
-        } ],
-        "enumValues" : null,
-        "possibleTypes" : null,
-        "directives" : [ ]
-      }, {
-        "kind" : "OBJECT",
-        "name" : "AdditionalFile",
-        "description" : "  An additional file which may be attached to the take",
-        "fields" : [ {
-          "name" : "file",
-          "description" : "  Reference to the additional file object",
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "OBJECT",
-              "name" : "File",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : [ ]
-        }, {
-          "name" : "key",
-          "description" : "  Type of additional file",
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "String",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : [ ]
-        } ],
-        "inputFields" : null,
-        "interfaces" : [ ],
-        "enumValues" : null,
-        "possibleTypes" : null,
-        "directives" : [ ]
-      }, {
-        "kind" : "OBJECT",
-        "name" : "Take",
-        "description" : "  Representation of a take",
-        "fields" : [ {
-          "name" : "additionalFiles",
-          "description" : "  Optional additional files for this take",
-          "args" : [ ],
-          "type" : {
-            "kind" : "LIST",
-            "name" : null,
-            "ofType" : {
-              "kind" : "OBJECT",
-              "name" : "AdditionalFile",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : [ ]
-        }, {
-          "name" : "client",
-          "description" : "  Reference to the client owner of the take",
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "OBJECT",
-              "name" : "Client",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : [ ]
-        }, {
-          "name" : "created",
-          "description" : "  Datetime string at which the take was created",
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "AWSDateTime",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : [ ]
-        }, {
-          "name" : "id",
-          "description" : "   Unique id of a take ",
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "ID",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : [ ]
-        }, {
-          "name" : "metadata",
-          "description" : "  Metadata for the client to store any key value pairs - json validation done by AWS",
-          "args" : [ ],
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "AWSJSON",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : [ ]
-        }, {
-          "name" : "videoFile",
-          "description" : "  Reference to the video file included with this take",
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "OBJECT",
-              "name" : "File",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : [ ]
-        } ],
-        "inputFields" : null,
-        "interfaces" : [ {
-          "kind" : "INTERFACE",
-          "name" : "Identifier",
-          "ofType" : null
-        }, {
-          "kind" : "INTERFACE",
-          "name" : "Timestamped",
-          "ofType" : null
-        }, {
-          "kind" : "INTERFACE",
-          "name" : "ClientOwner",
-          "ofType" : null
-        } ],
-        "enumValues" : null,
-        "possibleTypes" : null,
-        "directives" : [ ]
-      }, {
-        "kind" : "OBJECT",
-        "name" : "JobsPage",
-        "description" : "  Take page info",
-        "fields" : [ {
-          "name" : "jobs",
-          "description" : "  List of jobs in this page",
-          "args" : [ ],
-          "type" : {
-            "kind" : "LIST",
-            "name" : null,
-            "ofType" : {
-              "kind" : "OBJECT",
-              "name" : "Job",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : [ ]
-        }, {
-          "name" : "limit",
-          "description" : "  Number of elements in a single page",
-          "args" : [ ],
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Int",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : [ ]
-        }, {
-          "name" : "nextToken",
-          "description" : "  Next token (if any)",
-          "args" : [ ],
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "String",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : [ ]
-        } ],
-        "inputFields" : null,
-        "interfaces" : [ {
-          "kind" : "INTERFACE",
-          "name" : "Page",
-          "ofType" : null
-        } ],
-        "enumValues" : null,
-        "possibleTypes" : null,
-        "directives" : [ ]
-      }, {
-        "kind" : "SCALAR",
-        "name" : "Int",
-        "description" : "Built-in Int",
-        "fields" : null,
-        "inputFields" : null,
-        "interfaces" : null,
-        "enumValues" : null,
-        "possibleTypes" : null,
-        "directives" : null
-      }, {
-        "kind" : "INTERFACE",
-        "name" : "Page",
-        "description" : "  Implement this interface for your schema page",
-        "fields" : [ {
-          "name" : "limit",
-          "description" : "  Items to fetch in a single page. Defaults to 50.",
-          "args" : [ ],
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Int",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : [ ]
-        }, {
-          "name" : "nextToken",
-          "description" : "  Next token for the items to be fetched in the remaining pages.",
-          "args" : [ ],
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "String",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : [ ]
-        } ],
-        "inputFields" : null,
-        "interfaces" : null,
-        "enumValues" : null,
-        "possibleTypes" : [ {
-          "kind" : "OBJECT",
-          "name" : "JobsPage",
-          "ofType" : null
-        }, {
-          "kind" : "OBJECT",
-          "name" : "TakesPage",
-          "ofType" : null
-        } ],
-        "directives" : [ ]
-      }, {
-        "kind" : "INPUT_OBJECT",
-        "name" : "JobListInput",
-        "description" : "  Input required to list the jobs created under a client account.",
-        "fields" : null,
-        "inputFields" : [ {
-          "name" : "limit",
-          "description" : "  Items to fetch in a single page. Defaults to 50.",
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "Int",
-              "ofType" : null
-            }
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "nextToken",
-          "description" : "  Next token for the items to be fetched in the remaining pages.",
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "String",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "takeId",
-          "description" : "  Optional takeId filter to return jobs associated with a specific take.",
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "String",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        } ],
-        "interfaces" : null,
-        "enumValues" : null,
-        "possibleTypes" : null,
-        "directives" : [ ]
-      }, {
-        "kind" : "OBJECT",
-        "name" : "TakesPage",
-        "description" : "  Take page info",
-        "fields" : [ {
-          "name" : "limit",
-          "description" : "  Number of elements in a single page",
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "Int",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : [ ]
-        }, {
-          "name" : "nextToken",
-          "description" : "  Next token (if any)",
-          "args" : [ ],
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "String",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : [ ]
-        }, {
-          "name" : "takes",
-          "description" : "  List of takes in this page",
-          "args" : [ ],
-          "type" : {
-            "kind" : "LIST",
-            "name" : null,
-            "ofType" : {
-              "kind" : "OBJECT",
-              "name" : "Take",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : [ ]
-        } ],
-        "inputFields" : null,
-        "interfaces" : [ {
-          "kind" : "INTERFACE",
-          "name" : "Page",
-          "ofType" : null
-        } ],
-        "enumValues" : null,
-        "possibleTypes" : null,
-        "directives" : [ ]
-      }, {
-        "kind" : "INPUT_OBJECT",
-        "name" : "ListInput",
-        "description" : "  Input required for a list query",
-        "fields" : null,
-        "inputFields" : [ {
-          "name" : "limit",
-          "description" : "  Items to fetch in a single page. Defaults to 50.",
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "Int",
-              "ofType" : null
-            }
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "nextToken",
-          "description" : "  Next token for the items to be fetched in the remaining pages.",
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "String",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        } ],
-        "interfaces" : null,
-        "enumValues" : null,
-        "possibleTypes" : null,
-        "directives" : [ ]
-      }, {
-        "kind" : "OBJECT",
-        "name" : "Mutation",
-        "description" : "  List of available mutations in UGC API.",
-        "fields" : [ {
-          "name" : "createFile",
-          "description" : "  Create a file with given type (extension) of the file. For example: to create an mp4 file in the system, use `createFile(type: 'mp4')` mutation.",
-          "args" : [ {
-            "name" : "type",
-            "description" : null,
-            "type" : {
-              "kind" : "NON_NULL",
-              "name" : null,
-              "ofType" : {
-                "kind" : "SCALAR",
-                "name" : "String",
-                "ofType" : null
-              }
-            },
-            "defaultValue" : null
-          } ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "OBJECT",
-              "name" : "File",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : [ ]
-        }, {
-          "name" : "createJob",
-          "description" : "  Initialize processing a job to generate animation from a take.",
-          "args" : [ {
-            "name" : "takeId",
-            "description" : null,
-            "type" : {
-              "kind" : "NON_NULL",
-              "name" : null,
-              "ofType" : {
-                "kind" : "SCALAR",
-                "name" : "String",
-                "ofType" : null
-              }
-            },
-            "defaultValue" : null
-          } ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "OBJECT",
-              "name" : "Job",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : [ ]
-        }, {
-          "name" : "createTake",
-          "description" : "  Create a take from an existing file.",
-          "args" : [ {
-            "name" : "videoFileId",
-            "description" : null,
-            "type" : {
-              "kind" : "NON_NULL",
-              "name" : null,
-              "ofType" : {
-                "kind" : "SCALAR",
-                "name" : "String",
-                "ofType" : null
-              }
-            },
-            "defaultValue" : null
-          }, {
-            "name" : "additionalFileIds",
-            "description" : null,
-            "type" : {
-              "kind" : "LIST",
-              "name" : null,
-              "ofType" : {
-                "kind" : "INPUT_OBJECT",
-                "name" : "TakeFileInput",
-                "ofType" : null
-              }
-            },
-            "defaultValue" : null
-          }, {
-            "name" : "metadata",
-            "description" : null,
-            "type" : {
-              "kind" : "SCALAR",
-              "name" : "AWSJSON",
-              "ofType" : null
-            },
-            "defaultValue" : null
-          } ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "OBJECT",
-              "name" : "Take",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : [ ]
-        } ],
-        "inputFields" : null,
-        "interfaces" : [ ],
-        "enumValues" : null,
-        "possibleTypes" : null,
-        "directives" : [ ]
-      }, {
-        "kind" : "INPUT_OBJECT",
-        "name" : "TakeFileInput",
-        "description" : "  Input for an additional take file",
-        "fields" : null,
-        "inputFields" : [ {
-          "name" : "fileId",
-          "description" : "  Reference to the associated file.",
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "String",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "key",
-          "description" : "  Type of the additional file chosen from given values.",
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "ENUM",
-              "name" : "TakeFileInputKeys",
-              "ofType" : null
-            }
-          },
-          "defaultValue" : null
-        } ],
-        "interfaces" : null,
-        "enumValues" : null,
-        "possibleTypes" : null,
-        "directives" : [ ]
-      }, {
-        "kind" : "ENUM",
-        "name" : "TakeFileInputKeys",
-        "description" : null,
-        "fields" : null,
-        "inputFields" : null,
-        "interfaces" : null,
-        "enumValues" : [ {
-          "name" : "DEPTH",
-          "description" : null,
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "INTRINSIC",
-          "description" : null,
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "ODOMETRY",
-          "description" : null,
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "VISION",
-          "description" : null,
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        } ],
-        "possibleTypes" : null,
-        "directives" : [ ]
-      }, {
-        "kind" : "OBJECT",
-        "name" : "__Schema",
-        "description" : "A GraphQL Introspection defines the capabilities of a GraphQL server. It exposes all available types and directives on the server, the entry points for query, mutation, and subscription operations.",
-        "fields" : [ {
-          "name" : "types",
-          "description" : "A list of all types supported by this server.",
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "LIST",
-              "name" : null,
-              "ofType" : {
-                "kind" : "NON_NULL",
-                "name" : null,
-                "ofType" : {
-                  "kind" : "OBJECT",
-                  "name" : "__Type",
-                  "ofType" : null
-                }
-              }
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : null
-        }, {
-          "name" : "queryType",
-          "description" : "The type that query operations will be rooted at.",
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "OBJECT",
-              "name" : "__Type",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : null
-        }, {
-          "name" : "mutationType",
-          "description" : "If this server supports mutation, the type that mutation operations will be rooted at.",
-          "args" : [ ],
-          "type" : {
-            "kind" : "OBJECT",
-            "name" : "__Type",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : null
-        }, {
-          "name" : "directives",
-          "description" : "'A list of all directives supported by this server.",
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "LIST",
-              "name" : null,
-              "ofType" : {
-                "kind" : "NON_NULL",
-                "name" : null,
-                "ofType" : {
-                  "kind" : "OBJECT",
-                  "name" : "__Directive",
-                  "ofType" : null
-                }
-              }
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : null
-        }, {
-          "name" : "subscriptionType",
-          "description" : "'If this server support subscription, the type that subscription operations will be rooted at.",
-          "args" : [ ],
-          "type" : {
-            "kind" : "OBJECT",
-            "name" : "__Type",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : null
-        } ],
-        "inputFields" : null,
-        "interfaces" : [ ],
-        "enumValues" : null,
-        "possibleTypes" : null,
-        "directives" : null
-      }, {
-        "kind" : "OBJECT",
-        "name" : "__Type",
-        "description" : null,
-        "fields" : [ {
-          "name" : "kind",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "ENUM",
-              "name" : "__TypeKind",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : null
-        }, {
-          "name" : "name",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "String",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : null
-        }, {
-          "name" : "description",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "String",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : null
-        }, {
-          "name" : "fields",
-          "description" : null,
-          "args" : [ {
-            "name" : "includeDeprecated",
-            "description" : null,
-            "type" : {
-              "kind" : "SCALAR",
-              "name" : "Boolean",
-              "ofType" : null
-            },
-            "defaultValue" : "false"
-          } ],
-          "type" : {
-            "kind" : "LIST",
-            "name" : null,
-            "ofType" : {
-              "kind" : "NON_NULL",
-              "name" : null,
-              "ofType" : {
-                "kind" : "OBJECT",
-                "name" : "__Field",
-                "ofType" : null
-              }
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : null
-        }, {
-          "name" : "interfaces",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "LIST",
-            "name" : null,
-            "ofType" : {
-              "kind" : "NON_NULL",
-              "name" : null,
-              "ofType" : {
-                "kind" : "OBJECT",
-                "name" : "__Type",
-                "ofType" : null
-              }
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : null
-        }, {
-          "name" : "possibleTypes",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "LIST",
-            "name" : null,
-            "ofType" : {
-              "kind" : "NON_NULL",
-              "name" : null,
-              "ofType" : {
-                "kind" : "OBJECT",
-                "name" : "__Type",
-                "ofType" : null
-              }
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : null
-        }, {
-          "name" : "enumValues",
-          "description" : null,
-          "args" : [ {
-            "name" : "includeDeprecated",
-            "description" : null,
-            "type" : {
-              "kind" : "SCALAR",
-              "name" : "Boolean",
-              "ofType" : null
-            },
-            "defaultValue" : "false"
-          } ],
-          "type" : {
-            "kind" : "LIST",
-            "name" : null,
-            "ofType" : {
-              "kind" : "NON_NULL",
-              "name" : null,
-              "ofType" : {
-                "kind" : "OBJECT",
-                "name" : "__EnumValue",
-                "ofType" : null
-              }
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : null
-        }, {
-          "name" : "inputFields",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "LIST",
-            "name" : null,
-            "ofType" : {
-              "kind" : "NON_NULL",
-              "name" : null,
-              "ofType" : {
-                "kind" : "OBJECT",
-                "name" : "__InputValue",
-                "ofType" : null
-              }
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : null
-        }, {
-          "name" : "ofType",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "OBJECT",
-            "name" : "__Type",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : null
-        } ],
-        "inputFields" : null,
-        "interfaces" : [ ],
-        "enumValues" : null,
-        "possibleTypes" : null,
-        "directives" : null
-      }, {
-        "kind" : "ENUM",
-        "name" : "__TypeKind",
-        "description" : "An enum describing what kind of type a given __Type is",
-        "fields" : null,
-        "inputFields" : null,
-        "interfaces" : null,
-        "enumValues" : [ {
-          "name" : "SCALAR",
-          "description" : "Indicates this type is a scalar.",
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "OBJECT",
-          "description" : "Indicates this type is an object. `fields` and `interfaces` are valid fields.",
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "INTERFACE",
-          "description" : "Indicates this type is an interface. `fields` and `possibleTypes` are valid fields.",
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "UNION",
-          "description" : "Indicates this type is a union. `possibleTypes` is a valid field.",
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "ENUM",
-          "description" : "Indicates this type is an enum. `enumValues` is a valid field.",
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "INPUT_OBJECT",
-          "description" : "Indicates this type is an input object. `inputFields` is a valid field.",
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "LIST",
-          "description" : "Indicates this type is a list. `ofType` is a valid field.",
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "NON_NULL",
-          "description" : "Indicates this type is a non-null. `ofType` is a valid field.",
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        } ],
-        "possibleTypes" : null,
-        "directives" : null
-      }, {
-        "kind" : "OBJECT",
-        "name" : "__Field",
-        "description" : null,
-        "fields" : [ {
-          "name" : "name",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "String",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : null
-        }, {
-          "name" : "description",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "String",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : null
-        }, {
-          "name" : "args",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "LIST",
-              "name" : null,
-              "ofType" : {
-                "kind" : "NON_NULL",
-                "name" : null,
-                "ofType" : {
-                  "kind" : "OBJECT",
-                  "name" : "__InputValue",
-                  "ofType" : null
-                }
-              }
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : null
-        }, {
-          "name" : "type",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "OBJECT",
-              "name" : "__Type",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : null
-        }, {
-          "name" : "isDeprecated",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "Boolean",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : null
-        }, {
-          "name" : "deprecationReason",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "String",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : null
-        } ],
-        "inputFields" : null,
-        "interfaces" : [ ],
-        "enumValues" : null,
-        "possibleTypes" : null,
-        "directives" : null
-      }, {
-        "kind" : "OBJECT",
-        "name" : "__InputValue",
-        "description" : null,
-        "fields" : [ {
-          "name" : "name",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "String",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : null
-        }, {
-          "name" : "description",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "String",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : null
-        }, {
-          "name" : "type",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "OBJECT",
-              "name" : "__Type",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : null
-        }, {
-          "name" : "defaultValue",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "String",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : null
-        } ],
-        "inputFields" : null,
-        "interfaces" : [ ],
-        "enumValues" : null,
-        "possibleTypes" : null,
-        "directives" : null
-      }, {
-        "kind" : "SCALAR",
-        "name" : "Boolean",
-        "description" : "Built-in Boolean",
-        "fields" : null,
-        "inputFields" : null,
-        "interfaces" : null,
-        "enumValues" : null,
-        "possibleTypes" : null,
-        "directives" : null
-      }, {
-        "kind" : "OBJECT",
-        "name" : "__EnumValue",
-        "description" : null,
-        "fields" : [ {
-          "name" : "name",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "String",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : null
-        }, {
-          "name" : "description",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "String",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : null
-        }, {
-          "name" : "isDeprecated",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "Boolean",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : null
-        }, {
-          "name" : "deprecationReason",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "String",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : null
-        } ],
-        "inputFields" : null,
-        "interfaces" : [ ],
-        "enumValues" : null,
-        "possibleTypes" : null,
-        "directives" : null
-      }, {
-        "kind" : "OBJECT",
-        "name" : "__Directive",
-        "description" : null,
-        "fields" : [ {
-          "name" : "name",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "String",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : null
-        }, {
-          "name" : "description",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "String",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : null
-        }, {
-          "name" : "locations",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "LIST",
-            "name" : null,
-            "ofType" : {
-              "kind" : "NON_NULL",
-              "name" : null,
-              "ofType" : {
-                "kind" : "ENUM",
-                "name" : "__DirectiveLocation",
-                "ofType" : null
-              }
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : null
-        }, {
-          "name" : "args",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "LIST",
-              "name" : null,
-              "ofType" : {
-                "kind" : "NON_NULL",
-                "name" : null,
-                "ofType" : {
-                  "kind" : "OBJECT",
-                  "name" : "__InputValue",
-                  "ofType" : null
-                }
-              }
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null,
-          "directives" : null
-        }, {
-          "name" : "onOperation",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Boolean",
-            "ofType" : null
-          },
-          "isDeprecated" : true,
-          "deprecationReason" : "Use `locations`.",
-          "directives" : null
-        }, {
-          "name" : "onFragment",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Boolean",
-            "ofType" : null
-          },
-          "isDeprecated" : true,
-          "deprecationReason" : "Use `locations`.",
-          "directives" : null
-        }, {
-          "name" : "onField",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Boolean",
-            "ofType" : null
-          },
-          "isDeprecated" : true,
-          "deprecationReason" : "Use `locations`.",
-          "directives" : null
-        } ],
-        "inputFields" : null,
-        "interfaces" : [ ],
-        "enumValues" : null,
-        "possibleTypes" : null,
-        "directives" : null
-      }, {
-        "kind" : "ENUM",
-        "name" : "__DirectiveLocation",
-        "description" : "An enum describing valid locations where a directive can be placed",
-        "fields" : null,
-        "inputFields" : null,
-        "interfaces" : null,
-        "enumValues" : [ {
-          "name" : "QUERY",
-          "description" : "Indicates the directive is valid on queries.",
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "MUTATION",
-          "description" : "Indicates the directive is valid on mutations.",
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "FIELD",
-          "description" : "Indicates the directive is valid on fields.",
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "FRAGMENT_DEFINITION",
-          "description" : "Indicates the directive is valid on fragment definitions.",
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "FRAGMENT_SPREAD",
-          "description" : "Indicates the directive is valid on fragment spreads.",
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "INLINE_FRAGMENT",
-          "description" : "Indicates the directive is valid on inline fragments.",
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "SCHEMA",
-          "description" : "Indicates the directive is valid on a schema SDL definition.",
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "SCALAR",
-          "description" : "Indicates the directive is valid on a scalar SDL definition.",
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "OBJECT",
-          "description" : "Indicates the directive is valid on an object SDL definition.",
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "FIELD_DEFINITION",
-          "description" : "Indicates the directive is valid on a field SDL definition.",
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "ARGUMENT_DEFINITION",
-          "description" : "Indicates the directive is valid on a field argument SDL definition.",
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "INTERFACE",
-          "description" : "Indicates the directive is valid on an interface SDL definition.",
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "UNION",
-          "description" : "Indicates the directive is valid on an union SDL definition.",
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "ENUM",
-          "description" : "Indicates the directive is valid on an enum SDL definition.",
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "ENUM_VALUE",
-          "description" : "Indicates the directive is valid on an enum value SDL definition.",
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "INPUT_OBJECT",
-          "description" : "Indicates the directive is valid on an input object SDL definition.",
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "INPUT_FIELD_DEFINITION",
-          "description" : "Indicates the directive is valid on an input object field SDL definition.",
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        } ],
-        "possibleTypes" : null,
-        "directives" : null
-      } ],
-      "directives" : [ {
-        "name" : "include",
-        "description" : "Directs the executor to include this field or fragment only when the `if` argument is true",
-        "locations" : [ "FIELD", "FRAGMENT_SPREAD", "INLINE_FRAGMENT" ],
-        "args" : [ {
-          "name" : "if",
-          "description" : "Included when true.",
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "Boolean",
-              "ofType" : null
-            }
-          },
-          "defaultValue" : null
-        } ],
-        "onOperation" : false,
-        "onFragment" : true,
-        "onField" : true
-      }, {
-        "name" : "skip",
-        "description" : "Directs the executor to skip this field or fragment when the `if`'argument is true.",
-        "locations" : [ "FIELD", "FRAGMENT_SPREAD", "INLINE_FRAGMENT" ],
-        "args" : [ {
-          "name" : "if",
-          "description" : "Skipped when true.",
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "Boolean",
-              "ofType" : null
-            }
-          },
-          "defaultValue" : null
-        } ],
-        "onOperation" : false,
-        "onFragment" : true,
-        "onField" : true
-      }, {
-        "name" : "defer",
-        "description" : "This directive allows results to be deferred during execution",
-        "locations" : [ "FIELD" ],
-        "args" : [ ],
-        "onOperation" : false,
-        "onFragment" : false,
-        "onField" : true
-      }, {
-        "name" : "aws_api_key",
-        "description" : "Tells the service this field/object has access authorized by an API key.",
-        "locations" : [ "OBJECT", "FIELD_DEFINITION" ],
-        "args" : [ ],
-        "onOperation" : false,
-        "onFragment" : false,
-        "onField" : false
-      }, {
-        "name" : "aws_publish",
-        "description" : "Tells the service which subscriptions will be published to when this mutation is called. This directive is deprecated use @aws_susbscribe directive instead.",
-        "locations" : [ "FIELD_DEFINITION" ],
-        "args" : [ {
-          "name" : "subscriptions",
-          "description" : "List of subscriptions which will be published to when this mutation is called.",
-          "type" : {
-            "kind" : "LIST",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "String",
-              "ofType" : null
-            }
-          },
-          "defaultValue" : null
-        } ],
-        "onOperation" : false,
-        "onFragment" : false,
-        "onField" : false
-      }, {
-        "name" : "aws_oidc",
-        "description" : "Tells the service this field/object has access authorized by an OIDC token.",
-        "locations" : [ "OBJECT", "FIELD_DEFINITION" ],
-        "args" : [ ],
-        "onOperation" : false,
-        "onFragment" : false,
-        "onField" : false
-      }, {
-        "name" : "aws_iam",
-        "description" : "Tells the service this field/object has access authorized by sigv4 signing.",
-        "locations" : [ "OBJECT", "FIELD_DEFINITION" ],
-        "args" : [ ],
-        "onOperation" : false,
-        "onFragment" : false,
-        "onField" : false
-      }, {
-        "name" : "aws_cognito_user_pools",
-        "description" : "Tells the service this field/object has access authorized by a Cognito User Pools token.",
-        "locations" : [ "OBJECT", "FIELD_DEFINITION" ],
-        "args" : [ {
-          "name" : "cognito_groups",
-          "description" : "List of cognito user pool groups which have access on this field",
-          "type" : {
-            "kind" : "LIST",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "String",
-              "ofType" : null
-            }
-          },
-          "defaultValue" : null
-        } ],
-        "onOperation" : false,
-        "onFragment" : false,
-        "onField" : false
-      }, {
-        "name" : "aws_auth",
-        "description" : "Directs the schema to enforce authorization on a field",
-        "locations" : [ "FIELD_DEFINITION" ],
-        "args" : [ {
-          "name" : "cognito_groups",
-          "description" : "List of cognito user pool groups which have access on this field",
-          "type" : {
-            "kind" : "LIST",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "String",
-              "ofType" : null
-            }
-          },
-          "defaultValue" : null
-        } ],
-        "onOperation" : false,
-        "onFragment" : false,
-        "onField" : false
-      }, {
-        "name" : "aws_lambda",
-        "description" : "Tells the service this field/object has access authorized by a Lambda Authorizer.",
-        "locations" : [ "OBJECT", "FIELD_DEFINITION" ],
-        "args" : [ ],
-        "onOperation" : false,
-        "onFragment" : false,
-        "onField" : false
-      }, {
-        "name" : "deprecated",
-        "description" : null,
-        "locations" : [ "FIELD_DEFINITION", "ENUM_VALUE" ],
-        "args" : [ {
-          "name" : "reason",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "String",
-            "ofType" : null
-          },
-          "defaultValue" : "\"No longer supported\""
-        } ],
-        "onOperation" : false,
-        "onFragment" : false,
-        "onField" : false
-      }, {
-        "name" : "aws_subscribe",
-        "description" : "Tells the service which mutation triggers this subscription.",
-        "locations" : [ "FIELD_DEFINITION" ],
-        "args" : [ {
-          "name" : "mutations",
-          "description" : "List of mutations which will trigger this subscription when they are called.",
-          "type" : {
-            "kind" : "LIST",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "String",
-              "ofType" : null
-            }
-          },
-          "defaultValue" : null
-        } ],
-        "onOperation" : false,
-        "onFragment" : false,
-        "onField" : false
-      } ]
-    }
-  }
+	"data": {
+		"__schema": {
+			"queryType": {
+				"name": "Query"
+			},
+			"mutationType": {
+				"name": "Mutation"
+			},
+			"subscriptionType": null,
+			"types": [
+				{
+					"kind": "OBJECT",
+					"name": "Query",
+					"description": "  List of available queries in UGC API.",
+					"fields": [
+						{
+							"name": "getFile",
+							"description": "  Get file details with given file id.",
+							"args": [
+								{
+									"name": "fileId",
+									"description": null,
+									"type": {
+										"kind": "NON_NULL",
+										"name": null,
+										"ofType": {
+											"kind": "SCALAR",
+											"name": "ID",
+											"ofType": null
+										}
+									},
+									"defaultValue": null
+								}
+							],
+							"type": {
+								"kind": "NON_NULL",
+								"name": null,
+								"ofType": {
+									"kind": "OBJECT",
+									"name": "File",
+									"ofType": null
+								}
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "getJob",
+							"description": "  Get job details from given job id.",
+							"args": [
+								{
+									"name": "jobId",
+									"description": null,
+									"type": {
+										"kind": "NON_NULL",
+										"name": null,
+										"ofType": {
+											"kind": "SCALAR",
+											"name": "ID",
+											"ofType": null
+										}
+									},
+									"defaultValue": null
+								}
+							],
+							"type": {
+								"kind": "NON_NULL",
+								"name": null,
+								"ofType": {
+									"kind": "OBJECT",
+									"name": "Job",
+									"ofType": null
+								}
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "getTake",
+							"description": "  Get a take with give id.",
+							"args": [
+								{
+									"name": "takeId",
+									"description": null,
+									"type": {
+										"kind": "NON_NULL",
+										"name": null,
+										"ofType": {
+											"kind": "SCALAR",
+											"name": "ID",
+											"ofType": null
+										}
+									},
+									"defaultValue": null
+								}
+							],
+							"type": {
+								"kind": "NON_NULL",
+								"name": null,
+								"ofType": {
+									"kind": "OBJECT",
+									"name": "Take",
+									"ofType": null
+								}
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "listJobs",
+							"description": "  List all the jobs you've created under your client account.",
+							"args": [
+								{
+									"name": "input",
+									"description": null,
+									"type": {
+										"kind": "NON_NULL",
+										"name": null,
+										"ofType": {
+											"kind": "INPUT_OBJECT",
+											"name": "JobListInput",
+											"ofType": null
+										}
+									},
+									"defaultValue": null
+								}
+							],
+							"type": {
+								"kind": "NON_NULL",
+								"name": null,
+								"ofType": {
+									"kind": "OBJECT",
+									"name": "JobsPage",
+									"ofType": null
+								}
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "listTakes",
+							"description": "  List all the takes you've created under your client account.",
+							"args": [
+								{
+									"name": "input",
+									"description": null,
+									"type": {
+										"kind": "NON_NULL",
+										"name": null,
+										"ofType": {
+											"kind": "INPUT_OBJECT",
+											"name": "ListInput",
+											"ofType": null
+										}
+									},
+									"defaultValue": null
+								}
+							],
+							"type": {
+								"kind": "NON_NULL",
+								"name": null,
+								"ofType": {
+									"kind": "OBJECT",
+									"name": "TakesPage",
+									"ofType": null
+								}
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						}
+					],
+					"inputFields": null,
+					"interfaces": [],
+					"enumValues": null,
+					"possibleTypes": null
+				},
+				{
+					"kind": "OBJECT",
+					"name": "File",
+					"description": "  Represents a File in UGC API.",
+					"fields": [
+						{
+							"name": "client",
+							"description": "  Associated client account which created this file.",
+							"args": [],
+							"type": {
+								"kind": "OBJECT",
+								"name": "Client",
+								"ofType": null
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "created",
+							"description": "  Datetime at which the file was created.",
+							"args": [],
+							"type": {
+								"kind": "SCALAR",
+								"name": "AWSDateTime",
+								"ofType": null
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "id",
+							"description": "  Unique identifier for a File.",
+							"args": [],
+							"type": {
+								"kind": "NON_NULL",
+								"name": null,
+								"ofType": {
+									"kind": "SCALAR",
+									"name": "ID",
+									"ofType": null
+								}
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "metadata",
+							"description": "  Metadata for the client to store any key value pairs - json validation done by AWS",
+							"args": [],
+							"type": {
+								"kind": "SCALAR",
+								"name": "AWSJSON",
+								"ofType": null
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "presignedUrl",
+							"description": "  Url to upload/download the file. When creating a file, this attribute will return a upload url. Otherwise, this attribute will represent a download url.",
+							"args": [],
+							"type": {
+								"kind": "SCALAR",
+								"name": "AWSURL",
+								"ofType": null
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "type",
+							"description": "  Type (extension) of a file. Example: mp4, mov, avi etc.",
+							"args": [],
+							"type": {
+								"kind": "NON_NULL",
+								"name": null,
+								"ofType": {
+									"kind": "SCALAR",
+									"name": "String",
+									"ofType": null
+								}
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						}
+					],
+					"inputFields": null,
+					"interfaces": [
+						{
+							"kind": "INTERFACE",
+							"name": "Identifier",
+							"ofType": null
+						},
+						{
+							"kind": "INTERFACE",
+							"name": "Timestamped",
+							"ofType": null
+						},
+						{
+							"kind": "INTERFACE",
+							"name": "InternalFileSchema",
+							"ofType": null
+						},
+						{
+							"kind": "INTERFACE",
+							"name": "ClientOwner",
+							"ofType": null
+						}
+					],
+					"enumValues": null,
+					"possibleTypes": null
+				},
+				{
+					"kind": "OBJECT",
+					"name": "Client",
+					"description": "  Representation of a Client account.",
+					"fields": [
+						{
+							"name": "created",
+							"description": "  Datetime at which the Client was created.",
+							"args": [],
+							"type": {
+								"kind": "NON_NULL",
+								"name": null,
+								"ofType": {
+									"kind": "SCALAR",
+									"name": "AWSDateTime",
+									"ofType": null
+								}
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "id",
+							"description": "  Unique identifier for this client.",
+							"args": [],
+							"type": {
+								"kind": "NON_NULL",
+								"name": null,
+								"ofType": {
+									"kind": "SCALAR",
+									"name": "ID",
+									"ofType": null
+								}
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "name",
+							"description": "  Name associated to this client.",
+							"args": [],
+							"type": {
+								"kind": "NON_NULL",
+								"name": null,
+								"ofType": {
+									"kind": "SCALAR",
+									"name": "String",
+									"ofType": null
+								}
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						}
+					],
+					"inputFields": null,
+					"interfaces": [
+						{
+							"kind": "INTERFACE",
+							"name": "Identifier",
+							"ofType": null
+						},
+						{
+							"kind": "INTERFACE",
+							"name": "Timestamped",
+							"ofType": null
+						}
+					],
+					"enumValues": null,
+					"possibleTypes": null
+				},
+				{
+					"kind": "SCALAR",
+					"name": "AWSDateTime",
+					"description": "The `AWSDateTime` scalar type provided by AWS AppSync, represents a valid ***extended*** [ISO 8601 DateTime](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations) string. In other words, this scalar type accepts datetime strings of the form `YYYY-MM-DDThh:mm:ss.SSSZ`.  The scalar can also accept \"negative years\" of the form `-YYYY` which correspond to years before `0000`. For example, \"**-2017-01-01T00:00Z**\" and \"**-9999-01-01T00:00Z**\" are both valid datetime strings.  The field after the two digit seconds field is a nanoseconds field. It can accept between 1 and 9 digits. So, for example, \"**1970-01-01T12:00:00.2Z**\", \"**1970-01-01T12:00:00.277Z**\" and \"**1970-01-01T12:00:00.123456789Z**\" are all valid datetime strings.  The seconds and nanoseconds fields are optional (the seconds field must be specified if the nanoseconds field is to be used).  The [time zone offset](https://en.wikipedia.org/wiki/ISO_8601#Time_zone_designators) is compulsory for this scalar. The time zone offset must either be `Z` (representing the UTC time zone) or be in the format `±hh:mm:ss`. The seconds field in the timezone offset will be considered valid even though it is not part of the ISO 8601 standard.",
+					"fields": null,
+					"inputFields": null,
+					"interfaces": null,
+					"enumValues": null,
+					"possibleTypes": null
+				},
+				{
+					"kind": "SCALAR",
+					"name": "ID",
+					"description": "Built-in ID",
+					"fields": null,
+					"inputFields": null,
+					"interfaces": null,
+					"enumValues": null,
+					"possibleTypes": null
+				},
+				{
+					"kind": "SCALAR",
+					"name": "String",
+					"description": "Built-in String",
+					"fields": null,
+					"inputFields": null,
+					"interfaces": null,
+					"enumValues": null,
+					"possibleTypes": null
+				},
+				{
+					"kind": "INTERFACE",
+					"name": "Identifier",
+					"description": "  Implement this interface to add an identifier to your schema",
+					"fields": [
+						{
+							"name": "id",
+							"description": "  Unique identifier.",
+							"args": [],
+							"type": {
+								"kind": "SCALAR",
+								"name": "ID",
+								"ofType": null
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						}
+					],
+					"inputFields": null,
+					"interfaces": null,
+					"enumValues": null,
+					"possibleTypes": [
+						{
+							"kind": "OBJECT",
+							"name": "File",
+							"ofType": null
+						},
+						{
+							"kind": "OBJECT",
+							"name": "Client",
+							"ofType": null
+						},
+						{
+							"kind": "OBJECT",
+							"name": "Job",
+							"ofType": null
+						},
+						{
+							"kind": "OBJECT",
+							"name": "Take",
+							"ofType": null
+						}
+					]
+				},
+				{
+					"kind": "INTERFACE",
+					"name": "Timestamped",
+					"description": "  Implement this interface to make your schema timestampable",
+					"fields": [
+						{
+							"name": "created",
+							"description": "  The child type should define this attribute.",
+							"args": [],
+							"type": {
+								"kind": "SCALAR",
+								"name": "AWSDateTime",
+								"ofType": null
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						}
+					],
+					"inputFields": null,
+					"interfaces": null,
+					"enumValues": null,
+					"possibleTypes": [
+						{
+							"kind": "OBJECT",
+							"name": "File",
+							"ofType": null
+						},
+						{
+							"kind": "OBJECT",
+							"name": "Client",
+							"ofType": null
+						},
+						{
+							"kind": "OBJECT",
+							"name": "Job",
+							"ofType": null
+						},
+						{
+							"kind": "OBJECT",
+							"name": "Take",
+							"ofType": null
+						}
+					]
+				},
+				{
+					"kind": "SCALAR",
+					"name": "AWSJSON",
+					"description": "The `AWSJSON` scalar type provided by AWS AppSync, represents a JSON string that complies with [RFC 8259](https://tools.ietf.org/html/rfc8259).  Maps like \"**{\\\\\"upvotes\\\\\": 10}**\", lists like \"**[1,2,3]**\", and scalar values like \"**\\\\\"AWSJSON example string\\\\\"**\", \"**1**\", and \"**true**\" are accepted as valid JSON and will automatically be parsed and loaded in the resolver mapping templates as Maps, Lists, or Scalar values rather than as the literal input strings.  Invalid JSON strings like \"**{a: 1}**\", \"**{'a': 1}**\" and \"**Unquoted string**\" will throw GraphQL validation errors.",
+					"fields": null,
+					"inputFields": null,
+					"interfaces": null,
+					"enumValues": null,
+					"possibleTypes": null
+				},
+				{
+					"kind": "SCALAR",
+					"name": "AWSURL",
+					"description": "The `AWSURL` scalar type provided by AWS AppSync, represents a valid URL string (Ex: <https://www.amazon.com/>). The URL may use any scheme and may also be a local URL (Ex: <http://localhost/>).  URLs without schemes like \"**amazon.com**\" or \"**www.amazon.com**\" are considered invalid. URLs which contain double slashes (two consecutive forward slashes) in their path are also considered invalid.",
+					"fields": null,
+					"inputFields": null,
+					"interfaces": null,
+					"enumValues": null,
+					"possibleTypes": null
+				},
+				{
+					"kind": "INTERFACE",
+					"name": "InternalFileSchema",
+					"description": "  Implement this interface to add internal file service structure to your schema",
+					"fields": [
+						{
+							"name": "presignedUrl",
+							"description": "  Url to upload/download the file. When creating a file, this attribute will return a upload url. Otherwise, this attribute will represent a download url.",
+							"args": [],
+							"type": {
+								"kind": "SCALAR",
+								"name": "AWSURL",
+								"ofType": null
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "type",
+							"description": "  Type (extension) of a file. Example: mp4, mov, avi etc.",
+							"args": [],
+							"type": {
+								"kind": "SCALAR",
+								"name": "String",
+								"ofType": null
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						}
+					],
+					"inputFields": null,
+					"interfaces": null,
+					"enumValues": null,
+					"possibleTypes": [
+						{
+							"kind": "OBJECT",
+							"name": "File",
+							"ofType": null
+						}
+					]
+				},
+				{
+					"kind": "INTERFACE",
+					"name": "ClientOwner",
+					"description": "  Implement this interface if your schema has a client owner",
+					"fields": [
+						{
+							"name": "client",
+							"description": "  Reference to the associated Client owner.",
+							"args": [],
+							"type": {
+								"kind": "OBJECT",
+								"name": "Client",
+								"ofType": null
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						}
+					],
+					"inputFields": null,
+					"interfaces": null,
+					"enumValues": null,
+					"possibleTypes": [
+						{
+							"kind": "OBJECT",
+							"name": "File",
+							"ofType": null
+						},
+						{
+							"kind": "OBJECT",
+							"name": "Job",
+							"ofType": null
+						},
+						{
+							"kind": "OBJECT",
+							"name": "Take",
+							"ofType": null
+						}
+					]
+				},
+				{
+					"kind": "OBJECT",
+					"name": "Job",
+					"description": "  Represents an animation job for a take",
+					"fields": [
+						{
+							"name": "client",
+							"description": "  Client owner of this job",
+							"args": [],
+							"type": {
+								"kind": "NON_NULL",
+								"name": null,
+								"ofType": {
+									"kind": "OBJECT",
+									"name": "Client",
+									"ofType": null
+								}
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "created",
+							"description": "  Datetime at which the job was created",
+							"args": [],
+							"type": {
+								"kind": "SCALAR",
+								"name": "AWSDateTime",
+								"ofType": null
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "id",
+							"description": "  Unique identifier for the job",
+							"args": [],
+							"type": {
+								"kind": "NON_NULL",
+								"name": null,
+								"ofType": {
+									"kind": "SCALAR",
+									"name": "ID",
+									"ofType": null
+								}
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "metadata",
+							"description": "  Metadata json field where the client can store any key value pair",
+							"args": [],
+							"type": {
+								"kind": "SCALAR",
+								"name": "AWSJSON",
+								"ofType": null
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "outputs",
+							"description": "  Outputs of this job",
+							"args": [],
+							"type": {
+								"kind": "LIST",
+								"name": null,
+								"ofType": {
+									"kind": "OBJECT",
+									"name": "AdditionalFile",
+									"ofType": null
+								}
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "state",
+							"description": "  Current status of the job",
+							"args": [],
+							"type": {
+								"kind": "SCALAR",
+								"name": "String",
+								"ofType": null
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "take",
+							"description": "  Reference to the original take",
+							"args": [],
+							"type": {
+								"kind": "OBJECT",
+								"name": "Take",
+								"ofType": null
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						}
+					],
+					"inputFields": null,
+					"interfaces": [
+						{
+							"kind": "INTERFACE",
+							"name": "Identifier",
+							"ofType": null
+						},
+						{
+							"kind": "INTERFACE",
+							"name": "Timestamped",
+							"ofType": null
+						},
+						{
+							"kind": "INTERFACE",
+							"name": "ClientOwner",
+							"ofType": null
+						}
+					],
+					"enumValues": null,
+					"possibleTypes": null
+				},
+				{
+					"kind": "OBJECT",
+					"name": "AdditionalFile",
+					"description": "  An additional file which may be attached to the take",
+					"fields": [
+						{
+							"name": "file",
+							"description": "  Reference to the additional file object",
+							"args": [],
+							"type": {
+								"kind": "NON_NULL",
+								"name": null,
+								"ofType": {
+									"kind": "OBJECT",
+									"name": "File",
+									"ofType": null
+								}
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "key",
+							"description": "  Type of additional file",
+							"args": [],
+							"type": {
+								"kind": "NON_NULL",
+								"name": null,
+								"ofType": {
+									"kind": "SCALAR",
+									"name": "String",
+									"ofType": null
+								}
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						}
+					],
+					"inputFields": null,
+					"interfaces": [],
+					"enumValues": null,
+					"possibleTypes": null
+				},
+				{
+					"kind": "OBJECT",
+					"name": "Take",
+					"description": "  Representation of a take",
+					"fields": [
+						{
+							"name": "additionalFiles",
+							"description": "  Optional additional files for this take",
+							"args": [],
+							"type": {
+								"kind": "LIST",
+								"name": null,
+								"ofType": {
+									"kind": "OBJECT",
+									"name": "AdditionalFile",
+									"ofType": null
+								}
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "client",
+							"description": "  Reference to the client owner of the take",
+							"args": [],
+							"type": {
+								"kind": "NON_NULL",
+								"name": null,
+								"ofType": {
+									"kind": "OBJECT",
+									"name": "Client",
+									"ofType": null
+								}
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "created",
+							"description": "  Datetime string at which the take was created",
+							"args": [],
+							"type": {
+								"kind": "NON_NULL",
+								"name": null,
+								"ofType": {
+									"kind": "SCALAR",
+									"name": "AWSDateTime",
+									"ofType": null
+								}
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "id",
+							"description": "   Unique id of a take ",
+							"args": [],
+							"type": {
+								"kind": "NON_NULL",
+								"name": null,
+								"ofType": {
+									"kind": "SCALAR",
+									"name": "ID",
+									"ofType": null
+								}
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "metadata",
+							"description": "  Metadata for the client to store any key value pairs - json validation done by AWS",
+							"args": [],
+							"type": {
+								"kind": "SCALAR",
+								"name": "AWSJSON",
+								"ofType": null
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "videoFile",
+							"description": "  Reference to the video file included with this take",
+							"args": [],
+							"type": {
+								"kind": "NON_NULL",
+								"name": null,
+								"ofType": {
+									"kind": "OBJECT",
+									"name": "File",
+									"ofType": null
+								}
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						}
+					],
+					"inputFields": null,
+					"interfaces": [
+						{
+							"kind": "INTERFACE",
+							"name": "Identifier",
+							"ofType": null
+						},
+						{
+							"kind": "INTERFACE",
+							"name": "Timestamped",
+							"ofType": null
+						},
+						{
+							"kind": "INTERFACE",
+							"name": "ClientOwner",
+							"ofType": null
+						}
+					],
+					"enumValues": null,
+					"possibleTypes": null
+				},
+				{
+					"kind": "OBJECT",
+					"name": "JobsPage",
+					"description": "  Take page info",
+					"fields": [
+						{
+							"name": "jobs",
+							"description": "  List of jobs in this page",
+							"args": [],
+							"type": {
+								"kind": "LIST",
+								"name": null,
+								"ofType": {
+									"kind": "OBJECT",
+									"name": "Job",
+									"ofType": null
+								}
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "limit",
+							"description": "  Number of elements in a single page",
+							"args": [],
+							"type": {
+								"kind": "SCALAR",
+								"name": "Int",
+								"ofType": null
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "nextToken",
+							"description": "  Next token (if any)",
+							"args": [],
+							"type": {
+								"kind": "SCALAR",
+								"name": "String",
+								"ofType": null
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						}
+					],
+					"inputFields": null,
+					"interfaces": [
+						{
+							"kind": "INTERFACE",
+							"name": "Page",
+							"ofType": null
+						}
+					],
+					"enumValues": null,
+					"possibleTypes": null
+				},
+				{
+					"kind": "SCALAR",
+					"name": "Int",
+					"description": "Built-in Int",
+					"fields": null,
+					"inputFields": null,
+					"interfaces": null,
+					"enumValues": null,
+					"possibleTypes": null
+				},
+				{
+					"kind": "INTERFACE",
+					"name": "Page",
+					"description": "  Implement this interface for your schema page",
+					"fields": [
+						{
+							"name": "limit",
+							"description": "  Items to fetch in a single page. Defaults to 50.",
+							"args": [],
+							"type": {
+								"kind": "SCALAR",
+								"name": "Int",
+								"ofType": null
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "nextToken",
+							"description": "  Next token for the items to be fetched in the remaining pages.",
+							"args": [],
+							"type": {
+								"kind": "SCALAR",
+								"name": "String",
+								"ofType": null
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						}
+					],
+					"inputFields": null,
+					"interfaces": null,
+					"enumValues": null,
+					"possibleTypes": [
+						{
+							"kind": "OBJECT",
+							"name": "JobsPage",
+							"ofType": null
+						},
+						{
+							"kind": "OBJECT",
+							"name": "TakesPage",
+							"ofType": null
+						}
+					]
+				},
+				{
+					"kind": "INPUT_OBJECT",
+					"name": "JobListInput",
+					"description": "  Input required to list the jobs created under a client account.",
+					"fields": null,
+					"inputFields": [
+						{
+							"name": "limit",
+							"description": "  Items to fetch in a single page. Defaults to 50.",
+							"type": {
+								"kind": "NON_NULL",
+								"name": null,
+								"ofType": {
+									"kind": "SCALAR",
+									"name": "Int",
+									"ofType": null
+								}
+							},
+							"defaultValue": null
+						},
+						{
+							"name": "nextToken",
+							"description": "  Next token for the items to be fetched in the remaining pages.",
+							"type": {
+								"kind": "SCALAR",
+								"name": "String",
+								"ofType": null
+							},
+							"defaultValue": null
+						},
+						{
+							"name": "takeId",
+							"description": "  Optional takeId filter to return jobs associated with a specific take.",
+							"type": {
+								"kind": "SCALAR",
+								"name": "String",
+								"ofType": null
+							},
+							"defaultValue": null
+						}
+					],
+					"interfaces": null,
+					"enumValues": null,
+					"possibleTypes": null
+				},
+				{
+					"kind": "OBJECT",
+					"name": "TakesPage",
+					"description": "  Take page info",
+					"fields": [
+						{
+							"name": "limit",
+							"description": "  Number of elements in a single page",
+							"args": [],
+							"type": {
+								"kind": "NON_NULL",
+								"name": null,
+								"ofType": {
+									"kind": "SCALAR",
+									"name": "Int",
+									"ofType": null
+								}
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "nextToken",
+							"description": "  Next token (if any)",
+							"args": [],
+							"type": {
+								"kind": "SCALAR",
+								"name": "String",
+								"ofType": null
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "takes",
+							"description": "  List of takes in this page",
+							"args": [],
+							"type": {
+								"kind": "LIST",
+								"name": null,
+								"ofType": {
+									"kind": "OBJECT",
+									"name": "Take",
+									"ofType": null
+								}
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						}
+					],
+					"inputFields": null,
+					"interfaces": [
+						{
+							"kind": "INTERFACE",
+							"name": "Page",
+							"ofType": null
+						}
+					],
+					"enumValues": null,
+					"possibleTypes": null
+				},
+				{
+					"kind": "INPUT_OBJECT",
+					"name": "ListInput",
+					"description": "  Input required for a list query",
+					"fields": null,
+					"inputFields": [
+						{
+							"name": "limit",
+							"description": "  Items to fetch in a single page. Defaults to 50.",
+							"type": {
+								"kind": "NON_NULL",
+								"name": null,
+								"ofType": {
+									"kind": "SCALAR",
+									"name": "Int",
+									"ofType": null
+								}
+							},
+							"defaultValue": null
+						},
+						{
+							"name": "nextToken",
+							"description": "  Next token for the items to be fetched in the remaining pages.",
+							"type": {
+								"kind": "SCALAR",
+								"name": "String",
+								"ofType": null
+							},
+							"defaultValue": null
+						}
+					],
+					"interfaces": null,
+					"enumValues": null,
+					"possibleTypes": null
+				},
+				{
+					"kind": "OBJECT",
+					"name": "Mutation",
+					"description": "  List of available mutations in UGC API.",
+					"fields": [
+						{
+							"name": "createFile",
+							"description": "  Create a file with given type (extension) of the file. For example: to create an mp4 file in the system, use `createFile(type: 'mp4')` mutation.",
+							"args": [
+								{
+									"name": "type",
+									"description": null,
+									"type": {
+										"kind": "NON_NULL",
+										"name": null,
+										"ofType": {
+											"kind": "SCALAR",
+											"name": "String",
+											"ofType": null
+										}
+									},
+									"defaultValue": null
+								},
+								{
+									"name": "metadata",
+									"description": null,
+									"type": {
+										"kind": "SCALAR",
+										"name": "AWSJSON",
+										"ofType": null
+									},
+									"defaultValue": null
+								}
+							],
+							"type": {
+								"kind": "NON_NULL",
+								"name": null,
+								"ofType": {
+									"kind": "OBJECT",
+									"name": "File",
+									"ofType": null
+								}
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "createJob",
+							"description": "  Initialize processing a job to generate animation from a take.",
+							"args": [
+								{
+									"name": "takeId",
+									"description": null,
+									"type": {
+										"kind": "NON_NULL",
+										"name": null,
+										"ofType": {
+											"kind": "SCALAR",
+											"name": "String",
+											"ofType": null
+										}
+									},
+									"defaultValue": null
+								},
+								{
+									"name": "metadata",
+									"description": null,
+									"type": {
+										"kind": "SCALAR",
+										"name": "AWSJSON",
+										"ofType": null
+									},
+									"defaultValue": null
+								}
+							],
+							"type": {
+								"kind": "NON_NULL",
+								"name": null,
+								"ofType": {
+									"kind": "OBJECT",
+									"name": "Job",
+									"ofType": null
+								}
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "createTake",
+							"description": "  Create a take from an existing file.",
+							"args": [
+								{
+									"name": "videoFileId",
+									"description": null,
+									"type": {
+										"kind": "NON_NULL",
+										"name": null,
+										"ofType": {
+											"kind": "SCALAR",
+											"name": "String",
+											"ofType": null
+										}
+									},
+									"defaultValue": null
+								},
+								{
+									"name": "additionalFileIds",
+									"description": null,
+									"type": {
+										"kind": "LIST",
+										"name": null,
+										"ofType": {
+											"kind": "INPUT_OBJECT",
+											"name": "TakeFileInput",
+											"ofType": null
+										}
+									},
+									"defaultValue": null
+								},
+								{
+									"name": "metadata",
+									"description": null,
+									"type": {
+										"kind": "SCALAR",
+										"name": "AWSJSON",
+										"ofType": null
+									},
+									"defaultValue": null
+								}
+							],
+							"type": {
+								"kind": "NON_NULL",
+								"name": null,
+								"ofType": {
+									"kind": "OBJECT",
+									"name": "Take",
+									"ofType": null
+								}
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						}
+					],
+					"inputFields": null,
+					"interfaces": [],
+					"enumValues": null,
+					"possibleTypes": null
+				},
+				{
+					"kind": "INPUT_OBJECT",
+					"name": "TakeFileInput",
+					"description": "  Input for an additional take file",
+					"fields": null,
+					"inputFields": [
+						{
+							"name": "fileId",
+							"description": "  Reference to the associated file.",
+							"type": {
+								"kind": "SCALAR",
+								"name": "String",
+								"ofType": null
+							},
+							"defaultValue": null
+						},
+						{
+							"name": "key",
+							"description": "  Type of the additional file chosen from given values.",
+							"type": {
+								"kind": "NON_NULL",
+								"name": null,
+								"ofType": {
+									"kind": "ENUM",
+									"name": "TakeFileInputKeys",
+									"ofType": null
+								}
+							},
+							"defaultValue": null
+						}
+					],
+					"interfaces": null,
+					"enumValues": null,
+					"possibleTypes": null
+				},
+				{
+					"kind": "ENUM",
+					"name": "TakeFileInputKeys",
+					"description": null,
+					"fields": null,
+					"inputFields": null,
+					"interfaces": null,
+					"enumValues": [
+						{
+							"name": "DEPTH",
+							"description": null,
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "INTRINSIC",
+							"description": null,
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "ODOMETRY",
+							"description": null,
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "VISION",
+							"description": null,
+							"isDeprecated": false,
+							"deprecationReason": null
+						}
+					],
+					"possibleTypes": null
+				},
+				{
+					"kind": "OBJECT",
+					"name": "__Schema",
+					"description": "A GraphQL Introspection defines the capabilities of a GraphQL server. It exposes all available types and directives on the server, the entry points for query, mutation, and subscription operations.",
+					"fields": [
+						{
+							"name": "types",
+							"description": "A list of all types supported by this server.",
+							"args": [],
+							"type": {
+								"kind": "NON_NULL",
+								"name": null,
+								"ofType": {
+									"kind": "LIST",
+									"name": null,
+									"ofType": {
+										"kind": "NON_NULL",
+										"name": null,
+										"ofType": {
+											"kind": "OBJECT",
+											"name": "__Type",
+											"ofType": null
+										}
+									}
+								}
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "queryType",
+							"description": "The type that query operations will be rooted at.",
+							"args": [],
+							"type": {
+								"kind": "NON_NULL",
+								"name": null,
+								"ofType": {
+									"kind": "OBJECT",
+									"name": "__Type",
+									"ofType": null
+								}
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "mutationType",
+							"description": "If this server supports mutation, the type that mutation operations will be rooted at.",
+							"args": [],
+							"type": {
+								"kind": "OBJECT",
+								"name": "__Type",
+								"ofType": null
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "directives",
+							"description": "'A list of all directives supported by this server.",
+							"args": [],
+							"type": {
+								"kind": "NON_NULL",
+								"name": null,
+								"ofType": {
+									"kind": "LIST",
+									"name": null,
+									"ofType": {
+										"kind": "NON_NULL",
+										"name": null,
+										"ofType": {
+											"kind": "OBJECT",
+											"name": "__Directive",
+											"ofType": null
+										}
+									}
+								}
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "subscriptionType",
+							"description": "'If this server support subscription, the type that subscription operations will be rooted at.",
+							"args": [],
+							"type": {
+								"kind": "OBJECT",
+								"name": "__Type",
+								"ofType": null
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						}
+					],
+					"inputFields": null,
+					"interfaces": [],
+					"enumValues": null,
+					"possibleTypes": null
+				},
+				{
+					"kind": "OBJECT",
+					"name": "__Type",
+					"description": null,
+					"fields": [
+						{
+							"name": "kind",
+							"description": null,
+							"args": [],
+							"type": {
+								"kind": "NON_NULL",
+								"name": null,
+								"ofType": {
+									"kind": "ENUM",
+									"name": "__TypeKind",
+									"ofType": null
+								}
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "name",
+							"description": null,
+							"args": [],
+							"type": {
+								"kind": "SCALAR",
+								"name": "String",
+								"ofType": null
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "description",
+							"description": null,
+							"args": [],
+							"type": {
+								"kind": "SCALAR",
+								"name": "String",
+								"ofType": null
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "fields",
+							"description": null,
+							"args": [
+								{
+									"name": "includeDeprecated",
+									"description": null,
+									"type": {
+										"kind": "SCALAR",
+										"name": "Boolean",
+										"ofType": null
+									},
+									"defaultValue": "false"
+								}
+							],
+							"type": {
+								"kind": "LIST",
+								"name": null,
+								"ofType": {
+									"kind": "NON_NULL",
+									"name": null,
+									"ofType": {
+										"kind": "OBJECT",
+										"name": "__Field",
+										"ofType": null
+									}
+								}
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "interfaces",
+							"description": null,
+							"args": [],
+							"type": {
+								"kind": "LIST",
+								"name": null,
+								"ofType": {
+									"kind": "NON_NULL",
+									"name": null,
+									"ofType": {
+										"kind": "OBJECT",
+										"name": "__Type",
+										"ofType": null
+									}
+								}
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "possibleTypes",
+							"description": null,
+							"args": [],
+							"type": {
+								"kind": "LIST",
+								"name": null,
+								"ofType": {
+									"kind": "NON_NULL",
+									"name": null,
+									"ofType": {
+										"kind": "OBJECT",
+										"name": "__Type",
+										"ofType": null
+									}
+								}
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "enumValues",
+							"description": null,
+							"args": [
+								{
+									"name": "includeDeprecated",
+									"description": null,
+									"type": {
+										"kind": "SCALAR",
+										"name": "Boolean",
+										"ofType": null
+									},
+									"defaultValue": "false"
+								}
+							],
+							"type": {
+								"kind": "LIST",
+								"name": null,
+								"ofType": {
+									"kind": "NON_NULL",
+									"name": null,
+									"ofType": {
+										"kind": "OBJECT",
+										"name": "__EnumValue",
+										"ofType": null
+									}
+								}
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "inputFields",
+							"description": null,
+							"args": [],
+							"type": {
+								"kind": "LIST",
+								"name": null,
+								"ofType": {
+									"kind": "NON_NULL",
+									"name": null,
+									"ofType": {
+										"kind": "OBJECT",
+										"name": "__InputValue",
+										"ofType": null
+									}
+								}
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "ofType",
+							"description": null,
+							"args": [],
+							"type": {
+								"kind": "OBJECT",
+								"name": "__Type",
+								"ofType": null
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						}
+					],
+					"inputFields": null,
+					"interfaces": [],
+					"enumValues": null,
+					"possibleTypes": null
+				},
+				{
+					"kind": "ENUM",
+					"name": "__TypeKind",
+					"description": "An enum describing what kind of type a given __Type is",
+					"fields": null,
+					"inputFields": null,
+					"interfaces": null,
+					"enumValues": [
+						{
+							"name": "SCALAR",
+							"description": "Indicates this type is a scalar.",
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "OBJECT",
+							"description": "Indicates this type is an object. `fields` and `interfaces` are valid fields.",
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "INTERFACE",
+							"description": "Indicates this type is an interface. `fields` and `possibleTypes` are valid fields.",
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "UNION",
+							"description": "Indicates this type is a union. `possibleTypes` is a valid field.",
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "ENUM",
+							"description": "Indicates this type is an enum. `enumValues` is a valid field.",
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "INPUT_OBJECT",
+							"description": "Indicates this type is an input object. `inputFields` is a valid field.",
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "LIST",
+							"description": "Indicates this type is a list. `ofType` is a valid field.",
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "NON_NULL",
+							"description": "Indicates this type is a non-null. `ofType` is a valid field.",
+							"isDeprecated": false,
+							"deprecationReason": null
+						}
+					],
+					"possibleTypes": null
+				},
+				{
+					"kind": "OBJECT",
+					"name": "__Field",
+					"description": null,
+					"fields": [
+						{
+							"name": "name",
+							"description": null,
+							"args": [],
+							"type": {
+								"kind": "NON_NULL",
+								"name": null,
+								"ofType": {
+									"kind": "SCALAR",
+									"name": "String",
+									"ofType": null
+								}
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "description",
+							"description": null,
+							"args": [],
+							"type": {
+								"kind": "SCALAR",
+								"name": "String",
+								"ofType": null
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "args",
+							"description": null,
+							"args": [],
+							"type": {
+								"kind": "NON_NULL",
+								"name": null,
+								"ofType": {
+									"kind": "LIST",
+									"name": null,
+									"ofType": {
+										"kind": "NON_NULL",
+										"name": null,
+										"ofType": {
+											"kind": "OBJECT",
+											"name": "__InputValue",
+											"ofType": null
+										}
+									}
+								}
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "type",
+							"description": null,
+							"args": [],
+							"type": {
+								"kind": "NON_NULL",
+								"name": null,
+								"ofType": {
+									"kind": "OBJECT",
+									"name": "__Type",
+									"ofType": null
+								}
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "isDeprecated",
+							"description": null,
+							"args": [],
+							"type": {
+								"kind": "NON_NULL",
+								"name": null,
+								"ofType": {
+									"kind": "SCALAR",
+									"name": "Boolean",
+									"ofType": null
+								}
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "deprecationReason",
+							"description": null,
+							"args": [],
+							"type": {
+								"kind": "SCALAR",
+								"name": "String",
+								"ofType": null
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						}
+					],
+					"inputFields": null,
+					"interfaces": [],
+					"enumValues": null,
+					"possibleTypes": null
+				},
+				{
+					"kind": "OBJECT",
+					"name": "__InputValue",
+					"description": null,
+					"fields": [
+						{
+							"name": "name",
+							"description": null,
+							"args": [],
+							"type": {
+								"kind": "NON_NULL",
+								"name": null,
+								"ofType": {
+									"kind": "SCALAR",
+									"name": "String",
+									"ofType": null
+								}
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "description",
+							"description": null,
+							"args": [],
+							"type": {
+								"kind": "SCALAR",
+								"name": "String",
+								"ofType": null
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "type",
+							"description": null,
+							"args": [],
+							"type": {
+								"kind": "NON_NULL",
+								"name": null,
+								"ofType": {
+									"kind": "OBJECT",
+									"name": "__Type",
+									"ofType": null
+								}
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "defaultValue",
+							"description": null,
+							"args": [],
+							"type": {
+								"kind": "SCALAR",
+								"name": "String",
+								"ofType": null
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						}
+					],
+					"inputFields": null,
+					"interfaces": [],
+					"enumValues": null,
+					"possibleTypes": null
+				},
+				{
+					"kind": "SCALAR",
+					"name": "Boolean",
+					"description": "Built-in Boolean",
+					"fields": null,
+					"inputFields": null,
+					"interfaces": null,
+					"enumValues": null,
+					"possibleTypes": null
+				},
+				{
+					"kind": "OBJECT",
+					"name": "__EnumValue",
+					"description": null,
+					"fields": [
+						{
+							"name": "name",
+							"description": null,
+							"args": [],
+							"type": {
+								"kind": "NON_NULL",
+								"name": null,
+								"ofType": {
+									"kind": "SCALAR",
+									"name": "String",
+									"ofType": null
+								}
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "description",
+							"description": null,
+							"args": [],
+							"type": {
+								"kind": "SCALAR",
+								"name": "String",
+								"ofType": null
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "isDeprecated",
+							"description": null,
+							"args": [],
+							"type": {
+								"kind": "NON_NULL",
+								"name": null,
+								"ofType": {
+									"kind": "SCALAR",
+									"name": "Boolean",
+									"ofType": null
+								}
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "deprecationReason",
+							"description": null,
+							"args": [],
+							"type": {
+								"kind": "SCALAR",
+								"name": "String",
+								"ofType": null
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						}
+					],
+					"inputFields": null,
+					"interfaces": [],
+					"enumValues": null,
+					"possibleTypes": null
+				},
+				{
+					"kind": "OBJECT",
+					"name": "__Directive",
+					"description": null,
+					"fields": [
+						{
+							"name": "name",
+							"description": null,
+							"args": [],
+							"type": {
+								"kind": "SCALAR",
+								"name": "String",
+								"ofType": null
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "description",
+							"description": null,
+							"args": [],
+							"type": {
+								"kind": "SCALAR",
+								"name": "String",
+								"ofType": null
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "locations",
+							"description": null,
+							"args": [],
+							"type": {
+								"kind": "LIST",
+								"name": null,
+								"ofType": {
+									"kind": "NON_NULL",
+									"name": null,
+									"ofType": {
+										"kind": "ENUM",
+										"name": "__DirectiveLocation",
+										"ofType": null
+									}
+								}
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "args",
+							"description": null,
+							"args": [],
+							"type": {
+								"kind": "NON_NULL",
+								"name": null,
+								"ofType": {
+									"kind": "LIST",
+									"name": null,
+									"ofType": {
+										"kind": "NON_NULL",
+										"name": null,
+										"ofType": {
+											"kind": "OBJECT",
+											"name": "__InputValue",
+											"ofType": null
+										}
+									}
+								}
+							},
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "onOperation",
+							"description": null,
+							"args": [],
+							"type": {
+								"kind": "SCALAR",
+								"name": "Boolean",
+								"ofType": null
+							},
+							"isDeprecated": true,
+							"deprecationReason": "Use `locations`."
+						},
+						{
+							"name": "onFragment",
+							"description": null,
+							"args": [],
+							"type": {
+								"kind": "SCALAR",
+								"name": "Boolean",
+								"ofType": null
+							},
+							"isDeprecated": true,
+							"deprecationReason": "Use `locations`."
+						},
+						{
+							"name": "onField",
+							"description": null,
+							"args": [],
+							"type": {
+								"kind": "SCALAR",
+								"name": "Boolean",
+								"ofType": null
+							},
+							"isDeprecated": true,
+							"deprecationReason": "Use `locations`."
+						}
+					],
+					"inputFields": null,
+					"interfaces": [],
+					"enumValues": null,
+					"possibleTypes": null
+				},
+				{
+					"kind": "ENUM",
+					"name": "__DirectiveLocation",
+					"description": "An enum describing valid locations where a directive can be placed",
+					"fields": null,
+					"inputFields": null,
+					"interfaces": null,
+					"enumValues": [
+						{
+							"name": "QUERY",
+							"description": "Indicates the directive is valid on queries.",
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "MUTATION",
+							"description": "Indicates the directive is valid on mutations.",
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "FIELD",
+							"description": "Indicates the directive is valid on fields.",
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "FRAGMENT_DEFINITION",
+							"description": "Indicates the directive is valid on fragment definitions.",
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "FRAGMENT_SPREAD",
+							"description": "Indicates the directive is valid on fragment spreads.",
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "INLINE_FRAGMENT",
+							"description": "Indicates the directive is valid on inline fragments.",
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "SCHEMA",
+							"description": "Indicates the directive is valid on a schema SDL definition.",
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "SCALAR",
+							"description": "Indicates the directive is valid on a scalar SDL definition.",
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "OBJECT",
+							"description": "Indicates the directive is valid on an object SDL definition.",
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "FIELD_DEFINITION",
+							"description": "Indicates the directive is valid on a field SDL definition.",
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "ARGUMENT_DEFINITION",
+							"description": "Indicates the directive is valid on a field argument SDL definition.",
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "INTERFACE",
+							"description": "Indicates the directive is valid on an interface SDL definition.",
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "UNION",
+							"description": "Indicates the directive is valid on an union SDL definition.",
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "ENUM",
+							"description": "Indicates the directive is valid on an enum SDL definition.",
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "ENUM_VALUE",
+							"description": "Indicates the directive is valid on an enum value SDL definition.",
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "INPUT_OBJECT",
+							"description": "Indicates the directive is valid on an input object SDL definition.",
+							"isDeprecated": false,
+							"deprecationReason": null
+						},
+						{
+							"name": "INPUT_FIELD_DEFINITION",
+							"description": "Indicates the directive is valid on an input object field SDL definition.",
+							"isDeprecated": false,
+							"deprecationReason": null
+						}
+					],
+					"possibleTypes": null
+				}
+			],
+			"directives": [
+				{
+					"name": "include",
+					"description": "Directs the executor to include this field or fragment only when the `if` argument is true",
+					"locations": [
+						"FIELD",
+						"FRAGMENT_SPREAD",
+						"INLINE_FRAGMENT"
+					],
+					"args": [
+						{
+							"name": "if",
+							"description": "Included when true.",
+							"type": {
+								"kind": "NON_NULL",
+								"name": null,
+								"ofType": {
+									"kind": "SCALAR",
+									"name": "Boolean",
+									"ofType": null
+								}
+							},
+							"defaultValue": null
+						}
+					]
+				},
+				{
+					"name": "skip",
+					"description": "Directs the executor to skip this field or fragment when the `if`'argument is true.",
+					"locations": [
+						"FIELD",
+						"FRAGMENT_SPREAD",
+						"INLINE_FRAGMENT"
+					],
+					"args": [
+						{
+							"name": "if",
+							"description": "Skipped when true.",
+							"type": {
+								"kind": "NON_NULL",
+								"name": null,
+								"ofType": {
+									"kind": "SCALAR",
+									"name": "Boolean",
+									"ofType": null
+								}
+							},
+							"defaultValue": null
+						}
+					]
+				},
+				{
+					"name": "defer",
+					"description": "This directive allows results to be deferred during execution",
+					"locations": [
+						"FIELD"
+					],
+					"args": []
+				},
+				{
+					"name": "aws_subscribe",
+					"description": "Tells the service which mutation triggers this subscription.",
+					"locations": [
+						"FIELD_DEFINITION"
+					],
+					"args": [
+						{
+							"name": "mutations",
+							"description": "List of mutations which will trigger this subscription when they are called.",
+							"type": {
+								"kind": "LIST",
+								"name": null,
+								"ofType": {
+									"kind": "SCALAR",
+									"name": "String",
+									"ofType": null
+								}
+							},
+							"defaultValue": null
+						}
+					]
+				},
+				{
+					"name": "aws_publish",
+					"description": "Tells the service which subscriptions will be published to when this mutation is called. This directive is deprecated use @aws_susbscribe directive instead.",
+					"locations": [
+						"FIELD_DEFINITION"
+					],
+					"args": [
+						{
+							"name": "subscriptions",
+							"description": "List of subscriptions which will be published to when this mutation is called.",
+							"type": {
+								"kind": "LIST",
+								"name": null,
+								"ofType": {
+									"kind": "SCALAR",
+									"name": "String",
+									"ofType": null
+								}
+							},
+							"defaultValue": null
+						}
+					]
+				},
+				{
+					"name": "aws_api_key",
+					"description": "Tells the service this field/object has access authorized by an API key.",
+					"locations": [
+						"OBJECT",
+						"FIELD_DEFINITION"
+					],
+					"args": []
+				},
+				{
+					"name": "aws_iam",
+					"description": "Tells the service this field/object has access authorized by sigv4 signing.",
+					"locations": [
+						"OBJECT",
+						"FIELD_DEFINITION"
+					],
+					"args": []
+				},
+				{
+					"name": "aws_auth",
+					"description": "Directs the schema to enforce authorization on a field",
+					"locations": [
+						"FIELD_DEFINITION"
+					],
+					"args": [
+						{
+							"name": "cognito_groups",
+							"description": "List of cognito user pool groups which have access on this field",
+							"type": {
+								"kind": "LIST",
+								"name": null,
+								"ofType": {
+									"kind": "SCALAR",
+									"name": "String",
+									"ofType": null
+								}
+							},
+							"defaultValue": null
+						}
+					]
+				},
+				{
+					"name": "aws_oidc",
+					"description": "Tells the service this field/object has access authorized by an OIDC token.",
+					"locations": [
+						"OBJECT",
+						"FIELD_DEFINITION"
+					],
+					"args": []
+				},
+				{
+					"name": "aws_cognito_user_pools",
+					"description": "Tells the service this field/object has access authorized by a Cognito User Pools token.",
+					"locations": [
+						"OBJECT",
+						"FIELD_DEFINITION"
+					],
+					"args": [
+						{
+							"name": "cognito_groups",
+							"description": "List of cognito user pool groups which have access on this field",
+							"type": {
+								"kind": "LIST",
+								"name": null,
+								"ofType": {
+									"kind": "SCALAR",
+									"name": "String",
+									"ofType": null
+								}
+							},
+							"defaultValue": null
+						}
+					]
+				},
+				{
+					"name": "aws_lambda",
+					"description": "Tells the service this field/object has access authorized by a Lambda Authorizer.",
+					"locations": [
+						"OBJECT",
+						"FIELD_DEFINITION"
+					],
+					"args": []
+				},
+				{
+					"name": "deprecated",
+					"description": null,
+					"locations": [
+						"FIELD_DEFINITION",
+						"ENUM_VALUE"
+					],
+					"args": [
+						{
+							"name": "reason",
+							"description": null,
+							"type": {
+								"kind": "SCALAR",
+								"name": "String",
+								"ofType": null
+							},
+							"defaultValue": "\"No longer supported\""
+						}
+					]
+				}
+			]
+		}
+	}
 }

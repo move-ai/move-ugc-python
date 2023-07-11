@@ -8,3 +8,11 @@ expand_additional_file = f"""
         __typename
     }}
 """
+
+expand_outputs = f"""
+    outputs {{
+        key
+        {expand_file}
+        __typename
+    }}
+"""
