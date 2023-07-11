@@ -23,6 +23,7 @@ nav:
     - Usage:
       - Files: "getting-started/usage/file.md"
       - Takes: "getting-started/usage/take.md"
+      - Jobs: "getting-started/usage/job.md"
   - "API Reference":
       - Services:
         - Files: "api-reference/services/file.md"

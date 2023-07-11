@@ -2,6 +2,7 @@
 from typing import List, Optional
 
 from move_ugc.gql_requests.job import create as create_query
+from move_ugc.gql_requests.job import retrieve as retrieve_query
 from move_ugc.schemas.constants import ALLOWED_EXPAND_ATTRS
 from move_ugc.schemas.job import JobType
 from move_ugc.services.base import BaseService
@@ -54,4 +55,27 @@ class JobService(BaseService[JobType]):
                 "take_id": take_id,
                 "metadata": metadata,
             },
+        )
+
+    def retrieve(
+        self,
+        id: str,
+        expand: Optional[List[ALLOWED_EXPAND_ATTRS]] = None,
+    ) -> JobType:
+        """Retrieve a job from MoveUGC.
+
+        Args:
+            id:
+                id of the job to be retrieved.
+            expand:
+                list of fields to be expanded.
+                Currently only `client`, `take` and `outputs` are supported.
+
+        Returns:
+            Job instance of Pydantic model type.
+        """
+        return self.execute(
+            query_key=retrieve_query.key,
+            gql_query=retrieve_query.generate_query(expand=expand),
+            variable_values={"id": id},
         )

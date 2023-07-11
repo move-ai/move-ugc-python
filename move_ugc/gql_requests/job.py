@@ -24,3 +24,25 @@ create = UgcGql(
         "outputs": expand_outputs,
     },
 )
+
+
+retrieve = UgcGql(
+    query="""
+    query retrieve($id: ID!){{
+        getJob(jobId: $id){{
+            id
+            created
+            metadata
+            state
+            {expand}
+            __typename
+        }}
+    }}
+    """,
+    key="getJob",
+    expand={
+        "client": expand_client_query,
+        "take": expand_take_query,
+        "outputs": expand_outputs,
+    },
+)

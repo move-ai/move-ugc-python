@@ -28,3 +28,5 @@ per-file-ignores =
     RST214,
     ; Inline interpreted text or phrase reference start-string without end-string
     RST215,
+    ; Shadows built-in name id
+    WPS125,
