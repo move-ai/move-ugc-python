@@ -13,22 +13,22 @@ class TakeType(BaseModel):
     """Representation for Take type in MoveUGC."""
 
     id: str = Field(
-        description="Unique identifier for the file",
-        examples=["file-2c6059be-0f91-4cb8-aa1a-512cd10a66b5"],
+        description="Unique identifier for the take",
+        examples=["take-2c6059be-0f91-4cb8-aa1a-512cd10a66b5"],
         title="File ID",
     )
     created: datetime = Field(
-        description="Date and time when the file was created. This will be in UTC.",
+        description="Date and time when the take was created. This will be in UTC.",
         examples=["2021-08-04T15:00:00.000Z"],
         title="File creation date",
     )
     metadata: Json[Dict[str, str]] = Field(
-        description="Metadata associated with the file",
+        description="Metadata associated with the take",
         examples=[{"key": "value"}],
         title="File metadata",
     )
     client: Optional[Client] = Field(
-        description="Client associated with the file",
+        description="Client associated with the take",
         examples=[{"id": "client-2c6059be-0f91-4cb8-aa1a-512cd10a66b5"}],
         title="File client",
         default=None,

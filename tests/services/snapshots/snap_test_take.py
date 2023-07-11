@@ -328,25 +328,6 @@ snapshots["TestTakeService.test_fetch_service 1"] = GenericRepr(
     "TakeService(api_key='usJxDFJOzwvfcVdkQqye', endpoint_url=Url('https://pytest_invalid_endpoint_url.com/'))",
 )
 
-snapshots["TestTakeService.test_file_not_found take_not_found_response"] = [
-    {
-        "data": None,
-        "errorInfo": None,
-        "errorType": "MoveNotFoundError",
-        "locations": [
-            {
-                "column": 3,
-                "line": 2,
-                "sourceName": None,
-            },
-        ],
-        "message": "Resource not found in move-ugc-api.",
-        "path": [
-            "getTake",
-        ],
-    },
-]
-
 snapshots["TestTakeService.test_retrieve[empty_expand] retrieve_request_expand_[]"] = [
     [
         """query retrieve($id: ID!) {

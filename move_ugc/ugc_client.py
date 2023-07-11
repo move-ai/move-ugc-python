@@ -1,6 +1,7 @@
 """Move UGC SDK client."""
 from move_ugc.schemas.metaclient import MetaClient
 from move_ugc.services.file import FileService
+from move_ugc.services.job import JobService
 from move_ugc.services.take import TakeService
 
 
@@ -24,3 +25,12 @@ class MoveUgc(MetaClient):
             TakeService: The take service.
         """
         return TakeService(**self.model_dump())
+
+    @property
+    def jobs(self) -> JobService:
+        """Get the job service.
+
+        Returns:
+            JobService: The job service.
+        """
+        return JobService(**self.model_dump())
