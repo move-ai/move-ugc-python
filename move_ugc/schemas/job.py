@@ -29,7 +29,7 @@ class JobType(BaseModel):
     )
     client: Optional[Client] = Field(
         description="Client associated with the job",
-        examples=[{"id": "client-2c6059be-0f91-4cb8-aa1a-512cd10a66b5"}],
+        examples=[{"id": "client-ff07d226-4ecb-49b4-8aed-0bd35cd50eeb"}],
         title="File client",
         default=None,
     )
@@ -51,7 +51,7 @@ class JobType(BaseModel):
     )
     take: Optional[TakeType] = Field(
         description="Take associated with the job",
-        examples=[{"id": "take-2c6059be-0f91-4cb8-aa1a-512cd10a66b5"}],
+        examples=[{"id": "take-4003a524-7819-4537-ac82-8a3ac2635db9"}],
         title="Job take",
         default=None,
     )
