@@ -14,13 +14,13 @@ To create a take you need at least a video file with optional additional file ty
 
 ### Create a take with only a RGB video file (planned)
 
+> 💡 This is a planned feature and does not work right now.
+
 ```python
 take = ugc.takes.create(video_file_id="file-457e23c2-6afc-4913-91f6-36522245d57d")
 ```
 
 ### Create a take with additional files
-
-> 💡 This is a planned feature and does not work right now.
 
 ```python
 from move_ugc.schemas.additional_file import AdditionalFileIn, TakeAdditionalFileKeys

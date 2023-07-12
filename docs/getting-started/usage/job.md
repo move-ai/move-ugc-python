@@ -1,7 +1,7 @@
 Jobs are the processing entity in MoveUGC. By creating a Job, you can initiate the processing for a take. 
-A job can have multiple output types, currently the only output type supported is `mp4` and `fbx` files.
+A job can have multiple output types, currently the only output types supported are `mp4` and `fbx` files.
 
-## Prequisites
+## Prerequisites
 
 Before creating a job, please make sure that a take is created. If you've not created a take please refer to [this usage guide](/move-ugc-python/latest/getting-started/usage/take/).
 

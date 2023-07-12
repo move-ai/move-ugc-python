@@ -30,7 +30,7 @@ class JobType(BaseModel):
     client: Optional[Client] = Field(
         description="Client associated with the job",
         examples=[{"id": "client-ff07d226-4ecb-49b4-8aed-0bd35cd50eeb"}],
-        title="job client",
+        title="Job client",
         default=None,
     )
     outputs: Optional[List[AdditionalFileType]] = Field(
