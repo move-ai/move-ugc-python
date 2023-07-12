@@ -4,3 +4,4 @@
     options:
         members:
             - create
+            - retrieve

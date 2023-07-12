@@ -1,4 +1,4 @@
-Jobs are the processing entity in MoveUGC. By creating a Job, you can initiate the processing for a take. 
+Jobs are the processing entity in MoveUGC. By creating a Job, you can initiate the processing for a take.
 A job can have multiple output types, currently the only output types supported are `mp4` and `fbx` files.
 
 ## Prerequisites
@@ -21,3 +21,19 @@ take = ugc.jobs.create(
     metadata=json.dumps({"foo": "bar"}),
 )
 ```
+
+## Retrieving a job
+
+```python
+job = ugc.jobs.retrieve(job_id="job-2be2463e-ffa3-419b-beb4-ea0f99c79512")
+```
+
+## Retrieving a job with its nested resources
+
+```python
+job = ugc.jobs.retrieve(
+    job_id="job-2be2463e-ffa3-419b-beb4-ea0f99c79512", expand=["take", "outputs", "client"]
+)
+```
+
+> 💡 `expand` supports only `take`, `outputs` and `client` as of now.
