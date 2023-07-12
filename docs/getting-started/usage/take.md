@@ -1,25 +1,26 @@
 Takes are a way to define a recording session. A single take can be associated with a video file and optionally additional files.
 
 > 💡 Additional files is a planned feature which is not supported right now, the plan is to support additional file types: DEPTH, INTRINSIC, ODOMETRY, VISION, MOVE
+> Currently only MOVE files are supported as part of additional files which should contain a `.move` file.
 
 
 ## Prequisites
 
-As a minimum requirement to create a take you need to have a video file. You can create a video file by following the [usage guide](/move-ugc-python/latest/getting-started/usage/file/).
+As a minimum requirement to create a take you need to have a video file and a move file. You can create a video file by following the [usage guide](/move-ugc-python/latest/getting-started/usage/file/).
 
 ## Creating a take
 
 To create a take you need at least a video file with optional additional file types mentioned above.
 
-### Create a take with only a RGB video file
+### Create a take with only a RGB video file (planned)
+
+> 💡 This is a planned feature and does not work right now.
 
 ```python
 take = ugc.takes.create(video_file_id="file-457e23c2-6afc-4913-91f6-36522245d57d")
 ```
 
-### Create a take with additional files (planned)
-
-> 💡 This is a planned feature and does not work right now.
+### Create a take with additional files
 
 ```python
 from move_ugc.schemas.additional_file import AdditionalFileIn, TakeAdditionalFileKeys
@@ -27,7 +28,7 @@ take = ugc.takes.create(
     video_file_id="file-457e23c2-6afc-4913-91f6-36522245d57d",
     additional_files=[
         AdditionalFileIn(
-            key=TakeAdditionalFileKeys.depth,
+            key=TakeAdditionalFileKeys.move,
             file_id="file-ee02c1b6-0328-4a7c-a2b2-76883acb451d",
         )
     ]

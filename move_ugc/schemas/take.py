@@ -15,27 +15,27 @@ class TakeType(BaseModel):
     id: str = Field(
         description="Unique identifier for the take",
         examples=["take-2c6059be-0f91-4cb8-aa1a-512cd10a66b5"],
-        title="File ID",
+        title="Take ID",
     )
     created: datetime = Field(
         description="Date and time when the take was created. This will be in UTC.",
         examples=["2021-08-04T15:00:00.000Z"],
-        title="File creation date",
+        title="Take creation date",
     )
     metadata: Json[Dict[str, str]] = Field(
         description="Metadata associated with the take",
         examples=[{"key": "value"}],
-        title="File metadata",
+        title="Take metadata",
     )
     client: Optional[Client] = Field(
         description="Client associated with the take",
-        examples=[{"id": "client-2c6059be-0f91-4cb8-aa1a-512cd10a66b5"}],
-        title="File client",
+        examples=[{"id": "client-0aa9ba14-44f9-4d47-89b4-c77cdea9e801"}],
+        title="Take client",
         default=None,
     )
     video_file: Optional[FileType] = Field(
         description="Video file associated with the take",
-        examples=[{"id": "file-2c6059be-0f91-4cb8-aa1a-512cd10a66b5"}],
+        examples=[{"id": "file-1fd863d5-875b-4e48-89bb-c6234e804738"}],
         title="Take video file",
         alias="videoFile",
         default=None,
