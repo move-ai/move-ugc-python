@@ -9,7 +9,7 @@
 
 ## Full documentation
 
-The full documentation is available at https://move-ai.github.io/move-ugc-python/
+The full documentation is available at https://move-ai.github.io/move-ugc-python/latest/
 
 ## Installation
 
