@@ -4,7 +4,7 @@
 ![Python version](https://img.shields.io/badge/python-3.8%20%7C%203.9%20%7C%203.10%20%7C%203.11-blue)
 ![Tests](./badges/tests.svg)
 ![Coverage](./badges/coverage.svg)
-[![CI](https://github.com/move-ai/move-ugc-python/actions/workflows/ci.yml/badge.svg?branch=main&event=workflow_run)](https://github.com/move-ai/move-ugc-python/actions/workflows/ci.yml)
+[![CI](https://github.com/move-ai/move-ugc-python/actions/workflows/ci.yml/badge.svg)](https://github.com/move-ai/move-ugc-python/actions/workflows/ci.yml)
 ![Documentation Style](https://img.shields.io/badge/docs-mkdocs%20material-blue.svg?style=flat)
 
 ## Full documentation
@@ -16,12 +16,12 @@ The full documentation is available at https://move-ai.github.io/move-ugc-python
 ### With pip:
 
 ```bash
-pip install move-ugc
+pip install move-ugc-python
 ```
 ### With poetry:
 
 ```bash
-poetry add move-ugc
+poetry add move-ugc-python
 ```
 
 
