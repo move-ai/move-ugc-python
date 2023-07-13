@@ -9,7 +9,7 @@ class Settings(BaseSettings):
     """Global settings to be used by the SDK."""
 
     ugc_endpoint_url: HttpUrl = Field(
-        default="https://7oknhjzasjd25ifi3pqdco4mxa.appsync-api.eu-west-1.amazonaws.com/graphql",
+        default="https://api.move.ai/ugc/graphql",
         description="Move UGC API endpoint URL",
         title="GraphQL endpoint URL",
     )
