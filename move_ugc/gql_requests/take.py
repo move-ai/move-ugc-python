@@ -6,7 +6,7 @@ from move_ugc.schemas.gql import UgcGql
 
 create = UgcGql(
     query="""
-    mutation create($video_file_id: String!, $additional_file_ids: [TakeFileInput], $metadata: AWSJSON){{
+    mutation create($video_file_id: String!, $additional_file_ids: [TakeFileInput!], $metadata: AWSJSON){{
         createTake(videoFileId: $video_file_id, additionalFileIds: $additional_file_ids, metadata: $metadata){{
             id
             created
