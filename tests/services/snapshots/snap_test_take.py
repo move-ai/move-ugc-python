@@ -8,7 +8,7 @@ snapshots = Snapshot()
 
 snapshots["TestTakeService.test_create[empty_expand] create_mutation_expand_[]"] = [
     [
-        """mutation create($video_file_id: String!, $additional_file_ids: [TakeFileInput], $metadata: AWSJSON) {
+        """mutation create($video_file_id: String!, $additional_file_ids: [TakeFileInput!], $metadata: AWSJSON) {
   createTake(
     videoFileId: $video_file_id
     additionalFileIds: $additional_file_ids
@@ -51,7 +51,7 @@ snapshots[
     "TestTakeService.test_create[expand_additional_files] create_mutation_expand_additional_files"
 ] = [
     [
-        """mutation create($video_file_id: String!, $additional_file_ids: [TakeFileInput], $metadata: AWSJSON) {
+        """mutation create($video_file_id: String!, $additional_file_ids: [TakeFileInput!], $metadata: AWSJSON) {
   createTake(
     videoFileId: $video_file_id
     additionalFileIds: $additional_file_ids
@@ -124,7 +124,7 @@ snapshots[
     "TestTakeService.test_create[expand_client] create_mutation_expand_client"
 ] = [
     [
-        """mutation create($video_file_id: String!, $additional_file_ids: [TakeFileInput], $metadata: AWSJSON) {
+        """mutation create($video_file_id: String!, $additional_file_ids: [TakeFileInput!], $metadata: AWSJSON) {
   createTake(
     videoFileId: $video_file_id
     additionalFileIds: $additional_file_ids
@@ -178,7 +178,7 @@ snapshots[
     "TestTakeService.test_create[expand_video_file] create_mutation_expand_video_file"
 ] = [
     [
-        """mutation create($video_file_id: String!, $additional_file_ids: [TakeFileInput], $metadata: AWSJSON) {
+        """mutation create($video_file_id: String!, $additional_file_ids: [TakeFileInput!], $metadata: AWSJSON) {
   createTake(
     videoFileId: $video_file_id
     additionalFileIds: $additional_file_ids
@@ -240,7 +240,7 @@ snapshots[
 
 snapshots["TestTakeService.test_create[no_expand] create_mutation_expand_None"] = [
     [
-        """mutation create($video_file_id: String!, $additional_file_ids: [TakeFileInput], $metadata: AWSJSON) {
+        """mutation create($video_file_id: String!, $additional_file_ids: [TakeFileInput!], $metadata: AWSJSON) {
   createTake(
     videoFileId: $video_file_id
     additionalFileIds: $additional_file_ids
@@ -283,7 +283,7 @@ snapshots[
     "TestTakeService.test_create_lower_additional_file_key create_mutation_lower_additional_file_key"
 ] = [
     [
-        """mutation create($video_file_id: String!, $additional_file_ids: [TakeFileInput], $metadata: AWSJSON) {
+        """mutation create($video_file_id: String!, $additional_file_ids: [TakeFileInput!], $metadata: AWSJSON) {
   createTake(
     videoFileId: $video_file_id
     additionalFileIds: $additional_file_ids

@@ -7,6 +7,28 @@ on:
       - "*"
 
 jobs:
+  publish:
+    name: "Publish ${{ github.ref_name }}"
+    runs-on: "ubuntu-latest"
+    environment: Production
+    permissions:
+      id-token: write  # IMPORTANT: this permission is mandatory for trusted publishing
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+      - name: Set up python and dependencies
+        uses: ./.github/actions/base-python
+        with:
+          version: "3.10"
+      - name: Build dist/**
+        run: |
+          poetry build
+      - name: Publish to PyPI
+        # By default, this action will publish to PyPI from `.dist/*` path.
+        # We don't need to specific any API tokens here since trusted publishing is set up
+        # See https://docs.pypi.org/trusted-publishers/using-a-publisher/
+        uses: pypa/gh-action-pypi-publish@release/v1
+
   release:
     name: "Release ${{ github.ref_name }}"
     runs-on: "ubuntu-latest"
