@@ -10,12 +10,12 @@ While our core API is built on GraphQL, this SDK provides a simple interface for
 #### With pip:
 
 ```bash
-pip install move-ugc
+pip install move-ugc-python
 ```
 #### With poetry:
 
 ```bash
-poetry add move-ugc
+poetry add move-ugc-python
 ```
 
 ### Creating a file
