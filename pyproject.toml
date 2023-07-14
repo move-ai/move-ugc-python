@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "move-ugc-python"
-version = "0.7.5"
+version = "0.7.6"
 description = ""
 authors = ["Move.ai"]
 readme = "README.md"
