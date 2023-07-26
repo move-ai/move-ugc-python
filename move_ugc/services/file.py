@@ -30,7 +30,7 @@ class FileService(BaseService[FileType]):
 
     def retrieve(
         self,
-        id: str,  # noqa: WPS125
+        id: str,
         expand: Optional[List[ALLOWED_EXPAND_ATTRS]] = None,
     ) -> FileType:
         """Retrieve a file with given file_id from MoveUGC.
