@@ -18,11 +18,15 @@ per-file-ignores =
     RST214,
     ; Inline interpreted text or phrase reference start-string without end-string
     RST215,
+    ; Shadows built-in name id
+    WPS125,
     move_ugc/services/take.py:
     ; Inline literal start-string without end-string
     RST214,
     ; Inline interpreted text or phrase reference start-string without end-string
     RST215,
+    ; Shadows built-in name id
+    WPS125,
     move_ugc/services/job.py:
     ; Inline literal start-string without end-string
     RST214,

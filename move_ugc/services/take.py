@@ -68,7 +68,7 @@ class TakeService(BaseService[TakeType]):
 
     def retrieve(
         self,
-        id: str,  # noqa: WPS125
+        id: str,
         expand: Optional[List[ALLOWED_EXPAND_ATTRS]] = None,
     ) -> TakeType:
         """Retrieve a take with given take_id from MoveUGC.
