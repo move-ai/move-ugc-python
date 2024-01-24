@@ -98,6 +98,7 @@ class TestFileService(ServicesTestCase):
         request.getfixturevalue(file_fixture)
         file_model = self.client.files.create(
             file_type=faker.file_extension(),
+            metadata=request.getfixturevalue("metadata_for_update"),
             expand=expand,
         )
         suffix = "_".join(expand) if expand else str(expand)

@@ -8,8 +8,8 @@ snapshots = Snapshot()
 
 snapshots["TestFileService.test_create[empty_expand] create_mutation_expand_[]"] = [
     [
-        """mutation create($type: String!) {
-  createFile(type: $type) {
+        """mutation create($type: String!, $metadata: AWSJSON!) {
+  createFile(type: $type, metadata: $metadata) {
     id
     presignedUrl
     created
@@ -22,7 +22,8 @@ snapshots["TestFileService.test_create[empty_expand] create_mutation_expand_[]"]
     {
         "operation_name": None,
         "variable_values": {
-            "type": "csv",
+            "metadata": '{"decade": -127471.91004658, "other": 4537, "draw": 9025, "table": "fPlGoqlVJAWBmofrulqS", "huge": "RLQMnHdwIMQHuSbBEcSq", "last": "CliYtuFCSJkGbKACMVZc", "trouble": "1982-01-05 12:28:54", "analysis": "ableRsSGSBRpUxDKSTZs", "house": "EQQpSzpRFSYEmmcBHMyX", "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053"}',
+            "type": "wav",
         },
     },
 ]
@@ -46,8 +47,8 @@ snapshots[
     "TestFileService.test_create[expand_client] create_mutation_expand_client"
 ] = [
     [
-        """mutation create($type: String!) {
-  createFile(type: $type) {
+        """mutation create($type: String!, $metadata: AWSJSON!) {
+  createFile(type: $type, metadata: $metadata) {
     id
     presignedUrl
     created
@@ -68,7 +69,8 @@ snapshots[
     {
         "operation_name": None,
         "variable_values": {
-            "type": "csv",
+            "metadata": '{"decade": -127471.91004658, "other": 4537, "draw": 9025, "table": "fPlGoqlVJAWBmofrulqS", "huge": "RLQMnHdwIMQHuSbBEcSq", "last": "CliYtuFCSJkGbKACMVZc", "trouble": "1982-01-05 12:28:54", "analysis": "ableRsSGSBRpUxDKSTZs", "house": "EQQpSzpRFSYEmmcBHMyX", "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053"}',
+            "type": "wav",
         },
     },
 ]
@@ -102,8 +104,8 @@ snapshots[
 
 snapshots["TestFileService.test_create[no_expand] create_mutation_expand_None"] = [
     [
-        """mutation create($type: String!) {
-  createFile(type: $type) {
+        """mutation create($type: String!, $metadata: AWSJSON!) {
+  createFile(type: $type, metadata: $metadata) {
     id
     presignedUrl
     created
@@ -116,7 +118,8 @@ snapshots["TestFileService.test_create[no_expand] create_mutation_expand_None"] 
     {
         "operation_name": None,
         "variable_values": {
-            "type": "csv",
+            "metadata": '{"decade": -127471.91004658, "other": 4537, "draw": 9025, "table": "fPlGoqlVJAWBmofrulqS", "huge": "RLQMnHdwIMQHuSbBEcSq", "last": "CliYtuFCSJkGbKACMVZc", "trouble": "1982-01-05 12:28:54", "analysis": "ableRsSGSBRpUxDKSTZs", "house": "EQQpSzpRFSYEmmcBHMyX", "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053"}',
+            "type": "wav",
         },
     },
 ]

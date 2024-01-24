@@ -5,6 +5,8 @@ from typing import Dict
 import pytest
 from graphql.execution.execute import ExecutionResult
 
+from tests.constants import CREATE_FILE_MUTATION
+
 FakeFileJson = Dict[str, Dict[str, str]]
 
 
@@ -36,16 +38,19 @@ def fake_get_file_response(fake_file_json) -> FakeFileJson:
 
 
 @pytest.fixture
-def fake_create_file_response(fake_file_json) -> FakeFileJson:
+def fake_create_file_response(fake_file_json, metadata_for_update) -> FakeFileJson:
     """Fixture to return a fake file response for createFile mutation.
 
     Args:
         fake_file_json (dict[str, str]): Fake file json.
+        metadata_for_update (dict[str, Any]): Metadata for update.
 
     Returns:
         FakeFileJson: Fake file response.
     """
-    return {"createFile": fake_file_json}
+    file_json = fake_file_json.copy()
+    file_json["metadata"] = metadata_for_update
+    return {CREATE_FILE_MUTATION: fake_file_json}
 
 
 @pytest.fixture
@@ -169,7 +174,7 @@ def file_create_response_with_client(
         file_response (ExecutionResult): Fake file response.
     """
     fake_file_response_with_client = fake_create_file_response.copy()
-    fake_file_response_with_client["createFile"]["client"] = fake_client_type
+    fake_file_response_with_client[CREATE_FILE_MUTATION]["client"] = fake_client_type
     file_response = ExecutionResult(data=fake_file_response_with_client)
     mock_transport.side_effect = [introspection_result, file_response]
     yield file_response

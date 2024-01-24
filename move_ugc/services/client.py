@@ -1,5 +1,4 @@
 """Client mixin for the Move UGC SDK."""
-import json
 from typing import Any, Dict
 
 from move_ugc.gql_requests.client import retrieve as retrieve_query
@@ -51,5 +50,5 @@ class ClientService(BaseService[Client]):
         return self.execute(
             query_key=update_query.key,
             gql_query=update_query.generate_query(),
-            variable_values={"metadata": json.dumps(metadata, default=str)},
+            variable_values={"metadata": self.encode_aws_metadata(metadata)},
         )

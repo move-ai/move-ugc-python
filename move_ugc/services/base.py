@@ -1,4 +1,5 @@
 """Base service class for all services."""
+import json
 from abc import ABC
 from typing import Any, Dict, Generic, Optional, Type, TypeVar, cast
 
@@ -27,6 +28,17 @@ class BaseService(MetaClient, ABC, Generic[Schema]):
             Schema: Pydantic model.
         """
         return cast(Schema, self._schema(**response[query_key]))
+
+    def encode_aws_metadata(self, metadata: Optional[Dict[str, Any]]) -> str:
+        """Encode the metadata to a format that can be sent to AWS.
+
+        Args:
+            metadata (Optional[Dict[str, Any]]): Metadata to be encoded.
+
+        Returns:
+            str: Encoded metadata.
+        """
+        return json.dumps(metadata or {}, default=str)
 
     def execute(
         self,

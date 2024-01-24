@@ -1,5 +1,5 @@
 """File mixin for the Move UGC SDK."""
-from typing import List, Optional
+from typing import Any, Dict, List, Optional
 
 from move_ugc.gql_requests.file import create as create_query
 from move_ugc.gql_requests.file import retrieve as retrieve_query
@@ -53,6 +53,7 @@ class FileService(BaseService[FileType]):
     def create(
         self,
         file_type: str,
+        metadata: Optional[Dict[str, Any]] = None,
         expand: Optional[List[ALLOWED_EXPAND_ATTRS]] = None,
     ) -> FileType:
         """Create a file with given file type in MoveUGC.
@@ -60,6 +61,7 @@ class FileService(BaseService[FileType]):
         Args:
             file_type: type of file to be created. Example: `mp4`, `avi`, `move` etc.
             expand: list of fields to be expanded. Currently only `client` is supported.
+            metadata: metadata to be associated with the file.
 
         Returns:
             File instance of Pydantic model type.
@@ -67,5 +69,8 @@ class FileService(BaseService[FileType]):
         return self.execute(
             query_key=create_query.key,
             gql_query=create_query.generate_query(expand=expand),
-            variable_values={"type": file_type},
+            variable_values={
+                "type": file_type,
+                "metadata": self.encode_aws_metadata(metadata),
+            },
         )

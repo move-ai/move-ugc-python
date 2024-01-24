@@ -23,8 +23,8 @@ retrieve = UgcGql(
 
 create = UgcGql(
     query="""
-    mutation create($type: String!){{
-        createFile(type: $type){{
+    mutation create($type: String!, $metadata: AWSJSON!){{
+        createFile(type: $type, metadata: $metadata){{
             id
             presignedUrl
             created
