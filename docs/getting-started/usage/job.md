@@ -37,3 +37,5 @@ job = ugc.jobs.retrieve(
 ```
 
 > 💡 `expand` supports only `take`, `outputs` and `client` as of now.
+
+For more information on the job object, see the [API reference](/move-ugc-python/latest/api-reference/schemas/job/).

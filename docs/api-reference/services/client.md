@@ -1,8 +1,7 @@
-# Files
+# Client
 
-::: move_ugc.services.file.FileService
+::: move_ugc.services.client.ClientService
     options:
         members:
-            - create
             - retrieve
             - update
