@@ -122,7 +122,7 @@ snapshots[
         "operation_name": None,
         "variable_values": {
             "metadata": "{}",
-            "take_id": "fc1c1c02-3299-4ad6-a244-7a6cef18457d",
+            "take_id": "b898a7a5-37be-4600-bdc6-8ffa06c7a4f6",
         },
     },
 ]
@@ -144,7 +144,18 @@ snapshots[
                     "datetime.datetime(2023, 7, 3, 14, 48, 6, 29019, tzinfo=TzInfo(UTC))",
                 ),
                 "id": "file-a0059241-7ede-411c-a149-769a4305e8b6",
-                "metadata": {},
+                "metadata": {
+                    "analysis": "ableRsSGSBRpUxDKSTZs",
+                    "decade": -127471.91004658,
+                    "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053",
+                    "draw": 9025,
+                    "house": "EQQpSzpRFSYEmmcBHMyX",
+                    "huge": "RLQMnHdwIMQHuSbBEcSq",
+                    "last": "CliYtuFCSJkGbKACMVZc",
+                    "other": 4537,
+                    "table": "fPlGoqlVJAWBmofrulqS",
+                    "trouble": "1982-01-05 12:28:54",
+                },
                 "presigned_url": GenericRepr(
                     "Url('https://pytest_invalid_presigned_url.com/file')",
                 ),
@@ -159,7 +170,18 @@ snapshots[
                     "datetime.datetime(2023, 7, 3, 14, 48, 6, 29019, tzinfo=TzInfo(UTC))",
                 ),
                 "id": "file-a0059241-7ede-411c-a149-769a4305e8b6",
-                "metadata": {},
+                "metadata": {
+                    "analysis": "ableRsSGSBRpUxDKSTZs",
+                    "decade": -127471.91004658,
+                    "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053",
+                    "draw": 9025,
+                    "house": "EQQpSzpRFSYEmmcBHMyX",
+                    "huge": "RLQMnHdwIMQHuSbBEcSq",
+                    "last": "CliYtuFCSJkGbKACMVZc",
+                    "other": 4537,
+                    "table": "fPlGoqlVJAWBmofrulqS",
+                    "trouble": "1982-01-05 12:28:54",
+                },
                 "presigned_url": GenericRepr(
                     "Url('https://pytest_invalid_presigned_url.com/file')",
                 ),
@@ -194,7 +216,7 @@ snapshots["TestJobService.test_create[expand_take] create_mutation_expand_take"]
         "operation_name": None,
         "variable_values": {
             "metadata": "{}",
-            "take_id": "fc1c1c02-3299-4ad6-a244-7a6cef18457d",
+            "take_id": "b898a7a5-37be-4600-bdc6-8ffa06c7a4f6",
         },
     },
 ]
@@ -215,7 +237,18 @@ snapshots["TestJobService.test_create[expand_take] create_response_expand_take"]
             "datetime.datetime(2023, 6, 29, 8, 54, 52, 349467, tzinfo=TzInfo(UTC))",
         ),
         "id": "take-af54cc45-7137-4206-a4c1-b3bc21b398fc",
-        "metadata": {},
+        "metadata": {
+            "analysis": "ableRsSGSBRpUxDKSTZs",
+            "decade": -127471.91004658,
+            "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053",
+            "draw": 9025,
+            "house": "EQQpSzpRFSYEmmcBHMyX",
+            "huge": "RLQMnHdwIMQHuSbBEcSq",
+            "last": "CliYtuFCSJkGbKACMVZc",
+            "other": 4537,
+            "table": "fPlGoqlVJAWBmofrulqS",
+            "trouble": "1982-01-05 12:28:54",
+        },
         "video_file": None,
     },
 }
@@ -393,7 +426,7 @@ snapshots[
     {
         "operation_name": None,
         "variable_values": {
-            "id": "fc1c1c02-3299-4ad6-a244-7a6cef18457d",
+            "id": "b898a7a5-37be-4600-bdc6-8ffa06c7a4f6",
         },
     },
 ]
@@ -415,7 +448,18 @@ snapshots[
                     "datetime.datetime(2023, 7, 3, 14, 48, 6, 29019, tzinfo=TzInfo(UTC))",
                 ),
                 "id": "file-a0059241-7ede-411c-a149-769a4305e8b6",
-                "metadata": {},
+                "metadata": {
+                    "analysis": "ableRsSGSBRpUxDKSTZs",
+                    "decade": -127471.91004658,
+                    "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053",
+                    "draw": 9025,
+                    "house": "EQQpSzpRFSYEmmcBHMyX",
+                    "huge": "RLQMnHdwIMQHuSbBEcSq",
+                    "last": "CliYtuFCSJkGbKACMVZc",
+                    "other": 4537,
+                    "table": "fPlGoqlVJAWBmofrulqS",
+                    "trouble": "1982-01-05 12:28:54",
+                },
                 "presigned_url": GenericRepr(
                     "Url('https://pytest_invalid_presigned_url.com/file')",
                 ),
@@ -430,7 +474,18 @@ snapshots[
                     "datetime.datetime(2023, 7, 3, 14, 48, 6, 29019, tzinfo=TzInfo(UTC))",
                 ),
                 "id": "file-a0059241-7ede-411c-a149-769a4305e8b6",
-                "metadata": {},
+                "metadata": {
+                    "analysis": "ableRsSGSBRpUxDKSTZs",
+                    "decade": -127471.91004658,
+                    "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053",
+                    "draw": 9025,
+                    "house": "EQQpSzpRFSYEmmcBHMyX",
+                    "huge": "RLQMnHdwIMQHuSbBEcSq",
+                    "last": "CliYtuFCSJkGbKACMVZc",
+                    "other": 4537,
+                    "table": "fPlGoqlVJAWBmofrulqS",
+                    "trouble": "1982-01-05 12:28:54",
+                },
                 "presigned_url": GenericRepr(
                     "Url('https://pytest_invalid_presigned_url.com/file')",
                 ),
@@ -464,7 +519,7 @@ snapshots["TestJobService.test_retrieve[expand_take] retrieve_query_expand_take"
     {
         "operation_name": None,
         "variable_values": {
-            "id": "fc1c1c02-3299-4ad6-a244-7a6cef18457d",
+            "id": "b898a7a5-37be-4600-bdc6-8ffa06c7a4f6",
         },
     },
 ]
@@ -485,7 +540,18 @@ snapshots["TestJobService.test_retrieve[expand_take] retrieve_response_expand_ta
             "datetime.datetime(2023, 6, 29, 8, 54, 52, 349467, tzinfo=TzInfo(UTC))",
         ),
         "id": "take-af54cc45-7137-4206-a4c1-b3bc21b398fc",
-        "metadata": {},
+        "metadata": {
+            "analysis": "ableRsSGSBRpUxDKSTZs",
+            "decade": -127471.91004658,
+            "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053",
+            "draw": 9025,
+            "house": "EQQpSzpRFSYEmmcBHMyX",
+            "huge": "RLQMnHdwIMQHuSbBEcSq",
+            "last": "CliYtuFCSJkGbKACMVZc",
+            "other": 4537,
+            "table": "fPlGoqlVJAWBmofrulqS",
+            "trouble": "1982-01-05 12:28:54",
+        },
         "video_file": None,
     },
 }

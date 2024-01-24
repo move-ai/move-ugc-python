@@ -1,6 +1,6 @@
 """Representation for File type in Ugc API."""
 from datetime import datetime
-from typing import Dict, Optional
+from typing import Any, Optional
 
 from pydantic import BaseModel, Field, HttpUrl, Json
 
@@ -25,7 +25,7 @@ class FileType(BaseModel):
         examples=["2021-08-04T15:00:00.000Z"],
         title="File creation date",
     )
-    metadata: Json[Dict[str, str]] = Field(
+    metadata: Json[Any] = Field(
         description="Metadata associated with the file",
         examples=[{"key": "value"}],
         title="File metadata",

@@ -11,17 +11,20 @@ FakeFileJson = Dict[str, Dict[str, str]]
 
 
 @pytest.fixture
-def fake_file_json(files_fixtures_path) -> FakeFileJson:
+def fake_file_json(files_fixtures_path, metadata_for_update) -> FakeFileJson:
     """Fixture to return a fake file.
 
     Args:
         files_fixtures_path (str): Path to files fixtures.
+        metadata_for_update (dict[str, Any]): Metadata for update.
 
     Returns:
         FakeFileJson: Fake file.
     """
     with open(f"{files_fixtures_path}/fake_file.json") as file_json:
-        return json.load(file_json)
+        file_json_obj = json.load(file_json)
+        file_json_obj["metadata"] = json.dumps(metadata_for_update, default=str)
+        return file_json_obj
 
 
 @pytest.fixture
@@ -38,18 +41,15 @@ def fake_get_file_response(fake_file_json) -> FakeFileJson:
 
 
 @pytest.fixture
-def fake_create_file_response(fake_file_json, metadata_for_update) -> FakeFileJson:
+def fake_create_file_response(fake_file_json) -> FakeFileJson:
     """Fixture to return a fake file response for createFile mutation.
 
     Args:
         fake_file_json (dict[str, str]): Fake file json.
-        metadata_for_update (dict[str, Any]): Metadata for update.
 
     Returns:
         FakeFileJson: Fake file response.
     """
-    file_json = fake_file_json.copy()
-    file_json["metadata"] = metadata_for_update
     return {CREATE_FILE_MUTATION: fake_file_json}
 
 
