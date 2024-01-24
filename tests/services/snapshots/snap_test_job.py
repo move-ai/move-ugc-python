@@ -51,6 +51,9 @@ snapshots["TestJobService.test_create[expand_client] create_mutation_expand_clie
       id
       name
       created
+      metadata
+      portal
+      __typename
     }
     __typename
   }
@@ -67,9 +70,17 @@ snapshots["TestJobService.test_create[expand_client] create_mutation_expand_clie
 
 snapshots["TestJobService.test_create[expand_client] create_response_expand_client"] = {
     "client": {
-        "created": "2023-06-12T00:00:00.000000Z",
+        "created": GenericRepr(
+            "datetime.datetime(2023, 6, 12, 0, 0, tzinfo=TzInfo(UTC))",
+        ),
         "id": "client-47c982ec-60ab-4a0b-9286-2db4a76abc18",
+        "metadata": {
+            "foo": "bar",
+        },
         "name": "PYTEST_INVALID_CLIENT_NAME",
+        "portal": GenericRepr(
+            "Url('https://app.svix.com/login?primaryColorLight=39ddef&primaryColorDark=39ddef#key=')",
+        ),
     },
     "created": GenericRepr(
         "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
@@ -243,7 +254,7 @@ snapshots["TestJobService.test_create[no_expand] create_response_expand_None"] =
 }
 
 snapshots["TestJobService.test_fetch_service 1"] = GenericRepr(
-    "JobService(api_key='usJxDFJOzwvfcVdkQqye', endpoint_url=Url('https://pytest_invalid_endpoint_url.com/'))",
+    "JobService(api_key=SecretStr('**********'), endpoint_url=Url('https://pytest_invalid_endpoint_url.com/'))",
 )
 
 snapshots["TestJobService.test_job_not_found job_not_found_response"] = [
@@ -311,6 +322,9 @@ snapshots[
       id
       name
       created
+      metadata
+      portal
+      __typename
     }
     __typename
   }
@@ -328,9 +342,17 @@ snapshots[
     "TestJobService.test_retrieve[expand_client] retrieve_response_expand_client"
 ] = {
     "client": {
-        "created": "2023-06-12T00:00:00.000000Z",
+        "created": GenericRepr(
+            "datetime.datetime(2023, 6, 12, 0, 0, tzinfo=TzInfo(UTC))",
+        ),
         "id": "client-47c982ec-60ab-4a0b-9286-2db4a76abc18",
+        "metadata": {
+            "foo": "bar",
+        },
         "name": "PYTEST_INVALID_CLIENT_NAME",
+        "portal": GenericRepr(
+            "Url('https://app.svix.com/login?primaryColorLight=39ddef&primaryColorDark=39ddef#key=')",
+        ),
     },
     "created": GenericRepr(
         "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",

@@ -57,6 +57,9 @@ snapshots[
       id
       name
       created
+      metadata
+      portal
+      __typename
     }
     __typename
   }
@@ -74,9 +77,17 @@ snapshots[
     "TestFileService.test_create[expand_client] create_mutation_response_expand_client"
 ] = {
     "client": {
-        "created": "2023-06-12T00:00:00.000000Z",
+        "created": GenericRepr(
+            "datetime.datetime(2023, 6, 12, 0, 0, tzinfo=TzInfo(UTC))",
+        ),
         "id": "client-47c982ec-60ab-4a0b-9286-2db4a76abc18",
+        "metadata": {
+            "foo": "bar",
+        },
         "name": "PYTEST_INVALID_CLIENT_NAME",
+        "portal": GenericRepr(
+            "Url('https://app.svix.com/login?primaryColorLight=39ddef&primaryColorDark=39ddef#key=')",
+        ),
     },
     "created": GenericRepr(
         "datetime.datetime(2023, 7, 3, 14, 48, 6, 29019, tzinfo=TzInfo(UTC))",
@@ -126,7 +137,7 @@ snapshots[
 }
 
 snapshots["TestFileService.test_fetch_service 1"] = GenericRepr(
-    "FileService(api_key='usJxDFJOzwvfcVdkQqye', endpoint_url=Url('https://pytest_invalid_endpoint_url.com/'))",
+    "FileService(api_key=SecretStr('**********'), endpoint_url=Url('https://pytest_invalid_endpoint_url.com/'))",
 )
 
 snapshots["TestFileService.test_file_not_found file_not_found_response"] = [
@@ -188,9 +199,17 @@ snapshots[
     "TestFileService.test_retrieve[expand_client] file_retrieve_response_expand_client"
 ] = {
     "client": {
-        "created": "2023-06-12T00:00:00.000000Z",
+        "created": GenericRepr(
+            "datetime.datetime(2023, 6, 12, 0, 0, tzinfo=TzInfo(UTC))",
+        ),
         "id": "client-47c982ec-60ab-4a0b-9286-2db4a76abc18",
+        "metadata": {
+            "foo": "bar",
+        },
         "name": "PYTEST_INVALID_CLIENT_NAME",
+        "portal": GenericRepr(
+            "Url('https://app.svix.com/login?primaryColorLight=39ddef&primaryColorDark=39ddef#key=')",
+        ),
     },
     "created": GenericRepr(
         "datetime.datetime(2023, 7, 3, 14, 48, 6, 29019, tzinfo=TzInfo(UTC))",
@@ -218,6 +237,9 @@ snapshots[
       id
       name
       created
+      metadata
+      portal
+      __typename
     }
     __typename
   }

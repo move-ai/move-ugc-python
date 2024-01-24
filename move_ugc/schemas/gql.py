@@ -3,7 +3,7 @@ from typing import Dict, List, Optional
 
 from gql import gql
 from graphql import DocumentNode
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 from move_ugc.schemas.constants import ALLOWED_EXPAND_ATTRS
 
@@ -13,7 +13,7 @@ class UgcGql(BaseModel):
 
     query: str
     key: str
-    expand: Dict[str, str]
+    expand: Dict[str, str] = Field(default_factory=dict)
 
     def generate_query(
         self,
