@@ -5,7 +5,7 @@ from typing import Dict
 import pytest
 from graphql.execution.execute import ExecutionResult
 
-from tests.constants import CREATE_FILE_MUTATION
+from tests.constants import CREATE_FILE_MUTATION, UPDATE_FILE_MUTATION
 
 FakeFileJson = Dict[str, Dict[str, str]]
 
@@ -156,6 +156,31 @@ def file_create_response(
 
 
 @pytest.fixture
+def file_update_response(
+    mock_transport,
+    fake_create_file_response,
+    introspection_result,
+):
+    """Fixture to return a fake file response for update mutation.
+
+    Args:
+        mock_transport (MagicMock): Mock transport.
+        fake_create_file_response (FakeFileJson): Fake file json.
+        introspection_result (dict[str, str]): Introspection result.
+
+    Yields:
+        file_response (ExecutionResult): Fake file response.
+    """
+    fake_file_response = fake_create_file_response.copy()
+    # Overwrite createFile with updateFile
+    fake_file_response[UPDATE_FILE_MUTATION] = fake_file_response[CREATE_FILE_MUTATION]
+    fake_file_response.pop(CREATE_FILE_MUTATION)
+    file_response = ExecutionResult(data=fake_file_response)
+    mock_transport.side_effect = [introspection_result, file_response]
+    yield file_response
+
+
+@pytest.fixture
 def file_create_response_with_client(
     mock_transport,
     fake_create_file_response,
@@ -175,6 +200,36 @@ def file_create_response_with_client(
     """
     fake_file_response_with_client = fake_create_file_response.copy()
     fake_file_response_with_client[CREATE_FILE_MUTATION]["client"] = fake_client_type
+    file_response = ExecutionResult(data=fake_file_response_with_client)
+    mock_transport.side_effect = [introspection_result, file_response]
+    yield file_response
+
+
+@pytest.fixture
+def file_update_response_with_client(
+    mock_transport,
+    fake_create_file_response,
+    introspection_result,
+    fake_client_type,
+):
+    """Fixture to return a fake file response for update mutation with client.
+
+    Args:
+        mock_transport (MagicMock): Mock transport.
+        fake_create_file_response (FakeFileJson): Fake file json.
+        introspection_result (dict[str, str]): Introspection result.
+        fake_client_type (dict[str, str]): Fake client type.
+
+    Yields:
+        file_response (ExecutionResult): Fake file response.
+    """
+    fake_file_response_with_client = fake_create_file_response.copy()
+    # Overwrite createFile with updateFile
+    fake_file_response_with_client[CREATE_FILE_MUTATION]["client"] = fake_client_type
+    fake_file_response_with_client[
+        UPDATE_FILE_MUTATION
+    ] = fake_file_response_with_client[CREATE_FILE_MUTATION]
+    fake_file_response_with_client.pop(CREATE_FILE_MUTATION)
     file_response = ExecutionResult(data=fake_file_response_with_client)
     mock_transport.side_effect = [introspection_result, file_response]
     yield file_response

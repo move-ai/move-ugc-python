@@ -3,6 +3,7 @@ from typing import Any, Dict, List, Optional
 
 from move_ugc.gql_requests.file import create as create_query
 from move_ugc.gql_requests.file import retrieve as retrieve_query
+from move_ugc.gql_requests.file import update as update_query
 from move_ugc.schemas.constants import ALLOWED_EXPAND_ATTRS
 from move_ugc.schemas.file import FileType
 from move_ugc.services.base import BaseService
@@ -71,6 +72,31 @@ class FileService(BaseService[FileType]):
             gql_query=create_query.generate_query(expand=expand),
             variable_values={
                 "type": file_type,
+                "metadata": self.encode_aws_metadata(metadata),
+            },
+        )
+
+    def update(
+        self,
+        id: str,
+        metadata: Optional[Dict[str, Any]] = None,
+        expand: Optional[List[ALLOWED_EXPAND_ATTRS]] = None,
+    ) -> FileType:
+        """Update a file with given id in MoveUGC.
+
+        Args:
+            id: unique identifier for the file. This should typically be something like `file-{uuid}`.
+            expand: list of fields to be expanded. Currently only `client` is supported.
+            metadata: metadata to be associated with the file.
+
+        Returns:
+            File instance of Pydantic model type.
+        """
+        return self.execute(
+            query_key=update_query.key,
+            gql_query=update_query.generate_query(expand=expand),
+            variable_values={
+                "id": id,
                 "metadata": self.encode_aws_metadata(metadata),
             },
         )
