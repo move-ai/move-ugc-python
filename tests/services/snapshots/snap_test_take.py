@@ -137,6 +137,9 @@ snapshots[
       id
       name
       created
+      metadata
+      portal
+      __typename
     }
     __typename
   }
@@ -162,9 +165,17 @@ snapshots[
 ] = {
     "additional_files": None,
     "client": {
-        "created": "2023-06-12T00:00:00.000000Z",
+        "created": GenericRepr(
+            "datetime.datetime(2023, 6, 12, 0, 0, tzinfo=TzInfo(UTC))",
+        ),
         "id": "client-47c982ec-60ab-4a0b-9286-2db4a76abc18",
+        "metadata": {
+            "foo": "bar",
+        },
         "name": "PYTEST_INVALID_CLIENT_NAME",
+        "portal": GenericRepr(
+            "Url('https://app.svix.com/login?primaryColorLight=39ddef&primaryColorDark=39ddef#key=')",
+        ),
     },
     "created": GenericRepr(
         "datetime.datetime(2023, 6, 29, 8, 54, 52, 349467, tzinfo=TzInfo(UTC))",
@@ -325,7 +336,7 @@ snapshots[
 }
 
 snapshots["TestTakeService.test_fetch_service 1"] = GenericRepr(
-    "TakeService(api_key='usJxDFJOzwvfcVdkQqye', endpoint_url=Url('https://pytest_invalid_endpoint_url.com/'))",
+    "TakeService(api_key=SecretStr('**********'), endpoint_url=Url('https://pytest_invalid_endpoint_url.com/'))",
 )
 
 snapshots["TestTakeService.test_retrieve[empty_expand] retrieve_request_expand_[]"] = [
@@ -433,6 +444,9 @@ snapshots[
       id
       name
       created
+      metadata
+      portal
+      __typename
     }
     __typename
   }
@@ -451,9 +465,17 @@ snapshots[
 ] = {
     "additional_files": None,
     "client": {
-        "created": "2023-06-12T00:00:00.000000Z",
+        "created": GenericRepr(
+            "datetime.datetime(2023, 6, 12, 0, 0, tzinfo=TzInfo(UTC))",
+        ),
         "id": "client-47c982ec-60ab-4a0b-9286-2db4a76abc18",
+        "metadata": {
+            "foo": "bar",
+        },
         "name": "PYTEST_INVALID_CLIENT_NAME",
+        "portal": GenericRepr(
+            "Url('https://app.svix.com/login?primaryColorLight=39ddef&primaryColorDark=39ddef#key=')",
+        ),
     },
     "created": GenericRepr(
         "datetime.datetime(2023, 6, 29, 8, 54, 52, 349467, tzinfo=TzInfo(UTC))",
