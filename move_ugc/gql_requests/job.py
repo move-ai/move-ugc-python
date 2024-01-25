@@ -2,47 +2,68 @@
 from move_ugc.gql_requests.additional_file import expand_outputs
 from move_ugc.gql_requests.client import expand_client_query
 from move_ugc.gql_requests.take import expand_take_query
+from move_ugc.schemas.constants import CLIENT_LITERAL, OUTPUTS_LITERAL, TAKE_LITERAL
 from move_ugc.schemas.gql import UgcGql
 
+job_attributes = """
+    id
+    created
+    metadata
+    state
+    {expand}
+    __typename
+"""
+
 create = UgcGql(
-    query="""
-    mutation create($take_id: String!, $metadata: AWSJSON){{
-        createJob(takeId: $take_id, metadata: $metadata){{
-            id
-            created
-            metadata
-            state
-            {expand}
-            __typename
-        }}
-    }}
+    query=f"""
+    mutation create($take_id: String!, $metadata: AWSJSON) {{{{
+        createJob(takeId: $take_id, metadata: $metadata) {{{{
+            {job_attributes}
+        }}}}
+    }}}}
     """,
     key="createJob",
     expand={
-        "client": expand_client_query,
-        "take": expand_take_query,
-        "outputs": expand_outputs,
+        CLIENT_LITERAL: expand_client_query,
+        TAKE_LITERAL: expand_take_query,
+        OUTPUTS_LITERAL: expand_outputs,
     },
 )
 
 
 retrieve = UgcGql(
-    query="""
-    query retrieve($id: ID!){{
-        getJob(jobId: $id){{
-            id
-            created
-            metadata
-            state
-            {expand}
-            __typename
-        }}
-    }}
+    query=f"""
+    query retrieve($id: ID!) {{{{
+        getJob(jobId: $id) {{{{
+            {job_attributes}
+        }}}}
+    }}}}
     """,
     key="getJob",
     expand={
-        "client": expand_client_query,
-        "take": expand_take_query,
-        "outputs": expand_outputs,
+        CLIENT_LITERAL: expand_client_query,
+        TAKE_LITERAL: expand_take_query,
+        OUTPUTS_LITERAL: expand_outputs,
+    },
+)
+
+
+list_query = UgcGql(
+    query=f"""
+    query list($first: Int, $after: AWSJSON, $sortDirection: SortDirection) {{{{
+        listJobs(first: $first, after: $after, sortDirection: $sortDirection) {{{{
+            first
+            after
+            items {{{{
+                {job_attributes}
+            }}}}
+        }}}}
+    }}}}
+    """,
+    key="listJobs",
+    expand={
+        CLIENT_LITERAL: expand_client_query,
+        TAKE_LITERAL: expand_take_query,
+        OUTPUTS_LITERAL: expand_outputs,
     },
 )

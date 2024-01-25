@@ -309,6 +309,60 @@ snapshots["TestJobService.test_job_not_found job_not_found_response"] = [
     },
 ]
 
+snapshots["TestJobService.test_list job_list_request"] = [
+    [
+        """query list($first: Int, $after: AWSJSON, $sortDirection: SortDirection) {
+  listJobs(first: $first, after: $after, sortDirection: $sortDirection) {
+    first
+    after
+    items {
+      id
+      created
+      metadata
+      state
+      __typename
+    }
+  }
+}""",
+    ],
+    {
+        "operation_name": None,
+        "variable_values": {
+            "after": None,
+            "expand": None,
+            "first": 10,
+            "sortDirection": "DESC",
+        },
+    },
+]
+
+snapshots["TestJobService.test_list list_response"] = {
+    "items": [
+        {
+            "client": None,
+            "created": GenericRepr(
+                "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
+            ),
+            "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+            "metadata": {},
+            "outputs": None,
+            "state": "RUNNING",
+            "take": None,
+        },
+    ],
+    "limit": 6289,
+    "next_token": {
+        "analysis": GenericRepr("datetime.datetime(1982, 1, 5, 12, 28, 54)"),
+        "draw": 5591.51699508171,
+        "house": "ableRsSGSBRpUxDKSTZs",
+        "huge": 5652,
+        "last": "RLQMnHdwIMQHuSbBEcSq",
+        "other": "nQHawoCfPlGoqlVJAWBm",
+        "table": GenericRepr("datetime.datetime(1984, 11, 5, 1, 1, 54)"),
+        "trouble": "CliYtuFCSJkGbKACMVZc",
+    },
+}
+
 snapshots["TestJobService.test_retrieve[empty_expand] retrieve_query_expand_[]"] = [
     [
         """query retrieve($id: ID!) {

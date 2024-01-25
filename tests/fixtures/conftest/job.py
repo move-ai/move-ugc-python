@@ -5,7 +5,8 @@ from typing import Any, Dict
 import pytest
 from graphql.execution.execute import ExecutionResult
 
-from tests.constants import CREATE_JOB_MUTATION, GET_JOB_QUERY
+from tests.constants import CREATE_JOB_MUTATION, GET_JOB_QUERY, LIST_JOBS_QUERY
+from tests.fixtures.conftest.commons import build_list_response
 
 FakeJobJson = Dict[str, Any]
 KEY_LITERAL = "key"
@@ -37,6 +38,25 @@ def fake_create_job_response(fake_job_json) -> FakeJobJson:
         FakeJobJson: Fake job response.
     """
     return {CREATE_JOB_MUTATION: fake_job_json}
+
+
+@pytest.fixture
+def fake_list_job_response(fake_job_json, faker) -> FakeJobJson:
+    """Fixture to return a fake job response for getTake query.
+
+    Args:
+        fake_job_json (dict[str, str]): Fake job json.
+        faker (Faker): Faker instance.
+
+    Returns:
+        FakeJobJson: Fake job response.
+    """
+    return {
+        LIST_JOBS_QUERY: build_list_response(
+            fake_response=fake_job_json,
+            faker=faker,
+        ),
+    }
 
 
 @pytest.fixture
@@ -289,3 +309,24 @@ def job_not_found_response(
     job_error_response = ExecutionResult(errors=job_not_found_json)
     mock_transport.side_effect = [introspection_result, job_error_response]
     yield job_error_response
+
+
+@pytest.fixture
+def jobs_list_response(
+    mock_transport,
+    fake_list_job_response,
+    introspection_result,
+):
+    """Fixture to return a fake job response for listJobs query.
+
+    Args:
+        mock_transport (MockTransport): Mock transport.
+        fake_list_job_response (FakeTakeJson): Fake Job json.
+        introspection_result (dict[str, str]): Introspection result.
+
+    Yields:
+        FakeJobJson: Fake job response.
+    """
+    job_response = ExecutionResult(data=fake_list_job_response)
+    mock_transport.side_effect = [introspection_result, job_response]
+    yield job_response

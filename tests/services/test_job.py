@@ -131,3 +131,19 @@ class TestJobService(ServicesTestCase):
             excinfo.value.errors,  # noqa: WPS441
             name="job_not_found_response",
         )
+
+    def test_list(self, snapshot, jobs_list_response):
+        """Test listing jobs.
+
+        This should test -> `ugc.jobs.list()`
+
+        Args:
+            snapshot: The snapshot fixture.
+            jobs_list_response: job list response fixture.
+        """
+        job_list = self.client.jobs.list()
+        self.assert_execute(snapshot, name="job_list_request")
+        snapshot.assert_match(
+            job_list.model_dump(),
+            name="list_response",
+        )
