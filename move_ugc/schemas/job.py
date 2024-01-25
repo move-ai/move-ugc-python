@@ -1,6 +1,6 @@
 """Representation for Job type in Ugc API."""
 from datetime import datetime
-from typing import Dict, List, Optional
+from typing import Any, List, Optional
 
 from pydantic import BaseModel, Field, Json
 
@@ -22,7 +22,7 @@ class JobType(BaseModel):
         examples=["2021-08-04T15:00:00.000Z"],
         title="Job creation date",
     )
-    metadata: Json[Dict[str, str]] = Field(
+    metadata: Json[Any] = Field(
         description="Metadata associated with the job",
         examples=[{"key": "value"}],
         title="Job metadata",

@@ -1,6 +1,4 @@
 """Unit tests for using the job service."""
-import json
-
 import pytest
 from gql.transport.exceptions import TransportQueryError
 from graphql.execution.execute import ExecutionResult
@@ -54,7 +52,7 @@ class TestJobService(ServicesTestCase):
         request.getfixturevalue(job_fixture)
         job_model = self.client.jobs.create(
             take_id=faker.uuid4(),
-            metadata=json.dumps({}),
+            metadata=request.getfixturevalue("metadata_for_update"),
             expand=expand,
         )
         suffix = "_".join(expand) if expand else str(expand)
@@ -199,3 +197,32 @@ class TestJobService(ServicesTestCase):
         mock_transport.side_effect = [introspection_result, job_response]
 
         assert not self.client.jobs.list().items
+
+    def test_update(  # noqa: WPS211
+        self,
+        snapshot,
+        request,
+        faker,
+    ):
+        """Test updating a job.
+
+        This should test -> `ugc.jobs.update()`
+
+        Args:
+            snapshot: The snapshot fixture.
+            request: The request fixture.
+            faker: The faker fixture.
+        """
+        request.getfixturevalue("jobs_update_response")
+        job_model = self.client.jobs.update(
+            id=faker.uuid4(),
+            metadata=request.getfixturevalue("metadata_for_update"),
+        )
+        self.assert_execute(
+            snapshot=snapshot,
+            name="update_mutation",
+        )
+        snapshot.assert_match(
+            job_model.model_dump(),
+            name="update_response",
+        )

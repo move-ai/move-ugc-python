@@ -21,8 +21,8 @@ snapshots["TestJobService.test_create[empty_expand] create_mutation_expand_[]"] 
     {
         "operation_name": None,
         "variable_values": {
-            "metadata": "{}",
-            "take_id": "fc1c1c02-3299-4ad6-a244-7a6cef18457d",
+            "metadata": '{"decade": -127471.91004658, "other": 4537, "draw": 9025, "table": "fPlGoqlVJAWBmofrulqS", "huge": "RLQMnHdwIMQHuSbBEcSq", "last": "CliYtuFCSJkGbKACMVZc", "trouble": "1982-01-05 12:28:54", "analysis": "ableRsSGSBRpUxDKSTZs", "house": "EQQpSzpRFSYEmmcBHMyX", "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053"}',
+            "take_id": "b898a7a5-37be-4600-bdc6-8ffa06c7a4f6",
         },
     },
 ]
@@ -33,7 +33,18 @@ snapshots["TestJobService.test_create[empty_expand] create_response_expand_[]"] 
         "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
     ),
     "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
-    "metadata": {},
+    "metadata": {
+        "analysis": "ableRsSGSBRpUxDKSTZs",
+        "decade": -127471.91004658,
+        "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053",
+        "draw": 9025,
+        "house": "EQQpSzpRFSYEmmcBHMyX",
+        "huge": "RLQMnHdwIMQHuSbBEcSq",
+        "last": "CliYtuFCSJkGbKACMVZc",
+        "other": 4537,
+        "table": "fPlGoqlVJAWBmofrulqS",
+        "trouble": "1982-01-05 12:28:54",
+    },
     "outputs": None,
     "state": "RUNNING",
     "take": None,
@@ -62,8 +73,8 @@ snapshots["TestJobService.test_create[expand_client] create_mutation_expand_clie
     {
         "operation_name": None,
         "variable_values": {
-            "metadata": "{}",
-            "take_id": "fc1c1c02-3299-4ad6-a244-7a6cef18457d",
+            "metadata": '{"decade": -127471.91004658, "other": 4537, "draw": 9025, "table": "fPlGoqlVJAWBmofrulqS", "huge": "RLQMnHdwIMQHuSbBEcSq", "last": "CliYtuFCSJkGbKACMVZc", "trouble": "1982-01-05 12:28:54", "analysis": "ableRsSGSBRpUxDKSTZs", "house": "EQQpSzpRFSYEmmcBHMyX", "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053"}',
+            "take_id": "b898a7a5-37be-4600-bdc6-8ffa06c7a4f6",
         },
     },
 ]
@@ -86,7 +97,18 @@ snapshots["TestJobService.test_create[expand_client] create_response_expand_clie
         "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
     ),
     "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
-    "metadata": {},
+    "metadata": {
+        "analysis": "ableRsSGSBRpUxDKSTZs",
+        "decade": -127471.91004658,
+        "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053",
+        "draw": 9025,
+        "house": "EQQpSzpRFSYEmmcBHMyX",
+        "huge": "RLQMnHdwIMQHuSbBEcSq",
+        "last": "CliYtuFCSJkGbKACMVZc",
+        "other": 4537,
+        "table": "fPlGoqlVJAWBmofrulqS",
+        "trouble": "1982-01-05 12:28:54",
+    },
     "outputs": None,
     "state": "RUNNING",
     "take": None,
@@ -121,7 +143,7 @@ snapshots[
     {
         "operation_name": None,
         "variable_values": {
-            "metadata": "{}",
+            "metadata": '{"decade": -127471.91004658, "other": 4537, "draw": 9025, "table": "fPlGoqlVJAWBmofrulqS", "huge": "RLQMnHdwIMQHuSbBEcSq", "last": "CliYtuFCSJkGbKACMVZc", "trouble": "1982-01-05 12:28:54", "analysis": "ableRsSGSBRpUxDKSTZs", "house": "EQQpSzpRFSYEmmcBHMyX", "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053"}',
             "take_id": "b898a7a5-37be-4600-bdc6-8ffa06c7a4f6",
         },
     },
@@ -135,7 +157,18 @@ snapshots[
         "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
     ),
     "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
-    "metadata": {},
+    "metadata": {
+        "analysis": "ableRsSGSBRpUxDKSTZs",
+        "decade": -127471.91004658,
+        "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053",
+        "draw": 9025,
+        "house": "EQQpSzpRFSYEmmcBHMyX",
+        "huge": "RLQMnHdwIMQHuSbBEcSq",
+        "last": "CliYtuFCSJkGbKACMVZc",
+        "other": 4537,
+        "table": "fPlGoqlVJAWBmofrulqS",
+        "trouble": "1982-01-05 12:28:54",
+    },
     "outputs": [
         {
             "file": {
@@ -215,7 +248,7 @@ snapshots["TestJobService.test_create[expand_take] create_mutation_expand_take"]
     {
         "operation_name": None,
         "variable_values": {
-            "metadata": "{}",
+            "metadata": '{"decade": -127471.91004658, "other": 4537, "draw": 9025, "table": "fPlGoqlVJAWBmofrulqS", "huge": "RLQMnHdwIMQHuSbBEcSq", "last": "CliYtuFCSJkGbKACMVZc", "trouble": "1982-01-05 12:28:54", "analysis": "ableRsSGSBRpUxDKSTZs", "house": "EQQpSzpRFSYEmmcBHMyX", "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053"}',
             "take_id": "b898a7a5-37be-4600-bdc6-8ffa06c7a4f6",
         },
     },
@@ -227,7 +260,18 @@ snapshots["TestJobService.test_create[expand_take] create_response_expand_take"]
         "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
     ),
     "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
-    "metadata": {},
+    "metadata": {
+        "analysis": "ableRsSGSBRpUxDKSTZs",
+        "decade": -127471.91004658,
+        "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053",
+        "draw": 9025,
+        "house": "EQQpSzpRFSYEmmcBHMyX",
+        "huge": "RLQMnHdwIMQHuSbBEcSq",
+        "last": "CliYtuFCSJkGbKACMVZc",
+        "other": 4537,
+        "table": "fPlGoqlVJAWBmofrulqS",
+        "trouble": "1982-01-05 12:28:54",
+    },
     "outputs": None,
     "state": "RUNNING",
     "take": {
@@ -268,8 +312,8 @@ snapshots["TestJobService.test_create[no_expand] create_mutation_expand_None"] =
     {
         "operation_name": None,
         "variable_values": {
-            "metadata": "{}",
-            "take_id": "fc1c1c02-3299-4ad6-a244-7a6cef18457d",
+            "metadata": '{"decade": -127471.91004658, "other": 4537, "draw": 9025, "table": "fPlGoqlVJAWBmofrulqS", "huge": "RLQMnHdwIMQHuSbBEcSq", "last": "CliYtuFCSJkGbKACMVZc", "trouble": "1982-01-05 12:28:54", "analysis": "ableRsSGSBRpUxDKSTZs", "house": "EQQpSzpRFSYEmmcBHMyX", "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053"}',
+            "take_id": "b898a7a5-37be-4600-bdc6-8ffa06c7a4f6",
         },
     },
 ]
@@ -280,7 +324,18 @@ snapshots["TestJobService.test_create[no_expand] create_response_expand_None"] =
         "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
     ),
     "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
-    "metadata": {},
+    "metadata": {
+        "analysis": "ableRsSGSBRpUxDKSTZs",
+        "decade": -127471.91004658,
+        "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053",
+        "draw": 9025,
+        "house": "EQQpSzpRFSYEmmcBHMyX",
+        "huge": "RLQMnHdwIMQHuSbBEcSq",
+        "last": "CliYtuFCSJkGbKACMVZc",
+        "other": 4537,
+        "table": "fPlGoqlVJAWBmofrulqS",
+        "trouble": "1982-01-05 12:28:54",
+    },
     "outputs": None,
     "state": "RUNNING",
     "take": None,
@@ -350,22 +405,37 @@ snapshots["TestJobService.test_list[with_take_id] list_response"] = {
                 "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
             ),
             "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
-            "metadata": {},
+            "metadata": {
+                "analysis": "ableRsSGSBRpUxDKSTZs",
+                "decade": -127471.91004658,
+                "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053",
+                "draw": 9025,
+                "house": "EQQpSzpRFSYEmmcBHMyX",
+                "huge": "RLQMnHdwIMQHuSbBEcSq",
+                "last": "CliYtuFCSJkGbKACMVZc",
+                "other": 4537,
+                "table": "fPlGoqlVJAWBmofrulqS",
+                "trouble": "1982-01-05 12:28:54",
+            },
             "outputs": None,
             "state": "RUNNING",
             "take": None,
         },
     ],
-    "limit": 6289,
+    "limit": 433,
     "next_token": {
-        "analysis": GenericRepr("datetime.datetime(1982, 1, 5, 12, 28, 54)"),
-        "draw": 5591.51699508171,
-        "house": "ableRsSGSBRpUxDKSTZs",
-        "huge": 5652,
-        "last": "RLQMnHdwIMQHuSbBEcSq",
-        "other": "nQHawoCfPlGoqlVJAWBm",
-        "table": GenericRepr("datetime.datetime(1984, 11, 5, 1, 1, 54)"),
-        "trouble": "CliYtuFCSJkGbKACMVZc",
+        "ability": "TQtLfcoVjFwLvYXpwnub",
+        "attention": GenericRepr(
+            "Decimal('-94421184485993957790167155643305.1958182142991397918239901454')",
+        ),
+        "contain": "http://armstrong.net/postsindex.html",
+        "evening": "evqGQzKwSqfRoArzmKBW",
+        "figure": "alvaradocharles@example.org",
+        "set": 2642,
+        "so": -1000508466.811,
+        "stuff": GenericRepr(
+            "Decimal('-39859709324198798762190136418988284335952316805377455642414452157481053737582709181317757113.286861444124491')",
+        ),
     },
 }
 
@@ -410,22 +480,37 @@ snapshots["TestJobService.test_list[without_take_id] list_response"] = {
                 "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
             ),
             "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
-            "metadata": {},
+            "metadata": {
+                "analysis": "ableRsSGSBRpUxDKSTZs",
+                "decade": -127471.91004658,
+                "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053",
+                "draw": 9025,
+                "house": "EQQpSzpRFSYEmmcBHMyX",
+                "huge": "RLQMnHdwIMQHuSbBEcSq",
+                "last": "CliYtuFCSJkGbKACMVZc",
+                "other": 4537,
+                "table": "fPlGoqlVJAWBmofrulqS",
+                "trouble": "1982-01-05 12:28:54",
+            },
             "outputs": None,
             "state": "RUNNING",
             "take": None,
         },
     ],
-    "limit": 6289,
+    "limit": 433,
     "next_token": {
-        "analysis": GenericRepr("datetime.datetime(1982, 1, 5, 12, 28, 54)"),
-        "draw": 5591.51699508171,
-        "house": "ableRsSGSBRpUxDKSTZs",
-        "huge": 5652,
-        "last": "RLQMnHdwIMQHuSbBEcSq",
-        "other": "nQHawoCfPlGoqlVJAWBm",
-        "table": GenericRepr("datetime.datetime(1984, 11, 5, 1, 1, 54)"),
-        "trouble": "CliYtuFCSJkGbKACMVZc",
+        "ability": "TQtLfcoVjFwLvYXpwnub",
+        "attention": GenericRepr(
+            "Decimal('-94421184485993957790167155643305.1958182142991397918239901454')",
+        ),
+        "contain": "http://armstrong.net/postsindex.html",
+        "evening": "evqGQzKwSqfRoArzmKBW",
+        "figure": "alvaradocharles@example.org",
+        "set": 2642,
+        "so": -1000508466.811,
+        "stuff": GenericRepr(
+            "Decimal('-39859709324198798762190136418988284335952316805377455642414452157481053737582709181317757113.286861444124491')",
+        ),
     },
 }
 
@@ -444,7 +529,7 @@ snapshots["TestJobService.test_retrieve[empty_expand] retrieve_query_expand_[]"]
     {
         "operation_name": None,
         "variable_values": {
-            "id": "fc1c1c02-3299-4ad6-a244-7a6cef18457d",
+            "id": "b898a7a5-37be-4600-bdc6-8ffa06c7a4f6",
         },
     },
 ]
@@ -455,7 +540,18 @@ snapshots["TestJobService.test_retrieve[empty_expand] retrieve_response_expand_[
         "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
     ),
     "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
-    "metadata": {},
+    "metadata": {
+        "analysis": "ableRsSGSBRpUxDKSTZs",
+        "decade": -127471.91004658,
+        "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053",
+        "draw": 9025,
+        "house": "EQQpSzpRFSYEmmcBHMyX",
+        "huge": "RLQMnHdwIMQHuSbBEcSq",
+        "last": "CliYtuFCSJkGbKACMVZc",
+        "other": 4537,
+        "table": "fPlGoqlVJAWBmofrulqS",
+        "trouble": "1982-01-05 12:28:54",
+    },
     "outputs": None,
     "state": "RUNNING",
     "take": None,
@@ -486,7 +582,7 @@ snapshots[
     {
         "operation_name": None,
         "variable_values": {
-            "id": "fc1c1c02-3299-4ad6-a244-7a6cef18457d",
+            "id": "b898a7a5-37be-4600-bdc6-8ffa06c7a4f6",
         },
     },
 ]
@@ -511,7 +607,18 @@ snapshots[
         "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
     ),
     "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
-    "metadata": {},
+    "metadata": {
+        "analysis": "ableRsSGSBRpUxDKSTZs",
+        "decade": -127471.91004658,
+        "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053",
+        "draw": 9025,
+        "house": "EQQpSzpRFSYEmmcBHMyX",
+        "huge": "RLQMnHdwIMQHuSbBEcSq",
+        "last": "CliYtuFCSJkGbKACMVZc",
+        "other": 4537,
+        "table": "fPlGoqlVJAWBmofrulqS",
+        "trouble": "1982-01-05 12:28:54",
+    },
     "outputs": None,
     "state": "RUNNING",
     "take": None,
@@ -559,7 +666,18 @@ snapshots[
         "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
     ),
     "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
-    "metadata": {},
+    "metadata": {
+        "analysis": "ableRsSGSBRpUxDKSTZs",
+        "decade": -127471.91004658,
+        "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053",
+        "draw": 9025,
+        "house": "EQQpSzpRFSYEmmcBHMyX",
+        "huge": "RLQMnHdwIMQHuSbBEcSq",
+        "last": "CliYtuFCSJkGbKACMVZc",
+        "other": 4537,
+        "table": "fPlGoqlVJAWBmofrulqS",
+        "trouble": "1982-01-05 12:28:54",
+    },
     "outputs": [
         {
             "file": {
@@ -650,7 +768,18 @@ snapshots["TestJobService.test_retrieve[expand_take] retrieve_response_expand_ta
         "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
     ),
     "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
-    "metadata": {},
+    "metadata": {
+        "analysis": "ableRsSGSBRpUxDKSTZs",
+        "decade": -127471.91004658,
+        "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053",
+        "draw": 9025,
+        "house": "EQQpSzpRFSYEmmcBHMyX",
+        "huge": "RLQMnHdwIMQHuSbBEcSq",
+        "last": "CliYtuFCSJkGbKACMVZc",
+        "other": 4537,
+        "table": "fPlGoqlVJAWBmofrulqS",
+        "trouble": "1982-01-05 12:28:54",
+    },
     "outputs": None,
     "state": "RUNNING",
     "take": {
@@ -691,7 +820,7 @@ snapshots["TestJobService.test_retrieve[no_expand] retrieve_query_expand_None"] 
     {
         "operation_name": None,
         "variable_values": {
-            "id": "fc1c1c02-3299-4ad6-a244-7a6cef18457d",
+            "id": "b898a7a5-37be-4600-bdc6-8ffa06c7a4f6",
         },
     },
 ]
@@ -702,7 +831,62 @@ snapshots["TestJobService.test_retrieve[no_expand] retrieve_response_expand_None
         "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
     ),
     "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
-    "metadata": {},
+    "metadata": {
+        "analysis": "ableRsSGSBRpUxDKSTZs",
+        "decade": -127471.91004658,
+        "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053",
+        "draw": 9025,
+        "house": "EQQpSzpRFSYEmmcBHMyX",
+        "huge": "RLQMnHdwIMQHuSbBEcSq",
+        "last": "CliYtuFCSJkGbKACMVZc",
+        "other": 4537,
+        "table": "fPlGoqlVJAWBmofrulqS",
+        "trouble": "1982-01-05 12:28:54",
+    },
+    "outputs": None,
+    "state": "RUNNING",
+    "take": None,
+}
+
+snapshots["TestJobService.test_update update_mutation"] = [
+    [
+        """mutation update($id: String!, $metadata: AWSJSON!) {
+  updateJob(id: $id, metadata: $metadata) {
+    id
+    created
+    metadata
+    state
+    __typename
+  }
+}""",
+    ],
+    {
+        "operation_name": None,
+        "variable_values": {
+            "id": "b898a7a5-37be-4600-bdc6-8ffa06c7a4f6",
+            "metadata": '{"decade": -127471.91004658, "other": 4537, "draw": 9025, "table": "fPlGoqlVJAWBmofrulqS", "huge": "RLQMnHdwIMQHuSbBEcSq", "last": "CliYtuFCSJkGbKACMVZc", "trouble": "1982-01-05 12:28:54", "analysis": "ableRsSGSBRpUxDKSTZs", "house": "EQQpSzpRFSYEmmcBHMyX", "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053"}',
+        },
+    },
+]
+
+snapshots["TestJobService.test_update update_response"] = {
+    "client": None,
+    "created": GenericRepr(
+        "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
+    ),
+    "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+    "metadata": {
+        "analysis": "ableRsSGSBRpUxDKSTZs",
+        "decade": -127471.91004658,
+        "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053",
+        "draw": 9025,
+        "house": "EQQpSzpRFSYEmmcBHMyX",
+        "huge": "RLQMnHdwIMQHuSbBEcSq",
+        "last": "CliYtuFCSJkGbKACMVZc",
+        "other": 4537,
+        "table": "fPlGoqlVJAWBmofrulqS",
+        "trouble": "1982-01-05 12:28:54",
+    },
     "outputs": None,
     "state": "RUNNING",
     "take": None,

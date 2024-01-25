@@ -47,6 +47,21 @@ retrieve = UgcGql(
     },
 )
 
+update = UgcGql(
+    query=f"""
+    mutation update($id: String!, $metadata: AWSJSON!) {{{{
+        updateJob(id: $id, metadata: $metadata) {{{{
+            {job_attributes}
+        }}}}
+    }}}}
+    """,
+    key="updateJob",
+    expand={
+        CLIENT_LITERAL: expand_client_query,
+        TAKE_LITERAL: expand_take_query,
+        OUTPUTS_LITERAL: expand_outputs,
+    },
+)
 
 list_query = UgcGql(
     query=f"""
