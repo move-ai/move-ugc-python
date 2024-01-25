@@ -10,8 +10,10 @@ from tests.constants import (
     CLIENT_LITERAL,
     CREATE_TAKE_MUTATION,
     GET_TAKE_QUERY,
+    LIST_TAKES_QUERY,
     UPDATE_TAKE_MUTATION,
 )
+from tests.fixtures.conftest.commons import build_list_response
 
 FakeTakeJson = Dict[str, Any]
 
@@ -70,6 +72,25 @@ def fake_retrieve_take_response(fake_take_json) -> FakeTakeJson:
         FakeTakeJson: Fake take response.
     """
     return {GET_TAKE_QUERY: fake_take_json}
+
+
+@pytest.fixture
+def fake_list_take_response(fake_take_json, faker) -> FakeTakeJson:
+    """Fixture to return a fake take response for getTake query.
+
+    Args:
+        fake_take_json (dict[str, str]): Fake take json.
+        faker (Faker): Faker instance.
+
+    Returns:
+        FakeTakeJson: Fake take response.
+    """
+    return {
+        LIST_TAKES_QUERY: build_list_response(
+            fake_response=fake_take_json,
+            faker=faker,
+        ),
+    }
 
 
 @pytest.fixture
@@ -491,3 +512,24 @@ def take_not_found_response(
     take_error_response = ExecutionResult(errors=take_not_found_json)
     mock_transport.side_effect = [introspection_result, take_error_response]
     yield take_error_response
+
+
+@pytest.fixture
+def takes_list_response(
+    mock_transport,
+    fake_list_take_response,
+    introspection_result,
+):
+    """Fixture to return a fake take response for listTakes query.
+
+    Args:
+        mock_transport (MockTransport): Mock transport.
+        fake_list_take_response (FakeTakeJson): Fake take json.
+        introspection_result (dict[str, str]): Introspection result.
+
+    Yields:
+        FakeTakeJson: Fake take response.
+    """
+    take_response = ExecutionResult(data=fake_list_take_response)
+    mock_transport.side_effect = [introspection_result, take_response]
+    yield take_response

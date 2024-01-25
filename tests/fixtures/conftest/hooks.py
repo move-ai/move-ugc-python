@@ -17,9 +17,9 @@ def pytest_configure(config):
     key = "PYTEST_INVALID"
 
     # Keys with specific syntax
-    os.environ["ugc_endpoint_url"] = f"https://{key}_endpoint_url.com"
+    os.environ["move_ugc_endpoint_url"] = f"https://{key}_endpoint_url.com"
 
     # Generic keys to override
     keys_to_override = []
     for key_to_override in keys_to_override:
-        os.environ[key_to_override] = f"{key}_{key_to_override}"
+        os.environ[key_to_override] = f"move_{key}_{key_to_override}"

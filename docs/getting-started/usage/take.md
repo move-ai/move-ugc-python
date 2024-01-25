@@ -74,4 +74,27 @@ take = ugc.takes.update(
 )
 ```
 
+## Listing takes
+
+To list all the takes you can use the `ugc.takes.list` method:
+
+```python
+# By default this will return 10 takes at a time
+takes = ugc.takes.list()
+
+# Fetch N takes at a time
+N = 20
+takes = ugc.takes.list(limit=N)
+
+# Get next N takes
+next_takes = ugc.takes.list(limit=N, next_token=takes.next_token)
+
+# By default, takes are sorted by created_at in descending order. To sort by ascending order, use the sort_by parameter
+from move_ugc.schemas.commons import SortDirection
+takes = ugc.takes.list(sort_by=SortDirection.ASC)
+
+# You can also expand the associated types with the take just like with .retrieve()
+takes = ugc.takes.list(expand=["video_file", "client", "additional_files"])
+```
+
 For more information on the take object, see the [API reference](/move-ugc-python/latest/api-reference/schemas/take/).

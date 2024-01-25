@@ -3,6 +3,7 @@
 CREATE_TAKE_MUTATION = "createTake"
 UPDATE_TAKE_MUTATION = "updateTake"
 GET_TAKE_QUERY = "getTake"
+LIST_TAKES_QUERY = "listTakes"
 CREATE_JOB_MUTATION = "createJob"
 GET_JOB_QUERY = "getJob"
 UPDATE_CLIENT_MUTATION = "updateClient"

@@ -2,6 +2,11 @@
 from move_ugc.gql_requests.additional_file import expand_additional_file
 from move_ugc.gql_requests.client import expand_client_query
 from move_ugc.gql_requests.file import expand_video_file
+from move_ugc.schemas.constants import (
+    ADDITIONAL_FILE_LITERAL,
+    CLIENT_LITERAL,
+    VIDEO_FILE_LITERAL,
+)
 from move_ugc.schemas.gql import UgcGql
 
 take_attributes = """
@@ -22,9 +27,9 @@ create = UgcGql(
     """,
     key="createTake",
     expand={
-        "client": expand_client_query,
-        "video_file": expand_video_file,
-        "additional_files": expand_additional_file,
+        CLIENT_LITERAL: expand_client_query,
+        VIDEO_FILE_LITERAL: expand_video_file,
+        ADDITIONAL_FILE_LITERAL: expand_additional_file,
     },
 )
 
@@ -39,9 +44,9 @@ retrieve = UgcGql(
     """,
     key="getTake",
     expand={
-        "client": expand_client_query,
-        "video_file": expand_video_file,
-        "additional_files": expand_additional_file,
+        CLIENT_LITERAL: expand_client_query,
+        VIDEO_FILE_LITERAL: expand_video_file,
+        ADDITIONAL_FILE_LITERAL: expand_additional_file,
     },
 )
 
@@ -55,9 +60,29 @@ update = UgcGql(
     """,
     key="updateTake",
     expand={
-        "client": expand_client_query,
-        "video_file": expand_video_file,
-        "additional_files": expand_additional_file,
+        CLIENT_LITERAL: expand_client_query,
+        VIDEO_FILE_LITERAL: expand_video_file,
+        ADDITIONAL_FILE_LITERAL: expand_additional_file,
+    },
+)
+
+list_query = UgcGql(
+    query=f"""
+    query list($first: Int, $after: AWSJSON, $sortDirection: SortDirection) {{{{
+        listTakes(first: $first, after: $after, sortDirection: $sortDirection) {{{{
+            first
+            after
+            items {{{{
+                {take_attributes}
+            }}}}
+        }}}}
+    }}}}
+    """,
+    key="listTakes",
+    expand={
+        CLIENT_LITERAL: expand_client_query,
+        VIDEO_FILE_LITERAL: expand_video_file,
+        ADDITIONAL_FILE_LITERAL: expand_additional_file,
     },
 )
 

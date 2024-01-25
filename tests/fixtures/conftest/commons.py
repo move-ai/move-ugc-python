@@ -18,3 +18,16 @@ def metadata_for_update(faker) -> Dict[str, Any]:
         Dict[str, Any]: fake metadata dictionary
     """
     return faker.pydict()
+
+
+def build_list_response(fake_response, faker) -> Dict[str, Any]:
+    """Build a list response.
+
+    Args:
+        fake_response (Dict[str, Any]): fake response
+        faker (Faker): faker instance
+
+    Returns:
+        Dict[str, Any]: list response
+    """
+    return {"first": faker.pyint(), "after": faker.pydict(), "items": [fake_response]}

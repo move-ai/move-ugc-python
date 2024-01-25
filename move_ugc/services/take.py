@@ -2,9 +2,11 @@
 from typing import Any, Dict, List, Optional
 
 from move_ugc.gql_requests.take import create as create_query
+from move_ugc.gql_requests.take import list_query
 from move_ugc.gql_requests.take import retrieve as retrieve_query
 from move_ugc.gql_requests.take import update as update_query
 from move_ugc.schemas.additional_file import AdditionalFileIn
+from move_ugc.schemas.commons import ListBase, SortDirection, get_default_page_size
 from move_ugc.schemas.constants import ALLOWED_EXPAND_ATTRS
 from move_ugc.schemas.take import TakeType
 from move_ugc.services.base import BaseService
@@ -119,4 +121,41 @@ class TakeService(BaseService[TakeType]):
                 "id": id,
                 "metadata": self.encode_aws_metadata(metadata),
             },
+        )
+
+    def list(
+        self,
+        limit: Optional[int] = None,
+        next_token: Optional[str] = None,
+        sort_by: SortDirection = SortDirection.DESC,
+        expand: Optional[List[ALLOWED_EXPAND_ATTRS]] = None,
+    ) -> ListBase:
+        """List all takes in MoveUGC.
+
+        Args:
+            limit:
+                limit the number of items to be returned.
+            next_token:
+                next token to be used for pagination.
+            sort_by:
+                sort order for the list.
+            expand:
+                list of fields to be expanded.
+                Currently only `client`, `video_file` and `additional_files` are supported.
+
+        Returns:
+            List of Take instances of Pydantic model type.
+        """
+        if not limit:
+            limit = get_default_page_size()
+        return self.execute(  # type: ignore[return-value]
+            query_key=list_query.key,
+            gql_query=list_query.generate_query(expand=expand),
+            variable_values={
+                "first": limit,
+                "after": next_token,
+                "sortDirection": sort_by.value,
+                "expand": expand,
+            },
+            multi=True,
         )
