@@ -43,7 +43,7 @@ The metadata attribute in take type accepts any valid json string and can contai
 import json
 take = ugc.takes.create(
     video_file_id="file-457e23c2-6afc-4913-91f6-36522245d57d",
-    metadata=json.dumps({"foo": "bar"}),
+    metadata={"foo": "bar"},
 )
 ```
 
@@ -62,5 +62,16 @@ take = ugc.takes.retrieve(id="take-2be2463e-ffa3-419b-beb4-ea0f99c79512", expand
 > 💡 Currently supported attributes for expand are `client`, `video_file` and `additional_files`
 > Please note that expand feature can only be used to fetch types which are 1 level deep i.e. you cannot perform an expansion of `video_file.client`.
 > To fetch a client associated with a video_file you need to perform a [separate request](/move-ugc-python/latest/getting-started/usage/file/#retrieving-an-existing-file).
+
+## Updating a take
+
+To update a take you can use the `ugc.takes.update` method:
+
+```python
+take = ugc.takes.update(
+    id="take-2be2463e-ffa3-419b-beb4-ea0f99c79512",
+    metadata={"foo": "bar"},
+)
+```
 
 For more information on the take object, see the [API reference](/move-ugc-python/latest/api-reference/schemas/take/).
