@@ -22,6 +22,7 @@ nav:
   - "Getting started":
     - Overview: "index.md"
     - Usage:
+      - Authentication: "getting-started/usage/authentication.md"
       - Files: "getting-started/usage/file.md"
       - Takes: "getting-started/usage/take.md"
       - Jobs: "getting-started/usage/job.md"
