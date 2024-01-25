@@ -37,6 +37,7 @@ nav:
         - Client: "api-reference/schemas/client.md"
         - Take: "api-reference/schemas/take.md"
         - Job: "api-reference/schemas/job.md"
+        - Commons: "api-reference/schemas/commons.md"
   - "Contributing": "contributing.md"
 extra:
   version:

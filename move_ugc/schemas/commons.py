@@ -1,9 +1,11 @@
 """Common schemas to be used accross types."""
 import enum
-from typing import Any, Dict, Optional
+from typing import Any, Dict, List, Optional, Union
 
 from pydantic import BaseModel, ConfigDict, Field
 
+from move_ugc.schemas.job import JobType
+from move_ugc.schemas.take import TakeType
 from move_ugc.settings import get_settings
 
 
@@ -35,5 +37,9 @@ class ListBase(BaseModel):
         default=None,
         description="Cursor for the next page.",
         alias="after",
+    )
+    items: Union[List[TakeType], List[JobType]] = Field(  # noqa: WPS110
+        default_factory=list,
+        description="List of items. This can be either Job or Take.",
     )
     model_config = ConfigDict(populate_by_name=True, extra="allow")

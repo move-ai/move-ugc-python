@@ -35,11 +35,7 @@ class BaseService(MetaClient, ABC, Generic[Schema]):
             Schema: Pydantic model.
         """
         if multi:
-            list_base = ListBase(**response[query_key])
-            list_base.items = [
-                cast(Schema, self._schema(**list_item)) for list_item in list_base.items  # type: ignore[attr-defined]
-            ]
-            return list_base  # type: ignore[return-value]
+            return ListBase(**response[query_key])  # type: ignore[return-value]
         return cast(Schema, self._schema(**response[query_key]))
 
     def encode_aws_metadata(self, metadata: Optional[Dict[str, Any]]) -> str:
