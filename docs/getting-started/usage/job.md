@@ -62,4 +62,15 @@ jobs = ugc.jobs.list(sort_by=SortDirection.ASC)
 jobs = ugc.jobs.list(expand=["take", "outputs", "client"])
 ```
 
+## Updating a job
+
+To update a job you can use the `ugc.jobs.update` method:
+
+```python
+job = ugc.jobs.update(
+    id="job-2be2463e-ffa3-419b-beb4-ea0f99c79512",
+    metadata={"foo": "bar"},
+)
+```
+
 For more information on the job object, see the [API reference](/move-ugc-python/latest/api-reference/schemas/job/).
