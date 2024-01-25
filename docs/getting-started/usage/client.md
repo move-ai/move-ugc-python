@@ -17,7 +17,7 @@ To update your client with metadata, you can use the `ugc.client.update` method:
 ```python
 import json
 metadata = {"foo": "bar"}
-client = ugc.client.update(metadata=json.dumps(metadata))
+client = ugc.client.update(metadata=metadata)
 ```
 
 For more information on the client object, see the [API reference](/move-ugc-python/latest/api-reference/schemas/client/).

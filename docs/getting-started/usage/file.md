@@ -14,7 +14,7 @@ file = ugc.files.create(file_type="mp4")
 
 # Create a file with metadata
 file_metadata = {"foo": "bar"}
-file = ugc.files.create(file_type="mp4", metadata=json.dumps(file_metadata))
+file = ugc.files.create(file_type="mp4", metadata=file_metadata)
 
 # Create a file and fetch the client data in the same request
 file = ugc.files.create(file_type="mp4", expand=["client"])
@@ -52,7 +52,7 @@ file = ugc.files.update(id="file-123-123-123-123", metadata=json.dumps(file_meta
 
 # Update a file and fetch the client data in the same request
 file = ugc.files.update(
-    id="file-123-123-123-123", metadata=json.dumps(file_metadata), expand=["client"],
+    id="file-123-123-123-123", metadata=file_metadata, expand=["client"],
 )
 ```
 

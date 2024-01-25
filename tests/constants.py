@@ -1,6 +1,7 @@
 """Constants to be used in tests."""
 
 CREATE_TAKE_MUTATION = "createTake"
+UPDATE_TAKE_MUTATION = "updateTake"
 GET_TAKE_QUERY = "getTake"
 CREATE_JOB_MUTATION = "createJob"
 GET_JOB_QUERY = "getJob"
