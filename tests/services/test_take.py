@@ -241,3 +241,19 @@ class TestTakeService(ServicesTestCase):
             excinfo.value.errors,  # noqa: WPS441
             name="take_not_found_response",
         )
+
+    def test_list(self, snapshot, takes_list_response):
+        """Test listing takes.
+
+        This should test -> `ugc.takes.list()`
+
+        Args:
+            snapshot: The snapshot fixture.
+            takes_list_response: take list response fixture.
+        """
+        take_list = self.client.takes.list()
+        self.assert_execute(snapshot, name="take_list_request")
+        snapshot.assert_match(
+            take_list.model_dump(),
+            name="list_response",
+        )

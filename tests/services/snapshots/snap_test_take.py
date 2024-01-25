@@ -427,6 +427,73 @@ snapshots["TestTakeService.test_fetch_service 1"] = GenericRepr(
     "TakeService(api_key=SecretStr('**********'), endpoint_url=Url('https://pytest_invalid_endpoint_url.com/'))",
 )
 
+snapshots["TestTakeService.test_list list_response"] = {
+    "items": [
+        {
+            "additional_files": None,
+            "client": None,
+            "created": GenericRepr(
+                "datetime.datetime(2023, 6, 29, 8, 54, 52, 349467, tzinfo=TzInfo(UTC))",
+            ),
+            "id": "take-af54cc45-7137-4206-a4c1-b3bc21b398fc",
+            "metadata": {
+                "analysis": "ableRsSGSBRpUxDKSTZs",
+                "decade": -127471.91004658,
+                "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053",
+                "draw": 9025,
+                "house": "EQQpSzpRFSYEmmcBHMyX",
+                "huge": "RLQMnHdwIMQHuSbBEcSq",
+                "last": "CliYtuFCSJkGbKACMVZc",
+                "other": 4537,
+                "table": "fPlGoqlVJAWBmofrulqS",
+                "trouble": "1982-01-05 12:28:54",
+            },
+            "video_file": None,
+        },
+    ],
+    "limit": 433,
+    "next_token": {
+        "ability": "TQtLfcoVjFwLvYXpwnub",
+        "attention": GenericRepr(
+            "Decimal('-94421184485993957790167155643305.1958182142991397918239901454')",
+        ),
+        "contain": "http://armstrong.net/postsindex.html",
+        "evening": "evqGQzKwSqfRoArzmKBW",
+        "figure": "alvaradocharles@example.org",
+        "set": 2642,
+        "so": -1000508466.811,
+        "stuff": GenericRepr(
+            "Decimal('-39859709324198798762190136418988284335952316805377455642414452157481053737582709181317757113.286861444124491')",
+        ),
+    },
+}
+
+snapshots["TestTakeService.test_list take_list_request"] = [
+    [
+        """query list($first: Int, $after: AWSJSON, $sortDirection: SortDirection) {
+  listTakes(first: $first, after: $after, sortDirection: $sortDirection) {
+    first
+    after
+    items {
+      id
+      created
+      metadata
+      __typename
+    }
+  }
+}""",
+    ],
+    {
+        "operation_name": None,
+        "variable_values": {
+            "after": None,
+            "expand": None,
+            "first": 10,
+            "sortDirection": "DESC",
+        },
+    },
+]
+
 snapshots["TestTakeService.test_retrieve[empty_expand] retrieve_request_expand_[]"] = [
     [
         """query retrieve($id: ID!) {

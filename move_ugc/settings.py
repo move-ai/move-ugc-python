@@ -2,7 +2,7 @@
 from functools import lru_cache
 
 from pydantic import Field, HttpUrl
-from pydantic_settings import BaseSettings
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
@@ -13,6 +13,12 @@ class Settings(BaseSettings):
         description="Move UGC API endpoint URL",
         title="GraphQL endpoint URL",
     )
+    default_page_size: int = Field(
+        default=10,
+        description="Default page size to be used for pagination.",
+        title="Default page size",
+    )
+    model_config = SettingsConfigDict(env_prefix="move_")
 
 
 @lru_cache(maxsize=None)
