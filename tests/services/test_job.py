@@ -3,7 +3,10 @@ import json
 
 import pytest
 from gql.transport.exceptions import TransportQueryError
+from graphql.execution.execute import ExecutionResult
+from pydantic import ValidationError
 
+from tests.constants import LIST_JOBS_QUERY
 from tests.services.testcases import ServicesTestCase
 
 
@@ -153,3 +156,46 @@ class TestJobService(ServicesTestCase):
             job_list.model_dump(),
             name="list_response",
         )
+
+    def test_list_job_invalid(self, request, job_not_found_json):
+        """Test job errors.
+
+        This should test -> `ugc.jobs.list()`
+
+        Args:
+            request: The request fixture.
+            job_not_found_json: job not found json fixture.
+        """
+        mock_transport = request.getfixturevalue("mock_transport")
+        fake_list_job_response = request.getfixturevalue("fake_list_job_response")
+        introspection_result = request.getfixturevalue("introspection_result")
+
+        fake_list_job_response[LIST_JOBS_QUERY]["items"] = [
+            {"id": "dummy-123-123-123-123"},
+        ]
+
+        job_response = ExecutionResult(data=fake_list_job_response)
+        mock_transport.side_effect = [introspection_result, job_response]
+
+        with pytest.raises(ValidationError) as excinfo:
+            self.client.jobs.list()
+
+    def test_list_job_empty(self, request, job_not_found_json):
+        """Test job when it has an empty response.
+
+        This should test -> `ugc.jobs.list()`
+
+        Args:
+            request: The request fixture.
+            job_not_found_json: job not found json fixture.
+        """
+        mock_transport = request.getfixturevalue("mock_transport")
+        fake_list_job_response = request.getfixturevalue("fake_list_job_response")
+        introspection_result = request.getfixturevalue("introspection_result")
+
+        fake_list_job_response[LIST_JOBS_QUERY]["items"] = []
+
+        job_response = ExecutionResult(data=fake_list_job_response)
+        mock_transport.side_effect = [introspection_result, job_response]
+
+        assert not self.client.jobs.list().items
