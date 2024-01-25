@@ -82,11 +82,12 @@ class JobService(BaseService[JobType]):
             variable_values={"id": id},
         )
 
-    def list(
+    def list(  # noqa: WPS211
         self,
         limit: Optional[int] = None,
         next_token: Optional[str] = None,
         sort_by: SortDirection = SortDirection.DESC,
+        take_id: Optional[str] = None,
         expand: Optional[List[ALLOWED_EXPAND_ATTRS]] = None,
     ) -> ListBase:
         """List jobs in MoveUGC.
@@ -98,6 +99,8 @@ class JobService(BaseService[JobType]):
                 next token to be used for pagination.
             sort_by:
                 sort order for the list.
+            take_id:
+                id of the take to be used for filtering the jobs.
             expand:
                 list of fields to be expanded.
                 Currently only `client`, `take` and `outputs` are supported.
@@ -115,6 +118,7 @@ class JobService(BaseService[JobType]):
                 "after": next_token,
                 "sortDirection": sort_by.value,
                 "expand": expand,
+                "takeId": take_id,
             },
             multi=True,
         )

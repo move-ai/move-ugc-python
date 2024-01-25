@@ -132,16 +132,22 @@ class TestJobService(ServicesTestCase):
             name="job_not_found_response",
         )
 
-    def test_list(self, snapshot, jobs_list_response):
+    @pytest.mark.parametrize(
+        argnames="take_id",
+        argvalues=["take-123-123-123-123", None],
+        ids=["with_take_id", "without_take_id"],
+    )
+    def test_list(self, take_id, snapshot, jobs_list_response):
         """Test listing jobs.
 
         This should test -> `ugc.jobs.list()`
 
         Args:
+            take_id: The take id fixture.
             snapshot: The snapshot fixture.
             jobs_list_response: job list response fixture.
         """
-        job_list = self.client.jobs.list()
+        job_list = self.client.jobs.list(take_id=take_id)
         self.assert_execute(snapshot, name="job_list_request")
         snapshot.assert_match(
             job_list.model_dump(),

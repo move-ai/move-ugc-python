@@ -50,8 +50,8 @@ retrieve = UgcGql(
 
 list_query = UgcGql(
     query=f"""
-    query list($first: Int, $after: AWSJSON, $sortDirection: SortDirection) {{{{
-        listJobs(first: $first, after: $after, sortDirection: $sortDirection) {{{{
+    query list($first: Int, $after: AWSJSON, $sortDirection: SortDirection, $takeId: String) {{{{
+        listJobs(first: $first, after: $after, sortDirection: $sortDirection, takeId: $takeId) {{{{
             first
             after
             items {{{{
