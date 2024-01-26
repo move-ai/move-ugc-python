@@ -64,3 +64,16 @@ def job_fixtures_path(json_fixtures_path):
         str: Path to job fixtures.
     """
     return os.path.join(json_fixtures_path, "job")
+
+
+@pytest.fixture
+def webhooks_fixtures_path(json_fixtures_path):
+    """Fixture to return the path to the webhooks fixtures.
+
+    Args:
+        json_fixtures_path (str): Path to JSON fixtures.
+
+    Returns:
+        str: Path to webhooks fixtures.
+    """
+    return os.path.join(json_fixtures_path, "webhooks")

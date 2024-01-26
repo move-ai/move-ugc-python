@@ -12,4 +12,5 @@ pytest_plugins = [
     "tests.fixtures.conftest.take",
     "tests.fixtures.conftest.job",
     "tests.fixtures.conftest.commons",
+    "tests.fixtures.conftest.webhooks",
 ]

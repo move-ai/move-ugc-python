@@ -2,10 +2,11 @@
 from typing import Any, Dict, List, Optional
 
 from move_ugc.gql_requests.file import create as create_query
+from move_ugc.gql_requests.file import generate_share_code
 from move_ugc.gql_requests.file import retrieve as retrieve_query
 from move_ugc.gql_requests.file import update as update_query
 from move_ugc.schemas.constants import ALLOWED_EXPAND_ATTRS
-from move_ugc.schemas.file import FileType
+from move_ugc.schemas.file import FileType, ShareCode
 from move_ugc.services.base import BaseService
 
 
@@ -100,3 +101,19 @@ class FileService(BaseService[FileType]):
                 "metadata": self.encode_aws_metadata(metadata),
             },
         )
+
+    def generate_share_code(self, file_id: str) -> ShareCode:
+        """Generate a share code with given file_id.
+
+        Args:
+            file_id:
+                unique identifier for the file. This should typically be like `file-{uuid}`.
+
+        Returns:
+            ShareCode instance of Pydantic model type.
+        """
+        response = self.ugc_api.execute(
+            generate_share_code.generate_query(),
+            variable_values={"fileId": file_id},
+        )
+        return ShareCode(**response[generate_share_code.key])

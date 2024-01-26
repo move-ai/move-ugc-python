@@ -155,3 +155,18 @@ class TestFileService(ServicesTestCase):
             file_model.model_dump(),
             name=f"update_mutation_response_expand_{suffix}",
         )
+
+    def test_generate_share_code(self, share_code_response, faker, snapshot):
+        """Test generating a share code from Move UGC API.
+
+        Args:
+            share_code_response: The share code response fixture.
+            faker: The faker fixture.
+            snapshot: The snapshot fixture.
+        """
+        share_code = self.client.files.generate_share_code(file_id=faker.uuid4())
+        self.assert_execute(snapshot, name="generate_share_code_mutation")
+        snapshot.assert_match(
+            share_code.model_dump(),
+            name="generate_share_code_mutation_response",
+        )
