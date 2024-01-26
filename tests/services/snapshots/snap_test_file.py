@@ -195,6 +195,39 @@ snapshots["TestFileService.test_file_not_found file_not_found_response"] = [
     },
 ]
 
+snapshots["TestFileService.test_generate_share_code generate_share_code_mutation"] = [
+    [
+        """mutation generateShareCode($fileId: String!) {
+  generateShareCode(fileId: $fileId) {
+    code
+    created
+    file {
+      id
+    }
+    expires
+    url
+    __typename
+  }
+}""",
+    ],
+    {
+        "operation_name": None,
+        "variable_values": {
+            "fileId": "516b93c2-ca3c-4b89-b7d8-6704858462ab",
+        },
+    },
+]
+
+snapshots[
+    "TestFileService.test_generate_share_code generate_share_code_mutation_response"
+] = {
+    "code": "WkDQwclzAvJMvacZIYSm",
+    "created": GenericRepr("datetime.datetime(2020, 8, 27, 13, 27, 47)"),
+    "expires": GenericRepr("datetime.datetime(1993, 12, 30, 11, 32, 53)"),
+    "file_id": "e49022be-849a-43db-904d-dfc0ac8201d5",
+    "url": GenericRepr("Url('https://www.ramirez.biz/')"),
+}
+
 snapshots[
     "TestFileService.test_retrieve[empty_expand] file_retrieve_response_expand_[]"
 ] = {

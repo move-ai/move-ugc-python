@@ -2,7 +2,7 @@
 from datetime import datetime
 from typing import Any, Optional
 
-from pydantic import BaseModel, Field, HttpUrl, Json
+from pydantic import AliasPath, BaseModel, Field, HttpUrl, Json
 
 from move_ugc.schemas.client import Client
 
@@ -43,4 +43,37 @@ class FileType(BaseModel):
         ],
         title="File presigned URL",
         alias="presignedUrl",
+    )
+
+
+class ShareCode(BaseModel):
+    """Represents a share code associated a File in UGC API."""
+
+    code: str = Field(
+        description="Share code value for the associated file.",
+        example=["123456"],
+        title="Share code",
+    )
+    created: datetime = Field(
+        description="Date and time when the share code was created. This will be in UTC.",
+        examples=["2021-08-04T15:00:00.000Z"],
+        title="Share code creation date",
+    )
+    expires: datetime = Field(
+        description="Date and time when the share code expires. This will be in UTC.",
+        examples=["2021-08-04T15:00:00.000Z"],
+        title="Share code expiry date",
+    )
+    file_id: str = Field(
+        description="The file id to which the share code is associated.",
+        examples=["file-2c6059be-0f91-4cb8-aa1a-512cd10a66b5"],
+        title="File ID",
+        validation_alias=AliasPath("file", "id"),
+    )
+    url: HttpUrl = Field(
+        description="Presigned URL for the file",
+        examples=[
+            "https://api.move.ai/ugc/file/download?code=<code>",
+        ],
+        title="Share code redeem url.",
     )

@@ -54,6 +54,25 @@ update = UgcGql(
     expand={"client": expand_client_query},
 )
 
+
+generate_share_code = UgcGql(
+    query="""
+    mutation generateShareCode($fileId: String!) {{
+        generateShareCode(fileId: $fileId) {{
+            code
+            created
+            file {{
+                id
+            }}
+            expires
+            url
+            __typename
+        }}
+    }}
+    """,
+    key="generateShareCode",
+)
+
 expand_video_file = f"""
     videoFile {{
         {expand_file_base}

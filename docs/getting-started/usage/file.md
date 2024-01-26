@@ -56,4 +56,22 @@ file = ugc.files.update(
 )
 ```
 
+## Sharing a file via a share code
+
+To share a file via a share code, you can use the `ugc.files.generate_share_code` method given below, this will return a special share code type [API reference](/move-ugc-python/latest/api-reference/schemas/file/#sharecode) that contains the code, the redeem url, created datetime and the expiration datetime of the share code.
+
+```python
+share = ugc.files.generate_share_code(id="file-123-123-123-123")
+
+# Fetch the code
+share.code
+
+# Fetch the redeem url
+share.url
+
+# Fetch the expiration date
+share.expires
+```
+
+
 For more information on the file object, see the [API reference](/move-ugc-python/latest/api-reference/schemas/file/).
