@@ -1,6 +1,6 @@
 UGC API can easily be integrated with custom webhooks to get updates when an event is triggered by us. To create a webhook, you need to specify the URL of your webhook, a secret and the events you want to receive updates for.
 
-Currently, the available events can be found at this link. You can subscribe to any of these events using either the hosted portal url fetched as part of `ugc.client.retrieve` or `ugc.webhooks.upsert` method directly.
+Currently, the available events can be found at this [link](https://www.svix.com/event-types/eu/org_2U19l4cDWik8VmkVGzwQ0H77T1o/). You can subscribe to any of these events using either the hosted portal url fetched as part of `ugc.client.retrieve` or `ugc.webhooks.upsert` method directly.
 
 
 ## Subscribing to events
