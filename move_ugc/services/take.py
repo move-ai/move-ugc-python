@@ -130,7 +130,7 @@ class TakeService(BaseService[TakeType]):
         sort_by: SortDirection = SortDirection.DESC,
         expand: Optional[List[ALLOWED_EXPAND_ATTRS]] = None,
     ) -> ListBase:
-        """List all takes in MoveUGC.
+        """List takes in MoveUGC.
 
         Args:
             limit:
@@ -144,7 +144,7 @@ class TakeService(BaseService[TakeType]):
                 Currently only `client`, `video_file` and `additional_files` are supported.
 
         Returns:
-            List of Take instances of Pydantic model type.
+            ListBase: List of Take instances of Pydantic model type.
         """
         if not limit:
             limit = get_default_page_size()

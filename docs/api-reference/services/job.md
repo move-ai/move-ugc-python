@@ -6,3 +6,4 @@
             - create
             - retrieve
             - update
+            - list

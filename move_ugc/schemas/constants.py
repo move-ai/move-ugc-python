@@ -11,5 +11,7 @@ ALLOWED_EXPAND_ATTRS = Literal[
     "take",
 ]
 CLIENT_LITERAL = "client"
+TAKE_LITERAL = "take"
+OUTPUTS_LITERAL = "outputs"
 VIDEO_FILE_LITERAL = "video_file"
 ADDITIONAL_FILE_LITERAL = "additional_files"
