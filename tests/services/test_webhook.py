@@ -15,7 +15,7 @@ class TestWebhooksService(ServicesTestCase):
             upsert_webhook_endpoint_response: mocked webhook endpoint response
             snapshot: The snapshot fixture.
         """
-        webhook_model = self.client.webhooks.add(
+        webhook_model = self.client.webhooks.upsert(
             events=["ugc.jobs.state.completed"],
             uid=faker.pystr(),
             url=faker.url(),
@@ -38,7 +38,7 @@ class TestWebhooksService(ServicesTestCase):
             upsert_webhook_endpoint_response: mocked webhook endpoint response
             snapshot: The snapshot fixture.
         """
-        webhook_model = self.client.webhooks.add(
+        webhook_model = self.client.webhooks.upsert(
             events=["ugc.jobs.state.completed"],
             uid=faker.pystr(),
             url=faker.url(),

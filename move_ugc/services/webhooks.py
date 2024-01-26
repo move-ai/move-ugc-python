@@ -20,13 +20,13 @@ class WebhookService(BaseService[WebhookEndpoint]):
     url = "https://example.com/webhook"
 
     # Call webhook service methods directly
-    webhook_endpoint = ugc.webhooks.add(events=events, uid=uid, url=url)
+    webhook_endpoint = ugc.webhooks.upsert(events=events, uid=uid, url=url)
     ```
     """
 
     _schema = WebhookEndpoint
 
-    def add(  # noqa: WPS211
+    def upsert(  # noqa: WPS211
         self,
         events: List[str],
         uid: str,
@@ -34,7 +34,7 @@ class WebhookService(BaseService[WebhookEndpoint]):
         description: Optional[str] = "",
         secret: Optional[str] = None,
     ) -> WebhookEndpoint:
-        """Add a webhook endpoint to the client.
+        """Update or create a webhook endpoint to the client.
 
         Args:
             events (Any): Events to subscribe to.
