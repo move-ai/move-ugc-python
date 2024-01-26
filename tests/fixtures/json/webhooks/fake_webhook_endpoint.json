@@ -1,0 +1,12 @@
+{
+  "uid": "PYTEST_INVALID_UID",
+  "secret": "PYTEST_INVALID_SECRET",
+  "created": "2023-06-12T00:00:00.000000Z",
+  "expires": "2023-06-12T00:00:00.000000Z",
+  "url": "https://webhook.site/invalid",
+  "description": "PYTEST_INVALID_DESCRIPTION",
+  "events": ["PYTEST_INVALID_EVENT"],
+  "client": {
+    "id": "PYTEST_INVALID_CLIENT_ID"
+  }
+}

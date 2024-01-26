@@ -39,3 +39,8 @@ per-file-ignores =
     RST214,
     ; Inline interpreted text or phrase reference start-string without end-string
     RST215,
+    move_ugc/services/webhooks.py:
+    ; Inline literal start-string without end-string
+    RST214,
+    ; Inline interpreted text or phrase reference start-string without end-string
+    RST215,
