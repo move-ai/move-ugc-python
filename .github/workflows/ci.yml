@@ -14,7 +14,7 @@ jobs:
         python-version: [ '3.8', '3.9', '3.10', '3.11' ]
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Run pre-commit checks
         uses: ./.github/actions/pre-commit
         with:
@@ -31,7 +31,7 @@ jobs:
         python-version: [ '3.8', '3.9', '3.10', '3.11' ]
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Run tests
         uses: ./.github/actions/tests
         with:
@@ -50,7 +50,7 @@ jobs:
       - lint
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           ssh-key: "${{ secrets.RELEASE_WORKFLOW_KEY }}"
           fetch-depth: 0
