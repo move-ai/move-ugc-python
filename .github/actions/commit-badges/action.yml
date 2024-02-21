@@ -13,7 +13,7 @@ runs:
       shell: bash
       run: genbadge coverage --output-file badges/coverage.svg
     - name: Verify Changed files
-      uses: tj-actions/verify-changed-files@v14
+      uses: tj-actions/verify-changed-files@v18
       id: verify-changed-files
       with:
         files: |
