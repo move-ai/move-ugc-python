@@ -52,7 +52,7 @@ class TestTakeService(ServicesTestCase):
         request.getfixturevalue(take_fixture)
         take_model = self.client.takes.create(
             video_file_id=faker.uuid4(),
-            metadata=json.dumps({}),
+            metadata=request.getfixturevalue("metadata_for_update"),
             additional_files=[
                 AdditionalFileIn(
                     key=TakeAdditionalFileKeys.depth.value,
@@ -69,6 +69,58 @@ class TestTakeService(ServicesTestCase):
         snapshot.assert_match(
             take_model.model_dump(),
             name=f"create_response_expand_{suffix}",
+        )
+
+    @pytest.mark.parametrize(
+        argnames="expand, take_fixture",
+        argvalues=[
+            (None, "take_update_response"),
+            ([], "take_update_response"),
+            (["client"], "take_update_response_with_client"),
+            (["video_file"], "take_update_response_with_video_file"),
+            (["additional_files"], "take_update_response_with_additional_files"),
+        ],
+        ids=[
+            "no_expand",
+            "empty_expand",
+            "expand_client",
+            "expand_video_file",
+            "expand_additional_files",
+        ],
+    )
+    def test_update(  # noqa: WPS211
+        self,
+        snapshot,
+        faker,
+        request,
+        expand,
+        take_fixture,
+    ):
+        """Test creating a take.
+
+        This should test -> `ugc.takes.create()`
+
+        Args:
+            snapshot: The snapshot fixture.
+            faker: The faker fixture.
+            request: The request fixture.
+            expand: The expand fixture.
+            take_fixture: The take fixture.
+        """
+        request.getfixturevalue(take_fixture)
+        take_model = self.client.takes.update(
+            id=faker.uuid4(),
+            metadata=request.getfixturevalue("metadata_for_update"),
+            expand=expand,
+        )
+        suffix = "_".join(expand) if expand else str(expand)
+        self.assert_execute(
+            snapshot,
+            name=f"update_mutation_expand_{suffix}",
+        )
+        snapshot.assert_match(
+            take_model.model_dump(),
+            name=f"update_response_expand_{suffix}",
         )
 
     def test_create_wrong_additional_file_key(self, faker):
@@ -188,4 +240,20 @@ class TestTakeService(ServicesTestCase):
         snapshot.assert_match(
             excinfo.value.errors,  # noqa: WPS441
             name="take_not_found_response",
+        )
+
+    def test_list(self, snapshot, takes_list_response):
+        """Test listing takes.
+
+        This should test -> `ugc.takes.list()`
+
+        Args:
+            snapshot: The snapshot fixture.
+            takes_list_response: take list response fixture.
+        """
+        take_list = self.client.takes.list()
+        self.assert_execute(snapshot, name="take_list_request")
+        snapshot.assert_match(
+            take_list.model_dump(),
+            name="list_response",
         )

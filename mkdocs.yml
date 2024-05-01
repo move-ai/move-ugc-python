@@ -12,6 +12,7 @@ theme:
     - navigation.instant
     - navigation.tabs.sticky
     - navigation.top
+    - navigation.expand
     - content.code.copy
     - content.code.annotate
   palette:
@@ -21,19 +22,26 @@ nav:
   - "Getting started":
     - Overview: "index.md"
     - Usage:
+      - Authentication: "getting-started/usage/authentication.md"
       - Files: "getting-started/usage/file.md"
       - Takes: "getting-started/usage/take.md"
       - Jobs: "getting-started/usage/job.md"
+      - Client: "getting-started/usage/client.md"
+      - Webhooks: "getting-started/usage/webhooks.md"
   - "API Reference":
       - Services:
         - Files: "api-reference/services/file.md"
         - Takes: "api-reference/services/take.md"
         - Jobs: "api-reference/services/job.md"
+        - Client: "api-reference/services/client.md"
+        - Webhooks: "api-reference/services/webhooks.md"
       - Schemas:
         - File: "api-reference/schemas/file.md"
         - Client: "api-reference/schemas/client.md"
         - Take: "api-reference/schemas/take.md"
         - Job: "api-reference/schemas/job.md"
+        - Commons: "api-reference/schemas/commons.md"
+        - Webhooks: "api-reference/schemas/webhooks.md"
   - "Contributing": "contributing.md"
 extra:
   version:

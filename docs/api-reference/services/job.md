@@ -5,3 +5,5 @@
         members:
             - create
             - retrieve
+            - update
+            - list

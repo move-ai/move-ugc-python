@@ -37,3 +37,40 @@ job = ugc.jobs.retrieve(
 ```
 
 > 💡 `expand` supports only `take`, `outputs` and `client` as of now.
+
+
+## Listing jobs
+
+To list jobs created by your client, use the `list` method given below:
+
+```python
+# By default this will return 10 takes at a time
+jobs = ugc.jobs.list()
+
+# Fetch N jobs at a time
+N = 20
+jobs = ugc.jobs.list(limit=N)
+
+# Get next N jobs
+next_jobs = ugc.jobs.list(limit=N, next_token=jobs.next_token)
+
+# By default, jobs are sorted by created_at in descending order. To sort by ascending order, use the sort_by parameter
+from move_ugc.schemas.commons import SortDirection
+jobs = ugc.jobs.list(sort_by=SortDirection.ASC)
+
+# You can also expand the associated types with the jobs just like with .retrieve()
+jobs = ugc.jobs.list(expand=["take", "outputs", "client"])
+```
+
+## Updating a job
+
+To update a job you can use the `ugc.jobs.update` method:
+
+```python
+job = ugc.jobs.update(
+    id="job-2be2463e-ffa3-419b-beb4-ea0f99c79512",
+    metadata={"foo": "bar"},
+)
+```
+
+For more information on the job object, see the [API reference](/move-ugc-python/latest/api-reference/schemas/job/).

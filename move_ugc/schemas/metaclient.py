@@ -2,7 +2,7 @@
 from functools import cached_property
 
 from gql import Client
-from pydantic import BaseModel, Field, HttpUrl
+from pydantic import BaseModel, Field, HttpUrl, SecretStr
 
 from move_ugc.schemas.constants import MINIMUM_API_KEY_LENGTH
 from move_ugc.schemas.transport import _get_gql_client, _get_transport  # noqa: WPS450
@@ -21,7 +21,7 @@ def get_default_endpoint_url() -> HttpUrl:
 class MetaClient(BaseModel):
     """Move UGC SDK client."""
 
-    api_key: str = Field(
+    api_key: SecretStr = Field(
         description="Move UGC API key",
         title="API key",
         min_length=MINIMUM_API_KEY_LENGTH,
@@ -39,5 +39,8 @@ class MetaClient(BaseModel):
         Returns:
             Client: GraphQL client.
         """
-        transport = _get_transport(endpoint_url=self.endpoint_url, api_key=self.api_key)
+        transport = _get_transport(
+            endpoint_url=self.endpoint_url,
+            api_key=self.api_key.get_secret_value(),
+        )
         return _get_gql_client(transport=transport)

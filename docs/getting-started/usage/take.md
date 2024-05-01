@@ -43,7 +43,7 @@ The metadata attribute in take type accepts any valid json string and can contai
 import json
 take = ugc.takes.create(
     video_file_id="file-457e23c2-6afc-4913-91f6-36522245d57d",
-    metadata=json.dumps({"foo": "bar"}),
+    metadata={"foo": "bar"},
 )
 ```
 
@@ -62,3 +62,39 @@ take = ugc.takes.retrieve(id="take-2be2463e-ffa3-419b-beb4-ea0f99c79512", expand
 > 💡 Currently supported attributes for expand are `client`, `video_file` and `additional_files`
 > Please note that expand feature can only be used to fetch types which are 1 level deep i.e. you cannot perform an expansion of `video_file.client`.
 > To fetch a client associated with a video_file you need to perform a [separate request](/move-ugc-python/latest/getting-started/usage/file/#retrieving-an-existing-file).
+
+## Updating a take
+
+To update a take you can use the `ugc.takes.update` method:
+
+```python
+take = ugc.takes.update(
+    id="take-2be2463e-ffa3-419b-beb4-ea0f99c79512",
+    metadata={"foo": "bar"},
+)
+```
+
+## Listing takes
+
+To list all the takes you can use the `ugc.takes.list` method:
+
+```python
+# By default this will return 10 takes at a time
+takes = ugc.takes.list()
+
+# Fetch N takes at a time
+N = 20
+takes = ugc.takes.list(limit=N)
+
+# Get next N takes
+next_takes = ugc.takes.list(limit=N, next_token=takes.next_token)
+
+# By default, takes are sorted by created_at in descending order. To sort by ascending order, use the sort_by parameter
+from move_ugc.schemas.commons import SortDirection
+takes = ugc.takes.list(sort_by=SortDirection.ASC)
+
+# You can also expand the associated types with the take just like with .retrieve()
+takes = ugc.takes.list(expand=["video_file", "client", "additional_files"])
+```
+
+For more information on the take object, see the [API reference](/move-ugc-python/latest/api-reference/schemas/take/).

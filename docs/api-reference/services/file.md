@@ -5,3 +5,5 @@
         members:
             - create
             - retrieve
+            - update
+            - generate_share_code
