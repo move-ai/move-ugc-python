@@ -5,9 +5,9 @@ from move_ugc.gql_requests.take import create as create_query
 from move_ugc.gql_requests.take import list_query
 from move_ugc.gql_requests.take import retrieve as retrieve_query
 from move_ugc.gql_requests.take import update as update_query
-from move_ugc.schemas.additional_file import AdditionalFileIn
 from move_ugc.schemas.commons import ListBase, SortDirection, get_default_page_size
 from move_ugc.schemas.constants import ALLOWED_EXPAND_ATTRS
+from move_ugc.schemas.sources import SourceIn
 from move_ugc.schemas.take import TakeType
 from move_ugc.services.base import BaseService
 
@@ -32,26 +32,22 @@ class TakeService(BaseService[TakeType]):
 
     _schema = TakeType
 
-    def create(
+    def create_singlecam(
         self,
-        video_file_id: str,
-        additional_files: Optional[List[AdditionalFileIn]] = None,
+        sources: List[SourceIn],
         metadata: Optional[Dict[str, Any]] = None,
         expand: Optional[List[ALLOWED_EXPAND_ATTRS]] = None,
     ) -> TakeType:
-        """Create a file with given file type in MoveUGC.
+        """Create a singlecam take with given sources in MoveUGC.
 
         Args:
-            video_file_id:
-                id of the video file to be used for creating the take.
-                This usually contains a video file with extensions such as `mp4`, `avi`, `mov` etc.
+            sources:
+                list of sources to be used for creating the take.
             metadata:
                 metadata to be used for creating the take. This should be a valid json string.
-            additional_files:
-                list of additional files to be used for creating the take.
             expand:
                 list of fields to be expanded.
-                Currently only `client`, `video_file` and `additional_files` are supported.
+                Currently only `client` and `sources` are supported.
 
         Returns:
             File instance of Pydantic model type.
@@ -60,11 +56,7 @@ class TakeService(BaseService[TakeType]):
             query_key=create_query.key,
             gql_query=create_query.generate_query(expand=expand),
             variable_values={
-                "video_file_id": video_file_id,
-                "additional_file_ids": [
-                    additional_file.model_dump(by_alias=True)
-                    for additional_file in (additional_files or [])
-                ],
+                "sources": [source.model_dump(by_alias=True) for source in sources],
                 "metadata": self.encode_aws_metadata(metadata),
             },
         )
@@ -83,7 +75,7 @@ class TakeService(BaseService[TakeType]):
                 unique identifier for the take. This should typically be something like `take-{uuid}`.
             expand:
                 list of fields to be expanded.
-                Currently only `client`, `video_file` and `additional_files` are supported.
+                Currently only `client` and `sources` are supported.
 
         Returns:
             Take instance of Pydantic model type.
@@ -109,7 +101,7 @@ class TakeService(BaseService[TakeType]):
                 metadata to be used for updating the take. This should be a valid json string.
             expand:
                 list of fields to be expanded.
-                Currently only `client`, `video_file` and `additional_files` are supported.
+                Currently only `client` and `sources` are supported.
 
         Returns:
             Take instance of Pydantic model type.
@@ -141,7 +133,7 @@ class TakeService(BaseService[TakeType]):
                 sort order for the list.
             expand:
                 list of fields to be expanded.
-                Currently only `client`, `video_file` and `additional_files` are supported.
+                Currently only `client` and `sources` are supported.
 
         Returns:
             ListBase: List of Take instances of Pydantic model type.

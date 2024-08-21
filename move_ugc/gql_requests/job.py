@@ -17,12 +17,12 @@ job_attributes = """
 create = UgcGql(
     query=f"""
     mutation create($take_id: String!, $metadata: AWSJSON) {{{{
-        createJob(takeId: $take_id, metadata: $metadata) {{{{
+        createSingleCamJob(takeId: $take_id, metadata: $metadata) {{{{
             {job_attributes}
         }}}}
     }}}}
     """,
-    key="createJob",
+    key="createSingleCamJob",
     expand={
         CLIENT_LITERAL: expand_client_query,
         TAKE_LITERAL: expand_take_query,

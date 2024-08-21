@@ -8,12 +8,8 @@ snapshots = Snapshot()
 
 snapshots["TestTakeService.test_create[empty_expand] create_mutation_expand_[]"] = [
     [
-        """mutation create($video_file_id: String!, $additional_file_ids: [TakeFileInput!], $metadata: AWSJSON) {
-  createTake(
-    videoFileId: $video_file_id
-    additionalFileIds: $additional_file_ids
-    metadata: $metadata
-  ) {
+        """mutation create($sources: [SourceInput!], $metadata: AWSJSON) {
+  createSingleCamTake(sources: $sources, metadata: $metadata) {
     id
     created
     metadata
@@ -24,20 +20,24 @@ snapshots["TestTakeService.test_create[empty_expand] create_mutation_expand_[]"]
     {
         "operation_name": None,
         "variable_values": {
-            "additional_file_ids": [
+            "metadata": '{"decade": -127471.91004658, "other": 4537, "draw": 9025, "table": "fPlGoqlVJAWBmofrulqS", "huge": "RLQMnHdwIMQHuSbBEcSq", "last": "CliYtuFCSJkGbKACMVZc", "trouble": "1982-01-05 12:28:54", "analysis": "ableRsSGSBRpUxDKSTZs", "house": "EQQpSzpRFSYEmmcBHMyX", "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053"}',
+            "sources": [
                 {
-                    "fileId": "cba1d785-4a1e-4b59-aca4-d775bfdde401",
-                    "key": "DEPTH",
+                    "deviceLabel": "agreement",
+                    "fileId": "bfdde401-b898-47a5-b7be-a600bdc68ffa",
+                    "format": "MP4",
+                },
+                {
+                    "deviceLabel": "agreement",
+                    "fileId": "420a4847-cba1-4785-8a1e-1b592ca4d775",
+                    "format": "MOVE",
                 },
             ],
-            "metadata": '{"decade": -127471.91004658, "other": 4537, "draw": 9025, "table": "fPlGoqlVJAWBmofrulqS", "huge": "RLQMnHdwIMQHuSbBEcSq", "last": "CliYtuFCSJkGbKACMVZc", "trouble": "1982-01-05 12:28:54", "analysis": "ableRsSGSBRpUxDKSTZs", "house": "EQQpSzpRFSYEmmcBHMyX", "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053"}',
-            "video_file_id": "b898a7a5-37be-4600-bdc6-8ffa06c7a4f6",
         },
     },
 ]
 
 snapshots["TestTakeService.test_create[empty_expand] create_response_expand_[]"] = {
-    "additional_files": None,
     "client": None,
     "created": GenericRepr(
         "datetime.datetime(2023, 6, 29, 8, 54, 52, 349467, tzinfo=TzInfo(UTC))",
@@ -55,24 +55,20 @@ snapshots["TestTakeService.test_create[empty_expand] create_response_expand_[]"]
         "table": "fPlGoqlVJAWBmofrulqS",
         "trouble": "1982-01-05 12:28:54",
     },
-    "video_file": None,
+    "sources": None,
 }
 
 snapshots[
-    "TestTakeService.test_create[expand_additional_files] create_mutation_expand_additional_files"
+    "TestTakeService.test_create[expand_additional_sources] create_mutation_expand_sources"
 ] = [
     [
-        """mutation create($video_file_id: String!, $additional_file_ids: [TakeFileInput!], $metadata: AWSJSON) {
-  createTake(
-    videoFileId: $video_file_id
-    additionalFileIds: $additional_file_ids
-    metadata: $metadata
-  ) {
+        """mutation create($sources: [SourceInput!], $metadata: AWSJSON) {
+  createSingleCamTake(sources: $sources, metadata: $metadata) {
     id
     created
     metadata
-    additionalFiles {
-      key
+    sources {
+      deviceLabel
       file {
         id
         created
@@ -81,7 +77,7 @@ snapshots[
         presignedUrl
         __typename
       }
-      __typename
+      format
     }
     __typename
   }
@@ -90,23 +86,46 @@ snapshots[
     {
         "operation_name": None,
         "variable_values": {
-            "additional_file_ids": [
+            "metadata": '{"decade": -127471.91004658, "other": 4537, "draw": 9025, "table": "fPlGoqlVJAWBmofrulqS", "huge": "RLQMnHdwIMQHuSbBEcSq", "last": "CliYtuFCSJkGbKACMVZc", "trouble": "1982-01-05 12:28:54", "analysis": "ableRsSGSBRpUxDKSTZs", "house": "EQQpSzpRFSYEmmcBHMyX", "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053"}',
+            "sources": [
                 {
-                    "fileId": "cba1d785-4a1e-4b59-aca4-d775bfdde401",
-                    "key": "DEPTH",
+                    "deviceLabel": "agreement",
+                    "fileId": "bfdde401-b898-47a5-b7be-a600bdc68ffa",
+                    "format": "MP4",
+                },
+                {
+                    "deviceLabel": "agreement",
+                    "fileId": "420a4847-cba1-4785-8a1e-1b592ca4d775",
+                    "format": "MOVE",
                 },
             ],
-            "metadata": '{"decade": -127471.91004658, "other": 4537, "draw": 9025, "table": "fPlGoqlVJAWBmofrulqS", "huge": "RLQMnHdwIMQHuSbBEcSq", "last": "CliYtuFCSJkGbKACMVZc", "trouble": "1982-01-05 12:28:54", "analysis": "ableRsSGSBRpUxDKSTZs", "house": "EQQpSzpRFSYEmmcBHMyX", "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053"}',
-            "video_file_id": "b898a7a5-37be-4600-bdc6-8ffa06c7a4f6",
         },
     },
 ]
 
 snapshots[
-    "TestTakeService.test_create[expand_additional_files] create_response_expand_additional_files"
+    "TestTakeService.test_create[expand_additional_sources] create_response_expand_sources"
 ] = {
-    "additional_files": [
+    "client": None,
+    "created": GenericRepr(
+        "datetime.datetime(2023, 6, 29, 8, 54, 52, 349467, tzinfo=TzInfo(UTC))",
+    ),
+    "id": "take-af54cc45-7137-4206-a4c1-b3bc21b398fc",
+    "metadata": {
+        "analysis": "ableRsSGSBRpUxDKSTZs",
+        "decade": -127471.91004658,
+        "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053",
+        "draw": 9025,
+        "house": "EQQpSzpRFSYEmmcBHMyX",
+        "huge": "RLQMnHdwIMQHuSbBEcSq",
+        "last": "CliYtuFCSJkGbKACMVZc",
+        "other": 4537,
+        "table": "fPlGoqlVJAWBmofrulqS",
+        "trouble": "1982-01-05 12:28:54",
+    },
+    "sources": [
         {
+            "device_label": "foobar",
             "file": {
                 "client": None,
                 "created": GenericRepr(
@@ -130,39 +149,44 @@ snapshots[
                 ),
                 "type": ".mp4",
             },
-            "key": "DEPTH",
+            "format": "MP4",
+        },
+        {
+            "device_label": "foobar",
+            "file": {
+                "client": None,
+                "created": GenericRepr(
+                    "datetime.datetime(2023, 7, 3, 14, 48, 6, 29019, tzinfo=TzInfo(UTC))",
+                ),
+                "id": "file-a0059241-7ede-411c-a149-769a4305e8b6",
+                "metadata": {
+                    "analysis": "ableRsSGSBRpUxDKSTZs",
+                    "decade": -127471.91004658,
+                    "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053",
+                    "draw": 9025,
+                    "house": "EQQpSzpRFSYEmmcBHMyX",
+                    "huge": "RLQMnHdwIMQHuSbBEcSq",
+                    "last": "CliYtuFCSJkGbKACMVZc",
+                    "other": 4537,
+                    "table": "fPlGoqlVJAWBmofrulqS",
+                    "trouble": "1982-01-05 12:28:54",
+                },
+                "presigned_url": GenericRepr(
+                    "Url('https://pytest_invalid_presigned_url.com/file')",
+                ),
+                "type": ".mp4",
+            },
+            "format": "MOVE",
         },
     ],
-    "client": None,
-    "created": GenericRepr(
-        "datetime.datetime(2023, 6, 29, 8, 54, 52, 349467, tzinfo=TzInfo(UTC))",
-    ),
-    "id": "take-af54cc45-7137-4206-a4c1-b3bc21b398fc",
-    "metadata": {
-        "analysis": "ableRsSGSBRpUxDKSTZs",
-        "decade": -127471.91004658,
-        "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053",
-        "draw": 9025,
-        "house": "EQQpSzpRFSYEmmcBHMyX",
-        "huge": "RLQMnHdwIMQHuSbBEcSq",
-        "last": "CliYtuFCSJkGbKACMVZc",
-        "other": 4537,
-        "table": "fPlGoqlVJAWBmofrulqS",
-        "trouble": "1982-01-05 12:28:54",
-    },
-    "video_file": None,
 }
 
 snapshots[
     "TestTakeService.test_create[expand_client] create_mutation_expand_client"
 ] = [
     [
-        """mutation create($video_file_id: String!, $additional_file_ids: [TakeFileInput!], $metadata: AWSJSON) {
-  createTake(
-    videoFileId: $video_file_id
-    additionalFileIds: $additional_file_ids
-    metadata: $metadata
-  ) {
+        """mutation create($sources: [SourceInput!], $metadata: AWSJSON) {
+  createSingleCamTake(sources: $sources, metadata: $metadata) {
     id
     created
     metadata
@@ -181,14 +205,19 @@ snapshots[
     {
         "operation_name": None,
         "variable_values": {
-            "additional_file_ids": [
+            "metadata": '{"decade": -127471.91004658, "other": 4537, "draw": 9025, "table": "fPlGoqlVJAWBmofrulqS", "huge": "RLQMnHdwIMQHuSbBEcSq", "last": "CliYtuFCSJkGbKACMVZc", "trouble": "1982-01-05 12:28:54", "analysis": "ableRsSGSBRpUxDKSTZs", "house": "EQQpSzpRFSYEmmcBHMyX", "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053"}',
+            "sources": [
                 {
-                    "fileId": "cba1d785-4a1e-4b59-aca4-d775bfdde401",
-                    "key": "DEPTH",
+                    "deviceLabel": "agreement",
+                    "fileId": "bfdde401-b898-47a5-b7be-a600bdc68ffa",
+                    "format": "MP4",
+                },
+                {
+                    "deviceLabel": "agreement",
+                    "fileId": "420a4847-cba1-4785-8a1e-1b592ca4d775",
+                    "format": "MOVE",
                 },
             ],
-            "metadata": '{"decade": -127471.91004658, "other": 4537, "draw": 9025, "table": "fPlGoqlVJAWBmofrulqS", "huge": "RLQMnHdwIMQHuSbBEcSq", "last": "CliYtuFCSJkGbKACMVZc", "trouble": "1982-01-05 12:28:54", "analysis": "ableRsSGSBRpUxDKSTZs", "house": "EQQpSzpRFSYEmmcBHMyX", "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053"}',
-            "video_file_id": "b898a7a5-37be-4600-bdc6-8ffa06c7a4f6",
         },
     },
 ]
@@ -196,7 +225,6 @@ snapshots[
 snapshots[
     "TestTakeService.test_create[expand_client] create_response_expand_client"
 ] = {
-    "additional_files": None,
     "client": {
         "created": GenericRepr(
             "datetime.datetime(2023, 6, 12, 0, 0, tzinfo=TzInfo(UTC))",
@@ -226,29 +254,29 @@ snapshots[
         "table": "fPlGoqlVJAWBmofrulqS",
         "trouble": "1982-01-05 12:28:54",
     },
-    "video_file": None,
+    "sources": None,
 }
 
 snapshots[
-    "TestTakeService.test_create[expand_video_file] create_mutation_expand_video_file"
+    "TestTakeService.test_create[expand_video_file] create_mutation_expand_sources"
 ] = [
     [
-        """mutation create($video_file_id: String!, $additional_file_ids: [TakeFileInput!], $metadata: AWSJSON) {
-  createTake(
-    videoFileId: $video_file_id
-    additionalFileIds: $additional_file_ids
-    metadata: $metadata
-  ) {
+        """mutation create($sources: [SourceInput!], $metadata: AWSJSON) {
+  createSingleCamTake(sources: $sources, metadata: $metadata) {
     id
     created
     metadata
-    videoFile {
-      id
-      created
-      type
-      metadata
-      presignedUrl
-      __typename
+    sources {
+      deviceLabel
+      file {
+        id
+        created
+        type
+        metadata
+        presignedUrl
+        __typename
+      }
+      format
     }
     __typename
   }
@@ -257,22 +285,26 @@ snapshots[
     {
         "operation_name": None,
         "variable_values": {
-            "additional_file_ids": [
+            "metadata": '{"decade": -127471.91004658, "other": 4537, "draw": 9025, "table": "fPlGoqlVJAWBmofrulqS", "huge": "RLQMnHdwIMQHuSbBEcSq", "last": "CliYtuFCSJkGbKACMVZc", "trouble": "1982-01-05 12:28:54", "analysis": "ableRsSGSBRpUxDKSTZs", "house": "EQQpSzpRFSYEmmcBHMyX", "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053"}',
+            "sources": [
                 {
-                    "fileId": "cba1d785-4a1e-4b59-aca4-d775bfdde401",
-                    "key": "DEPTH",
+                    "deviceLabel": "agreement",
+                    "fileId": "bfdde401-b898-47a5-b7be-a600bdc68ffa",
+                    "format": "MP4",
+                },
+                {
+                    "deviceLabel": "agreement",
+                    "fileId": "420a4847-cba1-4785-8a1e-1b592ca4d775",
+                    "format": "MOVE",
                 },
             ],
-            "metadata": '{"decade": -127471.91004658, "other": 4537, "draw": 9025, "table": "fPlGoqlVJAWBmofrulqS", "huge": "RLQMnHdwIMQHuSbBEcSq", "last": "CliYtuFCSJkGbKACMVZc", "trouble": "1982-01-05 12:28:54", "analysis": "ableRsSGSBRpUxDKSTZs", "house": "EQQpSzpRFSYEmmcBHMyX", "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053"}',
-            "video_file_id": "b898a7a5-37be-4600-bdc6-8ffa06c7a4f6",
         },
     },
 ]
 
 snapshots[
-    "TestTakeService.test_create[expand_video_file] create_response_expand_video_file"
+    "TestTakeService.test_create[expand_video_file] create_response_expand_sources"
 ] = {
-    "additional_files": None,
     "client": None,
     "created": GenericRepr(
         "datetime.datetime(2023, 6, 29, 8, 54, 52, 349467, tzinfo=TzInfo(UTC))",
@@ -290,39 +322,41 @@ snapshots[
         "table": "fPlGoqlVJAWBmofrulqS",
         "trouble": "1982-01-05 12:28:54",
     },
-    "video_file": {
-        "client": None,
-        "created": GenericRepr(
-            "datetime.datetime(2023, 7, 3, 14, 48, 6, 29019, tzinfo=TzInfo(UTC))",
-        ),
-        "id": "file-a0059241-7ede-411c-a149-769a4305e8b6",
-        "metadata": {
-            "analysis": "ableRsSGSBRpUxDKSTZs",
-            "decade": -127471.91004658,
-            "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053",
-            "draw": 9025,
-            "house": "EQQpSzpRFSYEmmcBHMyX",
-            "huge": "RLQMnHdwIMQHuSbBEcSq",
-            "last": "CliYtuFCSJkGbKACMVZc",
-            "other": 4537,
-            "table": "fPlGoqlVJAWBmofrulqS",
-            "trouble": "1982-01-05 12:28:54",
+    "sources": [
+        {
+            "device_label": "foobar",
+            "file": {
+                "client": None,
+                "created": GenericRepr(
+                    "datetime.datetime(2023, 7, 3, 14, 48, 6, 29019, tzinfo=TzInfo(UTC))",
+                ),
+                "id": "file-a0059241-7ede-411c-a149-769a4305e8b6",
+                "metadata": {
+                    "analysis": "ableRsSGSBRpUxDKSTZs",
+                    "decade": -127471.91004658,
+                    "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053",
+                    "draw": 9025,
+                    "house": "EQQpSzpRFSYEmmcBHMyX",
+                    "huge": "RLQMnHdwIMQHuSbBEcSq",
+                    "last": "CliYtuFCSJkGbKACMVZc",
+                    "other": 4537,
+                    "table": "fPlGoqlVJAWBmofrulqS",
+                    "trouble": "1982-01-05 12:28:54",
+                },
+                "presigned_url": GenericRepr(
+                    "Url('https://pytest_invalid_presigned_url.com/file')",
+                ),
+                "type": ".mp4",
+            },
+            "format": "MP4",
         },
-        "presigned_url": GenericRepr(
-            "Url('https://pytest_invalid_presigned_url.com/file')",
-        ),
-        "type": ".mp4",
-    },
+    ],
 }
 
 snapshots["TestTakeService.test_create[no_expand] create_mutation_expand_None"] = [
     [
-        """mutation create($video_file_id: String!, $additional_file_ids: [TakeFileInput!], $metadata: AWSJSON) {
-  createTake(
-    videoFileId: $video_file_id
-    additionalFileIds: $additional_file_ids
-    metadata: $metadata
-  ) {
+        """mutation create($sources: [SourceInput!], $metadata: AWSJSON) {
+  createSingleCamTake(sources: $sources, metadata: $metadata) {
     id
     created
     metadata
@@ -333,20 +367,24 @@ snapshots["TestTakeService.test_create[no_expand] create_mutation_expand_None"] 
     {
         "operation_name": None,
         "variable_values": {
-            "additional_file_ids": [
+            "metadata": '{"decade": -127471.91004658, "other": 4537, "draw": 9025, "table": "fPlGoqlVJAWBmofrulqS", "huge": "RLQMnHdwIMQHuSbBEcSq", "last": "CliYtuFCSJkGbKACMVZc", "trouble": "1982-01-05 12:28:54", "analysis": "ableRsSGSBRpUxDKSTZs", "house": "EQQpSzpRFSYEmmcBHMyX", "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053"}',
+            "sources": [
                 {
-                    "fileId": "cba1d785-4a1e-4b59-aca4-d775bfdde401",
-                    "key": "DEPTH",
+                    "deviceLabel": "agreement",
+                    "fileId": "bfdde401-b898-47a5-b7be-a600bdc68ffa",
+                    "format": "MP4",
+                },
+                {
+                    "deviceLabel": "agreement",
+                    "fileId": "420a4847-cba1-4785-8a1e-1b592ca4d775",
+                    "format": "MOVE",
                 },
             ],
-            "metadata": '{"decade": -127471.91004658, "other": 4537, "draw": 9025, "table": "fPlGoqlVJAWBmofrulqS", "huge": "RLQMnHdwIMQHuSbBEcSq", "last": "CliYtuFCSJkGbKACMVZc", "trouble": "1982-01-05 12:28:54", "analysis": "ableRsSGSBRpUxDKSTZs", "house": "EQQpSzpRFSYEmmcBHMyX", "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053"}',
-            "video_file_id": "b898a7a5-37be-4600-bdc6-8ffa06c7a4f6",
         },
     },
 ]
 
 snapshots["TestTakeService.test_create[no_expand] create_response_expand_None"] = {
-    "additional_files": None,
     "client": None,
     "created": GenericRepr(
         "datetime.datetime(2023, 6, 29, 8, 54, 52, 349467, tzinfo=TzInfo(UTC))",
@@ -364,19 +402,15 @@ snapshots["TestTakeService.test_create[no_expand] create_response_expand_None"] 
         "table": "fPlGoqlVJAWBmofrulqS",
         "trouble": "1982-01-05 12:28:54",
     },
-    "video_file": None,
+    "sources": None,
 }
 
 snapshots[
     "TestTakeService.test_create_lower_additional_file_key create_mutation_lower_additional_file_key"
 ] = [
     [
-        """mutation create($video_file_id: String!, $additional_file_ids: [TakeFileInput!], $metadata: AWSJSON) {
-  createTake(
-    videoFileId: $video_file_id
-    additionalFileIds: $additional_file_ids
-    metadata: $metadata
-  ) {
+        """mutation create($sources: [SourceInput!], $metadata: AWSJSON) {
+  createSingleCamTake(sources: $sources, metadata: $metadata) {
     id
     created
     metadata
@@ -387,14 +421,19 @@ snapshots[
     {
         "operation_name": None,
         "variable_values": {
-            "additional_file_ids": [
+            "metadata": '"{}"',
+            "sources": [
                 {
-                    "fileId": "cba1d785-4a1e-4b59-aca4-d775bfdde401",
-                    "key": "DEPTH",
+                    "deviceLabel": "agreement",
+                    "fileId": "bfdde401-b898-47a5-b7be-a600bdc68ffa",
+                    "format": "MP4",
+                },
+                {
+                    "deviceLabel": "contain",
+                    "fileId": "0068cf0f-420a-4847-8ba1-d7854a1e1b59",
+                    "format": "MOVE",
                 },
             ],
-            "metadata": '"{}"',
-            "video_file_id": "b898a7a5-37be-4600-bdc6-8ffa06c7a4f6",
         },
     },
 ]
@@ -402,7 +441,6 @@ snapshots[
 snapshots[
     "TestTakeService.test_create_lower_additional_file_key create_response_lower_additional_file_key"
 ] = {
-    "additional_files": None,
     "client": None,
     "created": GenericRepr(
         "datetime.datetime(2023, 6, 29, 8, 54, 52, 349467, tzinfo=TzInfo(UTC))",
@@ -420,7 +458,7 @@ snapshots[
         "table": "fPlGoqlVJAWBmofrulqS",
         "trouble": "1982-01-05 12:28:54",
     },
-    "video_file": None,
+    "sources": None,
 }
 
 snapshots["TestTakeService.test_fetch_service 1"] = GenericRepr(
@@ -430,7 +468,6 @@ snapshots["TestTakeService.test_fetch_service 1"] = GenericRepr(
 snapshots["TestTakeService.test_list list_response"] = {
     "items": [
         {
-            "additional_files": None,
             "client": None,
             "created": GenericRepr(
                 "datetime.datetime(2023, 6, 29, 8, 54, 52, 349467, tzinfo=TzInfo(UTC))",
@@ -448,7 +485,7 @@ snapshots["TestTakeService.test_list list_response"] = {
                 "table": "fPlGoqlVJAWBmofrulqS",
                 "trouble": "1982-01-05 12:28:54",
             },
-            "video_file": None,
+            "sources": None,
         },
     ],
     "limit": 433,
@@ -514,7 +551,6 @@ snapshots["TestTakeService.test_retrieve[empty_expand] retrieve_request_expand_[
 ]
 
 snapshots["TestTakeService.test_retrieve[empty_expand] retrieve_response_expand_[]"] = {
-    "additional_files": None,
     "client": None,
     "created": GenericRepr(
         "datetime.datetime(2023, 6, 29, 8, 54, 52, 349467, tzinfo=TzInfo(UTC))",
@@ -532,11 +568,11 @@ snapshots["TestTakeService.test_retrieve[empty_expand] retrieve_response_expand_
         "table": "fPlGoqlVJAWBmofrulqS",
         "trouble": "1982-01-05 12:28:54",
     },
-    "video_file": None,
+    "sources": None,
 }
 
 snapshots[
-    "TestTakeService.test_retrieve[expand_additional_files] retrieve_request_expand_additional_files"
+    "TestTakeService.test_retrieve[expand_additional_files] retrieve_request_expand_sources"
 ] = [
     [
         """query retrieve($id: ID!) {
@@ -544,8 +580,8 @@ snapshots[
     id
     created
     metadata
-    additionalFiles {
-      key
+    sources {
+      deviceLabel
       file {
         id
         created
@@ -554,7 +590,7 @@ snapshots[
         presignedUrl
         __typename
       }
-      __typename
+      format
     }
     __typename
   }
@@ -569,10 +605,28 @@ snapshots[
 ]
 
 snapshots[
-    "TestTakeService.test_retrieve[expand_additional_files] retrieve_response_expand_additional_files"
+    "TestTakeService.test_retrieve[expand_additional_files] retrieve_response_expand_sources"
 ] = {
-    "additional_files": [
+    "client": None,
+    "created": GenericRepr(
+        "datetime.datetime(2023, 6, 29, 8, 54, 52, 349467, tzinfo=TzInfo(UTC))",
+    ),
+    "id": "take-af54cc45-7137-4206-a4c1-b3bc21b398fc",
+    "metadata": {
+        "analysis": "ableRsSGSBRpUxDKSTZs",
+        "decade": -127471.91004658,
+        "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053",
+        "draw": 9025,
+        "house": "EQQpSzpRFSYEmmcBHMyX",
+        "huge": "RLQMnHdwIMQHuSbBEcSq",
+        "last": "CliYtuFCSJkGbKACMVZc",
+        "other": 4537,
+        "table": "fPlGoqlVJAWBmofrulqS",
+        "trouble": "1982-01-05 12:28:54",
+    },
+    "sources": [
         {
+            "device_label": "foobar",
             "file": {
                 "client": None,
                 "created": GenericRepr(
@@ -596,27 +650,36 @@ snapshots[
                 ),
                 "type": ".mp4",
             },
-            "key": "DEPTH",
+            "format": "MP4",
+        },
+        {
+            "device_label": "foobar",
+            "file": {
+                "client": None,
+                "created": GenericRepr(
+                    "datetime.datetime(2023, 7, 3, 14, 48, 6, 29019, tzinfo=TzInfo(UTC))",
+                ),
+                "id": "file-a0059241-7ede-411c-a149-769a4305e8b6",
+                "metadata": {
+                    "analysis": "ableRsSGSBRpUxDKSTZs",
+                    "decade": -127471.91004658,
+                    "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053",
+                    "draw": 9025,
+                    "house": "EQQpSzpRFSYEmmcBHMyX",
+                    "huge": "RLQMnHdwIMQHuSbBEcSq",
+                    "last": "CliYtuFCSJkGbKACMVZc",
+                    "other": 4537,
+                    "table": "fPlGoqlVJAWBmofrulqS",
+                    "trouble": "1982-01-05 12:28:54",
+                },
+                "presigned_url": GenericRepr(
+                    "Url('https://pytest_invalid_presigned_url.com/file')",
+                ),
+                "type": ".mp4",
+            },
+            "format": "MOVE",
         },
     ],
-    "client": None,
-    "created": GenericRepr(
-        "datetime.datetime(2023, 6, 29, 8, 54, 52, 349467, tzinfo=TzInfo(UTC))",
-    ),
-    "id": "take-af54cc45-7137-4206-a4c1-b3bc21b398fc",
-    "metadata": {
-        "analysis": "ableRsSGSBRpUxDKSTZs",
-        "decade": -127471.91004658,
-        "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053",
-        "draw": 9025,
-        "house": "EQQpSzpRFSYEmmcBHMyX",
-        "huge": "RLQMnHdwIMQHuSbBEcSq",
-        "last": "CliYtuFCSJkGbKACMVZc",
-        "other": 4537,
-        "table": "fPlGoqlVJAWBmofrulqS",
-        "trouble": "1982-01-05 12:28:54",
-    },
-    "video_file": None,
 }
 
 snapshots[
@@ -651,7 +714,6 @@ snapshots[
 snapshots[
     "TestTakeService.test_retrieve[expand_client] retrieve_response_expand_client"
 ] = {
-    "additional_files": None,
     "client": {
         "created": GenericRepr(
             "datetime.datetime(2023, 6, 12, 0, 0, tzinfo=TzInfo(UTC))",
@@ -681,11 +743,11 @@ snapshots[
         "table": "fPlGoqlVJAWBmofrulqS",
         "trouble": "1982-01-05 12:28:54",
     },
-    "video_file": None,
+    "sources": None,
 }
 
 snapshots[
-    "TestTakeService.test_retrieve[expand_video_file] retrieve_request_expand_video_file"
+    "TestTakeService.test_retrieve[expand_video_file] retrieve_request_expand_sources"
 ] = [
     [
         """query retrieve($id: ID!) {
@@ -693,13 +755,17 @@ snapshots[
     id
     created
     metadata
-    videoFile {
-      id
-      created
-      type
-      metadata
-      presignedUrl
-      __typename
+    sources {
+      deviceLabel
+      file {
+        id
+        created
+        type
+        metadata
+        presignedUrl
+        __typename
+      }
+      format
     }
     __typename
   }
@@ -714,9 +780,8 @@ snapshots[
 ]
 
 snapshots[
-    "TestTakeService.test_retrieve[expand_video_file] retrieve_response_expand_video_file"
+    "TestTakeService.test_retrieve[expand_video_file] retrieve_response_expand_sources"
 ] = {
-    "additional_files": None,
     "client": None,
     "created": GenericRepr(
         "datetime.datetime(2023, 6, 29, 8, 54, 52, 349467, tzinfo=TzInfo(UTC))",
@@ -734,29 +799,35 @@ snapshots[
         "table": "fPlGoqlVJAWBmofrulqS",
         "trouble": "1982-01-05 12:28:54",
     },
-    "video_file": {
-        "client": None,
-        "created": GenericRepr(
-            "datetime.datetime(2023, 7, 3, 14, 48, 6, 29019, tzinfo=TzInfo(UTC))",
-        ),
-        "id": "file-a0059241-7ede-411c-a149-769a4305e8b6",
-        "metadata": {
-            "analysis": "ableRsSGSBRpUxDKSTZs",
-            "decade": -127471.91004658,
-            "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053",
-            "draw": 9025,
-            "house": "EQQpSzpRFSYEmmcBHMyX",
-            "huge": "RLQMnHdwIMQHuSbBEcSq",
-            "last": "CliYtuFCSJkGbKACMVZc",
-            "other": 4537,
-            "table": "fPlGoqlVJAWBmofrulqS",
-            "trouble": "1982-01-05 12:28:54",
+    "sources": [
+        {
+            "device_label": "foobar",
+            "file": {
+                "client": None,
+                "created": GenericRepr(
+                    "datetime.datetime(2023, 7, 3, 14, 48, 6, 29019, tzinfo=TzInfo(UTC))",
+                ),
+                "id": "file-a0059241-7ede-411c-a149-769a4305e8b6",
+                "metadata": {
+                    "analysis": "ableRsSGSBRpUxDKSTZs",
+                    "decade": -127471.91004658,
+                    "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053",
+                    "draw": 9025,
+                    "house": "EQQpSzpRFSYEmmcBHMyX",
+                    "huge": "RLQMnHdwIMQHuSbBEcSq",
+                    "last": "CliYtuFCSJkGbKACMVZc",
+                    "other": 4537,
+                    "table": "fPlGoqlVJAWBmofrulqS",
+                    "trouble": "1982-01-05 12:28:54",
+                },
+                "presigned_url": GenericRepr(
+                    "Url('https://pytest_invalid_presigned_url.com/file')",
+                ),
+                "type": ".mp4",
+            },
+            "format": "MP4",
         },
-        "presigned_url": GenericRepr(
-            "Url('https://pytest_invalid_presigned_url.com/file')",
-        ),
-        "type": ".mp4",
-    },
+    ],
 }
 
 snapshots["TestTakeService.test_retrieve[no_expand] retrieve_request_expand_None"] = [
@@ -779,7 +850,6 @@ snapshots["TestTakeService.test_retrieve[no_expand] retrieve_request_expand_None
 ]
 
 snapshots["TestTakeService.test_retrieve[no_expand] retrieve_response_expand_None"] = {
-    "additional_files": None,
     "client": None,
     "created": GenericRepr(
         "datetime.datetime(2023, 6, 29, 8, 54, 52, 349467, tzinfo=TzInfo(UTC))",
@@ -797,7 +867,7 @@ snapshots["TestTakeService.test_retrieve[no_expand] retrieve_response_expand_Non
         "table": "fPlGoqlVJAWBmofrulqS",
         "trouble": "1982-01-05 12:28:54",
     },
-    "video_file": None,
+    "sources": None,
 }
 
 snapshots["TestTakeService.test_take_not_found take_not_found_response"] = [
@@ -840,7 +910,6 @@ snapshots["TestTakeService.test_update[empty_expand] update_mutation_expand_[]"]
 ]
 
 snapshots["TestTakeService.test_update[empty_expand] update_response_expand_[]"] = {
-    "additional_files": None,
     "client": None,
     "created": GenericRepr(
         "datetime.datetime(2023, 6, 29, 8, 54, 52, 349467, tzinfo=TzInfo(UTC))",
@@ -858,11 +927,11 @@ snapshots["TestTakeService.test_update[empty_expand] update_response_expand_[]"]
         "table": "fPlGoqlVJAWBmofrulqS",
         "trouble": "1982-01-05 12:28:54",
     },
-    "video_file": None,
+    "sources": None,
 }
 
 snapshots[
-    "TestTakeService.test_update[expand_additional_files] update_mutation_expand_additional_files"
+    "TestTakeService.test_update[expand_additional_files] update_mutation_expand_sources"
 ] = [
     [
         """mutation update($id: String!, $metadata: AWSJSON!) {
@@ -870,8 +939,8 @@ snapshots[
     id
     created
     metadata
-    additionalFiles {
-      key
+    sources {
+      deviceLabel
       file {
         id
         created
@@ -880,7 +949,7 @@ snapshots[
         presignedUrl
         __typename
       }
-      __typename
+      format
     }
     __typename
   }
@@ -896,10 +965,28 @@ snapshots[
 ]
 
 snapshots[
-    "TestTakeService.test_update[expand_additional_files] update_response_expand_additional_files"
+    "TestTakeService.test_update[expand_additional_files] update_response_expand_sources"
 ] = {
-    "additional_files": [
+    "client": None,
+    "created": GenericRepr(
+        "datetime.datetime(2023, 6, 29, 8, 54, 52, 349467, tzinfo=TzInfo(UTC))",
+    ),
+    "id": "take-af54cc45-7137-4206-a4c1-b3bc21b398fc",
+    "metadata": {
+        "analysis": "ableRsSGSBRpUxDKSTZs",
+        "decade": -127471.91004658,
+        "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053",
+        "draw": 9025,
+        "house": "EQQpSzpRFSYEmmcBHMyX",
+        "huge": "RLQMnHdwIMQHuSbBEcSq",
+        "last": "CliYtuFCSJkGbKACMVZc",
+        "other": 4537,
+        "table": "fPlGoqlVJAWBmofrulqS",
+        "trouble": "1982-01-05 12:28:54",
+    },
+    "sources": [
         {
+            "device_label": "foobar",
             "file": {
                 "client": None,
                 "created": GenericRepr(
@@ -923,27 +1010,36 @@ snapshots[
                 ),
                 "type": ".mp4",
             },
-            "key": "DEPTH",
+            "format": "MP4",
+        },
+        {
+            "device_label": "foobar",
+            "file": {
+                "client": None,
+                "created": GenericRepr(
+                    "datetime.datetime(2023, 7, 3, 14, 48, 6, 29019, tzinfo=TzInfo(UTC))",
+                ),
+                "id": "file-a0059241-7ede-411c-a149-769a4305e8b6",
+                "metadata": {
+                    "analysis": "ableRsSGSBRpUxDKSTZs",
+                    "decade": -127471.91004658,
+                    "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053",
+                    "draw": 9025,
+                    "house": "EQQpSzpRFSYEmmcBHMyX",
+                    "huge": "RLQMnHdwIMQHuSbBEcSq",
+                    "last": "CliYtuFCSJkGbKACMVZc",
+                    "other": 4537,
+                    "table": "fPlGoqlVJAWBmofrulqS",
+                    "trouble": "1982-01-05 12:28:54",
+                },
+                "presigned_url": GenericRepr(
+                    "Url('https://pytest_invalid_presigned_url.com/file')",
+                ),
+                "type": ".mp4",
+            },
+            "format": "MOVE",
         },
     ],
-    "client": None,
-    "created": GenericRepr(
-        "datetime.datetime(2023, 6, 29, 8, 54, 52, 349467, tzinfo=TzInfo(UTC))",
-    ),
-    "id": "take-af54cc45-7137-4206-a4c1-b3bc21b398fc",
-    "metadata": {
-        "analysis": "ableRsSGSBRpUxDKSTZs",
-        "decade": -127471.91004658,
-        "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053",
-        "draw": 9025,
-        "house": "EQQpSzpRFSYEmmcBHMyX",
-        "huge": "RLQMnHdwIMQHuSbBEcSq",
-        "last": "CliYtuFCSJkGbKACMVZc",
-        "other": 4537,
-        "table": "fPlGoqlVJAWBmofrulqS",
-        "trouble": "1982-01-05 12:28:54",
-    },
-    "video_file": None,
 }
 
 snapshots[
@@ -979,7 +1075,6 @@ snapshots[
 snapshots[
     "TestTakeService.test_update[expand_client] update_response_expand_client"
 ] = {
-    "additional_files": None,
     "client": {
         "created": GenericRepr(
             "datetime.datetime(2023, 6, 12, 0, 0, tzinfo=TzInfo(UTC))",
@@ -1009,11 +1104,11 @@ snapshots[
         "table": "fPlGoqlVJAWBmofrulqS",
         "trouble": "1982-01-05 12:28:54",
     },
-    "video_file": None,
+    "sources": None,
 }
 
 snapshots[
-    "TestTakeService.test_update[expand_video_file] update_mutation_expand_video_file"
+    "TestTakeService.test_update[expand_video_file] update_mutation_expand_sources"
 ] = [
     [
         """mutation update($id: String!, $metadata: AWSJSON!) {
@@ -1021,13 +1116,17 @@ snapshots[
     id
     created
     metadata
-    videoFile {
-      id
-      created
-      type
-      metadata
-      presignedUrl
-      __typename
+    sources {
+      deviceLabel
+      file {
+        id
+        created
+        type
+        metadata
+        presignedUrl
+        __typename
+      }
+      format
     }
     __typename
   }
@@ -1043,9 +1142,8 @@ snapshots[
 ]
 
 snapshots[
-    "TestTakeService.test_update[expand_video_file] update_response_expand_video_file"
+    "TestTakeService.test_update[expand_video_file] update_response_expand_sources"
 ] = {
-    "additional_files": None,
     "client": None,
     "created": GenericRepr(
         "datetime.datetime(2023, 6, 29, 8, 54, 52, 349467, tzinfo=TzInfo(UTC))",
@@ -1063,29 +1161,35 @@ snapshots[
         "table": "fPlGoqlVJAWBmofrulqS",
         "trouble": "1982-01-05 12:28:54",
     },
-    "video_file": {
-        "client": None,
-        "created": GenericRepr(
-            "datetime.datetime(2023, 7, 3, 14, 48, 6, 29019, tzinfo=TzInfo(UTC))",
-        ),
-        "id": "file-a0059241-7ede-411c-a149-769a4305e8b6",
-        "metadata": {
-            "analysis": "ableRsSGSBRpUxDKSTZs",
-            "decade": -127471.91004658,
-            "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053",
-            "draw": 9025,
-            "house": "EQQpSzpRFSYEmmcBHMyX",
-            "huge": "RLQMnHdwIMQHuSbBEcSq",
-            "last": "CliYtuFCSJkGbKACMVZc",
-            "other": 4537,
-            "table": "fPlGoqlVJAWBmofrulqS",
-            "trouble": "1982-01-05 12:28:54",
+    "sources": [
+        {
+            "device_label": "foobar",
+            "file": {
+                "client": None,
+                "created": GenericRepr(
+                    "datetime.datetime(2023, 7, 3, 14, 48, 6, 29019, tzinfo=TzInfo(UTC))",
+                ),
+                "id": "file-a0059241-7ede-411c-a149-769a4305e8b6",
+                "metadata": {
+                    "analysis": "ableRsSGSBRpUxDKSTZs",
+                    "decade": -127471.91004658,
+                    "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053",
+                    "draw": 9025,
+                    "house": "EQQpSzpRFSYEmmcBHMyX",
+                    "huge": "RLQMnHdwIMQHuSbBEcSq",
+                    "last": "CliYtuFCSJkGbKACMVZc",
+                    "other": 4537,
+                    "table": "fPlGoqlVJAWBmofrulqS",
+                    "trouble": "1982-01-05 12:28:54",
+                },
+                "presigned_url": GenericRepr(
+                    "Url('https://pytest_invalid_presigned_url.com/file')",
+                ),
+                "type": ".mp4",
+            },
+            "format": "MP4",
         },
-        "presigned_url": GenericRepr(
-            "Url('https://pytest_invalid_presigned_url.com/file')",
-        ),
-        "type": ".mp4",
-    },
+    ],
 }
 
 snapshots["TestTakeService.test_update[no_expand] update_mutation_expand_None"] = [
@@ -1109,7 +1213,6 @@ snapshots["TestTakeService.test_update[no_expand] update_mutation_expand_None"] 
 ]
 
 snapshots["TestTakeService.test_update[no_expand] update_response_expand_None"] = {
-    "additional_files": None,
     "client": None,
     "created": GenericRepr(
         "datetime.datetime(2023, 6, 29, 8, 54, 52, 349467, tzinfo=TzInfo(UTC))",
@@ -1127,5 +1230,5 @@ snapshots["TestTakeService.test_update[no_expand] update_response_expand_None"] 
         "table": "fPlGoqlVJAWBmofrulqS",
         "trouble": "1982-01-05 12:28:54",
     },
-    "video_file": None,
+    "sources": None,
 }

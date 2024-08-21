@@ -9,7 +9,7 @@ snapshots = Snapshot()
 snapshots["TestJobService.test_create[empty_expand] create_mutation_expand_[]"] = [
     [
         """mutation create($take_id: String!, $metadata: AWSJSON) {
-  createJob(takeId: $take_id, metadata: $metadata) {
+  createSingleCamJob(takeId: $take_id, metadata: $metadata) {
     id
     created
     metadata
@@ -53,7 +53,7 @@ snapshots["TestJobService.test_create[empty_expand] create_response_expand_[]"] 
 snapshots["TestJobService.test_create[expand_client] create_mutation_expand_client"] = [
     [
         """mutation create($take_id: String!, $metadata: AWSJSON) {
-  createJob(takeId: $take_id, metadata: $metadata) {
+  createSingleCamJob(takeId: $take_id, metadata: $metadata) {
     id
     created
     metadata
@@ -119,7 +119,7 @@ snapshots[
 ] = [
     [
         """mutation create($take_id: String!, $metadata: AWSJSON) {
-  createJob(takeId: $take_id, metadata: $metadata) {
+  createSingleCamJob(takeId: $take_id, metadata: $metadata) {
     id
     created
     metadata
@@ -230,7 +230,7 @@ snapshots[
 snapshots["TestJobService.test_create[expand_take] create_mutation_expand_take"] = [
     [
         """mutation create($take_id: String!, $metadata: AWSJSON) {
-  createJob(takeId: $take_id, metadata: $metadata) {
+  createSingleCamJob(takeId: $take_id, metadata: $metadata) {
     id
     created
     metadata
@@ -275,7 +275,6 @@ snapshots["TestJobService.test_create[expand_take] create_response_expand_take"]
     "outputs": None,
     "state": "RUNNING",
     "take": {
-        "additional_files": None,
         "client": None,
         "created": GenericRepr(
             "datetime.datetime(2023, 6, 29, 8, 54, 52, 349467, tzinfo=TzInfo(UTC))",
@@ -293,14 +292,14 @@ snapshots["TestJobService.test_create[expand_take] create_response_expand_take"]
             "table": "fPlGoqlVJAWBmofrulqS",
             "trouble": "1982-01-05 12:28:54",
         },
-        "video_file": None,
+        "sources": None,
     },
 }
 
 snapshots["TestJobService.test_create[no_expand] create_mutation_expand_None"] = [
     [
         """mutation create($take_id: String!, $metadata: AWSJSON) {
-  createJob(takeId: $take_id, metadata: $metadata) {
+  createSingleCamJob(takeId: $take_id, metadata: $metadata) {
     id
     created
     metadata
@@ -783,7 +782,6 @@ snapshots["TestJobService.test_retrieve[expand_take] retrieve_response_expand_ta
     "outputs": None,
     "state": "RUNNING",
     "take": {
-        "additional_files": None,
         "client": None,
         "created": GenericRepr(
             "datetime.datetime(2023, 6, 29, 8, 54, 52, 349467, tzinfo=TzInfo(UTC))",
@@ -801,7 +799,7 @@ snapshots["TestJobService.test_retrieve[expand_take] retrieve_response_expand_ta
             "table": "fPlGoqlVJAWBmofrulqS",
             "trouble": "1982-01-05 12:28:54",
         },
-        "video_file": None,
+        "sources": None,
     },
 }
 

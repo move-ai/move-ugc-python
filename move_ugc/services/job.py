@@ -89,7 +89,7 @@ class JobService(BaseService[JobType]):
         metadata: Optional[Dict[str, Any]] = None,
         expand: Optional[List[ALLOWED_EXPAND_ATTRS]] = None,
     ) -> JobType:
-        """Update a take with given take_id in MoveUGC.
+        """Update a job with given job in MoveUGC.
 
         Args:
             id:
@@ -98,7 +98,7 @@ class JobService(BaseService[JobType]):
                 metadata to be used for updating the take. This should be a valid json string.
             expand:
                 list of fields to be expanded.
-                Currently only `client`, `video_file` and `additional_files` are supported.
+                Currently only `client`, `output`, `take` and `sources` are supported.
 
         Returns:
             Take instance of Pydantic model type.

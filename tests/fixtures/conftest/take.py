@@ -5,7 +5,7 @@ from typing import Any, Dict
 import pytest
 from graphql.execution.execute import ExecutionResult
 
-from move_ugc.schemas.additional_file import TakeAdditionalFileKeys
+from move_ugc.schemas.sources import TakeSourceKey
 from tests.constants import (
     CLIENT_LITERAL,
     CREATE_TAKE_MUTATION,
@@ -262,14 +262,14 @@ def take_update_response_with_client(
     )
 
 
-def build_response_with_video_file(
+def build_response_with_video_source(
     fake_response,
     fake_file_json,
     mock_transport,
     introspection_result,
     key,
 ):
-    """Build response with additional files.
+    """Build response with video source.
 
     Args:
         fake_response (FakeTakeJson): Fake take json.
@@ -281,115 +281,10 @@ def build_response_with_video_file(
     Returns:
         FakeTakeJson: Fake take response.
     """
-    fake_response[key]["videoFile"] = fake_file_json
-    take_response = ExecutionResult(data=fake_response)
-    mock_transport.side_effect = [introspection_result, take_response]
-    return take_response
-
-
-@pytest.fixture
-def take_create_response_with_video_file(
-    mock_transport,
-    fake_create_take_response,
-    introspection_result,
-    fake_file_json,
-) -> FakeTakeJson:
-    """Fixture to return a fake take response for createTake mutation with video file.
-
-    Args:
-        fake_create_take_response (FakeTakeJson): Fake take json.
-        mock_transport (MockTransport): Mock transport.
-        introspection_result (dict[str, str]): Introspection result.
-        fake_file_json (dict[str, str]): Fake file json.
-
-    Yields:
-        FakeTakeJson: Fake take response.
-    """
-    yield build_response_with_video_file(
-        fake_response=fake_create_take_response.copy(),
-        fake_file_json=fake_file_json,
-        mock_transport=mock_transport,
-        introspection_result=introspection_result,
-        key=CREATE_TAKE_MUTATION,
-    )
-
-
-@pytest.fixture
-def take_retrieve_response_with_video_file(
-    mock_transport,
-    fake_retrieve_take_response,
-    introspection_result,
-    fake_file_json,
-) -> FakeTakeJson:
-    """Fixture to return a fake take response for getTake query with video file.
-
-    Args:
-        fake_retrieve_take_response (FakeTakeJson): Fake take json.
-        mock_transport (MockTransport): Mock transport.
-        introspection_result (dict[str, str]): Introspection result.
-        fake_file_json (dict[str, str]): Fake file json.
-
-    Yields:
-        FakeTakeJson: Fake take response.
-    """
-    yield build_response_with_video_file(
-        fake_response=fake_retrieve_take_response.copy(),
-        fake_file_json=fake_file_json,
-        mock_transport=mock_transport,
-        introspection_result=introspection_result,
-        key=GET_TAKE_QUERY,
-    )
-
-
-@pytest.fixture
-def take_update_response_with_video_file(
-    mock_transport,
-    fake_update_take_response,
-    introspection_result,
-    fake_file_json,
-) -> FakeTakeJson:
-    """Fixture to return a fake take response for getTake query with video file.
-
-    Args:
-        fake_update_take_response (FakeTakeJson): Fake take json.
-        mock_transport (MockTransport): Mock transport.
-        introspection_result (dict[str, str]): Introspection result.
-        fake_file_json (dict[str, str]): Fake file json.
-
-    Yields:
-        FakeTakeJson: Fake take response.
-    """
-    yield build_response_with_video_file(
-        fake_response=fake_update_take_response.copy(),
-        fake_file_json=fake_file_json,
-        mock_transport=mock_transport,
-        introspection_result=introspection_result,
-        key=UPDATE_TAKE_MUTATION,
-    )
-
-
-def build_response_with_additional_files(
-    fake_response,
-    fake_file_json,
-    mock_transport,
-    introspection_result,
-    key,
-):
-    """Build response with additional files.
-
-    Args:
-        fake_response (FakeTakeJson): Fake take json.
-        fake_file_json (dict[str, str]): Fake file json.
-        mock_transport (MockTransport): Mock transport.
-        introspection_result (dict[str, str]): Introspection result.
-        key (str): Key of graphql query.
-
-    Returns:
-        FakeTakeJson: Fake take response.
-    """
-    fake_response[key]["additionalFiles"] = [
+    fake_response[key]["sources"] = [
         {
-            "key": TakeAdditionalFileKeys.depth.value,
+            "deviceLabel": "foobar",
+            "format": TakeSourceKey.mp4.value,
             "file": fake_file_json,
         },
     ]
@@ -399,13 +294,13 @@ def build_response_with_additional_files(
 
 
 @pytest.fixture
-def take_create_response_with_additional_files(
+def take_create_response_with_video_source(
     mock_transport,
     fake_create_take_response,
     introspection_result,
     fake_file_json,
 ) -> FakeTakeJson:
-    """Fixture to return a fake take response for createTake mutation with additional files.
+    """Fixture to return a fake take response for createTake mutation with video source.
 
     Args:
         fake_create_take_response (FakeTakeJson): Fake take json.
@@ -416,7 +311,7 @@ def take_create_response_with_additional_files(
     Yields:
         FakeTakeJson: Fake take response.
     """
-    yield build_response_with_additional_files(
+    yield build_response_with_video_source(
         fake_response=fake_create_take_response.copy(),
         fake_file_json=fake_file_json,
         mock_transport=mock_transport,
@@ -426,7 +321,125 @@ def take_create_response_with_additional_files(
 
 
 @pytest.fixture
-def take_retrieve_response_with_additional_files(
+def take_retrieve_response_with_video_source(
+    mock_transport,
+    fake_retrieve_take_response,
+    introspection_result,
+    fake_file_json,
+) -> FakeTakeJson:
+    """Fixture to return a fake take response for getTake query with video source.
+
+    Args:
+        fake_retrieve_take_response (FakeTakeJson): Fake take json.
+        mock_transport (MockTransport): Mock transport.
+        introspection_result (dict[str, str]): Introspection result.
+        fake_file_json (dict[str, str]): Fake file json.
+
+    Yields:
+        FakeTakeJson: Fake take response.
+    """
+    yield build_response_with_video_source(
+        fake_response=fake_retrieve_take_response.copy(),
+        fake_file_json=fake_file_json,
+        mock_transport=mock_transport,
+        introspection_result=introspection_result,
+        key=GET_TAKE_QUERY,
+    )
+
+
+@pytest.fixture
+def take_update_response_with_video_source(
+    mock_transport,
+    fake_update_take_response,
+    introspection_result,
+    fake_file_json,
+) -> FakeTakeJson:
+    """Fixture to return a fake take response for getTake query with video source.
+
+    Args:
+        fake_update_take_response (FakeTakeJson): Fake take json.
+        mock_transport (MockTransport): Mock transport.
+        introspection_result (dict[str, str]): Introspection result.
+        fake_file_json (dict[str, str]): Fake file json.
+
+    Yields:
+        FakeTakeJson: Fake take response.
+    """
+    yield build_response_with_video_source(
+        fake_response=fake_update_take_response.copy(),
+        fake_file_json=fake_file_json,
+        mock_transport=mock_transport,
+        introspection_result=introspection_result,
+        key=UPDATE_TAKE_MUTATION,
+    )
+
+
+def build_response_with_additional_sources(
+    fake_response,
+    fake_file_json,
+    mock_transport,
+    introspection_result,
+    key,
+):
+    """Build response with additional sources.
+
+    Args:
+        fake_response (FakeTakeJson): Fake take json.
+        fake_file_json (dict[str, str]): Fake file json.
+        mock_transport (MockTransport): Mock transport.
+        introspection_result (dict[str, str]): Introspection result.
+        key (str): Key of graphql query.
+
+    Returns:
+        FakeTakeJson: Fake take response.
+    """
+    device_label = "foobar"
+    fake_response[key]["sources"] = [
+        {
+            "deviceLabel": device_label,
+            "format": TakeSourceKey.mp4.value,
+            "file": fake_file_json,
+        },
+        {
+            "deviceLabel": device_label,
+            "format": TakeSourceKey.move.value,
+            "file": fake_file_json,
+        },
+    ]
+    take_response = ExecutionResult(data=fake_response)
+    mock_transport.side_effect = [introspection_result, take_response]
+    return take_response
+
+
+@pytest.fixture
+def take_create_response_with_additional_sources(
+    mock_transport,
+    fake_create_take_response,
+    introspection_result,
+    fake_file_json,
+) -> FakeTakeJson:
+    """Fixture to return a fake take response for createTake mutation with sources.
+
+    Args:
+        fake_create_take_response (FakeTakeJson): Fake take json.
+        mock_transport (MockTransport): Mock transport.
+        introspection_result (dict[str, str]): Introspection result.
+        fake_file_json (dict[str, str]): Fake file json.
+
+    Yields:
+        FakeTakeJson: Fake take response.
+    """
+    yield build_response_with_additional_sources(
+        fake_response=fake_create_take_response.copy(),
+        fake_file_json=fake_file_json,
+        mock_transport=mock_transport,
+        introspection_result=introspection_result,
+        key=CREATE_TAKE_MUTATION,
+    )
+
+
+@pytest.fixture
+def take_retrieve_response_with_additional_sources(  # noqa: WPS118
     mock_transport,
     fake_retrieve_take_response,
     introspection_result,
@@ -443,7 +456,7 @@ def take_retrieve_response_with_additional_files(
     Yields:
         FakeTakeJson: Fake take response.
     """
-    yield build_response_with_additional_files(
+    yield build_response_with_additional_sources(
         fake_response=fake_retrieve_take_response.copy(),
         fake_file_json=fake_file_json,
         mock_transport=mock_transport,
@@ -453,13 +466,13 @@ def take_retrieve_response_with_additional_files(
 
 
 @pytest.fixture
-def take_update_response_with_additional_files(
+def take_update_response_with_additional_sources(
     mock_transport,
     fake_update_take_response,
     introspection_result,
     fake_file_json,
 ) -> FakeTakeJson:
-    """Fixture to return a fake take response for getTake query with additional files.
+    """Fixture to return a fake take response for getTake query with additional sources.
 
     Args:
         fake_update_take_response (FakeTakeJson): Fake take json.
@@ -470,7 +483,7 @@ def take_update_response_with_additional_files(
     Yields:
         FakeTakeJson: Fake take response.
     """
-    yield build_response_with_additional_files(
+    yield build_response_with_additional_sources(
         fake_response=fake_update_take_response.copy(),
         fake_file_json=fake_file_json,
         mock_transport=mock_transport,

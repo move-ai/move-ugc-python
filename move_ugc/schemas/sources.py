@@ -7,13 +7,12 @@ from pydantic import BaseModel, Field
 from move_ugc.schemas.file import FileType
 
 
-class TakeAdditionalFileKeys(str, Enum):  # noqa: WPS600
-    """Choices for take additional file keys."""
+class TakeSourceKey(str, Enum):  # noqa: WPS600
+    """Choices for take source keys."""
 
-    depth = "DEPTH"
-    odometry = "ODOMETRY"
-    vision = "VISION"
-    intrinsic = "INTRINSIC"
+    mp4 = "MP4"
+    avi = "AVI"
+    mov = "MOV"
     move = "MOVE"
 
     @classmethod
@@ -51,18 +50,25 @@ class AdditionalFileType(BaseModel):
     )
 
 
-class AdditionalFileIn(BaseModel, use_enum_values=True):
-    """Additional file input required for creating a take."""
+class SourceIn(BaseModel, use_enum_values=True):
+    """Source input required for creating a take."""
 
-    key: TakeAdditionalFileKeys = Field(
-        description="Identification key for the additional file",
-        title="Additional file key",
-        examples=["depth", "odometry", "vision", "intrinsic"],
+    device_label: str = Field(
+        description="Label for the device",
+        title="Device label",
+        examples=["my-device"],
+        serialization_alias="deviceLabel",
     )
 
     file_id: str = Field(
-        description="File ID of the file to be associated with the additional file",
+        description="File ID of the file associated with the source",
         title="File ID",
         examples=["file-2c6059be-0f91-4cb8-aa1a-512cd10a66b5"],
         serialization_alias="fileId",
+    )
+
+    format: TakeSourceKey = Field(
+        description="Format of the source",
+        title="Source format",
+        examples=["MP4", "MOVE"],
     )

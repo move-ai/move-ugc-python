@@ -74,7 +74,7 @@ generate_share_code = UgcGql(
 )
 
 expand_video_file = f"""
-    videoFile {{
+    file {{
         {expand_file_base}
     }}
 """
