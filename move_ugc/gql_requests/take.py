@@ -1,12 +1,7 @@
 """Take gql requests for Move UGC SDK."""
-from move_ugc.gql_requests.additional_file import expand_additional_file
 from move_ugc.gql_requests.client import expand_client_query
 from move_ugc.gql_requests.file import expand_video_file
-from move_ugc.schemas.constants import (
-    ADDITIONAL_FILE_LITERAL,
-    CLIENT_LITERAL,
-    VIDEO_FILE_LITERAL,
-)
+from move_ugc.schemas.constants import CLIENT_LITERAL, SOURCES_LITERAL
 from move_ugc.schemas.gql import UgcGql
 
 take_attributes = """
@@ -17,19 +12,26 @@ take_attributes = """
     __typename
 """
 
+expand_sources = f"""
+    sources {{
+        deviceLabel
+        {expand_video_file}
+        format
+    }}
+"""
+
 create = UgcGql(
     query=f"""
-    mutation create($video_file_id: String!, $additional_file_ids: [TakeFileInput!], $metadata: AWSJSON) {{{{
-        createTake(videoFileId: $video_file_id, additionalFileIds: $additional_file_ids, metadata: $metadata) {{{{
+    mutation create($sources: [SourceInput!], $metadata: AWSJSON) {{{{
+        createSingleCamTake(sources: $sources, metadata: $metadata) {{{{
             {take_attributes}
         }}}}
     }}}}
     """,
-    key="createTake",
+    key="createSingleCamTake",
     expand={
         CLIENT_LITERAL: expand_client_query,
-        VIDEO_FILE_LITERAL: expand_video_file,
-        ADDITIONAL_FILE_LITERAL: expand_additional_file,
+        SOURCES_LITERAL: expand_sources,
     },
 )
 
@@ -45,8 +47,7 @@ retrieve = UgcGql(
     key="getTake",
     expand={
         CLIENT_LITERAL: expand_client_query,
-        VIDEO_FILE_LITERAL: expand_video_file,
-        ADDITIONAL_FILE_LITERAL: expand_additional_file,
+        SOURCES_LITERAL: expand_sources,
     },
 )
 
@@ -61,8 +62,7 @@ update = UgcGql(
     key="updateTake",
     expand={
         CLIENT_LITERAL: expand_client_query,
-        VIDEO_FILE_LITERAL: expand_video_file,
-        ADDITIONAL_FILE_LITERAL: expand_additional_file,
+        SOURCES_LITERAL: expand_sources,
     },
 )
 
@@ -81,8 +81,7 @@ list_query = UgcGql(
     key="listTakes",
     expand={
         CLIENT_LITERAL: expand_client_query,
-        VIDEO_FILE_LITERAL: expand_video_file,
-        ADDITIONAL_FILE_LITERAL: expand_additional_file,
+        SOURCES_LITERAL: expand_sources,
     },
 )
 

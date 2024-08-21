@@ -32,4 +32,5 @@ class UgcGql(BaseModel):
             expand_query = "\n".join(
                 [self.expand[field] for field in expand],
             )
+
         return gql(self.query.format(expand=expand_query))

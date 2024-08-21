@@ -4,8 +4,8 @@ from typing import Any, List, Optional
 
 from pydantic import BaseModel, Field, Json
 
-from move_ugc.schemas.additional_file import AdditionalFileType
 from move_ugc.schemas.client import Client
+from move_ugc.schemas.sources import AdditionalFileType
 from move_ugc.schemas.take import TakeType
 
 

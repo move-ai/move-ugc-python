@@ -4,8 +4,10 @@ import json
 import pytest
 from gql.transport.exceptions import TransportQueryError
 
-from move_ugc.schemas.additional_file import AdditionalFileIn, TakeAdditionalFileKeys
+from move_ugc.schemas.sources import SourceIn, TakeSourceKey
 from tests.services.testcases import ServicesTestCase
+
+SOURCES_LITERAL = "sources"
 
 
 class TestTakeService(ServicesTestCase):
@@ -19,15 +21,15 @@ class TestTakeService(ServicesTestCase):
             (None, "take_create_response"),
             ([], "take_create_response"),
             (["client"], "take_create_response_with_client"),
-            (["video_file"], "take_create_response_with_video_file"),
-            (["additional_files"], "take_create_response_with_additional_files"),
+            ([SOURCES_LITERAL], "take_create_response_with_video_source"),
+            ([SOURCES_LITERAL], "take_create_response_with_additional_sources"),
         ],
         ids=[
             "no_expand",
             "empty_expand",
             "expand_client",
             "expand_video_file",
-            "expand_additional_files",
+            "expand_additional_sources",
         ],
     )
     def test_create(  # noqa: WPS211
@@ -40,7 +42,7 @@ class TestTakeService(ServicesTestCase):
     ):
         """Test creating a take.
 
-        This should test -> `ugc.takes.create()`
+        This should test -> `ugc.takes.create_singlecam()`
 
         Args:
             snapshot: The snapshot fixture.
@@ -50,13 +52,19 @@ class TestTakeService(ServicesTestCase):
             take_fixture: The take fixture.
         """
         request.getfixturevalue(take_fixture)
-        take_model = self.client.takes.create(
-            video_file_id=faker.uuid4(),
+        device_label = faker.word()
+        take_model = self.client.takes.create_singlecam(
             metadata=request.getfixturevalue("metadata_for_update"),
-            additional_files=[
-                AdditionalFileIn(
-                    key=TakeAdditionalFileKeys.depth.value,
+            sources=[
+                SourceIn(
+                    device_label=device_label,
                     file_id=faker.uuid4(),
+                    format=TakeSourceKey.mp4,
+                ),
+                SourceIn(
+                    device_label=device_label,
+                    file_id=faker.uuid4(),
+                    format=TakeSourceKey.move,
                 ),
             ],
             expand=expand,
@@ -77,8 +85,8 @@ class TestTakeService(ServicesTestCase):
             (None, "take_update_response"),
             ([], "take_update_response"),
             (["client"], "take_update_response_with_client"),
-            (["video_file"], "take_update_response_with_video_file"),
-            (["additional_files"], "take_update_response_with_additional_files"),
+            ([SOURCES_LITERAL], "take_update_response_with_video_source"),
+            ([SOURCES_LITERAL], "take_update_response_with_additional_sources"),
         ],
         ids=[
             "no_expand",
@@ -98,7 +106,7 @@ class TestTakeService(ServicesTestCase):
     ):
         """Test creating a take.
 
-        This should test -> `ugc.takes.create()`
+        This should test -> `ugc.takes.create_singlecam()`
 
         Args:
             snapshot: The snapshot fixture.
@@ -126,21 +134,26 @@ class TestTakeService(ServicesTestCase):
     def test_create_wrong_additional_file_key(self, faker):
         """Test creating a take with wrong additional file key.
 
-        This should test -> `ugc.takes.create()`
+        This should test -> `ugc.takes.create_singlecam()`
 
         Args:
             faker: The faker fixture.
         """
         with pytest.raises(ValueError):
-            self.client.takes.create(
-                video_file_id=faker.uuid4(),
-                metadata=json.dumps({}),
-                additional_files=[
-                    AdditionalFileIn(
-                        key=faker.pystr(),
+            self.client.takes.create_singlecam(
+                sources=[
+                    SourceIn(
+                        device_label=faker.word(),
                         file_id=faker.uuid4(),
+                        format=TakeSourceKey.mp4,
+                    ),
+                    SourceIn(
+                        device_label=faker.word(),
+                        file_id=faker.uuid4(),
+                        format=faker.word(),
                     ),
                 ],
+                metadata=json.dumps({}),
             )
 
     def test_create_lower_additional_file_key(
@@ -151,20 +164,25 @@ class TestTakeService(ServicesTestCase):
     ):
         """Test creating a take with a lower case additional file key.
 
-        This should test -> `ugc.takes.create()`
+        This should test -> `ugc.takes.create_singlecam()`
 
         Args:
             faker: The faker fixture.
             take_create_response: The take_create_response fixture.
             snapshot: The snapshot fixture.
         """
-        take_model = self.client.takes.create(
-            video_file_id=faker.uuid4(),
+        take_model = self.client.takes.create_singlecam(
             metadata=json.dumps({}),
-            additional_files=[
-                AdditionalFileIn(
-                    key="depth",
+            sources=[
+                SourceIn(
+                    device_label=faker.word(),
                     file_id=faker.uuid4(),
+                    format=TakeSourceKey.mp4,
+                ),
+                SourceIn(
+                    device_label=faker.word(),
+                    file_id=faker.uuid4(),
+                    format="move",
                 ),
             ],
         )
@@ -183,8 +201,8 @@ class TestTakeService(ServicesTestCase):
             (None, "take_retrieve_response"),
             ([], "take_retrieve_response"),
             (["client"], "take_retrieve_response_with_client"),
-            (["video_file"], "take_retrieve_response_with_video_file"),
-            (["additional_files"], "take_retrieve_response_with_additional_files"),
+            ([SOURCES_LITERAL], "take_retrieve_response_with_video_source"),
+            ([SOURCES_LITERAL], "take_retrieve_response_with_additional_sources"),
         ],
         ids=[
             "no_expand",
