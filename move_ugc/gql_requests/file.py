@@ -8,6 +8,7 @@ expand_file_base = """
     type
     metadata
     presignedUrl
+    thumbnailUrl
     __typename
 """
 
