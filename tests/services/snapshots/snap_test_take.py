@@ -75,6 +75,7 @@ snapshots[
         type
         metadata
         presignedUrl
+        thumbnailUrl
         __typename
       }
       format
@@ -147,6 +148,9 @@ snapshots[
                 "presigned_url": GenericRepr(
                     "Url('https://pytest_invalid_presigned_url.com/file')",
                 ),
+                "thumbnail_url": GenericRepr(
+                    "Url('https://pytest_invalid_thumbnail_url.com/file')",
+                ),
                 "type": ".mp4",
             },
             "format": "MP4",
@@ -173,6 +177,9 @@ snapshots[
                 },
                 "presigned_url": GenericRepr(
                     "Url('https://pytest_invalid_presigned_url.com/file')",
+                ),
+                "thumbnail_url": GenericRepr(
+                    "Url('https://pytest_invalid_thumbnail_url.com/file')",
                 ),
                 "type": ".mp4",
             },
@@ -274,6 +281,7 @@ snapshots[
         type
         metadata
         presignedUrl
+        thumbnailUrl
         __typename
       }
       format
@@ -345,6 +353,9 @@ snapshots[
                 },
                 "presigned_url": GenericRepr(
                     "Url('https://pytest_invalid_presigned_url.com/file')",
+                ),
+                "thumbnail_url": GenericRepr(
+                    "Url('https://pytest_invalid_thumbnail_url.com/file')",
                 ),
                 "type": ".mp4",
             },
@@ -588,6 +599,7 @@ snapshots[
         type
         metadata
         presignedUrl
+        thumbnailUrl
         __typename
       }
       format
@@ -648,6 +660,9 @@ snapshots[
                 "presigned_url": GenericRepr(
                     "Url('https://pytest_invalid_presigned_url.com/file')",
                 ),
+                "thumbnail_url": GenericRepr(
+                    "Url('https://pytest_invalid_thumbnail_url.com/file')",
+                ),
                 "type": ".mp4",
             },
             "format": "MP4",
@@ -674,6 +689,9 @@ snapshots[
                 },
                 "presigned_url": GenericRepr(
                     "Url('https://pytest_invalid_presigned_url.com/file')",
+                ),
+                "thumbnail_url": GenericRepr(
+                    "Url('https://pytest_invalid_thumbnail_url.com/file')",
                 ),
                 "type": ".mp4",
             },
@@ -763,6 +781,7 @@ snapshots[
         type
         metadata
         presignedUrl
+        thumbnailUrl
         __typename
       }
       format
@@ -822,6 +841,9 @@ snapshots[
                 },
                 "presigned_url": GenericRepr(
                     "Url('https://pytest_invalid_presigned_url.com/file')",
+                ),
+                "thumbnail_url": GenericRepr(
+                    "Url('https://pytest_invalid_thumbnail_url.com/file')",
                 ),
                 "type": ".mp4",
             },
@@ -947,6 +969,7 @@ snapshots[
         type
         metadata
         presignedUrl
+        thumbnailUrl
         __typename
       }
       format
@@ -1008,6 +1031,9 @@ snapshots[
                 "presigned_url": GenericRepr(
                     "Url('https://pytest_invalid_presigned_url.com/file')",
                 ),
+                "thumbnail_url": GenericRepr(
+                    "Url('https://pytest_invalid_thumbnail_url.com/file')",
+                ),
                 "type": ".mp4",
             },
             "format": "MP4",
@@ -1034,6 +1060,9 @@ snapshots[
                 },
                 "presigned_url": GenericRepr(
                     "Url('https://pytest_invalid_presigned_url.com/file')",
+                ),
+                "thumbnail_url": GenericRepr(
+                    "Url('https://pytest_invalid_thumbnail_url.com/file')",
                 ),
                 "type": ".mp4",
             },
@@ -1124,6 +1153,7 @@ snapshots[
         type
         metadata
         presignedUrl
+        thumbnailUrl
         __typename
       }
       format
@@ -1184,6 +1214,9 @@ snapshots[
                 },
                 "presigned_url": GenericRepr(
                     "Url('https://pytest_invalid_presigned_url.com/file')",
+                ),
+                "thumbnail_url": GenericRepr(
+                    "Url('https://pytest_invalid_thumbnail_url.com/file')",
                 ),
                 "type": ".mp4",
             },

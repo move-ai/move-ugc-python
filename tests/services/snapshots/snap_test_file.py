@@ -15,6 +15,7 @@ snapshots["TestFileService.test_create[empty_expand] create_mutation_expand_[]"]
     type
     metadata
     presignedUrl
+    thumbnailUrl
     __typename
   }
 }""",
@@ -51,6 +52,9 @@ snapshots[
     "presigned_url": GenericRepr(
         "Url('https://pytest_invalid_presigned_url.com/file')",
     ),
+    "thumbnail_url": GenericRepr(
+        "Url('https://pytest_invalid_thumbnail_url.com/file')",
+    ),
     "type": ".mp4",
 }
 
@@ -65,6 +69,7 @@ snapshots[
     type
     metadata
     presignedUrl
+    thumbnailUrl
     __typename
     client {
       id
@@ -121,6 +126,9 @@ snapshots[
     "presigned_url": GenericRepr(
         "Url('https://pytest_invalid_presigned_url.com/file')",
     ),
+    "thumbnail_url": GenericRepr(
+        "Url('https://pytest_invalid_thumbnail_url.com/file')",
+    ),
     "type": ".mp4",
 }
 
@@ -133,6 +141,7 @@ snapshots["TestFileService.test_create[no_expand] create_mutation_expand_None"] 
     type
     metadata
     presignedUrl
+    thumbnailUrl
     __typename
   }
 }""",
@@ -168,6 +177,9 @@ snapshots[
     },
     "presigned_url": GenericRepr(
         "Url('https://pytest_invalid_presigned_url.com/file')",
+    ),
+    "thumbnail_url": GenericRepr(
+        "Url('https://pytest_invalid_thumbnail_url.com/file')",
     ),
     "type": ".mp4",
 }
@@ -251,6 +263,9 @@ snapshots[
     "presigned_url": GenericRepr(
         "Url('https://pytest_invalid_presigned_url.com/file')",
     ),
+    "thumbnail_url": GenericRepr(
+        "Url('https://pytest_invalid_thumbnail_url.com/file')",
+    ),
     "type": ".mp4",
 }
 
@@ -263,6 +278,7 @@ snapshots["TestFileService.test_retrieve[empty_expand] retrieve_query_expand_[]"
     type
     metadata
     presignedUrl
+    thumbnailUrl
     __typename
   }
 }""",
@@ -310,6 +326,9 @@ snapshots[
     "presigned_url": GenericRepr(
         "Url('https://pytest_invalid_presigned_url.com/file')",
     ),
+    "thumbnail_url": GenericRepr(
+        "Url('https://pytest_invalid_thumbnail_url.com/file')",
+    ),
     "type": ".mp4",
 }
 
@@ -324,6 +343,7 @@ snapshots[
     type
     metadata
     presignedUrl
+    thumbnailUrl
     __typename
     client {
       id
@@ -367,6 +387,9 @@ snapshots[
     "presigned_url": GenericRepr(
         "Url('https://pytest_invalid_presigned_url.com/file')",
     ),
+    "thumbnail_url": GenericRepr(
+        "Url('https://pytest_invalid_thumbnail_url.com/file')",
+    ),
     "type": ".mp4",
 }
 
@@ -379,6 +402,7 @@ snapshots["TestFileService.test_retrieve[no_expand] retrieve_query_expand_None"]
     type
     metadata
     presignedUrl
+    thumbnailUrl
     __typename
   }
 }""",
@@ -400,6 +424,7 @@ snapshots["TestFileService.test_update[empty_expand] update_mutation_expand_[]"]
     type
     metadata
     presignedUrl
+    thumbnailUrl
     __typename
   }
 }""",
@@ -436,6 +461,9 @@ snapshots[
     "presigned_url": GenericRepr(
         "Url('https://pytest_invalid_presigned_url.com/file')",
     ),
+    "thumbnail_url": GenericRepr(
+        "Url('https://pytest_invalid_thumbnail_url.com/file')",
+    ),
     "type": ".mp4",
 }
 
@@ -450,6 +478,7 @@ snapshots[
     type
     metadata
     presignedUrl
+    thumbnailUrl
     __typename
     client {
       id
@@ -506,6 +535,9 @@ snapshots[
     "presigned_url": GenericRepr(
         "Url('https://pytest_invalid_presigned_url.com/file')",
     ),
+    "thumbnail_url": GenericRepr(
+        "Url('https://pytest_invalid_thumbnail_url.com/file')",
+    ),
     "type": ".mp4",
 }
 
@@ -518,6 +550,7 @@ snapshots["TestFileService.test_update[no_expand] update_mutation_expand_None"] 
     type
     metadata
     presignedUrl
+    thumbnailUrl
     __typename
   }
 }""",
@@ -553,6 +586,9 @@ snapshots[
     },
     "presigned_url": GenericRepr(
         "Url('https://pytest_invalid_presigned_url.com/file')",
+    ),
+    "thumbnail_url": GenericRepr(
+        "Url('https://pytest_invalid_thumbnail_url.com/file')",
     ),
     "type": ".mp4",
 }
