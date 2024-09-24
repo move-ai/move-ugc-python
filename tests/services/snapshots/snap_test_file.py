@@ -292,6 +292,57 @@ snapshots["TestFileService.test_retrieve[empty_expand] retrieve_query_expand_[]"
 ]
 
 snapshots[
+    "TestFileService.test_retrieve[empty_expand_no_thumbnail] file_retrieve_response_expand_[]"
+] = {
+    "client": None,
+    "created": GenericRepr(
+        "datetime.datetime(2023, 7, 3, 14, 48, 6, 29019, tzinfo=TzInfo(UTC))",
+    ),
+    "id": "file-a0059241-7ede-411c-a149-769a4305e8b6",
+    "metadata": {
+        "analysis": "ableRsSGSBRpUxDKSTZs",
+        "decade": -127471.91004658,
+        "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053",
+        "draw": 9025,
+        "house": "EQQpSzpRFSYEmmcBHMyX",
+        "huge": "RLQMnHdwIMQHuSbBEcSq",
+        "last": "CliYtuFCSJkGbKACMVZc",
+        "other": 4537,
+        "table": "fPlGoqlVJAWBmofrulqS",
+        "trouble": "1982-01-05 12:28:54",
+    },
+    "presigned_url": GenericRepr(
+        "Url('https://pytest_invalid_presigned_url.com/file')",
+    ),
+    "thumbnail_url": "",
+    "type": ".mp4",
+}
+
+snapshots[
+    "TestFileService.test_retrieve[empty_expand_no_thumbnail] retrieve_query_expand_[]"
+] = [
+    [
+        """query retrieve($id: ID!) {
+  getFile(fileId: $id) {
+    id
+    created
+    type
+    metadata
+    presignedUrl
+    thumbnailUrl
+    __typename
+  }
+}""",
+    ],
+    {
+        "operation_name": None,
+        "variable_values": {
+            "id": "b898a7a5-37be-4600-bdc6-8ffa06c7a4f6",
+        },
+    },
+]
+
+snapshots[
     "TestFileService.test_retrieve[expand_client] file_retrieve_response_expand_client"
 ] = {
     "client": {

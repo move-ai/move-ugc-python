@@ -16,9 +16,10 @@ class TestFileService(ServicesTestCase):
         argvalues=[
             (None, "file_retrieve_response"),
             ([], "file_retrieve_response"),
+            ([], "file_retrieve_response_no_thumbnail"),
             ([CLIENT_LITERAL], "file_retrieve_response_with_client"),
         ],
-        ids=["no_expand", "empty_expand", "expand_client"],
+        ids=["no_expand", "empty_expand", "empty_expand_no_thumbnail", "expand_client"],
     )
     def test_retrieve(  # noqa: WPS211
         self,
