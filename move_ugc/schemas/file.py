@@ -44,13 +44,14 @@ class FileType(BaseModel):
         title="File presigned URL",
         alias="presignedUrl",
     )
-    thumbnail_url: HttpUrl = Field(
+    thumbnail_url: Optional[HttpUrl] = Field(
         description="Presigned URL for the thumbnail file. Only generated for source files.",
         examples=[
             "https://s3.amazonaws.com/bucket/file.mp4?AWSAccessKeyId=123&Expires=123&Signature=123",
         ],
         title="Thumbnail file presigned URL",
         alias="thumbnailUrl",
+        default="",
     )
 
 

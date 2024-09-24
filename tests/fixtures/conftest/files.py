@@ -85,6 +85,28 @@ def file_retrieve_response(
         file_response (ExecutionResult): Fake file response.
     """
     file_response = ExecutionResult(data=fake_get_file_response)
+    mock_transport.side_effect = [introspection_result, file_response]  # noqa: WPS204
+    yield file_response
+
+
+@pytest.fixture
+def file_retrieve_response_no_thumbnail(
+    mock_transport,
+    fake_get_file_response,
+    introspection_result,
+):
+    """Fixture to return a fake file response for retrieve query with no thumbnail.
+
+    Args:
+        mock_transport (MagicMock): Mock transport.
+        fake_get_file_response (dict[str, str]): Fake file json.
+        introspection_result (dict[str, str]): Introspection result.
+
+    Yields:
+        file_response (ExecutionResult): Fake file response.
+    """
+    fake_get_file_response["getFile"].pop("thumbnailUrl")
+    file_response = ExecutionResult(data=fake_get_file_response)
     mock_transport.side_effect = [introspection_result, file_response]
     yield file_response
 
