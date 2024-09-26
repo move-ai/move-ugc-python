@@ -1,6 +1,6 @@
 """Representation for Volume types in Ugc API."""
 from datetime import datetime
-from enum import StrEnum
+from enum import Enum
 from typing import Any, List, Optional
 
 from pydantic import BaseModel, Field, Json
@@ -9,7 +9,7 @@ from move_ugc.schemas.client import Client
 from move_ugc.schemas.take import ID_LITERAL, Source
 
 
-class AreaType(StrEnum):
+class AreaType(str, Enum):  # noqa: WPS600
     """Area type of the volume."""
 
     NORMAL = "NORMAL"  # noqa: WPS115
