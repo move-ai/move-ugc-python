@@ -74,3 +74,8 @@ class HumanVolumeType(BaseModel):
         title="Volume sources",
         default=None,
     )
+    state: str = Field(
+        description="State of the volume processing.",
+        examples=["FINISHED", "NOT STARTED", "RUNNING", "FAILED"],
+        title="Volume state",
+    )

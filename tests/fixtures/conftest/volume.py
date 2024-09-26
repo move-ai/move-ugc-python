@@ -5,7 +5,7 @@ from typing import Any, Dict
 import pytest
 from graphql import ExecutionResult
 
-from tests.constants import CREATE_HUMAN_VOLUME_MUTATION
+from tests.constants import CREATE_HUMAN_VOLUME_MUTATION, GET_VOLUME_QUERY
 from tests.fixtures.conftest.take import (
     build_response_with_additional_sources,
     build_response_with_video_source,
@@ -47,6 +47,19 @@ def fake_create_volume_response(fake_volume_json) -> FakeVolumeJson:
 
 
 @pytest.fixture
+def fake_get_volume_response(fake_volume_json) -> FakeVolumeJson:
+    """Fixture to return a fake volume response for getVolume query.
+
+    Args:
+        fake_volume_json (dict[str, str]): Fake volume json.
+
+    Returns:
+        FakeVolumeJson: Fake volume response.
+    """
+    return {GET_VOLUME_QUERY: fake_volume_json}
+
+
+@pytest.fixture
 def volume_create_response(
     mock_transport,
     fake_create_volume_response,
@@ -63,6 +76,27 @@ def volume_create_response(
         FakeVolumeJson: Fake volume response.
     """
     volume_response = ExecutionResult(data=fake_create_volume_response)
+    mock_transport.side_effect = [introspection_result, volume_response]
+    yield volume_response
+
+
+@pytest.fixture
+def volume_get_response(
+    mock_transport,
+    fake_get_volume_response,
+    introspection_result,
+) -> FakeVolumeJson:
+    """Fixture to return a fake volume response for getVolume query.
+
+    Args:
+        fake_get_volume_response (dict[str, str]): Fake volume json.
+        mock_transport (MockTransport): Mock transport.
+        introspection_result (dict[str, str]): Introspection result.
+
+    Yields:
+        FakeVolumeJson: Fake volume response.
+    """
+    volume_response = ExecutionResult(data=fake_get_volume_response)
     mock_transport.side_effect = [introspection_result, volume_response]
     yield volume_response
 
@@ -89,6 +123,30 @@ def volume_create_response_with_client(
         "client"
     ] = fake_client_type
     volume_response_client = ExecutionResult(data=fake_create_volume_response)
+    mock_transport.side_effect = [introspection_result, volume_response_client]
+    yield volume_response_client
+
+
+@pytest.fixture
+def volume_get_response_with_client(
+    mock_transport,
+    fake_get_volume_response,
+    introspection_result,
+    fake_client_type,
+) -> FakeVolumeJson:
+    """Fixture to return a fake volume response for getVolume query with client.
+
+    Args:
+        fake_get_volume_response (dict[str, str]): Fake volume json.
+        mock_transport (MockTransport): Mock transport.
+        introspection_result (dict[str, str]): Introspection result.
+        fake_client_type (dict[str, str]): Fake client type.
+
+    Yields:
+        FakeVolumeJson: Fake volume response.
+    """
+    fake_get_volume_response[GET_VOLUME_QUERY]["client"] = fake_client_type
+    volume_response_client = ExecutionResult(data=fake_get_volume_response)
     mock_transport.side_effect = [introspection_result, volume_response_client]
     yield volume_response_client
 
@@ -121,6 +179,38 @@ def volume_create_response_with_video_source(
 
 
 @pytest.fixture
+def volume_get_response_with_video_source(
+    faker,
+    mock_transport,
+    fake_get_volume_response,
+    introspection_result,
+    fake_file_json,
+) -> FakeVolumeJson:
+    """Fixture to return a fake volume response for getVolume query with video source.
+
+    Args:
+        faker (Faker): Faker fixture.
+        fake_get_volume_response (FakeVolumeJson): Fake volume json.
+        mock_transport (MockTransport): Mock transport.
+        introspection_result (dict[str, str]): Introspection result.
+        fake_file_json (dict[str, str]): Fake file json.
+
+    Yields:
+        FakeVolumeJson: Fake volume response.
+    """
+    yield build_response_with_video_source(
+        fake_response=fake_get_volume_response.copy(),
+        fake_file_json=fake_file_json,
+        mock_transport=mock_transport,
+        introspection_result=introspection_result,
+        key=GET_VOLUME_QUERY,
+        camera_settings={
+            "lens": faker.word(),
+        },
+    )
+
+
+@pytest.fixture
 def volume_create_res_with_additional_sources(
     mock_transport,
     fake_create_volume_response,
@@ -144,4 +234,36 @@ def volume_create_res_with_additional_sources(
         mock_transport=mock_transport,
         introspection_result=introspection_result,
         key=CREATE_HUMAN_VOLUME_MUTATION,
+    )
+
+
+@pytest.fixture
+def volume_get_res_with_additional_sources(
+    faker,
+    mock_transport,
+    fake_get_volume_response,
+    introspection_result,
+    fake_file_json,
+) -> FakeVolumeJson:
+    """Fixture to return a fake volume response for getVolume query with sources.
+
+    Args:
+        faker (Faker): Faker fixture.
+        fake_get_volume_response (FakeVolumeJson): Fake volume json.
+        mock_transport (MockTransport): Mock transport.
+        introspection_result (dict[str, str]): Introspection result.
+        fake_file_json (dict[str, str]): Fake file json.
+
+    Yields:
+        FakeVolumeJson: Fake volume response.
+    """
+    yield build_response_with_additional_sources(
+        fake_response=fake_get_volume_response.copy(),
+        fake_file_json=fake_file_json,
+        mock_transport=mock_transport,
+        introspection_result=introspection_result,
+        key=GET_VOLUME_QUERY,
+        camera_settings={
+            "lens": faker.word(),
+        },
     )

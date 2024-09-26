@@ -2,6 +2,7 @@
 from typing import Any, Dict, List, Optional
 
 from move_ugc.gql_requests.volume import create as create_query
+from move_ugc.gql_requests.volume import retrieve_human_volume
 from move_ugc.schemas.constants import ALLOWED_EXPAND_ATTRS
 from move_ugc.schemas.sources import SourceIn
 from move_ugc.schemas.sync_method import SyncMethodInput
@@ -74,4 +75,29 @@ class VolumeService(BaseService[HumanVolumeType]):
                 "metadata": self.encode_aws_metadata(metadata),
                 "name": name or "",
             },
+        )
+
+    def retrieve_human_volume(
+        self,
+        id: str,  # noqa: WPS125
+        expand: Optional[List[ALLOWED_EXPAND_ATTRS]] = None,
+    ) -> HumanVolumeType:
+        """Retrieve a human volume with given id from MoveUGC.
+
+        The unique id for take will usually be in the format: `volume-{uuid}`
+
+        Args:
+            id:
+                unique identifier for the take. This should typically be something like `volume-{uuid}`.
+            expand:
+                list of fields to be expanded.
+                Currently only `client` and `sources` are supported.
+
+        Returns:
+            HumanVolumeType instance of Pydantic model type.
+        """
+        return self.execute(
+            query_key=retrieve_human_volume.key,
+            gql_query=retrieve_human_volume.generate_query(expand=expand),
+            variable_values={"id": id},
         )

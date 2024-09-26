@@ -6,6 +6,7 @@ from pydantic import BaseModel, Field, Json
 
 from move_ugc.schemas.client import Client
 from move_ugc.schemas.file import FileType
+from move_ugc.schemas.sources import CameraSettings, ClipWindow
 
 ID_LITERAL = "id"
 
@@ -28,6 +29,19 @@ class Source(BaseModel):
         description="Format of the source",
         examples=["MP4"],
         title="Source format",
+    )
+    camera_settings: Optional[CameraSettings] = Field(
+        description="Camera settings used for the take",
+        title="Camera settings",
+        examples=[{"lens": "goprohero10-2-7k"}],
+        serialization_alias="cameraSettings",
+        default=None,
+    )
+    clip_window: Optional[ClipWindow] = Field(
+        description="Clip window for the source",
+        title="Clip window",
+        examples=[{"startTime": 0, "endTime": 10}],
+        default=None,
     )
 
 

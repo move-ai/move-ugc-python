@@ -34,7 +34,9 @@ class SyncMethodInput(BaseModel):
 
     clap_window: Optional[ClapWindowInput] = Field(
         serialization_alias="clapWindow",
+        default=None,
     )
     timecode_sync: Optional[TimecodeSyncInput] = Field(
         serialization_alias="timecodeSync",
+        default=None,
     )

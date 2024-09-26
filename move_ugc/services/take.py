@@ -56,7 +56,13 @@ class TakeService(BaseService[TakeType]):
             query_key=create_query.key,
             gql_query=create_query.generate_query(expand=expand),
             variable_values={
-                "sources": [source.model_dump(by_alias=True) for source in sources],
+                "sources": [
+                    source.model_dump(
+                        by_alias=True,
+                        exclude={"camera_settings", "clip_window"},
+                    )
+                    for source in sources
+                ],
                 "metadata": self.encode_aws_metadata(metadata),
             },
         )
