@@ -1,10 +1,13 @@
 name: Release
 
 # Run on every version tag (0.1.0, 0.1.1 and so on)
-on:
-  push:
-    tags:
-      - "*"
+#on:
+#  push:
+#    tags:
+#      - "*"
+
+on: workflow_dispatch
+
 
 jobs:
   publish:
