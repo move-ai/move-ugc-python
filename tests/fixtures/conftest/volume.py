@@ -1,5 +1,6 @@
 """Volume fixtures."""
 import json
+import os
 from typing import Any, Dict
 
 import pytest
@@ -27,7 +28,7 @@ def fake_volume_json(volume_fixtures_path, metadata_for_update) -> FakeVolumeJso
     Returns:
         FakeVolumeJson: Fake volume.
     """
-    with open(f"{volume_fixtures_path}/fake_volume.json") as volume_json:
+    with open(os.path.join(volume_fixtures_path, "fake_volume.json")) as volume_json:
         volume_json_obj = json.load(volume_json)
         volume_json_obj["metadata"] = json.dumps(metadata_for_update, default=str)
         return volume_json_obj

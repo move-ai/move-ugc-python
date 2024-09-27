@@ -19,10 +19,10 @@ class VolumeService(BaseService[HumanVolumeType]):
     from move_ugc import MoveUgc
     ugc = MoveUgc(api_key="my-api-key")
 
-    # Call take service methods directly
+    # Call volume service methods directly
     ugc.volumes.retrieve(id="volume-<guid>")
 
-    # Or use the take service as a mixin
+    # Or use the volume service as a mixin
     volume_service = ugc.volumes
     volume_service.retrieve(id="volume-<guid>")
     ```
@@ -84,11 +84,11 @@ class VolumeService(BaseService[HumanVolumeType]):
     ) -> HumanVolumeType:
         """Retrieve a human volume with given id from MoveUGC.
 
-        The unique id for take will usually be in the format: `volume-{uuid}`
+        The unique id for volume will usually be in the format: `volume-{uuid}`
 
         Args:
             id:
-                unique identifier for the take. This should typically be something like `volume-{uuid}`.
+                unique identifier for the volume. This should typically be something like `volume-{uuid}`.
             expand:
                 list of fields to be expanded.
                 Currently only `client` and `sources` are supported.

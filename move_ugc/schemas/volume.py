@@ -36,37 +36,37 @@ class HumanVolumeType(BaseModel):
         alias="areaType",
     )
     human_height: float = Field(
-        description="Height of the human in the volume",
+        description="Height of the human in metres",
         examples=[1.75],
-        title="Human height",
+        title="Human height in metres",
         alias="humanHeight",
     )
     created: datetime = Field(
         description="Date and time when the volume was created. This will be in UTC.",
         examples=["2021-08-04T15:00:00.000Z"],
-        title="Take creation date",
+        title="Volume creation date",
     )
     metadata: Json[Any] = Field(
         description="Metadata associated with the volume",
         examples=[{"key": "value"}],
-        title="Take metadata",
+        title="Volume metadata",
     )
     client: Optional[Client] = Field(
         description="Client associated with the volume",
         examples=[{ID_LITERAL: "client-0aa9ba14-44f9-4d47-89b4-c77cdea9e801"}],
-        title="Take client",
+        title="Volume client",
         default=None,
     )
     sources: Optional[List[Source]] = Field(
         description="Sources associated with the volume",
         examples=[
             {
-                "deviceLabel": "my-device",
+                "deviceLabel": "my-device-1",
                 "file": {ID_LITERAL: "file-1fd863d5-875b-4e48-89bb-c6234e804738"},
                 "format": "MP4",
             },
             {
-                "deviceLabel": "my-device",
+                "deviceLabel": "my-device-2",
                 "file": {ID_LITERAL: "file-1fd863d5-875b-4e48-89bb-c6234e804738"},
                 "format": "MOVE",
             },

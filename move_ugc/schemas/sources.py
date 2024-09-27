@@ -35,7 +35,11 @@ class TakeSourceKey(str, Enum):  # noqa: WPS600
 
 
 class CameraSettings(BaseModel):
-    """Camera settings input for creating a take."""
+    """Camera settings input for creating a take.
+
+    Find the list of available camera settings here:
+    https://move-ai.github.io/move-ugc-api/getting-started/multicam/lenses/
+    """
 
     lens: str = Field(
         description="Lens used for the take",
