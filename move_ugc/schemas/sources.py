@@ -125,3 +125,37 @@ class SourceIn(BaseModel, use_enum_values=True):
         serialization_alias="clipWindow",
         default=None,
     )
+
+
+class Source(BaseModel):
+    """Representation for Source type in MoveUGC."""
+
+    device_label: str = Field(
+        description="Label for the device",
+        examples=["my-device"],
+        title="Device label",
+        alias="deviceLabel",
+    )
+    file: FileType = Field(  # noqa: WPS110
+        description="File associated with the source",
+        examples=[{"id": "file-1fd863d5-875b-4e48-89bb-c6234e804738"}],
+        title="Source file",
+    )
+    format: str = Field(
+        description="Format of the source",
+        examples=["MP4"],
+        title="Source format",
+    )
+    camera_settings: Optional[CameraSettings] = Field(
+        description="Camera settings used for the take",
+        title="Camera settings",
+        examples=[{"lens": "goprohero10-2-7k"}],
+        serialization_alias="cameraSettings",
+        default=None,
+    )
+    clip_window: Optional[ClipWindow] = Field(
+        description="Clip window for the source",
+        title="Clip window",
+        examples=[{"startTime": 0, "endTime": 10}],
+        default=None,
+    )

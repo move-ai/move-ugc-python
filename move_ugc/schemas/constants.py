@@ -8,8 +8,10 @@ ALLOWED_EXPAND_ATTRS = Literal[
     "outputs",
     "take",
     "sources",
+    "volume",
 ]
 CLIENT_LITERAL = "client"
 TAKE_LITERAL = "take"
 OUTPUTS_LITERAL = "outputs"
 SOURCES_LITERAL = "sources"
+VOLUME_LITERAL = "volume"

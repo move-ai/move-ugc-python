@@ -2,12 +2,13 @@
 from typing import Any, Dict, List, Optional
 
 from move_ugc.gql_requests.take import create as create_query
-from move_ugc.gql_requests.take import list_query
+from move_ugc.gql_requests.take import create_multicam, list_query
 from move_ugc.gql_requests.take import retrieve as retrieve_query
 from move_ugc.gql_requests.take import update as update_query
 from move_ugc.schemas.commons import ListBase, SortDirection, get_default_page_size
 from move_ugc.schemas.constants import ALLOWED_EXPAND_ATTRS
 from move_ugc.schemas.sources import SourceIn
+from move_ugc.schemas.sync_method import SyncMethodInput
 from move_ugc.schemas.take import TakeType
 from move_ugc.services.base import BaseService
 
@@ -35,6 +36,7 @@ class TakeService(BaseService[TakeType]):
     def create_singlecam(
         self,
         sources: List[SourceIn],
+        name: Optional[str] = "",
         metadata: Optional[Dict[str, Any]] = None,
         expand: Optional[List[ALLOWED_EXPAND_ATTRS]] = None,
     ) -> TakeType:
@@ -43,6 +45,8 @@ class TakeService(BaseService[TakeType]):
         Args:
             sources:
                 list of sources to be used for creating the take.
+            name:
+                name to be used for creating the take.
             metadata:
                 metadata to be used for creating the take. This should be a valid json string.
             expand:
@@ -63,6 +67,51 @@ class TakeService(BaseService[TakeType]):
                     )
                     for source in sources
                 ],
+                "name": name,
+                "metadata": self.encode_aws_metadata(metadata),
+            },
+        )
+
+    def create_multicam(  # noqa: WPS211
+        self,
+        sources: List[SourceIn],
+        volume_id: str,
+        name: Optional[str] = "",
+        sync_method: Optional[SyncMethodInput] = None,
+        metadata: Optional[Dict[str, Any]] = None,
+        expand: Optional[List[ALLOWED_EXPAND_ATTRS]] = None,
+    ) -> TakeType:
+        """Create a multicam take with given sources in MoveUGC.
+
+        Args:
+            sources:
+                list of sources to be used for creating the take.
+            volume_id:
+                unique identifier for the volume. This should typically be something like `volume-{uuid}`.
+            name:
+                name to be used for creating the take.
+            sync_method:
+                sync method to be used for creating the take.
+            metadata:
+                metadata to be used for creating the take. This should be a valid json string.
+            expand:
+                list of fields to be expanded.
+                Currently only `client` and `sources` are supported.
+
+        Returns:
+            File instance of Pydantic model type.
+        """
+        sync_method_json = None
+        if sync_method:
+            sync_method_json = sync_method.model_dump(by_alias=True, mode="json")
+        return self.execute(
+            query_key=create_multicam.key,
+            gql_query=create_multicam.generate_query(expand=expand),
+            variable_values={
+                "sources": [source.model_dump(by_alias=True) for source in sources],
+                "volumeId": volume_id,
+                "name": name,
+                "syncMethod": sync_method_json,
                 "metadata": self.encode_aws_metadata(metadata),
             },
         )

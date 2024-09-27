@@ -9,6 +9,7 @@ from move_ugc.schemas.constants import SOURCES_LITERAL
 from move_ugc.schemas.sources import TakeSourceKey
 from tests.constants import (
     CLIENT_LITERAL,
+    CREATE_MULTICAM_TAKE_MUTATION,
     CREATE_TAKE_MUTATION,
     GET_TAKE_QUERY,
     LIST_TAKES_QUERY,
@@ -19,11 +20,28 @@ from tests.fixtures.conftest.commons import build_list_response
 FakeTakeJson = Dict[str, Any]
 
 
+def mock_response(fake_response, mock_transport, introspection_result):
+    """Mock response for graphql.
+
+    Args:
+        fake_response (dict[str, Any]): Fake response.
+        mock_transport (MockTransport): Mock transport.
+        introspection_result (dict[str, str]): Introspection result.
+
+    Returns:
+        ExecutionResult: Fake response.
+    """
+    take_response = ExecutionResult(data=fake_response)
+    mock_transport.side_effect = [introspection_result, take_response]
+    return take_response
+
+
 @pytest.fixture
-def fake_take_json(take_fixtures_path, metadata_for_update) -> FakeTakeJson:
+def fake_take_json(faker, take_fixtures_path, metadata_for_update) -> FakeTakeJson:
     """Fixture to return a fake take.
 
     Args:
+        faker (Faker): Faker instance.
         take_fixtures_path (str): Path to take fixtures.
         metadata_for_update (dict[str, Any]): Metadata for update.
 
@@ -32,6 +50,7 @@ def fake_take_json(take_fixtures_path, metadata_for_update) -> FakeTakeJson:
     """
     with open(f"{take_fixtures_path}/fake_take.json") as take_json:
         take_json = json.load(take_json)
+        take_json["name"] = faker.word()
         take_json["metadata"] = json.dumps(metadata_for_update, default=str)
         return take_json
 
@@ -47,6 +66,19 @@ def fake_create_take_response(fake_take_json) -> FakeTakeJson:
         FakeTakeJson: Fake take response.
     """
     return {CREATE_TAKE_MUTATION: fake_take_json}
+
+
+@pytest.fixture
+def fake_create_multicam_take_response(fake_take_json) -> FakeTakeJson:
+    """Fixture to return a fake take response for createMultiCamTake mutation.
+
+    Args:
+        fake_take_json (dict[str, str]): Fake take json.
+
+    Returns:
+        FakeTakeJson: Fake take response.
+    """
+    return {CREATE_MULTICAM_TAKE_MUTATION: fake_take_json}
 
 
 @pytest.fixture
@@ -110,9 +142,30 @@ def take_create_response(
     Yields:
         FakeTakeJson: Fake take response.
     """
-    take_response = ExecutionResult(data=fake_create_take_response)
-    mock_transport.side_effect = [introspection_result, take_response]
-    yield take_response
+    yield mock_response(fake_create_take_response, mock_transport, introspection_result)
+
+
+@pytest.fixture
+def take_create_multicam_response(
+    mock_transport,
+    fake_create_multicam_take_response,
+    introspection_result,
+) -> FakeTakeJson:
+    """Fixture to return a fake take response for createTake mutation.
+
+    Args:
+        fake_create_multicam_take_response (dict[str, str]): Fake take json.
+        mock_transport (MockTransport): Mock transport.
+        introspection_result (dict[str, str]): Introspection result.
+
+    Yields:
+        FakeTakeJson: Fake take response.
+    """
+    yield mock_response(
+        fake_create_multicam_take_response,
+        mock_transport,
+        introspection_result,
+    )
 
 
 @pytest.fixture
@@ -131,9 +184,11 @@ def take_retrieve_response(
     Yields:
         FakeTakeJson: Fake take response.
     """
-    take_response = ExecutionResult(data=fake_retrieve_take_response)
-    mock_transport.side_effect = [introspection_result, take_response]
-    yield take_response
+    yield mock_response(
+        fake_retrieve_take_response,
+        mock_transport,
+        introspection_result,
+    )
 
 
 @pytest.fixture
@@ -152,9 +207,7 @@ def take_update_response(
     Yields:
         FakeTakeJson: Fake take response.
     """
-    take_response = ExecutionResult(data=fake_update_take_response)
-    mock_transport.side_effect = [introspection_result, take_response]
-    yield take_response
+    yield mock_response(fake_update_take_response, mock_transport, introspection_result)
 
 
 def build_response_with_client(
@@ -177,9 +230,7 @@ def build_response_with_client(
         FakeTakeJson: Fake take response.
     """
     fake_response[key][CLIENT_LITERAL] = fake_client_type
-    take_response = ExecutionResult(data=fake_response)
-    mock_transport.side_effect = [introspection_result, take_response]
-    return take_response
+    return mock_response(fake_response, mock_transport, introspection_result)
 
 
 @pytest.fixture
@@ -206,6 +257,33 @@ def take_create_response_with_client(
         mock_transport=mock_transport,
         introspection_result=introspection_result,
         key=CREATE_TAKE_MUTATION,
+    )
+
+
+@pytest.fixture
+def take_create_multicam_response_with_client(
+    mock_transport,
+    fake_create_multicam_take_response,
+    introspection_result,
+    fake_client_type,
+) -> FakeTakeJson:
+    """Fixture to return a fake take response for createMultiCamTake mutation with client.
+
+    Args:
+        fake_create_multicam_take_response (FakeTakeJson): Fake take json.
+        mock_transport (MockTransport): Mock transport.
+        introspection_result (dict[str, str]): Introspection result.
+        fake_client_type (dict[str, str]): Fake client type.
+
+    Yields:
+        FakeTakeJson: Fake take response.
+    """
+    yield build_response_with_client(
+        fake_response=fake_create_multicam_take_response.copy(),
+        fake_client_type=fake_client_type,
+        mock_transport=mock_transport,
+        introspection_result=introspection_result,
+        key=CREATE_MULTICAM_TAKE_MUTATION,
     )
 
 
@@ -293,9 +371,7 @@ def build_response_with_video_source(  # noqa: WPS211
     ]
     if camera_settings:
         fake_response[key][SOURCES_LITERAL][0]["cameraSettings"] = camera_settings
-    take_response = ExecutionResult(data=fake_response)
-    mock_transport.side_effect = [introspection_result, take_response]
-    return take_response
+    return mock_response(fake_response, mock_transport, introspection_result)
 
 
 @pytest.fixture
@@ -322,6 +398,33 @@ def take_create_response_with_video_source(
         mock_transport=mock_transport,
         introspection_result=introspection_result,
         key=CREATE_TAKE_MUTATION,
+    )
+
+
+@pytest.fixture
+def take_create_mc_response_with_video_source(
+    mock_transport,
+    fake_create_multicam_take_response,
+    introspection_result,
+    fake_file_json,
+) -> FakeTakeJson:
+    """Fixture to return a fake take response for createMultiCamTake mutation with video source.
+
+    Args:
+        fake_create_multicam_take_response (FakeTakeJson): Fake take json.
+        mock_transport (MockTransport): Mock transport.
+        introspection_result (dict[str, str]): Introspection result.
+        fake_file_json (dict[str, str]): Fake file json.
+
+    Yields:
+        FakeTakeJson: Fake take response.
+    """
+    yield build_response_with_video_source(
+        fake_response=fake_create_multicam_take_response.copy(),
+        fake_file_json=fake_file_json,
+        mock_transport=mock_transport,
+        introspection_result=introspection_result,
+        key=CREATE_MULTICAM_TAKE_MUTATION,
     )
 
 
@@ -416,9 +519,7 @@ def build_response_with_additional_sources(  # noqa: WPS211
     if camera_settings:
         fake_response[key][SOURCES_LITERAL][0]["cameraSettings"] = camera_settings
         fake_response[key][SOURCES_LITERAL][1]["cameraSettings"] = camera_settings
-    take_response = ExecutionResult(data=fake_response)
-    mock_transport.side_effect = [introspection_result, take_response]
-    return take_response
+    return mock_response(fake_response, mock_transport, introspection_result)
 
 
 @pytest.fixture
@@ -445,6 +546,63 @@ def take_create_response_with_additional_sources(
         mock_transport=mock_transport,
         introspection_result=introspection_result,
         key=CREATE_TAKE_MUTATION,
+    )
+
+
+@pytest.fixture
+def take_create_mc_response_w_additional_sources(
+    mock_transport,
+    fake_create_multicam_take_response,
+    introspection_result,
+    fake_file_json,
+) -> FakeTakeJson:
+    """Fixture to return a fake take response for createMultiCamTake mutation with sources.
+
+    Args:
+        fake_create_multicam_take_response (FakeTakeJson): Fake take json.
+        mock_transport (MockTransport): Mock transport.
+        introspection_result (dict[str, str]): Introspection result.
+        fake_file_json (dict[str, str]): Fake file json.
+
+    Yields:
+        FakeTakeJson: Fake take response.
+    """
+    yield build_response_with_additional_sources(
+        fake_response=fake_create_multicam_take_response.copy(),
+        fake_file_json=fake_file_json,
+        mock_transport=mock_transport,
+        introspection_result=introspection_result,
+        key=CREATE_MULTICAM_TAKE_MUTATION,
+    )
+
+
+@pytest.fixture
+def take_create_mc_response_with_volume(
+    mock_transport,
+    fake_create_multicam_take_response,
+    introspection_result,
+    fake_volume_json,
+    fake_file_json,
+) -> FakeTakeJson:
+    """Fixture to return a fake take response for createMultiCamTake mutation with sources.
+
+    Args:
+        fake_create_multicam_take_response (FakeTakeJson): Fake take json.
+        mock_transport (MockTransport): Mock transport.
+        introspection_result (dict[str, str]): Introspection result.
+        fake_file_json (dict[str, str]): Fake file json.
+        fake_volume_json (dict[str, str]): Fake volume json.
+
+    Yields:
+        FakeTakeJson: Fake take response.
+    """
+    fake_create_multicam_take_response[CREATE_MULTICAM_TAKE_MUTATION][
+        "volume"
+    ] = fake_volume_json
+    yield mock_response(
+        fake_create_multicam_take_response,
+        mock_transport,
+        introspection_result,
     )
 
 
@@ -553,6 +711,4 @@ def takes_list_response(
     Yields:
         FakeTakeJson: Fake take response.
     """
-    take_response = ExecutionResult(data=fake_list_take_response)
-    mock_transport.side_effect = [introspection_result, take_response]
-    yield take_response
+    yield mock_response(fake_list_take_response, mock_transport, introspection_result)

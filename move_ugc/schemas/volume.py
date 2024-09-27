@@ -6,7 +6,9 @@ from typing import Any, List, Optional
 from pydantic import BaseModel, Field, Json
 
 from move_ugc.schemas.client import Client
-from move_ugc.schemas.take import ID_LITERAL, Source
+from move_ugc.schemas.sources import Source
+
+ID_LITERAL = "id"
 
 
 class AreaType(str, Enum):  # noqa: WPS600

@@ -80,3 +80,12 @@ retrieve_human_volume = UgcGql(
         SOURCES_LITERAL: expand_sources_w_camera_settings,
     },
 )
+
+
+expand_volume_query = """
+    volume {
+        ... on Volume {
+            ...HumanVolumeFragment
+        }
+    }
+"""

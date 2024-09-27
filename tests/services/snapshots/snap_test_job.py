@@ -245,6 +245,7 @@ snapshots["TestJobService.test_create[expand_take] create_mutation_expand_take"]
     take {
       id
       created
+      name
       metadata
       __typename
     }
@@ -256,7 +257,7 @@ snapshots["TestJobService.test_create[expand_take] create_mutation_expand_take"]
         "operation_name": None,
         "variable_values": {
             "metadata": '{"decade": -127471.91004658, "other": 4537, "draw": 9025, "table": "fPlGoqlVJAWBmofrulqS", "huge": "RLQMnHdwIMQHuSbBEcSq", "last": "CliYtuFCSJkGbKACMVZc", "trouble": "1982-01-05 12:28:54", "analysis": "ableRsSGSBRpUxDKSTZs", "house": "EQQpSzpRFSYEmmcBHMyX", "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053"}',
-            "take_id": "b898a7a5-37be-4600-bdc6-8ffa06c7a4f6",
+            "take_id": "bfdde401-b898-47a5-b7be-a600bdc68ffa",
         },
     },
 ]
@@ -299,7 +300,9 @@ snapshots["TestJobService.test_create[expand_take] create_response_expand_take"]
             "table": "fPlGoqlVJAWBmofrulqS",
             "trouble": "1982-01-05 12:28:54",
         },
+        "name": "agreement",
         "sources": None,
+        "volume": None,
     },
 }
 
@@ -760,6 +763,7 @@ snapshots["TestJobService.test_retrieve[expand_take] retrieve_query_expand_take"
     take {
       id
       created
+      name
       metadata
       __typename
     }
@@ -770,7 +774,7 @@ snapshots["TestJobService.test_retrieve[expand_take] retrieve_query_expand_take"
     {
         "operation_name": None,
         "variable_values": {
-            "id": "b898a7a5-37be-4600-bdc6-8ffa06c7a4f6",
+            "id": "bfdde401-b898-47a5-b7be-a600bdc68ffa",
         },
     },
 ]
@@ -813,7 +817,9 @@ snapshots["TestJobService.test_retrieve[expand_take] retrieve_response_expand_ta
             "table": "fPlGoqlVJAWBmofrulqS",
             "trouble": "1982-01-05 12:28:54",
         },
+        "name": "agreement",
         "sources": None,
+        "volume": None,
     },
 }
 
