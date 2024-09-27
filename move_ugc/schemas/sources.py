@@ -34,6 +34,43 @@ class TakeSourceKey(str, Enum):  # noqa: WPS600
         return None
 
 
+class CameraSettings(BaseModel):
+    """Camera settings input for creating a take.
+
+    Find the list of available camera settings here:
+    https://move-ai.github.io/move-ugc-api/getting-started/multicam/lenses/
+    """
+
+    lens: str = Field(
+        description="Lens used for the take",
+        title="Lens",
+        examples=[
+            "goprohero10-2-7k",
+            "blackmagic-ea-4k-24mm",
+            "sony-synced-fhd",
+            "panasonic-lumix-dc-bgh1-4k-12mm",
+            "optitrackprimecolor12mm-fhd",
+        ],
+    )
+
+
+class ClipWindow(BaseModel):
+    """Clip window for cropping a source."""
+
+    start_time: float = Field(
+        description="Start time of the clip window",
+        title="Start time",
+        examples=[0],
+        serialization_alias="startTime",
+    )
+    end_time: float = Field(
+        description="End time of the clip window",
+        title="End time",
+        examples=[10.0],
+        serialization_alias="endTime",
+    )
+
+
 class AdditionalFileType(BaseModel):
     """Representation for Additional File type in MoveUGC."""
 
@@ -71,4 +108,20 @@ class SourceIn(BaseModel, use_enum_values=True):
         description="Format of the source",
         title="Source format",
         examples=["MP4", "MOVE"],
+    )
+
+    camera_settings: Optional[CameraSettings] = Field(
+        description="Camera settings used for the take",
+        title="Camera settings",
+        examples=[{"lens": "goprohero10-2-7k"}],
+        serialization_alias="cameraSettings",
+        default=None,
+    )
+
+    clip_window: Optional[ClipWindow] = Field(
+        description="Clip window for cropping the source",
+        title="Clip window",
+        examples=[{"startTime": 0, "endTime": 10}],
+        serialization_alias="clipWindow",
+        default=None,
     )

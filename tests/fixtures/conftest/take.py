@@ -5,6 +5,7 @@ from typing import Any, Dict
 import pytest
 from graphql.execution.execute import ExecutionResult
 
+from move_ugc.schemas.constants import SOURCES_LITERAL
 from move_ugc.schemas.sources import TakeSourceKey
 from tests.constants import (
     CLIENT_LITERAL,
@@ -262,12 +263,13 @@ def take_update_response_with_client(
     )
 
 
-def build_response_with_video_source(
+def build_response_with_video_source(  # noqa: WPS211
     fake_response,
     fake_file_json,
     mock_transport,
     introspection_result,
     key,
+    camera_settings=None,
 ):
     """Build response with video source.
 
@@ -277,17 +279,20 @@ def build_response_with_video_source(
         mock_transport (MockTransport): Mock transport.
         introspection_result (dict[str, str]): Introspection result.
         key (str): Key of graphql query.
+        camera_settings (dict[str, str]): Camera settings.
 
     Returns:
         FakeTakeJson: Fake take response.
     """
-    fake_response[key]["sources"] = [
+    fake_response[key][SOURCES_LITERAL] = [
         {
             "deviceLabel": "foobar",
             "format": TakeSourceKey.mp4.value,
             "file": fake_file_json,
         },
     ]
+    if camera_settings:
+        fake_response[key][SOURCES_LITERAL][0]["cameraSettings"] = camera_settings
     take_response = ExecutionResult(data=fake_response)
     mock_transport.side_effect = [introspection_result, take_response]
     return take_response
@@ -374,12 +379,13 @@ def take_update_response_with_video_source(
     )
 
 
-def build_response_with_additional_sources(
+def build_response_with_additional_sources(  # noqa: WPS211
     fake_response,
     fake_file_json,
     mock_transport,
     introspection_result,
     key,
+    camera_settings=None,
 ):
     """Build response with additional sources.
 
@@ -389,12 +395,13 @@ def build_response_with_additional_sources(
         mock_transport (MockTransport): Mock transport.
         introspection_result (dict[str, str]): Introspection result.
         key (str): Key of graphql query.
+        camera_settings (dict[str, str]): Camera settings.
 
     Returns:
         FakeTakeJson: Fake take response.
     """
     device_label = "foobar"
-    fake_response[key]["sources"] = [
+    fake_response[key][SOURCES_LITERAL] = [
         {
             "deviceLabel": device_label,
             "format": TakeSourceKey.mp4.value,
@@ -406,6 +413,9 @@ def build_response_with_additional_sources(
             "file": fake_file_json,
         },
     ]
+    if camera_settings:
+        fake_response[key][SOURCES_LITERAL][0]["cameraSettings"] = camera_settings
+        fake_response[key][SOURCES_LITERAL][1]["cameraSettings"] = camera_settings
     take_response = ExecutionResult(data=fake_response)
     mock_transport.side_effect = [introspection_result, take_response]
     return take_response

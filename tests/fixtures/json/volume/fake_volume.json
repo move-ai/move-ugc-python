@@ -1,0 +1,9 @@
+{
+	"id": "volume-af54cc45-7137-4206-a4c1-b3bc21b398fc",
+	"created": "2023-06-29T08:54:52.349467Z",
+    "humanHeight": 1.5,
+    "areaType": "NORMAL",
+    "name": "fake_volume",
+    "state": "RUNNING",
+	"metadata": "{}"
+}

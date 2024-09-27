@@ -13,4 +13,5 @@ pytest_plugins = [
     "tests.fixtures.conftest.job",
     "tests.fixtures.conftest.commons",
     "tests.fixtures.conftest.webhooks",
+    "tests.fixtures.conftest.volume",
 ]

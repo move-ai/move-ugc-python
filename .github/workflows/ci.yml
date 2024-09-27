@@ -58,6 +58,7 @@ jobs:
         uses: commitizen-tools/commitizen-action@master
         with:
           push: false
+          prerelease: beta
           changelog: false
       - name: Push using ssh
         run: |

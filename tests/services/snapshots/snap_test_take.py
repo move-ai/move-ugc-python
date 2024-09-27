@@ -126,6 +126,8 @@ snapshots[
     },
     "sources": [
         {
+            "camera_settings": None,
+            "clip_window": None,
             "device_label": "foobar",
             "file": {
                 "client": None,
@@ -156,6 +158,8 @@ snapshots[
             "format": "MP4",
         },
         {
+            "camera_settings": None,
+            "clip_window": None,
             "device_label": "foobar",
             "file": {
                 "client": None,
@@ -332,6 +336,8 @@ snapshots[
     },
     "sources": [
         {
+            "camera_settings": None,
+            "clip_window": None,
             "device_label": "foobar",
             "file": {
                 "client": None,
@@ -638,6 +644,8 @@ snapshots[
     },
     "sources": [
         {
+            "camera_settings": None,
+            "clip_window": None,
             "device_label": "foobar",
             "file": {
                 "client": None,
@@ -668,6 +676,8 @@ snapshots[
             "format": "MP4",
         },
         {
+            "camera_settings": None,
+            "clip_window": None,
             "device_label": "foobar",
             "file": {
                 "client": None,
@@ -820,6 +830,8 @@ snapshots[
     },
     "sources": [
         {
+            "camera_settings": None,
+            "clip_window": None,
             "device_label": "foobar",
             "file": {
                 "client": None,
@@ -1009,6 +1021,8 @@ snapshots[
     },
     "sources": [
         {
+            "camera_settings": None,
+            "clip_window": None,
             "device_label": "foobar",
             "file": {
                 "client": None,
@@ -1039,6 +1053,8 @@ snapshots[
             "format": "MP4",
         },
         {
+            "camera_settings": None,
+            "clip_window": None,
             "device_label": "foobar",
             "file": {
                 "client": None,
@@ -1193,6 +1209,8 @@ snapshots[
     },
     "sources": [
         {
+            "camera_settings": None,
+            "clip_window": None,
             "device_label": "foobar",
             "file": {
                 "client": None,

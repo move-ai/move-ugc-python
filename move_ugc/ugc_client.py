@@ -4,6 +4,7 @@ from move_ugc.services.client import ClientService
 from move_ugc.services.file import FileService
 from move_ugc.services.job import JobService
 from move_ugc.services.take import TakeService
+from move_ugc.services.volume import VolumeService
 from move_ugc.services.webhooks import WebhookService
 
 
@@ -54,3 +55,12 @@ class MoveUgc(MetaClient):
             WebhookService: The webhook service.
         """
         return WebhookService(**self.model_dump())
+
+    @property
+    def volumes(self) -> VolumeService:
+        """Get the volume service.
+
+        Returns:
+            VolumeService: The volume service.
+        """
+        return VolumeService(**self.model_dump())
