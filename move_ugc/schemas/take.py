@@ -5,44 +5,10 @@ from typing import Any, List, Optional
 from pydantic import BaseModel, Field, Json
 
 from move_ugc.schemas.client import Client
-from move_ugc.schemas.file import FileType
-from move_ugc.schemas.sources import CameraSettings, ClipWindow
+from move_ugc.schemas.sources import Source
+from move_ugc.schemas.volume import HumanVolumeType
 
 ID_LITERAL = "id"
-
-
-class Source(BaseModel):
-    """Representation for Source type in MoveUGC."""
-
-    device_label: str = Field(
-        description="Label for the device",
-        examples=["my-device"],
-        title="Device label",
-        alias="deviceLabel",
-    )
-    file: FileType = Field(  # noqa: WPS110
-        description="File associated with the source",
-        examples=[{ID_LITERAL: "file-1fd863d5-875b-4e48-89bb-c6234e804738"}],
-        title="Source file",
-    )
-    format: str = Field(
-        description="Format of the source",
-        examples=["MP4"],
-        title="Source format",
-    )
-    camera_settings: Optional[CameraSettings] = Field(
-        description="Camera settings used for the take",
-        title="Camera settings",
-        examples=[{"lens": "goprohero10-2-7k"}],
-        serialization_alias="cameraSettings",
-        default=None,
-    )
-    clip_window: Optional[ClipWindow] = Field(
-        description="Clip window for the source",
-        title="Clip window",
-        examples=[{"startTime": 0, "endTime": 10}],
-        default=None,
-    )
 
 
 class TakeType(BaseModel):
@@ -52,6 +18,12 @@ class TakeType(BaseModel):
         description="Unique identifier for the take",
         examples=["take-2c6059be-0f91-4cb8-aa1a-512cd10a66b5"],
         title="Take ID",
+    )
+    name: Optional[str] = Field(
+        description="Name of the take",
+        examples=["My take"],
+        title="Take name",
+        default="",
     )
     created: datetime = Field(
         description="Date and time when the take was created. This will be in UTC.",
@@ -85,5 +57,11 @@ class TakeType(BaseModel):
         ],
         title="Take sources",
         alias="sources",
+        default=None,
+    )
+    volume: Optional[HumanVolumeType] = Field(
+        description="Volume associated with the take",
+        examples=[{"id": "volume-4003a524-7819-4537-ac82-8a3ac2635db9"}],
+        title="Take volume",
         default=None,
     )

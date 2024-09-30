@@ -10,6 +10,9 @@ per-file-ignores =
     WPS442,
     ; Found too many module members
     WPS202,
+    tests/services/test_take.py:
+    ; Found string literal over-use: _ - we can't remove this because of fixture names
+    WPS226,
     move_ugc/__init__.py:
     ; Found `__init__.py` module with logic
     WPS412,
@@ -49,3 +52,6 @@ per-file-ignores =
     RST214,
     ; Inline interpreted text or phrase reference start-string without end-string
     RST215,
+    move_ugc/gql_requests/take.py:
+    ; WPS226 Found string constant over-use - for }} brackets - we can't remove this due to f-strings
+    WPS226,

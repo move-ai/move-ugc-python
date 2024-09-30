@@ -1,11 +1,13 @@
 """GraphQL helper schemas."""
+import copy
 from typing import Dict, List, Optional
 
 from gql import gql
 from graphql import DocumentNode
 from pydantic import BaseModel, Field
 
-from move_ugc.schemas.constants import ALLOWED_EXPAND_ATTRS
+from move_ugc.gql_requests.fragments import human_volume_fragment
+from move_ugc.schemas.constants import ALLOWED_EXPAND_ATTRS, VOLUME_LITERAL
 
 
 class UgcGql(BaseModel):
@@ -27,10 +29,14 @@ class UgcGql(BaseModel):
         Returns:
             DocumentNode: Query with the expanded fields.
         """
+        query = copy.deepcopy(self.query)
         expand_query = ""
         if expand:
             expand_query = "\n".join(
                 [self.expand[field] for field in expand],
             )
+            if VOLUME_LITERAL in expand:
+                # Add all union type fragments
+                query += "\n".join([human_volume_fragment])
 
-        return gql(self.query.format(expand=expand_query))
+        return gql(query.format(expand=expand_query))

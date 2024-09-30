@@ -1,6 +1,7 @@
 """Constants to be used in tests."""
 
 CREATE_TAKE_MUTATION = "createSingleCamTake"
+CREATE_MULTICAM_TAKE_MUTATION = "createMultiCamTake"
 UPDATE_TAKE_MUTATION = "updateTake"
 GET_TAKE_QUERY = "getTake"
 LIST_TAKES_QUERY = "listTakes"
