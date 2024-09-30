@@ -8,7 +8,7 @@ from tests.constants import LIST_JOBS_QUERY
 from tests.services.testcases import ServicesTestCase
 
 
-class TestJobService(ServicesTestCase):
+class TestJobService(ServicesTestCase):  # noqa: WPS214
     """Test job service."""
 
     service_name = "jobs"
@@ -53,6 +53,59 @@ class TestJobService(ServicesTestCase):
         job_model = self.client.jobs.create(
             take_id=faker.uuid4(),
             metadata=request.getfixturevalue("metadata_for_update"),
+            expand=expand,
+        )
+        suffix = "_".join(expand) if expand else str(expand)
+        self.assert_execute(
+            snapshot=snapshot,
+            name=f"create_mutation_expand_{suffix}",
+        )
+        snapshot.assert_match(
+            job_model.model_dump(),
+            name=f"create_response_expand_{suffix}",
+        )
+
+    @pytest.mark.parametrize(
+        argnames="expand, job_fixture",
+        argvalues=[
+            (None, "job_create_multicam_response"),
+            ([], "job_create_multicam_response"),
+            (["client"], "job_create_multicam_with_client"),
+            (["take"], "job_create_multicam_with_take"),
+            (["outputs"], "job_create_multicam_with_outputs"),
+        ],
+        ids=[
+            "no_expand",
+            "empty_expand",
+            "expand_client",
+            "expand_take",
+            "expand_outputs",
+        ],
+    )
+    def test_create_multicam(  # noqa: WPS211
+        self,
+        snapshot,
+        request,
+        faker,
+        expand,
+        job_fixture,
+    ):
+        """Test creating a job.
+
+        This should test -> `ugc.jobs.create()`
+
+        Args:
+            snapshot: The snapshot fixture.
+            request: The request fixture.
+            faker: The faker fixture.
+            expand: The expand fixture.
+            job_fixture: The job fixture.
+        """
+        request.getfixturevalue(job_fixture)
+        job_model = self.client.jobs.create_multicam(
+            take_id=faker.uuid4(),
+            metadata=request.getfixturevalue("metadata_for_update"),
+            number_of_actors=faker.pyint(),
             expand=expand,
         )
         suffix = "_".join(expand) if expand else str(expand)

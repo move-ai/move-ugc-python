@@ -2,11 +2,35 @@
 from datetime import datetime
 from typing import Any, List, Optional
 
-from pydantic import BaseModel, Field, Json
+from pydantic import BaseModel, ConfigDict, Field, Json, alias_generators
 
 from move_ugc.schemas.client import Client
 from move_ugc.schemas.sources import AdditionalFileType
 from move_ugc.schemas.take import TakeType
+
+
+class JobOptions(BaseModel):
+    """Options which can be used for creating a job in MoveUGC.
+
+    This schema is used to represent the options which can be used for creating a job in MoveUGC.
+
+    The options are validated at runtime by the MoveUGC API. So, if you don't see an option you want to use,
+    please check the API documentation for the allowed options, and provide the key here accordingly as the key
+    may be missing in this version of the sdk but is still allowed by this schema (as extra="allow").
+
+    You can define the options as mentioned in the documentation or use snake case equivalent.
+    For example:
+
+    JobOptions(trackBall=True) can also be written as JobOptions(track_ball=True)
+
+    Please find the allowed options in the API documentation.
+    https://move-ai.github.io/move-ugc-api/schema/#optionsinput
+    """
+
+    model_config = ConfigDict(
+        extra="allow",
+        alias_generator=alias_generators.to_camel,
+    )
 
 
 class JobType(BaseModel):
@@ -54,4 +78,10 @@ class JobType(BaseModel):
         examples=[{"id": "take-4003a524-7819-4537-ac82-8a3ac2635db9"}],
         title="Job take",
         default=None,
+    )
+    name: Optional[str] = Field(
+        description="Name of the job",
+        examples=["job 1"],
+        title="Job name",
+        default="",
     )
