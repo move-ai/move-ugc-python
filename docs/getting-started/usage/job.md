@@ -74,3 +74,20 @@ job = ugc.jobs.update(
 ```
 
 For more information on the job object, see the [API reference](/move-ugc-python/latest/api-reference/schemas/job/).
+
+
+## Creating a multicam job
+
+To create a multicam job, you can use the `create_multicam` method:
+
+```python
+job = ugc.jobs.create_multicam(
+    take_id="take-2be2463e-ffa3-419b-beb4-ea0f99c79512",
+    options=JobOptions(track_fingers=True),
+    name="My multicam job",
+)
+```
+
+See the [API reference](/move-ugc-python/latest/api-reference/services/job/#move_ugc.schemas.job.JobOptions) for more information on available job options for multicam.
+
+See quickstart guide [here](https://move-ai.github.io/move-ugc-api/getting-started/multicam/quickstart/) for steps to create a multicam job. Please use the equivalent methods in the SDK to create a multicam job.

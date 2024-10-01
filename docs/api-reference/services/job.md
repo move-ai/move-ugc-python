@@ -4,6 +4,8 @@
     options:
         members:
             - create
+            - create_singlecam
+            - create_multicam
             - retrieve
             - update
             - list
