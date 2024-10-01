@@ -1,5 +1,6 @@
 """Take service for Move UGC SDK."""
 from typing import Any, Dict, List, Optional
+from warnings import warn
 
 from move_ugc.gql_requests.job import create as create_query
 from move_ugc.gql_requests.job import create_multicam, list_query
@@ -32,6 +33,41 @@ class JobService(BaseService[JobType]):
     _schema = JobType
 
     def create(
+        self,
+        take_id: str,
+        name: Optional[str] = "",
+        metadata: Optional[Dict[str, Any]] = None,
+        expand: Optional[List[ALLOWED_EXPAND_ATTRS]] = None,
+    ) -> JobType:
+        """Create a singlecam job in MoveUGC.
+
+        Args:
+            take_id:
+                id of the take to be used for creating the job.
+            name:
+                name to be used for creating the job.
+            metadata:
+                metadata to be used for creating the job. This should be a valid json string.
+            expand:
+                list of fields to be expanded.
+                Currently only `client`, `take` and `outputs` are supported.
+
+        Returns:
+            Job instance of Pydantic model type.
+        """
+        warn(
+            "This method is deprecated. Use create_singlecam instead.",
+            DeprecationWarning,
+            stacklevel=2,
+        )
+        return self.create_singlecam(
+            take_id=take_id,
+            name=name,
+            metadata=metadata,
+            expand=expand,
+        )
+
+    def create_singlecam(
         self,
         take_id: str,
         name: Optional[str] = "",
