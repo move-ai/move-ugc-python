@@ -1,13 +1,14 @@
 """Take service for Move UGC SDK."""
 from typing import Any, Dict, List, Optional
+from warnings import warn
 
 from move_ugc.gql_requests.job import create as create_query
-from move_ugc.gql_requests.job import list_query
+from move_ugc.gql_requests.job import create_multicam, list_query
 from move_ugc.gql_requests.job import retrieve as retrieve_query
 from move_ugc.gql_requests.job import update as update_query
 from move_ugc.schemas.commons import ListBase, SortDirection, get_default_page_size
 from move_ugc.schemas.constants import ALLOWED_EXPAND_ATTRS
-from move_ugc.schemas.job import JobType
+from move_ugc.schemas.job import JobOptions, JobType
 from move_ugc.services.base import BaseService
 
 
@@ -34,14 +35,52 @@ class JobService(BaseService[JobType]):
     def create(
         self,
         take_id: str,
+        name: Optional[str] = "",
         metadata: Optional[Dict[str, Any]] = None,
         expand: Optional[List[ALLOWED_EXPAND_ATTRS]] = None,
     ) -> JobType:
-        """Create a job in MoveUGC.
+        """Create a singlecam job in MoveUGC.
 
         Args:
             take_id:
                 id of the take to be used for creating the job.
+            name:
+                name to be used for creating the job.
+            metadata:
+                metadata to be used for creating the job. This should be a valid json string.
+            expand:
+                list of fields to be expanded.
+                Currently only `client`, `take` and `outputs` are supported.
+
+        Returns:
+            Job instance of Pydantic model type.
+        """
+        warn(
+            "This method is deprecated. Use create_singlecam instead.",
+            DeprecationWarning,
+            stacklevel=2,
+        )
+        return self.create_singlecam(
+            take_id=take_id,
+            name=name,
+            metadata=metadata,
+            expand=expand,
+        )
+
+    def create_singlecam(
+        self,
+        take_id: str,
+        name: Optional[str] = "",
+        metadata: Optional[Dict[str, Any]] = None,
+        expand: Optional[List[ALLOWED_EXPAND_ATTRS]] = None,
+    ) -> JobType:
+        """Create a singlecam job in MoveUGC.
+
+        Args:
+            take_id:
+                id of the take to be used for creating the job.
+            name:
+                name to be used for creating the job.
             metadata:
                 metadata to be used for creating the job. This should be a valid json string.
             expand:
@@ -56,6 +95,51 @@ class JobService(BaseService[JobType]):
             gql_query=create_query.generate_query(expand=expand),
             variable_values={
                 "take_id": take_id,
+                "name": name,
+                "metadata": self.encode_aws_metadata(metadata),
+            },
+        )
+
+    def create_multicam(  # noqa: WPS211
+        self,
+        take_id: str,
+        number_of_actors: int,
+        options: Optional[JobOptions] = None,
+        name: Optional[str] = "",
+        metadata: Optional[Dict[str, Any]] = None,
+        expand: Optional[List[ALLOWED_EXPAND_ATTRS]] = None,
+    ) -> JobType:
+        """Create a multicam job in MoveUGC.
+
+        Args:
+            take_id:
+                id of the take to be used for creating the job.
+            number_of_actors:
+                number of actors to be used for creating the job.
+            options:
+                options to be used for creating the job.
+                Check all the valid allowed options in the API documentation.
+                https://move-ai.github.io/move-ugc-api/schema/#optionsinput
+            name:
+                name to be used for creating the job.
+            metadata:
+                metadata to be used for creating the job. This should be a valid json string.
+            expand:
+                list of fields to be expanded.
+                Currently only `client`, `take` and `outputs` are supported.
+
+        Returns:
+            Job instance of Pydantic model type.
+        """
+        options = options or JobOptions()
+        return self.execute(
+            query_key=create_multicam.key,
+            gql_query=create_multicam.generate_query(expand=expand),
+            variable_values={
+                "take_id": take_id,
+                "numberOfActors": number_of_actors,
+                "name": name,
+                "options": options.model_dump(by_alias=True, mode="json"),
                 "metadata": self.encode_aws_metadata(metadata),
             },
         )

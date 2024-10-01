@@ -10,14 +10,23 @@ job_attributes = """
     created
     metadata
     state
+    name
     {expand}
     __typename
 """
 
 create = UgcGql(
     query=f"""
-    mutation create($take_id: String!, $metadata: AWSJSON) {{{{
-        createSingleCamJob(takeId: $take_id, metadata: $metadata) {{{{
+    mutation create(
+        $take_id: String!,
+        $name: String,
+        $metadata: AWSJSON
+    ) {{{{
+        createSingleCamJob(
+            takeId: $take_id,
+            name: $name,
+            metadata: $metadata
+        ) {{{{
             {job_attributes}
         }}}}
     }}}}
@@ -30,6 +39,33 @@ create = UgcGql(
     },
 )
 
+create_multicam = UgcGql(
+    query=f"""
+    mutation create(
+        $take_id: String!,
+        $name: String,
+        $numberOfActors: Int!,
+        $options: OptionsInput,
+        $metadata: AWSJSON
+    ) {{{{
+        createMultiCamJob(
+            takeId: $take_id,
+            name: $name,
+            numberOfActors: $numberOfActors,
+            options: $options,
+            metadata: $metadata
+        ) {{{{
+            {job_attributes}
+        }}}}
+    }}}}
+    """,
+    key="createMultiCamJob",
+    expand={
+        CLIENT_LITERAL: expand_client_query,
+        TAKE_LITERAL: expand_take_query,
+        OUTPUTS_LITERAL: expand_outputs,
+    },
+)
 
 retrieve = UgcGql(
     query=f"""
