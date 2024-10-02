@@ -17,7 +17,7 @@ def metadata_for_update(faker) -> Dict[str, Any]:
     Returns:
         Dict[str, Any]: fake metadata dictionary
     """
-    return faker.pydict()
+    return faker.pydict(value_types=["str"])
 
 
 def build_list_response(fake_response, faker) -> Dict[str, Any]:
@@ -30,4 +30,8 @@ def build_list_response(fake_response, faker) -> Dict[str, Any]:
     Returns:
         Dict[str, Any]: list response
     """
-    return {"first": faker.pyint(), "after": faker.pydict(), "items": [fake_response]}
+    return {
+        "first": faker.pyint(),
+        "after": faker.pydict(value_types=["str"]),
+        "items": [fake_response],
+    }

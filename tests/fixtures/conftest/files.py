@@ -277,8 +277,8 @@ def share_code_response(
     fake_share_code_response = {
         generate_share_code.key: {
             "code": faker.pystr(),
-            "created": faker.date_time().isoformat(),
-            "expires": faker.date_time().isoformat(),
+            "created": faker.date_time().date().isoformat(),
+            "expires": faker.date_time().date().isoformat(),
             "file": {"id": faker.uuid4()},
             "url": faker.url(),
         },
