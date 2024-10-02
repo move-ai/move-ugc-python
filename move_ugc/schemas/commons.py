@@ -2,7 +2,7 @@
 import enum
 from typing import Any, Dict, List, Optional, Union
 
-from pydantic import BaseModel, BeforeValidator, ConfigDict, Field
+from pydantic import BaseModel, BeforeValidator, ConfigDict, Field, Json
 from typing_extensions import Annotated
 
 from move_ugc.schemas.job import JobType
@@ -10,6 +10,7 @@ from move_ugc.schemas.take import TakeType
 from move_ugc.settings import get_settings
 
 LIST_ITEM_TYPE = List[Dict[str, Any]]
+DICT_AS_JSON_STRING_TYPE = Json[Dict[str, Any]]
 
 
 def validate_list_items_type(
@@ -67,7 +68,7 @@ class ListBase(BaseModel):
         description="Number of items to be returned.",
         alias="first",
     )
-    next_token: Optional[Dict[str, Any]] = Field(
+    next_token: Optional[DICT_AS_JSON_STRING_TYPE] = Field(
         default=None,
         description="Cursor for the next page.",
         alias="after",
