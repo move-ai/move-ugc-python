@@ -1,4 +1,5 @@
 """Common fixtures for the UGC Client shared across types."""
+import json
 from typing import Any, Dict
 
 import pytest
@@ -32,6 +33,6 @@ def build_list_response(fake_response, faker) -> Dict[str, Any]:
     """
     return {
         "first": faker.pyint(),
-        "after": faker.pydict(value_types=["str"]),
+        "after": json.dumps(faker.pydict(value_types=["str"])),
         "items": [fake_response],
     }
