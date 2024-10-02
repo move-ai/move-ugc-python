@@ -3,7 +3,8 @@
 ::: move_ugc.services.take.TakeService
     options:
         members:
-            - create
+            - create_singlecam
+            - create_multicam
             - retrieve
             - list
             - update

@@ -33,6 +33,7 @@ nav:
         - Files: "api-reference/services/file.md"
         - Takes: "api-reference/services/take.md"
         - Jobs: "api-reference/services/job.md"
+        - Volumes: "api-reference/services/volume.md"
         - Client: "api-reference/services/client.md"
         - Webhooks: "api-reference/services/webhooks.md"
       - Schemas:
@@ -40,6 +41,8 @@ nav:
         - Client: "api-reference/schemas/client.md"
         - Take: "api-reference/schemas/take.md"
         - Job: "api-reference/schemas/job.md"
+        - Sources: "api-reference/schemas/sources.md"
+        - Volume: "api-reference/schemas/volumes.md"
         - Commons: "api-reference/schemas/commons.md"
         - Webhooks: "api-reference/schemas/webhooks.md"
   - "Contributing": "contributing.md"

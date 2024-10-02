@@ -1,6 +1,6 @@
 # Volume
 
-::: move_ugc.services.take.VolumeService
+::: move_ugc.services.volume.VolumeService
     options:
         members:
             - create_human_volume
