@@ -57,7 +57,7 @@ snapshots["TestClientService.test_update update_query"] = [
     {
         "operation_name": None,
         "variable_values": {
-            "metadata": '{"decade": -127471.91004658, "other": 4537, "draw": 9025, "table": "fPlGoqlVJAWBmofrulqS", "huge": "RLQMnHdwIMQHuSbBEcSq", "last": "CliYtuFCSJkGbKACMVZc", "trouble": "1982-01-05 12:28:54", "analysis": "ableRsSGSBRpUxDKSTZs", "house": "EQQpSzpRFSYEmmcBHMyX", "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053"}',
+            "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
         },
     },
 ]
@@ -66,16 +66,16 @@ snapshots["TestClientService.test_update update_response"] = {
     "created": GenericRepr("datetime.datetime(2023, 6, 12, 0, 0, tzinfo=TzInfo(UTC))"),
     "id": "client-47c982ec-60ab-4a0b-9286-2db4a76abc18",
     "metadata": {
-        "analysis": "ableRsSGSBRpUxDKSTZs",
-        "decade": -127471.91004658,
-        "director": "-947039390768730142270977422821786185341130903676661937944160217375.3552236429914030334971362203889763798631388053",
-        "draw": 9025,
-        "house": "EQQpSzpRFSYEmmcBHMyX",
-        "huge": "RLQMnHdwIMQHuSbBEcSq",
-        "last": "CliYtuFCSJkGbKACMVZc",
-        "other": 4537,
-        "table": "fPlGoqlVJAWBmofrulqS",
-        "trouble": "1982-01-05 12:28:54",
+        "analysis": "UmKdTFlLMIuIvJkRJnoM",
+        "decade": "zAvJMvacZIYSmMsDUNvC",
+        "director": "KNmpExWtgQLcAEuRyBkN",
+        "draw": "PnbQcVNCliYtuFCSJkGb",
+        "house": "aYyOUXkJPUjPJGpDdakX",
+        "huge": "eFaLyHGEQQpSzpRFSYEm",
+        "last": "dnZCcfgZNBnaEkbOzIyO",
+        "other": "XbBPNrbhtJksbBuoWXSK",
+        "table": "ACMVZcKAiGBcYgCzHAad",
+        "trouble": "UgnhIyaDJzohUigyDYZf",
     },
     "name": "PYTEST_INVALID_CLIENT_NAME",
     "portal": GenericRepr(

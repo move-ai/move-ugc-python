@@ -9,13 +9,13 @@ packages = [{include = "move_ugc"}, {include = "move_ugc/py.typed"}]
 [tool.poetry.dependencies]
 python = "^3.8.1"
 gql = {extras = ["requests"], version = "^3.4.1"}
-pydantic-settings = "^2.0.0"
+pydantic-settings = "^2.2.1"
 pydantic = "^2.5.3"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.4.0"
 snapshottest = "^0.6.0"
-Faker = ">=18.13,<20.0"
+Faker = ">=18.13,<31.0"
 pytest-freezegun = "^0.4.2"
 pre-commit = "^3.3.3"
 wemake-python-styleguide = "^0.18.0"
@@ -26,9 +26,9 @@ pytest-randomly = "^3.13.0"
 optional = true
 
 [tool.poetry.group.docs.dependencies]
-mkdocs = "^1.4.3"
+mkdocs = "^1.6.1"
 mkdocstrings = {extras = ["python"], version = "^0.22.0"}
-mkdocs-material = "^9.1.17"
+mkdocs-material = "^9.5.38"
 mike = "^1.1.2"
 
 [build-system]

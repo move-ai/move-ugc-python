@@ -277,8 +277,11 @@ def share_code_response(
     fake_share_code_response = {
         generate_share_code.key: {
             "code": faker.pystr(),
-            "created": faker.date_time().isoformat(),
-            "expires": faker.date_time().isoformat(),
+            # Hard code both created and expires datetime
+            # because faker & freezegun don't seem to work on windows
+            # properly and changes values each time for this test
+            "created": "2014-04-25T09:00:00.00",
+            "expires": "2014-04-25T09:15:00.00",
             "file": {"id": faker.uuid4()},
             "url": faker.url(),
         },
