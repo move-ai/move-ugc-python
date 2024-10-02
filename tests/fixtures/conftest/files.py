@@ -3,6 +3,7 @@ import json
 from typing import Dict
 
 import pytest
+from freezegun import freeze_time
 from graphql.execution.execute import ExecutionResult
 
 from move_ugc.gql_requests.file import generate_share_code
@@ -274,15 +275,16 @@ def share_code_response(
     Yields:
         share_code_response (ExecutionResult): Fake share code response.
     """
-    fake_share_code_response = {
-        generate_share_code.key: {
-            "code": faker.pystr(),
-            "created": faker.date_time().date().isoformat(),
-            "expires": faker.date_time().date().isoformat(),
-            "file": {"id": faker.uuid4()},
-            "url": faker.url(),
-        },
-    }
+    with freeze_time("2021-01-01"):
+        fake_share_code_response = {
+            generate_share_code.key: {
+                "code": faker.pystr(),
+                "created": faker.date_time().isoformat(),
+                "expires": faker.date_time().isoformat(),
+                "file": {"id": faker.uuid4()},
+                "url": faker.url(),
+            },
+        }
     share_code_response = ExecutionResult(data=fake_share_code_response)
     mock_transport.side_effect = [introspection_result, share_code_response]
     yield share_code_response

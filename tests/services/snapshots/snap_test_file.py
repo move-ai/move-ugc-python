@@ -234,8 +234,8 @@ snapshots[
     "TestFileService.test_generate_share_code generate_share_code_mutation_response"
 ] = {
     "code": "WkDQwclzAvJMvacZIYSm",
-    "created": GenericRepr("datetime.datetime(2010, 10, 4, 0, 0)"),
-    "expires": GenericRepr("datetime.datetime(1989, 4, 22, 0, 0)"),
+    "created": GenericRepr("datetime.datetime(2007, 12, 19, 5, 34, 54, 659627)"),
+    "expires": GenericRepr("datetime.datetime(1987, 12, 26, 15, 40, 21, 270401)"),
     "file_id": "ed34cde6-e490-42be-849a-f3db904ddfc0",
     "url": GenericRepr("Url('https://www.ramirez.biz/')"),
 }
