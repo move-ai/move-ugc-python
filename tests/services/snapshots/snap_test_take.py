@@ -1630,8 +1630,8 @@ snapshots["TestTakeService.test_take_not_found take_not_found_response"] = [
 
 snapshots["TestTakeService.test_update[empty_expand] update_mutation_expand_[]"] = [
     [
-        """mutation update($id: String!, $metadata: AWSJSON!) {
-  updateTake(id: $id, metadata: $metadata) {
+        """mutation update($id: String!, $metadata: AWSJSON, $name: String) {
+  updateTake(id: $id, metadata: $metadata, name: $name) {
     id
     created
     metadata
@@ -1645,6 +1645,7 @@ snapshots["TestTakeService.test_update[empty_expand] update_mutation_expand_[]"]
         "variable_values": {
             "id": "874a50b9-8d86-4324-bab5-ed05e9c5e560",
             "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+            "name": "Erika Johnson",
         },
     },
 ]
@@ -1676,8 +1677,8 @@ snapshots[
     "TestTakeService.test_update[expand_additional_files] update_mutation_expand_sources"
 ] = [
     [
-        """mutation update($id: String!, $metadata: AWSJSON!) {
-  updateTake(id: $id, metadata: $metadata) {
+        """mutation update($id: String!, $metadata: AWSJSON, $name: String) {
+  updateTake(id: $id, metadata: $metadata, name: $name) {
     id
     created
     metadata
@@ -1705,6 +1706,7 @@ snapshots[
         "variable_values": {
             "id": "874a50b9-8d86-4324-bab5-ed05e9c5e560",
             "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+            "name": "Erika Johnson",
         },
     },
 ]
@@ -1805,8 +1807,8 @@ snapshots[
     "TestTakeService.test_update[expand_client] update_mutation_expand_client"
 ] = [
     [
-        """mutation update($id: String!, $metadata: AWSJSON!) {
-  updateTake(id: $id, metadata: $metadata) {
+        """mutation update($id: String!, $metadata: AWSJSON, $name: String) {
+  updateTake(id: $id, metadata: $metadata, name: $name) {
     id
     created
     metadata
@@ -1828,6 +1830,7 @@ snapshots[
         "variable_values": {
             "id": "874a50b9-8d86-4324-bab5-ed05e9c5e560",
             "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+            "name": "Erika Johnson",
         },
     },
 ]
@@ -1873,8 +1876,8 @@ snapshots[
     "TestTakeService.test_update[expand_video_file] update_mutation_expand_sources"
 ] = [
     [
-        """mutation update($id: String!, $metadata: AWSJSON!) {
-  updateTake(id: $id, metadata: $metadata) {
+        """mutation update($id: String!, $metadata: AWSJSON, $name: String) {
+  updateTake(id: $id, metadata: $metadata, name: $name) {
     id
     created
     metadata
@@ -1902,6 +1905,7 @@ snapshots[
         "variable_values": {
             "id": "874a50b9-8d86-4324-bab5-ed05e9c5e560",
             "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+            "name": "Erika Johnson",
         },
     },
 ]
@@ -1967,8 +1971,8 @@ snapshots[
 
 snapshots["TestTakeService.test_update[no_expand] update_mutation_expand_None"] = [
     [
-        """mutation update($id: String!, $metadata: AWSJSON!) {
-  updateTake(id: $id, metadata: $metadata) {
+        """mutation update($id: String!, $metadata: AWSJSON, $name: String) {
+  updateTake(id: $id, metadata: $metadata, name: $name) {
     id
     created
     metadata
@@ -1982,6 +1986,7 @@ snapshots["TestTakeService.test_update[no_expand] update_mutation_expand_None"] 
         "variable_values": {
             "id": "874a50b9-8d86-4324-bab5-ed05e9c5e560",
             "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+            "name": "Erika Johnson",
         },
     },
 ]
