@@ -202,6 +202,7 @@ class TestTakeService(ServicesTestCase):  # noqa: WPS214
             id=faker.uuid4(),
             metadata=request.getfixturevalue("metadata_for_update"),
             expand=expand,
+            name=faker.name(),
         )
         suffix = "_".join(expand) if expand else str(expand)
         self.assert_execute(

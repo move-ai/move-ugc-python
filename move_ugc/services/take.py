@@ -144,6 +144,7 @@ class TakeService(BaseService[TakeType]):
     def update(
         self,
         id: str,
+        name: Optional[str] = "",
         metadata: Optional[Dict[str, Any]] = None,
         expand: Optional[List[ALLOWED_EXPAND_ATTRS]] = None,
     ) -> TakeType:
@@ -152,6 +153,8 @@ class TakeService(BaseService[TakeType]):
         Args:
             id:
                 unique identifier for the take. This should typically be something like `take-{uuid}`.
+            name:
+                name of the take
             metadata:
                 metadata to be used for updating the take. This should be a valid json string.
             expand:
@@ -161,12 +164,16 @@ class TakeService(BaseService[TakeType]):
         Returns:
             Take instance of Pydantic model type.
         """
+        encoded_metadata = None
+        if metadata:
+            encoded_metadata = self.encode_aws_metadata(metadata)
         return self.execute(
             query_key=update_query.key,
             gql_query=update_query.generate_query(expand=expand),
             variable_values={
                 "id": id,
-                "metadata": self.encode_aws_metadata(metadata),
+                "name": name,
+                "metadata": encoded_metadata,
             },
         )
 

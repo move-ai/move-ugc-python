@@ -106,8 +106,8 @@ retrieve = UgcGql(
 
 update = UgcGql(
     query=f"""
-    mutation update($id: String!, $metadata: AWSJSON!) {{{{
-        updateTake(id: $id, metadata: $metadata) {{{{
+    mutation update($id: String!, $metadata: AWSJSON, $name: String) {{{{
+        updateTake(id: $id, metadata: $metadata, name: $name) {{{{
             {take_attributes}
         }}}}
     }}}}
