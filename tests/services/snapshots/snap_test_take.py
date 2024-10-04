@@ -79,6 +79,7 @@ snapshots[
         created
         type
         metadata
+        name
         presignedUrl
         thumbnailUrl
         __typename
@@ -154,6 +155,7 @@ snapshots[
                     "table": "ACMVZcKAiGBcYgCzHAad",
                     "trouble": "UgnhIyaDJzohUigyDYZf",
                 },
+                "name": "",
                 "presigned_url": GenericRepr(
                     "Url('https://pytest_invalid_presigned_url.com/file')",
                 ),
@@ -186,6 +188,7 @@ snapshots[
                     "table": "ACMVZcKAiGBcYgCzHAad",
                     "trouble": "UgnhIyaDJzohUigyDYZf",
                 },
+                "name": "",
                 "presigned_url": GenericRepr(
                     "Url('https://pytest_invalid_presigned_url.com/file')",
                 ),
@@ -297,6 +300,7 @@ snapshots[
         created
         type
         metadata
+        name
         presignedUrl
         thumbnailUrl
         __typename
@@ -372,6 +376,7 @@ snapshots[
                     "table": "ACMVZcKAiGBcYgCzHAad",
                     "trouble": "UgnhIyaDJzohUigyDYZf",
                 },
+                "name": "",
                 "presigned_url": GenericRepr(
                     "Url('https://pytest_invalid_presigned_url.com/file')",
                 ),
@@ -604,6 +609,7 @@ snapshots[
         created
         type
         metadata
+        name
         presignedUrl
         thumbnailUrl
         __typename
@@ -697,6 +703,7 @@ snapshots[
                     "table": "ACMVZcKAiGBcYgCzHAad",
                     "trouble": "UgnhIyaDJzohUigyDYZf",
                 },
+                "name": "",
                 "presigned_url": "https://pytest_invalid_presigned_url.com/file",
                 "thumbnail_url": "https://pytest_invalid_thumbnail_url.com/file",
                 "type": ".mp4",
@@ -723,6 +730,7 @@ snapshots[
                     "table": "ACMVZcKAiGBcYgCzHAad",
                     "trouble": "UgnhIyaDJzohUigyDYZf",
                 },
+                "name": "",
                 "presigned_url": "https://pytest_invalid_presigned_url.com/file",
                 "thumbnail_url": "https://pytest_invalid_thumbnail_url.com/file",
                 "type": ".mp4",
@@ -851,6 +859,7 @@ snapshots[
         created
         type
         metadata
+        name
         presignedUrl
         thumbnailUrl
         __typename
@@ -944,6 +953,7 @@ snapshots[
                     "table": "ACMVZcKAiGBcYgCzHAad",
                     "trouble": "UgnhIyaDJzohUigyDYZf",
                 },
+                "name": "",
                 "presigned_url": "https://pytest_invalid_presigned_url.com/file",
                 "thumbnail_url": "https://pytest_invalid_thumbnail_url.com/file",
                 "type": ".mp4",
@@ -1283,6 +1293,7 @@ snapshots[
         created
         type
         metadata
+        name
         presignedUrl
         thumbnailUrl
         __typename
@@ -1345,6 +1356,7 @@ snapshots[
                     "table": "ACMVZcKAiGBcYgCzHAad",
                     "trouble": "UgnhIyaDJzohUigyDYZf",
                 },
+                "name": "",
                 "presigned_url": GenericRepr(
                     "Url('https://pytest_invalid_presigned_url.com/file')",
                 ),
@@ -1377,6 +1389,7 @@ snapshots[
                     "table": "ACMVZcKAiGBcYgCzHAad",
                     "trouble": "UgnhIyaDJzohUigyDYZf",
                 },
+                "name": "",
                 "presigned_url": GenericRepr(
                     "Url('https://pytest_invalid_presigned_url.com/file')",
                 ),
@@ -1475,6 +1488,7 @@ snapshots[
         created
         type
         metadata
+        name
         presignedUrl
         thumbnailUrl
         __typename
@@ -1537,6 +1551,7 @@ snapshots[
                     "table": "ACMVZcKAiGBcYgCzHAad",
                     "trouble": "UgnhIyaDJzohUigyDYZf",
                 },
+                "name": "",
                 "presigned_url": GenericRepr(
                     "Url('https://pytest_invalid_presigned_url.com/file')",
                 ),
@@ -1674,6 +1689,7 @@ snapshots[
         created
         type
         metadata
+        name
         presignedUrl
         thumbnailUrl
         __typename
@@ -1737,6 +1753,7 @@ snapshots[
                     "table": "ACMVZcKAiGBcYgCzHAad",
                     "trouble": "UgnhIyaDJzohUigyDYZf",
                 },
+                "name": "",
                 "presigned_url": GenericRepr(
                     "Url('https://pytest_invalid_presigned_url.com/file')",
                 ),
@@ -1769,6 +1786,7 @@ snapshots[
                     "table": "ACMVZcKAiGBcYgCzHAad",
                     "trouble": "UgnhIyaDJzohUigyDYZf",
                 },
+                "name": "",
                 "presigned_url": GenericRepr(
                     "Url('https://pytest_invalid_presigned_url.com/file')",
                 ),
@@ -1868,6 +1886,7 @@ snapshots[
         created
         type
         metadata
+        name
         presignedUrl
         thumbnailUrl
         __typename
@@ -1931,6 +1950,7 @@ snapshots[
                     "table": "ACMVZcKAiGBcYgCzHAad",
                     "trouble": "UgnhIyaDJzohUigyDYZf",
                 },
+                "name": "",
                 "presigned_url": GenericRepr(
                     "Url('https://pytest_invalid_presigned_url.com/file')",
                 ),

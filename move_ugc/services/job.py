@@ -171,6 +171,7 @@ class JobService(BaseService[JobType]):
         self,
         id: str,
         metadata: Optional[Dict[str, Any]] = None,
+        name: Optional[str] = None,
         expand: Optional[List[ALLOWED_EXPAND_ATTRS]] = None,
     ) -> JobType:
         """Update a job with given job in MoveUGC.
@@ -180,6 +181,8 @@ class JobService(BaseService[JobType]):
                 unique identifier for the take. This should typically be something like `take-{uuid}`.
             metadata:
                 metadata to be used for updating the take. This should be a valid json string.
+            name:
+                name to be used for updating the take.
             expand:
                 list of fields to be expanded.
                 Currently only `client`, `output`, `take` and `sources` are supported.
@@ -187,12 +190,16 @@ class JobService(BaseService[JobType]):
         Returns:
             Take instance of Pydantic model type.
         """
+        encoded_metadata = None
+        if metadata:
+            encoded_metadata = self.encode_aws_metadata(metadata)
         return self.execute(
             query_key=update_query.key,
             gql_query=update_query.generate_query(expand=expand),
             variable_values={
                 "id": id,
-                "metadata": self.encode_aws_metadata(metadata),
+                "metadata": encoded_metadata,
+                "name": name,
             },
         )
 
