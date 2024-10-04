@@ -7,6 +7,7 @@ expand_file_base = """
     created
     type
     metadata
+    name
     presignedUrl
     thumbnailUrl
     __typename
@@ -33,8 +34,16 @@ retrieve = UgcGql(
 
 create = UgcGql(
     query=f"""
-    mutation create($type: String!, $metadata: AWSJSON!) {{{{
-        createFile(type: $type, metadata: $metadata) {{{{
+    mutation create(
+        $type: String!,
+        $metadata: AWSJSON,
+        $name: String
+    ) {{{{
+        createFile(
+            type: $type,
+            metadata: $metadata,
+            name: $name
+        ) {{{{
             {file_attributes}
         }}}}
     }}}}
@@ -45,8 +54,16 @@ create = UgcGql(
 
 update = UgcGql(
     query=f"""
-    mutation update($id: String!, $metadata: AWSJSON!) {{{{
-        updateFile(id: $id, metadata: $metadata) {{{{
+    mutation update(
+        $id: String!,
+        $metadata: AWSJSON,
+        $name: String
+    ) {{{{
+        updateFile(
+            id: $id,
+            metadata: $metadata,
+            name: $name
+        ) {{{{
             {file_attributes}
         }}}}
     }}}}

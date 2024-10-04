@@ -138,6 +138,7 @@ snapshots[
         created
         type
         metadata
+        name
         presignedUrl
         thumbnailUrl
         __typename
@@ -199,6 +200,7 @@ snapshots[
                     "table": "ACMVZcKAiGBcYgCzHAad",
                     "trouble": "UgnhIyaDJzohUigyDYZf",
                 },
+                "name": "",
                 "presigned_url": GenericRepr(
                     "Url('https://pytest_invalid_presigned_url.com/file')",
                 ),
@@ -228,6 +230,7 @@ snapshots[
                     "table": "ACMVZcKAiGBcYgCzHAad",
                     "trouble": "UgnhIyaDJzohUigyDYZf",
                 },
+                "name": "",
                 "presigned_url": GenericRepr(
                     "Url('https://pytest_invalid_presigned_url.com/file')",
                 ),
@@ -527,6 +530,7 @@ snapshots[
         created
         type
         metadata
+        name
         presignedUrl
         thumbnailUrl
         __typename
@@ -590,6 +594,7 @@ snapshots[
                     "table": "ACMVZcKAiGBcYgCzHAad",
                     "trouble": "UgnhIyaDJzohUigyDYZf",
                 },
+                "name": "",
                 "presigned_url": GenericRepr(
                     "Url('https://pytest_invalid_presigned_url.com/file')",
                 ),
@@ -619,6 +624,7 @@ snapshots[
                     "table": "ACMVZcKAiGBcYgCzHAad",
                     "trouble": "UgnhIyaDJzohUigyDYZf",
                 },
+                "name": "",
                 "presigned_url": GenericRepr(
                     "Url('https://pytest_invalid_presigned_url.com/file')",
                 ),
@@ -1091,6 +1097,7 @@ snapshots[
         created
         type
         metadata
+        name
         presignedUrl
         thumbnailUrl
         __typename
@@ -1150,6 +1157,7 @@ snapshots[
                     "table": "ACMVZcKAiGBcYgCzHAad",
                     "trouble": "UgnhIyaDJzohUigyDYZf",
                 },
+                "name": "",
                 "presigned_url": GenericRepr(
                     "Url('https://pytest_invalid_presigned_url.com/file')",
                 ),
@@ -1179,6 +1187,7 @@ snapshots[
                     "table": "ACMVZcKAiGBcYgCzHAad",
                     "trouble": "UgnhIyaDJzohUigyDYZf",
                 },
+                "name": "",
                 "presigned_url": GenericRepr(
                     "Url('https://pytest_invalid_presigned_url.com/file')",
                 ),
@@ -1314,8 +1323,8 @@ snapshots["TestJobService.test_retrieve[no_expand] retrieve_response_expand_None
 
 snapshots["TestJobService.test_update update_mutation"] = [
     [
-        """mutation update($id: String!, $metadata: AWSJSON!) {
-  updateJob(id: $id, metadata: $metadata) {
+        """mutation update($id: String!, $metadata: AWSJSON, $name: String) {
+  updateJob(id: $id, metadata: $metadata, name: $name) {
     id
     created
     metadata
@@ -1330,6 +1339,7 @@ snapshots["TestJobService.test_update update_mutation"] = [
         "variable_values": {
             "id": "8d866324-3ab5-4d05-a9c5-e560a8020f0a",
             "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+            "name": "Amber Harris",
         },
     },
 ]

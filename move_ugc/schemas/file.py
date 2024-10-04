@@ -53,6 +53,12 @@ class FileType(BaseModel):
         alias="thumbnailUrl",
         default="",
     )
+    name: str = Field(
+        description="Name of the file",
+        examples=["My file"],
+        title="File name",
+        default="",
+    )
 
 
 class ShareCode(BaseModel):

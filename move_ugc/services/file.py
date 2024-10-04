@@ -55,6 +55,7 @@ class FileService(BaseService[FileType]):
     def create(
         self,
         file_type: str,
+        name: Optional[str] = "",
         metadata: Optional[Dict[str, Any]] = None,
         expand: Optional[List[ALLOWED_EXPAND_ATTRS]] = None,
     ) -> FileType:
@@ -62,6 +63,7 @@ class FileService(BaseService[FileType]):
 
         Args:
             file_type: type of file to be created. Example: `mp4`, `avi`, `move` etc.
+            name: name of the file.
             expand: list of fields to be expanded. Currently only `client` is supported.
             metadata: metadata to be associated with the file.
 
@@ -74,6 +76,7 @@ class FileService(BaseService[FileType]):
             variable_values={
                 "type": file_type,
                 "metadata": self.encode_aws_metadata(metadata),
+                "name": name,
             },
         )
 
@@ -81,6 +84,7 @@ class FileService(BaseService[FileType]):
         self,
         id: str,
         metadata: Optional[Dict[str, Any]] = None,
+        name: Optional[str] = None,
         expand: Optional[List[ALLOWED_EXPAND_ATTRS]] = None,
     ) -> FileType:
         """Update a file with given id in MoveUGC.
@@ -89,16 +93,21 @@ class FileService(BaseService[FileType]):
             id: unique identifier for the file. This should typically be something like `file-{uuid}`.
             expand: list of fields to be expanded. Currently only `client` is supported.
             metadata: metadata to be associated with the file.
+            name: name of the file.
 
         Returns:
             File instance of Pydantic model type.
         """
+        encoded_metadata = None
+        if metadata:
+            encoded_metadata = self.encode_aws_metadata(metadata)
         return self.execute(
             query_key=update_query.key,
             gql_query=update_query.generate_query(expand=expand),
             variable_values={
                 "id": id,
-                "metadata": self.encode_aws_metadata(metadata),
+                "metadata": encoded_metadata,
+                "name": name,
             },
         )
 

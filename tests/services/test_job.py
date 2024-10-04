@@ -269,6 +269,7 @@ class TestJobService(ServicesTestCase):  # noqa: WPS214
         request.getfixturevalue("jobs_update_response")
         job_model = self.client.jobs.update(
             id=faker.uuid4(),
+            name=faker.name(),
             metadata=request.getfixturevalue("metadata_for_update"),
         )
         self.assert_execute(

@@ -145,6 +145,7 @@ class TestFileService(ServicesTestCase):
         file_model = self.client.files.update(
             id=faker.uuid4(),
             metadata=request.getfixturevalue("metadata_for_update"),
+            name=faker.name(),
             expand=expand,
         )
         suffix = "_".join(expand) if expand else str(expand)

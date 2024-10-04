@@ -8,12 +8,13 @@ snapshots = Snapshot()
 
 snapshots["TestFileService.test_create[empty_expand] create_mutation_expand_[]"] = [
     [
-        """mutation create($type: String!, $metadata: AWSJSON!) {
-  createFile(type: $type, metadata: $metadata) {
+        """mutation create($type: String!, $metadata: AWSJSON, $name: String) {
+  createFile(type: $type, metadata: $metadata, name: $name) {
     id
     created
     type
     metadata
+    name
     presignedUrl
     thumbnailUrl
     __typename
@@ -24,6 +25,7 @@ snapshots["TestFileService.test_create[empty_expand] create_mutation_expand_[]"]
         "operation_name": None,
         "variable_values": {
             "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+            "name": "",
             "type": "png",
         },
     },
@@ -49,6 +51,7 @@ snapshots[
         "table": "ACMVZcKAiGBcYgCzHAad",
         "trouble": "UgnhIyaDJzohUigyDYZf",
     },
+    "name": "",
     "presigned_url": GenericRepr(
         "Url('https://pytest_invalid_presigned_url.com/file')",
     ),
@@ -62,12 +65,13 @@ snapshots[
     "TestFileService.test_create[expand_client] create_mutation_expand_client"
 ] = [
     [
-        """mutation create($type: String!, $metadata: AWSJSON!) {
-  createFile(type: $type, metadata: $metadata) {
+        """mutation create($type: String!, $metadata: AWSJSON, $name: String) {
+  createFile(type: $type, metadata: $metadata, name: $name) {
     id
     created
     type
     metadata
+    name
     presignedUrl
     thumbnailUrl
     __typename
@@ -86,6 +90,7 @@ snapshots[
         "operation_name": None,
         "variable_values": {
             "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+            "name": "",
             "type": "png",
         },
     },
@@ -123,6 +128,7 @@ snapshots[
         "table": "ACMVZcKAiGBcYgCzHAad",
         "trouble": "UgnhIyaDJzohUigyDYZf",
     },
+    "name": "",
     "presigned_url": GenericRepr(
         "Url('https://pytest_invalid_presigned_url.com/file')",
     ),
@@ -134,12 +140,13 @@ snapshots[
 
 snapshots["TestFileService.test_create[no_expand] create_mutation_expand_None"] = [
     [
-        """mutation create($type: String!, $metadata: AWSJSON!) {
-  createFile(type: $type, metadata: $metadata) {
+        """mutation create($type: String!, $metadata: AWSJSON, $name: String) {
+  createFile(type: $type, metadata: $metadata, name: $name) {
     id
     created
     type
     metadata
+    name
     presignedUrl
     thumbnailUrl
     __typename
@@ -150,6 +157,7 @@ snapshots["TestFileService.test_create[no_expand] create_mutation_expand_None"] 
         "operation_name": None,
         "variable_values": {
             "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+            "name": "",
             "type": "png",
         },
     },
@@ -175,6 +183,7 @@ snapshots[
         "table": "ACMVZcKAiGBcYgCzHAad",
         "trouble": "UgnhIyaDJzohUigyDYZf",
     },
+    "name": "",
     "presigned_url": GenericRepr(
         "Url('https://pytest_invalid_presigned_url.com/file')",
     ),
@@ -260,6 +269,7 @@ snapshots[
         "table": "ACMVZcKAiGBcYgCzHAad",
         "trouble": "UgnhIyaDJzohUigyDYZf",
     },
+    "name": "",
     "presigned_url": GenericRepr(
         "Url('https://pytest_invalid_presigned_url.com/file')",
     ),
@@ -277,6 +287,7 @@ snapshots["TestFileService.test_retrieve[empty_expand] retrieve_query_expand_[]"
     created
     type
     metadata
+    name
     presignedUrl
     thumbnailUrl
     __typename
@@ -311,6 +322,7 @@ snapshots[
         "table": "ACMVZcKAiGBcYgCzHAad",
         "trouble": "UgnhIyaDJzohUigyDYZf",
     },
+    "name": "",
     "presigned_url": GenericRepr(
         "Url('https://pytest_invalid_presigned_url.com/file')",
     ),
@@ -328,6 +340,7 @@ snapshots[
     created
     type
     metadata
+    name
     presignedUrl
     thumbnailUrl
     __typename
@@ -374,6 +387,7 @@ snapshots[
         "table": "ACMVZcKAiGBcYgCzHAad",
         "trouble": "UgnhIyaDJzohUigyDYZf",
     },
+    "name": "",
     "presigned_url": GenericRepr(
         "Url('https://pytest_invalid_presigned_url.com/file')",
     ),
@@ -393,6 +407,7 @@ snapshots[
     created
     type
     metadata
+    name
     presignedUrl
     thumbnailUrl
     __typename
@@ -435,6 +450,7 @@ snapshots[
         "table": "ACMVZcKAiGBcYgCzHAad",
         "trouble": "UgnhIyaDJzohUigyDYZf",
     },
+    "name": "",
     "presigned_url": GenericRepr(
         "Url('https://pytest_invalid_presigned_url.com/file')",
     ),
@@ -452,6 +468,7 @@ snapshots["TestFileService.test_retrieve[no_expand] retrieve_query_expand_None"]
     created
     type
     metadata
+    name
     presignedUrl
     thumbnailUrl
     __typename
@@ -468,12 +485,13 @@ snapshots["TestFileService.test_retrieve[no_expand] retrieve_query_expand_None"]
 
 snapshots["TestFileService.test_update[empty_expand] update_mutation_expand_[]"] = [
     [
-        """mutation update($id: String!, $metadata: AWSJSON!) {
-  updateFile(id: $id, metadata: $metadata) {
+        """mutation update($id: String!, $metadata: AWSJSON, $name: String) {
+  updateFile(id: $id, metadata: $metadata, name: $name) {
     id
     created
     type
     metadata
+    name
     presignedUrl
     thumbnailUrl
     __typename
@@ -485,6 +503,7 @@ snapshots["TestFileService.test_update[empty_expand] update_mutation_expand_[]"]
         "variable_values": {
             "id": "8d866324-3ab5-4d05-a9c5-e560a8020f0a",
             "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+            "name": "Amber Harris",
         },
     },
 ]
@@ -509,6 +528,7 @@ snapshots[
         "table": "ACMVZcKAiGBcYgCzHAad",
         "trouble": "UgnhIyaDJzohUigyDYZf",
     },
+    "name": "",
     "presigned_url": GenericRepr(
         "Url('https://pytest_invalid_presigned_url.com/file')",
     ),
@@ -522,12 +542,13 @@ snapshots[
     "TestFileService.test_update[expand_client] update_mutation_expand_client"
 ] = [
     [
-        """mutation update($id: String!, $metadata: AWSJSON!) {
-  updateFile(id: $id, metadata: $metadata) {
+        """mutation update($id: String!, $metadata: AWSJSON, $name: String) {
+  updateFile(id: $id, metadata: $metadata, name: $name) {
     id
     created
     type
     metadata
+    name
     presignedUrl
     thumbnailUrl
     __typename
@@ -547,6 +568,7 @@ snapshots[
         "variable_values": {
             "id": "8d866324-3ab5-4d05-a9c5-e560a8020f0a",
             "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+            "name": "Amber Harris",
         },
     },
 ]
@@ -583,6 +605,7 @@ snapshots[
         "table": "ACMVZcKAiGBcYgCzHAad",
         "trouble": "UgnhIyaDJzohUigyDYZf",
     },
+    "name": "",
     "presigned_url": GenericRepr(
         "Url('https://pytest_invalid_presigned_url.com/file')",
     ),
@@ -594,12 +617,13 @@ snapshots[
 
 snapshots["TestFileService.test_update[no_expand] update_mutation_expand_None"] = [
     [
-        """mutation update($id: String!, $metadata: AWSJSON!) {
-  updateFile(id: $id, metadata: $metadata) {
+        """mutation update($id: String!, $metadata: AWSJSON, $name: String) {
+  updateFile(id: $id, metadata: $metadata, name: $name) {
     id
     created
     type
     metadata
+    name
     presignedUrl
     thumbnailUrl
     __typename
@@ -611,6 +635,7 @@ snapshots["TestFileService.test_update[no_expand] update_mutation_expand_None"] 
         "variable_values": {
             "id": "8d866324-3ab5-4d05-a9c5-e560a8020f0a",
             "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+            "name": "Amber Harris",
         },
     },
 ]
@@ -635,6 +660,7 @@ snapshots[
         "table": "ACMVZcKAiGBcYgCzHAad",
         "trouble": "UgnhIyaDJzohUigyDYZf",
     },
+    "name": "",
     "presigned_url": GenericRepr(
         "Url('https://pytest_invalid_presigned_url.com/file')",
     ),
