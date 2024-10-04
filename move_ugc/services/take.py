@@ -144,7 +144,7 @@ class TakeService(BaseService[TakeType]):
     def update(
         self,
         id: str,
-        name: Optional[str] = "",
+        name: Optional[str] = None,
         metadata: Optional[Dict[str, Any]] = None,
         expand: Optional[List[ALLOWED_EXPAND_ATTRS]] = None,
     ) -> TakeType:
