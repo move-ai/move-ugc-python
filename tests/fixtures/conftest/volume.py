@@ -6,7 +6,12 @@ from typing import Any, Dict
 import pytest
 from graphql import ExecutionResult
 
-from tests.constants import CREATE_HUMAN_VOLUME_MUTATION, GET_VOLUME_QUERY
+from tests.constants import (
+    CREATE_HUMAN_VOLUME_MUTATION,
+    GET_VOLUME_QUERY,
+    LIST_VOLUMES_QUERY,
+)
+from tests.fixtures.conftest.commons import build_list_response
 from tests.fixtures.conftest.take import (
     build_response_with_additional_sources,
     build_response_with_video_source,
@@ -268,3 +273,43 @@ def volume_get_res_with_additional_sources(
             "lens": faker.word(),
         },
     )
+
+
+@pytest.fixture
+def fake_list_volume_response(fake_volume_json, faker) -> FakeVolumeJson:
+    """Fixture to return a fake volume response for listVolumes query.
+
+    Args:
+        fake_volume_json (dict[str, str]): Fake volume json.
+        faker (Faker): Faker instance.
+
+    Returns:
+        FakeVolumeJson: Fake volume response.
+    """
+    return {
+        LIST_VOLUMES_QUERY: build_list_response(
+            fake_response=fake_volume_json,
+            faker=faker,
+        ),
+    }
+
+
+@pytest.fixture
+def volume_list_response(
+    mock_transport,
+    fake_list_volume_response,
+    introspection_result,
+):
+    """Fixture to return a fake volume response for listVolumes query.
+
+    Args:
+        mock_transport (MockTransport): Mock transport.
+        fake_list_volume_response (FakeVolumeJson): Fake volume json.
+        introspection_result (dict[str, str]): Introspection result.
+
+    Yields:
+        FakeVolumeJson: Fake volume response.
+    """
+    volume_response = ExecutionResult(data=fake_list_volume_response)
+    mock_transport.side_effect = [introspection_result, volume_response]
+    yield volume_response

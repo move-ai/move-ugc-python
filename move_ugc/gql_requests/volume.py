@@ -89,3 +89,28 @@ expand_volume_query = """
         }
     }
 """
+
+
+list_query = UgcGql(
+    query=f"""
+    query list($first: Int, $after: AWSJSON, $sortDirection: SortDirection) {{{{
+        listVolumes(first: $first, after: $after, sortDirection: $sortDirection) {{{{
+            first
+            after
+            items {{{{
+                ... on Volume {{{{
+                    ...VolumeFields
+                }}}}
+            }}}}
+        }}}}
+    }}}}
+    fragment VolumeFields on HumanVolume {{{{
+        {human_volume_attributes}
+    }}}}
+    """,
+    key="listVolumes",
+    expand={
+        CLIENT_LITERAL: expand_client_query,
+        SOURCES_LITERAL: expand_sources_w_camera_settings,
+    },
+)

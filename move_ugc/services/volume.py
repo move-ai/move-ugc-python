@@ -2,7 +2,8 @@
 from typing import Any, Dict, List, Optional
 
 from move_ugc.gql_requests.volume import create as create_query
-from move_ugc.gql_requests.volume import retrieve_human_volume
+from move_ugc.gql_requests.volume import list_query, retrieve_human_volume
+from move_ugc.schemas.commons import ListBase, SortDirection, get_default_page_size
 from move_ugc.schemas.constants import ALLOWED_EXPAND_ATTRS
 from move_ugc.schemas.sources import SourceIn
 from move_ugc.schemas.sync_method import SyncMethodInput
@@ -100,4 +101,45 @@ class VolumeService(BaseService[HumanVolumeType]):
             query_key=retrieve_human_volume.key,
             gql_query=retrieve_human_volume.generate_query(expand=expand),
             variable_values={"id": id},
+        )
+
+    def list(  # noqa: WPS211
+        self,
+        limit: Optional[int] = None,
+        next_token: Optional[str] = None,
+        sort_by: SortDirection = SortDirection.DESC,
+        take_id: Optional[str] = None,
+        expand: Optional[List[ALLOWED_EXPAND_ATTRS]] = None,
+    ) -> ListBase:
+        """List volumes in MoveUGC.
+
+        Args:
+            limit:
+                limit the number of items to be returned.
+            next_token:
+                next token to be used for pagination.
+            sort_by:
+                sort order for the list.
+            take_id:
+                id of the take to be used for filtering the jobs.
+            expand:
+                list of fields to be expanded.
+                Currently only `client`, `take` and `outputs` are supported.
+
+        Returns:
+            ListBase: List of Volume instances of Pydantic model type.
+        """
+        if not limit:
+            limit = get_default_page_size()
+        return self.execute(  # type: ignore[return-value]
+            query_key=list_query.key,
+            gql_query=list_query.generate_query(expand=expand),
+            variable_values={
+                "first": limit,
+                "after": next_token,
+                "sortDirection": sort_by.value,
+                "expand": expand,
+                "takeId": take_id,
+            },
+            multi=True,
         )

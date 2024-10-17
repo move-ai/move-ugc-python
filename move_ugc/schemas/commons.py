@@ -7,6 +7,7 @@ from typing_extensions import Annotated
 
 from move_ugc.schemas.job import JobType
 from move_ugc.schemas.take import TakeType
+from move_ugc.schemas.volume import HumanVolumeType
 from move_ugc.settings import get_settings
 
 LIST_ITEM_TYPE = List[Dict[str, Any]]
@@ -15,7 +16,7 @@ DICT_AS_JSON_STRING_TYPE = Json[Dict[str, Any]]
 
 def validate_list_items_type(
     list_items: LIST_ITEM_TYPE,
-) -> Union[List[JobType], List[TakeType], LIST_ITEM_TYPE]:
+) -> Union[List[JobType], List[TakeType], List[HumanVolumeType], LIST_ITEM_TYPE]:
     """Validate list items type.
 
     Args:
@@ -32,6 +33,8 @@ def validate_list_items_type(
             return [JobType(**list_item) for list_item in list_items]
         elif str(list_items[0]["id"]).startswith("take"):
             return [TakeType(**list_item) for list_item in list_items]
+        elif str(list_items[0]["id"]).startswith("volume"):
+            return [HumanVolumeType(**list_item) for list_item in list_items]
         raise ValueError("Invalid list items type.")
     # In case the validator could not decide which type is being used,
     #  pass the data to pydantic to do its inner validations.
@@ -39,7 +42,7 @@ def validate_list_items_type(
 
 
 ListItem = Annotated[
-    Union[List[JobType], List[TakeType]],
+    Union[List[JobType], List[TakeType], List[HumanVolumeType]],
     BeforeValidator(validate_list_items_type),
 ]
 
