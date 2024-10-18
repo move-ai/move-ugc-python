@@ -1,8 +1,11 @@
 """Unit tests for using the volume service."""
 import pytest
+from graphql import ExecutionResult
+from pydantic import ValidationError
 
 from move_ugc.schemas.sources import ClipWindow, SourceIn, TakeSourceKey
 from move_ugc.schemas.volume import AreaType
+from tests.constants import LIST_VOLUMES_QUERY
 from tests.services.testcases import ServicesTestCase
 
 SOURCES_LITERAL = "sources"
@@ -140,3 +143,60 @@ class TestVolumeService(ServicesTestCase):
             volume.model_dump(mode="json"),
             name=f"get_response_expand_{suffix}",
         )
+
+    def test_list(self, snapshot, volume_list_response):
+        """Test listing volumes.
+
+        This should test -> `ugc.volumes.list()`
+
+        Args:
+            snapshot: The snapshot fixture.
+            volume_list_response: volume list response fixture.
+        """
+        volume_list = self.client.volumes.list()
+        self.assert_execute(snapshot, name="volume_list_request")
+        snapshot.assert_match(
+            volume_list.model_dump(mode="json"),
+            name="list_response",
+        )
+
+    def test_list_volume_invalid(self, request):
+        """Test volume errors.
+
+        This should test -> `ugc.volumes.list()`
+
+        Args:
+            request: The request fixture.
+        """
+        mock_transport = request.getfixturevalue("mock_transport")
+        fake_list_volume_response = request.getfixturevalue("fake_list_volume_response")
+        introspection_result = request.getfixturevalue("introspection_result")
+
+        fake_list_volume_response[LIST_VOLUMES_QUERY]["items"] = [
+            {"id": "dummy-123-123-123-123"},
+        ]
+
+        volume_response = ExecutionResult(data=fake_list_volume_response)
+        mock_transport.side_effect = [introspection_result, volume_response]
+
+        with pytest.raises(ValidationError) as excinfo:
+            self.client.volumes.list()
+
+    def test_list_volume_empty(self, request):
+        """Test volume when it has an empty response.
+
+        This should test -> `ugc.volumes.list()`
+
+        Args:
+            request: The request fixture.
+        """
+        mock_transport = request.getfixturevalue("mock_transport")
+        fake_list_volume_response = request.getfixturevalue("fake_list_volume_response")
+        introspection_result = request.getfixturevalue("introspection_result")
+
+        fake_list_volume_response[LIST_VOLUMES_QUERY]["items"] = []
+
+        volume_response = ExecutionResult(data=fake_list_volume_response)
+        mock_transport.side_effect = [introspection_result, volume_response]
+
+        assert not self.client.volumes.list().items

@@ -555,6 +555,86 @@ snapshots["TestVolumeService.test_fetch_service 1"] = GenericRepr(
     "VolumeService(api_key=SecretStr('**********'), endpoint_url=Url('https://pytest_invalid_endpoint_url.com/'))",
 )
 
+snapshots["TestVolumeService.test_list list_response"] = {
+    "items": [
+        {
+            "area_type": "NORMAL",
+            "client": None,
+            "created": "2023-06-29T08:54:52.349467Z",
+            "human_height": 1.5,
+            "id": "volume-af54cc45-7137-4206-a4c1-b3bc21b398fc",
+            "metadata": {
+                "analysis": "UmKdTFlLMIuIvJkRJnoM",
+                "decade": "zAvJMvacZIYSmMsDUNvC",
+                "director": "KNmpExWtgQLcAEuRyBkN",
+                "draw": "PnbQcVNCliYtuFCSJkGb",
+                "house": "aYyOUXkJPUjPJGpDdakX",
+                "huge": "eFaLyHGEQQpSzpRFSYEm",
+                "last": "dnZCcfgZNBnaEkbOzIyO",
+                "other": "XbBPNrbhtJksbBuoWXSK",
+                "table": "ACMVZcKAiGBcYgCzHAad",
+                "trouble": "UgnhIyaDJzohUigyDYZf",
+            },
+            "name": "fake_volume",
+            "sources": None,
+            "state": "RUNNING",
+        },
+    ],
+    "limit": 3757,
+    "next_token": {
+        "agreement": "IROVLfjoMfevqGQzKwSq",
+        "area": "MGeUnKHFDBnmrDQHVgvC",
+        "contain": "ItsodpERiRYnOOBLwsUj",
+        "design": "KQzXIRcgffyxzegWhSCA",
+        "director": "oksQozLDQIKUXTOVnSgL",
+        "figure": "UGNjTUxVagRUsmeXePiR",
+        "garden": "HJNyPHvohoqQteqypgTr",
+        "newspaper": "awilNVmYFmacFDbYHCfB",
+        "really": "bzvYFNrFxckhfCPzGMPQ",
+        "set": "psGGIszJTdvgqoXarfFt",
+        "site": "wqiGgdMEXPdaWjqWDjsW",
+        "so": "CgTFQSEFOSeUlDbpOYnf",
+        "stuff": "UAkAvbvbIjMdtUGoSlUv",
+    },
+}
+
+snapshots["TestVolumeService.test_list volume_list_request"] = [
+    [
+        """query list($first: Int, $after: AWSJSON, $sortDirection: SortDirection) {
+  listVolumes(first: $first, after: $after, sortDirection: $sortDirection) {
+    first
+    after
+    items {
+      ... on Volume {
+        ...VolumeFields
+      }
+    }
+  }
+}
+
+fragment VolumeFields on HumanVolume {
+  id
+  areaType
+  created
+  humanHeight
+  metadata
+  name
+  state
+  __typename
+}""",
+    ],
+    {
+        "operation_name": None,
+        "variable_values": {
+            "after": None,
+            "expand": None,
+            "first": 10,
+            "sortDirection": "DESC",
+            "takeId": None,
+        },
+    },
+]
+
 snapshots["TestVolumeService.test_retrieve[empty_expand] get_query_expand_[]"] = [
     [
         """query retrieve($id: ID!) {
