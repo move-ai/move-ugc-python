@@ -30,7 +30,6 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: move-ai/move-services-testing
-          ref: feature/IST-2249-ugc-python
           ssh-key: ${{ secrets.INTEGRATION_TESTS_PRIVATE_KEY }}
       - uses: actions/setup-python@v5
         with:
