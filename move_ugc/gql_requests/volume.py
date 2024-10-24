@@ -1,6 +1,6 @@
 """Volume gql requests for Move UGC SDK."""
+from move_ugc.gql_requests.camera_settings import expand_sources_w_camera_settings
 from move_ugc.gql_requests.client import expand_client_query
-from move_ugc.gql_requests.file import expand_video_file
 from move_ugc.schemas.constants import CLIENT_LITERAL, SOURCES_LITERAL
 from move_ugc.schemas.gql import UgcGql
 
@@ -14,21 +14,6 @@ human_volume_attributes = """
     state
     {expand}
     __typename
-"""
-
-expand_camera_settings = """
-    cameraSettings {
-        lens
-    }
-"""
-
-expand_sources_w_camera_settings = f"""
-    sources {{
-        deviceLabel
-        {expand_video_file}
-        {expand_camera_settings}
-        format
-    }}
 """
 
 create = UgcGql(
