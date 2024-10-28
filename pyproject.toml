@@ -10,7 +10,7 @@ packages = [{include = "move_ugc"}, {include = "move_ugc/py.typed"}]
 python = "^3.8.1"
 gql = {extras = ["requests"], version = "^3.4.1"}
 pydantic-settings = "^2.2.1"
-pydantic = "2.4.*"
+pydantic = "^2.4.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.4.0"
