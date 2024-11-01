@@ -28,7 +28,7 @@ optional = true
 [tool.poetry.group.docs.dependencies]
 mkdocs = "^1.6.1"
 mkdocstrings = {extras = ["python"], version = "^0.26.1"}
-mkdocs-material = "^9.5.38"
+mkdocs-material = "^9.5.43"
 mike = "^1.1.2"
 
 [build-system]
