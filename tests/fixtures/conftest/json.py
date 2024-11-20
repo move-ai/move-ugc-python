@@ -90,3 +90,16 @@ def volume_fixtures_path(json_fixtures_path):
         str: Path to volume fixtures.
     """
     return os.path.join(json_fixtures_path, "volume")
+
+
+@pytest.fixture
+def camera_settings_fixtures_path(json_fixtures_path):
+    """Fixture to return the path to the camera settings fixtures.
+
+    Args:
+        json_fixtures_path (str): Path to JSON fixtures.
+
+    Returns:
+        str: Path to camera settings fixtures.
+    """
+    return os.path.join(json_fixtures_path, "camera_settings")

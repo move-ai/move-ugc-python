@@ -6,6 +6,7 @@ from pydantic import BaseModel, BeforeValidator, ConfigDict, Field, Json
 from typing_extensions import Annotated
 
 from move_ugc.schemas.job import JobType
+from move_ugc.schemas.sources import CameraSettings
 from move_ugc.schemas.take import TakeType
 from move_ugc.schemas.volume import HumanVolumeType
 from move_ugc.settings import get_settings
@@ -16,7 +17,13 @@ DICT_AS_JSON_STRING_TYPE = Json[Dict[str, Any]]
 
 def validate_list_items_type(
     list_items: LIST_ITEM_TYPE,
-) -> Union[List[JobType], List[TakeType], List[HumanVolumeType], LIST_ITEM_TYPE]:
+) -> Union[
+    List[JobType],
+    List[TakeType],
+    List[HumanVolumeType],
+    List[CameraSettings],
+    LIST_ITEM_TYPE,
+]:
     """Validate list items type.
 
     Args:
@@ -29,7 +36,9 @@ def validate_list_items_type(
         ValueError: If list items type is invalid.
     """
     if list_items:
-        if str(list_items[0]["id"]).startswith("job"):
+        if list_items[0].get("lens"):
+            return [CameraSettings(**list_item) for list_item in list_items]
+        elif str(list_items[0]["id"]).startswith("job"):
             return [JobType(**list_item) for list_item in list_items]
         elif str(list_items[0]["id"]).startswith("take"):
             return [TakeType(**list_item) for list_item in list_items]
@@ -42,7 +51,7 @@ def validate_list_items_type(
 
 
 ListItem = Annotated[
-    Union[List[JobType], List[TakeType], List[HumanVolumeType]],
+    Union[List[JobType], List[TakeType], List[HumanVolumeType], List[CameraSettings]],
     BeforeValidator(validate_list_items_type),
 ]
 
