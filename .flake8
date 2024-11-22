@@ -58,3 +58,8 @@ per-file-ignores =
     move_ugc/gql_requests/job.py:
     ; WPS226 Found string constant over-use - for }} brackets - we can't remove this due to f-strings
     WPS226,
+    move_ugc/services/camera_settings.py:
+    ; Inline literal start-string without end-string
+    RST214,
+    ; Inline interpreted text or phrase reference start-string without end-string
+    RST215,

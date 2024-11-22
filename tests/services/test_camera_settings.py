@@ -1,10 +1,4 @@
 """Unit tests for using the camera settings service."""
-import pytest
-from gql.transport.exceptions import TransportQueryError
-from graphql.execution.execute import ExecutionResult
-from pydantic import ValidationError
-
-from tests.constants import LIST_CAMERA_SETTINGS_QUERY
 from tests.services.testcases import ServicesTestCase
 
 
@@ -13,15 +7,14 @@ class TestCameraSettingsService(ServicesTestCase):  # noqa: WPS214
 
     service_name = "camera_settings"
 
-    def test_list(self,  snapshot, camera_settings_list_response):
-        """Test listing jobs.
+    def test_list(self, snapshot, camera_settings_list_response):
+        """Test listing camera settings.
 
-        This should test -> `ugc.jobs.list()`
+        This should test -> `ugc.camera_settings.list()`
 
         Args:
-            take_id: The take id fixture.
-            snapshot: The snapshot fixture.
-            jobs_list_response: job list response fixture.
+            snapshot (SnapshotFixture): Pytest snapshot fixture.
+            camera_settings_list_response (dict): Camera settings list response.
         """
         camera_settings_list = self.client.camera_settings.list()
         self.assert_execute(snapshot, name="camera_settings_list_request")

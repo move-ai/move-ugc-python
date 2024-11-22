@@ -6,7 +6,7 @@ from typing import Any, Dict, Generic, Optional, Type, TypeVar, cast
 from graphql import DocumentNode
 from pydantic import BaseModel
 
-from move_ugc.schemas.commons import ListBase
+from move_ugc.schemas.commons import ListBase, ListBaseItems
 from move_ugc.schemas.metaclient import MetaClient
 
 Schema = TypeVar("Schema", bound=BaseModel)  # Generic template type variable
@@ -17,6 +17,7 @@ class BaseService(MetaClient, ABC, Generic[Schema]):
     """Base service class for all services."""
 
     _schema: Type[BaseModel]
+    _list_base_schema: Type[ListBaseItems] = ListBase
 
     def serialize(
         self,
@@ -35,7 +36,7 @@ class BaseService(MetaClient, ABC, Generic[Schema]):
             Schema: Pydantic model.
         """
         if multi:
-            return ListBase(**response[query_key])  # type: ignore[return-value]
+            return self._list_base_schema(**response[query_key])  # type: ignore[return-value]
         return cast(Schema, self._schema(**response[query_key]))
 
     def encode_aws_metadata(self, metadata: Optional[Dict[str, Any]]) -> str:

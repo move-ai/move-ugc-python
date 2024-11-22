@@ -13,17 +13,18 @@ from move_ugc.settings import get_settings
 
 LIST_ITEM_TYPE = List[Dict[str, Any]]
 DICT_AS_JSON_STRING_TYPE = Json[Dict[str, Any]]
-
-
-def validate_list_items_type(
-    list_items: LIST_ITEM_TYPE,
-) -> Union[
+UNION_LIST_ITEMS_TYPE = Union[  # noqa: WPS235
     List[JobType],
     List[TakeType],
     List[HumanVolumeType],
     List[CameraSettings],
     LIST_ITEM_TYPE,
-]:
+]
+
+
+def validate_list_items_type(  # noqa: WPS231
+    list_items: LIST_ITEM_TYPE,
+) -> UNION_LIST_ITEMS_TYPE:
     """Validate list items type.
 
     Args:
@@ -51,7 +52,12 @@ def validate_list_items_type(
 
 
 ListItem = Annotated[
-    Union[List[JobType], List[TakeType], List[HumanVolumeType], List[CameraSettings]],
+    Union[
+        List[JobType],
+        List[TakeType],
+        List[HumanVolumeType],
+        List[CameraSettings],
+    ],
     BeforeValidator(validate_list_items_type),
 ]
 
@@ -72,8 +78,18 @@ class SortDirection(enum.Enum):
     DESC = "DESC"  # noqa: WPS115
 
 
-class ListBase(BaseModel):
-    """List base schema."""
+class ListBaseItems(BaseModel):
+    """List base items schema."""
+
+    items: ListItem = Field(  # noqa: WPS110
+        default_factory=list,
+        description="List of items. This can be either list of JobType or TakeType.",
+    )
+    model_config = ConfigDict(populate_by_name=True, extra="allow")
+
+
+class ListBase(ListBaseItems):
+    """List base schema inluding limit and next_token."""
 
     limit: int = Field(
         default_factory=get_default_page_size,
@@ -84,9 +100,5 @@ class ListBase(BaseModel):
         default=None,
         description="Cursor for the next page.",
         alias="after",
-    )
-    items: ListItem = Field(  # noqa: WPS110
-        default_factory=list,
-        description="List of items. This can be either list of JobType or TakeType.",
     )
     model_config = ConfigDict(populate_by_name=True, extra="allow")

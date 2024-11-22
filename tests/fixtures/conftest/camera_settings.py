@@ -5,9 +5,7 @@ from typing import Any, Dict
 import pytest
 from graphql.execution.execute import ExecutionResult
 
-from tests.constants import (
-    LIST_CAMERA_SETTINGS_QUERY,
-)
+from tests.constants import LIST_CAMERA_SETTINGS_QUERY
 from tests.fixtures.conftest.commons import build_list_response
 
 FakeCameraSettingsJson = Dict[str, Any]
@@ -30,7 +28,10 @@ def mock_response(fake_response, mock_transport, introspection_result):
 
 
 @pytest.fixture
-def fake_camera_settings_json(camera_settings_fixtures_path, metadata_for_update) -> FakeCameraSettingsJson:
+def fake_camera_settings_json(
+    camera_settings_fixtures_path,
+    metadata_for_update,
+) -> FakeCameraSettingsJson:
     """Fixture to return a fake camera settings.
 
     Args:
@@ -42,12 +43,18 @@ def fake_camera_settings_json(camera_settings_fixtures_path, metadata_for_update
     """
     with open(f"{camera_settings_fixtures_path}/fake_camera_settings.json") as job_json:
         camera_settings_json_obj = json.load(job_json)
-        camera_settings_json_obj["metadata"] = json.dumps(metadata_for_update, default=str)
+        camera_settings_json_obj["metadata"] = json.dumps(
+            metadata_for_update,
+            default=str,
+        )
         return camera_settings_json_obj
 
 
 @pytest.fixture
-def fake_list_camera_settings_response(fake_camera_settings_json, faker) -> FakeCameraSettingsJson:
+def fake_list_camera_settings_response(
+    fake_camera_settings_json,
+    faker,
+) -> FakeCameraSettingsJson:
     """Fixture to return a fake list camera settings response.
 
     Args:
@@ -63,6 +70,7 @@ def fake_list_camera_settings_response(fake_camera_settings_json, faker) -> Fake
             faker=faker,
         ),
     }
+
 
 @pytest.fixture
 def camera_settings_list_response(
@@ -82,4 +90,4 @@ def camera_settings_list_response(
     """
     camera_settings_response = ExecutionResult(data=fake_list_camera_settings_response)
     mock_transport.side_effect = [introspection_result, camera_settings_response]
-    yield camera_settings_response 
+    yield camera_settings_response
