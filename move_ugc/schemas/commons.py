@@ -82,7 +82,7 @@ class SortDirection(enum.Enum):
 class ListBaseItems(BaseModel):
     """List base items schema."""
 
-    items: ListItem = Field(  # noqa: WPS110 type: ignore[assignment]
+    items: ListItem = Field(  # type: ignore[assignment]  # noqa: WPS110
         default_factory=list,
         description="List of items. This can be either list of JobType or TakeType.",
     )
