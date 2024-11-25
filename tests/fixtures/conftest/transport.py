@@ -1,4 +1,5 @@
 """Define mock transport for the client."""
+
 import json
 from unittest.mock import patch
 

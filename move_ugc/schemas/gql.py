@@ -1,4 +1,5 @@
 """GraphQL helper schemas."""
+
 import copy
 from typing import Dict, List, Optional
 

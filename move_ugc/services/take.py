@@ -1,4 +1,5 @@
 """Take service for Move UGC SDK."""
+
 from typing import Any, Dict, List, Optional
 
 from move_ugc.gql_requests.take import create as create_query

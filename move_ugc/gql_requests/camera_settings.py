@@ -1,4 +1,5 @@
 """Camera settings gql requests for Move UGC SDK."""
+
 from move_ugc.gql_requests.file import expand_video_file
 from move_ugc.schemas.gql import UgcGql
 

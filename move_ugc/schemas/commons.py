@@ -1,4 +1,5 @@
 """Common schemas to be used across types."""
+
 import enum
 from typing import Any, Dict, List, Optional, Union
 
@@ -81,7 +82,7 @@ class SortDirection(enum.Enum):
 class ListBaseItems(BaseModel):
     """List base items schema."""
 
-    items: ListItem = Field(  # noqa: WPS110
+    items: ListItem = Field(  # noqa: WPS110 type: ignore[assignment]
         default_factory=list,
         description="List of items. This can be either list of JobType or TakeType.",
     )

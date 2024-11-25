@@ -1,4 +1,5 @@
 """Representation for File type in Ugc API."""
+
 from datetime import datetime
 from typing import Any, Optional
 
@@ -44,7 +45,7 @@ class FileType(BaseModel):
         title="File presigned URL",
         alias="presignedUrl",
     )
-    thumbnail_url: Optional[HttpUrl] = Field(
+    thumbnail_url: Optional[HttpUrl] = Field(  # type: ignore[assignment]
         description="Presigned URL for the thumbnail file. Only generated for source files.",
         examples=[
             "https://s3.amazonaws.com/bucket/file.mp4?AWSAccessKeyId=123&Expires=123&Signature=123",

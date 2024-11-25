@@ -1,4 +1,5 @@
 """Move UGC SDK client."""
+
 from move_ugc.schemas.metaclient import MetaClient
 from move_ugc.services.camera_settings import CameraSettingsService
 from move_ugc.services.client import ClientService

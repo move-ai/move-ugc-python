@@ -1,4 +1,5 @@
 """Client representation in pydantic schema."""
+
 from datetime import datetime
 from typing import Any
 

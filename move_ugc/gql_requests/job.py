@@ -1,4 +1,5 @@
 """Job gql requests for Move UGC SDK."""
+
 from move_ugc.gql_requests.additional_file import expand_outputs
 from move_ugc.gql_requests.client import expand_client_query
 from move_ugc.gql_requests.take import expand_take_query

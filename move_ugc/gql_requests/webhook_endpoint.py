@@ -1,4 +1,5 @@
 """Take gql requests for Move UGC SDK."""
+
 from move_ugc.schemas.gql import UgcGql
 
 add_webhook = UgcGql(

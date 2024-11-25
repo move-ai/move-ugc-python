@@ -1,4 +1,5 @@
 """Unit tests for using the job service."""
+
 import pytest
 from gql.transport.exceptions import TransportQueryError
 from graphql.execution.execute import ExecutionResult

@@ -1,4 +1,5 @@
 """File gql_requests for Move UGC API."""
+
 from move_ugc.gql_requests.client import expand_client_query
 from move_ugc.schemas.gql import UgcGql
 

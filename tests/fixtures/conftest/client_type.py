@@ -1,4 +1,5 @@
 """Client Type fixtures for the UGC Client."""
+
 import json
 from typing import Dict
 

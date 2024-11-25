@@ -1,4 +1,5 @@
 """Json fixtures."""
+
 import os
 
 import pytest

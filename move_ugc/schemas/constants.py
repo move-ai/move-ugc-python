@@ -1,4 +1,5 @@
 """Constant values for the client."""
+
 from typing import Literal
 
 AUTHORIZATION_HEADER = "authorization"

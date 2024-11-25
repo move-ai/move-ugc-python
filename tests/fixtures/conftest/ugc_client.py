@@ -1,4 +1,5 @@
 """Fixtures for the UGC Client."""
+
 import pytest
 
 from move_ugc import MoveUgc

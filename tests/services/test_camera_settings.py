@@ -1,4 +1,5 @@
 """Unit tests for using the camera settings service."""
+
 from tests.services.testcases import ServicesTestCase
 
 

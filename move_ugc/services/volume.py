@@ -1,4 +1,5 @@
 """Volume service for Move UGC SDK."""
+
 from typing import Any, Dict, List, Optional
 
 from move_ugc.gql_requests.volume import create as create_query
@@ -70,9 +71,9 @@ class VolumeService(BaseService[HumanVolumeType]):
                 "sources": [source.model_dump(by_alias=True) for source in sources],
                 "humanHeight": human_height,
                 "areaType": area_type.value,
-                "syncMethod": sync_method.model_dump(by_alias=True)
-                if sync_method
-                else None,
+                "syncMethod": (
+                    sync_method.model_dump(by_alias=True) if sync_method else None
+                ),
                 "metadata": self.encode_aws_metadata(metadata),
                 "name": name or "",
             },

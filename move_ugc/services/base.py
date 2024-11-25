@@ -1,4 +1,5 @@
 """Base service class for all services."""
+
 import json
 from abc import ABC
 from typing import Any, Dict, Generic, Optional, Type, TypeVar, cast

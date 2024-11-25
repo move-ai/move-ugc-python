@@ -1,4 +1,5 @@
 """Common testcases for services."""
+
 import pytest
 from graphql import DocumentNode
 from graphql.language.printer import print_ast

@@ -1,4 +1,5 @@
 """Job fixtures."""
+
 import json
 from typing import Any, Dict
 

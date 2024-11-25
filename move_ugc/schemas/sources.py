@@ -1,4 +1,5 @@
 """Representation for Additional file type in Ugc API."""
+
 from enum import Enum
 from typing import Optional
 
