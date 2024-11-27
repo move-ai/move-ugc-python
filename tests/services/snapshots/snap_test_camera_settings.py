@@ -28,8 +28,6 @@ snapshots["TestCameraSettingsService.test_list camera_settings_list_request"] = 
 ]
 
 snapshots["TestCameraSettingsService.test_list list_response"] = {
-    "after": '{"newspaper": "awilNVmYFmacFDbYHCfB", "really": "bzvYFNrFxckhfCPzGMPQ", "area": "MGeUnKHFDBnmrDQHVgvC", "garden": "HJNyPHvohoqQteqypgTr", "design": "KQzXIRcgffyxzegWhSCA", "agreement": "IROVLfjoMfevqGQzKwSq", "site": "wqiGgdMEXPdaWjqWDjsW", "director": "oksQozLDQIKUXTOVnSgL", "set": "psGGIszJTdvgqoXarfFt", "so": "CgTFQSEFOSeUlDbpOYnf", "contain": "ItsodpERiRYnOOBLwsUj", "figure": "UGNjTUxVagRUsmeXePiR", "stuff": "UAkAvbvbIjMdtUGoSlUv"}',
-    "first": 3757,
     "items": [
         {
             "lens": "blackmagic-ursa-4k-24mm",

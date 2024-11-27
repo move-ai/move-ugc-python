@@ -84,9 +84,9 @@ class ListBaseItems(BaseModel):
 
     items: ListItem = Field(  # type: ignore[assignment]  # noqa: WPS110
         default_factory=list,
-        description="List of items. This can be either list of JobType or TakeType.",
+        description="List of items. This can be either list of CameraSettings, JobType or TakeType.",
     )
-    model_config = ConfigDict(populate_by_name=True, extra="allow")
+    model_config = ConfigDict(populate_by_name=True, extra="ignore")
 
 
 class ListBase(ListBaseItems):

@@ -11,14 +11,12 @@ class CameraSettingsService(BaseService[CameraSettings]):
 
     To use this service, you need to instantiate it with a valid Move UGC client.
 
-    ```python
+    python
     from move_ugc import MoveUgc
     ugc = MoveUgc(api_key="my-api-key")
 
     # Call camera settings service methods directly
     ugc.camera_settings.list()
-
-    ```
     """
 
     _schema = CameraSettings
