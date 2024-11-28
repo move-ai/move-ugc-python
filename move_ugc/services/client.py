@@ -1,4 +1,5 @@
 """Client mixin for the Move UGC SDK."""
+
 from typing import Any, Dict
 
 from move_ugc.gql_requests.client import retrieve as retrieve_query

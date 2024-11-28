@@ -1,4 +1,5 @@
 """Take service for Move UGC SDK."""
+
 from typing import Any, Dict, List, Optional
 from warnings import warn
 

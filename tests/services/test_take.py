@@ -1,4 +1,5 @@
 """Unit tests for using the take service."""
+
 import json
 
 import pytest

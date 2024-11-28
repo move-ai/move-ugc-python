@@ -1,4 +1,5 @@
 """Move UGC SDK client."""
+
 from functools import cached_property
 
 from gql import Client

@@ -14,4 +14,5 @@ pytest_plugins = [
     "tests.fixtures.conftest.commons",
     "tests.fixtures.conftest.webhooks",
     "tests.fixtures.conftest.volume",
+    "tests.fixtures.conftest.camera_settings",
 ]

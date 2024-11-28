@@ -1,4 +1,5 @@
 """File mixin for the Move UGC SDK."""
+
 from typing import Any, Dict, List, Optional
 
 from move_ugc.gql_requests.file import create as create_query

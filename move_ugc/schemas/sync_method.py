@@ -1,4 +1,5 @@
 """Schemas to represent a SyncMethod entity in UGC API."""
+
 from typing import Optional
 
 from pydantic import BaseModel, Field

@@ -1,4 +1,5 @@
 """Global settings to be used by the SDK."""
+
 from functools import lru_cache
 
 from pydantic import Field, HttpUrl
@@ -8,7 +9,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 class Settings(BaseSettings):
     """Global settings to be used by the SDK."""
 
-    ugc_endpoint_url: HttpUrl = Field(
+    ugc_endpoint_url: HttpUrl = Field(  # type: ignore[assignment]
         default="https://api.move.ai/ugc/graphql",
         description="Move UGC API endpoint URL",
         title="GraphQL endpoint URL",

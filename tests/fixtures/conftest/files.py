@@ -1,4 +1,5 @@
 """File fixtures."""
+
 import json
 from typing import Dict
 

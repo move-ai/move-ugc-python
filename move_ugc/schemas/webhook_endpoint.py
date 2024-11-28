@@ -1,4 +1,5 @@
 """Representation for Webhook endpoint type in Ugc API."""
+
 from typing import List, Optional
 
 from pydantic import BaseModel, Field, HttpUrl, SecretStr

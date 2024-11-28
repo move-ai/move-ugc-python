@@ -29,6 +29,10 @@ repos:
         args:
           - --strict
           - --no-warn-no-return
+          # Don't warn us of unused ignores. This is required for python3.8/3.9 as
+          # mypy raises warnings we want to ignore in 3.11 that it doesn't raise for lower
+          # versions
+          - --no-warn-unused-ignores
         exclude: ^(tests|platform_utils/pytest_plugins)
         additional_dependencies: [
           "pydantic", "gql", "pydantic_settings"

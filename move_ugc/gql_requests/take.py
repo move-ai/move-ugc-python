@@ -1,4 +1,5 @@
 """Take gql requests for Move UGC SDK."""
+
 from move_ugc.gql_requests.camera_settings import expand_camera_settings
 from move_ugc.gql_requests.client import expand_client_query
 from move_ugc.gql_requests.file import expand_video_file

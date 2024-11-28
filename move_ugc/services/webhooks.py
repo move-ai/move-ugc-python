@@ -1,4 +1,5 @@
 """Webhook mixin for the Move UGC SDK."""
+
 from typing import List, Optional
 
 from move_ugc.gql_requests.webhook_endpoint import add_webhook

@@ -1,4 +1,5 @@
 """Unit tests for the creating a client."""
+
 import pytest
 
 from move_ugc import MoveUgc

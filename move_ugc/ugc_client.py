@@ -1,5 +1,7 @@
 """Move UGC SDK client."""
+
 from move_ugc.schemas.metaclient import MetaClient
+from move_ugc.services.camera_settings import CameraSettingsService
 from move_ugc.services.client import ClientService
 from move_ugc.services.file import FileService
 from move_ugc.services.job import JobService
@@ -64,3 +66,12 @@ class MoveUgc(MetaClient):
             VolumeService: The volume service.
         """
         return VolumeService(**self.model_dump())
+
+    @property
+    def camera_settings(self) -> CameraSettingsService:
+        """Get the camera settings service.
+
+        Returns:
+            CameraSettingsService: The camera settings service.
+        """
+        return CameraSettingsService(**self.model_dump())

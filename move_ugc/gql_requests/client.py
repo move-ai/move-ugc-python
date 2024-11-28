@@ -1,4 +1,5 @@
 """Queries for client."""
+
 from move_ugc.schemas.gql import UgcGql
 
 client_attributes_base = """

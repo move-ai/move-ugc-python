@@ -1,4 +1,5 @@
 """Representation for Take type in Ugc API."""
+
 from datetime import datetime
 from typing import Any, List, Optional
 

@@ -1,4 +1,5 @@
 """Implement hooks plugin to override global variables."""
+
 import os
 
 from move_ugc.settings import get_settings

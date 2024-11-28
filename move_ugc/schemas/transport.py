@@ -1,4 +1,5 @@
 """Define gql transports for the client."""
+
 from gql import Client
 from gql.transport.requests import RequestsHTTPTransport
 from pydantic import HttpUrl

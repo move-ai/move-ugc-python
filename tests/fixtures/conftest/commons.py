@@ -1,4 +1,5 @@
 """Common fixtures for the UGC Client shared across types."""
+
 import json
 from typing import Any, Dict
 
