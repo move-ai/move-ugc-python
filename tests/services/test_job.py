@@ -5,6 +5,7 @@ from gql.transport.exceptions import TransportQueryError
 from graphql.execution.execute import ExecutionResult
 from pydantic import ValidationError
 
+from move_ugc.schemas.job import JobOptions
 from tests.constants import LIST_JOBS_QUERY
 from tests.services.testcases import ServicesTestCase
 
@@ -31,12 +32,18 @@ class TestJobService(ServicesTestCase):  # noqa: WPS214
             "expand_outputs",
         ],
     )
+    @pytest.mark.parametrize(
+        argnames="options",
+        argvalues=[None, JobOptions(trackFingers=False, floorPlane=True)],
+        ids=["no_options", "with_options"],
+    )
     def test_create(  # noqa: WPS211
         self,
         snapshot,
         request,
         faker,
         expand,
+        options,
         job_fixture,
     ):
         """Test creating a job.
@@ -48,12 +55,14 @@ class TestJobService(ServicesTestCase):  # noqa: WPS214
             request: The request fixture.
             faker: The faker fixture.
             expand: The expand fixture.
+            options: The options fixture.
             job_fixture: The job fixture.
         """
         request.getfixturevalue(job_fixture)
         job_model = self.client.jobs.create(
             take_id=faker.uuid4(),
             metadata=request.getfixturevalue("metadata_for_update"),
+            options=options,
             expand=expand,
         )
         suffix = "_".join(expand) if expand else str(expand)
@@ -83,12 +92,17 @@ class TestJobService(ServicesTestCase):  # noqa: WPS214
             "expand_outputs",
         ],
     )
+    @pytest.mark.parametrize(
+        argnames="options",
+        argvalues=[None, JobOptions(trackFingers=False, floor_plane=True)],
+    )
     def test_create_multicam(  # noqa: WPS211
         self,
         snapshot,
         request,
         faker,
         expand,
+        options,
         job_fixture,
     ):
         """Test creating a job.
@@ -100,12 +114,14 @@ class TestJobService(ServicesTestCase):  # noqa: WPS214
             request: The request fixture.
             faker: The faker fixture.
             expand: The expand fixture.
+            options: The options fixture.
             job_fixture: The job fixture.
         """
         request.getfixturevalue(job_fixture)
         job_model = self.client.jobs.create_multicam(
             take_id=faker.uuid4(),
             metadata=request.getfixturevalue("metadata_for_update"),
+            options=options,
             number_of_actors=faker.pyint(),
             expand=expand,
         )

@@ -19,10 +19,10 @@ class JobOptions(BaseModel):
     please check the API documentation for the allowed options, and provide the key here accordingly as the key
     may be missing in this version of the sdk but is still allowed by this schema (as extra="allow").
 
-    You can define the options as mentioned in the documentation or use snake case equivalent.
+    You can define the options as mentioned in the documentation.
     For example:
 
-    JobOptions(trackBall=True) can also be written as JobOptions(track_ball=True)
+    JobOptions(trackBall=True)
 
     Please find the allowed options in the API documentation.
     https://move-ai.github.io/move-ugc-api/schema/#optionsinput
