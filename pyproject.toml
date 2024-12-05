@@ -13,7 +13,7 @@ pydantic-settings = "^2.2.1"
 pydantic = "^2.4.0"
 
 [tool.poetry.group.dev.dependencies]
-pytest = "^7.4.0"
+pytest = "^8.3.3"
 snapshottest = "^0.6.0"
 Faker = ">=18.13,<31.0"
 pytest-freezegun = "^0.4.2"
