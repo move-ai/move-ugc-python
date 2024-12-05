@@ -21,11 +21,13 @@ create = UgcGql(
     mutation create(
         $take_id: String!,
         $name: String,
+        $options: OptionsInput,
         $metadata: AWSJSON
     ) {{{{
         createSingleCamJob(
             takeId: $take_id,
             name: $name,
+            options: $options,
             metadata: $metadata
         ) {{{{
             {job_attributes}
