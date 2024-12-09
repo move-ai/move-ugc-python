@@ -41,7 +41,7 @@ repos:
     hooks:
       - id: poetry-lock-check
         name: "check poetry lock file"
-        entry: bash -c "poetry lock --check"
+        entry: bash -c "poetry check --lock"
         language: system
   - repo: https://github.com/commitizen-tools/commitizen
     rev: v3.13.0
