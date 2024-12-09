@@ -10,11 +10,12 @@ snapshots[
     "TestJobService.test_create[no_options-empty_expand] create_mutation_expand_[]"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $metadata: AWSJSON) {
+        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
   createSingleCamJob(
     takeId: $take_id
     name: $name
     options: $options
+    outputs: $outputs
     metadata: $metadata
   ) {
     id
@@ -32,6 +33,7 @@ snapshots[
             "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
             "name": "",
             "options": {},
+            "outputs": [],
             "take_id": "8d866324-3ab5-4d05-a9c5-e560a8020f0a",
         },
     },
@@ -67,11 +69,12 @@ snapshots[
     "TestJobService.test_create[no_options-expand_client] create_mutation_expand_client"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $metadata: AWSJSON) {
+        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
   createSingleCamJob(
     takeId: $take_id
     name: $name
     options: $options
+    outputs: $outputs
     metadata: $metadata
   ) {
     id
@@ -97,6 +100,7 @@ snapshots[
             "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
             "name": "",
             "options": {},
+            "outputs": [],
             "take_id": "8d866324-3ab5-4d05-a9c5-e560a8020f0a",
         },
     },
@@ -144,11 +148,12 @@ snapshots[
     "TestJobService.test_create[no_options-expand_outputs] create_mutation_expand_outputs"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $metadata: AWSJSON) {
+        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
   createSingleCamJob(
     takeId: $take_id
     name: $name
     options: $options
+    outputs: $outputs
     metadata: $metadata
   ) {
     id
@@ -180,6 +185,7 @@ snapshots[
             "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
             "name": "",
             "options": {},
+            "outputs": [],
             "take_id": "8d866324-3ab5-4d05-a9c5-e560a8020f0a",
         },
     },
@@ -276,11 +282,12 @@ snapshots[
     "TestJobService.test_create[no_options-expand_take] create_mutation_expand_take"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $metadata: AWSJSON) {
+        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
   createSingleCamJob(
     takeId: $take_id
     name: $name
     options: $options
+    outputs: $outputs
     metadata: $metadata
   ) {
     id
@@ -305,6 +312,7 @@ snapshots[
             "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
             "name": "",
             "options": {},
+            "outputs": [],
             "take_id": "874a50b9-8d86-4324-bab5-ed05e9c5e560",
         },
     },
@@ -361,11 +369,12 @@ snapshots[
     "TestJobService.test_create[no_options-no_expand] create_mutation_expand_None"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $metadata: AWSJSON) {
+        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
   createSingleCamJob(
     takeId: $take_id
     name: $name
     options: $options
+    outputs: $outputs
     metadata: $metadata
   ) {
     id
@@ -383,6 +392,7 @@ snapshots[
             "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
             "name": "",
             "options": {},
+            "outputs": [],
             "take_id": "8d866324-3ab5-4d05-a9c5-e560a8020f0a",
         },
     },
@@ -418,11 +428,12 @@ snapshots[
     "TestJobService.test_create[with_options-empty_expand] create_mutation_expand_[]"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $metadata: AWSJSON) {
+        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
   createSingleCamJob(
     takeId: $take_id
     name: $name
     options: $options
+    outputs: $outputs
     metadata: $metadata
   ) {
     id
@@ -443,6 +454,7 @@ snapshots[
                 "floorPlane": True,
                 "trackFingers": False,
             },
+            "outputs": [],
             "take_id": "8d866324-3ab5-4d05-a9c5-e560a8020f0a",
         },
     },
@@ -478,11 +490,12 @@ snapshots[
     "TestJobService.test_create[with_options-expand_client] create_mutation_expand_client"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $metadata: AWSJSON) {
+        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
   createSingleCamJob(
     takeId: $take_id
     name: $name
     options: $options
+    outputs: $outputs
     metadata: $metadata
   ) {
     id
@@ -511,6 +524,7 @@ snapshots[
                 "floorPlane": True,
                 "trackFingers": False,
             },
+            "outputs": [],
             "take_id": "8d866324-3ab5-4d05-a9c5-e560a8020f0a",
         },
     },
@@ -558,11 +572,12 @@ snapshots[
     "TestJobService.test_create[with_options-expand_outputs] create_mutation_expand_outputs"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $metadata: AWSJSON) {
+        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
   createSingleCamJob(
     takeId: $take_id
     name: $name
     options: $options
+    outputs: $outputs
     metadata: $metadata
   ) {
     id
@@ -597,6 +612,7 @@ snapshots[
                 "floorPlane": True,
                 "trackFingers": False,
             },
+            "outputs": [],
             "take_id": "8d866324-3ab5-4d05-a9c5-e560a8020f0a",
         },
     },
@@ -693,11 +709,12 @@ snapshots[
     "TestJobService.test_create[with_options-expand_take] create_mutation_expand_take"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $metadata: AWSJSON) {
+        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
   createSingleCamJob(
     takeId: $take_id
     name: $name
     options: $options
+    outputs: $outputs
     metadata: $metadata
   ) {
     id
@@ -725,6 +742,7 @@ snapshots[
                 "floorPlane": True,
                 "trackFingers": False,
             },
+            "outputs": [],
             "take_id": "874a50b9-8d86-4324-bab5-ed05e9c5e560",
         },
     },
@@ -781,11 +799,12 @@ snapshots[
     "TestJobService.test_create[with_options-no_expand] create_mutation_expand_None"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $metadata: AWSJSON) {
+        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
   createSingleCamJob(
     takeId: $take_id
     name: $name
     options: $options
+    outputs: $outputs
     metadata: $metadata
   ) {
     id
@@ -806,6 +825,7 @@ snapshots[
                 "floorPlane": True,
                 "trackFingers": False,
             },
+            "outputs": [],
             "take_id": "8d866324-3ab5-4d05-a9c5-e560a8020f0a",
         },
     },
@@ -841,12 +861,13 @@ snapshots[
     "TestJobService.test_create_multicam[None-empty_expand] create_mutation_expand_[]"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $metadata: AWSJSON) {
+        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
   createMultiCamJob(
     takeId: $take_id
     name: $name
     numberOfActors: $numberOfActors
     options: $options
+    outputs: $outputs
     metadata: $metadata
   ) {
     id
@@ -865,6 +886,7 @@ snapshots[
             "name": "",
             "numberOfActors": 8658,
             "options": {},
+            "outputs": [],
             "take_id": "8d866324-3ab5-4d05-a9c5-e560a8020f0a",
         },
     },
@@ -900,12 +922,13 @@ snapshots[
     "TestJobService.test_create_multicam[None-expand_client] create_mutation_expand_client"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $metadata: AWSJSON) {
+        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
   createMultiCamJob(
     takeId: $take_id
     name: $name
     numberOfActors: $numberOfActors
     options: $options
+    outputs: $outputs
     metadata: $metadata
   ) {
     id
@@ -932,6 +955,7 @@ snapshots[
             "name": "",
             "numberOfActors": 8658,
             "options": {},
+            "outputs": [],
             "take_id": "8d866324-3ab5-4d05-a9c5-e560a8020f0a",
         },
     },
@@ -979,12 +1003,13 @@ snapshots[
     "TestJobService.test_create_multicam[None-expand_outputs] create_mutation_expand_outputs"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $metadata: AWSJSON) {
+        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
   createMultiCamJob(
     takeId: $take_id
     name: $name
     numberOfActors: $numberOfActors
     options: $options
+    outputs: $outputs
     metadata: $metadata
   ) {
     id
@@ -1017,6 +1042,7 @@ snapshots[
             "name": "",
             "numberOfActors": 8658,
             "options": {},
+            "outputs": [],
             "take_id": "8d866324-3ab5-4d05-a9c5-e560a8020f0a",
         },
     },
@@ -1113,12 +1139,13 @@ snapshots[
     "TestJobService.test_create_multicam[None-expand_take] create_mutation_expand_take"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $metadata: AWSJSON) {
+        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
   createMultiCamJob(
     takeId: $take_id
     name: $name
     numberOfActors: $numberOfActors
     options: $options
+    outputs: $outputs
     metadata: $metadata
   ) {
     id
@@ -1144,6 +1171,7 @@ snapshots[
             "name": "",
             "numberOfActors": 849,
             "options": {},
+            "outputs": [],
             "take_id": "874a50b9-8d86-4324-bab5-ed05e9c5e560",
         },
     },
@@ -1200,12 +1228,13 @@ snapshots[
     "TestJobService.test_create_multicam[None-no_expand] create_mutation_expand_None"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $metadata: AWSJSON) {
+        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
   createMultiCamJob(
     takeId: $take_id
     name: $name
     numberOfActors: $numberOfActors
     options: $options
+    outputs: $outputs
     metadata: $metadata
   ) {
     id
@@ -1224,6 +1253,7 @@ snapshots[
             "name": "",
             "numberOfActors": 8658,
             "options": {},
+            "outputs": [],
             "take_id": "8d866324-3ab5-4d05-a9c5-e560a8020f0a",
         },
     },
@@ -1259,12 +1289,13 @@ snapshots[
     "TestJobService.test_create_multicam[options1-empty_expand] create_mutation_expand_[]"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $metadata: AWSJSON) {
+        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
   createMultiCamJob(
     takeId: $take_id
     name: $name
     numberOfActors: $numberOfActors
     options: $options
+    outputs: $outputs
     metadata: $metadata
   ) {
     id
@@ -1286,6 +1317,7 @@ snapshots[
                 "floor_plane": True,
                 "trackFingers": False,
             },
+            "outputs": [],
             "take_id": "8d866324-3ab5-4d05-a9c5-e560a8020f0a",
         },
     },
@@ -1321,12 +1353,13 @@ snapshots[
     "TestJobService.test_create_multicam[options1-expand_client] create_mutation_expand_client"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $metadata: AWSJSON) {
+        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
   createMultiCamJob(
     takeId: $take_id
     name: $name
     numberOfActors: $numberOfActors
     options: $options
+    outputs: $outputs
     metadata: $metadata
   ) {
     id
@@ -1356,6 +1389,7 @@ snapshots[
                 "floor_plane": True,
                 "trackFingers": False,
             },
+            "outputs": [],
             "take_id": "8d866324-3ab5-4d05-a9c5-e560a8020f0a",
         },
     },
@@ -1403,12 +1437,13 @@ snapshots[
     "TestJobService.test_create_multicam[options1-expand_outputs] create_mutation_expand_outputs"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $metadata: AWSJSON) {
+        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
   createMultiCamJob(
     takeId: $take_id
     name: $name
     numberOfActors: $numberOfActors
     options: $options
+    outputs: $outputs
     metadata: $metadata
   ) {
     id
@@ -1444,6 +1479,7 @@ snapshots[
                 "floor_plane": True,
                 "trackFingers": False,
             },
+            "outputs": [],
             "take_id": "8d866324-3ab5-4d05-a9c5-e560a8020f0a",
         },
     },
@@ -1540,12 +1576,13 @@ snapshots[
     "TestJobService.test_create_multicam[options1-expand_take] create_mutation_expand_take"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $metadata: AWSJSON) {
+        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
   createMultiCamJob(
     takeId: $take_id
     name: $name
     numberOfActors: $numberOfActors
     options: $options
+    outputs: $outputs
     metadata: $metadata
   ) {
     id
@@ -1574,6 +1611,7 @@ snapshots[
                 "floor_plane": True,
                 "trackFingers": False,
             },
+            "outputs": [],
             "take_id": "874a50b9-8d86-4324-bab5-ed05e9c5e560",
         },
     },
@@ -1630,12 +1668,13 @@ snapshots[
     "TestJobService.test_create_multicam[options1-no_expand] create_mutation_expand_None"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $metadata: AWSJSON) {
+        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
   createMultiCamJob(
     takeId: $take_id
     name: $name
     numberOfActors: $numberOfActors
     options: $options
+    outputs: $outputs
     metadata: $metadata
   ) {
     id
@@ -1657,6 +1696,7 @@ snapshots[
                 "floor_plane": True,
                 "trackFingers": False,
             },
+            "outputs": [],
             "take_id": "8d866324-3ab5-4d05-a9c5-e560a8020f0a",
         },
     },
@@ -1866,6 +1906,290 @@ snapshots["TestJobService.test_list[without_take_id] list_response"] = {
         "stuff": "UAkAvbvbIjMdtUGoSlUv",
     },
 }
+
+snapshots[
+    "TestJobService.test_output_types[None-create_multicam] create_multicam_response"
+] = [
+    [
+        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
+  createMultiCamJob(
+    takeId: $take_id
+    name: $name
+    numberOfActors: $numberOfActors
+    options: $options
+    outputs: $outputs
+    metadata: $metadata
+  ) {
+    id
+    created
+    metadata
+    state
+    name
+    __typename
+  }
+}""",
+    ],
+    {
+        "operation_name": None,
+        "variable_values": {
+            "metadata": "{}",
+            "name": "",
+            "numberOfActors": 8658,
+            "options": {},
+            "outputs": [],
+            "take_id": "8d866324-3ab5-4d05-a9c5-e560a8020f0a",
+        },
+    },
+]
+
+snapshots[
+    "TestJobService.test_output_types[None-create_singlecam] create_singlecam_response"
+] = [
+    [
+        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
+  createSingleCamJob(
+    takeId: $take_id
+    name: $name
+    options: $options
+    outputs: $outputs
+    metadata: $metadata
+  ) {
+    id
+    created
+    metadata
+    state
+    name
+    __typename
+  }
+}""",
+    ],
+    {
+        "operation_name": None,
+        "variable_values": {
+            "metadata": "{}",
+            "name": "",
+            "options": {},
+            "outputs": [],
+            "take_id": "8d866324-3ab5-4d05-a9c5-e560a8020f0a",
+        },
+    },
+]
+
+snapshots[
+    "TestJobService.test_output_types[outputs1-create_multicam] create_multicam_response"
+] = [
+    [
+        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
+  createMultiCamJob(
+    takeId: $take_id
+    name: $name
+    numberOfActors: $numberOfActors
+    options: $options
+    outputs: $outputs
+    metadata: $metadata
+  ) {
+    id
+    created
+    metadata
+    state
+    name
+    __typename
+  }
+}""",
+    ],
+    {
+        "operation_name": None,
+        "variable_values": {
+            "metadata": "{}",
+            "name": "",
+            "numberOfActors": 8658,
+            "options": {},
+            "outputs": [],
+            "take_id": "8d866324-3ab5-4d05-a9c5-e560a8020f0a",
+        },
+    },
+]
+
+snapshots[
+    "TestJobService.test_output_types[outputs1-create_singlecam] create_singlecam_response"
+] = [
+    [
+        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
+  createSingleCamJob(
+    takeId: $take_id
+    name: $name
+    options: $options
+    outputs: $outputs
+    metadata: $metadata
+  ) {
+    id
+    created
+    metadata
+    state
+    name
+    __typename
+  }
+}""",
+    ],
+    {
+        "operation_name": None,
+        "variable_values": {
+            "metadata": "{}",
+            "name": "",
+            "options": {},
+            "outputs": [],
+            "take_id": "8d866324-3ab5-4d05-a9c5-e560a8020f0a",
+        },
+    },
+]
+
+snapshots[
+    "TestJobService.test_output_types[outputs2-create_multicam] create_multicam_response"
+] = [
+    [
+        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
+  createMultiCamJob(
+    takeId: $take_id
+    name: $name
+    numberOfActors: $numberOfActors
+    options: $options
+    outputs: $outputs
+    metadata: $metadata
+  ) {
+    id
+    created
+    metadata
+    state
+    name
+    __typename
+  }
+}""",
+    ],
+    {
+        "operation_name": None,
+        "variable_values": {
+            "metadata": "{}",
+            "name": "",
+            "numberOfActors": 8658,
+            "options": {},
+            "outputs": [
+                "MAIN_BLEND",
+                "FBX",
+            ],
+            "take_id": "8d866324-3ab5-4d05-a9c5-e560a8020f0a",
+        },
+    },
+]
+
+snapshots[
+    "TestJobService.test_output_types[outputs2-create_singlecam] create_singlecam_response"
+] = [
+    [
+        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
+  createSingleCamJob(
+    takeId: $take_id
+    name: $name
+    options: $options
+    outputs: $outputs
+    metadata: $metadata
+  ) {
+    id
+    created
+    metadata
+    state
+    name
+    __typename
+  }
+}""",
+    ],
+    {
+        "operation_name": None,
+        "variable_values": {
+            "metadata": "{}",
+            "name": "",
+            "options": {},
+            "outputs": [
+                "MAIN_BLEND",
+                "FBX",
+            ],
+            "take_id": "8d866324-3ab5-4d05-a9c5-e560a8020f0a",
+        },
+    },
+]
+
+snapshots[
+    "TestJobService.test_output_types[outputs3-create_multicam] create_multicam_response"
+] = [
+    [
+        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
+  createMultiCamJob(
+    takeId: $take_id
+    name: $name
+    numberOfActors: $numberOfActors
+    options: $options
+    outputs: $outputs
+    metadata: $metadata
+  ) {
+    id
+    created
+    metadata
+    state
+    name
+    __typename
+  }
+}""",
+    ],
+    {
+        "operation_name": None,
+        "variable_values": {
+            "metadata": "{}",
+            "name": "",
+            "numberOfActors": 8658,
+            "options": {},
+            "outputs": [
+                "MAIN_GLB",
+                "UNKNOWN_OUTPUT",
+            ],
+            "take_id": "8d866324-3ab5-4d05-a9c5-e560a8020f0a",
+        },
+    },
+]
+
+snapshots[
+    "TestJobService.test_output_types[outputs3-create_singlecam] create_singlecam_response"
+] = [
+    [
+        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
+  createSingleCamJob(
+    takeId: $take_id
+    name: $name
+    options: $options
+    outputs: $outputs
+    metadata: $metadata
+  ) {
+    id
+    created
+    metadata
+    state
+    name
+    __typename
+  }
+}""",
+    ],
+    {
+        "operation_name": None,
+        "variable_values": {
+            "metadata": "{}",
+            "name": "",
+            "options": {},
+            "outputs": [
+                "MAIN_GLB",
+                "UNKNOWN_OUTPUT",
+            ],
+            "take_id": "8d866324-3ab5-4d05-a9c5-e560a8020f0a",
+        },
+    },
+]
 
 snapshots["TestJobService.test_retrieve[empty_expand] retrieve_query_expand_[]"] = [
     [

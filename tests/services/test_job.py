@@ -9,6 +9,8 @@ from move_ugc.schemas.job import JobOptions
 from tests.constants import LIST_JOBS_QUERY
 from tests.services.testcases import ServicesTestCase
 
+OUTPUTS = "outputs"
+
 
 class TestJobService(ServicesTestCase):  # noqa: WPS214
     """Test job service."""
@@ -22,7 +24,7 @@ class TestJobService(ServicesTestCase):  # noqa: WPS214
             ([], "job_create_response"),
             (["client"], "job_create_response_with_client"),
             (["take"], "job_create_response_with_take"),
-            (["outputs"], "job_create_response_with_outputs"),
+            ([OUTPUTS], "job_create_response_with_outputs"),
         ],
         ids=[
             "no_expand",
@@ -82,7 +84,7 @@ class TestJobService(ServicesTestCase):  # noqa: WPS214
             ([], "job_create_multicam_response"),
             (["client"], "job_create_multicam_with_client"),
             (["take"], "job_create_multicam_with_take"),
-            (["outputs"], "job_create_multicam_with_outputs"),
+            ([OUTPUTS], "job_create_multicam_with_outputs"),
         ],
         ids=[
             "no_expand",
@@ -142,7 +144,7 @@ class TestJobService(ServicesTestCase):  # noqa: WPS214
             ([], "job_retrieve_response"),
             (["client"], "job_retrieve_response_with_client"),
             (["take"], "job_retrieve_response_with_take"),
-            (["outputs"], "job_retrieve_response_with_outputs"),
+            ([OUTPUTS], "job_retrieve_response_with_outputs"),
         ],
         ids=[
             "no_expand",
@@ -296,4 +298,53 @@ class TestJobService(ServicesTestCase):  # noqa: WPS214
         snapshot.assert_match(
             job_model.model_dump(),
             name="update_response",
+        )
+
+    @pytest.mark.parametrize(
+        "service_method, job_fixture",
+        [
+            ["create_singlecam", "job_create_response"],
+            ["create_multicam", "job_create_multicam_response"],
+        ],
+        ids=["create_singlecam", "create_multicam"],
+    )
+    @pytest.mark.parametrize(
+        OUTPUTS,
+        [
+            None,
+            [],
+            ["MAIN_BLEND", "fbx"],
+            ["main_glb", "unknown_output"],
+        ],
+    )
+    def test_output_types(  # noqa: WPS211
+        self,
+        request,
+        service_method,
+        job_fixture,
+        outputs,
+        snapshot,
+        faker,
+    ):
+        """Test different output types for both single and multicam jobs.
+
+        Args:
+            request: The request fixture.
+            service_method: The service method fixture.
+            job_fixture: The job fixture.
+            outputs: The outputs fixture.
+            snapshot: The snapshot fixture.
+            faker: The faker fixture
+        """
+        request.getfixturevalue(job_fixture)
+        kwargs = {
+            "take_id": faker.uuid4(),
+            OUTPUTS: outputs,
+        }
+        if service_method == "create_multicam":
+            kwargs["number_of_actors"] = faker.pyint()
+        getattr(self.client.jobs, service_method)(**kwargs)
+        self.assert_execute(
+            snapshot=snapshot,
+            name=f"{service_method}_response",
         )
