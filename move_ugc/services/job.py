@@ -78,6 +78,7 @@ class JobService(BaseService[JobType]):
         name: Optional[str] = "",
         metadata: Optional[Dict[str, Any]] = None,
         options: Optional[JobOptions] = None,
+        outputs: Optional[List[str]] = None,
         expand: Optional[List[ALLOWED_EXPAND_ATTRS]] = None,
     ) -> JobType:
         """Create a singlecam job in MoveUGC.
@@ -93,6 +94,8 @@ class JobService(BaseService[JobType]):
                 options to be used for creating the job.
                 Check all the valid allowed options in the API documentation.
                 https://move-ai.github.io/move-ugc-api/schema/#optionsinput
+            outputs:
+                list of output types to be created for this job.
             expand:
                 list of fields to be expanded.
                 Currently only `client`, `take` and `outputs` are supported.
@@ -108,6 +111,7 @@ class JobService(BaseService[JobType]):
                 "take_id": take_id,
                 "name": name,
                 "options": options.model_dump(by_alias=True, mode="json"),
+                "outputs": [str(output).upper() for output in outputs or []],
                 "metadata": self.encode_aws_metadata(metadata),
             },
         )
@@ -117,6 +121,7 @@ class JobService(BaseService[JobType]):
         take_id: str,
         number_of_actors: int,
         options: Optional[JobOptions] = None,
+        outputs: Optional[List[str]] = None,
         name: Optional[str] = "",
         metadata: Optional[Dict[str, Any]] = None,
         expand: Optional[List[ALLOWED_EXPAND_ATTRS]] = None,
@@ -132,6 +137,8 @@ class JobService(BaseService[JobType]):
                 options to be used for creating the job.
                 Check all the valid allowed options in the API documentation.
                 https://move-ai.github.io/move-ugc-api/schema/#optionsinput
+            outputs:
+                list of output types to be created for this job.
             name:
                 name to be used for creating the job.
             metadata:
@@ -152,6 +159,7 @@ class JobService(BaseService[JobType]):
                 "numberOfActors": number_of_actors,
                 "name": name,
                 "options": options.model_dump(by_alias=True, mode="json"),
+                "outputs": [str(output).upper() for output in outputs or []],
                 "metadata": self.encode_aws_metadata(metadata),
             },
         )
