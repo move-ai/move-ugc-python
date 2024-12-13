@@ -16,7 +16,7 @@ job = ugc.jobs.create(take_id="take-2be2463e-ffa3-419b-beb4-ea0f99c79512")
 The metadata attribute in job type accepts any valid json string and can contain any custom data. This is particularly useful if any business logic needs to be implemented such as attaching a user id to a job.
 
 ```python
-job = ugc.jobs.create(
+job = ugc.jobs.create_singlecam(
     take_id="take-2be2463e-ffa3-419b-beb4-ea0f99c79512",
     metadata=json.dumps({"foo": "bar"}),
 )
