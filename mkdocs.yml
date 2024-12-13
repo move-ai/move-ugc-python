@@ -24,6 +24,10 @@ nav:
     - Usage:
       - Authentication: "getting-started/usage/authentication.md"
       - Files: "getting-started/usage/file.md"
+      - Singlecam: "getting-started/usage/singlecam.md"
+      - Multicam:
+        - Quickstart: "getting-started/usage/multicam/quickstart.md"
+        - Lenses: "getting-started/usage/multicam/lenses.md"
       - Takes: "getting-started/usage/take.md"
       - Jobs: "getting-started/usage/job.md"
       - Client: "getting-started/usage/client.md"
@@ -31,6 +35,7 @@ nav:
   - "API Reference":
       - Services:
         - Files: "api-reference/services/file.md"
+        - Camera settings: "api-reference/services/camera_settings.md"
         - Takes: "api-reference/services/take.md"
         - Jobs: "api-reference/services/job.md"
         - Volumes: "api-reference/services/volume.md"

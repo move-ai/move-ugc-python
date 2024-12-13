@@ -1,8 +1,5 @@
 Takes are a way to define a recording session. A single take can be associated with a video file and optionally additional files.
 
-> 💡 Additional files is a planned feature which is not supported right now, the plan is to support additional file types: DEPTH, INTRINSIC, ODOMETRY, VISION, MOVE
-> Currently only MOVE files are supported as part of additional files which should contain a `.move` file.
-
 
 ## Prequisites
 
@@ -10,8 +7,7 @@ As a minimum requirement to create a take you need to have a video file. You can
 
 ## Creating a take
 
-To create a take you need at least a video file with optional additional file types mentioned above.
-
+Example for creating a take with a single source:
 
 ```python
 take = ugc.takes.create_singlecam(
@@ -21,25 +17,6 @@ take = ugc.takes.create_singlecam(
             file_id="file-457e23c2-6afc-4913-91f6-36522245d57d",
             format="mp4"
         ),
-])
-```
-
-### Create a take with additional files (i.e. move file)
-
-```python
-
-take = ugc.takes.create_singlecam(
-    sources=[
-        SourceIn(
-            device_label="my-device",
-            file_id="file-457e23c2-6afc-4913-91f6-36522245d57d",
-            format="mp4",
-        ),
-        SourceIn(
-            device_label="my-device",
-            file_id="file-539c5313-ebfd-4eea-b3b1-92e1fd0a3bd0",
-            format="move",
-        )
 ])
 ```
 
