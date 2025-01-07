@@ -75,12 +75,18 @@ class ClipWindow(BaseModel):
 class AdditionalFileType(BaseModel):
     """Representation for Additional File type in MoveUGC."""
 
-    key: str = Field(
-        description="Identification key for the additional file",
+    key: Optional[str] = Field(
+        description="Identification key for the additional file. Deprecated in future version. Use `format` instead",
         title="Additional file key",
         examples=["mp4", "depth", "odometry", "vision", "intrinsic"],
+        default="",
     )
-
+    format: Optional[str] = Field(
+        description="Identification format for the additional file",
+        title="Additional file key",
+        examples=["mp4", "depth", "odometry", "vision", "intrinsic"],
+        default="",
+    )
     file: FileType = Field(  # noqa: WPS110 can't change the name due to GraphQL schema
         description="File associated with the additional file",
         title="Additional file",
