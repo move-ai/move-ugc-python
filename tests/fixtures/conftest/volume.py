@@ -159,6 +159,41 @@ def volume_get_response_with_client(
 
 
 @pytest.fixture
+def volume_get_response_with_outputs(
+    mock_transport,
+    fake_get_volume_response,
+    introspection_result,
+    fake_client_type,
+    fake_file_json,
+) -> FakeVolumeJson:
+    """Fixture to return a fake volume response for getVolume query with client.
+
+    Args:
+        fake_get_volume_response (dict[str, str]): Fake volume json.
+        mock_transport (MockTransport): Mock transport.
+        introspection_result (dict[str, str]): Introspection result.
+        fake_client_type (dict[str, str]): Fake client type.
+        fake_file_json (dict[str, str]): Fake file json.
+
+    Yields:
+        FakeVolumeJson: Fake volume response.
+    """
+    fake_get_volume_response[GET_VOLUME_QUERY]["outputs"] = [
+        {
+            "format": "volume_definition",
+            FILE_LITERAL: fake_file_json,
+        },
+        {
+            "format": "volume_report",
+            FILE_LITERAL: fake_file_json,
+        },
+    ]
+    volume_response_outputs = ExecutionResult(data=fake_get_volume_response)
+    mock_transport.side_effect = [introspection_result, volume_response_outputs]
+    yield volume_response_outputs
+
+
+@pytest.fixture
 def volume_create_response_with_video_source(
     mock_transport,
     fake_create_volume_response,

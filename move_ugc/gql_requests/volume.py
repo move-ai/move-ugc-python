@@ -1,8 +1,8 @@
 """Volume gql requests for Move UGC SDK."""
-
+from move_ugc.gql_requests.additional_file import expand_outputs_format
 from move_ugc.gql_requests.camera_settings import expand_sources_w_camera_settings
 from move_ugc.gql_requests.client import expand_client_query
-from move_ugc.schemas.constants import CLIENT_LITERAL, SOURCES_LITERAL
+from move_ugc.schemas.constants import CLIENT_LITERAL, OUTPUTS_LITERAL, SOURCES_LITERAL
 from move_ugc.schemas.gql import UgcGql
 
 human_volume_attributes = """
@@ -64,6 +64,7 @@ retrieve_human_volume = UgcGql(
     expand={
         CLIENT_LITERAL: expand_client_query,
         SOURCES_LITERAL: expand_sources_w_camera_settings,
+        OUTPUTS_LITERAL: expand_outputs_format,
     },
 )
 
@@ -98,5 +99,6 @@ list_query = UgcGql(
     expand={
         CLIENT_LITERAL: expand_client_query,
         SOURCES_LITERAL: expand_sources_w_camera_settings,
+        OUTPUTS_LITERAL: expand_outputs_format,
     },
 )

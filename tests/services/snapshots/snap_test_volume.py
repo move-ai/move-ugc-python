@@ -82,6 +82,7 @@ snapshots["TestVolumeService.test_create[empty_expand] create_response_expand_[]
         "trouble": "UgnhIyaDJzohUigyDYZf",
     },
     "name": "fake_volume",
+    "outputs": None,
     "sources": None,
     "state": "RUNNING",
 }
@@ -183,6 +184,7 @@ snapshots[
         "trouble": "UgnhIyaDJzohUigyDYZf",
     },
     "name": "fake_volume",
+    "outputs": None,
     "sources": [
         {
             "camera_settings": None,
@@ -338,6 +340,7 @@ snapshots[
         "trouble": "UgnhIyaDJzohUigyDYZf",
     },
     "name": "fake_volume",
+    "outputs": None,
     "sources": None,
     "state": "RUNNING",
 }
@@ -439,6 +442,7 @@ snapshots[
         "trouble": "UgnhIyaDJzohUigyDYZf",
     },
     "name": "fake_volume",
+    "outputs": None,
     "sources": [
         {
             "camera_settings": None,
@@ -547,6 +551,7 @@ snapshots["TestVolumeService.test_create[no_expand] create_response_expand_None"
         "trouble": "UgnhIyaDJzohUigyDYZf",
     },
     "name": "fake_volume",
+    "outputs": None,
     "sources": None,
     "state": "RUNNING",
 }
@@ -576,6 +581,7 @@ snapshots["TestVolumeService.test_list list_response"] = {
                 "trouble": "UgnhIyaDJzohUigyDYZf",
             },
             "name": "fake_volume",
+            "outputs": None,
             "sources": None,
             "state": "RUNNING",
         },
@@ -683,6 +689,7 @@ snapshots["TestVolumeService.test_retrieve[empty_expand] get_response_expand_[]"
         "trouble": "UgnhIyaDJzohUigyDYZf",
     },
     "name": "fake_volume",
+    "outputs": None,
     "sources": None,
     "state": "RUNNING",
 }
@@ -756,6 +763,7 @@ snapshots[
         "trouble": "UgnhIyaDJzohUigyDYZf",
     },
     "name": "fake_volume",
+    "outputs": None,
     "sources": [
         {
             "camera_settings": None,
@@ -881,6 +889,129 @@ snapshots[
         "trouble": "UgnhIyaDJzohUigyDYZf",
     },
     "name": "fake_volume",
+    "outputs": None,
+    "sources": None,
+    "state": "RUNNING",
+}
+
+snapshots[
+    "TestVolumeService.test_retrieve[expand_outputs] get_query_expand_outputs"
+] = [
+    [
+        """query retrieve($id: ID!) {
+  getVolume(id: $id) {
+    ... on Volume {
+      ...VolumeFields
+    }
+  }
+}
+
+fragment VolumeFields on HumanVolume {
+  id
+  areaType
+  created
+  humanHeight
+  metadata
+  name
+  state
+  outputs {
+    format
+    file {
+      id
+      created
+      type
+      metadata
+      name
+      presignedUrl
+      thumbnailUrl
+      __typename
+    }
+    __typename
+  }
+  __typename
+}""",
+    ],
+    {
+        "operation_name": None,
+        "variable_values": {
+            "id": "volume-8d866324-3ab5-4d05-a9c5-e560a8020f0a",
+        },
+    },
+]
+
+snapshots[
+    "TestVolumeService.test_retrieve[expand_outputs] get_response_expand_outputs"
+] = {
+    "area_type": "NORMAL",
+    "client": None,
+    "created": "2023-06-29T08:54:52.349467Z",
+    "human_height": 1.5,
+    "id": "volume-af54cc45-7137-4206-a4c1-b3bc21b398fc",
+    "metadata": {
+        "analysis": "UmKdTFlLMIuIvJkRJnoM",
+        "decade": "zAvJMvacZIYSmMsDUNvC",
+        "director": "KNmpExWtgQLcAEuRyBkN",
+        "draw": "PnbQcVNCliYtuFCSJkGb",
+        "house": "aYyOUXkJPUjPJGpDdakX",
+        "huge": "eFaLyHGEQQpSzpRFSYEm",
+        "last": "dnZCcfgZNBnaEkbOzIyO",
+        "other": "XbBPNrbhtJksbBuoWXSK",
+        "table": "ACMVZcKAiGBcYgCzHAad",
+        "trouble": "UgnhIyaDJzohUigyDYZf",
+    },
+    "name": "fake_volume",
+    "outputs": [
+        {
+            "file": {
+                "client": None,
+                "created": "2023-07-03T14:48:06.029019Z",
+                "id": "file-a0059241-7ede-411c-a149-769a4305e8b6",
+                "metadata": {
+                    "analysis": "UmKdTFlLMIuIvJkRJnoM",
+                    "decade": "zAvJMvacZIYSmMsDUNvC",
+                    "director": "KNmpExWtgQLcAEuRyBkN",
+                    "draw": "PnbQcVNCliYtuFCSJkGb",
+                    "house": "aYyOUXkJPUjPJGpDdakX",
+                    "huge": "eFaLyHGEQQpSzpRFSYEm",
+                    "last": "dnZCcfgZNBnaEkbOzIyO",
+                    "other": "XbBPNrbhtJksbBuoWXSK",
+                    "table": "ACMVZcKAiGBcYgCzHAad",
+                    "trouble": "UgnhIyaDJzohUigyDYZf",
+                },
+                "name": "",
+                "presigned_url": "https://pytest_invalid_presigned_url.com/file",
+                "thumbnail_url": "https://pytest_invalid_thumbnail_url.com/file",
+                "type": ".mp4",
+            },
+            "format": "volume_definition",
+            "key": "",
+        },
+        {
+            "file": {
+                "client": None,
+                "created": "2023-07-03T14:48:06.029019Z",
+                "id": "file-a0059241-7ede-411c-a149-769a4305e8b6",
+                "metadata": {
+                    "analysis": "UmKdTFlLMIuIvJkRJnoM",
+                    "decade": "zAvJMvacZIYSmMsDUNvC",
+                    "director": "KNmpExWtgQLcAEuRyBkN",
+                    "draw": "PnbQcVNCliYtuFCSJkGb",
+                    "house": "aYyOUXkJPUjPJGpDdakX",
+                    "huge": "eFaLyHGEQQpSzpRFSYEm",
+                    "last": "dnZCcfgZNBnaEkbOzIyO",
+                    "other": "XbBPNrbhtJksbBuoWXSK",
+                    "table": "ACMVZcKAiGBcYgCzHAad",
+                    "trouble": "UgnhIyaDJzohUigyDYZf",
+                },
+                "name": "",
+                "presigned_url": "https://pytest_invalid_presigned_url.com/file",
+                "thumbnail_url": "https://pytest_invalid_thumbnail_url.com/file",
+                "type": ".mp4",
+            },
+            "format": "volume_report",
+            "key": "",
+        },
+    ],
     "sources": None,
     "state": "RUNNING",
 }
@@ -954,6 +1085,7 @@ snapshots[
         "trouble": "UgnhIyaDJzohUigyDYZf",
     },
     "name": "fake_volume",
+    "outputs": None,
     "sources": [
         {
             "camera_settings": None,
@@ -1034,6 +1166,7 @@ snapshots["TestVolumeService.test_retrieve[no_expand] get_response_expand_None"]
         "trouble": "UgnhIyaDJzohUigyDYZf",
     },
     "name": "fake_volume",
+    "outputs": None,
     "sources": None,
     "state": "RUNNING",
 }

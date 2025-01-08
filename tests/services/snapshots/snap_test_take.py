@@ -1075,6 +1075,7 @@ snapshots[
             "trouble": "UgnhIyaDJzohUigyDYZf",
         },
         "name": "fake_volume",
+        "outputs": None,
         "sources": None,
         "state": "RUNNING",
     },

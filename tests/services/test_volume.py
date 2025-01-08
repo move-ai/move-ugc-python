@@ -4,6 +4,7 @@ import pytest
 from graphql import ExecutionResult
 from pydantic import ValidationError
 
+from move_ugc.schemas.constants import OUTPUTS_LITERAL
 from move_ugc.schemas.sources import ClipWindow, SourceIn, TakeSourceKey
 from move_ugc.schemas.volume import AreaType
 from tests.constants import LIST_VOLUMES_QUERY
@@ -100,6 +101,7 @@ class TestVolumeService(ServicesTestCase):
             (None, "volume_get_response"),
             ([], "volume_get_response"),
             (["client"], "volume_get_response_with_client"),
+            ([OUTPUTS_LITERAL], "volume_get_response_with_outputs"),
             ([SOURCES_LITERAL], "volume_get_response_with_video_source"),
             ([SOURCES_LITERAL], "volume_get_res_with_additional_sources"),
         ],
@@ -107,6 +109,7 @@ class TestVolumeService(ServicesTestCase):
             "no_expand",
             "empty_expand",
             "expand_client",
+            "expand_outputs",
             "expand_video_file",
             "expand_additional_sources",
         ],

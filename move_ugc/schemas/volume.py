@@ -7,7 +7,7 @@ from typing import Any, List, Optional
 from pydantic import BaseModel, Field, Json
 
 from move_ugc.schemas.client import Client
-from move_ugc.schemas.sources import Source
+from move_ugc.schemas.sources import AdditionalFileType, Source
 
 ID_LITERAL = "id"
 
@@ -75,6 +75,17 @@ class HumanVolumeType(BaseModel):
             },
         ],
         title="Volume sources",
+        default=None,
+    )
+    outputs: Optional[List[AdditionalFileType]] = Field(
+        description="Outputs for the volume. This usually contains the pkl, volume_definition and volume_report output files when the state is `FINISHED`",
+        examples=[
+            {
+                "key": "pkl",
+                "file": {"id": "file-ee02c1b6-0328-4a7c-a2b2-76883acb451d"},
+            },
+        ],
+        title="Volume outputs",
         default=None,
     )
     state: str = Field(
