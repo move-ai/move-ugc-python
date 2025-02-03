@@ -6,6 +6,7 @@ from typing import Any, List, Optional
 from pydantic import BaseModel, ConfigDict, Field, Json, alias_generators
 
 from move_ugc.schemas.client import Client
+from move_ugc.schemas.rig import Rig
 from move_ugc.schemas.sources import AdditionalFileType
 from move_ugc.schemas.take import TakeType
 
@@ -85,4 +86,11 @@ class JobType(BaseModel):
         examples=["job 1"],
         title="Job name",
         default="",
+    )
+
+    rig: Optional[Rig] = Field(
+        description="Name of rig to be used for the job",
+        examples=[{"name": "move_mo"}],
+        title="Job rig",
+        default=None,
     )

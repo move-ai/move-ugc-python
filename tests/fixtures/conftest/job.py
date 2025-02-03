@@ -324,6 +324,32 @@ def job_create_multicam_with_outputs(
 
 
 @pytest.fixture
+def job_create_multicam_with_rig(
+    mock_transport,
+    fake_create_multicam_response,
+    introspection_result,
+) -> FakeJobJson:
+    """Fixture to return a fake job response for createJob mutation with client.
+
+    Args:
+        fake_create_multicam_response (dict[str, str]): Fake job json.
+        mock_transport (MockTransport): Mock transport.
+        introspection_result (dict[str, str]): Introspection result.
+
+    Yields:
+        FakeJobJson: Fake job response.
+    """
+    fake_create_multicam_response[CREATE_MULTICAM_JOB_MUTATION]["rig"] = {
+        "name": "move_mo",
+    }
+    yield mock_response(
+        fake_create_multicam_response,
+        mock_transport,
+        introspection_result,
+    )
+
+
+@pytest.fixture
 def fake_retrieve_job_response(fake_job_json) -> FakeJobJson:
     """Fixture to return a fake job response for getJob query.
 
@@ -513,3 +539,25 @@ def jobs_update_response(
     job_response = ExecutionResult(data=fake_update_job_response)
     mock_transport.side_effect = [introspection_result, job_response]
     yield job_response
+
+
+@pytest.fixture
+def job_retrieve_response_with_rig(
+    mock_transport,
+    fake_retrieve_job_response,
+    introspection_result,
+) -> FakeJobJson:
+    """Fixture to return a fake job response for getJob query with outputs.
+
+    Args:
+        fake_retrieve_job_response (FakeJobJson): Fake job json.
+        mock_transport (MockTransport): Mock transport.
+        introspection_result (dict[str, str]): Introspection result.
+
+    Yields:
+        FakeJobJson: Fake job response.
+    """
+    fake_retrieve_job_response[GET_JOB_QUERY]["rig"] = {"name": "move_mo"}
+    job_response_with_rig = ExecutionResult(data=fake_retrieve_job_response)
+    mock_transport.side_effect = [introspection_result, job_response_with_rig]
+    yield job_response_with_rig

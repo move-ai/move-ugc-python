@@ -85,6 +85,7 @@ class TestJobService(ServicesTestCase):  # noqa: WPS214
             (["client"], "job_create_multicam_with_client"),
             (["take"], "job_create_multicam_with_take"),
             ([OUTPUTS], "job_create_multicam_with_outputs"),
+            (["rig"], "job_create_multicam_with_rig"),
         ],
         ids=[
             "no_expand",
@@ -92,11 +93,16 @@ class TestJobService(ServicesTestCase):  # noqa: WPS214
             "expand_client",
             "expand_take",
             "expand_outputs",
+            "expand_rig",
         ],
     )
     @pytest.mark.parametrize(
         argnames="options",
         argvalues=[None, JobOptions(trackFingers=False, floor_plane=True)],
+    )
+    @pytest.mark.parametrize(
+        argnames="rig",
+        argvalues=["", "move_mo"],
     )
     def test_create_multicam(  # noqa: WPS211
         self,
@@ -105,6 +111,7 @@ class TestJobService(ServicesTestCase):  # noqa: WPS214
         faker,
         expand,
         options,
+        rig,
         job_fixture,
     ):
         """Test creating a job.
@@ -117,6 +124,7 @@ class TestJobService(ServicesTestCase):  # noqa: WPS214
             faker: The faker fixture.
             expand: The expand fixture.
             options: The options fixture.
+            rig: The rig fixture.
             job_fixture: The job fixture.
         """
         request.getfixturevalue(job_fixture)
@@ -124,6 +132,7 @@ class TestJobService(ServicesTestCase):  # noqa: WPS214
             take_id=faker.uuid4(),
             metadata=request.getfixturevalue("metadata_for_update"),
             options=options,
+            rig=rig,
             number_of_actors=faker.pyint(),
             expand=expand,
         )
@@ -145,6 +154,7 @@ class TestJobService(ServicesTestCase):  # noqa: WPS214
             (["client"], "job_retrieve_response_with_client"),
             (["take"], "job_retrieve_response_with_take"),
             ([OUTPUTS], "job_retrieve_response_with_outputs"),
+            (["rig"], "job_retrieve_response_with_rig"),
         ],
         ids=[
             "no_expand",
@@ -152,6 +162,7 @@ class TestJobService(ServicesTestCase):  # noqa: WPS214
             "expand_client",
             "expand_take",
             "expand_outputs",
+            "expand_rig",
         ],
     )
     def test_retrieve(  # noqa: WPS211

@@ -122,6 +122,7 @@ class JobService(BaseService[JobType]):
         number_of_actors: int,
         options: Optional[JobOptions] = None,
         outputs: Optional[List[str]] = None,
+        rig: Optional[str] = "",
         name: Optional[str] = "",
         metadata: Optional[Dict[str, Any]] = None,
         expand: Optional[List[ALLOWED_EXPAND_ATTRS]] = None,
@@ -139,6 +140,8 @@ class JobService(BaseService[JobType]):
                 https://move-ai.github.io/move-ugc-api/schema/#optionsinput
             outputs:
                 list of output types to be created for this job.
+            rig:
+                rig to be used for creating the job.
             name:
                 name to be used for creating the job.
             metadata:
@@ -161,6 +164,7 @@ class JobService(BaseService[JobType]):
                 "options": options.model_dump(by_alias=True, mode="json"),
                 "outputs": [str(output).upper() for output in outputs or []],
                 "metadata": self.encode_aws_metadata(metadata),
+                "rig": rig,
             },
         )
 
