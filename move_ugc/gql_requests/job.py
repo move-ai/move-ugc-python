@@ -2,8 +2,14 @@
 
 from move_ugc.gql_requests.additional_file import expand_outputs
 from move_ugc.gql_requests.client import expand_client_query
+from move_ugc.gql_requests.rig import expand_rig_query
 from move_ugc.gql_requests.take import expand_take_query
-from move_ugc.schemas.constants import CLIENT_LITERAL, OUTPUTS_LITERAL, TAKE_LITERAL
+from move_ugc.schemas.constants import (
+    CLIENT_LITERAL,
+    OUTPUTS_LITERAL,
+    RIGS_LITERAL,
+    TAKE_LITERAL,
+)
 from move_ugc.schemas.gql import UgcGql
 
 job_attributes = """
@@ -52,7 +58,8 @@ create_multicam = UgcGql(
         $numberOfActors: Int!,
         $options: OptionsInput,
         $outputs: [OutputType],
-        $metadata: AWSJSON
+        $metadata: AWSJSON,
+        $rig: String
     ) {{{{
         createMultiCamJob(
             takeId: $take_id,
@@ -61,6 +68,7 @@ create_multicam = UgcGql(
             options: $options,
             outputs: $outputs,
             metadata: $metadata
+            rig: $rig
         ) {{{{
             {job_attributes}
         }}}}
@@ -71,6 +79,7 @@ create_multicam = UgcGql(
         CLIENT_LITERAL: expand_client_query,
         TAKE_LITERAL: expand_take_query,
         OUTPUTS_LITERAL: expand_outputs,
+        RIGS_LITERAL: expand_rig_query,
     },
 )
 
@@ -87,6 +96,7 @@ retrieve = UgcGql(
         CLIENT_LITERAL: expand_client_query,
         TAKE_LITERAL: expand_take_query,
         OUTPUTS_LITERAL: expand_outputs,
+        RIGS_LITERAL: expand_rig_query,
     },
 )
 
@@ -131,5 +141,6 @@ list_query = UgcGql(
         CLIENT_LITERAL: expand_client_query,
         TAKE_LITERAL: expand_take_query,
         OUTPUTS_LITERAL: expand_outputs,
+        RIGS_LITERAL: expand_rig_query,
     },
 )
