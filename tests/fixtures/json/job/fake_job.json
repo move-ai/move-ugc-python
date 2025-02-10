@@ -2,5 +2,6 @@
     "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
     "state": "RUNNING",
     "created": "2023-07-10T12:13:56.615715Z",
-    "metadata": "{}"
+    "metadata": "{}",
+    "__typename": "Job"
 }

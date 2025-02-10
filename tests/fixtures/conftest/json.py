@@ -104,3 +104,16 @@ def camera_settings_fixtures_path(json_fixtures_path):
         str: Path to camera settings fixtures.
     """
     return os.path.join(json_fixtures_path, "camera_settings")
+
+
+@pytest.fixture
+def rig_fixtures_path(json_fixtures_path):
+    """Fixture to return the path to the rig fixtures.
+
+    Args:
+        json_fixtures_path (str): Path to JSON fixtures.
+
+    Returns:
+        str: Path to rig fixtures.
+    """
+    return os.path.join(json_fixtures_path, "rig")

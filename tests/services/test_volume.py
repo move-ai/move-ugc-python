@@ -2,7 +2,6 @@
 
 import pytest
 from graphql import ExecutionResult
-from pydantic import ValidationError
 
 from move_ugc.schemas.constants import OUTPUTS_LITERAL
 from move_ugc.schemas.sources import ClipWindow, SourceIn, TakeSourceKey
@@ -183,7 +182,7 @@ class TestVolumeService(ServicesTestCase):
         volume_response = ExecutionResult(data=fake_list_volume_response)
         mock_transport.side_effect = [introspection_result, volume_response]
 
-        with pytest.raises(ValidationError) as excinfo:
+        with pytest.raises(KeyError) as excinfo:
             self.client.volumes.list()
 
     def test_list_volume_empty(self, request):

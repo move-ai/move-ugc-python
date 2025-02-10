@@ -3,7 +3,6 @@
 import pytest
 from gql.transport.exceptions import TransportQueryError
 from graphql.execution.execute import ExecutionResult
-from pydantic import ValidationError
 
 from move_ugc.schemas.job import JobOptions
 from tests.constants import LIST_JOBS_QUERY
@@ -238,7 +237,7 @@ class TestJobService(ServicesTestCase):  # noqa: WPS214
             name="list_response",
         )
 
-    def test_list_job_invalid(self, request, job_not_found_json):
+    def test_list_job_invalid(self, request, snapshot, job_not_found_json):
         """Test job errors.
 
         This should test -> `ugc.jobs.list()`
@@ -246,6 +245,7 @@ class TestJobService(ServicesTestCase):  # noqa: WPS214
         Args:
             request: The request fixture.
             job_not_found_json: job not found json fixture.
+            snapshot: The snapshot fixture.
         """
         mock_transport = request.getfixturevalue("mock_transport")
         fake_list_job_response = request.getfixturevalue("fake_list_job_response")
@@ -258,8 +258,13 @@ class TestJobService(ServicesTestCase):  # noqa: WPS214
         job_response = ExecutionResult(data=fake_list_job_response)
         mock_transport.side_effect = [introspection_result, job_response]
 
-        with pytest.raises(ValidationError) as excinfo:
+        with pytest.raises(KeyError) as excinfo:
             self.client.jobs.list()
+
+        snapshot.assert_match(
+            str(excinfo.value),  # noqa: WPS441
+            name="key_error_message",
+        )
 
     def test_list_job_empty(self, request, job_not_found_json):
         """Test job when it has an empty response.

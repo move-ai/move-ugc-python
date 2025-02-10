@@ -3149,6 +3149,10 @@ snapshots["TestJobService.test_list[without_take_id] list_response"] = {
 }
 
 snapshots[
+    "TestJobService.test_list_job_invalid key_error_message"
+] = "\"Got __typename of '' which not present in mapping_type_name_to_class: Rig, CameraSettings, Take, Job, HumanVolume\""
+
+snapshots[
     "TestJobService.test_output_types[None-create_multicam] create_multicam_response"
 ] = [
     [

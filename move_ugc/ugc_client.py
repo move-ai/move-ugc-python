@@ -5,12 +5,13 @@ from move_ugc.services.camera_settings import CameraSettingsService
 from move_ugc.services.client import ClientService
 from move_ugc.services.file import FileService
 from move_ugc.services.job import JobService
+from move_ugc.services.rig import RigService
 from move_ugc.services.take import TakeService
 from move_ugc.services.volume import VolumeService
 from move_ugc.services.webhooks import WebhookService
 
 
-class MoveUgc(MetaClient):
+class MoveUgc(MetaClient):  # noqa: WPS214
     """Move UGC SDK client."""
 
     @property
@@ -75,3 +76,12 @@ class MoveUgc(MetaClient):
             CameraSettingsService: The camera settings service.
         """
         return CameraSettingsService(**self.model_dump())
+
+    @property
+    def rigs(self) -> RigService:
+        """Get the rig service.
+
+        Returns:
+            RigService: The rig service.
+        """
+        return RigService(**self.model_dump())
