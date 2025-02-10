@@ -1,3 +1,4 @@
 {
-    "lens": "blackmagic-ursa-4k-24mm"
+    "lens": "blackmagic-ursa-4k-24mm",
+    "__typename": "CameraSettings"
 }
