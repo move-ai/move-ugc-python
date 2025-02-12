@@ -7,871 +7,6 @@ from snapshottest import GenericRepr, Snapshot
 snapshots = Snapshot()
 
 snapshots[
-    "TestJobService.test_create[no_options-empty_expand] create_mutation_expand_[]"
-] = [
-    [
-        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
-  createSingleCamJob(
-    takeId: $take_id
-    name: $name
-    options: $options
-    outputs: $outputs
-    metadata: $metadata
-  ) {
-    id
-    created
-    metadata
-    state
-    name
-    __typename
-  }
-}""",
-    ],
-    {
-        "operation_name": None,
-        "variable_values": {
-            "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
-            "name": "",
-            "options": {},
-            "outputs": [],
-            "take_id": "8d866324-3ab5-4d05-a9c5-e560a8020f0a",
-        },
-    },
-]
-
-snapshots[
-    "TestJobService.test_create[no_options-empty_expand] create_response_expand_[]"
-] = {
-    "client": None,
-    "created": GenericRepr(
-        "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
-    ),
-    "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
-    "metadata": {
-        "analysis": "UmKdTFlLMIuIvJkRJnoM",
-        "decade": "zAvJMvacZIYSmMsDUNvC",
-        "director": "KNmpExWtgQLcAEuRyBkN",
-        "draw": "PnbQcVNCliYtuFCSJkGb",
-        "house": "aYyOUXkJPUjPJGpDdakX",
-        "huge": "eFaLyHGEQQpSzpRFSYEm",
-        "last": "dnZCcfgZNBnaEkbOzIyO",
-        "other": "XbBPNrbhtJksbBuoWXSK",
-        "table": "ACMVZcKAiGBcYgCzHAad",
-        "trouble": "UgnhIyaDJzohUigyDYZf",
-    },
-    "name": "",
-    "outputs": None,
-    "rig": None,
-    "state": "RUNNING",
-    "take": None,
-}
-
-snapshots[
-    "TestJobService.test_create[no_options-expand_client] create_mutation_expand_client"
-] = [
-    [
-        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
-  createSingleCamJob(
-    takeId: $take_id
-    name: $name
-    options: $options
-    outputs: $outputs
-    metadata: $metadata
-  ) {
-    id
-    created
-    metadata
-    state
-    name
-    client {
-      id
-      name
-      created
-      metadata
-      portal
-      __typename
-    }
-    __typename
-  }
-}""",
-    ],
-    {
-        "operation_name": None,
-        "variable_values": {
-            "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
-            "name": "",
-            "options": {},
-            "outputs": [],
-            "take_id": "8d866324-3ab5-4d05-a9c5-e560a8020f0a",
-        },
-    },
-]
-
-snapshots[
-    "TestJobService.test_create[no_options-expand_client] create_response_expand_client"
-] = {
-    "client": {
-        "created": GenericRepr(
-            "datetime.datetime(2023, 6, 12, 0, 0, tzinfo=TzInfo(UTC))",
-        ),
-        "id": "client-47c982ec-60ab-4a0b-9286-2db4a76abc18",
-        "metadata": {
-            "foo": "bar",
-        },
-        "name": "PYTEST_INVALID_CLIENT_NAME",
-        "portal": GenericRepr(
-            "Url('https://app.svix.com/login?primaryColorLight=39ddef&primaryColorDark=39ddef#key=')",
-        ),
-    },
-    "created": GenericRepr(
-        "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
-    ),
-    "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
-    "metadata": {
-        "analysis": "UmKdTFlLMIuIvJkRJnoM",
-        "decade": "zAvJMvacZIYSmMsDUNvC",
-        "director": "KNmpExWtgQLcAEuRyBkN",
-        "draw": "PnbQcVNCliYtuFCSJkGb",
-        "house": "aYyOUXkJPUjPJGpDdakX",
-        "huge": "eFaLyHGEQQpSzpRFSYEm",
-        "last": "dnZCcfgZNBnaEkbOzIyO",
-        "other": "XbBPNrbhtJksbBuoWXSK",
-        "table": "ACMVZcKAiGBcYgCzHAad",
-        "trouble": "UgnhIyaDJzohUigyDYZf",
-    },
-    "name": "",
-    "outputs": None,
-    "rig": None,
-    "state": "RUNNING",
-    "take": None,
-}
-
-snapshots[
-    "TestJobService.test_create[no_options-expand_outputs] create_mutation_expand_outputs"
-] = [
-    [
-        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
-  createSingleCamJob(
-    takeId: $take_id
-    name: $name
-    options: $options
-    outputs: $outputs
-    metadata: $metadata
-  ) {
-    id
-    created
-    metadata
-    state
-    name
-    outputs {
-      key
-      file {
-        id
-        created
-        type
-        metadata
-        name
-        presignedUrl
-        thumbnailUrl
-        __typename
-      }
-      __typename
-    }
-    __typename
-  }
-}""",
-    ],
-    {
-        "operation_name": None,
-        "variable_values": {
-            "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
-            "name": "",
-            "options": {},
-            "outputs": [],
-            "take_id": "8d866324-3ab5-4d05-a9c5-e560a8020f0a",
-        },
-    },
-]
-
-snapshots[
-    "TestJobService.test_create[no_options-expand_outputs] create_response_expand_outputs"
-] = {
-    "client": None,
-    "created": GenericRepr(
-        "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
-    ),
-    "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
-    "metadata": {
-        "analysis": "UmKdTFlLMIuIvJkRJnoM",
-        "decade": "zAvJMvacZIYSmMsDUNvC",
-        "director": "KNmpExWtgQLcAEuRyBkN",
-        "draw": "PnbQcVNCliYtuFCSJkGb",
-        "house": "aYyOUXkJPUjPJGpDdakX",
-        "huge": "eFaLyHGEQQpSzpRFSYEm",
-        "last": "dnZCcfgZNBnaEkbOzIyO",
-        "other": "XbBPNrbhtJksbBuoWXSK",
-        "table": "ACMVZcKAiGBcYgCzHAad",
-        "trouble": "UgnhIyaDJzohUigyDYZf",
-    },
-    "name": "",
-    "outputs": [
-        {
-            "file": {
-                "client": None,
-                "created": GenericRepr(
-                    "datetime.datetime(2023, 7, 3, 14, 48, 6, 29019, tzinfo=TzInfo(UTC))",
-                ),
-                "id": "file-a0059241-7ede-411c-a149-769a4305e8b6",
-                "metadata": {
-                    "analysis": "UmKdTFlLMIuIvJkRJnoM",
-                    "decade": "zAvJMvacZIYSmMsDUNvC",
-                    "director": "KNmpExWtgQLcAEuRyBkN",
-                    "draw": "PnbQcVNCliYtuFCSJkGb",
-                    "house": "aYyOUXkJPUjPJGpDdakX",
-                    "huge": "eFaLyHGEQQpSzpRFSYEm",
-                    "last": "dnZCcfgZNBnaEkbOzIyO",
-                    "other": "XbBPNrbhtJksbBuoWXSK",
-                    "table": "ACMVZcKAiGBcYgCzHAad",
-                    "trouble": "UgnhIyaDJzohUigyDYZf",
-                },
-                "name": "",
-                "presigned_url": GenericRepr(
-                    "Url('https://pytest_invalid_presigned_url.com/file')",
-                ),
-                "thumbnail_url": GenericRepr(
-                    "Url('https://pytest_invalid_thumbnail_url.com/file')",
-                ),
-                "type": ".mp4",
-            },
-            "format": "",
-            "key": "mp4",
-        },
-        {
-            "file": {
-                "client": None,
-                "created": GenericRepr(
-                    "datetime.datetime(2023, 7, 3, 14, 48, 6, 29019, tzinfo=TzInfo(UTC))",
-                ),
-                "id": "file-a0059241-7ede-411c-a149-769a4305e8b6",
-                "metadata": {
-                    "analysis": "UmKdTFlLMIuIvJkRJnoM",
-                    "decade": "zAvJMvacZIYSmMsDUNvC",
-                    "director": "KNmpExWtgQLcAEuRyBkN",
-                    "draw": "PnbQcVNCliYtuFCSJkGb",
-                    "house": "aYyOUXkJPUjPJGpDdakX",
-                    "huge": "eFaLyHGEQQpSzpRFSYEm",
-                    "last": "dnZCcfgZNBnaEkbOzIyO",
-                    "other": "XbBPNrbhtJksbBuoWXSK",
-                    "table": "ACMVZcKAiGBcYgCzHAad",
-                    "trouble": "UgnhIyaDJzohUigyDYZf",
-                },
-                "name": "",
-                "presigned_url": GenericRepr(
-                    "Url('https://pytest_invalid_presigned_url.com/file')",
-                ),
-                "thumbnail_url": GenericRepr(
-                    "Url('https://pytest_invalid_thumbnail_url.com/file')",
-                ),
-                "type": ".mp4",
-            },
-            "format": "",
-            "key": "fbx",
-        },
-    ],
-    "rig": None,
-    "state": "RUNNING",
-    "take": None,
-}
-
-snapshots[
-    "TestJobService.test_create[no_options-expand_take] create_mutation_expand_take"
-] = [
-    [
-        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
-  createSingleCamJob(
-    takeId: $take_id
-    name: $name
-    options: $options
-    outputs: $outputs
-    metadata: $metadata
-  ) {
-    id
-    created
-    metadata
-    state
-    name
-    take {
-      id
-      created
-      name
-      metadata
-      __typename
-    }
-    __typename
-  }
-}""",
-    ],
-    {
-        "operation_name": None,
-        "variable_values": {
-            "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
-            "name": "",
-            "options": {},
-            "outputs": [],
-            "take_id": "874a50b9-8d86-4324-bab5-ed05e9c5e560",
-        },
-    },
-]
-
-snapshots[
-    "TestJobService.test_create[no_options-expand_take] create_response_expand_take"
-] = {
-    "client": None,
-    "created": GenericRepr(
-        "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
-    ),
-    "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
-    "metadata": {
-        "analysis": "UmKdTFlLMIuIvJkRJnoM",
-        "decade": "zAvJMvacZIYSmMsDUNvC",
-        "director": "KNmpExWtgQLcAEuRyBkN",
-        "draw": "PnbQcVNCliYtuFCSJkGb",
-        "house": "aYyOUXkJPUjPJGpDdakX",
-        "huge": "eFaLyHGEQQpSzpRFSYEm",
-        "last": "dnZCcfgZNBnaEkbOzIyO",
-        "other": "XbBPNrbhtJksbBuoWXSK",
-        "table": "ACMVZcKAiGBcYgCzHAad",
-        "trouble": "UgnhIyaDJzohUigyDYZf",
-    },
-    "name": "",
-    "outputs": None,
-    "rig": None,
-    "state": "RUNNING",
-    "take": {
-        "client": None,
-        "created": GenericRepr(
-            "datetime.datetime(2023, 6, 29, 8, 54, 52, 349467, tzinfo=TzInfo(UTC))",
-        ),
-        "id": "take-af54cc45-7137-4206-a4c1-b3bc21b398fc",
-        "metadata": {
-            "analysis": "UmKdTFlLMIuIvJkRJnoM",
-            "decade": "zAvJMvacZIYSmMsDUNvC",
-            "director": "KNmpExWtgQLcAEuRyBkN",
-            "draw": "PnbQcVNCliYtuFCSJkGb",
-            "house": "aYyOUXkJPUjPJGpDdakX",
-            "huge": "eFaLyHGEQQpSzpRFSYEm",
-            "last": "dnZCcfgZNBnaEkbOzIyO",
-            "other": "XbBPNrbhtJksbBuoWXSK",
-            "table": "ACMVZcKAiGBcYgCzHAad",
-            "trouble": "UgnhIyaDJzohUigyDYZf",
-        },
-        "name": "realize",
-        "sources": None,
-        "volume": None,
-    },
-}
-
-snapshots[
-    "TestJobService.test_create[no_options-no_expand] create_mutation_expand_None"
-] = [
-    [
-        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
-  createSingleCamJob(
-    takeId: $take_id
-    name: $name
-    options: $options
-    outputs: $outputs
-    metadata: $metadata
-  ) {
-    id
-    created
-    metadata
-    state
-    name
-    __typename
-  }
-}""",
-    ],
-    {
-        "operation_name": None,
-        "variable_values": {
-            "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
-            "name": "",
-            "options": {},
-            "outputs": [],
-            "take_id": "8d866324-3ab5-4d05-a9c5-e560a8020f0a",
-        },
-    },
-]
-
-snapshots[
-    "TestJobService.test_create[no_options-no_expand] create_response_expand_None"
-] = {
-    "client": None,
-    "created": GenericRepr(
-        "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
-    ),
-    "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
-    "metadata": {
-        "analysis": "UmKdTFlLMIuIvJkRJnoM",
-        "decade": "zAvJMvacZIYSmMsDUNvC",
-        "director": "KNmpExWtgQLcAEuRyBkN",
-        "draw": "PnbQcVNCliYtuFCSJkGb",
-        "house": "aYyOUXkJPUjPJGpDdakX",
-        "huge": "eFaLyHGEQQpSzpRFSYEm",
-        "last": "dnZCcfgZNBnaEkbOzIyO",
-        "other": "XbBPNrbhtJksbBuoWXSK",
-        "table": "ACMVZcKAiGBcYgCzHAad",
-        "trouble": "UgnhIyaDJzohUigyDYZf",
-    },
-    "name": "",
-    "outputs": None,
-    "rig": None,
-    "state": "RUNNING",
-    "take": None,
-}
-
-snapshots[
-    "TestJobService.test_create[with_options-empty_expand] create_mutation_expand_[]"
-] = [
-    [
-        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
-  createSingleCamJob(
-    takeId: $take_id
-    name: $name
-    options: $options
-    outputs: $outputs
-    metadata: $metadata
-  ) {
-    id
-    created
-    metadata
-    state
-    name
-    __typename
-  }
-}""",
-    ],
-    {
-        "operation_name": None,
-        "variable_values": {
-            "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
-            "name": "",
-            "options": {
-                "floorPlane": True,
-                "trackFingers": False,
-            },
-            "outputs": [],
-            "take_id": "8d866324-3ab5-4d05-a9c5-e560a8020f0a",
-        },
-    },
-]
-
-snapshots[
-    "TestJobService.test_create[with_options-empty_expand] create_response_expand_[]"
-] = {
-    "client": None,
-    "created": GenericRepr(
-        "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
-    ),
-    "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
-    "metadata": {
-        "analysis": "UmKdTFlLMIuIvJkRJnoM",
-        "decade": "zAvJMvacZIYSmMsDUNvC",
-        "director": "KNmpExWtgQLcAEuRyBkN",
-        "draw": "PnbQcVNCliYtuFCSJkGb",
-        "house": "aYyOUXkJPUjPJGpDdakX",
-        "huge": "eFaLyHGEQQpSzpRFSYEm",
-        "last": "dnZCcfgZNBnaEkbOzIyO",
-        "other": "XbBPNrbhtJksbBuoWXSK",
-        "table": "ACMVZcKAiGBcYgCzHAad",
-        "trouble": "UgnhIyaDJzohUigyDYZf",
-    },
-    "name": "",
-    "outputs": None,
-    "rig": None,
-    "state": "RUNNING",
-    "take": None,
-}
-
-snapshots[
-    "TestJobService.test_create[with_options-expand_client] create_mutation_expand_client"
-] = [
-    [
-        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
-  createSingleCamJob(
-    takeId: $take_id
-    name: $name
-    options: $options
-    outputs: $outputs
-    metadata: $metadata
-  ) {
-    id
-    created
-    metadata
-    state
-    name
-    client {
-      id
-      name
-      created
-      metadata
-      portal
-      __typename
-    }
-    __typename
-  }
-}""",
-    ],
-    {
-        "operation_name": None,
-        "variable_values": {
-            "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
-            "name": "",
-            "options": {
-                "floorPlane": True,
-                "trackFingers": False,
-            },
-            "outputs": [],
-            "take_id": "8d866324-3ab5-4d05-a9c5-e560a8020f0a",
-        },
-    },
-]
-
-snapshots[
-    "TestJobService.test_create[with_options-expand_client] create_response_expand_client"
-] = {
-    "client": {
-        "created": GenericRepr(
-            "datetime.datetime(2023, 6, 12, 0, 0, tzinfo=TzInfo(UTC))",
-        ),
-        "id": "client-47c982ec-60ab-4a0b-9286-2db4a76abc18",
-        "metadata": {
-            "foo": "bar",
-        },
-        "name": "PYTEST_INVALID_CLIENT_NAME",
-        "portal": GenericRepr(
-            "Url('https://app.svix.com/login?primaryColorLight=39ddef&primaryColorDark=39ddef#key=')",
-        ),
-    },
-    "created": GenericRepr(
-        "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
-    ),
-    "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
-    "metadata": {
-        "analysis": "UmKdTFlLMIuIvJkRJnoM",
-        "decade": "zAvJMvacZIYSmMsDUNvC",
-        "director": "KNmpExWtgQLcAEuRyBkN",
-        "draw": "PnbQcVNCliYtuFCSJkGb",
-        "house": "aYyOUXkJPUjPJGpDdakX",
-        "huge": "eFaLyHGEQQpSzpRFSYEm",
-        "last": "dnZCcfgZNBnaEkbOzIyO",
-        "other": "XbBPNrbhtJksbBuoWXSK",
-        "table": "ACMVZcKAiGBcYgCzHAad",
-        "trouble": "UgnhIyaDJzohUigyDYZf",
-    },
-    "name": "",
-    "outputs": None,
-    "rig": None,
-    "state": "RUNNING",
-    "take": None,
-}
-
-snapshots[
-    "TestJobService.test_create[with_options-expand_outputs] create_mutation_expand_outputs"
-] = [
-    [
-        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
-  createSingleCamJob(
-    takeId: $take_id
-    name: $name
-    options: $options
-    outputs: $outputs
-    metadata: $metadata
-  ) {
-    id
-    created
-    metadata
-    state
-    name
-    outputs {
-      key
-      file {
-        id
-        created
-        type
-        metadata
-        name
-        presignedUrl
-        thumbnailUrl
-        __typename
-      }
-      __typename
-    }
-    __typename
-  }
-}""",
-    ],
-    {
-        "operation_name": None,
-        "variable_values": {
-            "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
-            "name": "",
-            "options": {
-                "floorPlane": True,
-                "trackFingers": False,
-            },
-            "outputs": [],
-            "take_id": "8d866324-3ab5-4d05-a9c5-e560a8020f0a",
-        },
-    },
-]
-
-snapshots[
-    "TestJobService.test_create[with_options-expand_outputs] create_response_expand_outputs"
-] = {
-    "client": None,
-    "created": GenericRepr(
-        "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
-    ),
-    "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
-    "metadata": {
-        "analysis": "UmKdTFlLMIuIvJkRJnoM",
-        "decade": "zAvJMvacZIYSmMsDUNvC",
-        "director": "KNmpExWtgQLcAEuRyBkN",
-        "draw": "PnbQcVNCliYtuFCSJkGb",
-        "house": "aYyOUXkJPUjPJGpDdakX",
-        "huge": "eFaLyHGEQQpSzpRFSYEm",
-        "last": "dnZCcfgZNBnaEkbOzIyO",
-        "other": "XbBPNrbhtJksbBuoWXSK",
-        "table": "ACMVZcKAiGBcYgCzHAad",
-        "trouble": "UgnhIyaDJzohUigyDYZf",
-    },
-    "name": "",
-    "outputs": [
-        {
-            "file": {
-                "client": None,
-                "created": GenericRepr(
-                    "datetime.datetime(2023, 7, 3, 14, 48, 6, 29019, tzinfo=TzInfo(UTC))",
-                ),
-                "id": "file-a0059241-7ede-411c-a149-769a4305e8b6",
-                "metadata": {
-                    "analysis": "UmKdTFlLMIuIvJkRJnoM",
-                    "decade": "zAvJMvacZIYSmMsDUNvC",
-                    "director": "KNmpExWtgQLcAEuRyBkN",
-                    "draw": "PnbQcVNCliYtuFCSJkGb",
-                    "house": "aYyOUXkJPUjPJGpDdakX",
-                    "huge": "eFaLyHGEQQpSzpRFSYEm",
-                    "last": "dnZCcfgZNBnaEkbOzIyO",
-                    "other": "XbBPNrbhtJksbBuoWXSK",
-                    "table": "ACMVZcKAiGBcYgCzHAad",
-                    "trouble": "UgnhIyaDJzohUigyDYZf",
-                },
-                "name": "",
-                "presigned_url": GenericRepr(
-                    "Url('https://pytest_invalid_presigned_url.com/file')",
-                ),
-                "thumbnail_url": GenericRepr(
-                    "Url('https://pytest_invalid_thumbnail_url.com/file')",
-                ),
-                "type": ".mp4",
-            },
-            "format": "",
-            "key": "mp4",
-        },
-        {
-            "file": {
-                "client": None,
-                "created": GenericRepr(
-                    "datetime.datetime(2023, 7, 3, 14, 48, 6, 29019, tzinfo=TzInfo(UTC))",
-                ),
-                "id": "file-a0059241-7ede-411c-a149-769a4305e8b6",
-                "metadata": {
-                    "analysis": "UmKdTFlLMIuIvJkRJnoM",
-                    "decade": "zAvJMvacZIYSmMsDUNvC",
-                    "director": "KNmpExWtgQLcAEuRyBkN",
-                    "draw": "PnbQcVNCliYtuFCSJkGb",
-                    "house": "aYyOUXkJPUjPJGpDdakX",
-                    "huge": "eFaLyHGEQQpSzpRFSYEm",
-                    "last": "dnZCcfgZNBnaEkbOzIyO",
-                    "other": "XbBPNrbhtJksbBuoWXSK",
-                    "table": "ACMVZcKAiGBcYgCzHAad",
-                    "trouble": "UgnhIyaDJzohUigyDYZf",
-                },
-                "name": "",
-                "presigned_url": GenericRepr(
-                    "Url('https://pytest_invalid_presigned_url.com/file')",
-                ),
-                "thumbnail_url": GenericRepr(
-                    "Url('https://pytest_invalid_thumbnail_url.com/file')",
-                ),
-                "type": ".mp4",
-            },
-            "format": "",
-            "key": "fbx",
-        },
-    ],
-    "rig": None,
-    "state": "RUNNING",
-    "take": None,
-}
-
-snapshots[
-    "TestJobService.test_create[with_options-expand_take] create_mutation_expand_take"
-] = [
-    [
-        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
-  createSingleCamJob(
-    takeId: $take_id
-    name: $name
-    options: $options
-    outputs: $outputs
-    metadata: $metadata
-  ) {
-    id
-    created
-    metadata
-    state
-    name
-    take {
-      id
-      created
-      name
-      metadata
-      __typename
-    }
-    __typename
-  }
-}""",
-    ],
-    {
-        "operation_name": None,
-        "variable_values": {
-            "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
-            "name": "",
-            "options": {
-                "floorPlane": True,
-                "trackFingers": False,
-            },
-            "outputs": [],
-            "take_id": "874a50b9-8d86-4324-bab5-ed05e9c5e560",
-        },
-    },
-]
-
-snapshots[
-    "TestJobService.test_create[with_options-expand_take] create_response_expand_take"
-] = {
-    "client": None,
-    "created": GenericRepr(
-        "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
-    ),
-    "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
-    "metadata": {
-        "analysis": "UmKdTFlLMIuIvJkRJnoM",
-        "decade": "zAvJMvacZIYSmMsDUNvC",
-        "director": "KNmpExWtgQLcAEuRyBkN",
-        "draw": "PnbQcVNCliYtuFCSJkGb",
-        "house": "aYyOUXkJPUjPJGpDdakX",
-        "huge": "eFaLyHGEQQpSzpRFSYEm",
-        "last": "dnZCcfgZNBnaEkbOzIyO",
-        "other": "XbBPNrbhtJksbBuoWXSK",
-        "table": "ACMVZcKAiGBcYgCzHAad",
-        "trouble": "UgnhIyaDJzohUigyDYZf",
-    },
-    "name": "",
-    "outputs": None,
-    "rig": None,
-    "state": "RUNNING",
-    "take": {
-        "client": None,
-        "created": GenericRepr(
-            "datetime.datetime(2023, 6, 29, 8, 54, 52, 349467, tzinfo=TzInfo(UTC))",
-        ),
-        "id": "take-af54cc45-7137-4206-a4c1-b3bc21b398fc",
-        "metadata": {
-            "analysis": "UmKdTFlLMIuIvJkRJnoM",
-            "decade": "zAvJMvacZIYSmMsDUNvC",
-            "director": "KNmpExWtgQLcAEuRyBkN",
-            "draw": "PnbQcVNCliYtuFCSJkGb",
-            "house": "aYyOUXkJPUjPJGpDdakX",
-            "huge": "eFaLyHGEQQpSzpRFSYEm",
-            "last": "dnZCcfgZNBnaEkbOzIyO",
-            "other": "XbBPNrbhtJksbBuoWXSK",
-            "table": "ACMVZcKAiGBcYgCzHAad",
-            "trouble": "UgnhIyaDJzohUigyDYZf",
-        },
-        "name": "realize",
-        "sources": None,
-        "volume": None,
-    },
-}
-
-snapshots[
-    "TestJobService.test_create[with_options-no_expand] create_mutation_expand_None"
-] = [
-    [
-        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
-  createSingleCamJob(
-    takeId: $take_id
-    name: $name
-    options: $options
-    outputs: $outputs
-    metadata: $metadata
-  ) {
-    id
-    created
-    metadata
-    state
-    name
-    __typename
-  }
-}""",
-    ],
-    {
-        "operation_name": None,
-        "variable_values": {
-            "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
-            "name": "",
-            "options": {
-                "floorPlane": True,
-                "trackFingers": False,
-            },
-            "outputs": [],
-            "take_id": "8d866324-3ab5-4d05-a9c5-e560a8020f0a",
-        },
-    },
-]
-
-snapshots[
-    "TestJobService.test_create[with_options-no_expand] create_response_expand_None"
-] = {
-    "client": None,
-    "created": GenericRepr(
-        "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
-    ),
-    "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
-    "metadata": {
-        "analysis": "UmKdTFlLMIuIvJkRJnoM",
-        "decade": "zAvJMvacZIYSmMsDUNvC",
-        "director": "KNmpExWtgQLcAEuRyBkN",
-        "draw": "PnbQcVNCliYtuFCSJkGb",
-        "house": "aYyOUXkJPUjPJGpDdakX",
-        "huge": "eFaLyHGEQQpSzpRFSYEm",
-        "last": "dnZCcfgZNBnaEkbOzIyO",
-        "other": "XbBPNrbhtJksbBuoWXSK",
-        "table": "ACMVZcKAiGBcYgCzHAad",
-        "trouble": "UgnhIyaDJzohUigyDYZf",
-    },
-    "name": "",
-    "outputs": None,
-    "rig": None,
-    "state": "RUNNING",
-    "take": None,
-}
-
-snapshots[
     "TestJobService.test_create_multicam[-None-empty_expand] create_mutation_expand_[]"
 ] = [
     [
@@ -2942,6 +2077,871 @@ snapshots[
 
 snapshots[
     "TestJobService.test_create_multicam[move_mo-options1-no_expand] create_response_expand_None"
+] = {
+    "client": None,
+    "created": GenericRepr(
+        "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
+    ),
+    "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+    "metadata": {
+        "analysis": "UmKdTFlLMIuIvJkRJnoM",
+        "decade": "zAvJMvacZIYSmMsDUNvC",
+        "director": "KNmpExWtgQLcAEuRyBkN",
+        "draw": "PnbQcVNCliYtuFCSJkGb",
+        "house": "aYyOUXkJPUjPJGpDdakX",
+        "huge": "eFaLyHGEQQpSzpRFSYEm",
+        "last": "dnZCcfgZNBnaEkbOzIyO",
+        "other": "XbBPNrbhtJksbBuoWXSK",
+        "table": "ACMVZcKAiGBcYgCzHAad",
+        "trouble": "UgnhIyaDJzohUigyDYZf",
+    },
+    "name": "",
+    "outputs": None,
+    "rig": None,
+    "state": "RUNNING",
+    "take": None,
+}
+
+snapshots[
+    "TestJobService.test_create_singlecam[no_options-empty_expand] create_mutation_expand_[]"
+] = [
+    [
+        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
+  createSingleCamJob(
+    takeId: $take_id
+    name: $name
+    options: $options
+    outputs: $outputs
+    metadata: $metadata
+  ) {
+    id
+    created
+    metadata
+    state
+    name
+    __typename
+  }
+}""",
+    ],
+    {
+        "operation_name": None,
+        "variable_values": {
+            "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+            "name": "",
+            "options": {},
+            "outputs": [],
+            "take_id": "8d866324-3ab5-4d05-a9c5-e560a8020f0a",
+        },
+    },
+]
+
+snapshots[
+    "TestJobService.test_create_singlecam[no_options-empty_expand] create_response_expand_[]"
+] = {
+    "client": None,
+    "created": GenericRepr(
+        "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
+    ),
+    "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+    "metadata": {
+        "analysis": "UmKdTFlLMIuIvJkRJnoM",
+        "decade": "zAvJMvacZIYSmMsDUNvC",
+        "director": "KNmpExWtgQLcAEuRyBkN",
+        "draw": "PnbQcVNCliYtuFCSJkGb",
+        "house": "aYyOUXkJPUjPJGpDdakX",
+        "huge": "eFaLyHGEQQpSzpRFSYEm",
+        "last": "dnZCcfgZNBnaEkbOzIyO",
+        "other": "XbBPNrbhtJksbBuoWXSK",
+        "table": "ACMVZcKAiGBcYgCzHAad",
+        "trouble": "UgnhIyaDJzohUigyDYZf",
+    },
+    "name": "",
+    "outputs": None,
+    "rig": None,
+    "state": "RUNNING",
+    "take": None,
+}
+
+snapshots[
+    "TestJobService.test_create_singlecam[no_options-expand_client] create_mutation_expand_client"
+] = [
+    [
+        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
+  createSingleCamJob(
+    takeId: $take_id
+    name: $name
+    options: $options
+    outputs: $outputs
+    metadata: $metadata
+  ) {
+    id
+    created
+    metadata
+    state
+    name
+    client {
+      id
+      name
+      created
+      metadata
+      portal
+      __typename
+    }
+    __typename
+  }
+}""",
+    ],
+    {
+        "operation_name": None,
+        "variable_values": {
+            "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+            "name": "",
+            "options": {},
+            "outputs": [],
+            "take_id": "8d866324-3ab5-4d05-a9c5-e560a8020f0a",
+        },
+    },
+]
+
+snapshots[
+    "TestJobService.test_create_singlecam[no_options-expand_client] create_response_expand_client"
+] = {
+    "client": {
+        "created": GenericRepr(
+            "datetime.datetime(2023, 6, 12, 0, 0, tzinfo=TzInfo(UTC))",
+        ),
+        "id": "client-47c982ec-60ab-4a0b-9286-2db4a76abc18",
+        "metadata": {
+            "foo": "bar",
+        },
+        "name": "PYTEST_INVALID_CLIENT_NAME",
+        "portal": GenericRepr(
+            "Url('https://app.svix.com/login?primaryColorLight=39ddef&primaryColorDark=39ddef#key=')",
+        ),
+    },
+    "created": GenericRepr(
+        "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
+    ),
+    "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+    "metadata": {
+        "analysis": "UmKdTFlLMIuIvJkRJnoM",
+        "decade": "zAvJMvacZIYSmMsDUNvC",
+        "director": "KNmpExWtgQLcAEuRyBkN",
+        "draw": "PnbQcVNCliYtuFCSJkGb",
+        "house": "aYyOUXkJPUjPJGpDdakX",
+        "huge": "eFaLyHGEQQpSzpRFSYEm",
+        "last": "dnZCcfgZNBnaEkbOzIyO",
+        "other": "XbBPNrbhtJksbBuoWXSK",
+        "table": "ACMVZcKAiGBcYgCzHAad",
+        "trouble": "UgnhIyaDJzohUigyDYZf",
+    },
+    "name": "",
+    "outputs": None,
+    "rig": None,
+    "state": "RUNNING",
+    "take": None,
+}
+
+snapshots[
+    "TestJobService.test_create_singlecam[no_options-expand_outputs] create_mutation_expand_outputs"
+] = [
+    [
+        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
+  createSingleCamJob(
+    takeId: $take_id
+    name: $name
+    options: $options
+    outputs: $outputs
+    metadata: $metadata
+  ) {
+    id
+    created
+    metadata
+    state
+    name
+    outputs {
+      key
+      file {
+        id
+        created
+        type
+        metadata
+        name
+        presignedUrl
+        thumbnailUrl
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}""",
+    ],
+    {
+        "operation_name": None,
+        "variable_values": {
+            "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+            "name": "",
+            "options": {},
+            "outputs": [],
+            "take_id": "8d866324-3ab5-4d05-a9c5-e560a8020f0a",
+        },
+    },
+]
+
+snapshots[
+    "TestJobService.test_create_singlecam[no_options-expand_outputs] create_response_expand_outputs"
+] = {
+    "client": None,
+    "created": GenericRepr(
+        "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
+    ),
+    "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+    "metadata": {
+        "analysis": "UmKdTFlLMIuIvJkRJnoM",
+        "decade": "zAvJMvacZIYSmMsDUNvC",
+        "director": "KNmpExWtgQLcAEuRyBkN",
+        "draw": "PnbQcVNCliYtuFCSJkGb",
+        "house": "aYyOUXkJPUjPJGpDdakX",
+        "huge": "eFaLyHGEQQpSzpRFSYEm",
+        "last": "dnZCcfgZNBnaEkbOzIyO",
+        "other": "XbBPNrbhtJksbBuoWXSK",
+        "table": "ACMVZcKAiGBcYgCzHAad",
+        "trouble": "UgnhIyaDJzohUigyDYZf",
+    },
+    "name": "",
+    "outputs": [
+        {
+            "file": {
+                "client": None,
+                "created": GenericRepr(
+                    "datetime.datetime(2023, 7, 3, 14, 48, 6, 29019, tzinfo=TzInfo(UTC))",
+                ),
+                "id": "file-a0059241-7ede-411c-a149-769a4305e8b6",
+                "metadata": {
+                    "analysis": "UmKdTFlLMIuIvJkRJnoM",
+                    "decade": "zAvJMvacZIYSmMsDUNvC",
+                    "director": "KNmpExWtgQLcAEuRyBkN",
+                    "draw": "PnbQcVNCliYtuFCSJkGb",
+                    "house": "aYyOUXkJPUjPJGpDdakX",
+                    "huge": "eFaLyHGEQQpSzpRFSYEm",
+                    "last": "dnZCcfgZNBnaEkbOzIyO",
+                    "other": "XbBPNrbhtJksbBuoWXSK",
+                    "table": "ACMVZcKAiGBcYgCzHAad",
+                    "trouble": "UgnhIyaDJzohUigyDYZf",
+                },
+                "name": "",
+                "presigned_url": GenericRepr(
+                    "Url('https://pytest_invalid_presigned_url.com/file')",
+                ),
+                "thumbnail_url": GenericRepr(
+                    "Url('https://pytest_invalid_thumbnail_url.com/file')",
+                ),
+                "type": ".mp4",
+            },
+            "format": "",
+            "key": "mp4",
+        },
+        {
+            "file": {
+                "client": None,
+                "created": GenericRepr(
+                    "datetime.datetime(2023, 7, 3, 14, 48, 6, 29019, tzinfo=TzInfo(UTC))",
+                ),
+                "id": "file-a0059241-7ede-411c-a149-769a4305e8b6",
+                "metadata": {
+                    "analysis": "UmKdTFlLMIuIvJkRJnoM",
+                    "decade": "zAvJMvacZIYSmMsDUNvC",
+                    "director": "KNmpExWtgQLcAEuRyBkN",
+                    "draw": "PnbQcVNCliYtuFCSJkGb",
+                    "house": "aYyOUXkJPUjPJGpDdakX",
+                    "huge": "eFaLyHGEQQpSzpRFSYEm",
+                    "last": "dnZCcfgZNBnaEkbOzIyO",
+                    "other": "XbBPNrbhtJksbBuoWXSK",
+                    "table": "ACMVZcKAiGBcYgCzHAad",
+                    "trouble": "UgnhIyaDJzohUigyDYZf",
+                },
+                "name": "",
+                "presigned_url": GenericRepr(
+                    "Url('https://pytest_invalid_presigned_url.com/file')",
+                ),
+                "thumbnail_url": GenericRepr(
+                    "Url('https://pytest_invalid_thumbnail_url.com/file')",
+                ),
+                "type": ".mp4",
+            },
+            "format": "",
+            "key": "fbx",
+        },
+    ],
+    "rig": None,
+    "state": "RUNNING",
+    "take": None,
+}
+
+snapshots[
+    "TestJobService.test_create_singlecam[no_options-expand_take] create_mutation_expand_take"
+] = [
+    [
+        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
+  createSingleCamJob(
+    takeId: $take_id
+    name: $name
+    options: $options
+    outputs: $outputs
+    metadata: $metadata
+  ) {
+    id
+    created
+    metadata
+    state
+    name
+    take {
+      id
+      created
+      name
+      metadata
+      __typename
+    }
+    __typename
+  }
+}""",
+    ],
+    {
+        "operation_name": None,
+        "variable_values": {
+            "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+            "name": "",
+            "options": {},
+            "outputs": [],
+            "take_id": "874a50b9-8d86-4324-bab5-ed05e9c5e560",
+        },
+    },
+]
+
+snapshots[
+    "TestJobService.test_create_singlecam[no_options-expand_take] create_response_expand_take"
+] = {
+    "client": None,
+    "created": GenericRepr(
+        "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
+    ),
+    "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+    "metadata": {
+        "analysis": "UmKdTFlLMIuIvJkRJnoM",
+        "decade": "zAvJMvacZIYSmMsDUNvC",
+        "director": "KNmpExWtgQLcAEuRyBkN",
+        "draw": "PnbQcVNCliYtuFCSJkGb",
+        "house": "aYyOUXkJPUjPJGpDdakX",
+        "huge": "eFaLyHGEQQpSzpRFSYEm",
+        "last": "dnZCcfgZNBnaEkbOzIyO",
+        "other": "XbBPNrbhtJksbBuoWXSK",
+        "table": "ACMVZcKAiGBcYgCzHAad",
+        "trouble": "UgnhIyaDJzohUigyDYZf",
+    },
+    "name": "",
+    "outputs": None,
+    "rig": None,
+    "state": "RUNNING",
+    "take": {
+        "client": None,
+        "created": GenericRepr(
+            "datetime.datetime(2023, 6, 29, 8, 54, 52, 349467, tzinfo=TzInfo(UTC))",
+        ),
+        "id": "take-af54cc45-7137-4206-a4c1-b3bc21b398fc",
+        "metadata": {
+            "analysis": "UmKdTFlLMIuIvJkRJnoM",
+            "decade": "zAvJMvacZIYSmMsDUNvC",
+            "director": "KNmpExWtgQLcAEuRyBkN",
+            "draw": "PnbQcVNCliYtuFCSJkGb",
+            "house": "aYyOUXkJPUjPJGpDdakX",
+            "huge": "eFaLyHGEQQpSzpRFSYEm",
+            "last": "dnZCcfgZNBnaEkbOzIyO",
+            "other": "XbBPNrbhtJksbBuoWXSK",
+            "table": "ACMVZcKAiGBcYgCzHAad",
+            "trouble": "UgnhIyaDJzohUigyDYZf",
+        },
+        "name": "realize",
+        "sources": None,
+        "volume": None,
+    },
+}
+
+snapshots[
+    "TestJobService.test_create_singlecam[no_options-no_expand] create_mutation_expand_None"
+] = [
+    [
+        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
+  createSingleCamJob(
+    takeId: $take_id
+    name: $name
+    options: $options
+    outputs: $outputs
+    metadata: $metadata
+  ) {
+    id
+    created
+    metadata
+    state
+    name
+    __typename
+  }
+}""",
+    ],
+    {
+        "operation_name": None,
+        "variable_values": {
+            "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+            "name": "",
+            "options": {},
+            "outputs": [],
+            "take_id": "8d866324-3ab5-4d05-a9c5-e560a8020f0a",
+        },
+    },
+]
+
+snapshots[
+    "TestJobService.test_create_singlecam[no_options-no_expand] create_response_expand_None"
+] = {
+    "client": None,
+    "created": GenericRepr(
+        "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
+    ),
+    "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+    "metadata": {
+        "analysis": "UmKdTFlLMIuIvJkRJnoM",
+        "decade": "zAvJMvacZIYSmMsDUNvC",
+        "director": "KNmpExWtgQLcAEuRyBkN",
+        "draw": "PnbQcVNCliYtuFCSJkGb",
+        "house": "aYyOUXkJPUjPJGpDdakX",
+        "huge": "eFaLyHGEQQpSzpRFSYEm",
+        "last": "dnZCcfgZNBnaEkbOzIyO",
+        "other": "XbBPNrbhtJksbBuoWXSK",
+        "table": "ACMVZcKAiGBcYgCzHAad",
+        "trouble": "UgnhIyaDJzohUigyDYZf",
+    },
+    "name": "",
+    "outputs": None,
+    "rig": None,
+    "state": "RUNNING",
+    "take": None,
+}
+
+snapshots[
+    "TestJobService.test_create_singlecam[with_options-empty_expand] create_mutation_expand_[]"
+] = [
+    [
+        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
+  createSingleCamJob(
+    takeId: $take_id
+    name: $name
+    options: $options
+    outputs: $outputs
+    metadata: $metadata
+  ) {
+    id
+    created
+    metadata
+    state
+    name
+    __typename
+  }
+}""",
+    ],
+    {
+        "operation_name": None,
+        "variable_values": {
+            "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+            "name": "",
+            "options": {
+                "floorPlane": True,
+                "trackFingers": False,
+            },
+            "outputs": [],
+            "take_id": "8d866324-3ab5-4d05-a9c5-e560a8020f0a",
+        },
+    },
+]
+
+snapshots[
+    "TestJobService.test_create_singlecam[with_options-empty_expand] create_response_expand_[]"
+] = {
+    "client": None,
+    "created": GenericRepr(
+        "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
+    ),
+    "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+    "metadata": {
+        "analysis": "UmKdTFlLMIuIvJkRJnoM",
+        "decade": "zAvJMvacZIYSmMsDUNvC",
+        "director": "KNmpExWtgQLcAEuRyBkN",
+        "draw": "PnbQcVNCliYtuFCSJkGb",
+        "house": "aYyOUXkJPUjPJGpDdakX",
+        "huge": "eFaLyHGEQQpSzpRFSYEm",
+        "last": "dnZCcfgZNBnaEkbOzIyO",
+        "other": "XbBPNrbhtJksbBuoWXSK",
+        "table": "ACMVZcKAiGBcYgCzHAad",
+        "trouble": "UgnhIyaDJzohUigyDYZf",
+    },
+    "name": "",
+    "outputs": None,
+    "rig": None,
+    "state": "RUNNING",
+    "take": None,
+}
+
+snapshots[
+    "TestJobService.test_create_singlecam[with_options-expand_client] create_mutation_expand_client"
+] = [
+    [
+        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
+  createSingleCamJob(
+    takeId: $take_id
+    name: $name
+    options: $options
+    outputs: $outputs
+    metadata: $metadata
+  ) {
+    id
+    created
+    metadata
+    state
+    name
+    client {
+      id
+      name
+      created
+      metadata
+      portal
+      __typename
+    }
+    __typename
+  }
+}""",
+    ],
+    {
+        "operation_name": None,
+        "variable_values": {
+            "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+            "name": "",
+            "options": {
+                "floorPlane": True,
+                "trackFingers": False,
+            },
+            "outputs": [],
+            "take_id": "8d866324-3ab5-4d05-a9c5-e560a8020f0a",
+        },
+    },
+]
+
+snapshots[
+    "TestJobService.test_create_singlecam[with_options-expand_client] create_response_expand_client"
+] = {
+    "client": {
+        "created": GenericRepr(
+            "datetime.datetime(2023, 6, 12, 0, 0, tzinfo=TzInfo(UTC))",
+        ),
+        "id": "client-47c982ec-60ab-4a0b-9286-2db4a76abc18",
+        "metadata": {
+            "foo": "bar",
+        },
+        "name": "PYTEST_INVALID_CLIENT_NAME",
+        "portal": GenericRepr(
+            "Url('https://app.svix.com/login?primaryColorLight=39ddef&primaryColorDark=39ddef#key=')",
+        ),
+    },
+    "created": GenericRepr(
+        "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
+    ),
+    "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+    "metadata": {
+        "analysis": "UmKdTFlLMIuIvJkRJnoM",
+        "decade": "zAvJMvacZIYSmMsDUNvC",
+        "director": "KNmpExWtgQLcAEuRyBkN",
+        "draw": "PnbQcVNCliYtuFCSJkGb",
+        "house": "aYyOUXkJPUjPJGpDdakX",
+        "huge": "eFaLyHGEQQpSzpRFSYEm",
+        "last": "dnZCcfgZNBnaEkbOzIyO",
+        "other": "XbBPNrbhtJksbBuoWXSK",
+        "table": "ACMVZcKAiGBcYgCzHAad",
+        "trouble": "UgnhIyaDJzohUigyDYZf",
+    },
+    "name": "",
+    "outputs": None,
+    "rig": None,
+    "state": "RUNNING",
+    "take": None,
+}
+
+snapshots[
+    "TestJobService.test_create_singlecam[with_options-expand_outputs] create_mutation_expand_outputs"
+] = [
+    [
+        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
+  createSingleCamJob(
+    takeId: $take_id
+    name: $name
+    options: $options
+    outputs: $outputs
+    metadata: $metadata
+  ) {
+    id
+    created
+    metadata
+    state
+    name
+    outputs {
+      key
+      file {
+        id
+        created
+        type
+        metadata
+        name
+        presignedUrl
+        thumbnailUrl
+        __typename
+      }
+      __typename
+    }
+    __typename
+  }
+}""",
+    ],
+    {
+        "operation_name": None,
+        "variable_values": {
+            "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+            "name": "",
+            "options": {
+                "floorPlane": True,
+                "trackFingers": False,
+            },
+            "outputs": [],
+            "take_id": "8d866324-3ab5-4d05-a9c5-e560a8020f0a",
+        },
+    },
+]
+
+snapshots[
+    "TestJobService.test_create_singlecam[with_options-expand_outputs] create_response_expand_outputs"
+] = {
+    "client": None,
+    "created": GenericRepr(
+        "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
+    ),
+    "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+    "metadata": {
+        "analysis": "UmKdTFlLMIuIvJkRJnoM",
+        "decade": "zAvJMvacZIYSmMsDUNvC",
+        "director": "KNmpExWtgQLcAEuRyBkN",
+        "draw": "PnbQcVNCliYtuFCSJkGb",
+        "house": "aYyOUXkJPUjPJGpDdakX",
+        "huge": "eFaLyHGEQQpSzpRFSYEm",
+        "last": "dnZCcfgZNBnaEkbOzIyO",
+        "other": "XbBPNrbhtJksbBuoWXSK",
+        "table": "ACMVZcKAiGBcYgCzHAad",
+        "trouble": "UgnhIyaDJzohUigyDYZf",
+    },
+    "name": "",
+    "outputs": [
+        {
+            "file": {
+                "client": None,
+                "created": GenericRepr(
+                    "datetime.datetime(2023, 7, 3, 14, 48, 6, 29019, tzinfo=TzInfo(UTC))",
+                ),
+                "id": "file-a0059241-7ede-411c-a149-769a4305e8b6",
+                "metadata": {
+                    "analysis": "UmKdTFlLMIuIvJkRJnoM",
+                    "decade": "zAvJMvacZIYSmMsDUNvC",
+                    "director": "KNmpExWtgQLcAEuRyBkN",
+                    "draw": "PnbQcVNCliYtuFCSJkGb",
+                    "house": "aYyOUXkJPUjPJGpDdakX",
+                    "huge": "eFaLyHGEQQpSzpRFSYEm",
+                    "last": "dnZCcfgZNBnaEkbOzIyO",
+                    "other": "XbBPNrbhtJksbBuoWXSK",
+                    "table": "ACMVZcKAiGBcYgCzHAad",
+                    "trouble": "UgnhIyaDJzohUigyDYZf",
+                },
+                "name": "",
+                "presigned_url": GenericRepr(
+                    "Url('https://pytest_invalid_presigned_url.com/file')",
+                ),
+                "thumbnail_url": GenericRepr(
+                    "Url('https://pytest_invalid_thumbnail_url.com/file')",
+                ),
+                "type": ".mp4",
+            },
+            "format": "",
+            "key": "mp4",
+        },
+        {
+            "file": {
+                "client": None,
+                "created": GenericRepr(
+                    "datetime.datetime(2023, 7, 3, 14, 48, 6, 29019, tzinfo=TzInfo(UTC))",
+                ),
+                "id": "file-a0059241-7ede-411c-a149-769a4305e8b6",
+                "metadata": {
+                    "analysis": "UmKdTFlLMIuIvJkRJnoM",
+                    "decade": "zAvJMvacZIYSmMsDUNvC",
+                    "director": "KNmpExWtgQLcAEuRyBkN",
+                    "draw": "PnbQcVNCliYtuFCSJkGb",
+                    "house": "aYyOUXkJPUjPJGpDdakX",
+                    "huge": "eFaLyHGEQQpSzpRFSYEm",
+                    "last": "dnZCcfgZNBnaEkbOzIyO",
+                    "other": "XbBPNrbhtJksbBuoWXSK",
+                    "table": "ACMVZcKAiGBcYgCzHAad",
+                    "trouble": "UgnhIyaDJzohUigyDYZf",
+                },
+                "name": "",
+                "presigned_url": GenericRepr(
+                    "Url('https://pytest_invalid_presigned_url.com/file')",
+                ),
+                "thumbnail_url": GenericRepr(
+                    "Url('https://pytest_invalid_thumbnail_url.com/file')",
+                ),
+                "type": ".mp4",
+            },
+            "format": "",
+            "key": "fbx",
+        },
+    ],
+    "rig": None,
+    "state": "RUNNING",
+    "take": None,
+}
+
+snapshots[
+    "TestJobService.test_create_singlecam[with_options-expand_take] create_mutation_expand_take"
+] = [
+    [
+        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
+  createSingleCamJob(
+    takeId: $take_id
+    name: $name
+    options: $options
+    outputs: $outputs
+    metadata: $metadata
+  ) {
+    id
+    created
+    metadata
+    state
+    name
+    take {
+      id
+      created
+      name
+      metadata
+      __typename
+    }
+    __typename
+  }
+}""",
+    ],
+    {
+        "operation_name": None,
+        "variable_values": {
+            "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+            "name": "",
+            "options": {
+                "floorPlane": True,
+                "trackFingers": False,
+            },
+            "outputs": [],
+            "take_id": "874a50b9-8d86-4324-bab5-ed05e9c5e560",
+        },
+    },
+]
+
+snapshots[
+    "TestJobService.test_create_singlecam[with_options-expand_take] create_response_expand_take"
+] = {
+    "client": None,
+    "created": GenericRepr(
+        "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
+    ),
+    "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+    "metadata": {
+        "analysis": "UmKdTFlLMIuIvJkRJnoM",
+        "decade": "zAvJMvacZIYSmMsDUNvC",
+        "director": "KNmpExWtgQLcAEuRyBkN",
+        "draw": "PnbQcVNCliYtuFCSJkGb",
+        "house": "aYyOUXkJPUjPJGpDdakX",
+        "huge": "eFaLyHGEQQpSzpRFSYEm",
+        "last": "dnZCcfgZNBnaEkbOzIyO",
+        "other": "XbBPNrbhtJksbBuoWXSK",
+        "table": "ACMVZcKAiGBcYgCzHAad",
+        "trouble": "UgnhIyaDJzohUigyDYZf",
+    },
+    "name": "",
+    "outputs": None,
+    "rig": None,
+    "state": "RUNNING",
+    "take": {
+        "client": None,
+        "created": GenericRepr(
+            "datetime.datetime(2023, 6, 29, 8, 54, 52, 349467, tzinfo=TzInfo(UTC))",
+        ),
+        "id": "take-af54cc45-7137-4206-a4c1-b3bc21b398fc",
+        "metadata": {
+            "analysis": "UmKdTFlLMIuIvJkRJnoM",
+            "decade": "zAvJMvacZIYSmMsDUNvC",
+            "director": "KNmpExWtgQLcAEuRyBkN",
+            "draw": "PnbQcVNCliYtuFCSJkGb",
+            "house": "aYyOUXkJPUjPJGpDdakX",
+            "huge": "eFaLyHGEQQpSzpRFSYEm",
+            "last": "dnZCcfgZNBnaEkbOzIyO",
+            "other": "XbBPNrbhtJksbBuoWXSK",
+            "table": "ACMVZcKAiGBcYgCzHAad",
+            "trouble": "UgnhIyaDJzohUigyDYZf",
+        },
+        "name": "realize",
+        "sources": None,
+        "volume": None,
+    },
+}
+
+snapshots[
+    "TestJobService.test_create_singlecam[with_options-no_expand] create_mutation_expand_None"
+] = [
+    [
+        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
+  createSingleCamJob(
+    takeId: $take_id
+    name: $name
+    options: $options
+    outputs: $outputs
+    metadata: $metadata
+  ) {
+    id
+    created
+    metadata
+    state
+    name
+    __typename
+  }
+}""",
+    ],
+    {
+        "operation_name": None,
+        "variable_values": {
+            "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+            "name": "",
+            "options": {
+                "floorPlane": True,
+                "trackFingers": False,
+            },
+            "outputs": [],
+            "take_id": "8d866324-3ab5-4d05-a9c5-e560a8020f0a",
+        },
+    },
+]
+
+snapshots[
+    "TestJobService.test_create_singlecam[with_options-no_expand] create_response_expand_None"
 ] = {
     "client": None,
     "created": GenericRepr(

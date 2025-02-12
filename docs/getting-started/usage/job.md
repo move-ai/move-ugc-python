@@ -8,7 +8,7 @@ Before creating a job, please make sure that a take is created. If you've not cr
 ## Creating a job
 
 ```python
-job = ugc.jobs.create(take_id="take-2be2463e-ffa3-419b-beb4-ea0f99c79512")
+job = ugc.jobs.create_singlecam(take_id="take-2be2463e-ffa3-419b-beb4-ea0f99c79512")
 ```
 
 ## Attaching some custom metadata with your job
