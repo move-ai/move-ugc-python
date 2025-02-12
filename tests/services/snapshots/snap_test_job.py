@@ -3149,6 +3149,13 @@ snapshots["TestJobService.test_list[without_take_id] list_response"] = {
 }
 
 snapshots[
+    "TestJobService.test_list_job_invalid key_error_message"
+] = """1 validation error for ListBase
+items
+  Value error, Got __typename of '' which is not present in mapping_type_name_to_class: Rig, CameraSettings, Take, Job, HumanVolume [type=value_error, input_value=[{'id': 'dummy-123-123-123-123'}], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.9/v/value_error"""
+
+snapshots[
     "TestJobService.test_output_types[None-create_multicam] create_multicam_response"
 ] = [
     [
