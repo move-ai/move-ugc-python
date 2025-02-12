@@ -7,6 +7,7 @@ from pydantic import BaseModel, BeforeValidator, ConfigDict, Field, Json
 from typing_extensions import Annotated
 
 from move_ugc.schemas.job import JobType
+from move_ugc.schemas.rig import Rig
 from move_ugc.schemas.sources import CameraSettings
 from move_ugc.schemas.take import TakeType
 from move_ugc.schemas.volume import HumanVolumeType
@@ -19,8 +20,17 @@ UNION_LIST_ITEMS_TYPE = Union[  # noqa: WPS235
     List[TakeType],
     List[HumanVolumeType],
     List[CameraSettings],
+    List[Rig],
     LIST_ITEM_TYPE,
 ]
+
+mapping_type_name_to_class = {
+    "Rig": Rig,
+    "CameraSettings": CameraSettings,
+    "Take": TakeType,
+    "Job": JobType,
+    "HumanVolume": HumanVolumeType,
+}
 
 
 def validate_list_items_type(  # noqa: WPS231
@@ -35,18 +45,19 @@ def validate_list_items_type(  # noqa: WPS231
         List items.
 
     Raises:
-        ValueError: If list items type is invalid.
+        ValueError: If the __typename is not found in the mapping_type_name_to_class.
     """
+    # using the mapping_type_name_to_class to return the correct class item
     if list_items:
-        if list_items[0].get("lens"):
-            return [CameraSettings(**list_item) for list_item in list_items]
-        elif str(list_items[0]["id"]).startswith("job"):
-            return [JobType(**list_item) for list_item in list_items]
-        elif str(list_items[0]["id"]).startswith("take"):
-            return [TakeType(**list_item) for list_item in list_items]
-        elif str(list_items[0]["id"]).startswith("volume"):
-            return [HumanVolumeType(**list_item) for list_item in list_items]
-        raise ValueError("Invalid list items type.")
+        try:
+            return [  # type: ignore[return-value]
+                mapping_type_name_to_class[list_item.get("__typename", "")](**list_item)
+                for list_item in list_items
+            ]
+        except KeyError as exc:
+            raise ValueError(
+                f"Got __typename of {exc} which is not present in mapping_type_name_to_class: {', '.join(mapping_type_name_to_class.keys())}",  # noqa: WPS237
+            )
     # In case the validator could not decide which type is being used,
     #  pass the data to pydantic to do its inner validations.
     return list_items
@@ -58,6 +69,7 @@ ListItem = Annotated[
         List[TakeType],
         List[HumanVolumeType],
         List[CameraSettings],
+        List[Rig],
     ],
     BeforeValidator(validate_list_items_type),
 ]

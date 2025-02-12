@@ -21,11 +21,13 @@ jobs:
           - "list_takes"
           - "list_jobs"
           - "list_volumes"
+          - "list_rigs"
           - "create_files"
           - "share_files"
           - "update_file"
           - "update_job"
           - "update_take"
+      
     steps:
       - uses: actions/checkout@v4
         with:
