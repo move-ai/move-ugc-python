@@ -112,7 +112,7 @@ def fake_update_job_response(fake_job_json) -> FakeJobJson:
 
 
 @pytest.fixture
-def job_create_response(
+def job_create_singlecam_response(
     mock_transport,
     fake_create_job_response,
     introspection_result,
@@ -154,7 +154,7 @@ def job_create_multicam_response(
 
 
 @pytest.fixture
-def job_create_response_with_client(
+def job_create_singlecam_response_with_client(
     mock_transport,
     fake_create_job_response,
     introspection_result,
@@ -206,7 +206,7 @@ def job_create_multicam_with_client(
 
 
 @pytest.fixture
-def job_create_response_with_take(
+def job_create_singlecam_response_with_take(
     mock_transport,
     fake_create_job_response,
     introspection_result,
@@ -256,7 +256,7 @@ def job_create_multicam_with_take(
 
 
 @pytest.fixture
-def job_create_response_with_outputs(
+def job_create_singlecam_response_with_outputs(
     mock_transport,
     fake_create_job_response,
     introspection_result,

@@ -59,7 +59,6 @@ class VolumeService(BaseService[HumanVolumeType]):
                 name of the volume.
             expand:
                 list of fields to be expanded.
-                Currently only `client` and `sources` are supported.
 
         Returns:
             Volume instance of Pydantic model type.

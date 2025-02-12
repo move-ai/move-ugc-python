@@ -20,11 +20,11 @@ class TestJobService(ServicesTestCase):  # noqa: WPS214
     @pytest.mark.parametrize(
         argnames="expand, job_fixture",
         argvalues=[
-            (None, "job_create_response"),
-            ([], "job_create_response"),
-            (["client"], "job_create_response_with_client"),
-            (["take"], "job_create_response_with_take"),
-            ([OUTPUTS], "job_create_response_with_outputs"),
+            (None, "job_create_singlecam_response"),
+            ([], "job_create_singlecam_response"),
+            (["client"], "job_create_singlecam_response_with_client"),
+            (["take"], "job_create_singlecam_response_with_take"),
+            ([OUTPUTS], "job_create_singlecam_response_with_outputs"),
         ],
         ids=[
             "no_expand",
@@ -39,7 +39,7 @@ class TestJobService(ServicesTestCase):  # noqa: WPS214
         argvalues=[None, JobOptions(trackFingers=False, floorPlane=True)],
         ids=["no_options", "with_options"],
     )
-    def test_create(  # noqa: WPS211
+    def test_create_singlecam(  # noqa: WPS211
         self,
         snapshot,
         request,
@@ -50,7 +50,7 @@ class TestJobService(ServicesTestCase):  # noqa: WPS214
     ):
         """Test creating a job.
 
-        This should test -> `ugc.jobs.create()`
+        This should test -> `ugc.jobs.create_singlecam()`
 
         Args:
             snapshot: The snapshot fixture.
@@ -61,7 +61,7 @@ class TestJobService(ServicesTestCase):  # noqa: WPS214
             job_fixture: The job fixture.
         """
         request.getfixturevalue(job_fixture)
-        job_model = self.client.jobs.create(
+        job_model = self.client.jobs.create_singlecam(
             take_id=faker.uuid4(),
             metadata=request.getfixturevalue("metadata_for_update"),
             options=options,
@@ -116,7 +116,7 @@ class TestJobService(ServicesTestCase):  # noqa: WPS214
     ):
         """Test creating a job.
 
-        This should test -> `ugc.jobs.create()`
+        This should test -> `ugc.jobs.create_multicam()`
 
         Args:
             snapshot: The snapshot fixture.
@@ -173,9 +173,9 @@ class TestJobService(ServicesTestCase):  # noqa: WPS214
         expand,
         job_fixture,
     ):
-        """Test creating a job.
+        """Test retrieving a job.
 
-        This should test -> `ugc.jobs.create()`
+        This should test -> `ugc.jobs.retrieve()`
 
         Args:
             snapshot: The snapshot fixture.
@@ -314,7 +314,7 @@ class TestJobService(ServicesTestCase):  # noqa: WPS214
     @pytest.mark.parametrize(
         "service_method, job_fixture",
         [
-            ["create_singlecam", "job_create_response"],
+            ["create_singlecam", "job_create_singlecam_response"],
             ["create_multicam", "job_create_multicam_response"],
         ],
         ids=["create_singlecam", "create_multicam"],

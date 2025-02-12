@@ -67,13 +67,13 @@ video_file = ugc.files.retrieve(file_id="<FILE_ID>")
                 file_id=video_file.id,
                 format=video_file.type
     )])
-    ugc.jobs.create(take_id=take.id)
+    ugc.jobs.create_singlecam(take_id=take.id)
 ```
 
 ## Create a job
     
 ```python
-    job = ugc.jobs.create(take_id=take.id)
+    job = ugc.jobs.create_singlecam(take_id=take.id)
 ```
 
 
