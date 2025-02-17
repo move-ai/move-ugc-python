@@ -55,23 +55,6 @@ class CameraSettings(BaseModel):
     )
 
 
-class ClipWindow(BaseModel):
-    """Clip window for cropping a source."""
-
-    start_time: float = Field(
-        description="Start time of the clip window",
-        title="Start time",
-        examples=[0],
-        serialization_alias="startTime",
-    )
-    end_time: float = Field(
-        description="End time of the clip window",
-        title="End time",
-        examples=[10.0],
-        serialization_alias="endTime",
-    )
-
-
 class AdditionalFileType(BaseModel):
     """Representation for Additional File type in MoveUGC."""
 
@@ -125,14 +108,6 @@ class SourceIn(BaseModel, use_enum_values=True):
         default=None,
     )
 
-    clip_window: Optional[ClipWindow] = Field(
-        description="Clip window for cropping the source",
-        title="Clip window",
-        examples=[{"startTime": 0, "endTime": 10}],
-        serialization_alias="clipWindow",
-        default=None,
-    )
-
 
 class Source(BaseModel):
     """Representation for Source type in MoveUGC."""
@@ -158,11 +133,5 @@ class Source(BaseModel):
         title="Camera settings",
         examples=[{"lens": "goprohero10-2-7k"}],
         serialization_alias="cameraSettings",
-        default=None,
-    )
-    clip_window: Optional[ClipWindow] = Field(
-        description="Clip window for the source",
-        title="Clip window",
-        examples=[{"startTime": 0, "endTime": 10}],
         default=None,
     )

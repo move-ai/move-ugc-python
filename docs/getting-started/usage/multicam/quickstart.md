@@ -25,10 +25,6 @@ ugc.volumes.create_human_volume(
     sources=[
         SourceIn(
             source_id="source-1",
-            clip_window=ClipWindow(
-                start_time=0,
-                end_time=10,
-            ),
             file_id="file-2be2463e-ffa3-419b-beb4-ea0f99c79592",
             format=TakeSourceKey.MP4,
             camera_settings={
@@ -37,10 +33,6 @@ ugc.volumes.create_human_volume(
         ),
         SourceIn(
             source_id="source-2",
-            clip_window=ClipWindow(
-                start_time=0,
-                end_time=10,
-            ),
             file_id="file-edcf5b93-24b4-45b8-91b2-0985c4c44665",
             format=TakeSourceKey.MP4,
             camera_settings={
@@ -75,10 +67,6 @@ take = ugc.takes.create_multicam(
     sources=[
         SourceIn(
             source_id="source-1",
-            clip_window=ClipWindow(
-                start_time=0,
-                end_time=10,
-            ),
             file_id="file-2be2463e-ffa3-419b-beb4-ea0f99c79592",
             format=TakeSourceKey.MP4,
             camera_settings={
@@ -87,10 +75,6 @@ take = ugc.takes.create_multicam(
         ),
         SourceIn(
             source_id="source-2",
-            clip_window=ClipWindow(
-                start_time=0,
-                end_time=10,
-            ),
             file_id="file-edcf5b93-24b4-45b8-91b2-0985c4c44665",
             format=TakeSourceKey.MP4,
             camera_settings={
@@ -99,6 +83,10 @@ take = ugc.takes.create_multicam(
         ),
     ],
     volume_id="volume-2be2463e-ffa3-419b-beb4-ea0f99c79512",
+    clip_window=ClipWindow(
+        start_time=0,
+        end_time=10,
+    ),
 )
 ```
 

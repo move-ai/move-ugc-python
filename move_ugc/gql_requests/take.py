@@ -30,10 +30,6 @@ expand_sources_multicam = f"""
         {expand_video_file}
         format
         {expand_camera_settings}
-        clipWindow {{
-            startTime
-            endTime
-        }}
     }}
 """
 

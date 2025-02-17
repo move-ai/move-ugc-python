@@ -13,12 +13,6 @@
         members:
             - lens
 
-::: move_ugc.schemas.sources.ClipWindow
-    options:
-        members:
-            - start_time
-            - end_time
-
 ::: move_ugc.schemas.sources.AdditionalFileType
     options:
         members:
@@ -33,7 +27,6 @@
             - file_id
             - format
             - camera_settings
-            - clip_window
 
 ::: move_ugc.schemas.sources.Source
     options:
@@ -42,4 +35,3 @@
             - file
             - format
             - camera_settings
-            - clip_window

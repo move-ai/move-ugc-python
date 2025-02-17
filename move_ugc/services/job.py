@@ -8,7 +8,7 @@ from move_ugc.gql_requests.job import retrieve as retrieve_query
 from move_ugc.gql_requests.job import update as update_query
 from move_ugc.schemas.commons import ListBase, SortDirection, get_default_page_size
 from move_ugc.schemas.constants import ALLOWED_EXPAND_ATTRS
-from move_ugc.schemas.job import JobOptions, JobType
+from move_ugc.schemas.job import ClipWindow, JobOptions, JobType
 from move_ugc.services.base import BaseService
 
 
@@ -38,6 +38,7 @@ class JobService(BaseService[JobType]):
         name: Optional[str] = "",
         metadata: Optional[Dict[str, Any]] = None,
         options: Optional[JobOptions] = None,
+        clip_window: Optional[ClipWindow] = None,
         outputs: Optional[List[str]] = None,
         expand: Optional[List[ALLOWED_EXPAND_ATTRS]] = None,
     ) -> JobType:
@@ -54,6 +55,9 @@ class JobService(BaseService[JobType]):
                 options to be used for creating the job.
                 Check all the valid allowed options in the API documentation.
                 https://move-ai.github.io/move-ugc-api/schema/#optionsinput
+            clip_window:
+                The clip window that you want to process.
+                If not provided the entire video is processed
             outputs:
                 list of output types to be created for this job.
             expand:
@@ -73,6 +77,9 @@ class JobService(BaseService[JobType]):
                 "options": options.model_dump(by_alias=True, mode="json"),
                 "outputs": [str(output).upper() for output in outputs or []],
                 "metadata": self.encode_aws_metadata(metadata),
+                "clip_window": clip_window.model_dump(by_alias=True)
+                if clip_window
+                else None,
             },
         )
 
@@ -84,6 +91,7 @@ class JobService(BaseService[JobType]):
         outputs: Optional[List[str]] = None,
         rig: Optional[str] = "",
         name: Optional[str] = "",
+        clip_window: Optional[ClipWindow] = None,
         metadata: Optional[Dict[str, Any]] = None,
         expand: Optional[List[ALLOWED_EXPAND_ATTRS]] = None,
     ) -> JobType:
@@ -104,6 +112,9 @@ class JobService(BaseService[JobType]):
                 rig to be used for creating the job.
             name:
                 name to be used for creating the job.
+            clip_window:
+                The clip window that you want to process.
+                If not provided the entire video is processed
             metadata:
                 metadata to be used for creating the job. This should be a valid json string.
             expand:
@@ -125,6 +136,9 @@ class JobService(BaseService[JobType]):
                 "outputs": [str(output).upper() for output in outputs or []],
                 "metadata": self.encode_aws_metadata(metadata),
                 "rig": rig,
+                "clip_window": clip_window.model_dump(by_alias=True)
+                if clip_window
+                else None,
             },
         )
 
