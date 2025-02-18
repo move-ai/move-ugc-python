@@ -11,6 +11,23 @@ from move_ugc.schemas.sources import AdditionalFileType
 from move_ugc.schemas.take import TakeType
 
 
+class ClipWindow(BaseModel):
+    """Clip window for cropping a source."""
+
+    start_time: float = Field(
+        description="Start time of the clip window",
+        title="Start time",
+        examples=[0],
+        serialization_alias="startTime",
+    )
+    end_time: float = Field(
+        description="End time of the clip window",
+        title="End time",
+        examples=[10.0],
+        serialization_alias="endTime",
+    )
+
+
 class JobOptions(BaseModel):
     """Options which can be used for creating a job in MoveUGC.
 

@@ -6,6 +6,7 @@ from move_ugc.gql_requests.volume import create as create_query
 from move_ugc.gql_requests.volume import list_query, retrieve_human_volume
 from move_ugc.schemas.commons import ListBase, SortDirection, get_default_page_size
 from move_ugc.schemas.constants import ALLOWED_EXPAND_ATTRS
+from move_ugc.schemas.job import ClipWindow
 from move_ugc.schemas.sources import SourceIn
 from move_ugc.schemas.sync_method import SyncMethodInput
 from move_ugc.schemas.volume import AreaType, HumanVolumeType
@@ -40,6 +41,7 @@ class VolumeService(BaseService[HumanVolumeType]):
         sync_method: Optional[SyncMethodInput] = None,
         metadata: Optional[Dict[str, Any]] = None,
         name: Optional[str] = None,
+        clip_window: Optional[ClipWindow] = None,
         expand: Optional[List[ALLOWED_EXPAND_ATTRS]] = None,
     ) -> HumanVolumeType:
         """Create a human volume with given sources in MoveUGC.
@@ -57,6 +59,9 @@ class VolumeService(BaseService[HumanVolumeType]):
                 metadata to be used for creating the volume. This should be a valid json string.
             name:
                 name of the volume.
+            clip_window:
+                The clip window that you want to process.
+                If not provided the entire video is processed
             expand:
                 list of fields to be expanded.
 
@@ -75,6 +80,9 @@ class VolumeService(BaseService[HumanVolumeType]):
                 ),
                 "metadata": self.encode_aws_metadata(metadata),
                 "name": name or "",
+                "clip_window": clip_window.model_dump(by_alias=True)
+                if clip_window
+                else None,
             },
         )
 

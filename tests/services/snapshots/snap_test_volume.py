@@ -8,7 +8,7 @@ snapshots = Snapshot()
 
 snapshots["TestVolumeService.test_create[empty_expand] create_mutation_expand_[]"] = [
     [
-        """mutation create($sources: [SourceInput!], $syncMethod: SyncMethodInput, $areaType: AreaType!, $humanHeight: Float!, $metadata: AWSJSON, $name: String) {
+        """mutation create($sources: [SourceInput!], $syncMethod: SyncMethodInput, $areaType: AreaType!, $humanHeight: Float!, $metadata: AWSJSON, $name: String, $clip_window: ClipWindowInput) {
   createVolumeWithHuman(
     sources: $sources
     syncMethod: $syncMethod
@@ -16,6 +16,7 @@ snapshots["TestVolumeService.test_create[empty_expand] create_mutation_expand_[]
     humanHeight: $humanHeight
     metadata: $metadata
     name: $name
+    clipWindow: $clip_window
   ) {
     id
     areaType
@@ -32,6 +33,10 @@ snapshots["TestVolumeService.test_create[empty_expand] create_mutation_expand_[]
         "operation_name": None,
         "variable_values": {
             "areaType": "NORMAL",
+            "clip_window": {
+                "endTime": 9057.0,
+                "startTime": 3757.0,
+            },
             "humanHeight": 873121848153.264,
             "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
             "name": "attention",
@@ -40,19 +45,14 @@ snapshots["TestVolumeService.test_create[empty_expand] create_mutation_expand_[]
                     "cameraSettings": {
                         "lens": "design",
                     },
-                    "clipWindow": {
-                        "endTime": 5315.0,
-                        "startTime": 849.0,
-                    },
                     "deviceLabel": "realize",
-                    "fileId": "874a50b9-8d86-4324-bab5-ed05e9c5e560",
+                    "fileId": "530e9daa-0d45-45a7-a849-1a43874a50b9",
                     "format": "MP4",
                 },
                 {
                     "cameraSettings": {
                         "lens": "so",
                     },
-                    "clipWindow": None,
                     "deviceLabel": "realize",
                     "fileId": "b898a7a5-37be-4600-bdc6-8ffa06c7a4f6",
                     "format": "MOVE",
@@ -91,7 +91,7 @@ snapshots[
     "TestVolumeService.test_create[expand_additional_sources] create_mutation_expand_sources"
 ] = [
     [
-        """mutation create($sources: [SourceInput!], $syncMethod: SyncMethodInput, $areaType: AreaType!, $humanHeight: Float!, $metadata: AWSJSON, $name: String) {
+        """mutation create($sources: [SourceInput!], $syncMethod: SyncMethodInput, $areaType: AreaType!, $humanHeight: Float!, $metadata: AWSJSON, $name: String, $clip_window: ClipWindowInput) {
   createVolumeWithHuman(
     sources: $sources
     syncMethod: $syncMethod
@@ -99,6 +99,7 @@ snapshots[
     humanHeight: $humanHeight
     metadata: $metadata
     name: $name
+    clipWindow: $clip_window
   ) {
     id
     areaType
@@ -132,6 +133,10 @@ snapshots[
         "operation_name": None,
         "variable_values": {
             "areaType": "NORMAL",
+            "clip_window": {
+                "endTime": 9057.0,
+                "startTime": 3757.0,
+            },
             "humanHeight": 873121848153.264,
             "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
             "name": "attention",
@@ -140,19 +145,14 @@ snapshots[
                     "cameraSettings": {
                         "lens": "design",
                     },
-                    "clipWindow": {
-                        "endTime": 5315.0,
-                        "startTime": 849.0,
-                    },
                     "deviceLabel": "realize",
-                    "fileId": "874a50b9-8d86-4324-bab5-ed05e9c5e560",
+                    "fileId": "530e9daa-0d45-45a7-a849-1a43874a50b9",
                     "format": "MP4",
                 },
                 {
                     "cameraSettings": {
                         "lens": "so",
                     },
-                    "clipWindow": None,
                     "deviceLabel": "realize",
                     "fileId": "b898a7a5-37be-4600-bdc6-8ffa06c7a4f6",
                     "format": "MOVE",
@@ -188,7 +188,6 @@ snapshots[
     "sources": [
         {
             "camera_settings": None,
-            "clip_window": None,
             "device_label": "foobar",
             "file": {
                 "client": None,
@@ -215,7 +214,6 @@ snapshots[
         },
         {
             "camera_settings": None,
-            "clip_window": None,
             "device_label": "foobar",
             "file": {
                 "client": None,
@@ -248,7 +246,7 @@ snapshots[
     "TestVolumeService.test_create[expand_client] create_mutation_expand_client"
 ] = [
     [
-        """mutation create($sources: [SourceInput!], $syncMethod: SyncMethodInput, $areaType: AreaType!, $humanHeight: Float!, $metadata: AWSJSON, $name: String) {
+        """mutation create($sources: [SourceInput!], $syncMethod: SyncMethodInput, $areaType: AreaType!, $humanHeight: Float!, $metadata: AWSJSON, $name: String, $clip_window: ClipWindowInput) {
   createVolumeWithHuman(
     sources: $sources
     syncMethod: $syncMethod
@@ -256,6 +254,7 @@ snapshots[
     humanHeight: $humanHeight
     metadata: $metadata
     name: $name
+    clipWindow: $clip_window
   ) {
     id
     areaType
@@ -280,6 +279,10 @@ snapshots[
         "operation_name": None,
         "variable_values": {
             "areaType": "NORMAL",
+            "clip_window": {
+                "endTime": 9057.0,
+                "startTime": 3757.0,
+            },
             "humanHeight": 873121848153.264,
             "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
             "name": "attention",
@@ -288,19 +291,14 @@ snapshots[
                     "cameraSettings": {
                         "lens": "design",
                     },
-                    "clipWindow": {
-                        "endTime": 5315.0,
-                        "startTime": 849.0,
-                    },
                     "deviceLabel": "realize",
-                    "fileId": "874a50b9-8d86-4324-bab5-ed05e9c5e560",
+                    "fileId": "530e9daa-0d45-45a7-a849-1a43874a50b9",
                     "format": "MP4",
                 },
                 {
                     "cameraSettings": {
                         "lens": "so",
                     },
-                    "clipWindow": None,
                     "deviceLabel": "realize",
                     "fileId": "b898a7a5-37be-4600-bdc6-8ffa06c7a4f6",
                     "format": "MOVE",
@@ -349,7 +347,7 @@ snapshots[
     "TestVolumeService.test_create[expand_video_file] create_mutation_expand_sources"
 ] = [
     [
-        """mutation create($sources: [SourceInput!], $syncMethod: SyncMethodInput, $areaType: AreaType!, $humanHeight: Float!, $metadata: AWSJSON, $name: String) {
+        """mutation create($sources: [SourceInput!], $syncMethod: SyncMethodInput, $areaType: AreaType!, $humanHeight: Float!, $metadata: AWSJSON, $name: String, $clip_window: ClipWindowInput) {
   createVolumeWithHuman(
     sources: $sources
     syncMethod: $syncMethod
@@ -357,6 +355,7 @@ snapshots[
     humanHeight: $humanHeight
     metadata: $metadata
     name: $name
+    clipWindow: $clip_window
   ) {
     id
     areaType
@@ -390,6 +389,10 @@ snapshots[
         "operation_name": None,
         "variable_values": {
             "areaType": "NORMAL",
+            "clip_window": {
+                "endTime": 9057.0,
+                "startTime": 3757.0,
+            },
             "humanHeight": 873121848153.264,
             "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
             "name": "attention",
@@ -398,19 +401,14 @@ snapshots[
                     "cameraSettings": {
                         "lens": "design",
                     },
-                    "clipWindow": {
-                        "endTime": 5315.0,
-                        "startTime": 849.0,
-                    },
                     "deviceLabel": "realize",
-                    "fileId": "874a50b9-8d86-4324-bab5-ed05e9c5e560",
+                    "fileId": "530e9daa-0d45-45a7-a849-1a43874a50b9",
                     "format": "MP4",
                 },
                 {
                     "cameraSettings": {
                         "lens": "so",
                     },
-                    "clipWindow": None,
                     "deviceLabel": "realize",
                     "fileId": "b898a7a5-37be-4600-bdc6-8ffa06c7a4f6",
                     "format": "MOVE",
@@ -446,7 +444,6 @@ snapshots[
     "sources": [
         {
             "camera_settings": None,
-            "clip_window": None,
             "device_label": "foobar",
             "file": {
                 "client": None,
@@ -477,7 +474,7 @@ snapshots[
 
 snapshots["TestVolumeService.test_create[no_expand] create_mutation_expand_None"] = [
     [
-        """mutation create($sources: [SourceInput!], $syncMethod: SyncMethodInput, $areaType: AreaType!, $humanHeight: Float!, $metadata: AWSJSON, $name: String) {
+        """mutation create($sources: [SourceInput!], $syncMethod: SyncMethodInput, $areaType: AreaType!, $humanHeight: Float!, $metadata: AWSJSON, $name: String, $clip_window: ClipWindowInput) {
   createVolumeWithHuman(
     sources: $sources
     syncMethod: $syncMethod
@@ -485,6 +482,7 @@ snapshots["TestVolumeService.test_create[no_expand] create_mutation_expand_None"
     humanHeight: $humanHeight
     metadata: $metadata
     name: $name
+    clipWindow: $clip_window
   ) {
     id
     areaType
@@ -501,6 +499,10 @@ snapshots["TestVolumeService.test_create[no_expand] create_mutation_expand_None"
         "operation_name": None,
         "variable_values": {
             "areaType": "NORMAL",
+            "clip_window": {
+                "endTime": 9057.0,
+                "startTime": 3757.0,
+            },
             "humanHeight": 873121848153.264,
             "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
             "name": "attention",
@@ -509,19 +511,14 @@ snapshots["TestVolumeService.test_create[no_expand] create_mutation_expand_None"
                     "cameraSettings": {
                         "lens": "design",
                     },
-                    "clipWindow": {
-                        "endTime": 5315.0,
-                        "startTime": 849.0,
-                    },
                     "deviceLabel": "realize",
-                    "fileId": "874a50b9-8d86-4324-bab5-ed05e9c5e560",
+                    "fileId": "530e9daa-0d45-45a7-a849-1a43874a50b9",
                     "format": "MP4",
                 },
                 {
                     "cameraSettings": {
                         "lens": "so",
                     },
-                    "clipWindow": None,
                     "deviceLabel": "realize",
                     "fileId": "b898a7a5-37be-4600-bdc6-8ffa06c7a4f6",
                     "format": "MOVE",
@@ -767,7 +764,6 @@ snapshots[
     "sources": [
         {
             "camera_settings": None,
-            "clip_window": None,
             "device_label": "foobar",
             "file": {
                 "client": None,
@@ -794,7 +790,6 @@ snapshots[
         },
         {
             "camera_settings": None,
-            "clip_window": None,
             "device_label": "foobar",
             "file": {
                 "client": None,
@@ -1089,7 +1084,6 @@ snapshots[
     "sources": [
         {
             "camera_settings": None,
-            "clip_window": None,
             "device_label": "foobar",
             "file": {
                 "client": None,

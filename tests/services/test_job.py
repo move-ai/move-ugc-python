@@ -5,7 +5,7 @@ from gql.transport.exceptions import TransportQueryError
 from graphql.execution.execute import ExecutionResult
 from pydantic import ValidationError
 
-from move_ugc.schemas.job import JobOptions
+from move_ugc.schemas.job import ClipWindow, JobOptions
 from tests.constants import LIST_JOBS_QUERY
 from tests.services.testcases import ServicesTestCase
 
@@ -66,6 +66,10 @@ class TestJobService(ServicesTestCase):  # noqa: WPS214
             metadata=request.getfixturevalue("metadata_for_update"),
             options=options,
             expand=expand,
+            clip_window=ClipWindow(
+                start_time=1.0,
+                end_time=10.0,  # noqa:WPS432
+            ),
         )
         suffix = "_".join(expand) if expand else str(expand)
         self.assert_execute(

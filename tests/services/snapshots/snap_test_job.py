@@ -10,7 +10,7 @@ snapshots[
     "TestJobService.test_create_multicam[-None-empty_expand] create_mutation_expand_[]"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String) {
+        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String, $clip_window: ClipWindowInput) {
   createMultiCamJob(
     takeId: $take_id
     name: $name
@@ -19,6 +19,7 @@ snapshots[
     outputs: $outputs
     metadata: $metadata
     rig: $rig
+    clipWindow: $clip_window
   ) {
     id
     created
@@ -32,6 +33,7 @@ snapshots[
     {
         "operation_name": None,
         "variable_values": {
+            "clip_window": None,
             "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
             "name": "",
             "numberOfActors": 8658,
@@ -74,7 +76,7 @@ snapshots[
     "TestJobService.test_create_multicam[-None-expand_client] create_mutation_expand_client"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String) {
+        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String, $clip_window: ClipWindowInput) {
   createMultiCamJob(
     takeId: $take_id
     name: $name
@@ -83,6 +85,7 @@ snapshots[
     outputs: $outputs
     metadata: $metadata
     rig: $rig
+    clipWindow: $clip_window
   ) {
     id
     created
@@ -104,6 +107,7 @@ snapshots[
     {
         "operation_name": None,
         "variable_values": {
+            "clip_window": None,
             "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
             "name": "",
             "numberOfActors": 8658,
@@ -158,7 +162,7 @@ snapshots[
     "TestJobService.test_create_multicam[-None-expand_outputs] create_mutation_expand_outputs"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String) {
+        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String, $clip_window: ClipWindowInput) {
   createMultiCamJob(
     takeId: $take_id
     name: $name
@@ -167,6 +171,7 @@ snapshots[
     outputs: $outputs
     metadata: $metadata
     rig: $rig
+    clipWindow: $clip_window
   ) {
     id
     created
@@ -194,6 +199,7 @@ snapshots[
     {
         "operation_name": None,
         "variable_values": {
+            "clip_window": None,
             "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
             "name": "",
             "numberOfActors": 8658,
@@ -299,7 +305,7 @@ snapshots[
     "TestJobService.test_create_multicam[-None-expand_rig] create_mutation_expand_rig"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String) {
+        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String, $clip_window: ClipWindowInput) {
   createMultiCamJob(
     takeId: $take_id
     name: $name
@@ -308,6 +314,7 @@ snapshots[
     outputs: $outputs
     metadata: $metadata
     rig: $rig
+    clipWindow: $clip_window
   ) {
     id
     created
@@ -325,6 +332,7 @@ snapshots[
     {
         "operation_name": None,
         "variable_values": {
+            "clip_window": None,
             "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
             "name": "",
             "numberOfActors": 8658,
@@ -369,7 +377,7 @@ snapshots[
     "TestJobService.test_create_multicam[-None-expand_take] create_mutation_expand_take"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String) {
+        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String, $clip_window: ClipWindowInput) {
   createMultiCamJob(
     takeId: $take_id
     name: $name
@@ -378,6 +386,7 @@ snapshots[
     outputs: $outputs
     metadata: $metadata
     rig: $rig
+    clipWindow: $clip_window
   ) {
     id
     created
@@ -398,6 +407,7 @@ snapshots[
     {
         "operation_name": None,
         "variable_values": {
+            "clip_window": None,
             "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
             "name": "",
             "numberOfActors": 849,
@@ -461,7 +471,7 @@ snapshots[
     "TestJobService.test_create_multicam[-None-no_expand] create_mutation_expand_None"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String) {
+        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String, $clip_window: ClipWindowInput) {
   createMultiCamJob(
     takeId: $take_id
     name: $name
@@ -470,6 +480,7 @@ snapshots[
     outputs: $outputs
     metadata: $metadata
     rig: $rig
+    clipWindow: $clip_window
   ) {
     id
     created
@@ -483,6 +494,7 @@ snapshots[
     {
         "operation_name": None,
         "variable_values": {
+            "clip_window": None,
             "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
             "name": "",
             "numberOfActors": 8658,
@@ -525,7 +537,7 @@ snapshots[
     "TestJobService.test_create_multicam[-options1-empty_expand] create_mutation_expand_[]"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String) {
+        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String, $clip_window: ClipWindowInput) {
   createMultiCamJob(
     takeId: $take_id
     name: $name
@@ -534,6 +546,7 @@ snapshots[
     outputs: $outputs
     metadata: $metadata
     rig: $rig
+    clipWindow: $clip_window
   ) {
     id
     created
@@ -547,6 +560,7 @@ snapshots[
     {
         "operation_name": None,
         "variable_values": {
+            "clip_window": None,
             "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
             "name": "",
             "numberOfActors": 8658,
@@ -592,7 +606,7 @@ snapshots[
     "TestJobService.test_create_multicam[-options1-expand_client] create_mutation_expand_client"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String) {
+        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String, $clip_window: ClipWindowInput) {
   createMultiCamJob(
     takeId: $take_id
     name: $name
@@ -601,6 +615,7 @@ snapshots[
     outputs: $outputs
     metadata: $metadata
     rig: $rig
+    clipWindow: $clip_window
   ) {
     id
     created
@@ -622,6 +637,7 @@ snapshots[
     {
         "operation_name": None,
         "variable_values": {
+            "clip_window": None,
             "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
             "name": "",
             "numberOfActors": 8658,
@@ -679,7 +695,7 @@ snapshots[
     "TestJobService.test_create_multicam[-options1-expand_outputs] create_mutation_expand_outputs"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String) {
+        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String, $clip_window: ClipWindowInput) {
   createMultiCamJob(
     takeId: $take_id
     name: $name
@@ -688,6 +704,7 @@ snapshots[
     outputs: $outputs
     metadata: $metadata
     rig: $rig
+    clipWindow: $clip_window
   ) {
     id
     created
@@ -715,6 +732,7 @@ snapshots[
     {
         "operation_name": None,
         "variable_values": {
+            "clip_window": None,
             "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
             "name": "",
             "numberOfActors": 8658,
@@ -823,7 +841,7 @@ snapshots[
     "TestJobService.test_create_multicam[-options1-expand_rig] create_mutation_expand_rig"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String) {
+        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String, $clip_window: ClipWindowInput) {
   createMultiCamJob(
     takeId: $take_id
     name: $name
@@ -832,6 +850,7 @@ snapshots[
     outputs: $outputs
     metadata: $metadata
     rig: $rig
+    clipWindow: $clip_window
   ) {
     id
     created
@@ -849,6 +868,7 @@ snapshots[
     {
         "operation_name": None,
         "variable_values": {
+            "clip_window": None,
             "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
             "name": "",
             "numberOfActors": 8658,
@@ -896,7 +916,7 @@ snapshots[
     "TestJobService.test_create_multicam[-options1-expand_take] create_mutation_expand_take"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String) {
+        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String, $clip_window: ClipWindowInput) {
   createMultiCamJob(
     takeId: $take_id
     name: $name
@@ -905,6 +925,7 @@ snapshots[
     outputs: $outputs
     metadata: $metadata
     rig: $rig
+    clipWindow: $clip_window
   ) {
     id
     created
@@ -925,6 +946,7 @@ snapshots[
     {
         "operation_name": None,
         "variable_values": {
+            "clip_window": None,
             "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
             "name": "",
             "numberOfActors": 849,
@@ -991,7 +1013,7 @@ snapshots[
     "TestJobService.test_create_multicam[-options1-no_expand] create_mutation_expand_None"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String) {
+        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String, $clip_window: ClipWindowInput) {
   createMultiCamJob(
     takeId: $take_id
     name: $name
@@ -1000,6 +1022,7 @@ snapshots[
     outputs: $outputs
     metadata: $metadata
     rig: $rig
+    clipWindow: $clip_window
   ) {
     id
     created
@@ -1013,6 +1036,7 @@ snapshots[
     {
         "operation_name": None,
         "variable_values": {
+            "clip_window": None,
             "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
             "name": "",
             "numberOfActors": 8658,
@@ -1058,7 +1082,7 @@ snapshots[
     "TestJobService.test_create_multicam[move_mo-None-empty_expand] create_mutation_expand_[]"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String) {
+        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String, $clip_window: ClipWindowInput) {
   createMultiCamJob(
     takeId: $take_id
     name: $name
@@ -1067,6 +1091,7 @@ snapshots[
     outputs: $outputs
     metadata: $metadata
     rig: $rig
+    clipWindow: $clip_window
   ) {
     id
     created
@@ -1080,6 +1105,7 @@ snapshots[
     {
         "operation_name": None,
         "variable_values": {
+            "clip_window": None,
             "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
             "name": "",
             "numberOfActors": 8658,
@@ -1122,7 +1148,7 @@ snapshots[
     "TestJobService.test_create_multicam[move_mo-None-expand_client] create_mutation_expand_client"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String) {
+        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String, $clip_window: ClipWindowInput) {
   createMultiCamJob(
     takeId: $take_id
     name: $name
@@ -1131,6 +1157,7 @@ snapshots[
     outputs: $outputs
     metadata: $metadata
     rig: $rig
+    clipWindow: $clip_window
   ) {
     id
     created
@@ -1152,6 +1179,7 @@ snapshots[
     {
         "operation_name": None,
         "variable_values": {
+            "clip_window": None,
             "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
             "name": "",
             "numberOfActors": 8658,
@@ -1206,7 +1234,7 @@ snapshots[
     "TestJobService.test_create_multicam[move_mo-None-expand_outputs] create_mutation_expand_outputs"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String) {
+        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String, $clip_window: ClipWindowInput) {
   createMultiCamJob(
     takeId: $take_id
     name: $name
@@ -1215,6 +1243,7 @@ snapshots[
     outputs: $outputs
     metadata: $metadata
     rig: $rig
+    clipWindow: $clip_window
   ) {
     id
     created
@@ -1242,6 +1271,7 @@ snapshots[
     {
         "operation_name": None,
         "variable_values": {
+            "clip_window": None,
             "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
             "name": "",
             "numberOfActors": 8658,
@@ -1347,7 +1377,7 @@ snapshots[
     "TestJobService.test_create_multicam[move_mo-None-expand_rig] create_mutation_expand_rig"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String) {
+        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String, $clip_window: ClipWindowInput) {
   createMultiCamJob(
     takeId: $take_id
     name: $name
@@ -1356,6 +1386,7 @@ snapshots[
     outputs: $outputs
     metadata: $metadata
     rig: $rig
+    clipWindow: $clip_window
   ) {
     id
     created
@@ -1373,6 +1404,7 @@ snapshots[
     {
         "operation_name": None,
         "variable_values": {
+            "clip_window": None,
             "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
             "name": "",
             "numberOfActors": 8658,
@@ -1417,7 +1449,7 @@ snapshots[
     "TestJobService.test_create_multicam[move_mo-None-expand_take] create_mutation_expand_take"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String) {
+        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String, $clip_window: ClipWindowInput) {
   createMultiCamJob(
     takeId: $take_id
     name: $name
@@ -1426,6 +1458,7 @@ snapshots[
     outputs: $outputs
     metadata: $metadata
     rig: $rig
+    clipWindow: $clip_window
   ) {
     id
     created
@@ -1446,6 +1479,7 @@ snapshots[
     {
         "operation_name": None,
         "variable_values": {
+            "clip_window": None,
             "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
             "name": "",
             "numberOfActors": 849,
@@ -1509,7 +1543,7 @@ snapshots[
     "TestJobService.test_create_multicam[move_mo-None-no_expand] create_mutation_expand_None"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String) {
+        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String, $clip_window: ClipWindowInput) {
   createMultiCamJob(
     takeId: $take_id
     name: $name
@@ -1518,6 +1552,7 @@ snapshots[
     outputs: $outputs
     metadata: $metadata
     rig: $rig
+    clipWindow: $clip_window
   ) {
     id
     created
@@ -1531,6 +1566,7 @@ snapshots[
     {
         "operation_name": None,
         "variable_values": {
+            "clip_window": None,
             "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
             "name": "",
             "numberOfActors": 8658,
@@ -1573,7 +1609,7 @@ snapshots[
     "TestJobService.test_create_multicam[move_mo-options1-empty_expand] create_mutation_expand_[]"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String) {
+        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String, $clip_window: ClipWindowInput) {
   createMultiCamJob(
     takeId: $take_id
     name: $name
@@ -1582,6 +1618,7 @@ snapshots[
     outputs: $outputs
     metadata: $metadata
     rig: $rig
+    clipWindow: $clip_window
   ) {
     id
     created
@@ -1595,6 +1632,7 @@ snapshots[
     {
         "operation_name": None,
         "variable_values": {
+            "clip_window": None,
             "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
             "name": "",
             "numberOfActors": 8658,
@@ -1640,7 +1678,7 @@ snapshots[
     "TestJobService.test_create_multicam[move_mo-options1-expand_client] create_mutation_expand_client"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String) {
+        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String, $clip_window: ClipWindowInput) {
   createMultiCamJob(
     takeId: $take_id
     name: $name
@@ -1649,6 +1687,7 @@ snapshots[
     outputs: $outputs
     metadata: $metadata
     rig: $rig
+    clipWindow: $clip_window
   ) {
     id
     created
@@ -1670,6 +1709,7 @@ snapshots[
     {
         "operation_name": None,
         "variable_values": {
+            "clip_window": None,
             "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
             "name": "",
             "numberOfActors": 8658,
@@ -1727,7 +1767,7 @@ snapshots[
     "TestJobService.test_create_multicam[move_mo-options1-expand_outputs] create_mutation_expand_outputs"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String) {
+        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String, $clip_window: ClipWindowInput) {
   createMultiCamJob(
     takeId: $take_id
     name: $name
@@ -1736,6 +1776,7 @@ snapshots[
     outputs: $outputs
     metadata: $metadata
     rig: $rig
+    clipWindow: $clip_window
   ) {
     id
     created
@@ -1763,6 +1804,7 @@ snapshots[
     {
         "operation_name": None,
         "variable_values": {
+            "clip_window": None,
             "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
             "name": "",
             "numberOfActors": 8658,
@@ -1871,7 +1913,7 @@ snapshots[
     "TestJobService.test_create_multicam[move_mo-options1-expand_rig] create_mutation_expand_rig"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String) {
+        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String, $clip_window: ClipWindowInput) {
   createMultiCamJob(
     takeId: $take_id
     name: $name
@@ -1880,6 +1922,7 @@ snapshots[
     outputs: $outputs
     metadata: $metadata
     rig: $rig
+    clipWindow: $clip_window
   ) {
     id
     created
@@ -1897,6 +1940,7 @@ snapshots[
     {
         "operation_name": None,
         "variable_values": {
+            "clip_window": None,
             "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
             "name": "",
             "numberOfActors": 8658,
@@ -1944,7 +1988,7 @@ snapshots[
     "TestJobService.test_create_multicam[move_mo-options1-expand_take] create_mutation_expand_take"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String) {
+        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String, $clip_window: ClipWindowInput) {
   createMultiCamJob(
     takeId: $take_id
     name: $name
@@ -1953,6 +1997,7 @@ snapshots[
     outputs: $outputs
     metadata: $metadata
     rig: $rig
+    clipWindow: $clip_window
   ) {
     id
     created
@@ -1973,6 +2018,7 @@ snapshots[
     {
         "operation_name": None,
         "variable_values": {
+            "clip_window": None,
             "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
             "name": "",
             "numberOfActors": 849,
@@ -2039,7 +2085,7 @@ snapshots[
     "TestJobService.test_create_multicam[move_mo-options1-no_expand] create_mutation_expand_None"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String) {
+        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String, $clip_window: ClipWindowInput) {
   createMultiCamJob(
     takeId: $take_id
     name: $name
@@ -2048,6 +2094,7 @@ snapshots[
     outputs: $outputs
     metadata: $metadata
     rig: $rig
+    clipWindow: $clip_window
   ) {
     id
     created
@@ -2061,6 +2108,7 @@ snapshots[
     {
         "operation_name": None,
         "variable_values": {
+            "clip_window": None,
             "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
             "name": "",
             "numberOfActors": 8658,
@@ -2106,13 +2154,14 @@ snapshots[
     "TestJobService.test_create_singlecam[no_options-empty_expand] create_mutation_expand_[]"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
+        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $clip_window: ClipWindowInput) {
   createSingleCamJob(
     takeId: $take_id
     name: $name
     options: $options
     outputs: $outputs
     metadata: $metadata
+    clipWindow: $clip_window
   ) {
     id
     created
@@ -2126,6 +2175,10 @@ snapshots[
     {
         "operation_name": None,
         "variable_values": {
+            "clip_window": {
+                "endTime": 10.0,
+                "startTime": 1.0,
+            },
             "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
             "name": "",
             "options": {},
@@ -2166,13 +2219,14 @@ snapshots[
     "TestJobService.test_create_singlecam[no_options-expand_client] create_mutation_expand_client"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
+        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $clip_window: ClipWindowInput) {
   createSingleCamJob(
     takeId: $take_id
     name: $name
     options: $options
     outputs: $outputs
     metadata: $metadata
+    clipWindow: $clip_window
   ) {
     id
     created
@@ -2194,6 +2248,10 @@ snapshots[
     {
         "operation_name": None,
         "variable_values": {
+            "clip_window": {
+                "endTime": 10.0,
+                "startTime": 1.0,
+            },
             "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
             "name": "",
             "options": {},
@@ -2246,13 +2304,14 @@ snapshots[
     "TestJobService.test_create_singlecam[no_options-expand_outputs] create_mutation_expand_outputs"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
+        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $clip_window: ClipWindowInput) {
   createSingleCamJob(
     takeId: $take_id
     name: $name
     options: $options
     outputs: $outputs
     metadata: $metadata
+    clipWindow: $clip_window
   ) {
     id
     created
@@ -2280,6 +2339,10 @@ snapshots[
     {
         "operation_name": None,
         "variable_values": {
+            "clip_window": {
+                "endTime": 10.0,
+                "startTime": 1.0,
+            },
             "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
             "name": "",
             "options": {},
@@ -2383,13 +2446,14 @@ snapshots[
     "TestJobService.test_create_singlecam[no_options-expand_take] create_mutation_expand_take"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
+        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $clip_window: ClipWindowInput) {
   createSingleCamJob(
     takeId: $take_id
     name: $name
     options: $options
     outputs: $outputs
     metadata: $metadata
+    clipWindow: $clip_window
   ) {
     id
     created
@@ -2410,6 +2474,10 @@ snapshots[
     {
         "operation_name": None,
         "variable_values": {
+            "clip_window": {
+                "endTime": 10.0,
+                "startTime": 1.0,
+            },
             "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
             "name": "",
             "options": {},
@@ -2471,13 +2539,14 @@ snapshots[
     "TestJobService.test_create_singlecam[no_options-no_expand] create_mutation_expand_None"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
+        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $clip_window: ClipWindowInput) {
   createSingleCamJob(
     takeId: $take_id
     name: $name
     options: $options
     outputs: $outputs
     metadata: $metadata
+    clipWindow: $clip_window
   ) {
     id
     created
@@ -2491,6 +2560,10 @@ snapshots[
     {
         "operation_name": None,
         "variable_values": {
+            "clip_window": {
+                "endTime": 10.0,
+                "startTime": 1.0,
+            },
             "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
             "name": "",
             "options": {},
@@ -2531,13 +2604,14 @@ snapshots[
     "TestJobService.test_create_singlecam[with_options-empty_expand] create_mutation_expand_[]"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
+        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $clip_window: ClipWindowInput) {
   createSingleCamJob(
     takeId: $take_id
     name: $name
     options: $options
     outputs: $outputs
     metadata: $metadata
+    clipWindow: $clip_window
   ) {
     id
     created
@@ -2551,6 +2625,10 @@ snapshots[
     {
         "operation_name": None,
         "variable_values": {
+            "clip_window": {
+                "endTime": 10.0,
+                "startTime": 1.0,
+            },
             "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
             "name": "",
             "options": {
@@ -2594,13 +2672,14 @@ snapshots[
     "TestJobService.test_create_singlecam[with_options-expand_client] create_mutation_expand_client"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
+        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $clip_window: ClipWindowInput) {
   createSingleCamJob(
     takeId: $take_id
     name: $name
     options: $options
     outputs: $outputs
     metadata: $metadata
+    clipWindow: $clip_window
   ) {
     id
     created
@@ -2622,6 +2701,10 @@ snapshots[
     {
         "operation_name": None,
         "variable_values": {
+            "clip_window": {
+                "endTime": 10.0,
+                "startTime": 1.0,
+            },
             "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
             "name": "",
             "options": {
@@ -2677,13 +2760,14 @@ snapshots[
     "TestJobService.test_create_singlecam[with_options-expand_outputs] create_mutation_expand_outputs"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
+        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $clip_window: ClipWindowInput) {
   createSingleCamJob(
     takeId: $take_id
     name: $name
     options: $options
     outputs: $outputs
     metadata: $metadata
+    clipWindow: $clip_window
   ) {
     id
     created
@@ -2711,6 +2795,10 @@ snapshots[
     {
         "operation_name": None,
         "variable_values": {
+            "clip_window": {
+                "endTime": 10.0,
+                "startTime": 1.0,
+            },
             "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
             "name": "",
             "options": {
@@ -2817,13 +2905,14 @@ snapshots[
     "TestJobService.test_create_singlecam[with_options-expand_take] create_mutation_expand_take"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
+        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $clip_window: ClipWindowInput) {
   createSingleCamJob(
     takeId: $take_id
     name: $name
     options: $options
     outputs: $outputs
     metadata: $metadata
+    clipWindow: $clip_window
   ) {
     id
     created
@@ -2844,6 +2933,10 @@ snapshots[
     {
         "operation_name": None,
         "variable_values": {
+            "clip_window": {
+                "endTime": 10.0,
+                "startTime": 1.0,
+            },
             "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
             "name": "",
             "options": {
@@ -2908,13 +3001,14 @@ snapshots[
     "TestJobService.test_create_singlecam[with_options-no_expand] create_mutation_expand_None"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
+        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $clip_window: ClipWindowInput) {
   createSingleCamJob(
     takeId: $take_id
     name: $name
     options: $options
     outputs: $outputs
     metadata: $metadata
+    clipWindow: $clip_window
   ) {
     id
     created
@@ -2928,6 +3022,10 @@ snapshots[
     {
         "operation_name": None,
         "variable_values": {
+            "clip_window": {
+                "endTime": 10.0,
+                "startTime": 1.0,
+            },
             "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
             "name": "",
             "options": {
@@ -3159,7 +3257,7 @@ snapshots[
     "TestJobService.test_output_types[None-create_multicam] create_multicam_response"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String) {
+        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String, $clip_window: ClipWindowInput) {
   createMultiCamJob(
     takeId: $take_id
     name: $name
@@ -3168,6 +3266,7 @@ snapshots[
     outputs: $outputs
     metadata: $metadata
     rig: $rig
+    clipWindow: $clip_window
   ) {
     id
     created
@@ -3181,6 +3280,7 @@ snapshots[
     {
         "operation_name": None,
         "variable_values": {
+            "clip_window": None,
             "metadata": "{}",
             "name": "",
             "numberOfActors": 8658,
@@ -3196,13 +3296,14 @@ snapshots[
     "TestJobService.test_output_types[None-create_singlecam] create_singlecam_response"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
+        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $clip_window: ClipWindowInput) {
   createSingleCamJob(
     takeId: $take_id
     name: $name
     options: $options
     outputs: $outputs
     metadata: $metadata
+    clipWindow: $clip_window
   ) {
     id
     created
@@ -3216,6 +3317,7 @@ snapshots[
     {
         "operation_name": None,
         "variable_values": {
+            "clip_window": None,
             "metadata": "{}",
             "name": "",
             "options": {},
@@ -3229,7 +3331,7 @@ snapshots[
     "TestJobService.test_output_types[outputs1-create_multicam] create_multicam_response"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String) {
+        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String, $clip_window: ClipWindowInput) {
   createMultiCamJob(
     takeId: $take_id
     name: $name
@@ -3238,6 +3340,7 @@ snapshots[
     outputs: $outputs
     metadata: $metadata
     rig: $rig
+    clipWindow: $clip_window
   ) {
     id
     created
@@ -3251,6 +3354,7 @@ snapshots[
     {
         "operation_name": None,
         "variable_values": {
+            "clip_window": None,
             "metadata": "{}",
             "name": "",
             "numberOfActors": 8658,
@@ -3266,13 +3370,14 @@ snapshots[
     "TestJobService.test_output_types[outputs1-create_singlecam] create_singlecam_response"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
+        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $clip_window: ClipWindowInput) {
   createSingleCamJob(
     takeId: $take_id
     name: $name
     options: $options
     outputs: $outputs
     metadata: $metadata
+    clipWindow: $clip_window
   ) {
     id
     created
@@ -3286,6 +3391,7 @@ snapshots[
     {
         "operation_name": None,
         "variable_values": {
+            "clip_window": None,
             "metadata": "{}",
             "name": "",
             "options": {},
@@ -3299,7 +3405,7 @@ snapshots[
     "TestJobService.test_output_types[outputs2-create_multicam] create_multicam_response"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String) {
+        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String, $clip_window: ClipWindowInput) {
   createMultiCamJob(
     takeId: $take_id
     name: $name
@@ -3308,6 +3414,7 @@ snapshots[
     outputs: $outputs
     metadata: $metadata
     rig: $rig
+    clipWindow: $clip_window
   ) {
     id
     created
@@ -3321,6 +3428,7 @@ snapshots[
     {
         "operation_name": None,
         "variable_values": {
+            "clip_window": None,
             "metadata": "{}",
             "name": "",
             "numberOfActors": 8658,
@@ -3339,13 +3447,14 @@ snapshots[
     "TestJobService.test_output_types[outputs2-create_singlecam] create_singlecam_response"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
+        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $clip_window: ClipWindowInput) {
   createSingleCamJob(
     takeId: $take_id
     name: $name
     options: $options
     outputs: $outputs
     metadata: $metadata
+    clipWindow: $clip_window
   ) {
     id
     created
@@ -3359,6 +3468,7 @@ snapshots[
     {
         "operation_name": None,
         "variable_values": {
+            "clip_window": None,
             "metadata": "{}",
             "name": "",
             "options": {},
@@ -3375,7 +3485,7 @@ snapshots[
     "TestJobService.test_output_types[outputs3-create_multicam] create_multicam_response"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String) {
+        """mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String, $clip_window: ClipWindowInput) {
   createMultiCamJob(
     takeId: $take_id
     name: $name
@@ -3384,6 +3494,7 @@ snapshots[
     outputs: $outputs
     metadata: $metadata
     rig: $rig
+    clipWindow: $clip_window
   ) {
     id
     created
@@ -3397,6 +3508,7 @@ snapshots[
     {
         "operation_name": None,
         "variable_values": {
+            "clip_window": None,
             "metadata": "{}",
             "name": "",
             "numberOfActors": 8658,
@@ -3415,13 +3527,14 @@ snapshots[
     "TestJobService.test_output_types[outputs3-create_singlecam] create_singlecam_response"
 ] = [
     [
-        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON) {
+        """mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $clip_window: ClipWindowInput) {
   createSingleCamJob(
     takeId: $take_id
     name: $name
     options: $options
     outputs: $outputs
     metadata: $metadata
+    clipWindow: $clip_window
   ) {
     id
     created
@@ -3435,6 +3548,7 @@ snapshots[
     {
         "operation_name": None,
         "variable_values": {
+            "clip_window": None,
             "metadata": "{}",
             "name": "",
             "options": {},

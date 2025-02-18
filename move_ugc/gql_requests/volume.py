@@ -26,6 +26,7 @@ create = UgcGql(
         $humanHeight: Float!,
         $metadata: AWSJSON,
         $name: String,
+        $clip_window: ClipWindowInput,
     ) {{{{
         createVolumeWithHuman(
             sources: $sources,
@@ -34,6 +35,7 @@ create = UgcGql(
             humanHeight: $humanHeight,
             metadata: $metadata,
             name: $name,
+            clipWindow: $clip_window
         ) {{{{
             {human_volume_attributes}
         }}}}

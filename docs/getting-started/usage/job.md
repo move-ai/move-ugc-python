@@ -11,6 +11,22 @@ Before creating a job, please make sure that a take is created. If you've not cr
 job = ugc.jobs.create_singlecam(take_id="take-2be2463e-ffa3-419b-beb4-ea0f99c79512")
 ```
 
+## Specifying a clip window
+
+You can specify how much of your input video you wish to process. If not provided the entire
+video will be processed
+
+```python
+job = ugc.jobs.create_singlecam(
+    take_id="take-2be2463e-ffa3-419b-beb4-ea0f99c79512",
+    clip_window=ClipWindow(
+        start_time=0,
+        end_time=10,
+    ),
+)
+
+
+```
 ## Attaching some custom metadata with your job
 
 The metadata attribute in job type accepts any valid json string and can contain any custom data. This is particularly useful if any business logic needs to be implemented such as attaching a user id to a job.

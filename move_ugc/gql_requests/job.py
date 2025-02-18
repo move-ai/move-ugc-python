@@ -29,7 +29,8 @@ create = UgcGql(
         $name: String,
         $options: OptionsInput,
         $outputs: [OutputType],
-        $metadata: AWSJSON
+        $metadata: AWSJSON,
+        $clip_window: ClipWindowInput
     ) {{{{
         createSingleCamJob(
             takeId: $take_id,
@@ -37,6 +38,7 @@ create = UgcGql(
             options: $options,
             outputs: $outputs,
             metadata: $metadata
+            clipWindow: $clip_window
         ) {{{{
             {job_attributes}
         }}}}
@@ -59,7 +61,8 @@ create_multicam = UgcGql(
         $options: OptionsInput,
         $outputs: [OutputType],
         $metadata: AWSJSON,
-        $rig: String
+        $rig: String,
+        $clip_window: ClipWindowInput,
     ) {{{{
         createMultiCamJob(
             takeId: $take_id,
@@ -69,6 +72,7 @@ create_multicam = UgcGql(
             outputs: $outputs,
             metadata: $metadata
             rig: $rig
+            clipWindow: $clip_window
         ) {{{{
             {job_attributes}
         }}}}

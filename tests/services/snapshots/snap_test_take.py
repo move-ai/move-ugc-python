@@ -135,7 +135,6 @@ snapshots[
     "sources": [
         {
             "camera_settings": None,
-            "clip_window": None,
             "device_label": "foobar",
             "file": {
                 "client": None,
@@ -168,7 +167,6 @@ snapshots[
         },
         {
             "camera_settings": None,
-            "clip_window": None,
             "device_label": "foobar",
             "file": {
                 "client": None,
@@ -356,7 +354,6 @@ snapshots[
     "sources": [
         {
             "camera_settings": None,
-            "clip_window": None,
             "device_label": "foobar",
             "file": {
                 "client": None,
@@ -537,7 +534,6 @@ snapshots[
                     "cameraSettings": {
                         "lens": "area",
                     },
-                    "clipWindow": None,
                     "deviceLabel": "white",
                     "fileId": "a8491a43-874a-40b9-8d86-63243ab5ed05",
                     "format": "MP4",
@@ -546,7 +542,6 @@ snapshots[
                     "cameraSettings": {
                         "lens": "director",
                     },
-                    "clipWindow": None,
                     "deviceLabel": "white",
                     "fileId": "bdc68ffa-06c7-44f6-b4c4-614f530e9daa",
                     "format": "MOVE",
@@ -618,10 +613,6 @@ snapshots[
       cameraSettings {
         lens
       }
-      clipWindow {
-        startTime
-        endTime
-      }
     }
     __typename
   }
@@ -637,7 +628,6 @@ snapshots[
                     "cameraSettings": {
                         "lens": "area",
                     },
-                    "clipWindow": None,
                     "deviceLabel": "white",
                     "fileId": "a8491a43-874a-40b9-8d86-63243ab5ed05",
                     "format": "MP4",
@@ -646,7 +636,6 @@ snapshots[
                     "cameraSettings": {
                         "lens": "director",
                     },
-                    "clipWindow": None,
                     "deviceLabel": "white",
                     "fileId": "bdc68ffa-06c7-44f6-b4c4-614f530e9daa",
                     "format": "MOVE",
@@ -685,7 +674,6 @@ snapshots[
     "sources": [
         {
             "camera_settings": None,
-            "clip_window": None,
             "device_label": "foobar",
             "file": {
                 "client": None,
@@ -712,7 +700,6 @@ snapshots[
         },
         {
             "camera_settings": None,
-            "clip_window": None,
             "device_label": "foobar",
             "file": {
                 "client": None,
@@ -779,7 +766,6 @@ snapshots[
                     "cameraSettings": {
                         "lens": "area",
                     },
-                    "clipWindow": None,
                     "deviceLabel": "white",
                     "fileId": "a8491a43-874a-40b9-8d86-63243ab5ed05",
                     "format": "MP4",
@@ -788,7 +774,6 @@ snapshots[
                     "cameraSettings": {
                         "lens": "director",
                     },
-                    "clipWindow": None,
                     "deviceLabel": "white",
                     "fileId": "bdc68ffa-06c7-44f6-b4c4-614f530e9daa",
                     "format": "MOVE",
@@ -868,10 +853,6 @@ snapshots[
       cameraSettings {
         lens
       }
-      clipWindow {
-        startTime
-        endTime
-      }
     }
     __typename
   }
@@ -887,7 +868,6 @@ snapshots[
                     "cameraSettings": {
                         "lens": "area",
                     },
-                    "clipWindow": None,
                     "deviceLabel": "white",
                     "fileId": "a8491a43-874a-40b9-8d86-63243ab5ed05",
                     "format": "MP4",
@@ -896,7 +876,6 @@ snapshots[
                     "cameraSettings": {
                         "lens": "director",
                     },
-                    "clipWindow": None,
                     "deviceLabel": "white",
                     "fileId": "bdc68ffa-06c7-44f6-b4c4-614f530e9daa",
                     "format": "MOVE",
@@ -935,7 +914,6 @@ snapshots[
     "sources": [
         {
             "camera_settings": None,
-            "clip_window": None,
             "device_label": "foobar",
             "file": {
                 "client": None,
@@ -1010,7 +988,6 @@ fragment HumanVolumeFragment on HumanVolume {
                     "cameraSettings": {
                         "lens": "area",
                     },
-                    "clipWindow": None,
                     "deviceLabel": "white",
                     "fileId": "a8491a43-874a-40b9-8d86-63243ab5ed05",
                     "format": "MP4",
@@ -1019,7 +996,6 @@ fragment HumanVolumeFragment on HumanVolume {
                     "cameraSettings": {
                         "lens": "director",
                     },
-                    "clipWindow": None,
                     "deviceLabel": "white",
                     "fileId": "bdc68ffa-06c7-44f6-b4c4-614f530e9daa",
                     "format": "MOVE",
@@ -1111,7 +1087,6 @@ snapshots[
                     "cameraSettings": {
                         "lens": "area",
                     },
-                    "clipWindow": None,
                     "deviceLabel": "white",
                     "fileId": "a8491a43-874a-40b9-8d86-63243ab5ed05",
                     "format": "MP4",
@@ -1120,7 +1095,6 @@ snapshots[
                     "cameraSettings": {
                         "lens": "director",
                     },
-                    "clipWindow": None,
                     "deviceLabel": "white",
                     "fileId": "bdc68ffa-06c7-44f6-b4c4-614f530e9daa",
                     "format": "MOVE",
@@ -1337,7 +1311,6 @@ snapshots[
     "sources": [
         {
             "camera_settings": None,
-            "clip_window": None,
             "device_label": "foobar",
             "file": {
                 "client": None,
@@ -1370,7 +1343,6 @@ snapshots[
         },
         {
             "camera_settings": None,
-            "clip_window": None,
             "device_label": "foobar",
             "file": {
                 "client": None,
@@ -1532,7 +1504,6 @@ snapshots[
     "sources": [
         {
             "camera_settings": None,
-            "clip_window": None,
             "device_label": "foobar",
             "file": {
                 "client": None,
@@ -1736,7 +1707,6 @@ snapshots[
     "sources": [
         {
             "camera_settings": None,
-            "clip_window": None,
             "device_label": "foobar",
             "file": {
                 "client": None,
@@ -1769,7 +1739,6 @@ snapshots[
         },
         {
             "camera_settings": None,
-            "clip_window": None,
             "device_label": "foobar",
             "file": {
                 "client": None,
@@ -1935,7 +1904,6 @@ snapshots[
     "sources": [
         {
             "camera_settings": None,
-            "clip_window": None,
             "device_label": "foobar",
             "file": {
                 "client": None,

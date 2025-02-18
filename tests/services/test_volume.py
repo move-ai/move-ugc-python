@@ -5,7 +5,8 @@ from graphql import ExecutionResult
 from pydantic import ValidationError
 
 from move_ugc.schemas.constants import OUTPUTS_LITERAL
-from move_ugc.schemas.sources import ClipWindow, SourceIn, TakeSourceKey
+from move_ugc.schemas.job import ClipWindow
+from move_ugc.schemas.sources import SourceIn, TakeSourceKey
 from move_ugc.schemas.volume import AreaType
 from tests.constants import LIST_VOLUMES_QUERY
 from tests.services.testcases import ServicesTestCase
@@ -58,15 +59,15 @@ class TestVolumeService(ServicesTestCase):
         device_label = faker.word()
         volume = self.client.volumes.create_human_volume(
             metadata=request.getfixturevalue("metadata_for_update"),
+            clip_window=ClipWindow(
+                start_time=faker.pyint(),
+                end_time=faker.pyint(),
+            ),
             sources=[
                 SourceIn(
                     device_label=device_label,
                     file_id=faker.uuid4(),
                     format=TakeSourceKey.mp4,
-                    clip_window=ClipWindow(
-                        start_time=faker.pyint(),
-                        end_time=faker.pyint(),
-                    ),
                     camera_settings={
                         "lens": faker.word(),
                     },
