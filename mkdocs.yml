@@ -28,6 +28,7 @@ nav:
       - Multicam:
         - Quickstart: "getting-started/usage/multicam/quickstart.md"
         - Lenses: "getting-started/usage/multicam/lenses.md"
+        - Rigs: "getting-started/usage/multicam/rigs.md"
       - Takes: "getting-started/usage/take.md"
       - Jobs: "getting-started/usage/job.md"
       - Client: "getting-started/usage/client.md"
@@ -40,6 +41,7 @@ nav:
         - Jobs: "api-reference/services/job.md"
         - Volumes: "api-reference/services/volume.md"
         - Client: "api-reference/services/client.md"
+        - Rig: "api-reference/services/rig.md"
         - Webhooks: "api-reference/services/webhooks.md"
       - Schemas:
         - File: "api-reference/schemas/file.md"
@@ -49,6 +51,7 @@ nav:
         - Sources: "api-reference/schemas/sources.md"
         - Volume: "api-reference/schemas/volumes.md"
         - Commons: "api-reference/schemas/commons.md"
+        - Rig: "api-reference/schemas/rig.md"
         - Webhooks: "api-reference/schemas/webhooks.md"
   - "Contributing": "contributing.md"
 extra:
