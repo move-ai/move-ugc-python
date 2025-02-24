@@ -116,3 +116,18 @@ job = ugc.jobs.create_multicam(
     outputs=["MAIN_BLEND", "MAIN_GLB", "RENDER_VIDEO"],
 )
 ```
+
+
+### Retargeting to a specific rig
+
+You can optionally specify a rig to use for retargeting.
+If not specified, the `move_mo` rig is used by default
+
+```python
+job = ugc.jobs.create_multicam(
+    take_id="take-2be2463e-ffa3-419b-beb4-ea0f99c79512",
+    number_of_actors=1,
+    # Provide the name of the rig here
+    rig="move_ve",
+)
+```
