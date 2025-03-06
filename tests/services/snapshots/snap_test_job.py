@@ -179,7 +179,7 @@ snapshots[
     state
     name
     outputs {
-      key
+      format
       file {
         id
         created
@@ -262,7 +262,6 @@ snapshots[
                 "type": ".mp4",
             },
             "format": "",
-            "key": "mp4",
         },
         {
             "file": {
@@ -293,7 +292,6 @@ snapshots[
                 "type": ".mp4",
             },
             "format": "",
-            "key": "fbx",
         },
     ],
     "rig": None,
@@ -712,7 +710,7 @@ snapshots[
     state
     name
     outputs {
-      key
+      format
       file {
         id
         created
@@ -798,7 +796,6 @@ snapshots[
                 "type": ".mp4",
             },
             "format": "",
-            "key": "mp4",
         },
         {
             "file": {
@@ -829,7 +826,6 @@ snapshots[
                 "type": ".mp4",
             },
             "format": "",
-            "key": "fbx",
         },
     ],
     "rig": None,
@@ -1251,7 +1247,7 @@ snapshots[
     state
     name
     outputs {
-      key
+      format
       file {
         id
         created
@@ -1334,7 +1330,6 @@ snapshots[
                 "type": ".mp4",
             },
             "format": "",
-            "key": "mp4",
         },
         {
             "file": {
@@ -1365,7 +1360,6 @@ snapshots[
                 "type": ".mp4",
             },
             "format": "",
-            "key": "fbx",
         },
     ],
     "rig": None,
@@ -1784,7 +1778,7 @@ snapshots[
     state
     name
     outputs {
-      key
+      format
       file {
         id
         created
@@ -1870,7 +1864,6 @@ snapshots[
                 "type": ".mp4",
             },
             "format": "",
-            "key": "mp4",
         },
         {
             "file": {
@@ -1901,7 +1894,6 @@ snapshots[
                 "type": ".mp4",
             },
             "format": "",
-            "key": "fbx",
         },
     ],
     "rig": None,
@@ -2319,7 +2311,7 @@ snapshots[
     state
     name
     outputs {
-      key
+      format
       file {
         id
         created
@@ -2403,7 +2395,6 @@ snapshots[
                 "type": ".mp4",
             },
             "format": "",
-            "key": "mp4",
         },
         {
             "file": {
@@ -2434,7 +2425,6 @@ snapshots[
                 "type": ".mp4",
             },
             "format": "",
-            "key": "fbx",
         },
     ],
     "rig": None,
@@ -2775,7 +2765,7 @@ snapshots[
     state
     name
     outputs {
-      key
+      format
       file {
         id
         created
@@ -2862,7 +2852,6 @@ snapshots[
                 "type": ".mp4",
             },
             "format": "",
-            "key": "mp4",
         },
         {
             "file": {
@@ -2893,7 +2882,6 @@ snapshots[
                 "type": ".mp4",
             },
             "format": "",
-            "key": "fbx",
         },
     ],
     "rig": None,
@@ -3689,7 +3677,7 @@ snapshots[
     state
     name
     outputs {
-      key
+      format
       file {
         id
         created
@@ -3765,7 +3753,6 @@ snapshots[
                 "type": ".mp4",
             },
             "format": "",
-            "key": "mp4",
         },
         {
             "file": {
@@ -3796,7 +3783,6 @@ snapshots[
                 "type": ".mp4",
             },
             "format": "",
-            "key": "fbx",
         },
     ],
     "rig": None,
