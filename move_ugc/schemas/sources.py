@@ -1,9 +1,10 @@
 """Representation for Additional file type in Ugc API."""
 
+import warnings
 from enum import Enum
 from typing import Optional
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, computed_field
 
 from move_ugc.schemas.file import FileType
 
@@ -58,7 +59,7 @@ class CameraSettings(BaseModel):
 class AdditionalFileType(BaseModel):
     """Representation for Additional File type in MoveUGC."""
 
-    format: Optional[str] = Field(
+    format: str = Field(
         description="Identification format for the additional file",
         title="Additional file key",
         examples=["mp4", "depth", "odometry", "vision", "intrinsic"],
@@ -69,6 +70,22 @@ class AdditionalFileType(BaseModel):
         title="Additional file",
         examples=[{"id": "file-2c6059be-0f91-4cb8-aa1a-512cd10a66b5"}],
     )
+
+    # To be deprecated
+    @computed_field  # type: ignore[misc]
+    @property
+    def key(self) -> str:
+        """Return the key of the additional file.
+
+        Returns:
+            str: Key of the additional file.
+        """
+        warnings.warn(
+            "`key` will be deprecated in an upcoming release. Use `format` instead",
+            DeprecationWarning,
+            stacklevel=2,
+        )
+        return self.format
 
 
 class SourceIn(BaseModel, use_enum_values=True):

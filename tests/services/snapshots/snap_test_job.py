@@ -261,7 +261,8 @@ snapshots[
                 ),
                 "type": ".mp4",
             },
-            "format": "",
+            "format": "mp4",
+            "key": "mp4",
         },
         {
             "file": {
@@ -291,7 +292,8 @@ snapshots[
                 ),
                 "type": ".mp4",
             },
-            "format": "",
+            "format": "fbx",
+            "key": "fbx",
         },
     ],
     "rig": None,
@@ -795,7 +797,8 @@ snapshots[
                 ),
                 "type": ".mp4",
             },
-            "format": "",
+            "format": "mp4",
+            "key": "mp4",
         },
         {
             "file": {
@@ -825,7 +828,8 @@ snapshots[
                 ),
                 "type": ".mp4",
             },
-            "format": "",
+            "format": "fbx",
+            "key": "fbx",
         },
     ],
     "rig": None,
@@ -1329,7 +1333,8 @@ snapshots[
                 ),
                 "type": ".mp4",
             },
-            "format": "",
+            "format": "mp4",
+            "key": "mp4",
         },
         {
             "file": {
@@ -1359,7 +1364,8 @@ snapshots[
                 ),
                 "type": ".mp4",
             },
-            "format": "",
+            "format": "fbx",
+            "key": "fbx",
         },
     ],
     "rig": None,
@@ -1863,7 +1869,8 @@ snapshots[
                 ),
                 "type": ".mp4",
             },
-            "format": "",
+            "format": "mp4",
+            "key": "mp4",
         },
         {
             "file": {
@@ -1893,7 +1900,8 @@ snapshots[
                 ),
                 "type": ".mp4",
             },
-            "format": "",
+            "format": "fbx",
+            "key": "fbx",
         },
     ],
     "rig": None,
@@ -2394,7 +2402,8 @@ snapshots[
                 ),
                 "type": ".mp4",
             },
-            "format": "",
+            "format": "mp4",
+            "key": "mp4",
         },
         {
             "file": {
@@ -2424,7 +2433,8 @@ snapshots[
                 ),
                 "type": ".mp4",
             },
-            "format": "",
+            "format": "fbx",
+            "key": "fbx",
         },
     ],
     "rig": None,
@@ -2851,7 +2861,8 @@ snapshots[
                 ),
                 "type": ".mp4",
             },
-            "format": "",
+            "format": "mp4",
+            "key": "mp4",
         },
         {
             "file": {
@@ -2881,7 +2892,8 @@ snapshots[
                 ),
                 "type": ".mp4",
             },
-            "format": "",
+            "format": "fbx",
+            "key": "fbx",
         },
     ],
     "rig": None,
@@ -3752,7 +3764,8 @@ snapshots[
                 ),
                 "type": ".mp4",
             },
-            "format": "",
+            "format": "mp4",
+            "key": "mp4",
         },
         {
             "file": {
@@ -3782,7 +3795,8 @@ snapshots[
                 ),
                 "type": ".mp4",
             },
-            "format": "",
+            "format": "fbx",
+            "key": "fbx",
         },
     ],
     "rig": None,
