@@ -18,6 +18,8 @@ jobs:
           - "create_volume_with_human"
           - "create_multi_cam_take"
           - "create_multi_cam_job"
+          - "create_single_cam_take"
+          - "create_single_cam_job"
           - "list_takes"
           - "list_jobs"
           - "list_volumes"
