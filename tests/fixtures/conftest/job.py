@@ -16,8 +16,10 @@ from tests.constants import (
 from tests.fixtures.conftest.commons import build_list_response
 
 FakeJobJson = Dict[str, Any]
-KEY_LITERAL = "key"
+FORMAT_LITERAL = "format"
 FILE_LITERAL = "file"
+MP4_LITERAL = "mp4"
+FBX_LITERAL = "fbx"
 
 
 def mock_response(fake_response, mock_transport, introspection_result):
@@ -275,11 +277,11 @@ def job_create_singlecam_response_with_outputs(
     """
     fake_create_job_response[CREATE_JOB_MUTATION]["outputs"] = [
         {
-            KEY_LITERAL: "mp4",
+            FORMAT_LITERAL: MP4_LITERAL,
             FILE_LITERAL: fake_file_json,
         },
         {
-            KEY_LITERAL: "fbx",
+            FORMAT_LITERAL: FBX_LITERAL,
             FILE_LITERAL: fake_file_json,
         },
     ]
@@ -308,11 +310,11 @@ def job_create_multicam_with_outputs(
     """
     fake_create_multicam_response[CREATE_MULTICAM_JOB_MUTATION]["outputs"] = [
         {
-            KEY_LITERAL: "mp4",
+            FORMAT_LITERAL: MP4_LITERAL,
             FILE_LITERAL: fake_file_json,
         },
         {
-            KEY_LITERAL: "fbx",
+            FORMAT_LITERAL: FBX_LITERAL,
             FILE_LITERAL: fake_file_json,
         },
     ]
@@ -451,11 +453,11 @@ def job_retrieve_response_with_outputs(
     """
     fake_retrieve_job_response[GET_JOB_QUERY]["outputs"] = [
         {
-            KEY_LITERAL: "mp4",
+            FORMAT_LITERAL: MP4_LITERAL,
             FILE_LITERAL: fake_file_json,
         },
         {
-            KEY_LITERAL: "fbx",
+            FORMAT_LITERAL: FBX_LITERAL,
             FILE_LITERAL: fake_file_json,
         },
     ]

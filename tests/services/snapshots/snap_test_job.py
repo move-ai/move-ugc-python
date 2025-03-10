@@ -179,7 +179,7 @@ snapshots[
     state
     name
     outputs {
-      key
+      format
       file {
         id
         created
@@ -261,7 +261,7 @@ snapshots[
                 ),
                 "type": ".mp4",
             },
-            "format": "",
+            "format": "mp4",
             "key": "mp4",
         },
         {
@@ -292,7 +292,7 @@ snapshots[
                 ),
                 "type": ".mp4",
             },
-            "format": "",
+            "format": "fbx",
             "key": "fbx",
         },
     ],
@@ -712,7 +712,7 @@ snapshots[
     state
     name
     outputs {
-      key
+      format
       file {
         id
         created
@@ -797,7 +797,7 @@ snapshots[
                 ),
                 "type": ".mp4",
             },
-            "format": "",
+            "format": "mp4",
             "key": "mp4",
         },
         {
@@ -828,7 +828,7 @@ snapshots[
                 ),
                 "type": ".mp4",
             },
-            "format": "",
+            "format": "fbx",
             "key": "fbx",
         },
     ],
@@ -1251,7 +1251,7 @@ snapshots[
     state
     name
     outputs {
-      key
+      format
       file {
         id
         created
@@ -1333,7 +1333,7 @@ snapshots[
                 ),
                 "type": ".mp4",
             },
-            "format": "",
+            "format": "mp4",
             "key": "mp4",
         },
         {
@@ -1364,7 +1364,7 @@ snapshots[
                 ),
                 "type": ".mp4",
             },
-            "format": "",
+            "format": "fbx",
             "key": "fbx",
         },
     ],
@@ -1784,7 +1784,7 @@ snapshots[
     state
     name
     outputs {
-      key
+      format
       file {
         id
         created
@@ -1869,7 +1869,7 @@ snapshots[
                 ),
                 "type": ".mp4",
             },
-            "format": "",
+            "format": "mp4",
             "key": "mp4",
         },
         {
@@ -1900,7 +1900,7 @@ snapshots[
                 ),
                 "type": ".mp4",
             },
-            "format": "",
+            "format": "fbx",
             "key": "fbx",
         },
     ],
@@ -2319,7 +2319,7 @@ snapshots[
     state
     name
     outputs {
-      key
+      format
       file {
         id
         created
@@ -2402,7 +2402,7 @@ snapshots[
                 ),
                 "type": ".mp4",
             },
-            "format": "",
+            "format": "mp4",
             "key": "mp4",
         },
         {
@@ -2433,7 +2433,7 @@ snapshots[
                 ),
                 "type": ".mp4",
             },
-            "format": "",
+            "format": "fbx",
             "key": "fbx",
         },
     ],
@@ -2775,7 +2775,7 @@ snapshots[
     state
     name
     outputs {
-      key
+      format
       file {
         id
         created
@@ -2861,7 +2861,7 @@ snapshots[
                 ),
                 "type": ".mp4",
             },
-            "format": "",
+            "format": "mp4",
             "key": "mp4",
         },
         {
@@ -2892,7 +2892,7 @@ snapshots[
                 ),
                 "type": ".mp4",
             },
-            "format": "",
+            "format": "fbx",
             "key": "fbx",
         },
     ],
@@ -3689,7 +3689,7 @@ snapshots[
     state
     name
     outputs {
-      key
+      format
       file {
         id
         created
@@ -3764,7 +3764,7 @@ snapshots[
                 ),
                 "type": ".mp4",
             },
-            "format": "",
+            "format": "mp4",
             "key": "mp4",
         },
         {
@@ -3795,7 +3795,7 @@ snapshots[
                 ),
                 "type": ".mp4",
             },
-            "format": "",
+            "format": "fbx",
             "key": "fbx",
         },
     ],

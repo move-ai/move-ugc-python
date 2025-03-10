@@ -979,7 +979,7 @@ snapshots[
                 "type": ".mp4",
             },
             "format": "volume_definition",
-            "key": "",
+            "key": "volume_definition",
         },
         {
             "file": {
@@ -1004,7 +1004,7 @@ snapshots[
                 "type": ".mp4",
             },
             "format": "volume_report",
-            "key": "",
+            "key": "volume_report",
         },
     ],
     "sources": None,

@@ -80,7 +80,7 @@ class JobType(BaseModel):
         description="Outputs for the job. This usually contains the fbx, mp4 output files when the state is `FINISHED`",
         examples=[
             {
-                "key": "fbx",
+                "format": "fbx",
                 "file": {"id": "file-ee02c1b6-0328-4a7c-a2b2-76883acb451d"},
             },
         ],

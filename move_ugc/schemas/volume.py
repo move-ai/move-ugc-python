@@ -81,7 +81,7 @@ class HumanVolumeType(BaseModel):
         description="Outputs for the volume. This usually contains the pkl, volume_definition and volume_report output files when the state is `FINISHED`",
         examples=[
             {
-                "key": "pkl",
+                "format": "pkl",
                 "file": {"id": "file-ee02c1b6-0328-4a7c-a2b2-76883acb451d"},
             },
         ],
