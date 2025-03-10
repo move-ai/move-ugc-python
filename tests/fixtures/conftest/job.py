@@ -16,7 +16,6 @@ from tests.constants import (
 from tests.fixtures.conftest.commons import build_list_response
 
 FakeJobJson = Dict[str, Any]
-KEY_LITERAL = "key"
 FORMAT_LITERAL = "format"
 FILE_LITERAL = "file"
 MP4_LITERAL = "mp4"
@@ -279,12 +278,10 @@ def job_create_singlecam_response_with_outputs(
     fake_create_job_response[CREATE_JOB_MUTATION]["outputs"] = [
         {
             FORMAT_LITERAL: MP4_LITERAL,
-            KEY_LITERAL: MP4_LITERAL,
             FILE_LITERAL: fake_file_json,
         },
         {
             FORMAT_LITERAL: FBX_LITERAL,
-            KEY_LITERAL: FBX_LITERAL,
             FILE_LITERAL: fake_file_json,
         },
     ]
@@ -314,12 +311,10 @@ def job_create_multicam_with_outputs(
     fake_create_multicam_response[CREATE_MULTICAM_JOB_MUTATION]["outputs"] = [
         {
             FORMAT_LITERAL: MP4_LITERAL,
-            KEY_LITERAL: MP4_LITERAL,
             FILE_LITERAL: fake_file_json,
         },
         {
             FORMAT_LITERAL: FBX_LITERAL,
-            KEY_LITERAL: FBX_LITERAL,
             FILE_LITERAL: fake_file_json,
         },
     ]
@@ -459,12 +454,10 @@ def job_retrieve_response_with_outputs(
     fake_retrieve_job_response[GET_JOB_QUERY]["outputs"] = [
         {
             FORMAT_LITERAL: MP4_LITERAL,
-            KEY_LITERAL: MP4_LITERAL,
             FILE_LITERAL: fake_file_json,
         },
         {
             FORMAT_LITERAL: FBX_LITERAL,
-            KEY_LITERAL: FBX_LITERAL,
             FILE_LITERAL: fake_file_json,
         },
     ]
