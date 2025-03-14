@@ -99,7 +99,7 @@ To create a multicam job, you can use the `create_multicam` method:
 ```python
 job = ugc.jobs.create_multicam(
     take_id="take-2be2463e-ffa3-419b-beb4-ea0f99c79512",
-    options=JobOptions(track_fingers=True),
+    options=JobOptions(trackFingers=True),
     name="My multicam job",
 )
 ```
@@ -107,3 +107,32 @@ job = ugc.jobs.create_multicam(
 See the [API reference](/move-ugc-python/latest/api-reference/services/job/#move_ugc.schemas.job.JobOptions) for more information on available job options for multicam.
 
 See quickstart guide [here](https://move-ai.github.io/move-ugc-api/getting-started/multicam/quickstart/) for steps to create a multicam job. Please use the equivalent methods in the SDK to create a multicam job.
+
+
+## Specifying options on a job
+
+You can configure how your job is processed by specifying a `JobOptions` argument to `job.create_singlecam`
+or `job.create_multicam`. The allowed options are being added to constantly. Please refer
+to the API docs [here](https://move-ai.github.io/move-ugc-api/schema/#optionsinput) for a full list
+of available options. Options should be specified exactly as  they are defined in the [API docs](https://move-ai.github.io/move-ugc-api/schema/#optionsinput)
+
+See examples below
+
+```python
+from move_ugc.schemas.job import JobOptions
+
+# Specifying options on a singlecam job
+job = ugc.jobs.create_singlecam(
+    take_id="take-2be2463e-ffa3-419b-beb4-ea0f99c79512",
+    options=JobOptions(trackFingers=True, floorPlane=True, mocapModel="S1"),
+)
+
+# Specifying options on a multicam job
+job = ugc.jobs.create_multicam(
+    take_id="take-2be2463e-ffa3-419b-beb4-ea0f99c79512",
+    options=JobOptions(trackFingers=True, floorPlane=True),
+)
+
+
+
+```
