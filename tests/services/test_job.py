@@ -102,7 +102,7 @@ class TestJobService(ServicesTestCase):  # noqa: WPS214
     )
     @pytest.mark.parametrize(
         argnames="options",
-        argvalues=[None, JobOptions(trackFingers=False, floor_plane=True)],
+        argvalues=[None, JobOptions(trackFingers=False, floorPlane=True)],
     )
     @pytest.mark.parametrize(
         argnames="rig",

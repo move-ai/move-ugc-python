@@ -565,7 +565,7 @@ snapshots[
             "name": "",
             "numberOfActors": 8658,
             "options": {
-                "floor_plane": True,
+                "floorPlane": True,
                 "trackFingers": False,
             },
             "outputs": [],
@@ -642,7 +642,7 @@ snapshots[
             "name": "",
             "numberOfActors": 8658,
             "options": {
-                "floor_plane": True,
+                "floorPlane": True,
                 "trackFingers": False,
             },
             "outputs": [],
@@ -737,7 +737,7 @@ snapshots[
             "name": "",
             "numberOfActors": 8658,
             "options": {
-                "floor_plane": True,
+                "floorPlane": True,
                 "trackFingers": False,
             },
             "outputs": [],
@@ -873,7 +873,7 @@ snapshots[
             "name": "",
             "numberOfActors": 8658,
             "options": {
-                "floor_plane": True,
+                "floorPlane": True,
                 "trackFingers": False,
             },
             "outputs": [],
@@ -951,7 +951,7 @@ snapshots[
             "name": "",
             "numberOfActors": 849,
             "options": {
-                "floor_plane": True,
+                "floorPlane": True,
                 "trackFingers": False,
             },
             "outputs": [],
@@ -1041,7 +1041,7 @@ snapshots[
             "name": "",
             "numberOfActors": 8658,
             "options": {
-                "floor_plane": True,
+                "floorPlane": True,
                 "trackFingers": False,
             },
             "outputs": [],
@@ -1637,7 +1637,7 @@ snapshots[
             "name": "",
             "numberOfActors": 8658,
             "options": {
-                "floor_plane": True,
+                "floorPlane": True,
                 "trackFingers": False,
             },
             "outputs": [],
@@ -1714,7 +1714,7 @@ snapshots[
             "name": "",
             "numberOfActors": 8658,
             "options": {
-                "floor_plane": True,
+                "floorPlane": True,
                 "trackFingers": False,
             },
             "outputs": [],
@@ -1809,7 +1809,7 @@ snapshots[
             "name": "",
             "numberOfActors": 8658,
             "options": {
-                "floor_plane": True,
+                "floorPlane": True,
                 "trackFingers": False,
             },
             "outputs": [],
@@ -1945,7 +1945,7 @@ snapshots[
             "name": "",
             "numberOfActors": 8658,
             "options": {
-                "floor_plane": True,
+                "floorPlane": True,
                 "trackFingers": False,
             },
             "outputs": [],
@@ -2023,7 +2023,7 @@ snapshots[
             "name": "",
             "numberOfActors": 849,
             "options": {
-                "floor_plane": True,
+                "floorPlane": True,
                 "trackFingers": False,
             },
             "outputs": [],
@@ -2113,7 +2113,7 @@ snapshots[
             "name": "",
             "numberOfActors": 8658,
             "options": {
-                "floor_plane": True,
+                "floorPlane": True,
                 "trackFingers": False,
             },
             "outputs": [],
