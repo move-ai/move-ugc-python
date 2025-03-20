@@ -554,7 +554,7 @@ snapshots["TestVolumeService.test_create[no_expand] create_response_expand_None"
 }
 
 snapshots["TestVolumeService.test_fetch_service 1"] = GenericRepr(
-    "VolumeService(api_key=SecretStr('**********'), endpoint_url=Url('https://pytest_invalid_endpoint_url.com/'))",
+    "VolumeService(api_key=SecretStr('**********'), endpoint_url=HttpUrl('https://pytest_invalid_endpoint_url.com/'))",
 )
 
 snapshots["TestVolumeService.test_list list_response"] = {

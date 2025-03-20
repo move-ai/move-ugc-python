@@ -1,4 +1,5 @@
 """Queries for rig."""
+
 from move_ugc.schemas.gql import UgcGql
 
 rig_attributes_base = """

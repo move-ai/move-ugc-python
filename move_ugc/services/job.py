@@ -77,9 +77,9 @@ class JobService(BaseService[JobType]):
                 "options": options.model_dump(by_alias=True, mode="json"),
                 "outputs": [str(output).upper() for output in outputs or []],
                 "metadata": self.encode_aws_metadata(metadata),
-                "clip_window": clip_window.model_dump(by_alias=True)
-                if clip_window
-                else None,
+                "clip_window": (
+                    clip_window.model_dump(by_alias=True) if clip_window else None
+                ),
             },
         )
 
@@ -136,9 +136,9 @@ class JobService(BaseService[JobType]):
                 "outputs": [str(output).upper() for output in outputs or []],
                 "metadata": self.encode_aws_metadata(metadata),
                 "rig": rig,
-                "clip_window": clip_window.model_dump(by_alias=True)
-                if clip_window
-                else None,
+                "clip_window": (
+                    clip_window.model_dump(by_alias=True) if clip_window else None
+                ),
             },
         )
 

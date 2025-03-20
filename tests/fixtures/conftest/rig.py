@@ -1,4 +1,5 @@
 """Rig fixture for testing."""
+
 import json
 from typing import Any, Dict
 

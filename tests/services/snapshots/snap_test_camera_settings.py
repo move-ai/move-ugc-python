@@ -7,7 +7,7 @@ from snapshottest import GenericRepr, Snapshot
 snapshots = Snapshot()
 
 snapshots["TestCameraSettingsService.test_fetch_service 1"] = GenericRepr(
-    "CameraSettingsService(api_key=SecretStr('**********'), endpoint_url=Url('https://pytest_invalid_endpoint_url.com/'))",
+    "CameraSettingsService(api_key=SecretStr('**********'), endpoint_url=HttpUrl('https://pytest_invalid_endpoint_url.com/'))",
 )
 
 snapshots["TestCameraSettingsService.test_list camera_settings_list_request"] = [
