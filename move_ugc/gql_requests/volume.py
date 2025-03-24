@@ -1,4 +1,5 @@
 """Volume gql requests for Move UGC SDK."""
+
 from move_ugc.gql_requests.additional_file import expand_outputs
 from move_ugc.gql_requests.camera_settings import expand_sources_w_camera_settings
 from move_ugc.gql_requests.client import expand_client_query

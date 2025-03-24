@@ -1,4 +1,5 @@
 """Rig service for move-ugc-python-sdk."""
+
 from move_ugc.gql_requests.rig import list_query
 from move_ugc.schemas.commons import ListBaseItems
 from move_ugc.schemas.rig import Rig

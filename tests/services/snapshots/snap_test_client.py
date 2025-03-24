@@ -7,7 +7,7 @@ from snapshottest import GenericRepr, Snapshot
 snapshots = Snapshot()
 
 snapshots["TestClientService.test_fetch_service 1"] = GenericRepr(
-    "ClientService(api_key=SecretStr('**********'), endpoint_url=Url('https://pytest_invalid_endpoint_url.com/'))",
+    "ClientService(api_key=SecretStr('**********'), endpoint_url=HttpUrl('https://pytest_invalid_endpoint_url.com/'))",
 )
 
 snapshots["TestClientService.test_retrieve retrieve_query"] = [
@@ -37,7 +37,7 @@ snapshots["TestClientService.test_retrieve retrieve_response"] = {
     },
     "name": "PYTEST_INVALID_CLIENT_NAME",
     "portal": GenericRepr(
-        "Url('https://app.svix.com/login?primaryColorLight=39ddef&primaryColorDark=39ddef#key=')",
+        "HttpUrl('https://app.svix.com/login?primaryColorLight=39ddef&primaryColorDark=39ddef#key=')",
     ),
 }
 
@@ -79,6 +79,6 @@ snapshots["TestClientService.test_update update_response"] = {
     },
     "name": "PYTEST_INVALID_CLIENT_NAME",
     "portal": GenericRepr(
-        "Url('https://app.svix.com/login?primaryColorLight=39ddef&primaryColorDark=39ddef#key=')",
+        "HttpUrl('https://app.svix.com/login?primaryColorLight=39ddef&primaryColorDark=39ddef#key=')",
     ),
 }

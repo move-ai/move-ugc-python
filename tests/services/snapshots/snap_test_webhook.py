@@ -45,7 +45,7 @@ snapshots["TestWebhooksService.test_add_webhook add_webhook_response"] = {
     ],
     "secret": GenericRepr("SecretStr('**********')"),
     "uid": "PYTEST_INVALID_UID",
-    "url": GenericRepr("Url('https://webhook.site/invalid')"),
+    "url": GenericRepr("HttpUrl('https://webhook.site/invalid')"),
 }
 
 snapshots["TestWebhooksService.test_add_without_secret add_webhook_query"] = [
@@ -87,9 +87,9 @@ snapshots["TestWebhooksService.test_add_without_secret add_webhook_response"] = 
     ],
     "secret": GenericRepr("SecretStr('**********')"),
     "uid": "PYTEST_INVALID_UID",
-    "url": GenericRepr("Url('https://webhook.site/invalid')"),
+    "url": GenericRepr("HttpUrl('https://webhook.site/invalid')"),
 }
 
 snapshots["TestWebhooksService.test_fetch_service 1"] = GenericRepr(
-    "WebhookService(api_key=SecretStr('**********'), endpoint_url=Url('https://pytest_invalid_endpoint_url.com/'))",
+    "WebhookService(api_key=SecretStr('**********'), endpoint_url=HttpUrl('https://pytest_invalid_endpoint_url.com/'))",
 )

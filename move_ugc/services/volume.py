@@ -80,9 +80,9 @@ class VolumeService(BaseService[HumanVolumeType]):
                 ),
                 "metadata": self.encode_aws_metadata(metadata),
                 "name": name or "",
-                "clip_window": clip_window.model_dump(by_alias=True)
-                if clip_window
-                else None,
+                "clip_window": (
+                    clip_window.model_dump(by_alias=True) if clip_window else None
+                ),
             },
         )
 

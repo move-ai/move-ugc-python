@@ -53,10 +53,10 @@ snapshots[
     },
     "name": "",
     "presigned_url": GenericRepr(
-        "Url('https://pytest_invalid_presigned_url.com/file')",
+        "HttpUrl('https://pytest_invalid_presigned_url.com/file')",
     ),
     "thumbnail_url": GenericRepr(
-        "Url('https://pytest_invalid_thumbnail_url.com/file')",
+        "HttpUrl('https://pytest_invalid_thumbnail_url.com/file')",
     ),
     "type": ".mp4",
 }
@@ -109,7 +109,7 @@ snapshots[
         },
         "name": "PYTEST_INVALID_CLIENT_NAME",
         "portal": GenericRepr(
-            "Url('https://app.svix.com/login?primaryColorLight=39ddef&primaryColorDark=39ddef#key=')",
+            "HttpUrl('https://app.svix.com/login?primaryColorLight=39ddef&primaryColorDark=39ddef#key=')",
         ),
     },
     "created": GenericRepr(
@@ -130,10 +130,10 @@ snapshots[
     },
     "name": "",
     "presigned_url": GenericRepr(
-        "Url('https://pytest_invalid_presigned_url.com/file')",
+        "HttpUrl('https://pytest_invalid_presigned_url.com/file')",
     ),
     "thumbnail_url": GenericRepr(
-        "Url('https://pytest_invalid_thumbnail_url.com/file')",
+        "HttpUrl('https://pytest_invalid_thumbnail_url.com/file')",
     ),
     "type": ".mp4",
 }
@@ -185,16 +185,16 @@ snapshots[
     },
     "name": "",
     "presigned_url": GenericRepr(
-        "Url('https://pytest_invalid_presigned_url.com/file')",
+        "HttpUrl('https://pytest_invalid_presigned_url.com/file')",
     ),
     "thumbnail_url": GenericRepr(
-        "Url('https://pytest_invalid_thumbnail_url.com/file')",
+        "HttpUrl('https://pytest_invalid_thumbnail_url.com/file')",
     ),
     "type": ".mp4",
 }
 
 snapshots["TestFileService.test_fetch_service 1"] = GenericRepr(
-    "FileService(api_key=SecretStr('**********'), endpoint_url=Url('https://pytest_invalid_endpoint_url.com/'))",
+    "FileService(api_key=SecretStr('**********'), endpoint_url=HttpUrl('https://pytest_invalid_endpoint_url.com/'))",
 )
 
 snapshots["TestFileService.test_file_not_found file_not_found_response"] = [
@@ -246,7 +246,7 @@ snapshots[
     "created": GenericRepr("datetime.datetime(2014, 4, 25, 9, 0)"),
     "expires": GenericRepr("datetime.datetime(2014, 4, 25, 9, 15)"),
     "file_id": "ac8201d5-5a45-48cb-a9ab-794abe8f69a7",
-    "url": GenericRepr("Url('https://www.ramirez.biz/')"),
+    "url": GenericRepr("HttpUrl('https://www.ramirez.biz/')"),
 }
 
 snapshots[
@@ -271,10 +271,10 @@ snapshots[
     },
     "name": "",
     "presigned_url": GenericRepr(
-        "Url('https://pytest_invalid_presigned_url.com/file')",
+        "HttpUrl('https://pytest_invalid_presigned_url.com/file')",
     ),
     "thumbnail_url": GenericRepr(
-        "Url('https://pytest_invalid_thumbnail_url.com/file')",
+        "HttpUrl('https://pytest_invalid_thumbnail_url.com/file')",
     ),
     "type": ".mp4",
 }
@@ -324,7 +324,7 @@ snapshots[
     },
     "name": "",
     "presigned_url": GenericRepr(
-        "Url('https://pytest_invalid_presigned_url.com/file')",
+        "HttpUrl('https://pytest_invalid_presigned_url.com/file')",
     ),
     "thumbnail_url": "",
     "type": ".mp4",
@@ -368,7 +368,7 @@ snapshots[
         },
         "name": "PYTEST_INVALID_CLIENT_NAME",
         "portal": GenericRepr(
-            "Url('https://app.svix.com/login?primaryColorLight=39ddef&primaryColorDark=39ddef#key=')",
+            "HttpUrl('https://app.svix.com/login?primaryColorLight=39ddef&primaryColorDark=39ddef#key=')",
         ),
     },
     "created": GenericRepr(
@@ -389,10 +389,10 @@ snapshots[
     },
     "name": "",
     "presigned_url": GenericRepr(
-        "Url('https://pytest_invalid_presigned_url.com/file')",
+        "HttpUrl('https://pytest_invalid_presigned_url.com/file')",
     ),
     "thumbnail_url": GenericRepr(
-        "Url('https://pytest_invalid_thumbnail_url.com/file')",
+        "HttpUrl('https://pytest_invalid_thumbnail_url.com/file')",
     ),
     "type": ".mp4",
 }
@@ -452,10 +452,10 @@ snapshots[
     },
     "name": "",
     "presigned_url": GenericRepr(
-        "Url('https://pytest_invalid_presigned_url.com/file')",
+        "HttpUrl('https://pytest_invalid_presigned_url.com/file')",
     ),
     "thumbnail_url": GenericRepr(
-        "Url('https://pytest_invalid_thumbnail_url.com/file')",
+        "HttpUrl('https://pytest_invalid_thumbnail_url.com/file')",
     ),
     "type": ".mp4",
 }
@@ -530,10 +530,10 @@ snapshots[
     },
     "name": "",
     "presigned_url": GenericRepr(
-        "Url('https://pytest_invalid_presigned_url.com/file')",
+        "HttpUrl('https://pytest_invalid_presigned_url.com/file')",
     ),
     "thumbnail_url": GenericRepr(
-        "Url('https://pytest_invalid_thumbnail_url.com/file')",
+        "HttpUrl('https://pytest_invalid_thumbnail_url.com/file')",
     ),
     "type": ".mp4",
 }
@@ -586,7 +586,7 @@ snapshots[
         },
         "name": "PYTEST_INVALID_CLIENT_NAME",
         "portal": GenericRepr(
-            "Url('https://app.svix.com/login?primaryColorLight=39ddef&primaryColorDark=39ddef#key=')",
+            "HttpUrl('https://app.svix.com/login?primaryColorLight=39ddef&primaryColorDark=39ddef#key=')",
         ),
     },
     "created": GenericRepr(
@@ -607,10 +607,10 @@ snapshots[
     },
     "name": "",
     "presigned_url": GenericRepr(
-        "Url('https://pytest_invalid_presigned_url.com/file')",
+        "HttpUrl('https://pytest_invalid_presigned_url.com/file')",
     ),
     "thumbnail_url": GenericRepr(
-        "Url('https://pytest_invalid_thumbnail_url.com/file')",
+        "HttpUrl('https://pytest_invalid_thumbnail_url.com/file')",
     ),
     "type": ".mp4",
 }
@@ -662,10 +662,10 @@ snapshots[
     },
     "name": "",
     "presigned_url": GenericRepr(
-        "Url('https://pytest_invalid_presigned_url.com/file')",
+        "HttpUrl('https://pytest_invalid_presigned_url.com/file')",
     ),
     "thumbnail_url": GenericRepr(
-        "Url('https://pytest_invalid_thumbnail_url.com/file')",
+        "HttpUrl('https://pytest_invalid_thumbnail_url.com/file')",
     ),
     "type": ".mp4",
 }
