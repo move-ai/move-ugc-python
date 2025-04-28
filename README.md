@@ -29,7 +29,7 @@ poetry add move-ugc-python
 
 ```python
 from move_ugc import MoveUgc
-ugc = MoveUgc(api_key='<API_KEY>')
+ugc = MoveUgc(api_key='<API_KEYgergergerg>')
 ```
 
 ## Create a file and upload to move.ai
