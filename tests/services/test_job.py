@@ -159,6 +159,7 @@ class TestJobService(ServicesTestCase):  # noqa: WPS214
             (["take"], "job_retrieve_response_with_take"),
             ([OUTPUTS], "job_retrieve_response_with_outputs"),
             (["rig"], "job_retrieve_response_with_rig"),
+            (["inputs"], "job_retrieve_response_with_inputs"),
         ],
         ids=[
             "no_expand",
@@ -167,6 +168,7 @@ class TestJobService(ServicesTestCase):  # noqa: WPS214
             "expand_take",
             "expand_outputs",
             "expand_rig",
+            "expand_inputs",
         ],
     )
     def test_retrieve(  # noqa: WPS211

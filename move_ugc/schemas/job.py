@@ -6,6 +6,7 @@ from typing import Any, List, Optional
 from pydantic import BaseModel, ConfigDict, Field, Json, alias_generators
 
 from move_ugc.schemas.client import Client
+from move_ugc.schemas.inputs import ClipWindowInputType
 from move_ugc.schemas.progress import JobProgress
 from move_ugc.schemas.rig import Rig
 from move_ugc.schemas.sources import AdditionalFileType
@@ -51,6 +52,20 @@ class JobOptions(BaseModel):
         extra="allow",
         alias_generator=alias_generators.to_camel,
     )
+
+
+class JobInputType(BaseModel):
+    """Inputs for this job."""
+
+    clip_window: Optional[ClipWindowInputType] = Field(
+        default=None,
+        alias="clipWindow",
+    )
+    number_of_actors: Optional[int] = Field(
+        default=None,
+        alias="numberOfActors",
+    )
+    options: Optional[JobOptions] = Field(default=None)
 
 
 class JobType(BaseModel):
@@ -111,5 +126,10 @@ class JobType(BaseModel):
         description="Name of rig to be used for the job",
         examples=[{"name": "move_mo"}],
         title="Job rig",
+        default=None,
+    )
+    inputs: Optional[JobInputType] = Field(
+        description="The inputs used for this job",
+        title="Job inputs",
         default=None,
     )

@@ -7,6 +7,7 @@ from typing import Any, List, Optional
 from pydantic import BaseModel, Field, Json
 
 from move_ugc.schemas.client import Client
+from move_ugc.schemas.inputs import ClipWindowInputType
 from move_ugc.schemas.progress import JobProgress
 from move_ugc.schemas.sources import AdditionalFileType, Source
 
@@ -95,3 +96,4 @@ class HumanVolumeType(BaseModel):
         title="Volume state",
     )
     progress: JobProgress
+    clip_window: Optional[ClipWindowInputType] = Field(default=None, alias="clipWindow")

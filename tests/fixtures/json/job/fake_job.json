@@ -6,6 +6,17 @@
     "__typename": "Job",
     "progress": {
       "state": "RUNNING",
-      "percentage_complete": 50
+      "percentageComplete": 50
+    },
+    "inputs": {
+      "numberOfActors": 1,
+      "clipWindow": {
+        "startTime": 0,
+        "endTime": 10
+      },
+      "options": {
+        "trackBall": true,
+        "trackFingers": false
+      }
     }
 }

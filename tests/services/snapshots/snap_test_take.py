@@ -1035,6 +1035,10 @@ snapshots[
     "volume": {
         "area_type": "NORMAL",
         "client": None,
+        "clip_window": {
+            "end_time": 10.0,
+            "start_time": 10.0,
+        },
         "created": "2023-06-29T08:54:52.349467Z",
         "human_height": 1.5,
         "id": "volume-af54cc45-7137-4206-a4c1-b3bc21b398fc",

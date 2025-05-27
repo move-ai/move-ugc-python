@@ -70,6 +70,10 @@ snapshots["TestVolumeService.test_create[empty_expand] create_mutation_expand_[]
 snapshots["TestVolumeService.test_create[empty_expand] create_response_expand_[]"] = {
     "area_type": "NORMAL",
     "client": None,
+    "clip_window": {
+        "end_time": 10.0,
+        "start_time": 10.0,
+    },
     "created": "2023-06-29T08:54:52.349467Z",
     "human_height": 1.5,
     "id": "volume-af54cc45-7137-4206-a4c1-b3bc21b398fc",
@@ -180,6 +184,10 @@ snapshots[
 ] = {
     "area_type": "NORMAL",
     "client": None,
+    "clip_window": {
+        "end_time": 10.0,
+        "start_time": 10.0,
+    },
     "created": "2023-06-29T08:54:52.349467Z",
     "human_height": 1.5,
     "id": "volume-af54cc45-7137-4206-a4c1-b3bc21b398fc",
@@ -342,6 +350,10 @@ snapshots[
         "name": "PYTEST_INVALID_CLIENT_NAME",
         "portal": "https://app.svix.com/login?primaryColorLight=39ddef&primaryColorDark=39ddef#key=",
     },
+    "clip_window": {
+        "end_time": 10.0,
+        "start_time": 10.0,
+    },
     "created": "2023-06-29T08:54:52.349467Z",
     "human_height": 1.5,
     "id": "volume-af54cc45-7137-4206-a4c1-b3bc21b398fc",
@@ -403,29 +415,29 @@ snapshots[
     {
         "operation_name": None,
         "variable_values": {
-            "areaType": "NORMAL",
+            "areaType": "LARGE",
             "clip_window": {
-                "endTime": 9057.0,
-                "startTime": 3757.0,
+                "endTime": 5315.0,
+                "startTime": 849.0,
             },
-            "humanHeight": 873121848153.264,
+            "humanHeight": 59816290182492.2,
             "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
-            "name": "attention",
+            "name": "draw",
             "sources": [
                 {
                     "cameraSettings": {
-                        "lens": "design",
+                        "lens": "set",
                     },
-                    "deviceLabel": "realize",
-                    "fileId": "530e9daa-0d45-45a7-a849-1a43874a50b9",
+                    "deviceLabel": "newspaper",
+                    "fileId": "37bea600-bdc6-4ffa-86c7-a4f634c4614f",
                     "format": "MP4",
                 },
                 {
                     "cameraSettings": {
-                        "lens": "so",
+                        "lens": "evening",
                     },
-                    "deviceLabel": "realize",
-                    "fileId": "b898a7a5-37be-4600-bdc6-8ffa06c7a4f6",
+                    "deviceLabel": "newspaper",
+                    "fileId": "cba1d785-4a1e-4b59-aca4-d775bfdde401",
                     "format": "MOVE",
                 },
             ],
@@ -439,6 +451,10 @@ snapshots[
 ] = {
     "area_type": "NORMAL",
     "client": None,
+    "clip_window": {
+        "end_time": 9057.0,
+        "start_time": 9057.0,
+    },
     "created": "2023-06-29T08:54:52.349467Z",
     "human_height": 1.5,
     "id": "volume-af54cc45-7137-4206-a4c1-b3bc21b398fc",
@@ -549,6 +565,10 @@ snapshots[
 ] = {
     "area_type": "NORMAL",
     "client": None,
+    "clip_window": {
+        "end_time": 10.0,
+        "start_time": 10.0,
+    },
     "created": "2023-06-29T08:54:52.349467Z",
     "human_height": 1.5,
     "id": "volume-af54cc45-7137-4206-a4c1-b3bc21b398fc",
@@ -665,6 +685,10 @@ snapshots["TestVolumeService.test_create[no_expand] create_mutation_expand_None"
 snapshots["TestVolumeService.test_create[no_expand] create_response_expand_None"] = {
     "area_type": "NORMAL",
     "client": None,
+    "clip_window": {
+        "end_time": 10.0,
+        "start_time": 10.0,
+    },
     "created": "2023-06-29T08:54:52.349467Z",
     "human_height": 1.5,
     "id": "volume-af54cc45-7137-4206-a4c1-b3bc21b398fc",
@@ -699,6 +723,10 @@ snapshots["TestVolumeService.test_list list_response"] = {
         {
             "area_type": "NORMAL",
             "client": None,
+            "clip_window": {
+                "end_time": 10.0,
+                "start_time": 10.0,
+            },
             "created": "2023-06-29T08:54:52.349467Z",
             "human_height": 1.5,
             "id": "volume-af54cc45-7137-4206-a4c1-b3bc21b398fc",
@@ -819,6 +847,10 @@ fragment VolumeFields on HumanVolume {
 snapshots["TestVolumeService.test_retrieve[empty_expand] get_response_expand_[]"] = {
     "area_type": "NORMAL",
     "client": None,
+    "clip_window": {
+        "end_time": 10.0,
+        "start_time": 10.0,
+    },
     "created": "2023-06-29T08:54:52.349467Z",
     "human_height": 1.5,
     "id": "volume-af54cc45-7137-4206-a4c1-b3bc21b398fc",
@@ -901,6 +933,10 @@ snapshots[
 ] = {
     "area_type": "NORMAL",
     "client": None,
+    "clip_window": {
+        "end_time": 10.0,
+        "start_time": 10.0,
+    },
     "created": "2023-06-29T08:54:52.349467Z",
     "human_height": 1.5,
     "id": "volume-af54cc45-7137-4206-a4c1-b3bc21b398fc",
@@ -1033,6 +1069,10 @@ snapshots[
         "name": "PYTEST_INVALID_CLIENT_NAME",
         "portal": "https://app.svix.com/login?primaryColorLight=39ddef&primaryColorDark=39ddef#key=",
     },
+    "clip_window": {
+        "end_time": 10.0,
+        "start_time": 10.0,
+    },
     "created": "2023-06-29T08:54:52.349467Z",
     "human_height": 1.5,
     "id": "volume-af54cc45-7137-4206-a4c1-b3bc21b398fc",
@@ -1112,6 +1152,10 @@ snapshots[
 ] = {
     "area_type": "NORMAL",
     "client": None,
+    "clip_window": {
+        "end_time": 10.0,
+        "start_time": 10.0,
+    },
     "created": "2023-06-29T08:54:52.349467Z",
     "human_height": 1.5,
     "id": "volume-af54cc45-7137-4206-a4c1-b3bc21b398fc",
@@ -1245,6 +1289,10 @@ snapshots[
 ] = {
     "area_type": "NORMAL",
     "client": None,
+    "clip_window": {
+        "end_time": 10.0,
+        "start_time": 10.0,
+    },
     "created": "2023-06-29T08:54:52.349467Z",
     "human_height": 1.5,
     "id": "volume-af54cc45-7137-4206-a4c1-b3bc21b398fc",
@@ -1333,6 +1381,10 @@ fragment VolumeFields on HumanVolume {
 snapshots["TestVolumeService.test_retrieve[no_expand] get_response_expand_None"] = {
     "area_type": "NORMAL",
     "client": None,
+    "clip_window": {
+        "end_time": 10.0,
+        "start_time": 10.0,
+    },
     "created": "2023-06-29T08:54:52.349467Z",
     "human_height": 1.5,
     "id": "volume-af54cc45-7137-4206-a4c1-b3bc21b398fc",

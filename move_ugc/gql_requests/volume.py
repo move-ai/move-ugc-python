@@ -3,18 +3,11 @@
 from move_ugc.gql_requests.additional_file import expand_outputs
 from move_ugc.gql_requests.camera_settings import expand_sources_w_camera_settings
 from move_ugc.gql_requests.client import expand_client_query
+from move_ugc.gql_requests.inputs import expand_clip_window, expand_progress
 from move_ugc.schemas.constants import CLIENT_LITERAL, OUTPUTS_LITERAL, SOURCES_LITERAL
 from move_ugc.schemas.gql import UgcGql
 
-expand_clip_window = """
-    clipWindow {
-        startTime
-        endTime
-   }
-"""
-
-
-human_volume_attributes = """
+human_volume_attributes = f"""
     id
     areaType
     created
@@ -22,11 +15,8 @@ human_volume_attributes = """
     metadata
     name
     state
-    progress{{
-        state
-        percentageComplete
-    }}
-    {expand}
+    {expand_progress}
+    {{expand}}
     __typename
 """
 

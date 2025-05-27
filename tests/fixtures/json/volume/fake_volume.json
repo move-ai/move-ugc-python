@@ -9,6 +9,10 @@
     "__typename": "HumanVolume",
     "progress": {
       "state": "RUNNING",
-      "percentage_complete": 50
+      "percentageComplete": 50
+    },
+    "clipWindow": {
+        "startTime": 0,
+        "endTime": 10
     }
 }

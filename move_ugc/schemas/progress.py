@@ -7,6 +7,6 @@ class JobProgress(BaseModel):
 
     state: str
     percentage_complete: int = Field(
-        serialization_alias="percentageComplete",
+        alias="percentageComplete",
         description="Percentage of the job that has been completed.",
     )
