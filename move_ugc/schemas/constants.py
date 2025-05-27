@@ -11,6 +11,8 @@ ALLOWED_EXPAND_ATTRS = Literal[
     "sources",
     "volume",
     "rig",
+    "progress",
+    "clipWindow",
 ]
 CLIENT_LITERAL = "client"
 TAKE_LITERAL = "take"

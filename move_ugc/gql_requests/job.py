@@ -18,6 +18,10 @@ job_attributes = """
     metadata
     state
     name
+    progress{{
+        state
+        percentageComplete
+    }}
     {expand}
     __typename
 """

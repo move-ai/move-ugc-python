@@ -880,6 +880,20 @@
                      "deprecationReason":null
                   },
                   {
+                     "name":"inputs",
+                     "description":"  Inputs that were provided when creating this job",
+                     "args":[
+
+                     ],
+                     "type":{
+                        "kind":"OBJECT",
+                        "name":"JobInputs",
+                        "ofType":null
+                     },
+                     "isDeprecated":false,
+                     "deprecationReason":null
+                  },
+                  {
                      "name":"metadata",
                      "description":"  Metadata json field where the client can store any key value pair",
                      "args":[
@@ -926,6 +940,20 @@
                      "deprecationReason":null
                   },
                   {
+                     "name":"progress",
+                     "description":"  Progress information about this job",
+                     "args":[
+
+                     ],
+                     "type":{
+                        "kind":"OBJECT",
+                        "name":"JobProgress",
+                        "ofType":null
+                     },
+                     "isDeprecated":false,
+                     "deprecationReason":null
+                  },
+                  {
                      "name":"rig",
                      "description":"  Name of the rig to use. If not provided, the default rig will be used",
                      "args":[
@@ -941,7 +969,7 @@
                   },
                   {
                      "name":"state",
-                     "description":"  Current status of the job",
+                     "description":"  DEPRECATED: Use `progress.state`. Current status of the job",
                      "args":[
 
                      ],
@@ -991,6 +1019,258 @@
             },
             {
                "kind":"OBJECT",
+               "name":"JobInputs",
+               "description":"  The return type for job inputs.",
+               "fields":[
+                  {
+                     "name":"clipWindow",
+                     "description":"  The clip window used for this job",
+                     "args":[
+
+                     ],
+                     "type":{
+                        "kind":"OBJECT",
+                        "name":"ClipWindowJobInputType",
+                        "ofType":null
+                     },
+                     "isDeprecated":false,
+                     "deprecationReason":null
+                  },
+                  {
+                     "name":"numberOfActors",
+                     "description":"  Number of actors in the take",
+                     "args":[
+
+                     ],
+                     "type":{
+                        "kind":"SCALAR",
+                        "name":"Int",
+                        "ofType":null
+                     },
+                     "isDeprecated":false,
+                     "deprecationReason":null
+                  },
+                  {
+                     "name":"options",
+                     "description":"  The options used for this job.",
+                     "args":[
+
+                     ],
+                     "type":{
+                        "kind":"OBJECT",
+                        "name":"OptionsInputType",
+                        "ofType":null
+                     },
+                     "isDeprecated":false,
+                     "deprecationReason":null
+                  }
+               ],
+               "inputFields":null,
+               "interfaces":[
+
+               ],
+               "enumValues":null,
+               "possibleTypes":null
+            },
+            {
+               "kind":"OBJECT",
+               "name":"ClipWindowJobInputType",
+               "description":"  The return type for clip window.",
+               "fields":[
+                  {
+                     "name":"endTime",
+                     "description":"  The end time of the clip window to be processed.",
+                     "args":[
+
+                     ],
+                     "type":{
+                        "kind":"NON_NULL",
+                        "name":null,
+                        "ofType":{
+                           "kind":"SCALAR",
+                           "name":"Float",
+                           "ofType":null
+                        }
+                     },
+                     "isDeprecated":false,
+                     "deprecationReason":null
+                  },
+                  {
+                     "name":"startTime",
+                     "description":"  The start time of the clip window to be processed.",
+                     "args":[
+
+                     ],
+                     "type":{
+                        "kind":"NON_NULL",
+                        "name":null,
+                        "ofType":{
+                           "kind":"SCALAR",
+                           "name":"Float",
+                           "ofType":null
+                        }
+                     },
+                     "isDeprecated":false,
+                     "deprecationReason":null
+                  }
+               ],
+               "inputFields":null,
+               "interfaces":[
+
+               ],
+               "enumValues":null,
+               "possibleTypes":null
+            },
+            {
+               "kind":"SCALAR",
+               "name":"Float",
+               "description":"Built-in Float",
+               "fields":null,
+               "inputFields":null,
+               "interfaces":null,
+               "enumValues":null,
+               "possibleTypes":null
+            },
+            {
+               "kind":"SCALAR",
+               "name":"Int",
+               "description":"Built-in Int",
+               "fields":null,
+               "inputFields":null,
+               "interfaces":null,
+               "enumValues":null,
+               "possibleTypes":null
+            },
+            {
+               "kind":"OBJECT",
+               "name":"OptionsInputType",
+               "description":"  The return type for the provided job options.",
+               "fields":[
+                  {
+                     "name":"floorPlane",
+                     "description":"  Floor Plane",
+                     "args":[
+
+                     ],
+                     "type":{
+                        "kind":"SCALAR",
+                        "name":"Boolean",
+                        "ofType":null
+                     },
+                     "isDeprecated":false,
+                     "deprecationReason":null
+                  },
+                  {
+                     "name":"mocapModel",
+                     "description":"  Mocap Model",
+                     "args":[
+
+                     ],
+                     "type":{
+                        "kind":"ENUM",
+                        "name":"MocapModelOptionsInput",
+                        "ofType":null
+                     },
+                     "isDeprecated":false,
+                     "deprecationReason":null
+                  },
+                  {
+                     "name":"trackBall",
+                     "description":"  Track Ball",
+                     "args":[
+
+                     ],
+                     "type":{
+                        "kind":"SCALAR",
+                        "name":"Boolean",
+                        "ofType":null
+                     },
+                     "isDeprecated":false,
+                     "deprecationReason":null
+                  },
+                  {
+                     "name":"trackFingers",
+                     "description":"  Track Fingers",
+                     "args":[
+
+                     ],
+                     "type":{
+                        "kind":"SCALAR",
+                        "name":"Boolean",
+                        "ofType":null
+                     },
+                     "isDeprecated":false,
+                     "deprecationReason":null
+                  },
+                  {
+                     "name":"trackJerseyNumbers",
+                     "description":"  Track Jersey Numbers",
+                     "args":[
+
+                     ],
+                     "type":{
+                        "kind":"SCALAR",
+                        "name":"Boolean",
+                        "ofType":null
+                     },
+                     "isDeprecated":false,
+                     "deprecationReason":null
+                  }
+               ],
+               "inputFields":null,
+               "interfaces":[
+
+               ],
+               "enumValues":null,
+               "possibleTypes":null
+            },
+            {
+               "kind":"SCALAR",
+               "name":"Boolean",
+               "description":"Built-in Boolean",
+               "fields":null,
+               "inputFields":null,
+               "interfaces":null,
+               "enumValues":null,
+               "possibleTypes":null
+            },
+            {
+               "kind":"ENUM",
+               "name":"MocapModelOptionsInput",
+               "description":null,
+               "fields":null,
+               "inputFields":null,
+               "interfaces":null,
+               "enumValues":[
+                  {
+                     "name":"M1",
+                     "description":null,
+                     "isDeprecated":false,
+                     "deprecationReason":null
+                  },
+                  {
+                     "name":"M2",
+                     "description":null,
+                     "isDeprecated":false,
+                     "deprecationReason":null
+                  },
+                  {
+                     "name":"S1",
+                     "description":null,
+                     "isDeprecated":false,
+                     "deprecationReason":null
+                  },
+                  {
+                     "name":"S2",
+                     "description":null,
+                     "isDeprecated":false,
+                     "deprecationReason":null
+                  }
+               ],
+               "possibleTypes":null
+            },
+            {
+               "kind":"OBJECT",
                "name":"AdditionalFile",
                "description":"  An additional file which may be attached to the take",
                "fields":[
@@ -1029,6 +1309,47 @@
                   {
                      "name":"key",
                      "description":"  Type of additional file",
+                     "args":[
+
+                     ],
+                     "type":{
+                        "kind":"SCALAR",
+                        "name":"String",
+                        "ofType":null
+                     },
+                     "isDeprecated":false,
+                     "deprecationReason":null
+                  }
+               ],
+               "inputFields":null,
+               "interfaces":[
+
+               ],
+               "enumValues":null,
+               "possibleTypes":null
+            },
+            {
+               "kind":"OBJECT",
+               "name":"JobProgress",
+               "description":"  The return type for the job progress.",
+               "fields":[
+                  {
+                     "name":"percentageComplete",
+                     "description":"  The percentage complete of the job",
+                     "args":[
+
+                     ],
+                     "type":{
+                        "kind":"SCALAR",
+                        "name":"Int",
+                        "ofType":null
+                     },
+                     "isDeprecated":false,
+                     "deprecationReason":null
+                  },
+                  {
+                     "name":"state",
+                     "description":"  The state of the job",
                      "args":[
 
                      ],
@@ -1300,20 +1621,6 @@
                      "deprecationReason":null
                   },
                   {
-                     "name":"clipWindow",
-                     "description":"  The clip window that should be processed. If not provided the entire source will be processed.",
-                     "args":[
-
-                     ],
-                     "type":{
-                        "kind":"OBJECT",
-                        "name":"ClipWindow",
-                        "ofType":null
-                     },
-                     "isDeprecated":false,
-                     "deprecationReason":null
-                  },
-                  {
                      "name":"deviceLabel",
                      "description":"  A user defined label for the device this source input was captured on.",
                      "args":[
@@ -1395,65 +1702,6 @@
                "interfaces":[
 
                ],
-               "enumValues":null,
-               "possibleTypes":null
-            },
-            {
-               "kind":"OBJECT",
-               "name":"ClipWindow",
-               "description":"  The start and end time of the clip window that should be processed. startTime should be before endTime.",
-               "fields":[
-                  {
-                     "name":"endTime",
-                     "description":"  The end time of the clip window to be processed.",
-                     "args":[
-
-                     ],
-                     "type":{
-                        "kind":"NON_NULL",
-                        "name":null,
-                        "ofType":{
-                           "kind":"SCALAR",
-                           "name":"Float",
-                           "ofType":null
-                        }
-                     },
-                     "isDeprecated":false,
-                     "deprecationReason":null
-                  },
-                  {
-                     "name":"startTime",
-                     "description":"  The start time of the clip window to be processed.",
-                     "args":[
-
-                     ],
-                     "type":{
-                        "kind":"NON_NULL",
-                        "name":null,
-                        "ofType":{
-                           "kind":"SCALAR",
-                           "name":"Float",
-                           "ofType":null
-                        }
-                     },
-                     "isDeprecated":false,
-                     "deprecationReason":null
-                  }
-               ],
-               "inputFields":null,
-               "interfaces":[
-
-               ],
-               "enumValues":null,
-               "possibleTypes":null
-            },
-            {
-               "kind":"SCALAR",
-               "name":"Float",
-               "description":"Built-in Float",
-               "fields":null,
-               "inputFields":null,
-               "interfaces":null,
                "enumValues":null,
                "possibleTypes":null
             },
@@ -1614,16 +1862,6 @@
                "possibleTypes":null
             },
             {
-               "kind":"SCALAR",
-               "name":"Boolean",
-               "description":"Built-in Boolean",
-               "fields":null,
-               "inputFields":null,
-               "interfaces":null,
-               "enumValues":null,
-               "possibleTypes":null
-            },
-            {
                "kind":"ENUM",
                "name":"TakeType",
                "description":null,
@@ -1682,8 +1920,36 @@
                      "deprecationReason":null
                   },
                   {
-                     "name":"client",
+                     "name":"clipWindow",
                      "description":"  Reference to the client owner of the volume.",
+                     "args":[
+
+                     ],
+                     "type":{
+                        "kind":"OBJECT",
+                        "name":"ClipWindowJobInputType",
+                        "ofType":null
+                     },
+                     "isDeprecated":false,
+                     "deprecationReason":null
+                  },
+                  {
+                     "name":"progress",
+                     "description":null,
+                     "args":[
+
+                     ],
+                     "type":{
+                        "kind":"OBJECT",
+                        "name":"JobProgress",
+                        "ofType":null
+                     },
+                     "isDeprecated":false,
+                     "deprecationReason":null
+                  },
+                  {
+                     "name":"client",
+                     "description":null,
                      "args":[
 
                      ],
@@ -1957,16 +2223,6 @@
                      "ofType":null
                   }
                ],
-               "enumValues":null,
-               "possibleTypes":null
-            },
-            {
-               "kind":"SCALAR",
-               "name":"Int",
-               "description":"Built-in Int",
-               "fields":null,
-               "inputFields":null,
-               "interfaces":null,
                "enumValues":null,
                "possibleTypes":null
             },
@@ -3151,7 +3407,7 @@
             {
                "kind":"INPUT_OBJECT",
                "name":"OptionsInput",
-               "description":"  Options input for a multicam run",
+               "description":"  Options input for a job",
                "fields":null,
                "inputFields":[
                   {
@@ -3160,6 +3416,16 @@
                      "type":{
                         "kind":"SCALAR",
                         "name":"Boolean",
+                        "ofType":null
+                     },
+                     "defaultValue":null
+                  },
+                  {
+                     "name":"mocapModel",
+                     "description":"  Mocap Model",
+                     "type":{
+                        "kind":"ENUM",
+                        "name":"MocapModelOptionsInput",
                         "ofType":null
                      },
                      "defaultValue":null
@@ -3207,6 +3473,12 @@
                "inputFields":null,
                "interfaces":null,
                "enumValues":[
+                  {
+                     "name":"ALL_BLEND",
+                     "description":null,
+                     "isDeprecated":false,
+                     "deprecationReason":null
+                  },
                   {
                      "name":"ALL_BVH",
                      "description":null,
@@ -3290,6 +3562,12 @@
                      "description":null,
                      "isDeprecated":false,
                      "deprecationReason":null
+                  },
+                  {
+                     "name":"SYNC_DATA",
+                     "description":null,
+                     "isDeprecated":false,
+                     "deprecationReason":null
                   }
                ],
                "possibleTypes":null
@@ -3306,16 +3584,6 @@
                      "type":{
                         "kind":"INPUT_OBJECT",
                         "name":"CameraSettingsInput",
-                        "ofType":null
-                     },
-                     "defaultValue":null
-                  },
-                  {
-                     "name":"clipWindow",
-                     "description":"  The clip window that should be processed. If not provided the entire source will be processed.",
-                     "type":{
-                        "kind":"INPUT_OBJECT",
-                        "name":"ClipWindowInput",
                         "ofType":null
                      },
                      "defaultValue":null
@@ -4662,6 +4930,40 @@
                ]
             },
             {
+               "name":"aws_publish",
+               "description":"Tells the service which subscriptions will be published to when this mutation is called. This directive is deprecated use @aws_susbscribe directive instead.",
+               "locations":[
+                  "FIELD_DEFINITION"
+               ],
+               "args":[
+                  {
+                     "name":"subscriptions",
+                     "description":"List of subscriptions which will be published to when this mutation is called.",
+                     "type":{
+                        "kind":"LIST",
+                        "name":null,
+                        "ofType":{
+                           "kind":"SCALAR",
+                           "name":"String",
+                           "ofType":null
+                        }
+                     },
+                     "defaultValue":null
+                  }
+               ]
+            },
+            {
+               "name":"aws_lambda",
+               "description":"Tells the service this field/object has access authorized by a Lambda Authorizer.",
+               "locations":[
+                  "OBJECT",
+                  "FIELD_DEFINITION"
+               ],
+               "args":[
+
+               ]
+            },
+            {
                "name":"aws_oidc",
                "description":"Tells the service this field/object has access authorized by an OIDC token.",
                "locations":[
@@ -4693,26 +4995,14 @@
                ]
             },
             {
-               "name":"aws_publish",
-               "description":"Tells the service which subscriptions will be published to when this mutation is called. This directive is deprecated use @aws_susbscribe directive instead.",
+               "name":"aws_api_key",
+               "description":"Tells the service this field/object has access authorized by an API key.",
                "locations":[
+                  "OBJECT",
                   "FIELD_DEFINITION"
                ],
                "args":[
-                  {
-                     "name":"subscriptions",
-                     "description":"List of subscriptions which will be published to when this mutation is called.",
-                     "type":{
-                        "kind":"LIST",
-                        "name":null,
-                        "ofType":{
-                           "kind":"SCALAR",
-                           "name":"String",
-                           "ofType":null
-                        }
-                     },
-                     "defaultValue":null
-                  }
+
                ]
             },
             {
@@ -4740,8 +5030,8 @@
                ]
             },
             {
-               "name":"aws_api_key",
-               "description":"Tells the service this field/object has access authorized by an API key.",
+               "name":"aws_iam",
+               "description":"Tells the service this field/object has access authorized by sigv4 signing.",
                "locations":[
                   "OBJECT",
                   "FIELD_DEFINITION"
@@ -4774,17 +5064,6 @@
                ]
             },
             {
-               "name":"aws_iam",
-               "description":"Tells the service this field/object has access authorized by sigv4 signing.",
-               "locations":[
-                  "OBJECT",
-                  "FIELD_DEFINITION"
-               ],
-               "args":[
-
-               ]
-            },
-            {
                "name":"aws_subscribe",
                "description":"Tells the service which mutation triggers this subscription.",
                "locations":[
@@ -4805,17 +5084,6 @@
                      },
                      "defaultValue":null
                   }
-               ]
-            },
-            {
-               "name":"aws_lambda",
-               "description":"Tells the service this field/object has access authorized by a Lambda Authorizer.",
-               "locations":[
-                  "OBJECT",
-                  "FIELD_DEFINITION"
-               ],
-               "args":[
-
                ]
             }
          ]

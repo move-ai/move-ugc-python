@@ -3,5 +3,9 @@
     "state": "RUNNING",
     "created": "2023-07-10T12:13:56.615715Z",
     "metadata": "{}",
-    "__typename": "Job"
+    "__typename": "Job",
+    "progress": {
+      "state": "RUNNING",
+      "percentage_complete": 50
+    }
 }

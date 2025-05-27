@@ -6,6 +6,14 @@ from move_ugc.gql_requests.client import expand_client_query
 from move_ugc.schemas.constants import CLIENT_LITERAL, OUTPUTS_LITERAL, SOURCES_LITERAL
 from move_ugc.schemas.gql import UgcGql
 
+expand_clip_window = """
+    clipWindow {
+        startTime
+        endTime
+   }
+"""
+
+
 human_volume_attributes = """
     id
     areaType
@@ -14,6 +22,10 @@ human_volume_attributes = """
     metadata
     name
     state
+    progress{{
+        state
+        percentageComplete
+    }}
     {expand}
     __typename
 """
@@ -46,6 +58,7 @@ create = UgcGql(
     expand={
         CLIENT_LITERAL: expand_client_query,
         SOURCES_LITERAL: expand_sources_w_camera_settings,
+        "clipWindow": expand_clip_window,
     },
 )
 

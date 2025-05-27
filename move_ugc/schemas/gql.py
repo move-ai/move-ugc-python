@@ -39,5 +39,4 @@ class UgcGql(BaseModel):
             if VOLUME_LITERAL in expand:
                 # Add all union type fragments
                 query += "\n".join([human_volume_fragment])
-
         return gql(query.format(expand=expand_query))

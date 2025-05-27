@@ -349,3 +349,28 @@ def volume_list_response(
     volume_response = ExecutionResult(data=fake_list_volume_response)
     mock_transport.side_effect = [introspection_result, volume_response]
     yield volume_response
+
+
+@pytest.fixture
+def volume_create_response_with_clip_window(
+    mock_transport,
+    fake_create_volume_response,
+    introspection_result,
+) -> FakeVolumeJson:
+    """Fixture to return a fake volume response for createVolumeWithHuman mutation with clip window.
+
+    Args:
+        fake_create_volume_response (dict[str, str]): Fake volume json.
+        mock_transport (MockTransport): Mock transport.
+        introspection_result (dict[str, str]): Introspection result.
+
+    Yields:
+        FakeVolumeJson: Fake volume response.
+    """
+    fake_create_volume_response[CREATE_HUMAN_VOLUME_MUTATION]["clipWindow"] = {
+        "startTime": "123.0",
+        "endTime": "1234",
+    }
+    volume_response = ExecutionResult(data=fake_create_volume_response)
+    mock_transport.side_effect = [introspection_result, volume_response]
+    yield volume_response

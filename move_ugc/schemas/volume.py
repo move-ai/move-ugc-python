@@ -7,6 +7,7 @@ from typing import Any, List, Optional
 from pydantic import BaseModel, Field, Json
 
 from move_ugc.schemas.client import Client
+from move_ugc.schemas.progress import JobProgress
 from move_ugc.schemas.sources import AdditionalFileType, Source
 
 ID_LITERAL = "id"
@@ -89,7 +90,8 @@ class HumanVolumeType(BaseModel):
         default=None,
     )
     state: str = Field(
-        description="State of the volume processing.",
+        description="DEPRECATED: Use `progress` instead. State of the volume processing.",
         examples=["FINISHED", "NOT STARTED", "RUNNING", "FAILED"],
         title="Volume state",
     )
+    progress: JobProgress

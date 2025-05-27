@@ -1052,6 +1052,10 @@ snapshots[
         },
         "name": "fake_volume",
         "outputs": None,
+        "progress": {
+            "percentage_complete": 50,
+            "state": "RUNNING",
+        },
         "sources": None,
         "state": "RUNNING",
     },

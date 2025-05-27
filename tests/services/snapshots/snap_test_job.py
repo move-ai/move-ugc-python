@@ -26,6 +26,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     __typename
   }
 }""",
@@ -67,6 +71,10 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,
@@ -92,6 +100,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     client {
       id
       name
@@ -153,6 +165,10 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,
@@ -178,6 +194,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     outputs {
       format
       file {
@@ -296,6 +316,10 @@ snapshots[
             "key": "fbx",
         },
     ],
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,
@@ -321,6 +345,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     rig {
       name
       __typename
@@ -366,6 +394,10 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": {
         "name": "move_mo",
     },
@@ -393,6 +425,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     take {
       id
       created
@@ -441,6 +477,10 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": {
@@ -487,6 +527,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     __typename
   }
 }""",
@@ -528,6 +572,10 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,
@@ -553,6 +601,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     __typename
   }
 }""",
@@ -597,6 +649,10 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,
@@ -622,6 +678,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     client {
       id
       name
@@ -686,6 +746,10 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,
@@ -711,6 +775,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     outputs {
       format
       file {
@@ -832,6 +900,10 @@ snapshots[
             "key": "fbx",
         },
     ],
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,
@@ -857,6 +929,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     rig {
       name
       __typename
@@ -905,6 +981,10 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": {
         "name": "move_mo",
     },
@@ -932,6 +1012,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     take {
       id
       created
@@ -983,6 +1067,10 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": {
@@ -1029,6 +1117,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     __typename
   }
 }""",
@@ -1073,6 +1165,10 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,
@@ -1098,6 +1194,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     __typename
   }
 }""",
@@ -1139,6 +1239,10 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,
@@ -1164,6 +1268,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     client {
       id
       name
@@ -1225,6 +1333,10 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,
@@ -1250,6 +1362,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     outputs {
       format
       file {
@@ -1368,6 +1484,10 @@ snapshots[
             "key": "fbx",
         },
     ],
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,
@@ -1393,6 +1513,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     rig {
       name
       __typename
@@ -1438,6 +1562,10 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": {
         "name": "move_mo",
     },
@@ -1465,6 +1593,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     take {
       id
       created
@@ -1513,6 +1645,10 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": {
@@ -1559,6 +1695,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     __typename
   }
 }""",
@@ -1600,6 +1740,10 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,
@@ -1625,6 +1769,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     __typename
   }
 }""",
@@ -1669,6 +1817,10 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,
@@ -1694,6 +1846,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     client {
       id
       name
@@ -1758,6 +1914,10 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,
@@ -1783,6 +1943,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     outputs {
       format
       file {
@@ -1904,6 +2068,10 @@ snapshots[
             "key": "fbx",
         },
     ],
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,
@@ -1929,6 +2097,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     rig {
       name
       __typename
@@ -1977,6 +2149,10 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": {
         "name": "move_mo",
     },
@@ -2004,6 +2180,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     take {
       id
       created
@@ -2055,6 +2235,10 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": {
@@ -2101,6 +2285,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     __typename
   }
 }""",
@@ -2145,6 +2333,10 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,
@@ -2168,6 +2360,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     __typename
   }
 }""",
@@ -2210,6 +2406,10 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,
@@ -2233,6 +2433,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     client {
       id
       name
@@ -2295,6 +2499,10 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,
@@ -2318,6 +2526,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     outputs {
       format
       file {
@@ -2437,6 +2649,10 @@ snapshots[
             "key": "fbx",
         },
     ],
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,
@@ -2460,6 +2676,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     take {
       id
       created
@@ -2509,6 +2729,10 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": {
@@ -2553,6 +2777,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     __typename
   }
 }""",
@@ -2595,6 +2823,10 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,
@@ -2618,6 +2850,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     __typename
   }
 }""",
@@ -2663,6 +2899,10 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,
@@ -2686,6 +2926,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     client {
       id
       name
@@ -2751,6 +2995,10 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,
@@ -2774,6 +3022,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     outputs {
       format
       file {
@@ -2896,6 +3148,10 @@ snapshots[
             "key": "fbx",
         },
     ],
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,
@@ -2919,6 +3175,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     take {
       id
       created
@@ -2971,6 +3231,10 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": {
@@ -3015,6 +3279,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     __typename
   }
 }""",
@@ -3060,6 +3328,10 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,
@@ -3105,6 +3377,10 @@ snapshots["TestJobService.test_list[with_take_id] job_list_request"] = [
       metadata
       state
       name
+      progress {
+        state
+        percentageComplete
+      }
       __typename
     }
   }
@@ -3144,6 +3420,10 @@ snapshots["TestJobService.test_list[with_take_id] list_response"] = {
             },
             "name": "",
             "outputs": None,
+            "progress": {
+                "percentage_complete": 50,
+                "state": "RUNNING",
+            },
             "rig": None,
             "state": "RUNNING",
             "take": None,
@@ -3184,6 +3464,10 @@ snapshots["TestJobService.test_list[without_take_id] job_list_request"] = [
       metadata
       state
       name
+      progress {
+        state
+        percentageComplete
+      }
       __typename
     }
   }
@@ -3223,6 +3507,10 @@ snapshots["TestJobService.test_list[without_take_id] list_response"] = {
             },
             "name": "",
             "outputs": None,
+            "progress": {
+                "percentage_complete": 50,
+                "state": "RUNNING",
+            },
             "rig": None,
             "state": "RUNNING",
             "take": None,
@@ -3273,6 +3561,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     __typename
   }
 }""",
@@ -3310,6 +3602,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     __typename
   }
 }""",
@@ -3347,6 +3643,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     __typename
   }
 }""",
@@ -3384,6 +3684,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     __typename
   }
 }""",
@@ -3421,6 +3725,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     __typename
   }
 }""",
@@ -3461,6 +3769,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     __typename
   }
 }""",
@@ -3501,6 +3813,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     __typename
   }
 }""",
@@ -3541,6 +3857,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     __typename
   }
 }""",
@@ -3570,6 +3890,10 @@ snapshots["TestJobService.test_retrieve[empty_expand] retrieve_query_expand_[]"]
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     __typename
   }
 }""",
@@ -3602,6 +3926,10 @@ snapshots["TestJobService.test_retrieve[empty_expand] retrieve_response_expand_[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,
@@ -3618,6 +3946,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     client {
       id
       name
@@ -3672,6 +4004,10 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,
@@ -3688,6 +4024,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     outputs {
       format
       file {
@@ -3799,6 +4139,10 @@ snapshots[
             "key": "fbx",
         },
     ],
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,
@@ -3813,6 +4157,10 @@ snapshots["TestJobService.test_retrieve[expand_rig] retrieve_query_expand_rig"] 
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     rig {
       name
       __typename
@@ -3849,6 +4197,10 @@ snapshots["TestJobService.test_retrieve[expand_rig] retrieve_response_expand_rig
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": {
         "name": "move_mo",
     },
@@ -3865,6 +4217,10 @@ snapshots["TestJobService.test_retrieve[expand_take] retrieve_query_expand_take"
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     take {
       id
       created
@@ -3904,6 +4260,10 @@ snapshots["TestJobService.test_retrieve[expand_take] retrieve_response_expand_ta
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": {
@@ -3939,6 +4299,10 @@ snapshots["TestJobService.test_retrieve[no_expand] retrieve_query_expand_None"] 
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     __typename
   }
 }""",
@@ -3971,6 +4335,10 @@ snapshots["TestJobService.test_retrieve[no_expand] retrieve_response_expand_None
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,
@@ -3985,6 +4353,10 @@ snapshots["TestJobService.test_update update_mutation"] = [
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     __typename
   }
 }""",
@@ -4019,6 +4391,10 @@ snapshots["TestJobService.test_update update_response"] = {
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,
