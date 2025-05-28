@@ -1,3 +1,9 @@
+## 3.3.1 (2025-05-28)
+
+### Fix
+
+- adjusted a comment regarding teh default outputs in the latest added example for the single camera end to end test case
+
 ## 3.3.0 (2025-05-28)
 
 ### Feat
