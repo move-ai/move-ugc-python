@@ -27,6 +27,7 @@ class TestVolumeService(ServicesTestCase):
             (["client"], "volume_create_response_with_client"),
             ([SOURCES_LITERAL], "volume_create_response_with_video_source"),
             ([SOURCES_LITERAL], "volume_create_res_with_additional_sources"),
+            (["clipWindow"], "volume_create_response_with_clip_window"),
         ],
         ids=[
             "no_expand",
@@ -34,6 +35,7 @@ class TestVolumeService(ServicesTestCase):
             "expand_client",
             "expand_video_file",
             "expand_additional_sources",
+            "expand_clip_window",
         ],
     )
     def test_create(  # noqa: WPS211

@@ -26,6 +26,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     __typename
   }
 }""",
@@ -53,6 +57,17 @@ snapshots[
         "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
     ),
     "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+    "inputs": {
+        "clip_window": {
+            "end_time": 10.0,
+            "start_time": 10.0,
+        },
+        "number_of_actors": 1,
+        "options": {
+            "trackBall": True,
+            "trackFingers": False,
+        },
+    },
     "metadata": {
         "analysis": "UmKdTFlLMIuIvJkRJnoM",
         "decade": "zAvJMvacZIYSmMsDUNvC",
@@ -67,6 +82,10 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,
@@ -92,6 +111,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     client {
       id
       name
@@ -139,6 +162,17 @@ snapshots[
         "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
     ),
     "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+    "inputs": {
+        "clip_window": {
+            "end_time": 10.0,
+            "start_time": 10.0,
+        },
+        "number_of_actors": 1,
+        "options": {
+            "trackBall": True,
+            "trackFingers": False,
+        },
+    },
     "metadata": {
         "analysis": "UmKdTFlLMIuIvJkRJnoM",
         "decade": "zAvJMvacZIYSmMsDUNvC",
@@ -153,6 +187,10 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,
@@ -178,6 +216,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     outputs {
       format
       file {
@@ -219,6 +261,17 @@ snapshots[
         "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
     ),
     "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+    "inputs": {
+        "clip_window": {
+            "end_time": 10.0,
+            "start_time": 10.0,
+        },
+        "number_of_actors": 1,
+        "options": {
+            "trackBall": True,
+            "trackFingers": False,
+        },
+    },
     "metadata": {
         "analysis": "UmKdTFlLMIuIvJkRJnoM",
         "decade": "zAvJMvacZIYSmMsDUNvC",
@@ -296,6 +349,10 @@ snapshots[
             "key": "fbx",
         },
     ],
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,
@@ -321,6 +378,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     rig {
       name
       __typename
@@ -352,6 +413,17 @@ snapshots[
         "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
     ),
     "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+    "inputs": {
+        "clip_window": {
+            "end_time": 10.0,
+            "start_time": 10.0,
+        },
+        "number_of_actors": 1,
+        "options": {
+            "trackBall": True,
+            "trackFingers": False,
+        },
+    },
     "metadata": {
         "analysis": "UmKdTFlLMIuIvJkRJnoM",
         "decade": "zAvJMvacZIYSmMsDUNvC",
@@ -366,6 +438,10 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": {
         "name": "move_mo",
     },
@@ -393,6 +469,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     take {
       id
       created
@@ -427,6 +507,17 @@ snapshots[
         "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
     ),
     "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+    "inputs": {
+        "clip_window": {
+            "end_time": 10.0,
+            "start_time": 10.0,
+        },
+        "number_of_actors": 1,
+        "options": {
+            "trackBall": True,
+            "trackFingers": False,
+        },
+    },
     "metadata": {
         "analysis": "UmKdTFlLMIuIvJkRJnoM",
         "decade": "zAvJMvacZIYSmMsDUNvC",
@@ -441,6 +532,10 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": {
@@ -487,6 +582,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     __typename
   }
 }""",
@@ -514,6 +613,17 @@ snapshots[
         "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
     ),
     "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+    "inputs": {
+        "clip_window": {
+            "end_time": 10.0,
+            "start_time": 10.0,
+        },
+        "number_of_actors": 1,
+        "options": {
+            "trackBall": True,
+            "trackFingers": False,
+        },
+    },
     "metadata": {
         "analysis": "UmKdTFlLMIuIvJkRJnoM",
         "decade": "zAvJMvacZIYSmMsDUNvC",
@@ -528,6 +638,10 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,
@@ -553,6 +667,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     __typename
   }
 }""",
@@ -583,6 +701,17 @@ snapshots[
         "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
     ),
     "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+    "inputs": {
+        "clip_window": {
+            "end_time": 10.0,
+            "start_time": 10.0,
+        },
+        "number_of_actors": 1,
+        "options": {
+            "trackBall": True,
+            "trackFingers": False,
+        },
+    },
     "metadata": {
         "analysis": "UmKdTFlLMIuIvJkRJnoM",
         "decade": "zAvJMvacZIYSmMsDUNvC",
@@ -597,6 +726,10 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,
@@ -622,6 +755,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     client {
       id
       name
@@ -672,6 +809,17 @@ snapshots[
         "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
     ),
     "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+    "inputs": {
+        "clip_window": {
+            "end_time": 10.0,
+            "start_time": 10.0,
+        },
+        "number_of_actors": 1,
+        "options": {
+            "trackBall": True,
+            "trackFingers": False,
+        },
+    },
     "metadata": {
         "analysis": "UmKdTFlLMIuIvJkRJnoM",
         "decade": "zAvJMvacZIYSmMsDUNvC",
@@ -686,6 +834,10 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,
@@ -711,6 +863,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     outputs {
       format
       file {
@@ -755,6 +911,17 @@ snapshots[
         "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
     ),
     "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+    "inputs": {
+        "clip_window": {
+            "end_time": 10.0,
+            "start_time": 10.0,
+        },
+        "number_of_actors": 1,
+        "options": {
+            "trackBall": True,
+            "trackFingers": False,
+        },
+    },
     "metadata": {
         "analysis": "UmKdTFlLMIuIvJkRJnoM",
         "decade": "zAvJMvacZIYSmMsDUNvC",
@@ -832,6 +999,10 @@ snapshots[
             "key": "fbx",
         },
     ],
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,
@@ -857,6 +1028,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     rig {
       name
       __typename
@@ -891,6 +1066,17 @@ snapshots[
         "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
     ),
     "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+    "inputs": {
+        "clip_window": {
+            "end_time": 10.0,
+            "start_time": 10.0,
+        },
+        "number_of_actors": 1,
+        "options": {
+            "trackBall": True,
+            "trackFingers": False,
+        },
+    },
     "metadata": {
         "analysis": "UmKdTFlLMIuIvJkRJnoM",
         "decade": "zAvJMvacZIYSmMsDUNvC",
@@ -905,6 +1091,10 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": {
         "name": "move_mo",
     },
@@ -932,6 +1122,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     take {
       id
       created
@@ -969,6 +1163,17 @@ snapshots[
         "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
     ),
     "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+    "inputs": {
+        "clip_window": {
+            "end_time": 10.0,
+            "start_time": 10.0,
+        },
+        "number_of_actors": 1,
+        "options": {
+            "trackBall": True,
+            "trackFingers": False,
+        },
+    },
     "metadata": {
         "analysis": "UmKdTFlLMIuIvJkRJnoM",
         "decade": "zAvJMvacZIYSmMsDUNvC",
@@ -983,6 +1188,10 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": {
@@ -1029,6 +1238,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     __typename
   }
 }""",
@@ -1059,6 +1272,17 @@ snapshots[
         "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
     ),
     "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+    "inputs": {
+        "clip_window": {
+            "end_time": 10.0,
+            "start_time": 10.0,
+        },
+        "number_of_actors": 1,
+        "options": {
+            "trackBall": True,
+            "trackFingers": False,
+        },
+    },
     "metadata": {
         "analysis": "UmKdTFlLMIuIvJkRJnoM",
         "decade": "zAvJMvacZIYSmMsDUNvC",
@@ -1073,6 +1297,10 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,
@@ -1098,6 +1326,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     __typename
   }
 }""",
@@ -1125,6 +1357,17 @@ snapshots[
         "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
     ),
     "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+    "inputs": {
+        "clip_window": {
+            "end_time": 10.0,
+            "start_time": 10.0,
+        },
+        "number_of_actors": 1,
+        "options": {
+            "trackBall": True,
+            "trackFingers": False,
+        },
+    },
     "metadata": {
         "analysis": "UmKdTFlLMIuIvJkRJnoM",
         "decade": "zAvJMvacZIYSmMsDUNvC",
@@ -1139,6 +1382,10 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,
@@ -1164,6 +1411,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     client {
       id
       name
@@ -1211,6 +1462,17 @@ snapshots[
         "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
     ),
     "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+    "inputs": {
+        "clip_window": {
+            "end_time": 10.0,
+            "start_time": 10.0,
+        },
+        "number_of_actors": 1,
+        "options": {
+            "trackBall": True,
+            "trackFingers": False,
+        },
+    },
     "metadata": {
         "analysis": "UmKdTFlLMIuIvJkRJnoM",
         "decade": "zAvJMvacZIYSmMsDUNvC",
@@ -1225,6 +1487,10 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,
@@ -1250,6 +1516,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     outputs {
       format
       file {
@@ -1291,6 +1561,17 @@ snapshots[
         "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
     ),
     "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+    "inputs": {
+        "clip_window": {
+            "end_time": 10.0,
+            "start_time": 10.0,
+        },
+        "number_of_actors": 1,
+        "options": {
+            "trackBall": True,
+            "trackFingers": False,
+        },
+    },
     "metadata": {
         "analysis": "UmKdTFlLMIuIvJkRJnoM",
         "decade": "zAvJMvacZIYSmMsDUNvC",
@@ -1368,6 +1649,10 @@ snapshots[
             "key": "fbx",
         },
     ],
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,
@@ -1393,6 +1678,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     rig {
       name
       __typename
@@ -1424,6 +1713,17 @@ snapshots[
         "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
     ),
     "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+    "inputs": {
+        "clip_window": {
+            "end_time": 10.0,
+            "start_time": 10.0,
+        },
+        "number_of_actors": 1,
+        "options": {
+            "trackBall": True,
+            "trackFingers": False,
+        },
+    },
     "metadata": {
         "analysis": "UmKdTFlLMIuIvJkRJnoM",
         "decade": "zAvJMvacZIYSmMsDUNvC",
@@ -1438,6 +1738,10 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": {
         "name": "move_mo",
     },
@@ -1465,6 +1769,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     take {
       id
       created
@@ -1499,6 +1807,17 @@ snapshots[
         "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
     ),
     "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+    "inputs": {
+        "clip_window": {
+            "end_time": 10.0,
+            "start_time": 10.0,
+        },
+        "number_of_actors": 1,
+        "options": {
+            "trackBall": True,
+            "trackFingers": False,
+        },
+    },
     "metadata": {
         "analysis": "UmKdTFlLMIuIvJkRJnoM",
         "decade": "zAvJMvacZIYSmMsDUNvC",
@@ -1513,6 +1832,10 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": {
@@ -1559,6 +1882,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     __typename
   }
 }""",
@@ -1586,6 +1913,17 @@ snapshots[
         "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
     ),
     "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+    "inputs": {
+        "clip_window": {
+            "end_time": 10.0,
+            "start_time": 10.0,
+        },
+        "number_of_actors": 1,
+        "options": {
+            "trackBall": True,
+            "trackFingers": False,
+        },
+    },
     "metadata": {
         "analysis": "UmKdTFlLMIuIvJkRJnoM",
         "decade": "zAvJMvacZIYSmMsDUNvC",
@@ -1600,6 +1938,10 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,
@@ -1625,6 +1967,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     __typename
   }
 }""",
@@ -1655,6 +2001,17 @@ snapshots[
         "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
     ),
     "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+    "inputs": {
+        "clip_window": {
+            "end_time": 10.0,
+            "start_time": 10.0,
+        },
+        "number_of_actors": 1,
+        "options": {
+            "trackBall": True,
+            "trackFingers": False,
+        },
+    },
     "metadata": {
         "analysis": "UmKdTFlLMIuIvJkRJnoM",
         "decade": "zAvJMvacZIYSmMsDUNvC",
@@ -1669,6 +2026,10 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,
@@ -1694,6 +2055,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     client {
       id
       name
@@ -1744,6 +2109,17 @@ snapshots[
         "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
     ),
     "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+    "inputs": {
+        "clip_window": {
+            "end_time": 10.0,
+            "start_time": 10.0,
+        },
+        "number_of_actors": 1,
+        "options": {
+            "trackBall": True,
+            "trackFingers": False,
+        },
+    },
     "metadata": {
         "analysis": "UmKdTFlLMIuIvJkRJnoM",
         "decade": "zAvJMvacZIYSmMsDUNvC",
@@ -1758,6 +2134,10 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,
@@ -1783,6 +2163,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     outputs {
       format
       file {
@@ -1827,6 +2211,17 @@ snapshots[
         "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
     ),
     "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+    "inputs": {
+        "clip_window": {
+            "end_time": 10.0,
+            "start_time": 10.0,
+        },
+        "number_of_actors": 1,
+        "options": {
+            "trackBall": True,
+            "trackFingers": False,
+        },
+    },
     "metadata": {
         "analysis": "UmKdTFlLMIuIvJkRJnoM",
         "decade": "zAvJMvacZIYSmMsDUNvC",
@@ -1904,6 +2299,10 @@ snapshots[
             "key": "fbx",
         },
     ],
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,
@@ -1929,6 +2328,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     rig {
       name
       __typename
@@ -1963,6 +2366,17 @@ snapshots[
         "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
     ),
     "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+    "inputs": {
+        "clip_window": {
+            "end_time": 10.0,
+            "start_time": 10.0,
+        },
+        "number_of_actors": 1,
+        "options": {
+            "trackBall": True,
+            "trackFingers": False,
+        },
+    },
     "metadata": {
         "analysis": "UmKdTFlLMIuIvJkRJnoM",
         "decade": "zAvJMvacZIYSmMsDUNvC",
@@ -1977,6 +2391,10 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": {
         "name": "move_mo",
     },
@@ -2004,6 +2422,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     take {
       id
       created
@@ -2041,6 +2463,17 @@ snapshots[
         "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
     ),
     "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+    "inputs": {
+        "clip_window": {
+            "end_time": 10.0,
+            "start_time": 10.0,
+        },
+        "number_of_actors": 1,
+        "options": {
+            "trackBall": True,
+            "trackFingers": False,
+        },
+    },
     "metadata": {
         "analysis": "UmKdTFlLMIuIvJkRJnoM",
         "decade": "zAvJMvacZIYSmMsDUNvC",
@@ -2055,6 +2488,10 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": {
@@ -2101,6 +2538,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     __typename
   }
 }""",
@@ -2131,6 +2572,17 @@ snapshots[
         "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
     ),
     "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+    "inputs": {
+        "clip_window": {
+            "end_time": 10.0,
+            "start_time": 10.0,
+        },
+        "number_of_actors": 1,
+        "options": {
+            "trackBall": True,
+            "trackFingers": False,
+        },
+    },
     "metadata": {
         "analysis": "UmKdTFlLMIuIvJkRJnoM",
         "decade": "zAvJMvacZIYSmMsDUNvC",
@@ -2145,6 +2597,10 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,
@@ -2168,6 +2624,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     __typename
   }
 }""",
@@ -2196,6 +2656,17 @@ snapshots[
         "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
     ),
     "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+    "inputs": {
+        "clip_window": {
+            "end_time": 10.0,
+            "start_time": 10.0,
+        },
+        "number_of_actors": 1,
+        "options": {
+            "trackBall": True,
+            "trackFingers": False,
+        },
+    },
     "metadata": {
         "analysis": "UmKdTFlLMIuIvJkRJnoM",
         "decade": "zAvJMvacZIYSmMsDUNvC",
@@ -2210,6 +2681,10 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,
@@ -2233,6 +2708,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     client {
       id
       name
@@ -2281,6 +2760,17 @@ snapshots[
         "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
     ),
     "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+    "inputs": {
+        "clip_window": {
+            "end_time": 10.0,
+            "start_time": 10.0,
+        },
+        "number_of_actors": 1,
+        "options": {
+            "trackBall": True,
+            "trackFingers": False,
+        },
+    },
     "metadata": {
         "analysis": "UmKdTFlLMIuIvJkRJnoM",
         "decade": "zAvJMvacZIYSmMsDUNvC",
@@ -2295,6 +2785,10 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,
@@ -2318,6 +2812,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     outputs {
       format
       file {
@@ -2360,6 +2858,17 @@ snapshots[
         "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
     ),
     "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+    "inputs": {
+        "clip_window": {
+            "end_time": 10.0,
+            "start_time": 10.0,
+        },
+        "number_of_actors": 1,
+        "options": {
+            "trackBall": True,
+            "trackFingers": False,
+        },
+    },
     "metadata": {
         "analysis": "UmKdTFlLMIuIvJkRJnoM",
         "decade": "zAvJMvacZIYSmMsDUNvC",
@@ -2437,6 +2946,10 @@ snapshots[
             "key": "fbx",
         },
     ],
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,
@@ -2460,6 +2973,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     take {
       id
       created
@@ -2495,6 +3012,17 @@ snapshots[
         "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
     ),
     "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+    "inputs": {
+        "clip_window": {
+            "end_time": 10.0,
+            "start_time": 10.0,
+        },
+        "number_of_actors": 1,
+        "options": {
+            "trackBall": True,
+            "trackFingers": False,
+        },
+    },
     "metadata": {
         "analysis": "UmKdTFlLMIuIvJkRJnoM",
         "decade": "zAvJMvacZIYSmMsDUNvC",
@@ -2509,6 +3037,10 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": {
@@ -2553,6 +3085,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     __typename
   }
 }""",
@@ -2581,6 +3117,17 @@ snapshots[
         "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
     ),
     "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+    "inputs": {
+        "clip_window": {
+            "end_time": 10.0,
+            "start_time": 10.0,
+        },
+        "number_of_actors": 1,
+        "options": {
+            "trackBall": True,
+            "trackFingers": False,
+        },
+    },
     "metadata": {
         "analysis": "UmKdTFlLMIuIvJkRJnoM",
         "decade": "zAvJMvacZIYSmMsDUNvC",
@@ -2595,6 +3142,10 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,
@@ -2618,6 +3169,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     __typename
   }
 }""",
@@ -2649,6 +3204,17 @@ snapshots[
         "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
     ),
     "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+    "inputs": {
+        "clip_window": {
+            "end_time": 10.0,
+            "start_time": 10.0,
+        },
+        "number_of_actors": 1,
+        "options": {
+            "trackBall": True,
+            "trackFingers": False,
+        },
+    },
     "metadata": {
         "analysis": "UmKdTFlLMIuIvJkRJnoM",
         "decade": "zAvJMvacZIYSmMsDUNvC",
@@ -2663,6 +3229,10 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,
@@ -2686,6 +3256,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     client {
       id
       name
@@ -2737,6 +3311,17 @@ snapshots[
         "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
     ),
     "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+    "inputs": {
+        "clip_window": {
+            "end_time": 10.0,
+            "start_time": 10.0,
+        },
+        "number_of_actors": 1,
+        "options": {
+            "trackBall": True,
+            "trackFingers": False,
+        },
+    },
     "metadata": {
         "analysis": "UmKdTFlLMIuIvJkRJnoM",
         "decade": "zAvJMvacZIYSmMsDUNvC",
@@ -2751,6 +3336,10 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,
@@ -2774,6 +3363,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     outputs {
       format
       file {
@@ -2819,6 +3412,17 @@ snapshots[
         "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
     ),
     "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+    "inputs": {
+        "clip_window": {
+            "end_time": 10.0,
+            "start_time": 10.0,
+        },
+        "number_of_actors": 1,
+        "options": {
+            "trackBall": True,
+            "trackFingers": False,
+        },
+    },
     "metadata": {
         "analysis": "UmKdTFlLMIuIvJkRJnoM",
         "decade": "zAvJMvacZIYSmMsDUNvC",
@@ -2896,6 +3500,10 @@ snapshots[
             "key": "fbx",
         },
     ],
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,
@@ -2919,6 +3527,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     take {
       id
       created
@@ -2957,6 +3569,17 @@ snapshots[
         "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
     ),
     "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+    "inputs": {
+        "clip_window": {
+            "end_time": 10.0,
+            "start_time": 10.0,
+        },
+        "number_of_actors": 1,
+        "options": {
+            "trackBall": True,
+            "trackFingers": False,
+        },
+    },
     "metadata": {
         "analysis": "UmKdTFlLMIuIvJkRJnoM",
         "decade": "zAvJMvacZIYSmMsDUNvC",
@@ -2971,6 +3594,10 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": {
@@ -3015,6 +3642,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     __typename
   }
 }""",
@@ -3046,6 +3677,17 @@ snapshots[
         "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
     ),
     "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+    "inputs": {
+        "clip_window": {
+            "end_time": 10.0,
+            "start_time": 10.0,
+        },
+        "number_of_actors": 1,
+        "options": {
+            "trackBall": True,
+            "trackFingers": False,
+        },
+    },
     "metadata": {
         "analysis": "UmKdTFlLMIuIvJkRJnoM",
         "decade": "zAvJMvacZIYSmMsDUNvC",
@@ -3060,6 +3702,10 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,
@@ -3105,6 +3751,10 @@ snapshots["TestJobService.test_list[with_take_id] job_list_request"] = [
       metadata
       state
       name
+      progress {
+        state
+        percentageComplete
+      }
       __typename
     }
   }
@@ -3130,6 +3780,17 @@ snapshots["TestJobService.test_list[with_take_id] list_response"] = {
                 "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
             ),
             "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+            "inputs": {
+                "clip_window": {
+                    "end_time": 10.0,
+                    "start_time": 10.0,
+                },
+                "number_of_actors": 1,
+                "options": {
+                    "trackBall": True,
+                    "trackFingers": False,
+                },
+            },
             "metadata": {
                 "analysis": "UmKdTFlLMIuIvJkRJnoM",
                 "decade": "zAvJMvacZIYSmMsDUNvC",
@@ -3144,6 +3805,10 @@ snapshots["TestJobService.test_list[with_take_id] list_response"] = {
             },
             "name": "",
             "outputs": None,
+            "progress": {
+                "percentage_complete": 50,
+                "state": "RUNNING",
+            },
             "rig": None,
             "state": "RUNNING",
             "take": None,
@@ -3184,6 +3849,10 @@ snapshots["TestJobService.test_list[without_take_id] job_list_request"] = [
       metadata
       state
       name
+      progress {
+        state
+        percentageComplete
+      }
       __typename
     }
   }
@@ -3209,6 +3878,17 @@ snapshots["TestJobService.test_list[without_take_id] list_response"] = {
                 "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
             ),
             "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+            "inputs": {
+                "clip_window": {
+                    "end_time": 10.0,
+                    "start_time": 10.0,
+                },
+                "number_of_actors": 1,
+                "options": {
+                    "trackBall": True,
+                    "trackFingers": False,
+                },
+            },
             "metadata": {
                 "analysis": "UmKdTFlLMIuIvJkRJnoM",
                 "decade": "zAvJMvacZIYSmMsDUNvC",
@@ -3223,6 +3903,10 @@ snapshots["TestJobService.test_list[without_take_id] list_response"] = {
             },
             "name": "",
             "outputs": None,
+            "progress": {
+                "percentage_complete": 50,
+                "state": "RUNNING",
+            },
             "rig": None,
             "state": "RUNNING",
             "take": None,
@@ -3273,6 +3957,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     __typename
   }
 }""",
@@ -3310,6 +3998,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     __typename
   }
 }""",
@@ -3347,6 +4039,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     __typename
   }
 }""",
@@ -3384,6 +4080,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     __typename
   }
 }""",
@@ -3421,6 +4121,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     __typename
   }
 }""",
@@ -3461,6 +4165,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     __typename
   }
 }""",
@@ -3501,6 +4209,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     __typename
   }
 }""",
@@ -3541,6 +4253,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     __typename
   }
 }""",
@@ -3570,6 +4286,10 @@ snapshots["TestJobService.test_retrieve[empty_expand] retrieve_query_expand_[]"]
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     __typename
   }
 }""",
@@ -3588,6 +4308,17 @@ snapshots["TestJobService.test_retrieve[empty_expand] retrieve_response_expand_[
         "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
     ),
     "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+    "inputs": {
+        "clip_window": {
+            "end_time": 10.0,
+            "start_time": 10.0,
+        },
+        "number_of_actors": 1,
+        "options": {
+            "trackBall": True,
+            "trackFingers": False,
+        },
+    },
     "metadata": {
         "analysis": "UmKdTFlLMIuIvJkRJnoM",
         "decade": "zAvJMvacZIYSmMsDUNvC",
@@ -3602,6 +4333,10 @@ snapshots["TestJobService.test_retrieve[empty_expand] retrieve_response_expand_[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,
@@ -3618,6 +4353,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     client {
       id
       name
@@ -3658,6 +4397,17 @@ snapshots[
         "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
     ),
     "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+    "inputs": {
+        "clip_window": {
+            "end_time": 10.0,
+            "start_time": 10.0,
+        },
+        "number_of_actors": 1,
+        "options": {
+            "trackBall": True,
+            "trackFingers": False,
+        },
+    },
     "metadata": {
         "analysis": "UmKdTFlLMIuIvJkRJnoM",
         "decade": "zAvJMvacZIYSmMsDUNvC",
@@ -3672,6 +4422,93 @@ snapshots[
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
+    "rig": None,
+    "state": "RUNNING",
+    "take": None,
+}
+
+snapshots[
+    "TestJobService.test_retrieve[expand_inputs] retrieve_query_expand_inputs"
+] = [
+    [
+        """query retrieve($id: ID!) {
+  getJob(jobId: $id) {
+    id
+    created
+    metadata
+    state
+    name
+    progress {
+      state
+      percentageComplete
+    }
+    inputs {
+      clipWindow {
+        startTime
+        endTime
+      }
+      numberOfActors
+      options {
+        floorPlane
+        mocapModel
+        trackBall
+        trackFingers
+        trackJerseyNumbers
+      }
+    }
+    __typename
+  }
+}""",
+    ],
+    {
+        "operation_name": None,
+        "variable_values": {
+            "id": "bdc68ffa-06c7-44f6-b4c4-614f530e9daa",
+        },
+    },
+]
+
+snapshots[
+    "TestJobService.test_retrieve[expand_inputs] retrieve_response_expand_inputs"
+] = {
+    "client": None,
+    "created": GenericRepr(
+        "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
+    ),
+    "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+    "inputs": {
+        "clip_window": {
+            "end_time": 8658.0,
+            "start_time": 8658.0,
+        },
+        "number_of_actors": 849,
+        "options": {
+            "trackBall": True,
+            "trackFingers": False,
+        },
+    },
+    "metadata": {
+        "analysis": "UmKdTFlLMIuIvJkRJnoM",
+        "decade": "zAvJMvacZIYSmMsDUNvC",
+        "director": "KNmpExWtgQLcAEuRyBkN",
+        "draw": "PnbQcVNCliYtuFCSJkGb",
+        "house": "aYyOUXkJPUjPJGpDdakX",
+        "huge": "eFaLyHGEQQpSzpRFSYEm",
+        "last": "dnZCcfgZNBnaEkbOzIyO",
+        "other": "XbBPNrbhtJksbBuoWXSK",
+        "table": "ACMVZcKAiGBcYgCzHAad",
+        "trouble": "UgnhIyaDJzohUigyDYZf",
+    },
+    "name": "",
+    "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,
@@ -3688,6 +4525,10 @@ snapshots[
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     outputs {
       format
       file {
@@ -3722,6 +4563,17 @@ snapshots[
         "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
     ),
     "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+    "inputs": {
+        "clip_window": {
+            "end_time": 10.0,
+            "start_time": 10.0,
+        },
+        "number_of_actors": 1,
+        "options": {
+            "trackBall": True,
+            "trackFingers": False,
+        },
+    },
     "metadata": {
         "analysis": "UmKdTFlLMIuIvJkRJnoM",
         "decade": "zAvJMvacZIYSmMsDUNvC",
@@ -3799,6 +4651,10 @@ snapshots[
             "key": "fbx",
         },
     ],
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,
@@ -3813,6 +4669,10 @@ snapshots["TestJobService.test_retrieve[expand_rig] retrieve_query_expand_rig"] 
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     rig {
       name
       __typename
@@ -3835,6 +4695,17 @@ snapshots["TestJobService.test_retrieve[expand_rig] retrieve_response_expand_rig
         "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
     ),
     "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+    "inputs": {
+        "clip_window": {
+            "end_time": 10.0,
+            "start_time": 10.0,
+        },
+        "number_of_actors": 1,
+        "options": {
+            "trackBall": True,
+            "trackFingers": False,
+        },
+    },
     "metadata": {
         "analysis": "UmKdTFlLMIuIvJkRJnoM",
         "decade": "zAvJMvacZIYSmMsDUNvC",
@@ -3849,6 +4720,10 @@ snapshots["TestJobService.test_retrieve[expand_rig] retrieve_response_expand_rig
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": {
         "name": "move_mo",
     },
@@ -3865,6 +4740,10 @@ snapshots["TestJobService.test_retrieve[expand_take] retrieve_query_expand_take"
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     take {
       id
       created
@@ -3890,6 +4769,17 @@ snapshots["TestJobService.test_retrieve[expand_take] retrieve_response_expand_ta
         "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
     ),
     "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+    "inputs": {
+        "clip_window": {
+            "end_time": 10.0,
+            "start_time": 10.0,
+        },
+        "number_of_actors": 1,
+        "options": {
+            "trackBall": True,
+            "trackFingers": False,
+        },
+    },
     "metadata": {
         "analysis": "UmKdTFlLMIuIvJkRJnoM",
         "decade": "zAvJMvacZIYSmMsDUNvC",
@@ -3904,6 +4794,10 @@ snapshots["TestJobService.test_retrieve[expand_take] retrieve_response_expand_ta
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": {
@@ -3939,6 +4833,10 @@ snapshots["TestJobService.test_retrieve[no_expand] retrieve_query_expand_None"] 
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     __typename
   }
 }""",
@@ -3957,6 +4855,17 @@ snapshots["TestJobService.test_retrieve[no_expand] retrieve_response_expand_None
         "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
     ),
     "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+    "inputs": {
+        "clip_window": {
+            "end_time": 10.0,
+            "start_time": 10.0,
+        },
+        "number_of_actors": 1,
+        "options": {
+            "trackBall": True,
+            "trackFingers": False,
+        },
+    },
     "metadata": {
         "analysis": "UmKdTFlLMIuIvJkRJnoM",
         "decade": "zAvJMvacZIYSmMsDUNvC",
@@ -3971,6 +4880,10 @@ snapshots["TestJobService.test_retrieve[no_expand] retrieve_response_expand_None
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,
@@ -3985,6 +4898,10 @@ snapshots["TestJobService.test_update update_mutation"] = [
     metadata
     state
     name
+    progress {
+      state
+      percentageComplete
+    }
     __typename
   }
 }""",
@@ -4005,6 +4922,17 @@ snapshots["TestJobService.test_update update_response"] = {
         "datetime.datetime(2023, 7, 10, 12, 13, 56, 615715, tzinfo=TzInfo(UTC))",
     ),
     "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+    "inputs": {
+        "clip_window": {
+            "end_time": 10.0,
+            "start_time": 10.0,
+        },
+        "number_of_actors": 1,
+        "options": {
+            "trackBall": True,
+            "trackFingers": False,
+        },
+    },
     "metadata": {
         "analysis": "UmKdTFlLMIuIvJkRJnoM",
         "decade": "zAvJMvacZIYSmMsDUNvC",
@@ -4019,6 +4947,10 @@ snapshots["TestJobService.test_update update_response"] = {
     },
     "name": "",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "rig": None,
     "state": "RUNNING",
     "take": None,

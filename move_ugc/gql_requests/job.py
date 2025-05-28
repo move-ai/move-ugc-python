@@ -2,23 +2,26 @@
 
 from move_ugc.gql_requests.additional_file import expand_outputs
 from move_ugc.gql_requests.client import expand_client_query
+from move_ugc.gql_requests.inputs import expand_inputs, expand_progress
 from move_ugc.gql_requests.rig import expand_rig_query
 from move_ugc.gql_requests.take import expand_take_query
 from move_ugc.schemas.constants import (
     CLIENT_LITERAL,
+    INPUTS_LITERAL,
     OUTPUTS_LITERAL,
     RIGS_LITERAL,
     TAKE_LITERAL,
 )
 from move_ugc.schemas.gql import UgcGql
 
-job_attributes = """
+job_attributes = f"""
     id
     created
     metadata
     state
     name
-    {expand}
+    {expand_progress}
+    {{expand}}
     __typename
 """
 
@@ -49,6 +52,7 @@ create = UgcGql(
         CLIENT_LITERAL: expand_client_query,
         TAKE_LITERAL: expand_take_query,
         OUTPUTS_LITERAL: expand_outputs,
+        INPUTS_LITERAL: expand_inputs,
     },
 )
 
@@ -101,6 +105,7 @@ retrieve = UgcGql(
         TAKE_LITERAL: expand_take_query,
         OUTPUTS_LITERAL: expand_outputs,
         RIGS_LITERAL: expand_rig_query,
+        INPUTS_LITERAL: expand_inputs,
     },
 )
 
@@ -125,6 +130,7 @@ update = UgcGql(
         CLIENT_LITERAL: expand_client_query,
         TAKE_LITERAL: expand_take_query,
         OUTPUTS_LITERAL: expand_outputs,
+        INPUTS_LITERAL: expand_inputs,
     },
 )
 
@@ -146,5 +152,6 @@ list_query = UgcGql(
         TAKE_LITERAL: expand_take_query,
         OUTPUTS_LITERAL: expand_outputs,
         RIGS_LITERAL: expand_rig_query,
+        INPUTS_LITERAL: expand_inputs,
     },
 )

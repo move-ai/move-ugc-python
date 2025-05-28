@@ -25,6 +25,10 @@ snapshots["TestVolumeService.test_create[empty_expand] create_mutation_expand_[]
     metadata
     name
     state
+    progress {
+      state
+      percentageComplete
+    }
     __typename
   }
 }""",
@@ -66,6 +70,10 @@ snapshots["TestVolumeService.test_create[empty_expand] create_mutation_expand_[]
 snapshots["TestVolumeService.test_create[empty_expand] create_response_expand_[]"] = {
     "area_type": "NORMAL",
     "client": None,
+    "clip_window": {
+        "end_time": 10.0,
+        "start_time": 10.0,
+    },
     "created": "2023-06-29T08:54:52.349467Z",
     "human_height": 1.5,
     "id": "volume-af54cc45-7137-4206-a4c1-b3bc21b398fc",
@@ -83,6 +91,10 @@ snapshots["TestVolumeService.test_create[empty_expand] create_response_expand_[]
     },
     "name": "fake_volume",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "sources": None,
     "state": "RUNNING",
 }
@@ -108,6 +120,10 @@ snapshots[
     metadata
     name
     state
+    progress {
+      state
+      percentageComplete
+    }
     sources {
       deviceLabel
       file {
@@ -168,6 +184,10 @@ snapshots[
 ] = {
     "area_type": "NORMAL",
     "client": None,
+    "clip_window": {
+        "end_time": 10.0,
+        "start_time": 10.0,
+    },
     "created": "2023-06-29T08:54:52.349467Z",
     "human_height": 1.5,
     "id": "volume-af54cc45-7137-4206-a4c1-b3bc21b398fc",
@@ -185,6 +205,10 @@ snapshots[
     },
     "name": "fake_volume",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "sources": [
         {
             "camera_settings": None,
@@ -263,6 +287,10 @@ snapshots[
     metadata
     name
     state
+    progress {
+      state
+      percentageComplete
+    }
     client {
       id
       name
@@ -322,6 +350,10 @@ snapshots[
         "name": "PYTEST_INVALID_CLIENT_NAME",
         "portal": "https://app.svix.com/login?primaryColorLight=39ddef&primaryColorDark=39ddef#key=",
     },
+    "clip_window": {
+        "end_time": 10.0,
+        "start_time": 10.0,
+    },
     "created": "2023-06-29T08:54:52.349467Z",
     "human_height": 1.5,
     "id": "volume-af54cc45-7137-4206-a4c1-b3bc21b398fc",
@@ -339,6 +371,111 @@ snapshots[
     },
     "name": "fake_volume",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
+    "sources": None,
+    "state": "RUNNING",
+}
+
+snapshots[
+    "TestVolumeService.test_create[expand_clip_window] create_mutation_expand_clipWindow"
+] = [
+    [
+        """mutation create($sources: [SourceInput!], $syncMethod: SyncMethodInput, $areaType: AreaType!, $humanHeight: Float!, $metadata: AWSJSON, $name: String, $clip_window: ClipWindowInput) {
+  createVolumeWithHuman(
+    sources: $sources
+    syncMethod: $syncMethod
+    areaType: $areaType
+    humanHeight: $humanHeight
+    metadata: $metadata
+    name: $name
+    clipWindow: $clip_window
+  ) {
+    id
+    areaType
+    created
+    humanHeight
+    metadata
+    name
+    state
+    progress {
+      state
+      percentageComplete
+    }
+    clipWindow {
+      startTime
+      endTime
+    }
+    __typename
+  }
+}""",
+    ],
+    {
+        "operation_name": None,
+        "variable_values": {
+            "areaType": "LARGE",
+            "clip_window": {
+                "endTime": 5315.0,
+                "startTime": 849.0,
+            },
+            "humanHeight": 59816290182492.2,
+            "metadata": '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+            "name": "draw",
+            "sources": [
+                {
+                    "cameraSettings": {
+                        "lens": "set",
+                    },
+                    "deviceLabel": "newspaper",
+                    "fileId": "37bea600-bdc6-4ffa-86c7-a4f634c4614f",
+                    "format": "MP4",
+                },
+                {
+                    "cameraSettings": {
+                        "lens": "evening",
+                    },
+                    "deviceLabel": "newspaper",
+                    "fileId": "cba1d785-4a1e-4b59-aca4-d775bfdde401",
+                    "format": "MOVE",
+                },
+            ],
+            "syncMethod": None,
+        },
+    },
+]
+
+snapshots[
+    "TestVolumeService.test_create[expand_clip_window] create_response_expand_clipWindow"
+] = {
+    "area_type": "NORMAL",
+    "client": None,
+    "clip_window": {
+        "end_time": 9057.0,
+        "start_time": 9057.0,
+    },
+    "created": "2023-06-29T08:54:52.349467Z",
+    "human_height": 1.5,
+    "id": "volume-af54cc45-7137-4206-a4c1-b3bc21b398fc",
+    "metadata": {
+        "analysis": "UmKdTFlLMIuIvJkRJnoM",
+        "decade": "zAvJMvacZIYSmMsDUNvC",
+        "director": "KNmpExWtgQLcAEuRyBkN",
+        "draw": "PnbQcVNCliYtuFCSJkGb",
+        "house": "aYyOUXkJPUjPJGpDdakX",
+        "huge": "eFaLyHGEQQpSzpRFSYEm",
+        "last": "dnZCcfgZNBnaEkbOzIyO",
+        "other": "XbBPNrbhtJksbBuoWXSK",
+        "table": "ACMVZcKAiGBcYgCzHAad",
+        "trouble": "UgnhIyaDJzohUigyDYZf",
+    },
+    "name": "fake_volume",
+    "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "sources": None,
     "state": "RUNNING",
 }
@@ -364,6 +501,10 @@ snapshots[
     metadata
     name
     state
+    progress {
+      state
+      percentageComplete
+    }
     sources {
       deviceLabel
       file {
@@ -424,6 +565,10 @@ snapshots[
 ] = {
     "area_type": "NORMAL",
     "client": None,
+    "clip_window": {
+        "end_time": 10.0,
+        "start_time": 10.0,
+    },
     "created": "2023-06-29T08:54:52.349467Z",
     "human_height": 1.5,
     "id": "volume-af54cc45-7137-4206-a4c1-b3bc21b398fc",
@@ -441,6 +586,10 @@ snapshots[
     },
     "name": "fake_volume",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "sources": [
         {
             "camera_settings": None,
@@ -491,6 +640,10 @@ snapshots["TestVolumeService.test_create[no_expand] create_mutation_expand_None"
     metadata
     name
     state
+    progress {
+      state
+      percentageComplete
+    }
     __typename
   }
 }""",
@@ -532,6 +685,10 @@ snapshots["TestVolumeService.test_create[no_expand] create_mutation_expand_None"
 snapshots["TestVolumeService.test_create[no_expand] create_response_expand_None"] = {
     "area_type": "NORMAL",
     "client": None,
+    "clip_window": {
+        "end_time": 10.0,
+        "start_time": 10.0,
+    },
     "created": "2023-06-29T08:54:52.349467Z",
     "human_height": 1.5,
     "id": "volume-af54cc45-7137-4206-a4c1-b3bc21b398fc",
@@ -549,6 +706,10 @@ snapshots["TestVolumeService.test_create[no_expand] create_response_expand_None"
     },
     "name": "fake_volume",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "sources": None,
     "state": "RUNNING",
 }
@@ -562,6 +723,10 @@ snapshots["TestVolumeService.test_list list_response"] = {
         {
             "area_type": "NORMAL",
             "client": None,
+            "clip_window": {
+                "end_time": 10.0,
+                "start_time": 10.0,
+            },
             "created": "2023-06-29T08:54:52.349467Z",
             "human_height": 1.5,
             "id": "volume-af54cc45-7137-4206-a4c1-b3bc21b398fc",
@@ -579,6 +744,10 @@ snapshots["TestVolumeService.test_list list_response"] = {
             },
             "name": "fake_volume",
             "outputs": None,
+            "progress": {
+                "percentage_complete": 50,
+                "state": "RUNNING",
+            },
             "sources": None,
             "state": "RUNNING",
         },
@@ -623,6 +792,10 @@ fragment VolumeFields on HumanVolume {
   metadata
   name
   state
+  progress {
+    state
+    percentageComplete
+  }
   __typename
 }""",
     ],
@@ -656,6 +829,10 @@ fragment VolumeFields on HumanVolume {
   metadata
   name
   state
+  progress {
+    state
+    percentageComplete
+  }
   __typename
 }""",
     ],
@@ -670,6 +847,10 @@ fragment VolumeFields on HumanVolume {
 snapshots["TestVolumeService.test_retrieve[empty_expand] get_response_expand_[]"] = {
     "area_type": "NORMAL",
     "client": None,
+    "clip_window": {
+        "end_time": 10.0,
+        "start_time": 10.0,
+    },
     "created": "2023-06-29T08:54:52.349467Z",
     "human_height": 1.5,
     "id": "volume-af54cc45-7137-4206-a4c1-b3bc21b398fc",
@@ -687,6 +868,10 @@ snapshots["TestVolumeService.test_retrieve[empty_expand] get_response_expand_[]"
     },
     "name": "fake_volume",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "sources": None,
     "state": "RUNNING",
 }
@@ -711,6 +896,10 @@ fragment VolumeFields on HumanVolume {
   metadata
   name
   state
+  progress {
+    state
+    percentageComplete
+  }
   sources {
     deviceLabel
     file {
@@ -744,6 +933,10 @@ snapshots[
 ] = {
     "area_type": "NORMAL",
     "client": None,
+    "clip_window": {
+        "end_time": 10.0,
+        "start_time": 10.0,
+    },
     "created": "2023-06-29T08:54:52.349467Z",
     "human_height": 1.5,
     "id": "volume-af54cc45-7137-4206-a4c1-b3bc21b398fc",
@@ -761,6 +954,10 @@ snapshots[
     },
     "name": "fake_volume",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "sources": [
         {
             "camera_settings": None,
@@ -836,6 +1033,10 @@ fragment VolumeFields on HumanVolume {
   metadata
   name
   state
+  progress {
+    state
+    percentageComplete
+  }
   client {
     id
     name
@@ -868,6 +1069,10 @@ snapshots[
         "name": "PYTEST_INVALID_CLIENT_NAME",
         "portal": "https://app.svix.com/login?primaryColorLight=39ddef&primaryColorDark=39ddef#key=",
     },
+    "clip_window": {
+        "end_time": 10.0,
+        "start_time": 10.0,
+    },
     "created": "2023-06-29T08:54:52.349467Z",
     "human_height": 1.5,
     "id": "volume-af54cc45-7137-4206-a4c1-b3bc21b398fc",
@@ -885,6 +1090,10 @@ snapshots[
     },
     "name": "fake_volume",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "sources": None,
     "state": "RUNNING",
 }
@@ -909,6 +1118,10 @@ fragment VolumeFields on HumanVolume {
   metadata
   name
   state
+  progress {
+    state
+    percentageComplete
+  }
   outputs {
     format
     file {
@@ -939,6 +1152,10 @@ snapshots[
 ] = {
     "area_type": "NORMAL",
     "client": None,
+    "clip_window": {
+        "end_time": 10.0,
+        "start_time": 10.0,
+    },
     "created": "2023-06-29T08:54:52.349467Z",
     "human_height": 1.5,
     "id": "volume-af54cc45-7137-4206-a4c1-b3bc21b398fc",
@@ -1007,6 +1224,10 @@ snapshots[
             "key": "volume_report",
         },
     ],
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "sources": None,
     "state": "RUNNING",
 }
@@ -1031,6 +1252,10 @@ fragment VolumeFields on HumanVolume {
   metadata
   name
   state
+  progress {
+    state
+    percentageComplete
+  }
   sources {
     deviceLabel
     file {
@@ -1064,6 +1289,10 @@ snapshots[
 ] = {
     "area_type": "NORMAL",
     "client": None,
+    "clip_window": {
+        "end_time": 10.0,
+        "start_time": 10.0,
+    },
     "created": "2023-06-29T08:54:52.349467Z",
     "human_height": 1.5,
     "id": "volume-af54cc45-7137-4206-a4c1-b3bc21b398fc",
@@ -1081,6 +1310,10 @@ snapshots[
     },
     "name": "fake_volume",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "sources": [
         {
             "camera_settings": None,
@@ -1130,6 +1363,10 @@ fragment VolumeFields on HumanVolume {
   metadata
   name
   state
+  progress {
+    state
+    percentageComplete
+  }
   __typename
 }""",
     ],
@@ -1144,6 +1381,10 @@ fragment VolumeFields on HumanVolume {
 snapshots["TestVolumeService.test_retrieve[no_expand] get_response_expand_None"] = {
     "area_type": "NORMAL",
     "client": None,
+    "clip_window": {
+        "end_time": 10.0,
+        "start_time": 10.0,
+    },
     "created": "2023-06-29T08:54:52.349467Z",
     "human_height": 1.5,
     "id": "volume-af54cc45-7137-4206-a4c1-b3bc21b398fc",
@@ -1161,6 +1402,10 @@ snapshots["TestVolumeService.test_retrieve[no_expand] get_response_expand_None"]
     },
     "name": "fake_volume",
     "outputs": None,
+    "progress": {
+        "percentage_complete": 50,
+        "state": "RUNNING",
+    },
     "sources": None,
     "state": "RUNNING",
 }

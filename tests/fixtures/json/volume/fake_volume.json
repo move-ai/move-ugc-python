@@ -6,5 +6,13 @@
     "name": "fake_volume",
     "state": "RUNNING",
 	"metadata": "{}",
-    "__typename": "HumanVolume"
+    "__typename": "HumanVolume",
+    "progress": {
+      "state": "RUNNING",
+      "percentageComplete": 50
+    },
+    "clipWindow": {
+        "startTime": 0,
+        "endTime": 10
+    }
 }

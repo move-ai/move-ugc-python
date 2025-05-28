@@ -6,6 +6,8 @@ from typing import Any, List, Optional
 from pydantic import BaseModel, ConfigDict, Field, Json, alias_generators
 
 from move_ugc.schemas.client import Client
+from move_ugc.schemas.inputs import ClipWindowInputType
+from move_ugc.schemas.progress import JobProgress
 from move_ugc.schemas.rig import Rig
 from move_ugc.schemas.sources import AdditionalFileType
 from move_ugc.schemas.take import TakeType
@@ -52,6 +54,20 @@ class JobOptions(BaseModel):
     )
 
 
+class JobInputType(BaseModel):
+    """Inputs for this job."""
+
+    clip_window: Optional[ClipWindowInputType] = Field(
+        default=None,
+        alias="clipWindow",
+    )
+    number_of_actors: Optional[int] = Field(
+        default=None,
+        alias="numberOfActors",
+    )
+    options: Optional[JobOptions] = Field(default=None)
+
+
 class JobType(BaseModel):
     """Representation for Job type in MoveUGC."""
 
@@ -88,10 +104,11 @@ class JobType(BaseModel):
         default=None,
     )
     state: str = Field(
-        description="State of the job",
+        description="DEPRECATED: Use `progress` instead. State of the job",
         examples=["FINISHED", "NOT STARTED", "RUNNING", "FAILED"],
         title="Job state",
     )
+    progress: JobProgress
     take: Optional[TakeType] = Field(
         description="Take associated with the job",
         examples=[{"id": "take-4003a524-7819-4537-ac82-8a3ac2635db9"}],
@@ -109,5 +126,10 @@ class JobType(BaseModel):
         description="Name of rig to be used for the job",
         examples=[{"name": "move_mo"}],
         title="Job rig",
+        default=None,
+    )
+    inputs: Optional[JobInputType] = Field(
+        description="The inputs used for this job",
+        title="Job inputs",
         default=None,
     )

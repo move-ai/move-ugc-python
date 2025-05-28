@@ -549,7 +549,7 @@ def job_retrieve_response_with_rig(
     fake_retrieve_job_response,
     introspection_result,
 ) -> FakeJobJson:
-    """Fixture to return a fake job response for getJob query with outputs.
+    """Fixture to return a fake job response for getJob query with a rig.
 
     Args:
         fake_retrieve_job_response (FakeJobJson): Fake job json.
@@ -560,6 +560,40 @@ def job_retrieve_response_with_rig(
         FakeJobJson: Fake job response.
     """
     fake_retrieve_job_response[GET_JOB_QUERY]["rig"] = {"name": "move_mo"}
+    job_response_with_rig = ExecutionResult(data=fake_retrieve_job_response)
+    mock_transport.side_effect = [introspection_result, job_response_with_rig]
+    yield job_response_with_rig
+
+
+@pytest.fixture
+def job_retrieve_response_with_inputs(
+    mock_transport,
+    fake_retrieve_job_response,
+    introspection_result,
+    faker,
+) -> FakeJobJson:
+    """Fixture to return a fake job response for getJob query with inputs.
+
+    Args:
+        fake_retrieve_job_response (FakeJobJson): Fake job json.
+        mock_transport (MockTransport): Mock transport.
+        introspection_result (dict[str, str]): Introspection result.
+        faker (Faker): Faker instance.
+
+    Yields:
+        FakeJobJson: Fake job response.
+    """
+    fake_retrieve_job_response[GET_JOB_QUERY]["inputs"] = {
+        "options": {
+            "trackFingers": faker.pybool(),
+            "trackBall": faker.pybool(),
+        },
+        "clipWindow": {
+            "startTime": faker.pyint(),
+            "endTime": faker.pyint(),
+        },
+        "numberOfActors": faker.pyint(),
+    }
     job_response_with_rig = ExecutionResult(data=fake_retrieve_job_response)
     mock_transport.side_effect = [introspection_result, job_response_with_rig]
     yield job_response_with_rig
