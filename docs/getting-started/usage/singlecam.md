@@ -161,7 +161,8 @@ def main(
     take = ugc.takes.create_singlecam(sources=sources)
     print("Created take:", take.id)
 
-    # 4. Kick off job (full default outputs)
+# 4. Start the job. If you do not specify the `outputs` argument, all default outputs will be generated. 
+#    To generate only specific outputs, list them in the `outputs` argument as shown below.    
     job = ugc.jobs.create_singlecam(take_id=take.id, outputs=['MAIN_BLEND', 'MAIN_FBX'])
     print("Created job:", job.id)
 
