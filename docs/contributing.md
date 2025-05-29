@@ -4,7 +4,7 @@
 - The complete test suite depends on having at least the following installed
   (possibly not a complete list)
   - git 
-  - python3 (at least 3.8)
+  - python3 (at least 3.9)
   - poetry
 
 ## Instruction for creating a commit
