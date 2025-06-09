@@ -1,3 +1,9 @@
+## 4.0.0 (2025-06-09)
+
+### BREAKING CHANGE
+
+- IST-2718: Deprecating Python 3.8 support
+
 ## 3.3.1 (2025-05-28)
 
 ### Fix
