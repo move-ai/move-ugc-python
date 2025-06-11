@@ -1,0 +1,37 @@
+{
+  "client": null,
+  "created": "2023-07-10T12:13:56.615715+0000",
+  "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+  "inputs": {
+    "clip_window": {
+      "end_time": 8658.0,
+      "start_time": 8658.0
+    },
+    "number_of_actors": 849,
+    "options": {
+      "trackBall": true,
+      "trackFingers": false
+    }
+  },
+  "metadata": {
+    "analysis": "UmKdTFlLMIuIvJkRJnoM",
+    "decade": "zAvJMvacZIYSmMsDUNvC",
+    "director": "KNmpExWtgQLcAEuRyBkN",
+    "draw": "PnbQcVNCliYtuFCSJkGb",
+    "house": "aYyOUXkJPUjPJGpDdakX",
+    "huge": "eFaLyHGEQQpSzpRFSYEm",
+    "last": "dnZCcfgZNBnaEkbOzIyO",
+    "other": "XbBPNrbhtJksbBuoWXSK",
+    "table": "ACMVZcKAiGBcYgCzHAad",
+    "trouble": "UgnhIyaDJzohUigyDYZf"
+  },
+  "name": "",
+  "outputs": null,
+  "progress": {
+    "percentage_complete": 50,
+    "state": "RUNNING"
+  },
+  "rig": null,
+  "state": "RUNNING",
+  "take": null
+}

@@ -1,0 +1,9 @@
+{
+  "description": "PYTEST_INVALID_DESCRIPTION",
+  "events": [
+    "PYTEST_INVALID_EVENT"
+  ],
+  "secret": "SecretStr('**********')",
+  "uid": "PYTEST_INVALID_UID",
+  "url": "HttpUrl('https://webhook.site/invalid')"
+}

@@ -1,0 +1,346 @@
+# serializer version: 1
+# name: TestFileService.test_create[empty_expand][create_mutation_expand_[]]
+  list([
+    list([
+      '''
+        mutation create($type: String!, $metadata: AWSJSON, $name: String) {
+          createFile(type: $type, metadata: $metadata, name: $name) {
+            id
+            created
+            type
+            metadata
+            name
+            presignedUrl
+            thumbnailUrl
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': '',
+        'type': 'png',
+      }),
+    }),
+  ])
+# ---
+# name: TestFileService.test_create[expand_client][create_mutation_expand_client]
+  list([
+    list([
+      '''
+        mutation create($type: String!, $metadata: AWSJSON, $name: String) {
+          createFile(type: $type, metadata: $metadata, name: $name) {
+            id
+            created
+            type
+            metadata
+            name
+            presignedUrl
+            thumbnailUrl
+            __typename
+            client {
+              id
+              name
+              created
+              metadata
+              portal
+              __typename
+            }
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': '',
+        'type': 'png',
+      }),
+    }),
+  ])
+# ---
+# name: TestFileService.test_create[no_expand][create_mutation_expand_None]
+  list([
+    list([
+      '''
+        mutation create($type: String!, $metadata: AWSJSON, $name: String) {
+          createFile(type: $type, metadata: $metadata, name: $name) {
+            id
+            created
+            type
+            metadata
+            name
+            presignedUrl
+            thumbnailUrl
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': '',
+        'type': 'png',
+      }),
+    }),
+  ])
+# ---
+# name: TestFileService.test_fetch_service
+  FileService(api_key=SecretStr('**********'), endpoint_url=HttpUrl('https://pytest_invalid_endpoint_url.com/'))
+# ---
+# name: TestFileService.test_file_not_found[file_not_found_response]
+  list([
+    dict({
+      'data': None,
+      'errorInfo': None,
+      'errorType': 'MoveNotFoundError',
+      'locations': list([
+        dict({
+          'column': 3,
+          'line': 2,
+          'sourceName': None,
+        }),
+      ]),
+      'message': 'Resource not found in move-ugc-api.',
+      'path': list([
+        'getFile',
+      ]),
+    }),
+  ])
+# ---
+# name: TestFileService.test_generate_share_code[generate_share_code_mutation]
+  list([
+    list([
+      '''
+        mutation generateShareCode($fileId: String!) {
+          generateShareCode(fileId: $fileId) {
+            code
+            created
+            file {
+              id
+            }
+            expires
+            url
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'fileId': '516b93c2-ca3c-4b89-b7d8-6704858462ab',
+      }),
+    }),
+  ])
+# ---
+# name: TestFileService.test_retrieve[empty_expand][retrieve_query_expand_[]]
+  list([
+    list([
+      '''
+        query retrieve($id: ID!) {
+          getFile(fileId: $id) {
+            id
+            created
+            type
+            metadata
+            name
+            presignedUrl
+            thumbnailUrl
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'id': '8d866324-3ab5-4d05-a9c5-e560a8020f0a',
+      }),
+    }),
+  ])
+# ---
+# name: TestFileService.test_retrieve[empty_expand_no_thumbnail][retrieve_query_expand_[]]
+  list([
+    list([
+      '''
+        query retrieve($id: ID!) {
+          getFile(fileId: $id) {
+            id
+            created
+            type
+            metadata
+            name
+            presignedUrl
+            thumbnailUrl
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'id': '8d866324-3ab5-4d05-a9c5-e560a8020f0a',
+      }),
+    }),
+  ])
+# ---
+# name: TestFileService.test_retrieve[expand_client][retrieve_query_expand_client]
+  list([
+    list([
+      '''
+        query retrieve($id: ID!) {
+          getFile(fileId: $id) {
+            id
+            created
+            type
+            metadata
+            name
+            presignedUrl
+            thumbnailUrl
+            __typename
+            client {
+              id
+              name
+              created
+              metadata
+              portal
+              __typename
+            }
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'id': '8d866324-3ab5-4d05-a9c5-e560a8020f0a',
+      }),
+    }),
+  ])
+# ---
+# name: TestFileService.test_retrieve[no_expand][retrieve_query_expand_None]
+  list([
+    list([
+      '''
+        query retrieve($id: ID!) {
+          getFile(fileId: $id) {
+            id
+            created
+            type
+            metadata
+            name
+            presignedUrl
+            thumbnailUrl
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'id': '8d866324-3ab5-4d05-a9c5-e560a8020f0a',
+      }),
+    }),
+  ])
+# ---
+# name: TestFileService.test_update[empty_expand][update_mutation_expand_[]]
+  list([
+    list([
+      '''
+        mutation update($id: String!, $metadata: AWSJSON, $name: String) {
+          updateFile(id: $id, metadata: $metadata, name: $name) {
+            id
+            created
+            type
+            metadata
+            name
+            presignedUrl
+            thumbnailUrl
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'id': '8d866324-3ab5-4d05-a9c5-e560a8020f0a',
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': 'Amber Harris',
+      }),
+    }),
+  ])
+# ---
+# name: TestFileService.test_update[expand_client][update_mutation_expand_client]
+  list([
+    list([
+      '''
+        mutation update($id: String!, $metadata: AWSJSON, $name: String) {
+          updateFile(id: $id, metadata: $metadata, name: $name) {
+            id
+            created
+            type
+            metadata
+            name
+            presignedUrl
+            thumbnailUrl
+            __typename
+            client {
+              id
+              name
+              created
+              metadata
+              portal
+              __typename
+            }
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'id': '8d866324-3ab5-4d05-a9c5-e560a8020f0a',
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': 'Amber Harris',
+      }),
+    }),
+  ])
+# ---
+# name: TestFileService.test_update[no_expand][update_mutation_expand_None]
+  list([
+    list([
+      '''
+        mutation update($id: String!, $metadata: AWSJSON, $name: String) {
+          updateFile(id: $id, metadata: $metadata, name: $name) {
+            id
+            created
+            type
+            metadata
+            name
+            presignedUrl
+            thumbnailUrl
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'id': '8d866324-3ab5-4d05-a9c5-e560a8020f0a',
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': 'Amber Harris',
+      }),
+    }),
+  ])
+# ---

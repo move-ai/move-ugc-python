@@ -8,13 +8,20 @@ class TestWebhooksService(ServicesTestCase):
 
     service_name = "webhooks"
 
-    def test_add_webhook(self, faker, upsert_webhook_endpoint_response, snapshot):
+    def test_add_webhook(
+        self,
+        faker,
+        upsert_webhook_endpoint_response,
+        snapshot,
+        snapshot_json,
+    ):
         """Test adding a webhook endpoint to Move UGC API.
 
         Args:
             faker: The faker fixture.
             upsert_webhook_endpoint_response: mocked webhook endpoint response
             snapshot: The snapshot fixture.
+            snapshot_json: The snapshot json fixture.
         """
         webhook_model = self.client.webhooks.upsert(
             events=["ugc.jobs.state.completed"],
@@ -24,13 +31,16 @@ class TestWebhooksService(ServicesTestCase):
             description=faker.pystr(),
         )
         self.assert_execute(snapshot, name="add_webhook_query")
-        snapshot.assert_match(webhook_model.model_dump(), name="add_webhook_response")
+        assert webhook_model.model_dump() == snapshot_json(
+            name="add_webhook_response",
+        )
 
     def test_add_without_secret(
         self,
         faker,
         upsert_webhook_endpoint_response,
         snapshot,
+        snapshot_json,
     ):
         """Test adding a webhook endpoint to Move UGC API without pre-defined secret.
 
@@ -38,6 +48,7 @@ class TestWebhooksService(ServicesTestCase):
             faker: The faker fixture.
             upsert_webhook_endpoint_response: mocked webhook endpoint response
             snapshot: The snapshot fixture.
+            snapshot_json: The snapshot json fixture.
         """
         webhook_model = self.client.webhooks.upsert(
             events=["ugc.jobs.state.completed"],
@@ -45,4 +56,6 @@ class TestWebhooksService(ServicesTestCase):
             url=faker.url(),
         )
         self.assert_execute(snapshot, name="add_webhook_query")
-        snapshot.assert_match(webhook_model.model_dump(), name="add_webhook_response")
+        assert webhook_model.model_dump() == snapshot_json(
+            name="add_webhook_response",
+        )

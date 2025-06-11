@@ -1,6 +1,6 @@
 [flake8]
 max-line-length=88
-ignore = Q000, E722, F841, F405, F403, W503, E501, WPS306, WPS305, WPS453
+ignore = Q000, E722, F841, F405, F403, W503, E501, WPS306, WPS305, WPS453, WPS318
 exclude= **/snapshots/**
 per-file-ignores =
     tests/**:
@@ -13,6 +13,8 @@ per-file-ignores =
     tests/services/test_take.py:
     ; Found string literal over-use: _ - we can't remove this because of fixture names
     WPS226,
+    ; Use of assert detected
+    S101,
     move_ugc/__init__.py:
     ; Found `__init__.py` module with logic
     WPS412,

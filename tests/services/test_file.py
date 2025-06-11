@@ -26,6 +26,7 @@ class TestFileService(ServicesTestCase):
         self,
         expand,
         snapshot,
+        snapshot_json,
         faker,
         request,
         file_fixture,
@@ -37,6 +38,7 @@ class TestFileService(ServicesTestCase):
         Args:
             expand: The expand fixture.
             snapshot: The snapshot fixture.
+            snapshot_json: The snapshot JSON fixture.
             faker: The faker fixture.
             request: The request fixture.
             file_fixture: The file fixture.
@@ -48,8 +50,7 @@ class TestFileService(ServicesTestCase):
             snapshot,
             name=f"retrieve_query_expand_{suffix}",
         )
-        snapshot.assert_match(
-            file_model.model_dump(),
+        assert file_model.model_dump() == snapshot_json(
             name=f"file_retrieve_response_expand_{suffix}",
         )
 
@@ -65,8 +66,7 @@ class TestFileService(ServicesTestCase):
         """
         with pytest.raises(TransportQueryError) as excinfo:
             self.client.files.retrieve(id=faker.uuid4(), expand=[CLIENT_LITERAL])
-        snapshot.assert_match(
-            excinfo.value.errors,  # noqa: WPS441
+        assert excinfo.value.errors == snapshot(  # noqa: WPS441
             name="file_not_found_response",
         )
 
@@ -83,6 +83,7 @@ class TestFileService(ServicesTestCase):
         self,
         expand,
         snapshot,
+        snapshot_json,
         faker,
         request,
         file_fixture,
@@ -94,6 +95,7 @@ class TestFileService(ServicesTestCase):
         Args:
             expand: The expand fixture.
             snapshot: The snapshot fixture.
+            snapshot_json: The snapshot JSON fixture.
             faker: The faker fixture.
             request: The request fixture.
             file_fixture: The file fixture.
@@ -109,8 +111,7 @@ class TestFileService(ServicesTestCase):
             snapshot,
             name=f"create_mutation_expand_{suffix}",
         )
-        snapshot.assert_match(
-            file_model.model_dump(),
+        assert file_model.model_dump() == snapshot_json(
             name=f"create_mutation_response_expand_{suffix}",
         )
 
@@ -127,6 +128,7 @@ class TestFileService(ServicesTestCase):
         self,
         expand,
         snapshot,
+        snapshot_json,
         faker,
         request,
         file_fixture,
@@ -138,6 +140,7 @@ class TestFileService(ServicesTestCase):
         Args:
             expand: The expand fixture.
             snapshot: The snapshot fixture.
+            snapshot_json: The snapshot JSON fixture.
             faker: The faker fixture.
             request: The request fixture.
             file_fixture: The file fixture.
@@ -154,22 +157,28 @@ class TestFileService(ServicesTestCase):
             snapshot,
             name=f"update_mutation_expand_{suffix}",
         )
-        snapshot.assert_match(
-            file_model.model_dump(),
+        assert file_model.model_dump() == snapshot_json(
             name=f"update_mutation_response_expand_{suffix}",
         )
 
-    def test_generate_share_code(self, share_code_response, faker, snapshot):
+    def test_generate_share_code(
+        self,
+        share_code_response,
+        faker,
+        snapshot,
+        snapshot_json,
+    ):
         """Test generating a share code from Move UGC API.
 
         Args:
             share_code_response: The share code response fixture.
             faker: The faker fixture.
             snapshot: The snapshot fixture.
+            snapshot_json: The snapshot JSON fixture.
         """
         share_code = self.client.files.generate_share_code(file_id=faker.uuid4())
         self.assert_execute(snapshot, name="generate_share_code_mutation")
-        snapshot.assert_match(
-            share_code.model_dump(),
+
+        assert share_code.model_dump() == snapshot_json(
             name="generate_share_code_mutation_response",
         )

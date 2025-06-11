@@ -41,6 +41,7 @@ class TestVolumeService(ServicesTestCase):
     def test_create(  # noqa: WPS211
         self,
         snapshot,
+        snapshot_json,
         faker,
         request,
         expand,
@@ -52,6 +53,7 @@ class TestVolumeService(ServicesTestCase):
 
         Args:
             snapshot: The snapshot fixture.
+            snapshot_json: The snapshot json fixture.
             faker: The faker fixture.
             request: The request fixture.
             expand: The expand fixture.
@@ -93,8 +95,7 @@ class TestVolumeService(ServicesTestCase):
             snapshot,
             name=f"create_mutation_expand_{suffix}",
         )
-        snapshot.assert_match(
-            volume.model_dump(mode="json"),
+        assert volume.model_dump(mode="json") == snapshot_json(
             name=f"create_response_expand_{suffix}",
         )
 
@@ -120,6 +121,7 @@ class TestVolumeService(ServicesTestCase):
     def test_retrieve(  # noqa: WPS211
         self,
         snapshot,
+        snapshot_json,
         faker,
         request,
         expand,
@@ -131,6 +133,7 @@ class TestVolumeService(ServicesTestCase):
 
         Args:
             snapshot: The snapshot fixture.
+            snapshot_json: The snapshot json fixture.
             faker: The faker fixture.
             request: The request fixture.
             expand: The expand fixture.
@@ -146,24 +149,23 @@ class TestVolumeService(ServicesTestCase):
             snapshot,
             name=f"get_query_expand_{suffix}",
         )
-        snapshot.assert_match(
-            volume.model_dump(mode="json"),
+        assert volume.model_dump(mode="json") == snapshot_json(
             name=f"get_response_expand_{suffix}",
         )
 
-    def test_list(self, snapshot, volume_list_response):
+    def test_list(self, snapshot, snapshot_json, volume_list_response):
         """Test listing volumes.
 
         This should test -> `ugc.volumes.list()`
 
         Args:
             snapshot: The snapshot fixture.
+            snapshot_json: The snapshot json fixture.
             volume_list_response: volume list response fixture.
         """
         volume_list = self.client.volumes.list()
         self.assert_execute(snapshot, name="volume_list_request")
-        snapshot.assert_match(
-            volume_list.model_dump(mode="json"),
+        assert volume_list.model_dump(mode="json") == snapshot_json(
             name="list_response",
         )
 

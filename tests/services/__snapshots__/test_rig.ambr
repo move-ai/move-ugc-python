@@ -1,0 +1,24 @@
+# serializer version: 1
+# name: TestRigService.test_fetch_service
+  RigService(api_key=SecretStr('**********'), endpoint_url=HttpUrl('https://pytest_invalid_endpoint_url.com/'))
+# ---
+# name: TestRigService.test_list[rig_list_request]
+  list([
+    list([
+      '''
+        query list {
+          listRigs {
+            items {
+              name
+              __typename
+            }
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': None,
+    }),
+  ])
+# ---

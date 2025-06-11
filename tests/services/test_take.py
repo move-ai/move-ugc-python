@@ -38,6 +38,7 @@ class TestTakeService(ServicesTestCase):  # noqa: WPS214
     def test_create(  # noqa: WPS211
         self,
         snapshot,
+        snapshot_json,
         faker,
         request,
         expand,
@@ -49,6 +50,7 @@ class TestTakeService(ServicesTestCase):  # noqa: WPS214
 
         Args:
             snapshot: The snapshot fixture.
+            snapshot_json: The snapshot json fixture.
             faker: The faker fixture.
             request: The request fixture.
             expand: The expand fixture.
@@ -78,8 +80,7 @@ class TestTakeService(ServicesTestCase):  # noqa: WPS214
             snapshot,
             name=f"create_mutation_expand_{suffix}",
         )
-        snapshot.assert_match(
-            take_model.model_dump(),
+        assert take_model.model_dump() == snapshot_json(
             name=f"create_response_expand_{suffix}",
         )
 
@@ -105,6 +106,7 @@ class TestTakeService(ServicesTestCase):  # noqa: WPS214
     def test_create_multicam(  # noqa: WPS211
         self,
         snapshot,
+        snapshot_json,
         faker,
         request,
         expand,
@@ -116,6 +118,7 @@ class TestTakeService(ServicesTestCase):  # noqa: WPS214
 
         Args:
             snapshot: The snapshot fixture.
+            snapshot_json: The snapshot json fixture.
             faker: The faker fixture.
             request: The request fixture.
             expand: The expand fixture.
@@ -157,8 +160,7 @@ class TestTakeService(ServicesTestCase):  # noqa: WPS214
             snapshot,
             name=f"create_mutation_expand_{suffix}",
         )
-        snapshot.assert_match(
-            take_model.model_dump(mode="json"),
+        assert take_model.model_dump(mode="json") == snapshot_json(
             name=f"create_response_expand_{suffix}",
         )
 
@@ -182,6 +184,7 @@ class TestTakeService(ServicesTestCase):  # noqa: WPS214
     def test_update(  # noqa: WPS211
         self,
         snapshot,
+        snapshot_json,
         faker,
         request,
         expand,
@@ -193,6 +196,7 @@ class TestTakeService(ServicesTestCase):  # noqa: WPS214
 
         Args:
             snapshot: The snapshot fixture.
+            snapshot_json: The snapshot json fixture.
             faker: The faker fixture.
             request: The request fixture.
             expand: The expand fixture.
@@ -210,8 +214,7 @@ class TestTakeService(ServicesTestCase):  # noqa: WPS214
             snapshot,
             name=f"update_mutation_expand_{suffix}",
         )
-        snapshot.assert_match(
-            take_model.model_dump(),
+        assert take_model.model_dump() == snapshot_json(
             name=f"update_response_expand_{suffix}",
         )
 
@@ -245,6 +248,7 @@ class TestTakeService(ServicesTestCase):  # noqa: WPS214
         faker,
         take_create_response,
         snapshot,
+        snapshot_json,
     ):
         """Test creating a take with a lower case additional file key.
 
@@ -254,6 +258,7 @@ class TestTakeService(ServicesTestCase):  # noqa: WPS214
             faker: The faker fixture.
             take_create_response: The take_create_response fixture.
             snapshot: The snapshot fixture.
+            snapshot_json: The snapshot json fixture.
         """
         take_model = self.client.takes.create_singlecam(
             metadata=json.dumps({}),
@@ -274,8 +279,7 @@ class TestTakeService(ServicesTestCase):  # noqa: WPS214
             snapshot,
             name="create_mutation_lower_additional_file_key",
         )
-        snapshot.assert_match(
-            take_model.model_dump(),
+        assert take_model.model_dump() == snapshot_json(
             name="create_response_lower_additional_file_key",
         )
 
@@ -299,6 +303,7 @@ class TestTakeService(ServicesTestCase):  # noqa: WPS214
     def test_retrieve(  # noqa: WPS211
         self,
         snapshot,
+        snapshot_json,
         faker,
         request,
         expand,
@@ -310,6 +315,7 @@ class TestTakeService(ServicesTestCase):  # noqa: WPS214
 
         Args:
             snapshot: The snapshot fixture.
+            snapshot_json: The snapshot json fixture.
             faker: The faker fixture.
             request: The request fixture.
             expand: The expand fixture.
@@ -322,8 +328,7 @@ class TestTakeService(ServicesTestCase):  # noqa: WPS214
             snapshot,
             name=f"retrieve_request_expand_{suffix}",
         )
-        snapshot.assert_match(
-            take_model.model_dump(),
+        assert take_model.model_dump() == snapshot_json(
             name=f"retrieve_response_expand_{suffix}",
         )
 
@@ -339,23 +344,20 @@ class TestTakeService(ServicesTestCase):  # noqa: WPS214
         """
         with pytest.raises(TransportQueryError) as excinfo:
             self.client.takes.retrieve(id=faker.uuid4())
-        snapshot.assert_match(
-            excinfo.value.errors,  # noqa: WPS441
+        assert excinfo.value.errors == snapshot(  # noqa: WPS441
             name="take_not_found_response",
         )
 
-    def test_list(self, snapshot, takes_list_response):
+    def test_list(self, snapshot, snapshot_json, takes_list_response):
         """Test listing takes.
 
         This should test -> `ugc.takes.list()`
 
         Args:
             snapshot: The snapshot fixture.
+            snapshot_json: The snapshot json fixture.
             takes_list_response: take list response fixture.
         """
         take_list = self.client.takes.list()
         self.assert_execute(snapshot, name="take_list_request")
-        snapshot.assert_match(
-            take_list.model_dump(),
-            name="list_response",
-        )
+        assert take_list.model_dump() == snapshot_json(name="list_response")

@@ -1,0 +1,1006 @@
+# serializer version: 1
+# name: TestTakeService.test_create[empty_expand][create_mutation_expand_[]]
+  list([
+    list([
+      '''
+        mutation create($sources: [SourceInput!], $name: String, $metadata: AWSJSON) {
+          createSingleCamTake(sources: $sources, name: $name, metadata: $metadata) {
+            id
+            created
+            metadata
+            name
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': 'site',
+        'sources': list([
+          dict({
+            'deviceLabel': 'white',
+            'fileId': 'a8491a43-874a-40b9-8d86-63243ab5ed05',
+            'format': 'MP4',
+          }),
+          dict({
+            'deviceLabel': 'white',
+            'fileId': '06c7a4f6-34c4-414f-930e-9daa0d4585a7',
+            'format': 'MOVE',
+          }),
+        ]),
+      }),
+    }),
+  ])
+# ---
+# name: TestTakeService.test_create[expand_additional_sources][create_mutation_expand_sources]
+  list([
+    list([
+      '''
+        mutation create($sources: [SourceInput!], $name: String, $metadata: AWSJSON) {
+          createSingleCamTake(sources: $sources, name: $name, metadata: $metadata) {
+            id
+            created
+            metadata
+            name
+            sources {
+              deviceLabel
+              file {
+                id
+                created
+                type
+                metadata
+                name
+                presignedUrl
+                thumbnailUrl
+                __typename
+              }
+              format
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': 'site',
+        'sources': list([
+          dict({
+            'deviceLabel': 'white',
+            'fileId': 'a8491a43-874a-40b9-8d86-63243ab5ed05',
+            'format': 'MP4',
+          }),
+          dict({
+            'deviceLabel': 'white',
+            'fileId': '06c7a4f6-34c4-414f-930e-9daa0d4585a7',
+            'format': 'MOVE',
+          }),
+        ]),
+      }),
+    }),
+  ])
+# ---
+# name: TestTakeService.test_create[expand_client][create_mutation_expand_client]
+  list([
+    list([
+      '''
+        mutation create($sources: [SourceInput!], $name: String, $metadata: AWSJSON) {
+          createSingleCamTake(sources: $sources, name: $name, metadata: $metadata) {
+            id
+            created
+            metadata
+            name
+            client {
+              id
+              name
+              created
+              metadata
+              portal
+              __typename
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': 'site',
+        'sources': list([
+          dict({
+            'deviceLabel': 'white',
+            'fileId': 'a8491a43-874a-40b9-8d86-63243ab5ed05',
+            'format': 'MP4',
+          }),
+          dict({
+            'deviceLabel': 'white',
+            'fileId': '06c7a4f6-34c4-414f-930e-9daa0d4585a7',
+            'format': 'MOVE',
+          }),
+        ]),
+      }),
+    }),
+  ])
+# ---
+# name: TestTakeService.test_create[expand_video_file][create_mutation_expand_sources]
+  list([
+    list([
+      '''
+        mutation create($sources: [SourceInput!], $name: String, $metadata: AWSJSON) {
+          createSingleCamTake(sources: $sources, name: $name, metadata: $metadata) {
+            id
+            created
+            metadata
+            name
+            sources {
+              deviceLabel
+              file {
+                id
+                created
+                type
+                metadata
+                name
+                presignedUrl
+                thumbnailUrl
+                __typename
+              }
+              format
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': 'site',
+        'sources': list([
+          dict({
+            'deviceLabel': 'white',
+            'fileId': 'a8491a43-874a-40b9-8d86-63243ab5ed05',
+            'format': 'MP4',
+          }),
+          dict({
+            'deviceLabel': 'white',
+            'fileId': '06c7a4f6-34c4-414f-930e-9daa0d4585a7',
+            'format': 'MOVE',
+          }),
+        ]),
+      }),
+    }),
+  ])
+# ---
+# name: TestTakeService.test_create[no_expand][create_mutation_expand_None]
+  list([
+    list([
+      '''
+        mutation create($sources: [SourceInput!], $name: String, $metadata: AWSJSON) {
+          createSingleCamTake(sources: $sources, name: $name, metadata: $metadata) {
+            id
+            created
+            metadata
+            name
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': 'site',
+        'sources': list([
+          dict({
+            'deviceLabel': 'white',
+            'fileId': 'a8491a43-874a-40b9-8d86-63243ab5ed05',
+            'format': 'MP4',
+          }),
+          dict({
+            'deviceLabel': 'white',
+            'fileId': '06c7a4f6-34c4-414f-930e-9daa0d4585a7',
+            'format': 'MOVE',
+          }),
+        ]),
+      }),
+    }),
+  ])
+# ---
+# name: TestTakeService.test_create_lower_additional_file_key[create_mutation_lower_additional_file_key]
+  list([
+    list([
+      '''
+        mutation create($sources: [SourceInput!], $name: String, $metadata: AWSJSON) {
+          createSingleCamTake(sources: $sources, name: $name, metadata: $metadata) {
+            id
+            created
+            metadata
+            name
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'metadata': '"{}"',
+        'name': '',
+        'sources': list([
+          dict({
+            'deviceLabel': 'white',
+            'fileId': 'a8491a43-874a-40b9-8d86-63243ab5ed05',
+            'format': 'MP4',
+          }),
+          dict({
+            'deviceLabel': 'area',
+            'fileId': 'bdc68ffa-06c7-44f6-b4c4-614f530e9daa',
+            'format': 'MOVE',
+          }),
+        ]),
+      }),
+    }),
+  ])
+# ---
+# name: TestTakeService.test_create_multicam[empty_expand][create_mutation_expand_[]]
+  list([
+    list([
+      '''
+        mutation create($sources: [SourceInput!], $syncMethod: SyncMethodInput, $metadata: AWSJSON, $name: String, $volumeId: String!) {
+          createMultiCamTake(
+            sources: $sources
+            syncMethod: $syncMethod
+            name: $name
+            volumeId: $volumeId
+            metadata: $metadata
+          ) {
+            id
+            created
+            metadata
+            name
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': 'evening',
+        'sources': list([
+          dict({
+            'cameraSettings': dict({
+              'lens': 'area',
+            }),
+            'deviceLabel': 'white',
+            'fileId': 'a8491a43-874a-40b9-8d86-63243ab5ed05',
+            'format': 'MP4',
+          }),
+          dict({
+            'cameraSettings': dict({
+              'lens': 'director',
+            }),
+            'deviceLabel': 'white',
+            'fileId': 'bdc68ffa-06c7-44f6-b4c4-614f530e9daa',
+            'format': 'MOVE',
+          }),
+        ]),
+        'syncMethod': dict({
+          'clapWindow': None,
+          'timecodeSync': dict({
+            'useTimecode': False,
+          }),
+        }),
+        'volumeId': 'volume-cba1d785-4a1e-4b59-aca4-d775bfdde401',
+      }),
+    }),
+  ])
+# ---
+# name: TestTakeService.test_create_multicam[expand_additional_sources][create_mutation_expand_sources]
+  list([
+    list([
+      '''
+        mutation create($sources: [SourceInput!], $syncMethod: SyncMethodInput, $metadata: AWSJSON, $name: String, $volumeId: String!) {
+          createMultiCamTake(
+            sources: $sources
+            syncMethod: $syncMethod
+            name: $name
+            volumeId: $volumeId
+            metadata: $metadata
+          ) {
+            id
+            created
+            metadata
+            name
+            sources {
+              deviceLabel
+              file {
+                id
+                created
+                type
+                metadata
+                name
+                presignedUrl
+                thumbnailUrl
+                __typename
+              }
+              format
+              cameraSettings {
+                lens
+              }
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': 'evening',
+        'sources': list([
+          dict({
+            'cameraSettings': dict({
+              'lens': 'area',
+            }),
+            'deviceLabel': 'white',
+            'fileId': 'a8491a43-874a-40b9-8d86-63243ab5ed05',
+            'format': 'MP4',
+          }),
+          dict({
+            'cameraSettings': dict({
+              'lens': 'director',
+            }),
+            'deviceLabel': 'white',
+            'fileId': 'bdc68ffa-06c7-44f6-b4c4-614f530e9daa',
+            'format': 'MOVE',
+          }),
+        ]),
+        'syncMethod': dict({
+          'clapWindow': None,
+          'timecodeSync': dict({
+            'useTimecode': False,
+          }),
+        }),
+        'volumeId': 'volume-cba1d785-4a1e-4b59-aca4-d775bfdde401',
+      }),
+    }),
+  ])
+# ---
+# name: TestTakeService.test_create_multicam[expand_client][create_mutation_expand_client]
+  list([
+    list([
+      '''
+        mutation create($sources: [SourceInput!], $syncMethod: SyncMethodInput, $metadata: AWSJSON, $name: String, $volumeId: String!) {
+          createMultiCamTake(
+            sources: $sources
+            syncMethod: $syncMethod
+            name: $name
+            volumeId: $volumeId
+            metadata: $metadata
+          ) {
+            id
+            created
+            metadata
+            name
+            client {
+              id
+              name
+              created
+              metadata
+              portal
+              __typename
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': 'evening',
+        'sources': list([
+          dict({
+            'cameraSettings': dict({
+              'lens': 'area',
+            }),
+            'deviceLabel': 'white',
+            'fileId': 'a8491a43-874a-40b9-8d86-63243ab5ed05',
+            'format': 'MP4',
+          }),
+          dict({
+            'cameraSettings': dict({
+              'lens': 'director',
+            }),
+            'deviceLabel': 'white',
+            'fileId': 'bdc68ffa-06c7-44f6-b4c4-614f530e9daa',
+            'format': 'MOVE',
+          }),
+        ]),
+        'syncMethod': dict({
+          'clapWindow': None,
+          'timecodeSync': dict({
+            'useTimecode': False,
+          }),
+        }),
+        'volumeId': 'volume-cba1d785-4a1e-4b59-aca4-d775bfdde401',
+      }),
+    }),
+  ])
+# ---
+# name: TestTakeService.test_create_multicam[expand_video_file][create_mutation_expand_sources]
+  list([
+    list([
+      '''
+        mutation create($sources: [SourceInput!], $syncMethod: SyncMethodInput, $metadata: AWSJSON, $name: String, $volumeId: String!) {
+          createMultiCamTake(
+            sources: $sources
+            syncMethod: $syncMethod
+            name: $name
+            volumeId: $volumeId
+            metadata: $metadata
+          ) {
+            id
+            created
+            metadata
+            name
+            sources {
+              deviceLabel
+              file {
+                id
+                created
+                type
+                metadata
+                name
+                presignedUrl
+                thumbnailUrl
+                __typename
+              }
+              format
+              cameraSettings {
+                lens
+              }
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': 'evening',
+        'sources': list([
+          dict({
+            'cameraSettings': dict({
+              'lens': 'area',
+            }),
+            'deviceLabel': 'white',
+            'fileId': 'a8491a43-874a-40b9-8d86-63243ab5ed05',
+            'format': 'MP4',
+          }),
+          dict({
+            'cameraSettings': dict({
+              'lens': 'director',
+            }),
+            'deviceLabel': 'white',
+            'fileId': 'bdc68ffa-06c7-44f6-b4c4-614f530e9daa',
+            'format': 'MOVE',
+          }),
+        ]),
+        'syncMethod': dict({
+          'clapWindow': None,
+          'timecodeSync': dict({
+            'useTimecode': False,
+          }),
+        }),
+        'volumeId': 'volume-cba1d785-4a1e-4b59-aca4-d775bfdde401',
+      }),
+    }),
+  ])
+# ---
+# name: TestTakeService.test_create_multicam[expand_volume][create_mutation_expand_volume]
+  list([
+    list([
+      '''
+        mutation create($sources: [SourceInput!], $syncMethod: SyncMethodInput, $metadata: AWSJSON, $name: String, $volumeId: String!) {
+          createMultiCamTake(
+            sources: $sources
+            syncMethod: $syncMethod
+            name: $name
+            volumeId: $volumeId
+            metadata: $metadata
+          ) {
+            id
+            created
+            metadata
+            name
+            volume {
+              ... on Volume {
+                ...HumanVolumeFragment
+              }
+            }
+            __typename
+          }
+        }
+        
+        fragment HumanVolumeFragment on HumanVolume {
+          id
+          areaType
+          created
+          humanHeight
+          metadata
+          name
+          state
+          __typename
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': 'evening',
+        'sources': list([
+          dict({
+            'cameraSettings': dict({
+              'lens': 'area',
+            }),
+            'deviceLabel': 'white',
+            'fileId': 'a8491a43-874a-40b9-8d86-63243ab5ed05',
+            'format': 'MP4',
+          }),
+          dict({
+            'cameraSettings': dict({
+              'lens': 'director',
+            }),
+            'deviceLabel': 'white',
+            'fileId': 'bdc68ffa-06c7-44f6-b4c4-614f530e9daa',
+            'format': 'MOVE',
+          }),
+        ]),
+        'syncMethod': dict({
+          'clapWindow': None,
+          'timecodeSync': dict({
+            'useTimecode': False,
+          }),
+        }),
+        'volumeId': 'volume-cba1d785-4a1e-4b59-aca4-d775bfdde401',
+      }),
+    }),
+  ])
+# ---
+# name: TestTakeService.test_create_multicam[no_expand][create_mutation_expand_None]
+  list([
+    list([
+      '''
+        mutation create($sources: [SourceInput!], $syncMethod: SyncMethodInput, $metadata: AWSJSON, $name: String, $volumeId: String!) {
+          createMultiCamTake(
+            sources: $sources
+            syncMethod: $syncMethod
+            name: $name
+            volumeId: $volumeId
+            metadata: $metadata
+          ) {
+            id
+            created
+            metadata
+            name
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': 'evening',
+        'sources': list([
+          dict({
+            'cameraSettings': dict({
+              'lens': 'area',
+            }),
+            'deviceLabel': 'white',
+            'fileId': 'a8491a43-874a-40b9-8d86-63243ab5ed05',
+            'format': 'MP4',
+          }),
+          dict({
+            'cameraSettings': dict({
+              'lens': 'director',
+            }),
+            'deviceLabel': 'white',
+            'fileId': 'bdc68ffa-06c7-44f6-b4c4-614f530e9daa',
+            'format': 'MOVE',
+          }),
+        ]),
+        'syncMethod': dict({
+          'clapWindow': None,
+          'timecodeSync': dict({
+            'useTimecode': False,
+          }),
+        }),
+        'volumeId': 'volume-cba1d785-4a1e-4b59-aca4-d775bfdde401',
+      }),
+    }),
+  ])
+# ---
+# name: TestTakeService.test_fetch_service
+  TakeService(api_key=SecretStr('**********'), endpoint_url=HttpUrl('https://pytest_invalid_endpoint_url.com/'))
+# ---
+# name: TestTakeService.test_list[take_list_request]
+  list([
+    list([
+      '''
+        query list($first: Int, $after: AWSJSON, $sortDirection: SortDirection) {
+          listTakes(first: $first, after: $after, sortDirection: $sortDirection) {
+            first
+            after
+            items {
+              id
+              created
+              metadata
+              name
+              __typename
+            }
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'after': None,
+        'expand': None,
+        'first': 10,
+        'sortDirection': 'DESC',
+      }),
+    }),
+  ])
+# ---
+# name: TestTakeService.test_retrieve[empty_expand][retrieve_request_expand_[]]
+  list([
+    list([
+      '''
+        query retrieve($id: ID!) {
+          getTake(takeId: $id) {
+            id
+            created
+            metadata
+            name
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'id': '874a50b9-8d86-4324-bab5-ed05e9c5e560',
+      }),
+    }),
+  ])
+# ---
+# name: TestTakeService.test_retrieve[expand_additional_files][retrieve_request_expand_sources]
+  list([
+    list([
+      '''
+        query retrieve($id: ID!) {
+          getTake(takeId: $id) {
+            id
+            created
+            metadata
+            name
+            sources {
+              deviceLabel
+              file {
+                id
+                created
+                type
+                metadata
+                name
+                presignedUrl
+                thumbnailUrl
+                __typename
+              }
+              format
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'id': '874a50b9-8d86-4324-bab5-ed05e9c5e560',
+      }),
+    }),
+  ])
+# ---
+# name: TestTakeService.test_retrieve[expand_client][retrieve_request_expand_client]
+  list([
+    list([
+      '''
+        query retrieve($id: ID!) {
+          getTake(takeId: $id) {
+            id
+            created
+            metadata
+            name
+            client {
+              id
+              name
+              created
+              metadata
+              portal
+              __typename
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'id': '874a50b9-8d86-4324-bab5-ed05e9c5e560',
+      }),
+    }),
+  ])
+# ---
+# name: TestTakeService.test_retrieve[expand_video_file][retrieve_request_expand_sources]
+  list([
+    list([
+      '''
+        query retrieve($id: ID!) {
+          getTake(takeId: $id) {
+            id
+            created
+            metadata
+            name
+            sources {
+              deviceLabel
+              file {
+                id
+                created
+                type
+                metadata
+                name
+                presignedUrl
+                thumbnailUrl
+                __typename
+              }
+              format
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'id': '874a50b9-8d86-4324-bab5-ed05e9c5e560',
+      }),
+    }),
+  ])
+# ---
+# name: TestTakeService.test_retrieve[no_expand][retrieve_request_expand_None]
+  list([
+    list([
+      '''
+        query retrieve($id: ID!) {
+          getTake(takeId: $id) {
+            id
+            created
+            metadata
+            name
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'id': '874a50b9-8d86-4324-bab5-ed05e9c5e560',
+      }),
+    }),
+  ])
+# ---
+# name: TestTakeService.test_take_not_found[take_not_found_response]
+  list([
+    dict({
+      'data': None,
+      'errorInfo': None,
+      'errorType': 'MoveNotFoundError',
+      'locations': list([
+        dict({
+          'column': 3,
+          'line': 2,
+          'sourceName': None,
+        }),
+      ]),
+      'message': 'Resource not found in move-ugc-api.',
+      'path': list([
+        'getTake',
+      ]),
+    }),
+  ])
+# ---
+# name: TestTakeService.test_update[empty_expand][update_mutation_expand_[]]
+  list([
+    list([
+      '''
+        mutation update($id: String!, $metadata: AWSJSON, $name: String) {
+          updateTake(id: $id, metadata: $metadata, name: $name) {
+            id
+            created
+            metadata
+            name
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'id': '874a50b9-8d86-4324-bab5-ed05e9c5e560',
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': 'Erika Johnson',
+      }),
+    }),
+  ])
+# ---
+# name: TestTakeService.test_update[expand_additional_files][update_mutation_expand_sources]
+  list([
+    list([
+      '''
+        mutation update($id: String!, $metadata: AWSJSON, $name: String) {
+          updateTake(id: $id, metadata: $metadata, name: $name) {
+            id
+            created
+            metadata
+            name
+            sources {
+              deviceLabel
+              file {
+                id
+                created
+                type
+                metadata
+                name
+                presignedUrl
+                thumbnailUrl
+                __typename
+              }
+              format
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'id': '874a50b9-8d86-4324-bab5-ed05e9c5e560',
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': 'Erika Johnson',
+      }),
+    }),
+  ])
+# ---
+# name: TestTakeService.test_update[expand_client][update_mutation_expand_client]
+  list([
+    list([
+      '''
+        mutation update($id: String!, $metadata: AWSJSON, $name: String) {
+          updateTake(id: $id, metadata: $metadata, name: $name) {
+            id
+            created
+            metadata
+            name
+            client {
+              id
+              name
+              created
+              metadata
+              portal
+              __typename
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'id': '874a50b9-8d86-4324-bab5-ed05e9c5e560',
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': 'Erika Johnson',
+      }),
+    }),
+  ])
+# ---
+# name: TestTakeService.test_update[expand_video_file][update_mutation_expand_sources]
+  list([
+    list([
+      '''
+        mutation update($id: String!, $metadata: AWSJSON, $name: String) {
+          updateTake(id: $id, metadata: $metadata, name: $name) {
+            id
+            created
+            metadata
+            name
+            sources {
+              deviceLabel
+              file {
+                id
+                created
+                type
+                metadata
+                name
+                presignedUrl
+                thumbnailUrl
+                __typename
+              }
+              format
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'id': '874a50b9-8d86-4324-bab5-ed05e9c5e560',
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': 'Erika Johnson',
+      }),
+    }),
+  ])
+# ---
+# name: TestTakeService.test_update[no_expand][update_mutation_expand_None]
+  list([
+    list([
+      '''
+        mutation update($id: String!, $metadata: AWSJSON, $name: String) {
+          updateTake(id: $id, metadata: $metadata, name: $name) {
+            id
+            created
+            metadata
+            name
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'id': '874a50b9-8d86-4324-bab5-ed05e9c5e560',
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': 'Erika Johnson',
+      }),
+    }),
+  ])
+# ---

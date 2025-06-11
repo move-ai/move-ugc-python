@@ -1,0 +1,24 @@
+# serializer version: 1
+# name: TestCameraSettingsService.test_fetch_service
+  CameraSettingsService(api_key=SecretStr('**********'), endpoint_url=HttpUrl('https://pytest_invalid_endpoint_url.com/'))
+# ---
+# name: TestCameraSettingsService.test_list[camera_settings_list_request]
+  list([
+    list([
+      '''
+        query list {
+          listCameraSettings {
+            items {
+              lens
+              __typename
+            }
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': None,
+    }),
+  ])
+# ---

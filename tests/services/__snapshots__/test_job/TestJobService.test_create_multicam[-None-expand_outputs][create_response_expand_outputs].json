@@ -1,0 +1,88 @@
+{
+  "client": null,
+  "created": "2023-07-10T12:13:56.615715+0000",
+  "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+  "inputs": {
+    "clip_window": {
+      "end_time": 10.0,
+      "start_time": 10.0
+    },
+    "number_of_actors": 1,
+    "options": {
+      "trackBall": true,
+      "trackFingers": false
+    }
+  },
+  "metadata": {
+    "analysis": "UmKdTFlLMIuIvJkRJnoM",
+    "decade": "zAvJMvacZIYSmMsDUNvC",
+    "director": "KNmpExWtgQLcAEuRyBkN",
+    "draw": "PnbQcVNCliYtuFCSJkGb",
+    "house": "aYyOUXkJPUjPJGpDdakX",
+    "huge": "eFaLyHGEQQpSzpRFSYEm",
+    "last": "dnZCcfgZNBnaEkbOzIyO",
+    "other": "XbBPNrbhtJksbBuoWXSK",
+    "table": "ACMVZcKAiGBcYgCzHAad",
+    "trouble": "UgnhIyaDJzohUigyDYZf"
+  },
+  "name": "",
+  "outputs": [
+    {
+      "file": {
+        "client": null,
+        "created": "2023-07-03T14:48:06.029019+0000",
+        "id": "file-a0059241-7ede-411c-a149-769a4305e8b6",
+        "metadata": {
+          "analysis": "UmKdTFlLMIuIvJkRJnoM",
+          "decade": "zAvJMvacZIYSmMsDUNvC",
+          "director": "KNmpExWtgQLcAEuRyBkN",
+          "draw": "PnbQcVNCliYtuFCSJkGb",
+          "house": "aYyOUXkJPUjPJGpDdakX",
+          "huge": "eFaLyHGEQQpSzpRFSYEm",
+          "last": "dnZCcfgZNBnaEkbOzIyO",
+          "other": "XbBPNrbhtJksbBuoWXSK",
+          "table": "ACMVZcKAiGBcYgCzHAad",
+          "trouble": "UgnhIyaDJzohUigyDYZf"
+        },
+        "name": "",
+        "presigned_url": "HttpUrl('https://pytest_invalid_presigned_url.com/file')",
+        "thumbnail_url": "HttpUrl('https://pytest_invalid_thumbnail_url.com/file')",
+        "type": ".mp4"
+      },
+      "format": "mp4",
+      "key": "mp4"
+    },
+    {
+      "file": {
+        "client": null,
+        "created": "2023-07-03T14:48:06.029019+0000",
+        "id": "file-a0059241-7ede-411c-a149-769a4305e8b6",
+        "metadata": {
+          "analysis": "UmKdTFlLMIuIvJkRJnoM",
+          "decade": "zAvJMvacZIYSmMsDUNvC",
+          "director": "KNmpExWtgQLcAEuRyBkN",
+          "draw": "PnbQcVNCliYtuFCSJkGb",
+          "house": "aYyOUXkJPUjPJGpDdakX",
+          "huge": "eFaLyHGEQQpSzpRFSYEm",
+          "last": "dnZCcfgZNBnaEkbOzIyO",
+          "other": "XbBPNrbhtJksbBuoWXSK",
+          "table": "ACMVZcKAiGBcYgCzHAad",
+          "trouble": "UgnhIyaDJzohUigyDYZf"
+        },
+        "name": "",
+        "presigned_url": "HttpUrl('https://pytest_invalid_presigned_url.com/file')",
+        "thumbnail_url": "HttpUrl('https://pytest_invalid_thumbnail_url.com/file')",
+        "type": ".mp4"
+      },
+      "format": "fbx",
+      "key": "fbx"
+    }
+  ],
+  "progress": {
+    "percentage_complete": 50,
+    "state": "RUNNING"
+  },
+  "rig": null,
+  "state": "RUNNING",
+  "take": null
+}

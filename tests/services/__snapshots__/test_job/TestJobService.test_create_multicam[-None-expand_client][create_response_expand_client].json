@@ -1,0 +1,45 @@
+{
+  "client": {
+    "created": "2023-06-12T00:00:00.000000+0000",
+    "id": "client-47c982ec-60ab-4a0b-9286-2db4a76abc18",
+    "metadata": {
+      "foo": "bar"
+    },
+    "name": "PYTEST_INVALID_CLIENT_NAME",
+    "portal": "HttpUrl('https://app.svix.com/login?primaryColorLight=39ddef&primaryColorDark=39ddef#key=')"
+  },
+  "created": "2023-07-10T12:13:56.615715+0000",
+  "id": "job-59ff6b90-e03c-41cf-8d20-58926e0e4f3f",
+  "inputs": {
+    "clip_window": {
+      "end_time": 10.0,
+      "start_time": 10.0
+    },
+    "number_of_actors": 1,
+    "options": {
+      "trackBall": true,
+      "trackFingers": false
+    }
+  },
+  "metadata": {
+    "analysis": "UmKdTFlLMIuIvJkRJnoM",
+    "decade": "zAvJMvacZIYSmMsDUNvC",
+    "director": "KNmpExWtgQLcAEuRyBkN",
+    "draw": "PnbQcVNCliYtuFCSJkGb",
+    "house": "aYyOUXkJPUjPJGpDdakX",
+    "huge": "eFaLyHGEQQpSzpRFSYEm",
+    "last": "dnZCcfgZNBnaEkbOzIyO",
+    "other": "XbBPNrbhtJksbBuoWXSK",
+    "table": "ACMVZcKAiGBcYgCzHAad",
+    "trouble": "UgnhIyaDJzohUigyDYZf"
+  },
+  "name": "",
+  "outputs": null,
+  "progress": {
+    "percentage_complete": 50,
+    "state": "RUNNING"
+  },
+  "rig": null,
+  "state": "RUNNING",
+  "take": null
+}
