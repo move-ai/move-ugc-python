@@ -1,3 +1,13 @@
+## 4.1.0 (2025-06-11)
+
+### Feat
+
+- IST-2861: Implement syrupy
+
+### Fix
+
+- IST-2760: Tests for python 3.12 and 3.13
+
 ## 4.0.0 (2025-06-09)
 
 ### BREAKING CHANGE
