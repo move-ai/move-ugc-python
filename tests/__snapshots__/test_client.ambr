@@ -1,0 +1,4 @@
+# serializer version: 1
+# name: TestMoveUgcClient.test_create_client
+  MoveUgc(api_key=SecretStr('**********'), endpoint_url=HttpUrl('https://pytest_invalid_endpoint_url.com/'))
+# ---

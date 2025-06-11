@@ -39,4 +39,4 @@ class ServicesTestCase:
                 readable_args.append(print_ast(arg))
                 continue
             readable_args.append(arg)
-        snapshot.assert_match([readable_args, kwargs], name=name)
+        assert snapshot(name=name) == [readable_args, kwargs]

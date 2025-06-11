@@ -1,0 +1,2525 @@
+# serializer version: 1
+# name: TestJobService.test_create_multicam[-None-empty_expand][create_mutation_expand_[]]
+  list([
+    list([
+      '''
+        mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String, $clip_window: ClipWindowInput) {
+          createMultiCamJob(
+            takeId: $take_id
+            name: $name
+            numberOfActors: $numberOfActors
+            options: $options
+            outputs: $outputs
+            metadata: $metadata
+            rig: $rig
+            clipWindow: $clip_window
+          ) {
+            id
+            created
+            metadata
+            state
+            name
+            progress {
+              state
+              percentageComplete
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'clip_window': None,
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': '',
+        'numberOfActors': 8658,
+        'options': dict({
+        }),
+        'outputs': list([
+        ]),
+        'rig': '',
+        'take_id': '8d866324-3ab5-4d05-a9c5-e560a8020f0a',
+      }),
+    }),
+  ])
+# ---
+# name: TestJobService.test_create_multicam[-None-expand_client][create_mutation_expand_client]
+  list([
+    list([
+      '''
+        mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String, $clip_window: ClipWindowInput) {
+          createMultiCamJob(
+            takeId: $take_id
+            name: $name
+            numberOfActors: $numberOfActors
+            options: $options
+            outputs: $outputs
+            metadata: $metadata
+            rig: $rig
+            clipWindow: $clip_window
+          ) {
+            id
+            created
+            metadata
+            state
+            name
+            progress {
+              state
+              percentageComplete
+            }
+            client {
+              id
+              name
+              created
+              metadata
+              portal
+              __typename
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'clip_window': None,
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': '',
+        'numberOfActors': 8658,
+        'options': dict({
+        }),
+        'outputs': list([
+        ]),
+        'rig': '',
+        'take_id': '8d866324-3ab5-4d05-a9c5-e560a8020f0a',
+      }),
+    }),
+  ])
+# ---
+# name: TestJobService.test_create_multicam[-None-expand_outputs][create_mutation_expand_outputs]
+  list([
+    list([
+      '''
+        mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String, $clip_window: ClipWindowInput) {
+          createMultiCamJob(
+            takeId: $take_id
+            name: $name
+            numberOfActors: $numberOfActors
+            options: $options
+            outputs: $outputs
+            metadata: $metadata
+            rig: $rig
+            clipWindow: $clip_window
+          ) {
+            id
+            created
+            metadata
+            state
+            name
+            progress {
+              state
+              percentageComplete
+            }
+            outputs {
+              format
+              file {
+                id
+                created
+                type
+                metadata
+                name
+                presignedUrl
+                thumbnailUrl
+                __typename
+              }
+              __typename
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'clip_window': None,
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': '',
+        'numberOfActors': 8658,
+        'options': dict({
+        }),
+        'outputs': list([
+        ]),
+        'rig': '',
+        'take_id': '8d866324-3ab5-4d05-a9c5-e560a8020f0a',
+      }),
+    }),
+  ])
+# ---
+# name: TestJobService.test_create_multicam[-None-expand_rig][create_mutation_expand_rig]
+  list([
+    list([
+      '''
+        mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String, $clip_window: ClipWindowInput) {
+          createMultiCamJob(
+            takeId: $take_id
+            name: $name
+            numberOfActors: $numberOfActors
+            options: $options
+            outputs: $outputs
+            metadata: $metadata
+            rig: $rig
+            clipWindow: $clip_window
+          ) {
+            id
+            created
+            metadata
+            state
+            name
+            progress {
+              state
+              percentageComplete
+            }
+            rig {
+              name
+              __typename
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'clip_window': None,
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': '',
+        'numberOfActors': 8658,
+        'options': dict({
+        }),
+        'outputs': list([
+        ]),
+        'rig': '',
+        'take_id': '8d866324-3ab5-4d05-a9c5-e560a8020f0a',
+      }),
+    }),
+  ])
+# ---
+# name: TestJobService.test_create_multicam[-None-expand_take][create_mutation_expand_take]
+  list([
+    list([
+      '''
+        mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String, $clip_window: ClipWindowInput) {
+          createMultiCamJob(
+            takeId: $take_id
+            name: $name
+            numberOfActors: $numberOfActors
+            options: $options
+            outputs: $outputs
+            metadata: $metadata
+            rig: $rig
+            clipWindow: $clip_window
+          ) {
+            id
+            created
+            metadata
+            state
+            name
+            progress {
+              state
+              percentageComplete
+            }
+            take {
+              id
+              created
+              name
+              metadata
+              __typename
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'clip_window': None,
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': '',
+        'numberOfActors': 849,
+        'options': dict({
+        }),
+        'outputs': list([
+        ]),
+        'rig': '',
+        'take_id': '874a50b9-8d86-4324-bab5-ed05e9c5e560',
+      }),
+    }),
+  ])
+# ---
+# name: TestJobService.test_create_multicam[-None-no_expand][create_mutation_expand_None]
+  list([
+    list([
+      '''
+        mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String, $clip_window: ClipWindowInput) {
+          createMultiCamJob(
+            takeId: $take_id
+            name: $name
+            numberOfActors: $numberOfActors
+            options: $options
+            outputs: $outputs
+            metadata: $metadata
+            rig: $rig
+            clipWindow: $clip_window
+          ) {
+            id
+            created
+            metadata
+            state
+            name
+            progress {
+              state
+              percentageComplete
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'clip_window': None,
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': '',
+        'numberOfActors': 8658,
+        'options': dict({
+        }),
+        'outputs': list([
+        ]),
+        'rig': '',
+        'take_id': '8d866324-3ab5-4d05-a9c5-e560a8020f0a',
+      }),
+    }),
+  ])
+# ---
+# name: TestJobService.test_create_multicam[-options1-empty_expand][create_mutation_expand_[]]
+  list([
+    list([
+      '''
+        mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String, $clip_window: ClipWindowInput) {
+          createMultiCamJob(
+            takeId: $take_id
+            name: $name
+            numberOfActors: $numberOfActors
+            options: $options
+            outputs: $outputs
+            metadata: $metadata
+            rig: $rig
+            clipWindow: $clip_window
+          ) {
+            id
+            created
+            metadata
+            state
+            name
+            progress {
+              state
+              percentageComplete
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'clip_window': None,
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': '',
+        'numberOfActors': 8658,
+        'options': dict({
+          'floorPlane': True,
+          'trackFingers': False,
+        }),
+        'outputs': list([
+        ]),
+        'rig': '',
+        'take_id': '8d866324-3ab5-4d05-a9c5-e560a8020f0a',
+      }),
+    }),
+  ])
+# ---
+# name: TestJobService.test_create_multicam[-options1-expand_client][create_mutation_expand_client]
+  list([
+    list([
+      '''
+        mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String, $clip_window: ClipWindowInput) {
+          createMultiCamJob(
+            takeId: $take_id
+            name: $name
+            numberOfActors: $numberOfActors
+            options: $options
+            outputs: $outputs
+            metadata: $metadata
+            rig: $rig
+            clipWindow: $clip_window
+          ) {
+            id
+            created
+            metadata
+            state
+            name
+            progress {
+              state
+              percentageComplete
+            }
+            client {
+              id
+              name
+              created
+              metadata
+              portal
+              __typename
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'clip_window': None,
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': '',
+        'numberOfActors': 8658,
+        'options': dict({
+          'floorPlane': True,
+          'trackFingers': False,
+        }),
+        'outputs': list([
+        ]),
+        'rig': '',
+        'take_id': '8d866324-3ab5-4d05-a9c5-e560a8020f0a',
+      }),
+    }),
+  ])
+# ---
+# name: TestJobService.test_create_multicam[-options1-expand_outputs][create_mutation_expand_outputs]
+  list([
+    list([
+      '''
+        mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String, $clip_window: ClipWindowInput) {
+          createMultiCamJob(
+            takeId: $take_id
+            name: $name
+            numberOfActors: $numberOfActors
+            options: $options
+            outputs: $outputs
+            metadata: $metadata
+            rig: $rig
+            clipWindow: $clip_window
+          ) {
+            id
+            created
+            metadata
+            state
+            name
+            progress {
+              state
+              percentageComplete
+            }
+            outputs {
+              format
+              file {
+                id
+                created
+                type
+                metadata
+                name
+                presignedUrl
+                thumbnailUrl
+                __typename
+              }
+              __typename
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'clip_window': None,
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': '',
+        'numberOfActors': 8658,
+        'options': dict({
+          'floorPlane': True,
+          'trackFingers': False,
+        }),
+        'outputs': list([
+        ]),
+        'rig': '',
+        'take_id': '8d866324-3ab5-4d05-a9c5-e560a8020f0a',
+      }),
+    }),
+  ])
+# ---
+# name: TestJobService.test_create_multicam[-options1-expand_rig][create_mutation_expand_rig]
+  list([
+    list([
+      '''
+        mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String, $clip_window: ClipWindowInput) {
+          createMultiCamJob(
+            takeId: $take_id
+            name: $name
+            numberOfActors: $numberOfActors
+            options: $options
+            outputs: $outputs
+            metadata: $metadata
+            rig: $rig
+            clipWindow: $clip_window
+          ) {
+            id
+            created
+            metadata
+            state
+            name
+            progress {
+              state
+              percentageComplete
+            }
+            rig {
+              name
+              __typename
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'clip_window': None,
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': '',
+        'numberOfActors': 8658,
+        'options': dict({
+          'floorPlane': True,
+          'trackFingers': False,
+        }),
+        'outputs': list([
+        ]),
+        'rig': '',
+        'take_id': '8d866324-3ab5-4d05-a9c5-e560a8020f0a',
+      }),
+    }),
+  ])
+# ---
+# name: TestJobService.test_create_multicam[-options1-expand_take][create_mutation_expand_take]
+  list([
+    list([
+      '''
+        mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String, $clip_window: ClipWindowInput) {
+          createMultiCamJob(
+            takeId: $take_id
+            name: $name
+            numberOfActors: $numberOfActors
+            options: $options
+            outputs: $outputs
+            metadata: $metadata
+            rig: $rig
+            clipWindow: $clip_window
+          ) {
+            id
+            created
+            metadata
+            state
+            name
+            progress {
+              state
+              percentageComplete
+            }
+            take {
+              id
+              created
+              name
+              metadata
+              __typename
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'clip_window': None,
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': '',
+        'numberOfActors': 849,
+        'options': dict({
+          'floorPlane': True,
+          'trackFingers': False,
+        }),
+        'outputs': list([
+        ]),
+        'rig': '',
+        'take_id': '874a50b9-8d86-4324-bab5-ed05e9c5e560',
+      }),
+    }),
+  ])
+# ---
+# name: TestJobService.test_create_multicam[-options1-no_expand][create_mutation_expand_None]
+  list([
+    list([
+      '''
+        mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String, $clip_window: ClipWindowInput) {
+          createMultiCamJob(
+            takeId: $take_id
+            name: $name
+            numberOfActors: $numberOfActors
+            options: $options
+            outputs: $outputs
+            metadata: $metadata
+            rig: $rig
+            clipWindow: $clip_window
+          ) {
+            id
+            created
+            metadata
+            state
+            name
+            progress {
+              state
+              percentageComplete
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'clip_window': None,
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': '',
+        'numberOfActors': 8658,
+        'options': dict({
+          'floorPlane': True,
+          'trackFingers': False,
+        }),
+        'outputs': list([
+        ]),
+        'rig': '',
+        'take_id': '8d866324-3ab5-4d05-a9c5-e560a8020f0a',
+      }),
+    }),
+  ])
+# ---
+# name: TestJobService.test_create_multicam[move_mo-None-empty_expand][create_mutation_expand_[]]
+  list([
+    list([
+      '''
+        mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String, $clip_window: ClipWindowInput) {
+          createMultiCamJob(
+            takeId: $take_id
+            name: $name
+            numberOfActors: $numberOfActors
+            options: $options
+            outputs: $outputs
+            metadata: $metadata
+            rig: $rig
+            clipWindow: $clip_window
+          ) {
+            id
+            created
+            metadata
+            state
+            name
+            progress {
+              state
+              percentageComplete
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'clip_window': None,
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': '',
+        'numberOfActors': 8658,
+        'options': dict({
+        }),
+        'outputs': list([
+        ]),
+        'rig': 'move_mo',
+        'take_id': '8d866324-3ab5-4d05-a9c5-e560a8020f0a',
+      }),
+    }),
+  ])
+# ---
+# name: TestJobService.test_create_multicam[move_mo-None-expand_client][create_mutation_expand_client]
+  list([
+    list([
+      '''
+        mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String, $clip_window: ClipWindowInput) {
+          createMultiCamJob(
+            takeId: $take_id
+            name: $name
+            numberOfActors: $numberOfActors
+            options: $options
+            outputs: $outputs
+            metadata: $metadata
+            rig: $rig
+            clipWindow: $clip_window
+          ) {
+            id
+            created
+            metadata
+            state
+            name
+            progress {
+              state
+              percentageComplete
+            }
+            client {
+              id
+              name
+              created
+              metadata
+              portal
+              __typename
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'clip_window': None,
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': '',
+        'numberOfActors': 8658,
+        'options': dict({
+        }),
+        'outputs': list([
+        ]),
+        'rig': 'move_mo',
+        'take_id': '8d866324-3ab5-4d05-a9c5-e560a8020f0a',
+      }),
+    }),
+  ])
+# ---
+# name: TestJobService.test_create_multicam[move_mo-None-expand_outputs][create_mutation_expand_outputs]
+  list([
+    list([
+      '''
+        mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String, $clip_window: ClipWindowInput) {
+          createMultiCamJob(
+            takeId: $take_id
+            name: $name
+            numberOfActors: $numberOfActors
+            options: $options
+            outputs: $outputs
+            metadata: $metadata
+            rig: $rig
+            clipWindow: $clip_window
+          ) {
+            id
+            created
+            metadata
+            state
+            name
+            progress {
+              state
+              percentageComplete
+            }
+            outputs {
+              format
+              file {
+                id
+                created
+                type
+                metadata
+                name
+                presignedUrl
+                thumbnailUrl
+                __typename
+              }
+              __typename
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'clip_window': None,
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': '',
+        'numberOfActors': 8658,
+        'options': dict({
+        }),
+        'outputs': list([
+        ]),
+        'rig': 'move_mo',
+        'take_id': '8d866324-3ab5-4d05-a9c5-e560a8020f0a',
+      }),
+    }),
+  ])
+# ---
+# name: TestJobService.test_create_multicam[move_mo-None-expand_rig][create_mutation_expand_rig]
+  list([
+    list([
+      '''
+        mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String, $clip_window: ClipWindowInput) {
+          createMultiCamJob(
+            takeId: $take_id
+            name: $name
+            numberOfActors: $numberOfActors
+            options: $options
+            outputs: $outputs
+            metadata: $metadata
+            rig: $rig
+            clipWindow: $clip_window
+          ) {
+            id
+            created
+            metadata
+            state
+            name
+            progress {
+              state
+              percentageComplete
+            }
+            rig {
+              name
+              __typename
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'clip_window': None,
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': '',
+        'numberOfActors': 8658,
+        'options': dict({
+        }),
+        'outputs': list([
+        ]),
+        'rig': 'move_mo',
+        'take_id': '8d866324-3ab5-4d05-a9c5-e560a8020f0a',
+      }),
+    }),
+  ])
+# ---
+# name: TestJobService.test_create_multicam[move_mo-None-expand_take][create_mutation_expand_take]
+  list([
+    list([
+      '''
+        mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String, $clip_window: ClipWindowInput) {
+          createMultiCamJob(
+            takeId: $take_id
+            name: $name
+            numberOfActors: $numberOfActors
+            options: $options
+            outputs: $outputs
+            metadata: $metadata
+            rig: $rig
+            clipWindow: $clip_window
+          ) {
+            id
+            created
+            metadata
+            state
+            name
+            progress {
+              state
+              percentageComplete
+            }
+            take {
+              id
+              created
+              name
+              metadata
+              __typename
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'clip_window': None,
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': '',
+        'numberOfActors': 849,
+        'options': dict({
+        }),
+        'outputs': list([
+        ]),
+        'rig': 'move_mo',
+        'take_id': '874a50b9-8d86-4324-bab5-ed05e9c5e560',
+      }),
+    }),
+  ])
+# ---
+# name: TestJobService.test_create_multicam[move_mo-None-no_expand][create_mutation_expand_None]
+  list([
+    list([
+      '''
+        mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String, $clip_window: ClipWindowInput) {
+          createMultiCamJob(
+            takeId: $take_id
+            name: $name
+            numberOfActors: $numberOfActors
+            options: $options
+            outputs: $outputs
+            metadata: $metadata
+            rig: $rig
+            clipWindow: $clip_window
+          ) {
+            id
+            created
+            metadata
+            state
+            name
+            progress {
+              state
+              percentageComplete
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'clip_window': None,
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': '',
+        'numberOfActors': 8658,
+        'options': dict({
+        }),
+        'outputs': list([
+        ]),
+        'rig': 'move_mo',
+        'take_id': '8d866324-3ab5-4d05-a9c5-e560a8020f0a',
+      }),
+    }),
+  ])
+# ---
+# name: TestJobService.test_create_multicam[move_mo-options1-empty_expand][create_mutation_expand_[]]
+  list([
+    list([
+      '''
+        mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String, $clip_window: ClipWindowInput) {
+          createMultiCamJob(
+            takeId: $take_id
+            name: $name
+            numberOfActors: $numberOfActors
+            options: $options
+            outputs: $outputs
+            metadata: $metadata
+            rig: $rig
+            clipWindow: $clip_window
+          ) {
+            id
+            created
+            metadata
+            state
+            name
+            progress {
+              state
+              percentageComplete
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'clip_window': None,
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': '',
+        'numberOfActors': 8658,
+        'options': dict({
+          'floorPlane': True,
+          'trackFingers': False,
+        }),
+        'outputs': list([
+        ]),
+        'rig': 'move_mo',
+        'take_id': '8d866324-3ab5-4d05-a9c5-e560a8020f0a',
+      }),
+    }),
+  ])
+# ---
+# name: TestJobService.test_create_multicam[move_mo-options1-expand_client][create_mutation_expand_client]
+  list([
+    list([
+      '''
+        mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String, $clip_window: ClipWindowInput) {
+          createMultiCamJob(
+            takeId: $take_id
+            name: $name
+            numberOfActors: $numberOfActors
+            options: $options
+            outputs: $outputs
+            metadata: $metadata
+            rig: $rig
+            clipWindow: $clip_window
+          ) {
+            id
+            created
+            metadata
+            state
+            name
+            progress {
+              state
+              percentageComplete
+            }
+            client {
+              id
+              name
+              created
+              metadata
+              portal
+              __typename
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'clip_window': None,
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': '',
+        'numberOfActors': 8658,
+        'options': dict({
+          'floorPlane': True,
+          'trackFingers': False,
+        }),
+        'outputs': list([
+        ]),
+        'rig': 'move_mo',
+        'take_id': '8d866324-3ab5-4d05-a9c5-e560a8020f0a',
+      }),
+    }),
+  ])
+# ---
+# name: TestJobService.test_create_multicam[move_mo-options1-expand_outputs][create_mutation_expand_outputs]
+  list([
+    list([
+      '''
+        mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String, $clip_window: ClipWindowInput) {
+          createMultiCamJob(
+            takeId: $take_id
+            name: $name
+            numberOfActors: $numberOfActors
+            options: $options
+            outputs: $outputs
+            metadata: $metadata
+            rig: $rig
+            clipWindow: $clip_window
+          ) {
+            id
+            created
+            metadata
+            state
+            name
+            progress {
+              state
+              percentageComplete
+            }
+            outputs {
+              format
+              file {
+                id
+                created
+                type
+                metadata
+                name
+                presignedUrl
+                thumbnailUrl
+                __typename
+              }
+              __typename
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'clip_window': None,
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': '',
+        'numberOfActors': 8658,
+        'options': dict({
+          'floorPlane': True,
+          'trackFingers': False,
+        }),
+        'outputs': list([
+        ]),
+        'rig': 'move_mo',
+        'take_id': '8d866324-3ab5-4d05-a9c5-e560a8020f0a',
+      }),
+    }),
+  ])
+# ---
+# name: TestJobService.test_create_multicam[move_mo-options1-expand_rig][create_mutation_expand_rig]
+  list([
+    list([
+      '''
+        mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String, $clip_window: ClipWindowInput) {
+          createMultiCamJob(
+            takeId: $take_id
+            name: $name
+            numberOfActors: $numberOfActors
+            options: $options
+            outputs: $outputs
+            metadata: $metadata
+            rig: $rig
+            clipWindow: $clip_window
+          ) {
+            id
+            created
+            metadata
+            state
+            name
+            progress {
+              state
+              percentageComplete
+            }
+            rig {
+              name
+              __typename
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'clip_window': None,
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': '',
+        'numberOfActors': 8658,
+        'options': dict({
+          'floorPlane': True,
+          'trackFingers': False,
+        }),
+        'outputs': list([
+        ]),
+        'rig': 'move_mo',
+        'take_id': '8d866324-3ab5-4d05-a9c5-e560a8020f0a',
+      }),
+    }),
+  ])
+# ---
+# name: TestJobService.test_create_multicam[move_mo-options1-expand_take][create_mutation_expand_take]
+  list([
+    list([
+      '''
+        mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String, $clip_window: ClipWindowInput) {
+          createMultiCamJob(
+            takeId: $take_id
+            name: $name
+            numberOfActors: $numberOfActors
+            options: $options
+            outputs: $outputs
+            metadata: $metadata
+            rig: $rig
+            clipWindow: $clip_window
+          ) {
+            id
+            created
+            metadata
+            state
+            name
+            progress {
+              state
+              percentageComplete
+            }
+            take {
+              id
+              created
+              name
+              metadata
+              __typename
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'clip_window': None,
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': '',
+        'numberOfActors': 849,
+        'options': dict({
+          'floorPlane': True,
+          'trackFingers': False,
+        }),
+        'outputs': list([
+        ]),
+        'rig': 'move_mo',
+        'take_id': '874a50b9-8d86-4324-bab5-ed05e9c5e560',
+      }),
+    }),
+  ])
+# ---
+# name: TestJobService.test_create_multicam[move_mo-options1-no_expand][create_mutation_expand_None]
+  list([
+    list([
+      '''
+        mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String, $clip_window: ClipWindowInput) {
+          createMultiCamJob(
+            takeId: $take_id
+            name: $name
+            numberOfActors: $numberOfActors
+            options: $options
+            outputs: $outputs
+            metadata: $metadata
+            rig: $rig
+            clipWindow: $clip_window
+          ) {
+            id
+            created
+            metadata
+            state
+            name
+            progress {
+              state
+              percentageComplete
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'clip_window': None,
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': '',
+        'numberOfActors': 8658,
+        'options': dict({
+          'floorPlane': True,
+          'trackFingers': False,
+        }),
+        'outputs': list([
+        ]),
+        'rig': 'move_mo',
+        'take_id': '8d866324-3ab5-4d05-a9c5-e560a8020f0a',
+      }),
+    }),
+  ])
+# ---
+# name: TestJobService.test_create_singlecam[no_options-empty_expand][create_mutation_expand_[]]
+  list([
+    list([
+      '''
+        mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $clip_window: ClipWindowInput) {
+          createSingleCamJob(
+            takeId: $take_id
+            name: $name
+            options: $options
+            outputs: $outputs
+            metadata: $metadata
+            clipWindow: $clip_window
+          ) {
+            id
+            created
+            metadata
+            state
+            name
+            progress {
+              state
+              percentageComplete
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'clip_window': dict({
+          'endTime': 10.0,
+          'startTime': 1.0,
+        }),
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': '',
+        'options': dict({
+        }),
+        'outputs': list([
+        ]),
+        'take_id': '8d866324-3ab5-4d05-a9c5-e560a8020f0a',
+      }),
+    }),
+  ])
+# ---
+# name: TestJobService.test_create_singlecam[no_options-expand_client][create_mutation_expand_client]
+  list([
+    list([
+      '''
+        mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $clip_window: ClipWindowInput) {
+          createSingleCamJob(
+            takeId: $take_id
+            name: $name
+            options: $options
+            outputs: $outputs
+            metadata: $metadata
+            clipWindow: $clip_window
+          ) {
+            id
+            created
+            metadata
+            state
+            name
+            progress {
+              state
+              percentageComplete
+            }
+            client {
+              id
+              name
+              created
+              metadata
+              portal
+              __typename
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'clip_window': dict({
+          'endTime': 10.0,
+          'startTime': 1.0,
+        }),
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': '',
+        'options': dict({
+        }),
+        'outputs': list([
+        ]),
+        'take_id': '8d866324-3ab5-4d05-a9c5-e560a8020f0a',
+      }),
+    }),
+  ])
+# ---
+# name: TestJobService.test_create_singlecam[no_options-expand_outputs][create_mutation_expand_outputs]
+  list([
+    list([
+      '''
+        mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $clip_window: ClipWindowInput) {
+          createSingleCamJob(
+            takeId: $take_id
+            name: $name
+            options: $options
+            outputs: $outputs
+            metadata: $metadata
+            clipWindow: $clip_window
+          ) {
+            id
+            created
+            metadata
+            state
+            name
+            progress {
+              state
+              percentageComplete
+            }
+            outputs {
+              format
+              file {
+                id
+                created
+                type
+                metadata
+                name
+                presignedUrl
+                thumbnailUrl
+                __typename
+              }
+              __typename
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'clip_window': dict({
+          'endTime': 10.0,
+          'startTime': 1.0,
+        }),
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': '',
+        'options': dict({
+        }),
+        'outputs': list([
+        ]),
+        'take_id': '8d866324-3ab5-4d05-a9c5-e560a8020f0a',
+      }),
+    }),
+  ])
+# ---
+# name: TestJobService.test_create_singlecam[no_options-expand_take][create_mutation_expand_take]
+  list([
+    list([
+      '''
+        mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $clip_window: ClipWindowInput) {
+          createSingleCamJob(
+            takeId: $take_id
+            name: $name
+            options: $options
+            outputs: $outputs
+            metadata: $metadata
+            clipWindow: $clip_window
+          ) {
+            id
+            created
+            metadata
+            state
+            name
+            progress {
+              state
+              percentageComplete
+            }
+            take {
+              id
+              created
+              name
+              metadata
+              __typename
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'clip_window': dict({
+          'endTime': 10.0,
+          'startTime': 1.0,
+        }),
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': '',
+        'options': dict({
+        }),
+        'outputs': list([
+        ]),
+        'take_id': '874a50b9-8d86-4324-bab5-ed05e9c5e560',
+      }),
+    }),
+  ])
+# ---
+# name: TestJobService.test_create_singlecam[no_options-no_expand][create_mutation_expand_None]
+  list([
+    list([
+      '''
+        mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $clip_window: ClipWindowInput) {
+          createSingleCamJob(
+            takeId: $take_id
+            name: $name
+            options: $options
+            outputs: $outputs
+            metadata: $metadata
+            clipWindow: $clip_window
+          ) {
+            id
+            created
+            metadata
+            state
+            name
+            progress {
+              state
+              percentageComplete
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'clip_window': dict({
+          'endTime': 10.0,
+          'startTime': 1.0,
+        }),
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': '',
+        'options': dict({
+        }),
+        'outputs': list([
+        ]),
+        'take_id': '8d866324-3ab5-4d05-a9c5-e560a8020f0a',
+      }),
+    }),
+  ])
+# ---
+# name: TestJobService.test_create_singlecam[with_options-empty_expand][create_mutation_expand_[]]
+  list([
+    list([
+      '''
+        mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $clip_window: ClipWindowInput) {
+          createSingleCamJob(
+            takeId: $take_id
+            name: $name
+            options: $options
+            outputs: $outputs
+            metadata: $metadata
+            clipWindow: $clip_window
+          ) {
+            id
+            created
+            metadata
+            state
+            name
+            progress {
+              state
+              percentageComplete
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'clip_window': dict({
+          'endTime': 10.0,
+          'startTime': 1.0,
+        }),
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': '',
+        'options': dict({
+          'floorPlane': True,
+          'trackFingers': False,
+        }),
+        'outputs': list([
+        ]),
+        'take_id': '8d866324-3ab5-4d05-a9c5-e560a8020f0a',
+      }),
+    }),
+  ])
+# ---
+# name: TestJobService.test_create_singlecam[with_options-expand_client][create_mutation_expand_client]
+  list([
+    list([
+      '''
+        mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $clip_window: ClipWindowInput) {
+          createSingleCamJob(
+            takeId: $take_id
+            name: $name
+            options: $options
+            outputs: $outputs
+            metadata: $metadata
+            clipWindow: $clip_window
+          ) {
+            id
+            created
+            metadata
+            state
+            name
+            progress {
+              state
+              percentageComplete
+            }
+            client {
+              id
+              name
+              created
+              metadata
+              portal
+              __typename
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'clip_window': dict({
+          'endTime': 10.0,
+          'startTime': 1.0,
+        }),
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': '',
+        'options': dict({
+          'floorPlane': True,
+          'trackFingers': False,
+        }),
+        'outputs': list([
+        ]),
+        'take_id': '8d866324-3ab5-4d05-a9c5-e560a8020f0a',
+      }),
+    }),
+  ])
+# ---
+# name: TestJobService.test_create_singlecam[with_options-expand_outputs][create_mutation_expand_outputs]
+  list([
+    list([
+      '''
+        mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $clip_window: ClipWindowInput) {
+          createSingleCamJob(
+            takeId: $take_id
+            name: $name
+            options: $options
+            outputs: $outputs
+            metadata: $metadata
+            clipWindow: $clip_window
+          ) {
+            id
+            created
+            metadata
+            state
+            name
+            progress {
+              state
+              percentageComplete
+            }
+            outputs {
+              format
+              file {
+                id
+                created
+                type
+                metadata
+                name
+                presignedUrl
+                thumbnailUrl
+                __typename
+              }
+              __typename
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'clip_window': dict({
+          'endTime': 10.0,
+          'startTime': 1.0,
+        }),
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': '',
+        'options': dict({
+          'floorPlane': True,
+          'trackFingers': False,
+        }),
+        'outputs': list([
+        ]),
+        'take_id': '8d866324-3ab5-4d05-a9c5-e560a8020f0a',
+      }),
+    }),
+  ])
+# ---
+# name: TestJobService.test_create_singlecam[with_options-expand_take][create_mutation_expand_take]
+  list([
+    list([
+      '''
+        mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $clip_window: ClipWindowInput) {
+          createSingleCamJob(
+            takeId: $take_id
+            name: $name
+            options: $options
+            outputs: $outputs
+            metadata: $metadata
+            clipWindow: $clip_window
+          ) {
+            id
+            created
+            metadata
+            state
+            name
+            progress {
+              state
+              percentageComplete
+            }
+            take {
+              id
+              created
+              name
+              metadata
+              __typename
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'clip_window': dict({
+          'endTime': 10.0,
+          'startTime': 1.0,
+        }),
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': '',
+        'options': dict({
+          'floorPlane': True,
+          'trackFingers': False,
+        }),
+        'outputs': list([
+        ]),
+        'take_id': '874a50b9-8d86-4324-bab5-ed05e9c5e560',
+      }),
+    }),
+  ])
+# ---
+# name: TestJobService.test_create_singlecam[with_options-no_expand][create_mutation_expand_None]
+  list([
+    list([
+      '''
+        mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $clip_window: ClipWindowInput) {
+          createSingleCamJob(
+            takeId: $take_id
+            name: $name
+            options: $options
+            outputs: $outputs
+            metadata: $metadata
+            clipWindow: $clip_window
+          ) {
+            id
+            created
+            metadata
+            state
+            name
+            progress {
+              state
+              percentageComplete
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'clip_window': dict({
+          'endTime': 10.0,
+          'startTime': 1.0,
+        }),
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': '',
+        'options': dict({
+          'floorPlane': True,
+          'trackFingers': False,
+        }),
+        'outputs': list([
+        ]),
+        'take_id': '8d866324-3ab5-4d05-a9c5-e560a8020f0a',
+      }),
+    }),
+  ])
+# ---
+# name: TestJobService.test_fetch_service
+  JobService(api_key=SecretStr('**********'), endpoint_url=HttpUrl('https://pytest_invalid_endpoint_url.com/'))
+# ---
+# name: TestJobService.test_job_not_found[job_not_found_response]
+  list([
+    dict({
+      'data': None,
+      'errorInfo': None,
+      'errorType': 'MoveNotFoundError',
+      'locations': list([
+        dict({
+          'column': 3,
+          'line': 2,
+          'sourceName': None,
+        }),
+      ]),
+      'message': 'Resource not found in move-ugc-api.',
+      'path': list([
+        'getJob',
+      ]),
+    }),
+  ])
+# ---
+# name: TestJobService.test_list[with_take_id][job_list_request]
+  list([
+    list([
+      '''
+        query list($first: Int, $after: AWSJSON, $sortDirection: SortDirection, $takeId: String) {
+          listJobs(
+            first: $first
+            after: $after
+            sortDirection: $sortDirection
+            takeId: $takeId
+          ) {
+            first
+            after
+            items {
+              id
+              created
+              metadata
+              state
+              name
+              progress {
+                state
+                percentageComplete
+              }
+              __typename
+            }
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'after': None,
+        'expand': None,
+        'first': 10,
+        'sortDirection': 'DESC',
+        'takeId': 'take-123-123-123-123',
+      }),
+    }),
+  ])
+# ---
+# name: TestJobService.test_list[without_take_id][job_list_request]
+  list([
+    list([
+      '''
+        query list($first: Int, $after: AWSJSON, $sortDirection: SortDirection, $takeId: String) {
+          listJobs(
+            first: $first
+            after: $after
+            sortDirection: $sortDirection
+            takeId: $takeId
+          ) {
+            first
+            after
+            items {
+              id
+              created
+              metadata
+              state
+              name
+              progress {
+                state
+                percentageComplete
+              }
+              __typename
+            }
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'after': None,
+        'expand': None,
+        'first': 10,
+        'sortDirection': 'DESC',
+        'takeId': None,
+      }),
+    }),
+  ])
+# ---
+# name: TestJobService.test_list_job_invalid[key_error_message]
+  '''
+  1 validation error for ListBase
+  items
+    Value error, Got __typename of '' which is not present in mapping_type_name_to_class: Rig, CameraSettings, Take, Job, HumanVolume [type=value_error, input_value=[{'id': 'dummy-123-123-123-123'}], input_type=list]
+      For further information visit https://errors.pydantic.dev/2.10/v/value_error
+  '''
+# ---
+# name: TestJobService.test_output_types[None-create_multicam][create_multicam_response]
+  list([
+    list([
+      '''
+        mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String, $clip_window: ClipWindowInput) {
+          createMultiCamJob(
+            takeId: $take_id
+            name: $name
+            numberOfActors: $numberOfActors
+            options: $options
+            outputs: $outputs
+            metadata: $metadata
+            rig: $rig
+            clipWindow: $clip_window
+          ) {
+            id
+            created
+            metadata
+            state
+            name
+            progress {
+              state
+              percentageComplete
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'clip_window': None,
+        'metadata': '{}',
+        'name': '',
+        'numberOfActors': 8658,
+        'options': dict({
+        }),
+        'outputs': list([
+        ]),
+        'rig': '',
+        'take_id': '8d866324-3ab5-4d05-a9c5-e560a8020f0a',
+      }),
+    }),
+  ])
+# ---
+# name: TestJobService.test_output_types[None-create_singlecam][create_singlecam_response]
+  list([
+    list([
+      '''
+        mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $clip_window: ClipWindowInput) {
+          createSingleCamJob(
+            takeId: $take_id
+            name: $name
+            options: $options
+            outputs: $outputs
+            metadata: $metadata
+            clipWindow: $clip_window
+          ) {
+            id
+            created
+            metadata
+            state
+            name
+            progress {
+              state
+              percentageComplete
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'clip_window': None,
+        'metadata': '{}',
+        'name': '',
+        'options': dict({
+        }),
+        'outputs': list([
+        ]),
+        'take_id': '8d866324-3ab5-4d05-a9c5-e560a8020f0a',
+      }),
+    }),
+  ])
+# ---
+# name: TestJobService.test_output_types[outputs1-create_multicam][create_multicam_response]
+  list([
+    list([
+      '''
+        mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String, $clip_window: ClipWindowInput) {
+          createMultiCamJob(
+            takeId: $take_id
+            name: $name
+            numberOfActors: $numberOfActors
+            options: $options
+            outputs: $outputs
+            metadata: $metadata
+            rig: $rig
+            clipWindow: $clip_window
+          ) {
+            id
+            created
+            metadata
+            state
+            name
+            progress {
+              state
+              percentageComplete
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'clip_window': None,
+        'metadata': '{}',
+        'name': '',
+        'numberOfActors': 8658,
+        'options': dict({
+        }),
+        'outputs': list([
+        ]),
+        'rig': '',
+        'take_id': '8d866324-3ab5-4d05-a9c5-e560a8020f0a',
+      }),
+    }),
+  ])
+# ---
+# name: TestJobService.test_output_types[outputs1-create_singlecam][create_singlecam_response]
+  list([
+    list([
+      '''
+        mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $clip_window: ClipWindowInput) {
+          createSingleCamJob(
+            takeId: $take_id
+            name: $name
+            options: $options
+            outputs: $outputs
+            metadata: $metadata
+            clipWindow: $clip_window
+          ) {
+            id
+            created
+            metadata
+            state
+            name
+            progress {
+              state
+              percentageComplete
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'clip_window': None,
+        'metadata': '{}',
+        'name': '',
+        'options': dict({
+        }),
+        'outputs': list([
+        ]),
+        'take_id': '8d866324-3ab5-4d05-a9c5-e560a8020f0a',
+      }),
+    }),
+  ])
+# ---
+# name: TestJobService.test_output_types[outputs2-create_multicam][create_multicam_response]
+  list([
+    list([
+      '''
+        mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String, $clip_window: ClipWindowInput) {
+          createMultiCamJob(
+            takeId: $take_id
+            name: $name
+            numberOfActors: $numberOfActors
+            options: $options
+            outputs: $outputs
+            metadata: $metadata
+            rig: $rig
+            clipWindow: $clip_window
+          ) {
+            id
+            created
+            metadata
+            state
+            name
+            progress {
+              state
+              percentageComplete
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'clip_window': None,
+        'metadata': '{}',
+        'name': '',
+        'numberOfActors': 8658,
+        'options': dict({
+        }),
+        'outputs': list([
+          'MAIN_BLEND',
+          'FBX',
+        ]),
+        'rig': '',
+        'take_id': '8d866324-3ab5-4d05-a9c5-e560a8020f0a',
+      }),
+    }),
+  ])
+# ---
+# name: TestJobService.test_output_types[outputs2-create_singlecam][create_singlecam_response]
+  list([
+    list([
+      '''
+        mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $clip_window: ClipWindowInput) {
+          createSingleCamJob(
+            takeId: $take_id
+            name: $name
+            options: $options
+            outputs: $outputs
+            metadata: $metadata
+            clipWindow: $clip_window
+          ) {
+            id
+            created
+            metadata
+            state
+            name
+            progress {
+              state
+              percentageComplete
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'clip_window': None,
+        'metadata': '{}',
+        'name': '',
+        'options': dict({
+        }),
+        'outputs': list([
+          'MAIN_BLEND',
+          'FBX',
+        ]),
+        'take_id': '8d866324-3ab5-4d05-a9c5-e560a8020f0a',
+      }),
+    }),
+  ])
+# ---
+# name: TestJobService.test_output_types[outputs3-create_multicam][create_multicam_response]
+  list([
+    list([
+      '''
+        mutation create($take_id: String!, $name: String, $numberOfActors: Int!, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $rig: String, $clip_window: ClipWindowInput) {
+          createMultiCamJob(
+            takeId: $take_id
+            name: $name
+            numberOfActors: $numberOfActors
+            options: $options
+            outputs: $outputs
+            metadata: $metadata
+            rig: $rig
+            clipWindow: $clip_window
+          ) {
+            id
+            created
+            metadata
+            state
+            name
+            progress {
+              state
+              percentageComplete
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'clip_window': None,
+        'metadata': '{}',
+        'name': '',
+        'numberOfActors': 8658,
+        'options': dict({
+        }),
+        'outputs': list([
+          'MAIN_GLB',
+          'UNKNOWN_OUTPUT',
+        ]),
+        'rig': '',
+        'take_id': '8d866324-3ab5-4d05-a9c5-e560a8020f0a',
+      }),
+    }),
+  ])
+# ---
+# name: TestJobService.test_output_types[outputs3-create_singlecam][create_singlecam_response]
+  list([
+    list([
+      '''
+        mutation create($take_id: String!, $name: String, $options: OptionsInput, $outputs: [OutputType], $metadata: AWSJSON, $clip_window: ClipWindowInput) {
+          createSingleCamJob(
+            takeId: $take_id
+            name: $name
+            options: $options
+            outputs: $outputs
+            metadata: $metadata
+            clipWindow: $clip_window
+          ) {
+            id
+            created
+            metadata
+            state
+            name
+            progress {
+              state
+              percentageComplete
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'clip_window': None,
+        'metadata': '{}',
+        'name': '',
+        'options': dict({
+        }),
+        'outputs': list([
+          'MAIN_GLB',
+          'UNKNOWN_OUTPUT',
+        ]),
+        'take_id': '8d866324-3ab5-4d05-a9c5-e560a8020f0a',
+      }),
+    }),
+  ])
+# ---
+# name: TestJobService.test_retrieve[empty_expand][retrieve_query_expand_[]]
+  list([
+    list([
+      '''
+        query retrieve($id: ID!) {
+          getJob(jobId: $id) {
+            id
+            created
+            metadata
+            state
+            name
+            progress {
+              state
+              percentageComplete
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'id': '8d866324-3ab5-4d05-a9c5-e560a8020f0a',
+      }),
+    }),
+  ])
+# ---
+# name: TestJobService.test_retrieve[expand_client][retrieve_query_expand_client]
+  list([
+    list([
+      '''
+        query retrieve($id: ID!) {
+          getJob(jobId: $id) {
+            id
+            created
+            metadata
+            state
+            name
+            progress {
+              state
+              percentageComplete
+            }
+            client {
+              id
+              name
+              created
+              metadata
+              portal
+              __typename
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'id': '8d866324-3ab5-4d05-a9c5-e560a8020f0a',
+      }),
+    }),
+  ])
+# ---
+# name: TestJobService.test_retrieve[expand_inputs][retrieve_query_expand_inputs]
+  list([
+    list([
+      '''
+        query retrieve($id: ID!) {
+          getJob(jobId: $id) {
+            id
+            created
+            metadata
+            state
+            name
+            progress {
+              state
+              percentageComplete
+            }
+            inputs {
+              clipWindow {
+                startTime
+                endTime
+              }
+              numberOfActors
+              options {
+                floorPlane
+                mocapModel
+                trackBall
+                trackFingers
+                trackJerseyNumbers
+              }
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'id': 'bdc68ffa-06c7-44f6-b4c4-614f530e9daa',
+      }),
+    }),
+  ])
+# ---
+# name: TestJobService.test_retrieve[expand_outputs][retrieve_query_expand_outputs]
+  list([
+    list([
+      '''
+        query retrieve($id: ID!) {
+          getJob(jobId: $id) {
+            id
+            created
+            metadata
+            state
+            name
+            progress {
+              state
+              percentageComplete
+            }
+            outputs {
+              format
+              file {
+                id
+                created
+                type
+                metadata
+                name
+                presignedUrl
+                thumbnailUrl
+                __typename
+              }
+              __typename
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'id': '8d866324-3ab5-4d05-a9c5-e560a8020f0a',
+      }),
+    }),
+  ])
+# ---
+# name: TestJobService.test_retrieve[expand_rig][retrieve_query_expand_rig]
+  list([
+    list([
+      '''
+        query retrieve($id: ID!) {
+          getJob(jobId: $id) {
+            id
+            created
+            metadata
+            state
+            name
+            progress {
+              state
+              percentageComplete
+            }
+            rig {
+              name
+              __typename
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'id': '8d866324-3ab5-4d05-a9c5-e560a8020f0a',
+      }),
+    }),
+  ])
+# ---
+# name: TestJobService.test_retrieve[expand_take][retrieve_query_expand_take]
+  list([
+    list([
+      '''
+        query retrieve($id: ID!) {
+          getJob(jobId: $id) {
+            id
+            created
+            metadata
+            state
+            name
+            progress {
+              state
+              percentageComplete
+            }
+            take {
+              id
+              created
+              name
+              metadata
+              __typename
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'id': '874a50b9-8d86-4324-bab5-ed05e9c5e560',
+      }),
+    }),
+  ])
+# ---
+# name: TestJobService.test_retrieve[no_expand][retrieve_query_expand_None]
+  list([
+    list([
+      '''
+        query retrieve($id: ID!) {
+          getJob(jobId: $id) {
+            id
+            created
+            metadata
+            state
+            name
+            progress {
+              state
+              percentageComplete
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'id': '8d866324-3ab5-4d05-a9c5-e560a8020f0a',
+      }),
+    }),
+  ])
+# ---
+# name: TestJobService.test_update[update_mutation]
+  list([
+    list([
+      '''
+        mutation update($id: String!, $metadata: AWSJSON, $name: String) {
+          updateJob(id: $id, metadata: $metadata, name: $name) {
+            id
+            created
+            metadata
+            state
+            name
+            progress {
+              state
+              percentageComplete
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'id': '8d866324-3ab5-4d05-a9c5-e560a8020f0a',
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': 'Amber Harris',
+      }),
+    }),
+  ])
+# ---

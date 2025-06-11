@@ -14,13 +14,13 @@ pydantic = "^2.10.6"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.4.0"
-snapshottest = "^0.6.0"
 Faker = ">=18.13,<31.0"
 pytest-freezegun = "^0.4.2"
 pre-commit = "^3.3.3"
 wemake-python-styleguide = "^0.18.0"
 pytest-cov = "^4.0.0"
 pytest-randomly = "^3.13.0"
+syrupy = "^4.9.1"
 
 [tool.poetry.group.docs]
 optional = true

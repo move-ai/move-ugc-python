@@ -1,0 +1,84 @@
+{
+  "area_type": "NORMAL",
+  "client": null,
+  "clip_window": {
+    "end_time": 10.0,
+    "start_time": 10.0
+  },
+  "created": "2023-06-29T08:54:52.349467Z",
+  "human_height": 1.5,
+  "id": "volume-af54cc45-7137-4206-a4c1-b3bc21b398fc",
+  "metadata": {
+    "analysis": "UmKdTFlLMIuIvJkRJnoM",
+    "decade": "zAvJMvacZIYSmMsDUNvC",
+    "director": "KNmpExWtgQLcAEuRyBkN",
+    "draw": "PnbQcVNCliYtuFCSJkGb",
+    "house": "aYyOUXkJPUjPJGpDdakX",
+    "huge": "eFaLyHGEQQpSzpRFSYEm",
+    "last": "dnZCcfgZNBnaEkbOzIyO",
+    "other": "XbBPNrbhtJksbBuoWXSK",
+    "table": "ACMVZcKAiGBcYgCzHAad",
+    "trouble": "UgnhIyaDJzohUigyDYZf"
+  },
+  "name": "fake_volume",
+  "outputs": null,
+  "progress": {
+    "percentage_complete": 50,
+    "state": "RUNNING"
+  },
+  "sources": [
+    {
+      "camera_settings": null,
+      "device_label": "foobar",
+      "file": {
+        "client": null,
+        "created": "2023-07-03T14:48:06.029019Z",
+        "id": "file-a0059241-7ede-411c-a149-769a4305e8b6",
+        "metadata": {
+          "analysis": "UmKdTFlLMIuIvJkRJnoM",
+          "decade": "zAvJMvacZIYSmMsDUNvC",
+          "director": "KNmpExWtgQLcAEuRyBkN",
+          "draw": "PnbQcVNCliYtuFCSJkGb",
+          "house": "aYyOUXkJPUjPJGpDdakX",
+          "huge": "eFaLyHGEQQpSzpRFSYEm",
+          "last": "dnZCcfgZNBnaEkbOzIyO",
+          "other": "XbBPNrbhtJksbBuoWXSK",
+          "table": "ACMVZcKAiGBcYgCzHAad",
+          "trouble": "UgnhIyaDJzohUigyDYZf"
+        },
+        "name": "",
+        "presigned_url": "https://pytest_invalid_presigned_url.com/file",
+        "thumbnail_url": "https://pytest_invalid_thumbnail_url.com/file",
+        "type": ".mp4"
+      },
+      "format": "MP4"
+    },
+    {
+      "camera_settings": null,
+      "device_label": "foobar",
+      "file": {
+        "client": null,
+        "created": "2023-07-03T14:48:06.029019Z",
+        "id": "file-a0059241-7ede-411c-a149-769a4305e8b6",
+        "metadata": {
+          "analysis": "UmKdTFlLMIuIvJkRJnoM",
+          "decade": "zAvJMvacZIYSmMsDUNvC",
+          "director": "KNmpExWtgQLcAEuRyBkN",
+          "draw": "PnbQcVNCliYtuFCSJkGb",
+          "house": "aYyOUXkJPUjPJGpDdakX",
+          "huge": "eFaLyHGEQQpSzpRFSYEm",
+          "last": "dnZCcfgZNBnaEkbOzIyO",
+          "other": "XbBPNrbhtJksbBuoWXSK",
+          "table": "ACMVZcKAiGBcYgCzHAad",
+          "trouble": "UgnhIyaDJzohUigyDYZf"
+        },
+        "name": "",
+        "presigned_url": "https://pytest_invalid_presigned_url.com/file",
+        "thumbnail_url": "https://pytest_invalid_thumbnail_url.com/file",
+        "type": ".mp4"
+      },
+      "format": "MOVE"
+    }
+  ],
+  "state": "RUNNING"
+}

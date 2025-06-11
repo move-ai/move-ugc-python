@@ -1,0 +1,39 @@
+{
+  "area_type": "NORMAL",
+  "client": {
+    "created": "2023-06-12T00:00:00Z",
+    "id": "client-47c982ec-60ab-4a0b-9286-2db4a76abc18",
+    "metadata": {
+      "foo": "bar"
+    },
+    "name": "PYTEST_INVALID_CLIENT_NAME",
+    "portal": "https://app.svix.com/login?primaryColorLight=39ddef&primaryColorDark=39ddef#key="
+  },
+  "clip_window": {
+    "end_time": 10.0,
+    "start_time": 10.0
+  },
+  "created": "2023-06-29T08:54:52.349467Z",
+  "human_height": 1.5,
+  "id": "volume-af54cc45-7137-4206-a4c1-b3bc21b398fc",
+  "metadata": {
+    "analysis": "UmKdTFlLMIuIvJkRJnoM",
+    "decade": "zAvJMvacZIYSmMsDUNvC",
+    "director": "KNmpExWtgQLcAEuRyBkN",
+    "draw": "PnbQcVNCliYtuFCSJkGb",
+    "house": "aYyOUXkJPUjPJGpDdakX",
+    "huge": "eFaLyHGEQQpSzpRFSYEm",
+    "last": "dnZCcfgZNBnaEkbOzIyO",
+    "other": "XbBPNrbhtJksbBuoWXSK",
+    "table": "ACMVZcKAiGBcYgCzHAad",
+    "trouble": "UgnhIyaDJzohUigyDYZf"
+  },
+  "name": "fake_volume",
+  "outputs": null,
+  "progress": {
+    "percentage_complete": 50,
+    "state": "RUNNING"
+  },
+  "sources": null,
+  "state": "RUNNING"
+}

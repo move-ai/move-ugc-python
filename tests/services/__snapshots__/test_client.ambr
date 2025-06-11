@@ -1,0 +1,50 @@
+# serializer version: 1
+# name: TestClientService.test_fetch_service
+  ClientService(api_key=SecretStr('**********'), endpoint_url=HttpUrl('https://pytest_invalid_endpoint_url.com/'))
+# ---
+# name: TestClientService.test_retrieve[retrieve_query]
+  list([
+    list([
+      '''
+        query retrieve {
+          client {
+            id
+            name
+            created
+            metadata
+            portal
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': None,
+    }),
+  ])
+# ---
+# name: TestClientService.test_update[update_query]
+  list([
+    list([
+      '''
+        mutation update($metadata: AWSJSON!) {
+          updateClient(metadata: $metadata) {
+            id
+            name
+            created
+            metadata
+            portal
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+      }),
+    }),
+  ])
+# ---

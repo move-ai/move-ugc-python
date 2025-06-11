@@ -1,0 +1,74 @@
+# serializer version: 1
+# name: TestWebhooksService.test_add_webhook[add_webhook_query]
+  list([
+    list([
+      '''
+        mutation addWebhook($events: [String!]!, $uid: String!, $url: String!, $description: String, $secret: String) {
+          upsertWebhookEndpoint(
+            events: $events
+            uid: $uid
+            url: $url
+            description: $description
+            secret: $secret
+          ) {
+            description
+            events
+            uid
+            url
+            secret
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'description': 'ZPnbQcVNCliYtuFCSJkG',
+        'events': list([
+          'ugc.jobs.state.completed',
+        ]),
+        'secret': 'XbBPNrbhtJksbBuoWXSK',
+        'uid': 'WkDQwclzAvJMvacZIYSm',
+        'url': 'https://dunn.com/',
+      }),
+    }),
+  ])
+# ---
+# name: TestWebhooksService.test_add_without_secret[add_webhook_query]
+  list([
+    list([
+      '''
+        mutation addWebhook($events: [String!]!, $uid: String!, $url: String!, $description: String, $secret: String) {
+          upsertWebhookEndpoint(
+            events: $events
+            uid: $uid
+            url: $url
+            description: $description
+            secret: $secret
+          ) {
+            description
+            events
+            uid
+            url
+            secret
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'description': '',
+        'events': list([
+          'ugc.jobs.state.completed',
+        ]),
+        'secret': None,
+        'uid': 'WkDQwclzAvJMvacZIYSm',
+        'url': 'https://dunn.com/',
+      }),
+    }),
+  ])
+# ---
+# name: TestWebhooksService.test_fetch_service
+  WebhookService(api_key=SecretStr('**********'), endpoint_url=HttpUrl('https://pytest_invalid_endpoint_url.com/'))
+# ---

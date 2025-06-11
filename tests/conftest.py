@@ -16,4 +16,5 @@ pytest_plugins = [
     "tests.fixtures.conftest.volume",
     "tests.fixtures.conftest.camera_settings",
     "tests.fixtures.conftest.rig",
+    "tests.fixtures.conftest.syrupy",
 ]

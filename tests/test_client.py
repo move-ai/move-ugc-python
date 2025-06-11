@@ -16,7 +16,7 @@ class TestMoveUgcClient:
             snapshot: The snapshot fixture.
         """
         client = MoveUgc(api_key=faker.pystr())
-        snapshot.assert_match(client, name="client")
+        assert client == snapshot
 
     def test_create_without_api_key(self, snapshot):
         """Test creating a client without an API key.

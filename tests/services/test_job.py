@@ -42,6 +42,7 @@ class TestJobService(ServicesTestCase):  # noqa: WPS214
     def test_create_singlecam(  # noqa: WPS211
         self,
         snapshot,
+        snapshot_json,
         request,
         faker,
         expand,
@@ -54,6 +55,7 @@ class TestJobService(ServicesTestCase):  # noqa: WPS214
 
         Args:
             snapshot: The snapshot fixture.
+            snapshot_json: The snapshot json fixture.
             request: The request fixture.
             faker: The faker fixture.
             expand: The expand fixture.
@@ -76,8 +78,7 @@ class TestJobService(ServicesTestCase):  # noqa: WPS214
             snapshot=snapshot,
             name=f"create_mutation_expand_{suffix}",
         )
-        snapshot.assert_match(
-            job_model.model_dump(),
+        assert job_model.model_dump() == snapshot_json(
             name=f"create_response_expand_{suffix}",
         )
 
@@ -111,6 +112,7 @@ class TestJobService(ServicesTestCase):  # noqa: WPS214
     def test_create_multicam(  # noqa: WPS211
         self,
         snapshot,
+        snapshot_json,
         request,
         faker,
         expand,
@@ -124,6 +126,7 @@ class TestJobService(ServicesTestCase):  # noqa: WPS214
 
         Args:
             snapshot: The snapshot fixture.
+            snapshot_json: The snapshot json fixture.
             request: The request fixture.
             faker: The faker fixture.
             expand: The expand fixture.
@@ -145,8 +148,7 @@ class TestJobService(ServicesTestCase):  # noqa: WPS214
             snapshot=snapshot,
             name=f"create_mutation_expand_{suffix}",
         )
-        snapshot.assert_match(
-            job_model.model_dump(),
+        assert job_model.model_dump() == snapshot_json(
             name=f"create_response_expand_{suffix}",
         )
 
@@ -174,6 +176,7 @@ class TestJobService(ServicesTestCase):  # noqa: WPS214
     def test_retrieve(  # noqa: WPS211
         self,
         snapshot,
+        snapshot_json,
         request,
         faker,
         expand,
@@ -185,6 +188,7 @@ class TestJobService(ServicesTestCase):  # noqa: WPS214
 
         Args:
             snapshot: The snapshot fixture.
+            snapshot_json: The snapshot json fixture.
             request: The request fixture.
             faker: The faker fixture.
             expand: The expand fixture.
@@ -200,8 +204,7 @@ class TestJobService(ServicesTestCase):  # noqa: WPS214
             snapshot=snapshot,
             name=f"retrieve_query_expand_{suffix}",
         )
-        snapshot.assert_match(
-            job_model.model_dump(),
+        assert job_model.model_dump() == snapshot_json(
             name=f"retrieve_response_expand_{suffix}",
         )
 
@@ -217,8 +220,7 @@ class TestJobService(ServicesTestCase):  # noqa: WPS214
         """
         with pytest.raises(TransportQueryError) as excinfo:
             self.client.takes.retrieve(id=faker.uuid4())
-        snapshot.assert_match(
-            excinfo.value.errors,  # noqa: WPS441
+        assert excinfo.value.errors == snapshot(  # noqa: WPS441
             name="job_not_found_response",
         )
 
@@ -227,7 +229,7 @@ class TestJobService(ServicesTestCase):  # noqa: WPS214
         argvalues=["take-123-123-123-123", None],
         ids=["with_take_id", "without_take_id"],
     )
-    def test_list(self, take_id, snapshot, jobs_list_response):
+    def test_list(self, take_id, snapshot, snapshot_json, jobs_list_response):
         """Test listing jobs.
 
         This should test -> `ugc.jobs.list()`
@@ -235,12 +237,12 @@ class TestJobService(ServicesTestCase):  # noqa: WPS214
         Args:
             take_id: The take id fixture.
             snapshot: The snapshot fixture.
+            snapshot_json: The snapshot json fixture.
             jobs_list_response: job list response fixture.
         """
         job_list = self.client.jobs.list(take_id=take_id)
         self.assert_execute(snapshot, name="job_list_request")
-        snapshot.assert_match(
-            job_list.model_dump(),
+        assert job_list.model_dump() == snapshot_json(
             name="list_response",
         )
 
@@ -268,10 +270,7 @@ class TestJobService(ServicesTestCase):  # noqa: WPS214
         with pytest.raises(ValidationError) as excinfo:
             self.client.jobs.list()
 
-        snapshot.assert_match(
-            str(excinfo.value),  # noqa: WPS441
-            name="key_error_message",
-        )
+        assert str(excinfo.value) == snapshot(name="key_error_message")  # noqa: WPS441
 
     def test_list_job_empty(self, request, job_not_found_json):
         """Test job when it has an empty response.
@@ -296,6 +295,7 @@ class TestJobService(ServicesTestCase):  # noqa: WPS214
     def test_update(  # noqa: WPS211
         self,
         snapshot,
+        snapshot_json,
         request,
         faker,
     ):
@@ -305,6 +305,7 @@ class TestJobService(ServicesTestCase):  # noqa: WPS214
 
         Args:
             snapshot: The snapshot fixture.
+            snapshot_json: The snapshot json fixture.
             request: The request fixture.
             faker: The faker fixture.
         """
@@ -318,10 +319,7 @@ class TestJobService(ServicesTestCase):  # noqa: WPS214
             snapshot=snapshot,
             name="update_mutation",
         )
-        snapshot.assert_match(
-            job_model.model_dump(),
-            name="update_response",
-        )
+        assert job_model.model_dump() == snapshot_json(name="update_response")
 
     @pytest.mark.parametrize(
         "service_method, job_fixture",

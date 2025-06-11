@@ -1,0 +1,21 @@
+{
+  "client": null,
+  "created": "2023-07-03T14:48:06.029019+0000",
+  "id": "file-a0059241-7ede-411c-a149-769a4305e8b6",
+  "metadata": {
+    "analysis": "UmKdTFlLMIuIvJkRJnoM",
+    "decade": "zAvJMvacZIYSmMsDUNvC",
+    "director": "KNmpExWtgQLcAEuRyBkN",
+    "draw": "PnbQcVNCliYtuFCSJkGb",
+    "house": "aYyOUXkJPUjPJGpDdakX",
+    "huge": "eFaLyHGEQQpSzpRFSYEm",
+    "last": "dnZCcfgZNBnaEkbOzIyO",
+    "other": "XbBPNrbhtJksbBuoWXSK",
+    "table": "ACMVZcKAiGBcYgCzHAad",
+    "trouble": "UgnhIyaDJzohUigyDYZf"
+  },
+  "name": "",
+  "presigned_url": "HttpUrl('https://pytest_invalid_presigned_url.com/file')",
+  "thumbnail_url": "",
+  "type": ".mp4"
+}

@@ -1,0 +1,750 @@
+# serializer version: 1
+# name: TestVolumeService.test_create[empty_expand][create_mutation_expand_[]]
+  list([
+    list([
+      '''
+        mutation create($sources: [SourceInput!], $syncMethod: SyncMethodInput, $areaType: AreaType!, $humanHeight: Float!, $metadata: AWSJSON, $name: String, $clip_window: ClipWindowInput) {
+          createVolumeWithHuman(
+            sources: $sources
+            syncMethod: $syncMethod
+            areaType: $areaType
+            humanHeight: $humanHeight
+            metadata: $metadata
+            name: $name
+            clipWindow: $clip_window
+          ) {
+            id
+            areaType
+            created
+            humanHeight
+            metadata
+            name
+            state
+            progress {
+              state
+              percentageComplete
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'areaType': 'NORMAL',
+        'clip_window': dict({
+          'endTime': 9057.0,
+          'startTime': 3757.0,
+        }),
+        'humanHeight': 873121848153.264,
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': 'attention',
+        'sources': list([
+          dict({
+            'cameraSettings': dict({
+              'lens': 'design',
+            }),
+            'deviceLabel': 'realize',
+            'fileId': '530e9daa-0d45-45a7-a849-1a43874a50b9',
+            'format': 'MP4',
+          }),
+          dict({
+            'cameraSettings': dict({
+              'lens': 'so',
+            }),
+            'deviceLabel': 'realize',
+            'fileId': 'b898a7a5-37be-4600-bdc6-8ffa06c7a4f6',
+            'format': 'MOVE',
+          }),
+        ]),
+        'syncMethod': None,
+      }),
+    }),
+  ])
+# ---
+# name: TestVolumeService.test_create[expand_additional_sources][create_mutation_expand_sources]
+  list([
+    list([
+      '''
+        mutation create($sources: [SourceInput!], $syncMethod: SyncMethodInput, $areaType: AreaType!, $humanHeight: Float!, $metadata: AWSJSON, $name: String, $clip_window: ClipWindowInput) {
+          createVolumeWithHuman(
+            sources: $sources
+            syncMethod: $syncMethod
+            areaType: $areaType
+            humanHeight: $humanHeight
+            metadata: $metadata
+            name: $name
+            clipWindow: $clip_window
+          ) {
+            id
+            areaType
+            created
+            humanHeight
+            metadata
+            name
+            state
+            progress {
+              state
+              percentageComplete
+            }
+            sources {
+              deviceLabel
+              file {
+                id
+                created
+                type
+                metadata
+                name
+                presignedUrl
+                thumbnailUrl
+                __typename
+              }
+              cameraSettings {
+                lens
+              }
+              format
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'areaType': 'NORMAL',
+        'clip_window': dict({
+          'endTime': 9057.0,
+          'startTime': 3757.0,
+        }),
+        'humanHeight': 873121848153.264,
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': 'attention',
+        'sources': list([
+          dict({
+            'cameraSettings': dict({
+              'lens': 'design',
+            }),
+            'deviceLabel': 'realize',
+            'fileId': '530e9daa-0d45-45a7-a849-1a43874a50b9',
+            'format': 'MP4',
+          }),
+          dict({
+            'cameraSettings': dict({
+              'lens': 'so',
+            }),
+            'deviceLabel': 'realize',
+            'fileId': 'b898a7a5-37be-4600-bdc6-8ffa06c7a4f6',
+            'format': 'MOVE',
+          }),
+        ]),
+        'syncMethod': None,
+      }),
+    }),
+  ])
+# ---
+# name: TestVolumeService.test_create[expand_client][create_mutation_expand_client]
+  list([
+    list([
+      '''
+        mutation create($sources: [SourceInput!], $syncMethod: SyncMethodInput, $areaType: AreaType!, $humanHeight: Float!, $metadata: AWSJSON, $name: String, $clip_window: ClipWindowInput) {
+          createVolumeWithHuman(
+            sources: $sources
+            syncMethod: $syncMethod
+            areaType: $areaType
+            humanHeight: $humanHeight
+            metadata: $metadata
+            name: $name
+            clipWindow: $clip_window
+          ) {
+            id
+            areaType
+            created
+            humanHeight
+            metadata
+            name
+            state
+            progress {
+              state
+              percentageComplete
+            }
+            client {
+              id
+              name
+              created
+              metadata
+              portal
+              __typename
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'areaType': 'NORMAL',
+        'clip_window': dict({
+          'endTime': 9057.0,
+          'startTime': 3757.0,
+        }),
+        'humanHeight': 873121848153.264,
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': 'attention',
+        'sources': list([
+          dict({
+            'cameraSettings': dict({
+              'lens': 'design',
+            }),
+            'deviceLabel': 'realize',
+            'fileId': '530e9daa-0d45-45a7-a849-1a43874a50b9',
+            'format': 'MP4',
+          }),
+          dict({
+            'cameraSettings': dict({
+              'lens': 'so',
+            }),
+            'deviceLabel': 'realize',
+            'fileId': 'b898a7a5-37be-4600-bdc6-8ffa06c7a4f6',
+            'format': 'MOVE',
+          }),
+        ]),
+        'syncMethod': None,
+      }),
+    }),
+  ])
+# ---
+# name: TestVolumeService.test_create[expand_clip_window][create_mutation_expand_clipWindow]
+  list([
+    list([
+      '''
+        mutation create($sources: [SourceInput!], $syncMethod: SyncMethodInput, $areaType: AreaType!, $humanHeight: Float!, $metadata: AWSJSON, $name: String, $clip_window: ClipWindowInput) {
+          createVolumeWithHuman(
+            sources: $sources
+            syncMethod: $syncMethod
+            areaType: $areaType
+            humanHeight: $humanHeight
+            metadata: $metadata
+            name: $name
+            clipWindow: $clip_window
+          ) {
+            id
+            areaType
+            created
+            humanHeight
+            metadata
+            name
+            state
+            progress {
+              state
+              percentageComplete
+            }
+            clipWindow {
+              startTime
+              endTime
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'areaType': 'LARGE',
+        'clip_window': dict({
+          'endTime': 5315.0,
+          'startTime': 849.0,
+        }),
+        'humanHeight': 59816290182492.2,
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': 'draw',
+        'sources': list([
+          dict({
+            'cameraSettings': dict({
+              'lens': 'set',
+            }),
+            'deviceLabel': 'newspaper',
+            'fileId': '37bea600-bdc6-4ffa-86c7-a4f634c4614f',
+            'format': 'MP4',
+          }),
+          dict({
+            'cameraSettings': dict({
+              'lens': 'evening',
+            }),
+            'deviceLabel': 'newspaper',
+            'fileId': 'cba1d785-4a1e-4b59-aca4-d775bfdde401',
+            'format': 'MOVE',
+          }),
+        ]),
+        'syncMethod': None,
+      }),
+    }),
+  ])
+# ---
+# name: TestVolumeService.test_create[expand_video_file][create_mutation_expand_sources]
+  list([
+    list([
+      '''
+        mutation create($sources: [SourceInput!], $syncMethod: SyncMethodInput, $areaType: AreaType!, $humanHeight: Float!, $metadata: AWSJSON, $name: String, $clip_window: ClipWindowInput) {
+          createVolumeWithHuman(
+            sources: $sources
+            syncMethod: $syncMethod
+            areaType: $areaType
+            humanHeight: $humanHeight
+            metadata: $metadata
+            name: $name
+            clipWindow: $clip_window
+          ) {
+            id
+            areaType
+            created
+            humanHeight
+            metadata
+            name
+            state
+            progress {
+              state
+              percentageComplete
+            }
+            sources {
+              deviceLabel
+              file {
+                id
+                created
+                type
+                metadata
+                name
+                presignedUrl
+                thumbnailUrl
+                __typename
+              }
+              cameraSettings {
+                lens
+              }
+              format
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'areaType': 'NORMAL',
+        'clip_window': dict({
+          'endTime': 9057.0,
+          'startTime': 3757.0,
+        }),
+        'humanHeight': 873121848153.264,
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': 'attention',
+        'sources': list([
+          dict({
+            'cameraSettings': dict({
+              'lens': 'design',
+            }),
+            'deviceLabel': 'realize',
+            'fileId': '530e9daa-0d45-45a7-a849-1a43874a50b9',
+            'format': 'MP4',
+          }),
+          dict({
+            'cameraSettings': dict({
+              'lens': 'so',
+            }),
+            'deviceLabel': 'realize',
+            'fileId': 'b898a7a5-37be-4600-bdc6-8ffa06c7a4f6',
+            'format': 'MOVE',
+          }),
+        ]),
+        'syncMethod': None,
+      }),
+    }),
+  ])
+# ---
+# name: TestVolumeService.test_create[no_expand][create_mutation_expand_None]
+  list([
+    list([
+      '''
+        mutation create($sources: [SourceInput!], $syncMethod: SyncMethodInput, $areaType: AreaType!, $humanHeight: Float!, $metadata: AWSJSON, $name: String, $clip_window: ClipWindowInput) {
+          createVolumeWithHuman(
+            sources: $sources
+            syncMethod: $syncMethod
+            areaType: $areaType
+            humanHeight: $humanHeight
+            metadata: $metadata
+            name: $name
+            clipWindow: $clip_window
+          ) {
+            id
+            areaType
+            created
+            humanHeight
+            metadata
+            name
+            state
+            progress {
+              state
+              percentageComplete
+            }
+            __typename
+          }
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'areaType': 'NORMAL',
+        'clip_window': dict({
+          'endTime': 9057.0,
+          'startTime': 3757.0,
+        }),
+        'humanHeight': 873121848153.264,
+        'metadata': '{"decade": "zAvJMvacZIYSmMsDUNvC", "other": "XbBPNrbhtJksbBuoWXSK", "draw": "PnbQcVNCliYtuFCSJkGb", "table": "ACMVZcKAiGBcYgCzHAad", "huge": "eFaLyHGEQQpSzpRFSYEm", "last": "dnZCcfgZNBnaEkbOzIyO", "trouble": "UgnhIyaDJzohUigyDYZf", "analysis": "UmKdTFlLMIuIvJkRJnoM", "house": "aYyOUXkJPUjPJGpDdakX", "director": "KNmpExWtgQLcAEuRyBkN"}',
+        'name': 'attention',
+        'sources': list([
+          dict({
+            'cameraSettings': dict({
+              'lens': 'design',
+            }),
+            'deviceLabel': 'realize',
+            'fileId': '530e9daa-0d45-45a7-a849-1a43874a50b9',
+            'format': 'MP4',
+          }),
+          dict({
+            'cameraSettings': dict({
+              'lens': 'so',
+            }),
+            'deviceLabel': 'realize',
+            'fileId': 'b898a7a5-37be-4600-bdc6-8ffa06c7a4f6',
+            'format': 'MOVE',
+          }),
+        ]),
+        'syncMethod': None,
+      }),
+    }),
+  ])
+# ---
+# name: TestVolumeService.test_fetch_service
+  VolumeService(api_key=SecretStr('**********'), endpoint_url=HttpUrl('https://pytest_invalid_endpoint_url.com/'))
+# ---
+# name: TestVolumeService.test_list[volume_list_request]
+  list([
+    list([
+      '''
+        query list($first: Int, $after: AWSJSON, $sortDirection: SortDirection) {
+          listVolumes(first: $first, after: $after, sortDirection: $sortDirection) {
+            first
+            after
+            items {
+              ... on Volume {
+                ...VolumeFields
+              }
+            }
+          }
+        }
+        
+        fragment VolumeFields on HumanVolume {
+          id
+          areaType
+          created
+          humanHeight
+          metadata
+          name
+          state
+          progress {
+            state
+            percentageComplete
+          }
+          __typename
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'after': None,
+        'expand': None,
+        'first': 10,
+        'sortDirection': 'DESC',
+        'takeId': None,
+      }),
+    }),
+  ])
+# ---
+# name: TestVolumeService.test_retrieve[empty_expand][get_query_expand_[]]
+  list([
+    list([
+      '''
+        query retrieve($id: ID!) {
+          getVolume(id: $id) {
+            ... on Volume {
+              ...VolumeFields
+            }
+          }
+        }
+        
+        fragment VolumeFields on HumanVolume {
+          id
+          areaType
+          created
+          humanHeight
+          metadata
+          name
+          state
+          progress {
+            state
+            percentageComplete
+          }
+          __typename
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'id': 'volume-8d866324-3ab5-4d05-a9c5-e560a8020f0a',
+      }),
+    }),
+  ])
+# ---
+# name: TestVolumeService.test_retrieve[expand_additional_sources][get_query_expand_sources]
+  list([
+    list([
+      '''
+        query retrieve($id: ID!) {
+          getVolume(id: $id) {
+            ... on Volume {
+              ...VolumeFields
+            }
+          }
+        }
+        
+        fragment VolumeFields on HumanVolume {
+          id
+          areaType
+          created
+          humanHeight
+          metadata
+          name
+          state
+          progress {
+            state
+            percentageComplete
+          }
+          sources {
+            deviceLabel
+            file {
+              id
+              created
+              type
+              metadata
+              name
+              presignedUrl
+              thumbnailUrl
+              __typename
+            }
+            cameraSettings {
+              lens
+            }
+            format
+          }
+          __typename
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'id': 'volume-874a50b9-8d86-4324-bab5-ed05e9c5e560',
+      }),
+    }),
+  ])
+# ---
+# name: TestVolumeService.test_retrieve[expand_client][get_query_expand_client]
+  list([
+    list([
+      '''
+        query retrieve($id: ID!) {
+          getVolume(id: $id) {
+            ... on Volume {
+              ...VolumeFields
+            }
+          }
+        }
+        
+        fragment VolumeFields on HumanVolume {
+          id
+          areaType
+          created
+          humanHeight
+          metadata
+          name
+          state
+          progress {
+            state
+            percentageComplete
+          }
+          client {
+            id
+            name
+            created
+            metadata
+            portal
+            __typename
+          }
+          __typename
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'id': 'volume-8d866324-3ab5-4d05-a9c5-e560a8020f0a',
+      }),
+    }),
+  ])
+# ---
+# name: TestVolumeService.test_retrieve[expand_outputs][get_query_expand_outputs]
+  list([
+    list([
+      '''
+        query retrieve($id: ID!) {
+          getVolume(id: $id) {
+            ... on Volume {
+              ...VolumeFields
+            }
+          }
+        }
+        
+        fragment VolumeFields on HumanVolume {
+          id
+          areaType
+          created
+          humanHeight
+          metadata
+          name
+          state
+          progress {
+            state
+            percentageComplete
+          }
+          outputs {
+            format
+            file {
+              id
+              created
+              type
+              metadata
+              name
+              presignedUrl
+              thumbnailUrl
+              __typename
+            }
+            __typename
+          }
+          __typename
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'id': 'volume-8d866324-3ab5-4d05-a9c5-e560a8020f0a',
+      }),
+    }),
+  ])
+# ---
+# name: TestVolumeService.test_retrieve[expand_video_file][get_query_expand_sources]
+  list([
+    list([
+      '''
+        query retrieve($id: ID!) {
+          getVolume(id: $id) {
+            ... on Volume {
+              ...VolumeFields
+            }
+          }
+        }
+        
+        fragment VolumeFields on HumanVolume {
+          id
+          areaType
+          created
+          humanHeight
+          metadata
+          name
+          state
+          progress {
+            state
+            percentageComplete
+          }
+          sources {
+            deviceLabel
+            file {
+              id
+              created
+              type
+              metadata
+              name
+              presignedUrl
+              thumbnailUrl
+              __typename
+            }
+            cameraSettings {
+              lens
+            }
+            format
+          }
+          __typename
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'id': 'volume-874a50b9-8d86-4324-bab5-ed05e9c5e560',
+      }),
+    }),
+  ])
+# ---
+# name: TestVolumeService.test_retrieve[no_expand][get_query_expand_None]
+  list([
+    list([
+      '''
+        query retrieve($id: ID!) {
+          getVolume(id: $id) {
+            ... on Volume {
+              ...VolumeFields
+            }
+          }
+        }
+        
+        fragment VolumeFields on HumanVolume {
+          id
+          areaType
+          created
+          humanHeight
+          metadata
+          name
+          state
+          progress {
+            state
+            percentageComplete
+          }
+          __typename
+        }
+      ''',
+    ]),
+    dict({
+      'operation_name': None,
+      'variable_values': dict({
+        'id': 'volume-8d866324-3ab5-4d05-a9c5-e560a8020f0a',
+      }),
+    }),
+  ])
+# ---
